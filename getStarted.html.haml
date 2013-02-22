@@ -1,0 +1,206 @@
+---
+layout: base
+style: community
+title: Get Started
+---
+
+%header.jumbotron.subhead(id="overview")
+	%h1 Getting started
+	%p.lead Overview of the project, its contents, and how to get started with a simple template.
+
+.row
+	.span3.bs-docs-sidebar
+		%ul.nav.nav-list.bs-docs-sidenav
+			%li<
+				%a(href="#download-bootstrap")
+					%i.icon-chevron-right
+					Download
+			%li<
+				%a(href="#file-structure")
+					%i.icon-chevron-right
+					File structure
+			%li<
+				%a(href="#contents")
+					%i.icon-chevron-right
+					What's included
+			%li<
+				%a(href="#html-template")
+					%i.icon-chevron-right
+					HTML template
+			%li<
+				%a(href="#examples")
+					%i.icon-chevron-right
+					Examples
+			%li<
+				%a(href="#what-next")
+					%i.icon-chevron-right
+					What next?
+
+	.span9
+		%section(id="download-bootstrap")
+			.page-header
+				%h1 1. Download
+				%p.lead Before downloading, be sure to have a code editor (we recommend <a href="http://sublimetext.com/2">Sublime Text 2</a>) and some working knowledge of HTML and CSS. We won't walk through the source files here, but they are available for download. We'll focus on getting started with the compiled Bootstrap files.
+
+			.row-fluid
+				.span6
+					%h2 Download compiled
+					%p <strong>Fastest way to get started:</strong> get the compiled and minified versions of our CSS, JS, and images. No docs or original source files.
+					%p<
+						%a.btn.btn-large.btn-primary(href="assets/bootstrap.zip") Download Bootstrap
+
+				.span6
+					%h2 Download source
+					%p Get the original files for all CSS and JavaScript, along with a local copy of the docs by downloading the latest version directly from GitHub.
+					%p<
+						%a.btn.btn-large(href="https://github.com/twitter/bootstrap/zipball/master") Download Bootstrap source
+
+		%section(id="file-structure")
+			.page-header
+				%h1 2. File structure
+				%p.lead Within the download you'll find the following file structure and contents, logically grouping common assets and providing both compiled and minified variations.
+				%p Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You'll see something like this:
+				%pre.prettyprint
+					= preserve do
+						:plain
+							&nbsp; bootstrap/
+							  ├── css/
+							  │   ├── bootstrap.css
+							  │   ├── bootstrap.min.css
+							  ├── js/
+							  │   ├── bootstrap.js
+							  │   ├── bootstrap.min.js
+							  └── img/
+							      ├── glyphicons-halflings.png
+							      └── glyphicons-halflings-white.png
+
+			%p This is the most basic form of Bootstrap: compiled files for quick drop-in usage in nearly any web project. We provide compiled CSS and JS (<code>bootstrap.*</code>), as well as compiled and minified CSS and JS (<code>bootstrap.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.
+			%p Please note that all JavaScript plugins require jQuery to be included.
+
+		%section(id="contents")
+			.page-header
+				%h1 3. What's included
+			%p.lead Bootstrap comes equipped with HTML, CSS, and JS for all sorts of things, but they can be summarized with a handful of categories visible at the top of the <a href="http://getbootstrap.com">Bootstrap documentation</a>.
+
+			%h2 Docs sections
+			%h4<
+				%a(href="http://twitter.github.com/bootstrap/scaffolding.html") Scaffolding
+			%p Global styles for the body to reset type and background, link styles, grid system, and two simple layouts.
+			%h4<
+				%a(href="http://twitter.github.com/bootstrap/base-css.html") Base CSS
+			%p Styles for common HTML elements like typography, code, tables, forms, and buttons. Also includes <a href="http://glyphicons.com">Glyphicons</a>, a great little icon set.
+			%h4<
+				%a(href="http://twitter.github.com/bootstrap/components.html") Components
+			%p Basic styles for common interface components like tabs and pills, navbar, alerts, page headers, and more.
+			%h4<
+				%a(href="http://twitter.github.com/bootstrap/javascript.html") JavaScript plugins
+			%p Similar to Components, these JavaScript plugins are interactive components for things like tooltips, popovers, modals, and more.
+
+			%h2 List of components
+			%p Together, the <strong>Components</strong> and <strong>JavaScript plugins</strong> sections provide the following interface elements:
+			%ul
+				%li Button groups
+				%li Button dropdowns
+				%li Navigational tabs, pills, and lists
+				%li Navbar
+				%li Labels
+				%li Badges
+				%li Page headers and hero unit
+				%li Thumbnails
+				%li Alerts
+				%li Progress bars
+				%li Modals
+				%li Dropdowns
+				%li Tooltips
+				%li Popovers
+				%li Accordion
+				%li Carousel
+				%li Typeahead
+			%p In future guides, we may walk through these components individually in more detail. Until then, look for each of these in the documentation for information on how to utilize and customize them.
+
+		%section(id="html-template")
+			.page-header
+				%h1 4. Basic HTML template
+			%p.lead With a brief intro into the contents out of the way, we can focus on putting Bootstrap to use. To do that, we'll utilize a basic HTML template that includes everything we mentioned in the <a href="#file-structure">File structure</a>.
+			%p Now, here's a look at a <strong>typical HTML file</strong>:
+			%pre.prettyprint.linenums
+				= preserve do
+					:escaped
+						<!DOCTYPE html>
+						<html>
+						  <head>
+						    <title>Bootstrap 101 Template</title>
+						  </head>
+						  <body>
+						    <h1>Hello, world!</h1>
+						    <script src="http://code.jquery.com/jquery-latest.js"></script>
+						  </body>
+						</html>
+
+			%p To make this <strong>a Bootstrapped template</strong>, just include the appropriate CSS and JS files:
+			%pre.prettyprint.linenums
+				= preserve do
+					:escaped
+						<!DOCTYPE html>
+						<html>
+						  <head>
+						    <title>Bootstrap 101 Template</title>
+						    <!-- Bootstrap -->
+						    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+						  </head>
+						  <body>
+						    <h1>Hello, world!</h1>
+						    <script src="http://code.jquery.com/jquery-latest.js"></script>
+						    <script src="js/bootstrap.min.js"></script>
+						  </body>
+						</html>
+
+			%p <strong>And you're set!</strong> With those two files added, you can begin to develop any site or application with Bootstrap.
+
+		%section(id="examples")
+			.page-header
+				%h1 5. Examples
+			%p.lead Move beyond the base template with a few example layouts. We encourage folks to iterate on these examples and not simply use them as an end result.
+			%ul.thumbnails.bootstrap-examples
+				%li.span3
+					%a.thumbnail(href="examples/starter-template.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Starter template
+					%p A barebones HTML document with all the Bootstrap CSS and JavaScript included.
+				%li.span3
+					%a.thumbnail(href="examples/hero.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Basic marketing site
+					%p Featuring a hero unit for a primary message and three supporting elements.
+				%li.span3
+					%a.thumbnail(href="examples/fluid.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Fluid layout
+					%p Uses our new responsive, fluid grid system to create a seamless liquid layout.
+				%li.span3
+					%a.thumbnail(href="examples/marketing-narrow.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Narrow marketing
+					%p Slim, lightweight marketing template for small projects or teams.
+				%li.span3
+					%a.thumbnail(href="examples/signin.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Sign in
+					%p Barebones sign in form with custom, larger form controls and a flexible layout.
+				%li.span3
+					%a.thumbnail(href="examples/sticky-footer.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Sticky footer
+					%p Pin a fixed-height footer to the bottom of the user's viewport.
+				%li.span3
+					%a.thumbnail(href="examples/carousel.html")
+						%img(data-src="holder.js/380x260/community" alt="")
+					%h4 Carousel jumbotron
+					%p A more interactive riff on the basic marketing site featuring a prominent carousel.
+
+		%section(id="what-next")
+			.page-header
+				%h1 What next?
+			%p.lead Head to the docs for information, examples, and code snippets, or take the next leap and customize Bootstrap for any upcoming project.
+			%a.btn.btn-large.btn-primary(href="./scaffolding.html") Visit the Bootstrap docs
+			%a.btn.btn-large(href="./customize.html" style="margin-left: 5px;") Customize Bootstrap

@@ -1,0 +1,185 @@
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+$black:                 #000;
+$grayDarker:            #424242;
+$grayDark:              #656565;
+$gray:                  #8c8f91;
+$grayLight:             #d5d5d5;
+$grayLighter:           #e6e7e8;
+$white:                 #fff;
+
+// Accent colors
+// -------------------------
+$blue:                  #4a5d75;
+$blueDark:              #243446;
+$green:                 #46a546;
+$red:                   #9d261d;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        #f3f3f3;
+$textColor:             $grayDarker;
+
+// Links
+// -------------------------
+$linkColor:             #369;
+$linkColorHover:        darken($linkColor, 15%);
+
+// Typography
+// -------------------------
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        20px;
+$altFontFamily:         $serifFontFamily;
+
+$headingsFontFamily:    "TitilliumText22LMedium", Helvetica, Arial, sans-serif;
+$headingsFontWeight:    inherit;    // instead of browser default, bold
+$headingsColor:         $grayDarker; // empty to use BS default, $textColor
+
+// Tables
+// -------------------------
+$tableBackground:                   transparent; // overall background-color
+$tableBackgroundAccent:             #F4F3F3; // for striping
+$tableBackgroundHover:              #f5f5f5; // for hover
+$tableBorder:                       #ddd; // table and cell border
+
+// Buttons
+// -------------------------
+$btnBackground:                     #f9f9f9;
+$btnBackgroundHighlight:            #f3f3f3;
+$btnBorder:                         #ccc;
+
+$btnPrimaryBackground:              #4f729d;
+$btnPrimaryBackgroundHighlight:     #3e5776;
+
+$btnInfoBackground:                 #aacde1;
+$btnInfoBackgroundHighlight:        #86a9bd;
+
+$btnSuccessBackground:              #8ec383;
+$btnSuccessBackgroundHighlight:     $green;
+
+$btnWarningBackground:              #f7b539;
+$btnWarningBackgroundHighlight:     #d19b33;
+
+$btnDangerBackground:               #e24d42;
+$btnDangerBackgroundHighlight:      #af423a;
+
+$btnInverseBackground:              $grayDark;
+$btnInverseBackgroundHighlight:     $grayDarker;
+
+// Forms
+// -------------------------
+$inputBackground:               $white;
+$inputBorder:                   #ccc;
+$inputBorderRadius:             3px;
+$inputDisabledBackground:       $grayLighter;
+$formActionsBackground:         #f5f5f5;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            #f9fdff;
+$dropdownBorder:                rgba(0,0,0,.2);
+$dropdownLinkColor:             $grayDark;
+$dropdownLinkColorHover:        $white;
+$dropdownLinkBackgroundHover:   $blue;
+$dropdownDividerTop:            #e5e5e5;
+$dropdownDividerBottom:         $white;
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+$zindexDropdown:          1000;
+$zindexPopover:           1010;
+$zindexTooltip:           1020;
+$zindexFixedNavbar:       1030;
+$zindexModalBackdrop:     1040;
+$zindexModal:             1050;
+
+// Sprite icons path
+// -------------------------
+$iconSpritePath:          image-url("glyphicons-halflings.png", $only-path: true);
+$iconWhiteSpritePath:     image-url("glyphicons-halflings-white.png", $only-path: true);
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:         $grayLight;
+
+// Hr border color
+// -------------------------
+$hrBorder:                $grayLighter;
+
+// Navbar
+// -------------------------
+$navbarHeight:                    40px;
+$navbarBackground:                #243246; 
+$navbarBackgroundHighlight:       #3b4d64;
+
+$navbarText:                      #c9d4e4;
+$navbarLinkColor:                 #c9d4e4;
+$navbarLinkColorHover:            $white;
+$navbarLinkColorActive:           $navbarLinkColorHover;
+$navbarLinkBackgroundHover:       transparent;
+$navbarLinkBackgroundActive:      $navbarBackground;
+
+$navbarSearchBackground:          $navbarBackground;
+$navbarSearchBackgroundFocus:     $white;
+$navbarSearchBorder:              darken($navbarSearchBackground, 30%);
+$navbarSearchPlaceholderColor:    #ccc;
+$navbarBrandColor:                $navbarLinkColor;
+
+// Hero unit
+// -------------------------
+$heroUnitBackground:              $grayLighter;
+$heroUnitHeadingColor:            $grayDarker;
+$heroUnitLeadColor:               inherit;
+
+// Form states and alerts
+// -------------------------
+$warningText:             #c09853;
+$warningBackground:       #fcf8e3;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
+
+$errorText:               #b94a48;
+$errorBackground:         #f2dede;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
+
+$successText:             #468847;
+$successBackground:       #dff0d8;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%);
+
+$infoText:                #3a87ad;
+$infoBackground:          #d9edf7;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+// -------------------------
+$gridColumns:             12;
+$gridColumnWidth:         60px;
+$gridGutterWidth:         20px;
+$gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
+
+// Fluid grid
+// -------------------------
+$fluidGridColumnWidth:    6.382978723%;
+$fluidGridGutterWidth:    2.127659574%;
