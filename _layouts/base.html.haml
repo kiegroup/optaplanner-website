@@ -1,11 +1,10 @@
 !!! 5
 %html(lang="en")
 	%head
-		%meta(charset="utf-8")
+		%meta(http-equiv="content-type" content="text/html; charset=utf-8")
 		%meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		%meta(name="description" content="#{page.description}")
-		%meta(name="author" content="#{page.author}")
-		%title #{page.title} · #{site.title}
+		%title #{escape_once(site.title)}: #{escape_once(page.title)}
 
 		/ IE 6-8 support of HTML 5 elements
 		/[if lt IE 9]
@@ -45,7 +44,7 @@
 								%a(rel="tooltip" target="_blank" href="http://twitter.github.com/bootstrap" title="Bootstrap")<
 									Built With Bootstrap
 
-		.container(style="padding-top: 110px;")
+		.container(style="padding-top: 50px;")
 			~ content
 
 		.company
