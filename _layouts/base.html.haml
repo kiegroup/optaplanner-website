@@ -4,13 +4,13 @@
 		%meta(http-equiv="content-type" content="text/html; charset=utf-8")
 		%meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		%meta(name="description" content="#{page.description}")
-		%title #{escape_once(site.title)}: #{escape_once(page.title)}
+		%title #{escape_once(site.title)} - #{escape_once(page.title)}
+
+		%link(href="#{site.bootstrap_css_url}/bootstrap-community.css" rel="stylesheet" media="screen")
 
 		/ IE 6-8 support of HTML 5 elements
 		/[if lt IE 9]
 			%script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
-
-		%link(href="#{site.bootstrap_css_url}/bootstrap-#{page.style}#{site.minified}.css" rel="stylesheet" media="screen")
 		
 	%body(data-spy="scroll" data-target=".bs-docs-sidebar")
 		.navbar.navbar-fixed-top
