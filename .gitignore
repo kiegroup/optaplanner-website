@@ -4,6 +4,7 @@
 # Eclipse, Netbeans and IntelliJ files
 /.*
 !.gitignore
+!.awestruct_ignore
 /nbproject
 /*.ipr
 /*.iws
