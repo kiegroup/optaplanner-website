@@ -1,69 +1,41 @@
 ---
 layout: base
 style: community
-title: Bootstrap Themes
+title: OptaPlanner
 ---
 
+%h1 OptaPlanner
+
+%blockquote
+  %p Do more business with less resources
+
 .hero-unit.pagination-centered
-	%h1 Bootstrap Themes
-	%p
-		Hosted Bootstrap themes for the JBoss Community by the Visual Design Team.
-	%p
-		%a.btn.btn-primary.btn-large(href="getStarted.html") Get Started
-	:markdown
-		[Extend](extend.html) &nbsp;&nbsp;&nbsp; [GitHub Project](http://github.com/jbossorg/themes)
-		
-.row
-	.span12
-		%h1 Gallery
+  %h2 What is OptaPlanner?
+  .carousel.slide#whatIsCarousel
+    .carousel-inner
+      .item.active
+        %a(href="#")
+          %img(src="./landingPage/employeeShiftRosteringUseCase.png" alt="Employee Shift Rostering use case")
+      .item
+        %a(href="#")
+          %img(src="./landingPage/employeeShiftRosteringHardConstraints.png" alt="Employee Shift Rostering hard constraints")
+      .item
+        %a(href="#")
+          %img(src="./landingPage/employeeShiftRosteringSoftConstraints.png" alt="Employee Shift Rostering soft constraints")
+      .item
+        %a(href="#")
+          %img(src="landingPage/curriculumCourseClassDiagram.png" alt="Course scheduling use case")
+      .item
+        %a(href="#")
+          %img(src="landingPage/machineReassignmentBestScoreScalabilitySummaryLevel1.png" alt="Best score scalability")
+    %a.carousel-control.left(href="#whatIsCarousel" data-slide="prev")& &lsaquo;
+    %a.carousel-control.right(href="#whatIsCarousel" data-slide="next")& &rsaquo;
 
-.row
-	.span4
-		.thumbnail
-			%a(href="default/")<
-				%img(data-src="holder.js/370x250/community" alt="Default")
-			.caption
-				%h3 Default
-				%p The default Bootstrap theme.
-				.btn-toolbar
-					.btn-group<
-						%a.btn.btn-large(href="#{site.base_url}/default/swatch.html") Preview
-					.btn-group
-						%a.btn.btn-large.btn-primary Links
-						%a.btn.btn-large.btn-primary.dropdown-toggle(data-toggle="dropdown" href="#")
-							%span.caret
-						%ul.dropdown-menu
-							%li<
-								%a(target="_blank" href="bootstrap.css") bootstrap.css
-							%li<
-								%a(target="_blank" href="bootstrap.min.css") bootstrap.min.css
-							%li.divider
-							%li<
-								%a(target="_blank" href="bootstrap.js") bootstrap.js
-							%li<
-								%a(target="_blank" href="bootstrap.min.js") bootstrap.min.js
+.row-fluid
+  .span6
+    %p<
+      %a.btn.btn-large.btn-success(href="http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip") Download OptaPlanner 5.5.0.final
 
-	.span4
-		.thumbnail
-			%a(href="community/")<
-				%img(data-src="holder.js/370x250/community" alt="Community")
-			.caption
-				%h3 Community
-				%p The JBoss Community theme.
-				.btn-toolbar
-					.btn-group<
-						%a.btn.btn-large(href="#{site.base_url}/community/swatch.html") Preview
-					.btn-group
-						%a.btn.btn-large.btn-primary Links
-						%a.btn.btn-large.btn-primary.dropdown-toggle(data-toggle="dropdown" href="#")
-							%span.caret
-						%ul.dropdown-menu
-							%li<
-								%a(target="_blank" href="bootstrap-community.css") bootstrap-community.css
-							%li<
-								%a(target="_blank" href="bootstrap-community.min.css") bootstrap-community.min.css
-							%li.divider
-							%li<
-								%a(target="_blank" href="bootstrap-community.js") bootstrap-community.js
-							%li<
-								%a(target="_blank" href="bootstrap-community.min.js") bootstrap-community.min.js
+  .span6
+    %p<
+      %a.btn.btn-large.btn-primary(href="http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html") Read documentation

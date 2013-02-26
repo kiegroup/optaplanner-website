@@ -1,4 +1,4 @@
-/target
+# Local files
 /local
 
 # Eclipse, Netbeans and IntelliJ files
@@ -13,8 +13,7 @@
 .DS_Store
 
 # Awestruct files
-_tmp
-_site
-.awestruct
-.sass-cache
-images
+/_site
+/_tmp
+/.awestruct
+/.sass-cache
