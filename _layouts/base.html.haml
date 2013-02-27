@@ -19,7 +19,7 @@
       .navbar-inner
         .container
           %a.brand(href="#{site.base_url}/")
-            %img{:src=>"/common/optaPlannerHeaderLogo.png"}
+            %img{:src=>"#{site.base_url}/headerfooter/optaPlannerHeaderLogo.png"}
           %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
             %span.icon-bar
             %span.icon-bar
@@ -52,9 +52,22 @@
       ~ content
 
     %footer
-      .company
-        %a(href="http://www.redhat.com/")<
-          %img(src="#{site.jborg_images_url}/common/redhat_logo.png")
+      %hr
+      .container
+        .row-fluid
+          .span6
+            .company
+              %a(href="http://www.redhat.com/")<
+                %img(src="#{site.jborg_images_url}/common/redhat_logo.png")
+            :markdown
+              &copy; Copyright 2010-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
+            :markdown
+              OptaPlanner is JBoss Community project. Development is sponsored by Red Hat, Inc.
+          .span6
+            :markdown
+              [Terms of use](http://www.redhat.com/legal/legal_statement.html) - [Privacy policy](http://www.redhat.com/legal/privacy_statement.html)
+            :markdown
+              Site generated on #{Time.now.strftime( '%Y-%m-%d %H:%M %Z' )}
 
     %script(src="#{site.jborg_js_url}/libs/jquery/1.8.1/jquery#{site.minified}.js")
     %script(src="#{site.jborg_js_url}/libs/prettify/188.0.0/prettify.min.js")
