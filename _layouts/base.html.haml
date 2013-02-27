@@ -43,10 +43,8 @@
                   %li<
                     %a(href="#{site.base_url}/community/swatch.html") Community
 
-            %ul.nav.pull-right
-              %li<
-                %a(rel="tooltip" target="_blank" href="http://twitter.github.com/bootstrap" title="Bootstrap")<
-                  Built With Bootstrap
+            .pull-right
+              %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021")&nbsp;
 
     .container(style="padding-top: 70px;")
       ~ content
@@ -74,3 +72,16 @@
     %script(src="#{site.jborg_js_url}/libs/holder/1.9/holder.js")
     %script Holder.add_theme("community", { background: "#eee", foreground: "#aaa", size: 12 })
     %script(src="#{site.bootstrap_js_url}/bootstrap-community#{site.minified}.js")
+    -# g-plusone
+    :plain
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script');
+          po.type = 'text/javascript';
+          po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+
