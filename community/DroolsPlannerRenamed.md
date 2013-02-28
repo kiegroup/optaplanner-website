@@ -23,7 +23,7 @@ to become a top-level [JBoss Community](http://www.jboss.org/) project.
 
     * Alternative score calculation options, such as pure Java calculation (no Drools), also remain fully supported.
 
-## How will this affect my business?
+## How will this affect your business?
 
 From a business point of view, there's **little or no change**:
 
