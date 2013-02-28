@@ -18,8 +18,8 @@
     %header.navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.brand(href="#{site.base_url}/")
-            %img{:src=>"#{site.base_url}/headerfooter/optaPlannerHeaderLogo.png"}
+          %a.brand(href="/")
+            %img{:src=>"/headerfooter/optaPlannerHeaderLogo.png"}
           %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
             %span.icon-bar
             %span.icon-bar
@@ -27,21 +27,21 @@
           %nav.nav-collapse(role="navigation")
             %ul.nav
               %li<
-                %a(href="#{site.base_url}/index.html") Home
+                %a(href="/index.html") Home
               %li<
-                %a(href="#{site.base_url}/community.html") Community
+                %a(href="/community.html") Community
               %li<
-                %a(href="#{site.base_url}/code.html") Code
+                %a(href="/code.html") Code
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                   = precede 'Gallery ' do
                     %b.caret>
                 %ul.dropdown-menu
                   %li<
-                    %a(href="#{site.base_url}/default/swatch.html") Default
+                    %a(href="/default/swatch.html") Default
                   %li.divider
                   %li<
-                    %a(href="#{site.base_url}/community/swatch.html") Community
+                    %a(href="/community/swatch.html") Community
 
             .pull-right
               %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021")&nbsp;
