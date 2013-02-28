@@ -3,7 +3,7 @@ layout: base
 title: What is OptaPlanner?
 ---
 
-.hero-unit.pagination-centered(style="padding: 5px;")
+.hero-unit.pagination-centered(style="padding: 10px;")
   %p What is OptaPlanner?
   .carousel.slide#whatIsCarousel
     .carousel-inner
@@ -27,9 +27,19 @@ title: What is OptaPlanner?
 
 .row-fluid
   .span6
-    %p.pagination-centered<
-      %a.btn.btn-large.btn-success(href="http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip") Download OptaPlanner 5.5.0.Final
+    .hero-unit(style="padding: 10px;")
+      .pagination-centered<
+        %a.btn.btn-large.btn-success(href="http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip")<
+          Download OptaPlanner 5.5.0.Final
+      :markdown
+        ### Try the examples now
+
+        * Download the zip and unzip it
+        * On Linux/Mac, run `examples/runExamples.sh`
+        * On Windows, run `examples/runExamples.bat`
 
   .span6
-    %p.pagination-centered<
-      %a.btn.btn-large.btn-primary(href="http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html") Read documentation 5.5.0.Final
+    .hero-unit(style="padding: 10px;")
+      .pagination-centered<
+        %a.btn.btn-large.btn-primary(href="http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html")<
+          Read documentation 5.5.0.Final
