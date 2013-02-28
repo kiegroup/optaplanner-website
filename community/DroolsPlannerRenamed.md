@@ -8,9 +8,9 @@ As of version `6.0.0.Beta1`, **Drools Planner has been renamed to OptaPlanner**.
 
 ## Why change the name?
 
-Drools Planner was often confused with Drools itself, yet it has very little to do with business rules.
-Instead, it does planning optimization. Implementation wise, the use of Drools is even optional for quite some time.
-To make this distinction clearer, it's been renamed OptaPlanner.
+OptaPlanner is the new name for Drools Planner.
+OptaPlanner is now standalone, but can still be optionally combined with the Drools rule engine
+for a powerful declarative approach to planning optimization.
 
 * OptaPlanner has graduated from the [Drools](http://www.jboss.org/drools) project
 to become a top-level [JBoss Community](http://www.jboss.org/) project.
@@ -20,7 +20,7 @@ in the KIE group.
 
 * Our commitment to Drools hasn't changed.
 
-    * The powerful Drools rule engine is still the recommended way to do score calculation.
+    * The efficient Drools rule engine is still the recommended way to do score calculation.
 
     * Alternative score calculation options, such as pure Java calculation (no Drools), also remain fully supported.
 
