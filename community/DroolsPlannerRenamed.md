@@ -16,7 +16,7 @@ for a powerful declarative approach to planning optimization.
 to become a top-level [JBoss Community](http://www.jboss.org/) project.
 
     * OptaPlanner (the planning engine) joins its siblings Drools (the rule engine) and jBPM (the workflow engine)
-in the KIE group.
+    in the KIE group.
 
 * Our commitment to Drools hasn't changed.
 
