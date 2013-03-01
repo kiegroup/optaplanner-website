@@ -33,9 +33,9 @@ From a business point of view, there's **little or no change**:
 
 * The license remains unchanged (Apache Software License 2.0). It's still the same open source license.
 
-* Red Hat will even offer support subscriptions for OptaPlanner as part of its [BRMS](http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/) offering.
+* Red Hat is considering support subscriptions offerings for OptaPlanner as part of its [BRMS](http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/) and BPM platforms.
 
-    * For BRMS 6.0, OptaPlanner will be available as a *tech preview*.
+    * A *Tech Preview* of OptaPlanner is targeted for BRMS 6.0.
 
 ## What has changed?
 
