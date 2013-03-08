@@ -22,7 +22,7 @@ fi
 
 # Change directory to the directory of the script
 cd `dirname $0`
-siteDir="`pwd -P`/_site"
+siteDir="`pwd -P`/_site/"
 
 if [ "${cleanEnabled}" = "true" ]; then
 	echo "Cleaning ${siteDir}"
@@ -35,6 +35,9 @@ if [ "${buildEnabled}" = "true" ]; then
 fi
 
 if [ "${publishEnabled}" = "true" ]; then
-	echo "Deploying ${siteDir}"
-    # TODO
+	publishDir="filemgmt.jboss.org:/www_htdocs/optaplanner/"
+	echo "Deploying ${siteDir} to ${publishDir}"
+	echo -n "Username: "
+	read publishDirUsername
+    rsync -avz --delete --progress --protocol=29 ${siteDir} ${publishDirUsername}@${publishDir}
 fi
