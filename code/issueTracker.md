@@ -8,7 +8,9 @@ layout: base
 
 We welcome issue reports (bugs, improvements, new feature requests, ...) in our issue tracker:
 
-**[Show the issue tracker](https://issues.jboss.org/browse/PLANNER)**
+**[Show JIRA issue tracker](https://issues.jboss.org/browse/PLANNER)**
+
+Log in and click on the button *Create Issue* to report a bug, improvement or feature request.
 
 ## Pull requests on GitHub
 
