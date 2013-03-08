@@ -4,6 +4,8 @@ layout: base
 ---
 # #{page.title}
 
+This page only mentions *active contributors*, who have contributed to OptaPlanner in the last year.
+
 ## R&D team
 
 * Geoffrey De smet
@@ -28,6 +30,10 @@ layout: base
 
 * Sam Van Malderen
 
+    * Genetic algorithms prototype
+
     * IRC nickname: elsam
 
-* ... See [all contributors on Ohloh](https://www.ohloh.net/p/optaplanner/contributors/summary)
+## Historic contributors
+
+See [all contributors on Ohloh](https://www.ohloh.net/p/optaplanner/contributors/summary).
