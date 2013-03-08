@@ -33,7 +33,7 @@ From a business point of view, there's **little or no change**:
 
 * The license remains unchanged (Apache Software License 2.0). It's still the same open source license.
 
-* Red Hat is considering support subscriptions offerings for OptaPlanner as part of its [BRMS](http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/) and BPM platforms.
+* Red Hat is considering support subscription offerings for OptaPlanner as part of its [BRMS](http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/) and BPM platforms.
 
     * A *Tech Preview* of OptaPlanner is targeted for BRMS 6.0.
 
@@ -59,7 +59,9 @@ From a business point of view, there's **little or no change**:
 
     * As usual, for more information see the Upgrade Recipe in the download zip.
 
-* The API's namespace has changed. As usual, see the Upgrade Recipe on how to deal with this efficiently.
+* The API's namespace has changed. As usual, see
+[the upgrade recipe](https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt)
+on how to deal with this efficiently.
 
     * Starting from 6.1.0.Final, OptaPlanner will have a 100% backwards compatible API.
 
