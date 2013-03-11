@@ -33,6 +33,8 @@ From a business point of view, there's **little or no change**:
 
 * The license remains unchanged (Apache Software License 2.0). It's still the same open source license.
 
+* The release lifecycle remains unchanged: OptaPlanner is still released at the same time as Drools and jBPM.
+
 * Red Hat is considering support subscription offerings for OptaPlanner as part of its [BRMS](http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/) and BPM platforms.
 
     * A *Tech Preview* of OptaPlanner is targeted for BRMS 6.0.
