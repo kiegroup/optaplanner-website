@@ -4,12 +4,12 @@ layout: base
 ---
 # #{page.title}
 
-The source control management is [Git](http://git-scm.com/).
-The blessed repository's are hosted on GitHub.
+We use [Git](http://git-scm.com/) as source control management.
+The blessed repositories are hosted on GitHub.
 
-These are the OptaPlanner repositories:
+There are several OptaPlanner repositories:
 
-* [optaplanner](https://github.com/droolsjbpm/optaplanner): The source code for OptaPlanner (including examples and documentation).
+* [optaplanner](https://github.com/droolsjbpm/optaplanner): The source code for OptaPlanner itself, examples and documentation.
 
     * Get the source code locally:
 
@@ -46,3 +46,4 @@ These are the OptaPlanner repositories:
             $ firefox _site/index.html
             ...
 
+**Pull requests are welcome!**
