@@ -12,14 +12,14 @@
     / IE 6-8 support of HTML 5 elements
     /[if lt IE 9]
       %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
-    %link(rel="shortcut icon" href="/favicon.ico")
+    %link{:rel => "shortcut icon", :href => relative("/favicon.ico")}
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
     %header.navbar.navbar-fixed-top
       .navbar-inner
         .container
-          %a.brand(href="/")
-            %img{:src=>"/headerFooter/optaPlannerLogoDark450px.png"}
+          %a.brand{:href => relative("/")}
+            %img{:src => relative("/headerFooter/optaPlannerLogoDark450px.png")}
           %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
             %span.icon-bar
             %span.icon-bar
@@ -27,52 +27,52 @@
           %nav.nav-collapse(role="navigation")
             %ul.nav
               %li<
-                %a(href="/") Home
+                %a{:href => relative("/")} Home
               %li<
-                %a(href="/download/download.html") Download
+                %a{:href => relative("/download/download.html")} Download
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                   = precede 'Learn ' do
                     %b.caret>
                 %ul.dropdown-menu
                   %li<
-                    %a(href="/learn/video.html") Video's
+                    %a{:href => relative("/learn/video.html")} Video's
                   %li<
-                    %a(href="/learn/documentation.html") Documentation
+                    %a{:href => relative("/learn/documentation.html")} Documentation
                   %li<
-                    %a(href="/learn/presentation.html") Presentations
+                    %a{:href => relative("/learn/presentation.html")} Presentations
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                   = precede 'Community ' do
                     %b.caret>
                 %ul.dropdown-menu
                   %li<
-                    %a(href="/community/socialMedia.html") Social Media
+                    %a{:href => relative("/community/socialMedia.html")} Social Media
                   %li<
-                    %a(href="/community/blog.html") Blog
+                    %a{:href => relative("/community/blog.html")} Blog
                   %li<
-                    %a(href="/community/team.html") Team
+                    %a{:href => relative("/community/team.html")} Team
                   %li<
-                    %a(href="/community/research.html") Research
+                    %a{:href => relative("/community/research.html")} Research
                   %li.divider
                   %li<
-                    %a(href="/community/forum.html") Forum
+                    %a{:href => relative("/community/forum.html")} Forum
                   %li<
-                    %a(href="/community/chat.html") Chat
+                    %a{:href => relative("/community/chat.html")} Chat
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                   = precede 'Code ' do
                     %b.caret>
                 %ul.dropdown-menu
                   %li<
-                    %a(href="/code/issueTracker.html") Report an issue
+                    %a{:href => relative("/code/issueTracker.html")} Report an issue
                   %li<
-                    %a(href="/code/sourceCode.html") Source code
+                    %a{:href => relative("/code/sourceCode.html")} Source code
                   %li<
-                    %a(href="/code/continuousIntegration.html") Continuous integration
+                    %a{:href => relative("/code/continuousIntegration.html")} Continuous integration
                   %li.divider
                   %li<
-                    %a(href="/code/license.html") License
+                    %a{:href => relative("/code/license.html")} License
 
             .pull-right
               %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021")&nbsp;
