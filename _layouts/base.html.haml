@@ -47,6 +47,11 @@
                     %b.caret>
                 %ul.dropdown-menu
                   %li<
+                    %a{:href => relative("/community/forum.html")} Forum
+                  %li<
+                    %a{:href => relative("/community/chat.html")} Chat
+                  %li.divider
+                  %li<
                     %a{:href => relative("/community/socialMedia.html")} Social Media
                   %li<
                     %a{:href => relative("/community/blog.html")} Blog
@@ -54,11 +59,6 @@
                     %a{:href => relative("/community/team.html")} Team
                   %li<
                     %a{:href => relative("/community/research.html")} Research
-                  %li.divider
-                  %li<
-                    %a{:href => relative("/community/forum.html")} Forum
-                  %li<
-                    %a{:href => relative("/community/chat.html")} Chat
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                   = precede 'Code ' do
