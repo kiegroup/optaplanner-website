@@ -15,6 +15,7 @@
     %link{:rel => "shortcut icon", :href => relative("/favicon.ico")}
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
+
     %header.navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -76,6 +77,10 @@
 
             .pull-right
               %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021")&nbsp;
+
+    %div(style="position: absolute; top: 50px; right: 0; border: 0; max-width: 20%;" )
+      %a(href="https://github.com/droolsjbpm/optaplanner")
+        %img{:src => relative("/headerFooter/forkMeOnGithub.png"), :alt => "Fork me on GitHub"}
 
     .container(style="padding-top: 70px;")
       ~ content
