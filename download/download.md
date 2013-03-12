@@ -14,9 +14,9 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 
     * License: [ASL 2.0](../code/license.html)
 
-* Older community releases: [Check the release archive](http://download.jboss.org/drools/release/)
+* Older community releases: Check [the release archive](http://download.jboss.org/drools/release/).
 
-* Red Hat subscription releases: [Check the product download site](http://www.jboss.com/downloads/)
+* Red Hat subscription releases: Check [the product download site](http://www.jboss.com/downloads/).
 
 ## Maven, Gradle, Ivy or Buildr
 

@@ -28,7 +28,7 @@ There are several OptaPlanner repositories:
             $ mvn exec:exec
             ...
 
-* [optaplanner-website](https://github.com/droolsjbpm/optaplanner-website): The source code for this website.
+* [optaplanner-website](https://github.com/droolsjbpm/optaplanner-website): The source code for this website and presentations.
 
     * Get the source code locally:
 
