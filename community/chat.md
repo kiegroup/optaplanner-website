@@ -10,9 +10,9 @@ Most of our project discussion take place on IRC, usually during European and Am
 
 ## Connection info
 
-* Talk with [a webinterface](http://webchat.freenode.net/?channels=optaplanner%2Cdrools&uio=d4)
+* Chat in [your browser](http://webchat.freenode.net/?channels=optaplanner%2Cdrools&uio=d4)
 
-* Talk with an IRC client ([XChat](http://www.xchat.org/) (Linux), [Colloquy](http://colloquy.info/) (Mac), [HydraIRC](http://www.hydrairc.com/) (Windows), ...):
+* Chat with an IRC client ([XChat](http://www.xchat.org/) (Linux), [Colloquy](http://colloquy.info/) (Mac), [HydraIRC](http://www.hydrairc.com/) (Windows), ...):
 
     * IRC server: **chat.freenode.net:6667**
 
