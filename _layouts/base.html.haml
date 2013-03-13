@@ -1,9 +1,9 @@
 !!! 5
 %html(lang="en")
   %head
-    %meta(charset='utf-8')
-    %title #{escape_once(site.title)} - #{escape_once(page.title)}
+    %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title #{escape_once(site.title)} - #{escape_once(page.title)}
     %meta(name="description"){:content=>page.description ? page.description : site.description}
     - if site.keywords
       %meta(name='keywords'){:content=>site.keywords}
