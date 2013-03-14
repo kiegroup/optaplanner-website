@@ -8,8 +8,8 @@
     - if site.keywords
       %meta(name='keywords'){:content=>site.keywords}
 
-    %link{:rel => "stylesheet", :href => relative("/twitterbootstrap/css/bootstrap.css")}
-    %link{:rel => "stylesheet", :href => relative("/twitterbootstrap/css/bootstrap-responsive.css")}
+    %link{:rel => "stylesheet", :href => relative("/twitterbootstrap/css/bootstrap.min.css")}
+    %link{:rel => "stylesheet", :href => relative("/twitterbootstrap/css/bootstrap-responsive.min.css")}
     %link{:rel => "stylesheet", :href => relative("/twitterbootstrap/css/prettify.css")}
     -# %link{:rel => "stylesheet", :href => site.jbossorg_bootstrap_css}
     %link{:rel => "stylesheet", :href => relative("/website/optaplannerWebsite.css")}
@@ -128,8 +128,8 @@
             :markdown
               [Terms of use](http://www.redhat.com/legal/legal_statement.html) - [Privacy policy](http://www.redhat.com/legal/privacy_statement.html) - [Website info](#{relative("/website/websiteInfo.html")})
 
-    %script{:src => relative("/twitterbootstrap/js/jquery.js")}
-    %script{:src => relative("/twitterbootstrap/js/bootstrap.js")}
+    %script{:src => relative("/twitterbootstrap/js/jquery.min.js")}
+    %script{:src => relative("/twitterbootstrap/js/bootstrap.min.js")}
     %script{:src => relative("/twitterbootstrap/js/prettify.js")}
     -# %script{:src => site.jbossorg_bootstrap_js}
     -# g-plusone script
