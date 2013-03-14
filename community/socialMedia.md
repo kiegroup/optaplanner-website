@@ -6,18 +6,18 @@ layout: base
 
 ## OptaPlanner stream
 
-Easily understood information about OptaPlanner. Includes a post for every release.
+This stream contains easily understood information about OptaPlanner. Includes a post for every release.
 
-* [Google+](https://plus.google.com/112724449845406009021)
+* [OptaPlanner on Google+](https://plus.google.com/112724449845406009021)
 
-* [Twitter](https://twitter.com/#!/droolsplanner) (automatically synced from Google+)
+* [OptaPlanner on Twitter](https://twitter.com/#!/droolsplanner) (automatically synced from Google+)
 
-* [Facebook](https://www.facebook.com/DroolsPlanner) (automatically synced from Google+)
+* [OptaPlanner on Facebook](https://www.facebook.com/DroolsPlanner) (automatically synced from Google+)
 
-## Geoffrey De Smet
+## Developer streams
 
-More technical information about OptaPlanner and Java™ in general.
+These streams contain more technical information about OptaPlanner and Java™ in general.
 
-* [Google+](https://plus.google.com/112811208792575157490)
+* [Geoffrey De Smet on Google+](https://plus.google.com/112811208792575157490)
 
-* [Twitter](http://twitter.com/geoffreydesmet)
+* [Geoffrey De Smet on Twitter](http://twitter.com/geoffreydesmet)
