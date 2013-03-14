@@ -95,17 +95,19 @@
       .container
         .row-fluid
           .span6
-            .company
+            %p
+              Development is sponsored by
               %a(href="http://www.redhat.com/")<
                 %img{:src => relative("/headerFooter/redHatLogo.png"), :alt => "Red Hat"}
-            :markdown
-              OptaPlanner is a [JBoss Community](http://www.jboss.org/) project. Development is sponsored by [Red Hat](http://www.redhat.com/).
+            %p
+              OptaPlanner is part of the
+              %a(href="http://www.jboss.org/")<
+                %img{:src => relative("/headerFooter/jbossCommunityLogo.png"), :alt => "JBoss Community"}
           .span6
-            / Site generated on #{Time.now.strftime( '%Y-%m-%d %H:%M %Z' )}
-            :markdown
-              [Terms of use](http://www.redhat.com/legal/legal_statement.html) - [Privacy policy](http://www.redhat.com/legal/privacy_statement.html) - Generated on #{Time.now.strftime( '%Y-%m-%d' )}.
             :markdown
               &copy; Copyright 2006-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
+            :markdown
+              [Terms of use](http://www.redhat.com/legal/legal_statement.html) - [Privacy policy](http://www.redhat.com/legal/privacy_statement.html) - [Website info](#{relative("/website/websiteInfo.html")})
 
     %script{:src => relative("/twitterbootstrap/js/jquery.js")}
     %script{:src => relative("/twitterbootstrap/js/bootstrap.js")}
