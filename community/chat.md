@@ -22,7 +22,7 @@ Most of our project discussion take place on IRC, usually during European and Am
 
         * **#optaplanner**
 
-        * **#drools** (for DRL problems)
+        * **#drools** (for DRL questions)
 
     * Channels for contributors:
 
