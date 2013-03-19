@@ -4,17 +4,17 @@ layout: base
 ---
 # #{page.title}
 
-* Documentation for OptaPlanner #{site.pom.latestFinal_version}
+* Documentation for OptaPlanner #{site.pom.latestFinal.version}
 
-    * ![](documentation.png) **OptaPlanner reference manual**: [HTML Single](#{site.pom.latestFinal_documentationHtmlSingle}) -
-    [HTML](#{site.pom.latestFinal_documentationHtml}) -
-    [PDF](#{site.pom.latestFinal_documentationPdf})
+    * ![](documentation.png) **OptaPlanner reference manual**: [HTML Single](#{site.pom.latestFinal.documentationHtmlSingle}) -
+    [HTML](#{site.pom.latestFinal.documentationHtml}) -
+    [PDF](#{site.pom.latestFinal.documentationPdf})
 
-    * OptaPlanner javadocs: [HTML](#{site.pom.latestFinal_javadocs})
+    * OptaPlanner javadocs: [HTML](#{site.pom.latestFinal.javadocs})
 
-    * Drools Expert reference manual: [HTML Single](#{site.pom.latestFinal_droolsExpert_documentationHtmlSingle}) -
-    [HTML](#{site.pom.latestFinal_droolsExpert_documentationHtml}) -
-    [PDF](#{site.pom.latestFinal_droolsExpert_documentationPdf})
+    * Drools Expert reference manual: [HTML Single](#{site.pom.latestFinal.droolsExpert_documentationHtmlSingle}) -
+    [HTML](#{site.pom.latestFinal.droolsExpert_documentationHtml}) -
+    [PDF](#{site.pom.latestFinal.droolsExpert_documentationPdf})
 
 * Older community documentation: Check [the documentation archive](http://docs.jboss.org/drools/release/).
 

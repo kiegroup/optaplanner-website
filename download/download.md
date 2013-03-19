@@ -8,9 +8,9 @@ layout: base
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
-* ![](download.png) **[Download OptaPlanner #{site.pom.latestFinal_version}](#{site.pom.latestFinal_distributionZip})**
+* ![](download.png) **[Download OptaPlanner #{site.pom.latestFinal.version}](#{site.pom.latestFinal.distributionZip})**
 
-    * Release date: `#{site.pom.latestFinal_releaseDate}`
+    * Release date: `#{site.pom.latestFinal.releaseDate}`
 
     * License: [ASL 2.0](../code/license.html)
 
@@ -28,7 +28,7 @@ If you use Maven, just add a dependency in your `pom.xml`:
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-core</artifactId>
-      <version>#{site.pom.latestFinal_version}</version>
+      <version>#{site.pom.latestFinal.version}</version>
     </dependency>
 
 This is similar for Gradle, Ivy and Buildr.
@@ -45,16 +45,16 @@ or [the issue tracker](../code/issueTracker.html).
 A Beta should work pretty reliably, but its new API's might still change before a CR is released.
 A CR should be almost identical the Final release.
 
-* ![](download.png) **[Download OptaPlanner #{site.pom.latest_version}](#{site.pom.latest_distributionZip})**
+* ![](download.png) **[Download OptaPlanner #{site.pom.latest.version}](#{site.pom.latest.distributionZip})**
 
-    * Release date: `#{site.pom.latest_releaseDate}`
+    * Release date: `#{site.pom.latest.releaseDate}`
 
 Or with Maven:
 
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-core</artifactId>
-      <version>#{site.pom.latest_version}</version>
+      <version>#{site.pom.latest.version}</version>
     </dependency>
 
 ### Nightlies
