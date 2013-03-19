@@ -42,10 +42,10 @@ or [the issue tracker](../code/issueTracker.html).
 
 ### Alpha's, Beta's and CR's
 
-A Beta should work pretty reliably, but its new API's might still change before a CR is released.
-A CR should be almost identical the Final release.
+A Beta should work pretty reliably (it passes automated testing), but its new API's might still change before a CR is released.
+A CR should be almost identical to the Final release.
 
-* ![](download.png) **[Download OptaPlanner #{site.pom.latest.version}](#{site.pom.latest.distributionZip})**
+* ![](download.png) [Download OptaPlanner #{site.pom.latest.version}](#{site.pom.latest.distributionZip})
 
     * Release date: `#{site.pom.latest.releaseDate}`
 
@@ -57,6 +57,8 @@ Or with Maven:
       <version>#{site.pom.latest.version}</version>
     </dependency>
 
-### Nightlies
+### Nightly snapshots
 
-Nightlies are very unstable binaries, build by [our build server](../code/continuousIntegration.html).
+Nightly snapshots are very unstable binaries, build by [our build server](../code/continuousIntegration.html).
+
+* ![](download.png) [Download OptaPlanner #{site.pom.nightly.version}](#{site.pom.nightly.distributionZip})

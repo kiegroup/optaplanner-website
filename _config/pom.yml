@@ -1,6 +1,6 @@
 latestFinal:
     version: 5.5.0.Final
-    distributionZip: http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip
+    distributionZip: http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-5.5.0.Final.zip
     releaseDate: 2012-11-13
 
     documentationHtmlSingle: http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html
@@ -18,3 +18,17 @@ latest:
     distributionZip: http://download.jboss.org/drools/release/6.0.0.Alpha9/optaplanner-distribution-6.0.0.Alpha9.zip
     releaseDate: 2013-02-28
 
+    documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-docs/html_single/index.html
+    documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-docs/html/index.html
+    documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-docs/pdf/drools-planner-docs.pdf
+    javadocs: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-javadoc/index.html
+
+    droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-expert-docs/html_single/index.html
+    droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-expert-docs/html/index.html
+    droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Alpha9/drools-expert-docs/pdf/drools-expert-docs.pdf
+
+nightly:
+    version: 6.0.0-SNAPSHOT
+    distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.0.0-SNAPSHOT.zip
+
+    documentationHtmlSingle : https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html_single/index.html
