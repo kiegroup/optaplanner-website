@@ -36,7 +36,7 @@ This is similar for Gradle, Ivy and Buildr.
 ## Non-Final releases
 
 **Non-Final releases are the best way to test drive new features and API's
-and provide feedback before we lock down their API and behaviour with a Final release.**
+to provide feedback before we lock down the API with a Final release.**
 We welcome that feedback on [the forum](../community/forum.html), [chat](../community/chat.html)
 or [the issue tracker](../code/issueTracker.html).
 
