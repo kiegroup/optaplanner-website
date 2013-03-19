@@ -12,9 +12,9 @@ layout: base
 
     * OptaPlanner javadocs: [HTML](#{site.pom.latestFinal_javadocs})
 
-    * Drools Expert reference manual: [HTML Single](http://docs.jboss.org/drools/release/5.5.0.Final/drools-expert-docs/html_single/index.html) -
-    [HTML](http://docs.jboss.org/drools/release/5.5.0.Final/drools-expert-docs/html/index.html) -
-    [PDF](http://docs.jboss.org/drools/release/5.5.0.Final/drools-expert-docs/pdf/drools-expert-docs.pdf)
+    * Drools Expert reference manual: [HTML Single](#{site.pom.latestFinal_droolsExpert_documentationHtmlSingle}) -
+    [HTML](#{site.pom.latestFinal_droolsExpert_documentationHtml}) -
+    [PDF](#{site.pom.latestFinal_droolsExpert_documentationPdf})
 
 * Older community documentation: Check [the documentation archive](http://docs.jboss.org/drools/release/).
 

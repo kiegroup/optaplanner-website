@@ -42,7 +42,7 @@ or [the issue tracker](../code/issueTracker.html).
 
 ### Alpha's, Beta's and CR's
 
-A Beta should work reliably, but its new API's might still change before a CR is released.
+A Beta should work pretty reliably, but its new API's might still change before a CR is released.
 A CR should be almost identical the Final release.
 
 * ![](download.png) **[Download OptaPlanner #{site.pom.latest_version}](#{site.pom.latest_distributionZip})**
