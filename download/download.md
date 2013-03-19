@@ -8,9 +8,9 @@ layout: base
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
-* ![](download.png) **[Download OptaPlanner 5.5.0.Final](http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip)**
+* ![](download.png) **[Download OptaPlanner #{site.pom.latestFinal_version}](#{site.pom.latestFinal_distributionZip})**
 
-    * Release date: 2012-11-13
+    * Release date: `#{site.pom.latestFinal_releaseDate}`
 
     * License: [ASL 2.0](../code/license.html)
 
@@ -23,12 +23,40 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 The OptaPlanner jars are also available in [the central maven repository](http://search.maven.org/#search|ga|1|org.optaplanner)
 (and also in [the JBoss maven repository](https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.optaplanner~~~~)).
 
-If you use Maven, just add a dependency:
+If you use Maven, just add a dependency in your `pom.xml`:
 
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-core</artifactId>
-      <version>...</version>
+      <version>#{site.pom.latestFinal_version}</version>
     </dependency>
 
 This is similar for Gradle, Ivy and Buildr.
+
+## Non-Final releases
+
+**Non-Final releases are the best way to test drive new features and API's
+and provide feedback before we lock down their API and behaviour with a Final release.**
+We welcome that feedback on [the forum](../community/forum.html), [chat](../community/chat.html)
+or [the issue tracker](../code/issueTracker.html).
+
+### Alpha's, Beta's and CR's
+
+A Beta should work reliably, but its new API's might still change before a CR is released.
+A CR should be almost identical the Final release.
+
+* ![](download.png) **[Download OptaPlanner #{site.pom.latest_version}](#{site.pom.latest_distributionZip})**
+
+    * Release date: `#{site.pom.latest_releaseDate}`
+
+Or with Maven:
+
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+      <version>#{site.pom.latest_version}</version>
+    </dependency>
+
+### Nightlies
+
+Nightlies are very unstable binaries, build by [our build server](../code/continuousIntegration.html).

@@ -46,9 +46,9 @@ layout: base
   .span6
     .hero-unit(style="padding: 10px; margin-bottom: 10px;")
       .pagination-centered<
-        %a.btn.btn-large.btn-success(href="http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip")<
+        %a.btn.btn-large.btn-success(href="#{site.pom.latestFinal_distributionZip}")<
           %img(src = "download/download.png")
-          Download OptaPlanner 5.5.0.Final
+          Download OptaPlanner #{site.pom.latestFinal_version}
       :markdown
         ### Try the examples now
 
@@ -59,9 +59,9 @@ layout: base
   .span6
     .hero-unit(style="padding: 10px; margin-bottom: 10px;")
       .pagination-centered<
-        %a.btn.btn-large.btn-primary(href="http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html")<
+        %a.btn.btn-large.btn-primary(href="#{site.pom.latestFinal_documentationHtmlSingle}")<
           %img(src = "learn/documentation.png")
-          Read documentation 5.5.0.Final
+          Read documentation #{site.pom.latestFinal_version}
       :markdown
         ### Get started
 
