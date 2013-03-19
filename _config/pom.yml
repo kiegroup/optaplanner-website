@@ -1,6 +1,6 @@
 latestFinal:
     version: 5.5.0.Final
-    distributionZip: http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-5.5.0.Final.zip
+    distributionZip: http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip
     releaseDate: 2012-11-13
 
     documentationHtmlSingle: http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html
