@@ -8,7 +8,7 @@ layout: base
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
-* **[Download OptaPlanner 5.5.0.Final](http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip)**
+* ![](download.png) **[Download OptaPlanner 5.5.0.Final](http://download.jboss.org/drools/release/5.5.0.Final/drools-planner-distribution-5.5.0.Final.zip)**
 
     * Release date: 2012-11-13
 

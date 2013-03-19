@@ -6,7 +6,7 @@ layout: base
 
 * Documentation for OptaPlanner 5.5.0.Final
 
-    * **OptaPlanner reference manual**: [HTML Single](http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html) -
+    * ![](documentation.png) **OptaPlanner reference manual**: [HTML Single](http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html_single/index.html) -
     [HTML](http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/html/index.html) -
     [PDF](http://docs.jboss.org/drools/release/5.5.0.Final/drools-planner-docs/pdf/drools-planner-docs.pdf)
 
