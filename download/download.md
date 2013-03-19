@@ -42,7 +42,8 @@ or [the issue tracker](../code/issueTracker.html).
 
 ### Alpha's, Beta's and CR's
 
-A Beta should work pretty reliably (it passes automated testing), but its new API's might still change before a CR is released.
+An Alpha can be unstable.
+A Beta should work (it passes automated testing), but its new API's might still change in the next release.
 A CR should be almost identical to the Final release.
 
 * ![](download.png) [Download OptaPlanner #{site.pom.latest.version}](#{site.pom.latest.distributionZip})
@@ -59,6 +60,6 @@ Or with Maven:
 
 ### Nightly snapshots
 
-Nightly snapshots are very unstable binaries, build by [our build server](../code/continuousIntegration.html).
+Nightly snapshots are unstable binaries, build by [our build server](../code/continuousIntegration.html).
 
 * ![](download.png) [Download OptaPlanner #{site.pom.nightly.version}](#{site.pom.nightly.distributionZip})
