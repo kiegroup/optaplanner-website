@@ -6,6 +6,7 @@
     %title #{escape_once(site.title)} - #{escape_once(page.title)}
     %meta(name="description"){:content => page.description ? page.description : site.description}
     %meta(name="keywords"){:content => page.keywords ? page.keywords : site.keywords}
+    %link(rel="canonical"){:href => "#{site.canonicalBaseUrl}#{page.url}"}
 
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap-responsive.min.css")}
