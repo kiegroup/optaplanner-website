@@ -1,4 +1,6 @@
 title: OptaPlanner
+description: OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java.
+keywords: metaheuristics, heuristics, NP-complete, tabu search, simulated annealing, planning problems, java, open source
 
 # jbossorg_bootstrap_css: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0/bootstrap-community.css
 # jbossorg_bootstrap_js: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0/bootstrap-community.js
