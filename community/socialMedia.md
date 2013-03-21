@@ -10,9 +10,9 @@ This stream contains easily understood information about OptaPlanner. Includes a
 
 * ![](../headerFooter/googlePlusLogo.png) [OptaPlanner on Google+](https://plus.google.com/112724449845406009021)
 
-* ![](../headerFooter/twitterLogo.png) [OptaPlanner on Twitter](https://twitter.com/#!/droolsplanner) (automatically synced from Google+)
+* ![](../headerFooter/twitterLogo.png) [OptaPlanner on Twitter](https://twitter.com/optaplanner) (automatically synced from Google+)
 
-* ![](../headerFooter/facebookLogo.png) [OptaPlanner on Facebook](https://www.facebook.com/DroolsPlanner) (automatically synced from Google+)
+* ![](../headerFooter/facebookLogo.png) [OptaPlanner on Facebook](https://www.facebook.com/OptaPlanner) (automatically synced from Google+)
 
 ## Developer streams
 
