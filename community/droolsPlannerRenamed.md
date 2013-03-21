@@ -15,6 +15,8 @@ for a powerful declarative approach to planning optimization.
 * OptaPlanner has graduated from the [Drools](http://www.jboss.org/drools) project
 to become a top-level [JBoss Community](http://www.jboss.org/) project.
 
+    * OptaPlanner is not a fork of Drools Planner. We simply renamed it.
+
     * OptaPlanner (the planning engine) joins its siblings Drools (the rule engine) and jBPM (the workflow engine) in the KIE group.
 
 * Our commitment to Drools hasn't changed.
