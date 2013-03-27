@@ -1,0 +1,25 @@
+- # Properties file read by jboss.org for the project listing
+- # See http://www.jboss.org/help/awestructguide/projectpropertyfilestruction.html
+- values = {}
+
+- values['nodePath']= "/optaplanner"
+- values['projectName']= "OptaPlanner"
+- values['homePage']= site.canonicalBaseUrl
+- values['description'] = site.description
+- values['license']= "ASL"
+- values['downloadsLink']= "#{site.canonicalBaseUrl}/download/download.html"
+- values['docsLink']= "#{site.canonicalBaseUrl}/learn/documentation.html"
+
+- # Community
+- values['userForumLink']= "#{site.canonicalBaseUrl}/community/forum.html"
+- values['chatLink']= "#{site.canonicalBaseUrl}/community/chat.html"
+- values['blogLink']= "#{site.canonicalBaseUrl}/community/blog.html"
+- values['twitterLink']= "https://twitter.com/optaplanner"
+
+- # Code
+- values['githubLink']= "https://github.com/droolsjbpm/optaplanner"
+- values['jiraLink']= "https://issues.jboss.org/browse/PLANNER"
+- values['hudsonLink']= "https://hudson.jboss.org/hudson/job/optaplanner"
+
+- for key in values.keys
+    #{key}=#{values[key]}
