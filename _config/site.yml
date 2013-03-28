@@ -1,7 +1,7 @@
 encoding: UTF-8
 title: OptaPlanner
 description: OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java.
-keywords: metaheuristic, heuristic, constraint satisfaction, constraint programming, NP-complete, NP-hard, optimization, planning, scheduling, java, open source, software, library, solver, tabu search, simulated annealing, pareto
+keywords: metaheuristic, heuristic, constraint satisfaction, constraint programming, operations research, NP-complete, NP-hard, optimization, planning, scheduling, java, open source, software, library, solver, tabu search, simulated annealing, pareto
 canonicalBaseUrl: http://www.optaplanner.org
 
 # jbossorg_bootstrap_css: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0/bootstrap-community.css
