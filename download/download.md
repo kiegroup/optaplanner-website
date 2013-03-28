@@ -37,8 +37,8 @@ This is similar for Gradle, Ivy and Buildr.
 
 **Non-Final releases are the best way to test drive new features and API's
 to provide feedback before we lock down the API with a Final release.**
-We welcome that feedback on [the forum](../community/forum.html), [chat](../community/chat.html)
-or [the issue tracker](../code/issueTracker.html).
+We welcome that feedback on the [forum](../community/forum.html), [chat](../community/chat.html)
+or [issue tracker](../code/issueTracker.html).
 
 ### Alpha's, Beta's and CR's
 
