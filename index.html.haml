@@ -48,12 +48,20 @@ layout: base
         %a.btn.btn-large.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
           %img(src = "download/download.png")
           Download OptaPlanner #{site.pom.latestFinal.version}
-      :markdown
-        ### Try the examples now
-
-        * Download the zip and unzip it
-        * On Linux/Mac, run `examples/runExamples.sh`
-        * On Windows, run `examples/runExamples.bat`
+      %h3 Try the examples now
+      %ul
+        %li Download the zip and unzip it
+        %li
+          On Linux/Mac, run
+          %code examples/runExamples.sh
+        %li
+          On Windows, run
+          %code examples/runExamples.bat
+      %p
+        %small<
+          Requires
+          %a(href="http://www.java.com")< Java™
+          to run.
 
   .span6
     .hero-unit(style="padding: 10px; margin-bottom: 10px;")
