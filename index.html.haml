@@ -45,9 +45,10 @@ layout: base
   .span6
     .hero-unit(style="padding: 10px; margin-bottom: 10px;")
       .pagination-centered<
-        %a.btn.btn-large.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
+        -# TODO After 6.0.0.Final release, replace latest by latestFinal twice
+        %a.btn.btn-large.btn-success(href="#{site.pom.latest.distributionZip}")<
           %img(src = "download/download.png")
-          Download OptaPlanner #{site.pom.latestFinal.version}
+          Download OptaPlanner #{site.pom.latest.version}
       %h3 Try the examples now
       %ul
         %li Download the zip and unzip it
@@ -66,9 +67,10 @@ layout: base
   .span6
     .hero-unit(style="padding: 10px; margin-bottom: 10px;")
       .pagination-centered<
-        %a.btn.btn-large.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+        -# TODO After 6.0.0.Final release, replace latest by latestFinal twice
+        %a.btn.btn-large.btn-primary(href="#{site.pom.latest.documentationHtmlSingle}")<
           %img(src = "learn/documentation.png")
-          Read documentation #{site.pom.latestFinal.version}
+          Read documentation #{site.pom.latest.version}
       :markdown
         ### Get started
 

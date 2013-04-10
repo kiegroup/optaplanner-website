@@ -25,7 +25,7 @@ The OptaPlanner jars are also available in [the central maven repository](http:/
 
 If you use Maven, just add a dependency in your `pom.xml`:
 
-    <dependency>
+    <dependency><!-- TODO For 5.5.x the groupId was org.drools.planner and the artifactId was drools-planner-core -->
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-core</artifactId>
       <version>#{site.pom.latestFinal.version}</version>
