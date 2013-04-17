@@ -5,7 +5,7 @@ layout: base
 
 # #{page.title}
 
-## Build with
+## Website technology
 
 This website uses:
 
