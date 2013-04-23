@@ -29,3 +29,27 @@
     margin: 0 auto;
     display: block;
 }
+
+/* Make carousel indicators visible and center them */
+.carousel-indicators-toolbar {
+    position: relative;
+    margin: 0 auto 10px auto;
+    top: 10px;
+    left: auto;
+    right: auto;
+    height: auto;
+    width: 180px;
+}
+.carousel-indicators-toolbar ol {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    background-color: #d4d4d4;
+    border-radius: 6px 6px 6px 6px;
+}
+.carousel-indicators-toolbar li {
+    float: none;
+    display: inline-block;
+}
