@@ -10,7 +10,7 @@
 
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap-responsive.min.css")}
-    %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/prettify.css")}
+    %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/highlight.css")}
     -# %link(rel="stylesheet"){:href => site.jbossorg_bootstrap_css}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     :plain
@@ -129,7 +129,9 @@
 
     %script{:src => relative("/twitterbootstrap/js/jquery.min.js")}
     %script{:src => relative("/twitterbootstrap/js/bootstrap.min.js")}
-    %script{:src => relative("/twitterbootstrap/js/prettify.js")}
+    %script{:src => relative("/twitterbootstrap/js/highlight.js")}
+    %script
+      hljs.initHighlightingOnLoad();
     -# %script{:src => site.jbossorg_bootstrap_js}
     -# g-plusone script and google analytics script
     :plain

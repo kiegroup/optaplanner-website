@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="twitterbootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="twitterbootstrap/css/prettify.css">
+    <link rel="stylesheet" href="twitterbootstrap/css/highlight.css">
     <link rel="stylesheet" href="dzslides/dzslides-style.css">
     <link rel="stylesheet" href="dzslides/dzslides-core.css">
 
@@ -48,7 +48,7 @@
 
     <section>
         <h3>Server POJO</h3>
-        <pre class="prettyprint lang-java">public class Server {
+        <pre><code class="java">public class Server {
 
   private int cpuPower;
   private int memory;
@@ -57,7 +57,7 @@
   private int cost;
 
   // getters
-}</pre>
+}</code></pre>
     </section>
 
     <section>
@@ -653,6 +653,7 @@
 
     <div id="progress-bar"></div>
     <script src="dzslides/dzslides.js"></script>
-    <script src="twitterbootstrap/js/prettify.js"></script>
+    <script src="twitterbootstrap/js/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
