@@ -47,7 +47,7 @@
     </section>
 
     <section>
-        <h3>Server POJO</h3>
+        <h3>Server</h3>
         <pre><code class="java">public class Server {
 
   private int cpuPower;
@@ -57,6 +57,99 @@
   private int cost;
 
   // getters
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Process is a planning entity</h3>
+        <pre><code class="java">@PlanningEntity
+public class Process {
+
+  private int requiredCpuPower;
+  private int requiredMemory;
+  private int requiredNetworkBandwidth;
+
+  ...
+
+  // getters, clone, equals, hashcode
+}</code></pre>
+    </section>
+    <section>
+        <h3>Process has a planning variable</h3>
+        <pre><code class="java">@PlanningEntity
+public class Process {
+  ...
+  private Server server;
+
+  @PlanningVariable
+  @ValueRange(type = FROM_SOLUTION_PROPERTY,
+      solutionProperty = "serverList")
+  public Server getServer() {
+    return server;
+  }
+  public void setServer(Server server) {...}
+  ...
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Solution CloudBalance: problem facts</h3>
+        <pre><code class="java">public class CloudBalance
+    implements Solution&lt;HardAndSoftScore&gt; {
+
+  private List&lt;Server&gt; serverList;
+
+  public List&lt;Server&gt; getServerList() {
+    return serverList;
+  }
+
+  ...
+}</code></pre>
+    </section>
+    <section>
+        <h3>Solution CloudBalance: planning entities</h3>
+        <pre><code class="java">public class CloudBalance
+    implements Solution&lt;HardAndSoftScore&gt; {
+  ...
+
+  private List&lt;Process&gt; processList;
+
+  @PlanningEntityCollectionProperty
+  public List&lt;Process&gt; getProcessList() {
+    return processList;
+  }
+
+  ...
+}</code></pre>
+    </section>
+    <section>
+        <h3>Solution CloudBalance: getProblemFacts()</h3>
+        <pre><code class="java">public class CloudBalance
+    implements Solution&lt;HardAndSoftScore&gt; {
+  ...
+
+  // Used in score constraints
+  public Collection&lt;Object&gt; getProblemFacts() {
+    List&lt;Object&gt; facts = new ArrayList&lt;Object&gt;();
+    facts.addAll(serverList);
+    return facts;
+  }
+
+  ...
+}</code></pre>
+    </section>
+    <section>
+        <h3>Solution CloudBalance: score</h3>
+        <pre><code class="java">public class CloudBalance
+    implements Solution&lt;HardAndSoftScore&gt; {
+  ...
+
+  private HardAndSoftScore score;
+
+  public HardAndSoftScore getScore() {...}
+  public void setScore(HardAndSoftScore score) {...}
+
+  ...
 }</code></pre>
     </section>
 
