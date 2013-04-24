@@ -283,3 +283,11 @@ progress of the presentation. */
     -ms-transition: left 0ms linear 0s;
     transition: left 0ms linear 0s;
 }
+
+/* Fix dzslides vs Twitter bootstrap problem */
+body {
+    line-height: normal;
+}
+li {
+    line-height: normal;
+}
