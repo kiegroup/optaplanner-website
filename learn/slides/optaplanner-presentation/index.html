@@ -173,6 +173,106 @@ public class Process {
     </section>
 
     <section>
+        <h3>Score constraints</h3>
+    </section>
+
+    <section>
+        <h3>Score calculation</h3>
+        <ul>
+            <li>Simple Java</li>
+            <li>Incremental Java</li>
+            <li>Drools</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Simple Java score calculation</h3>
+        <ul>
+            <li>Easy to implement</li>
+            <li>Bridge an existing system</li>
+            <li>Slow</li>
+        </ul>
+        <pre><code class="java">public class CloudBalancingSimpleScoreCalculator
+    implements SimpleScoreCalculator&lt;CloudBalance&gt; {
+
+  public Score calculateScore(CloudBalance cb) {
+    ...
+    return DefaultHardAndSoftScore.valueOf(
+        hardScore, softScore);
+  }
+
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Incremental Java score calculation</h3>
+        <ul>
+            <li>Fast
+                <ul>
+                    <li>Solution changes ⇒ recalculate score delta only</li>
+                </ul>
+            </li>
+            <li>Hard to implement
+                <ul>
+                    <li>Much boilerplate code</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Drools score calculation</h3>
+        <ul>
+            <li>Incremental
+                <ul>
+                    <li>No boilerplate code</li>
+                </ul>
+            </li>
+            <li>Constraints in Drools Rule Language (DRL)
+                <ul>
+                    <li>Declarative (like SQL, regular expression)</li>
+                </ul>
+            </li>
+            <li>Integration opportunities
+                <ul>
+                    <li>Guvnor</li>
+                    <li>Decision tables</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h3>DRL soft constraint: server cost</h3>
+        <pre><code class="drl">rule "serverCost"
+  when
+    // there is a server
+    $s : Server($c : cost)
+    // there is a processes on that server
+    exists Process(server == $s)
+  then
+    // lower soft score by the maintenance cost
+    scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
+end</code></pre>
+    </section>
+    <section>
+        <h3>DRL hard constraint: CPU power</h3>
+        <pre><code class="drl">rule "requiredCpuPowerTotal"
+  when
+    // there is a server
+    $s : Server($cpu : cpuPower)
+    // with too little cpu for its processes
+    $total : Number(intValue > $cpu) from accumulate(
+      Process(server == $s,
+          $requiredCpu : requiredCpuPower),
+      sum($requiredCpu)
+    )
+  then
+    // lower hard score by the excessive CPU usage
+    scoreHolder.addHardConstraintMatch(kcontext, $cpu - $total.intValue());
+end</code></pre>
+    </section>
+
+    <section>
         <h1>
             <span class="smaller-p-text">Introduction to</span><br/>
             heuristics and metaheuristics<br/>
