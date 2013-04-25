@@ -273,6 +273,36 @@ end</code></pre>
     </section>
 
     <section>
+        <h3>Solving it</h3>
+    </section>
+
+    <section>
+        <h3>Solver configuration by XML</h3>
+        <pre><code class="xml">&lt;solver&gt;
+  &lt;solutionClass&gt;...CloudBalance&lt;/solutionClass&gt;
+  &lt;planningEntityClass&gt;...Process&lt;/planningEntityClass&gt;
+
+  &lt;scoreDirectorFactory&gt;
+    &lt;scoreDefinitionType&gt;HARD_AND_SOFT&lt;/scoreDefinitionType&gt;
+    &lt;scoreDrl&gt;...ScoreRules.drl&lt;/scoreDrl&gt;
+  &lt;/scoreDirectorFactory&gt;
+
+  &lt;!-- optimization algorithms --&gt;
+&lt;/solver&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>Solving</h3>
+        <pre><code class="java">XmlSolverFactory factory = new XmlSolverFactory(
+    "...SolverConfig.xml");
+Solver solver = factory.buildSolver();
+
+solver.setPlanningProblem(cloudBalance);
+solver.solve();
+cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
+    </section>
+
+    <section>
         <h1>
             <span class="smaller-p-text">Introduction to</span><br/>
             heuristics and metaheuristics<br/>
