@@ -246,10 +246,10 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.315"
-     inkscape:cx="400"
+     inkscape:cx="310.26616"
      inkscape:cy="300"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer6"
      showgrid="true"
      width="800px"
      borderlayer="true"
@@ -282,7 +282,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -561,19 +561,7 @@
            height="69.999992"
            width="360"
            id="rect3219" /></flowRegion><flowPara
-         id="flowPara3159">First Fit Decreasing again...</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3473"
-       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial"
-       transform="translate(-374.18457,174.39886)"><flowRegion
-         id="flowRegion3475"><rect
-           id="rect3477"
-           width="360"
-           height="49.999973"
-           x="394.73438"
-           y="805.42676"
-           style="font-size:28px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
-         id="flowPara3479">FAIL</flowPara></flowRoot>  </g>
+         id="flowPara3159">First Fit Decreasing again...</flowPara></flowRoot>  </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
@@ -911,5 +899,17 @@
            x="380"
            y="43.777069"
            style="font-size:18px;text-align:start;text-anchor:start;fill:#a40000" /></flowRegion><flowPara
-         id="flowPara3444">Not optimal!</flowPara></flowRoot>  </g>
+         id="flowPara3444">Not optimal!</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3473"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial"
+       transform="translate(-374.18457,-277.96332)"><flowRegion
+         id="flowRegion3475"><rect
+           id="rect3477"
+           width="360"
+           height="49.999973"
+           x="394.73438"
+           y="805.42676"
+           style="font-size:28px;text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         id="flowPara3479">FAIL</flowPara></flowRoot>  </g>
 </svg>
