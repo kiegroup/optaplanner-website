@@ -158,6 +158,14 @@
     </section>
 
     <section>
+        <h3>CloudBalancing demo</h3>
+        <figure>
+            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+            <p>CloudBalancing demo</p>
+        </figure>
+    </section>
+
+    <section>
         <h3>Domain model</h3>
     </section>
 
@@ -165,8 +173,8 @@
         <img src="quick_start/cloudBalanceClassDiagram_0.png">
     </section>
     <section>
-        <h3>Server</h3>
-        <pre><code class="java">public class Server {
+        <h3>Computer</h3>
+        <pre><code class="java">public class Computer {
 
   private int cpuPower;
   private int memory;
@@ -203,15 +211,15 @@ public class Process {
         <pre><code class="java">@PlanningEntity
 public class Process {
   ...
-  private Server server;
+  private Computer computer;
 
   @PlanningVariable
   @ValueRange(type = FROM_SOLUTION_PROPERTY,
-      solutionProperty = "serverList")
-  public Server getServer() {
-    return server;
+      solutionProperty = "computerList")
+  public Computer getComputer() {
+    return computer;
   }
-  public void setServer(Server server) {...}
+  public void setComputer(Computer computer) {...}
   ...
 }</code></pre>
     </section>
@@ -227,10 +235,10 @@ public class Process {
         <pre><code class="java">public class CloudBalance
     implements Solution&lt;HardAndSoftScore&gt; {
 
-  private List&lt;Server&gt; serverList;
+  private List&lt;Computer&gt; computerList;
 
-  public List&lt;Server&gt; getServerList() {
-    return serverList;
+  public List&lt;Computer&gt; getComputerList() {
+    return computerList;
   }
 
   ...
@@ -261,7 +269,7 @@ public class Process {
   // Used in score constraints
   public Collection&lt;Object&gt; getProblemFacts() {
     List&lt;Object&gt; facts = new ArrayList&lt;Object&gt;();
-    facts.addAll(serverList);
+    facts.addAll(computerList);
     return facts;
   }
 
@@ -388,13 +396,13 @@ public class Process {
         </ul>
     </section>
     <section>
-        <h3>DRL soft constraint: server cost</h3>
-        <pre><code class="drl">rule "serverCost"
+        <h3>DRL soft constraint: computer cost</h3>
+        <pre><code class="drl">rule "computerCost"
   when
-    // there is a server
-    $s : Server($c : cost)
-    // there is a processes on that server
-    exists Process(server == $s)
+    // there is a computer
+    $s : Computer($c : cost)
+    // there is a processes on that computer
+    exists Process(computer == $s)
   then
     // lower soft score by the maintenance cost
     scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
@@ -404,11 +412,11 @@ end</code></pre>
         <h3>DRL hard constraint: CPU power</h3>
         <pre><code class="drl">rule "requiredCpuPowerTotal"
   when
-    // there is a server
-    $s : Server($cpu : cpuPower)
+    // there is a computer
+    $s : Computer($cpu : cpuPower)
     // with too little cpu for its processes
     $total : Number(intValue > $cpu) from accumulate(
-      Process(server == $s,
+      Process(computer == $s,
           $requiredCpu : requiredCpuPower),
       sum($requiredCpu)
     )
