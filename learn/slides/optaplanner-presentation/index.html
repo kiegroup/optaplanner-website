@@ -487,6 +487,112 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
     <section>
+        <h1>Optimization algorithms</h1>
+    </section>
+
+    <section>
+        <h3>Brute force config</h3>
+        <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;bruteForce /&gt;
+&lt;/solver&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>First Fit config</h3>
+        <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+&lt;/solver&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>First Fit Decreasing config</h3>
+        <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+&lt;/solver&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>DifficultyComparator</h3>
+        <pre><code class="java">public class ProcessDifficultyComparator
+    implements Comparator&lt;Process&gt; {
+  public int compare(Process a, Process b) {
+    // Compare on requiredCpuPower * requiredMemory
+    //     * requiredNetworkBandwidth
+  }
+}
+
+@PlanningEntity(difficultyComparatorClass
+    = ProcessDifficultyComparator.class)
+public class Process  {
+  ...
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Construction Heuristics + Local Search</h3>
+        <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+  &lt;localSearch&gt;
+    ...
+  &lt;localSearch&gt;
+&lt;/solver&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>Hill Climbing config</h3>
+        <pre><code class="xml">&lt;localSearch&gt;
+  &lt;forager&gt;
+    &lt;!-- Untweaked standard value --&gt;
+    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>Tabu Search config</h3>
+        <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Untweaked standard value --&gt;
+    &lt;entityTabuSize&gt;7&lt;/entityTabuSize&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Untweaked standard value --&gt;
+    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+    </section>
+
+    <section>
+        <h3>Simulated Annealing config</h3>
+        <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Tweaked value --&gt;
+    &lt;simulatedAnnealingStartingTemperature&gt;
+        0hard/400soft
+    &lt;/simulatedAnnealingStartingTemperature&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Untweaked standard value --&gt;
+    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+    </section>
+
+    <section>
         <h3>Summary</h3>
         <ul>
             <li>OptaPlanner solves planning and scheduling problems</li>
