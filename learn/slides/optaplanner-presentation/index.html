@@ -446,7 +446,8 @@ public class Process {
     exists Process(computer == $s)
   then
     // lower soft score by the maintenance cost
-    scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
+    scoreHolder.addSoftConstraintMatch(kcontext,
+        - $cost);
 end</code></pre>
     </section>
     <section>
@@ -463,7 +464,8 @@ end</code></pre>
     )
   then
     // lower hard score by the excessive CPU usage
-    scoreHolder.addHardConstraintMatch(kcontext, $cpu - $total.intValue());
+    scoreHolder.addHardConstraintMatch(kcontext,
+        $cpu - $total.intValue());
 end</code></pre>
     </section>
 
