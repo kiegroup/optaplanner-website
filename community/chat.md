@@ -32,7 +32,7 @@ Most of our project discussion take place on IRC, usually during European and Am
 
 ## Guidelines
 
-* Answers can take a while. If no one answers, then they are busy or AFK. Try the [Forum](forum.html) instead.
-* Don't send private messages to anyone. Private support is reserved for Red Hat customers only.
-* Don't ask *"Can I ask a question?"*. Just ask your question immediately.
+* Answers can take a while. Wait at least an hour. If no one answers, then they are busy or AFK. Try the [Forum](forum.html) instead.
+* Don't send private messages to anyone, use only the public channels. Private support is reserved for Red Hat customers only.
+* No need to waste time by asking *"Can I ask a question?"*. Just ask your question immediately.
 * If you need assistance with other JBoss projects, try their IRC channel on Freenode.
