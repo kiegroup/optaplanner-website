@@ -1,7 +1,7 @@
 Twitter bootstrap
 =================
 
-Twitter bootstrap version: 2.3.1
+Twitter bootstrap version: 2.3.2
 Downloaded from: http://twitter.github.com/bootstrap/
 License: Apache License v2.0 (just like OptaPlanner)
 
