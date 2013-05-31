@@ -53,3 +53,6 @@
     float: none;
     display: inline-block;
 }
+.carousel-indicators > li {
+    cursor: pointer;
+}
