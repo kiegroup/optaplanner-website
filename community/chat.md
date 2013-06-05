@@ -18,7 +18,7 @@ Most of our project discussion take place on IRC, usually during European and Am
 
         * [List of alternative servers](http://freenode.net/irc_servers.shtml)
 
-    * Channel for users:
+    * Channels for users:
 
         * **#optaplanner**
 
