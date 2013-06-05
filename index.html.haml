@@ -5,8 +5,13 @@ layout: base
 
 .alert
   %button.close(type="button" data-dismiss="alert") &times;
-  Announcement:
+  2013-03-21:
   %a(href="community/droolsPlannerRenamed.html") Drools Planner has been renamed to OptaPlanner.
+
+.alert
+  %button.close(type="button" data-dismiss="alert") &times;
+  #{site.pom.latest.releaseDate}:
+  %a(href="download/download.html") OptaPlanner #{site.pom.latest.version} has been released.
 
 .hero-unit.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
   .carousel.slide#whatIsCarousel(style="margin: 0;")
