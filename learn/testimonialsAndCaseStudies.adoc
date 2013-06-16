@@ -1,0 +1,21 @@
+= Testimonials and Case Studies
+:awestruct-layout: base
+
+== {doctitle}
+
+=== Testimonials
+
+* Drools Planner rocks! Complex planning problems solving & optimization made easy. We love it! https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
+
+=== Case Studies
+
+* link:caseStudies/OptaPlannerCaseStudy_RJV_2013-06-14.pdf[Task assignment] for RJV ( Belgium)
+
+=== Articles
+
+* http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA (Austria)
+
+=== Let us know
+
+If you would like share a case study, article or 1-line testimonial, link:../community/socialMedia.html[let us know]:
+we might add it here and share it on the social media.
