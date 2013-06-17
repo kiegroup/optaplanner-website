@@ -1,0 +1,11 @@
+= Video's
+:awestruct-layout: base
+
+== {doctitle}
+
+See http://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geoffrey's OptaPlanner playlist on YouTube]
+for a list of all video's.
+
++++
+<iframe width="853" height="480" src="http://www.youtube.com/embed/videoseries?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&showinfo=1" frameborder="0" allowfullscreen></iframe>
++++
