@@ -8,7 +8,9 @@ Some our users have shared their story:
 
 === Testimonials
 
-* Drools Planner rocks! Complex planning problems solving & optimization made easy. We love it! https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
+* Drools Planner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
+
+* Thanks to OptaPlanner we are able to provide fast and affordable automated resource planning cloud service to IT organisations in Germany. - Reinis Vicups
 
 === Case Studies
 
