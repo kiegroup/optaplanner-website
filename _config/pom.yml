@@ -14,18 +14,18 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-    version: 6.0.0.Beta3
-    distributionZip: http://download.jboss.org/drools/release/6.0.0.Beta3/optaplanner-distribution-6.0.0.Beta3.zip
-    releaseDate: 2013-06-04
+    version: 6.0.0.Beta4
+    distributionZip: http://download.jboss.org/drools/release/6.0.0.Beta4/optaplanner-distribution-6.0.0.Beta4.zip
+    releaseDate: 2013-06-28
 
-    documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Beta3/optaplanner-docs/html_single/index.html
-    documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Beta3/optaplanner-docs/html/index.html
-    documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Beta3/optaplanner-docs/pdf/optaplanner-docs.pdf
-    javadocs: http://docs.jboss.org/drools/release/6.0.0.Beta3/optaplanner-javadoc/index.html
+    documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Beta4/optaplanner-docs/html_single/index.html
+    documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Beta4/optaplanner-docs/html/index.html
+    documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Beta4/optaplanner-docs/pdf/optaplanner-docs.pdf
+    javadocs: http://docs.jboss.org/drools/release/6.0.0.Beta4/optaplanner-javadoc/index.html
 
-    droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Beta3/drools-expert-docs/html_single/index.html
-    droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Beta3/drools-expert-docs/html/index.html
-    droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Beta3/drools-expert-docs/pdf/drools-expert-docs.pdf
+    droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.0.Beta4/drools-expert-docs/html_single/index.html
+    droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.0.0.Beta4/drools-expert-docs/html/index.html
+    droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.0.0.Beta4/drools-expert-docs/pdf/drools-expert-docs.pdf
 
 nightly:
     version: 6.0.0-SNAPSHOT
