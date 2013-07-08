@@ -14,6 +14,8 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 
     * License: [ASL 2.0](../code/license.html)
 
+    * Download size: Large, but over 90% is due to examples (especially data sets) and documentation
+
 * Older community releases: Check [the release archive](http://download.jboss.org/drools/release/).
 
 * Red Hat subscription releases: Check [the product download site](http://www.jboss.com/downloads/).
@@ -49,6 +51,8 @@ A CR should be almost identical to the Final release.
 * ![](download.png) [Download OptaPlanner #{site.pom.latest.version}](#{site.pom.latest.distributionZip})
 
     * Release date: `#{site.pom.latest.releaseDate}`
+
+    * License: [ASL 2.0](../code/license.html)
 
 Or with Maven:
 
