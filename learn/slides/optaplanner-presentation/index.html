@@ -254,9 +254,7 @@ public class Process {
   ...
   private Computer computer;
 
-  @PlanningVariable
-  @ValueRange(type = FROM_SOLUTION_PROPERTY,
-      solutionProperty = "computerList")
+  @PlanningVariable(valueRangeProviderRefs = {"computerRange"})
   public Computer getComputer() {
     return computer;
   }
@@ -278,6 +276,7 @@ public class Process {
 
   private List&lt;Computer&gt; computerList;
 
+  @ValueRangeProvider(id = "computerRange")
   public List&lt;Computer&gt; getComputerList() {
     return computerList;
   }
