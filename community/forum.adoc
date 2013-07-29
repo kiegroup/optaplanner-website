@@ -1,0 +1,28 @@
+= Forum (free support)
+:awestruct-layout: base
+
+== {doctitle}
+
+=== Usage questions
+
+If you have a question about OptaPlanner, just ask our friendly community:
+
+* Ask on http://www.jboss.org/drools/lists[the Drools user mailing list] (recommended)
+
+* Ask on http://stackoverflow.com/questions/tagged/optaplanner[StackOverflow]
+
+Please follow these recommendations when posting a question:
+
+* Get to the point. Keep it as short as possible.
+* Include _relevant_ technical details (stacktrace, short code snippet, ...).
+* Be polite. Be friendly. Reread your question before posting it.
+* Be patient. This isn't link:paidSupport.html[paid support].
+
+=== Development discussions
+
+If you've link:../code/sourceCode.html[build OptaPlanner from source] and you would like to improve it,
+then come talk with us:
+
+* Join us on http://www.jboss.org/drools/lists[the Drools developer mailing list] (recommended)
+
+* And link:chat.html[chat with us].
