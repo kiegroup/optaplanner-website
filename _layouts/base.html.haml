@@ -1,12 +1,16 @@
 !!! 5
-%html(lang="en")
+%html(lang="en" itemscope="" itemtype="http://schema.org/Product")
   %head
     %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title #{escape_once(site.title)} - #{escape_once(page.title)}
+    %title #{escape_once(site.title + " - " + page.title)}
     %meta(name="description"){:content => page.description ? page.description : site.description}
     %meta(name="keywords"){:content => page.keywords ? page.keywords : site.keywords}
     %link(rel="canonical"){:href => "#{site.canonicalBaseUrl}#{page.url}"}
+    -# Social media: make it look good when shared
+    %meta(itemprop="name"){:content => escape_once(site.title + " - " + page.title)}
+    %meta(itemprop="description"){:content => page.description ? page.description : site.description}
+    %meta(itemprop="image"){:content => relative("/headerFooter/optaPlannerLogo200px.png")}
 
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap-responsive.min.css")}
@@ -90,13 +94,12 @@
             %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
           .pull-right(style="padding: 12px 10px 10px 10px;vertical-align: middle;")
             %span()
-              Follow:
-              %a(href = "https://plus.google.com/112724449845406009021" target="_blank" title="Google+")<
-                %img{:src => relative("/headerFooter/googlePlusLogo.png")}
-              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (G+ sync)")<
-                %img{:src => relative("/headerFooter/twitterLogo.png")}
-              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (G+ sync)")<
-                %img{:src => relative("/headerFooter/facebookLogo.png")}
+              %a(href = "https://plus.google.com/112724449845406009021" rel="publisher" target="_blank" title="Google+")<
+                %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"}
+              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (G+ mirror)")<
+                %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"}
+              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (G+ mirror)")<
+                %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
 
     .body-without-header-footer
       %div(style="position: absolute; right: 0; border: 0; max-width: 20%;" )
