@@ -18,3 +18,4 @@
 /_tmp
 /.awestruct
 /.sass-cache
+/Gemfile.lock

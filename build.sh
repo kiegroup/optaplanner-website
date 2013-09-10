@@ -26,12 +26,12 @@ siteDir="`pwd -P`/_site/"
 
 if [ "${cleanEnabled}" = "true" ]; then
 	echo "Cleaning ${siteDir}"
-    rm -Rf ${siteDir}
+   rake clean
 fi
 
 if [ "${buildEnabled}" = "true" ]; then
 	echo "Building ${siteDir}"
-    awestruct --profile production
+    rake build
 fi
 
 if [ "${publishEnabled}" = "true" ]; then

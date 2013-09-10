@@ -6,17 +6,15 @@ layout: base
 
 This page only mentions *active contributors*, who have contributed to OptaPlanner in the last year.
 
-## R&D team
-
 <!--- To find the gravatar hash id, use: "echo -n ...@gmail.com | md5sum" --->
+
+## R&D
 
 * ![](http://www.gravatar.com/avatar/27147a6679a4bfb6461ff1c0ae10473e?s=50&d=mm) Geoffrey De smet
 
     * OptaPlanner lead
 
     * IRC nickname: ge0ffrey
-
-* [The Drools team](http://www.jboss.org/drools/team)
 
 ## Quality Assurance
 
@@ -36,6 +34,28 @@ This page only mentions *active contributors*, who have contributed to OptaPlann
 
     * IRC nickname: elsam
 
+* ![](http://www.gravatar.com/avatar/8eb1897dda40d25fd65697872e4a8480?s=50&d=mm) Frederic Hornain
+
+    * Several example images, French articles
+
 ## Historic contributors
 
 See [all contributors on Ohloh](https://www.ohloh.net/p/optaplanner/contributors/summary).
+
+## Drools Expert R&D team
+
+* ![](http://www.gravatar.com/avatar/461df23df429c87550d3ce25c95d182b?s=50&d=mm) Mark Proctor
+
+    * KIE lead
+
+    * IRC nickname: conan
+
+* ![](http://www.gravatar.com/avatar/1b7f091584d6362942215fa51d5913ba?s=50&d=mm) Edson Tirelli
+
+    * Drools lead
+
+    * IRC nickname: etirelli
+
+* ![](http://www.gravatar.com/avatar/9eafc29df96e6aaf4a3eb4c0209086ae?s=50&d=mm) Mario Fusco
+
+    * IRC nickname: mfusco
