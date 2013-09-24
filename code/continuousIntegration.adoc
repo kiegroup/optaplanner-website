@@ -1,0 +1,10 @@
+= Continuous integration
+:awestruct-layout: base
+
+== {doctitle}
+
+We use Jenkins for continuous integration.
+
+*Show https://hudson.jboss.org/hudson/job/optaplanner/[the Jenkins job].*
+
+Keep the build blue!

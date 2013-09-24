@@ -3,7 +3,9 @@
 
 == {doctitle}
 
-We use http://git-scm.com/[Git] as source control management. The blessed OptaPlanner repositories are hosted on GitHub:
+We use http://git-scm.com/[Git] as source control management.
+
+The blessed OptaPlanner repositories are hosted on GitHub:
 
 * https://github.com/droolsjbpm/optaplanner[optaplanner]: The source code for OptaPlanner itself, examples and documentation.
 
@@ -25,7 +27,7 @@ We use http://git-scm.com/[Git] as source control management. The blessed OptaPl
         ...
 
     . Edit the sources in your favorite IDE (such as http://www.jetbrains.com/idea/[IntelliJ IDEA],
-      http://www.eclipse.org/[Eclipse] or https://netbeans.org/[NetBeans]).
+    http://www.eclipse.org/[Eclipse] or https://netbeans.org/[NetBeans]).
         +
         Many of us prefer IntelliJ IDEA:
         +++
