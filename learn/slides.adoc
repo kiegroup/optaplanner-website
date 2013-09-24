@@ -17,5 +17,5 @@ Feel free to reuse any of these materials as you see fit to present OptaPlanner 
 
 . Don't forget to change the presenter name in the first and the last slide :)
 
-. If its a public event, link:../community/chat.html[let us know]
+. If its a public event, link:../community/socialMedia.html[let us know]
 and we might share it on link:../community/socialMedia.html[our social media].

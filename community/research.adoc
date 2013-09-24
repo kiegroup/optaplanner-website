@@ -1,0 +1,9 @@
+= Research
+:awestruct-layout: base
+
+== {doctitle}
+
+OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in
+http://www.orcomplete.com/research/geoffrey-de-smet/open-source-metaheuristics-research-on-drools-planner[this article].
+
+If you're doing academic or professional research on top of OptaPlanner, link:../community/socialMedia.html[let us know].
