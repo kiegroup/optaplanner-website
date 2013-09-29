@@ -11,11 +11,11 @@ These slides are viewable in your browser:
 
 === Reuse these slides
 
-Feel free to reuse any of these materials as you see fit to present OptaPlanner to your local community, JUG, ...:
+Feel free to reuse any of these materials as you see fit to present OptaPlanner (for example to your local JUG):
 
 . Download https://github.com/droolsjbpm/optaplanner-website/tree/master/learn/slides/[the source of these slides].
 
-. Don't forget to change the presenter name in the first and the last slide :)
+. Don't forget to change the presenter name in the first and the last slide.
 
-. If its a public event, link:../community/socialMedia.html[let us know]
+. If it's a public event, link:../community/socialMedia.html[let us know]
 and we might share it on link:../community/socialMedia.html[our social media].
