@@ -1,0 +1,24 @@
+= Website info
+:awestruct-layout: base
+:showtitle:
+:experimental:
+
+== Website technology
+
+This website uses:
+
+* http://awestruct.org/[Awestruct]
+
+* http://asciidoctor.org[Asciidoctor] (AsciiDoc)
+
+* http://twitter.github.com/bootstrap/[Twitter Bootstrap]
+
+* http://tango.freedesktop.org/[Tango Desktop Project icons]
+
+This website was generated on _{localdatetime}_.
+
+== Website feedback
+
+We welcome any feedback about this website on the link:../community/forum.html[forum], link:../community/chat.html[chat] or link:../code/issueTracker.html[issue tracker].
+
+To submit a change to any page in this website, click on the button [.btn.btn-mini]#Edit this page# on the bottom of that page.
