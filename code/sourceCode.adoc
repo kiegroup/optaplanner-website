@@ -54,4 +54,6 @@ _The source code for this website and presentations._
  $ firefox _site/index.html
  ...
 
+. Edit the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] sources.
+
 Want to improve our sources? *Pull requests are welcome!*
