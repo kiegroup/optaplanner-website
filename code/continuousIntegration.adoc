@@ -1,7 +1,6 @@
 = Continuous integration
 :awestruct-layout: base
-
-== {doctitle}
+:showtitle:
 
 We use Jenkins for continuous integration.
 

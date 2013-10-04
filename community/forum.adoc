@@ -1,9 +1,8 @@
 = Forum (free support)
 :awestruct-layout: base
+:showtitle:
 
-== {doctitle}
-
-=== Usage questions
+== Usage questions
 
 If you have a question about OptaPlanner, just ask our friendly community:
 
@@ -18,7 +17,7 @@ Please follow these recommendations when posting a question:
 * Be polite. Be friendly. Reread your question before posting it.
 * Be patient. This isn't link:paidSupport.html[paid support].
 
-=== Development discussions
+== Development discussions
 
 If you've link:../code/sourceCode.html[build OptaPlanner from source] and you would like to improve it,
 then come talk with us:

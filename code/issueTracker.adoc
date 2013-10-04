@@ -1,9 +1,8 @@
 = Report an issue
 :awestruct-layout: base
+:showtitle:
 
-== {doctitle}
-
-=== Issue tracker
+== Issue tracker
 
 We welcome issue reports (bugs, improvements, new feature requests, ...) in our issue tracker:
 
@@ -11,7 +10,7 @@ We welcome issue reports (bugs, improvements, new feature requests, ...) in our 
 
 Log in and click on the button _Create Issue_ to report a bug, improvement or feature request.
 
-=== Pull requests on GitHub
+== Pull requests on GitHub
 
 Want to fix the issue yourself? Fork https://github.com/droolsjbpm/optaplanner[the git repository] and send in a pull request.
 We usually process all pull requests within a few days.

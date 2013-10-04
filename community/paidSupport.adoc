@@ -1,7 +1,6 @@
 = Paid support
 :awestruct-layout: base
-
-== {doctitle}
+:showtitle:
 
 Red Hat is considering support subscription offerings for OptaPlanner as part of its BRMS and BPM platforms.
 A Tech Preview of OptaPlanner is targeted for BRMS 6.0.

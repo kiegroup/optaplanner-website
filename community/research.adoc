@@ -1,7 +1,6 @@
 = Research
 :awestruct-layout: base
-
-== {doctitle}
+:showtitle:
 
 OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in
 http://www.orcomplete.com/research/geoffrey-de-smet/open-source-metaheuristics-research-on-drools-planner[this article].

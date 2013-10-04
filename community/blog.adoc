@@ -1,7 +1,6 @@
 = Blog
 :awestruct-layout: base
-
-== {doctitle}
+:showtitle:
 
 We regularly write articles on http://blog.athico.com/search/label/planner[the OptaPlanner blog].
 

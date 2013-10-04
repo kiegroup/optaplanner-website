@@ -1,8 +1,7 @@
 = Source code
 :awestruct-layout: base
 :linkattrs:
-
-== {doctitle}
+:showtitle:
 
 We use http://git-scm.com/[Git] as source control management.
 

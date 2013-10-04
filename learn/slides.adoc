@@ -1,15 +1,14 @@
 = Slides
 :awestruct-layout: base
+:showtitle:
 
-== {doctitle}
-
-=== Watch the slides
+== Watch the slides
 
 These slides are viewable in your browser:
 
 *link:slides/optaplanner-presentation/index.html[Show the OptaPlanner presentation]*
 
-=== Reuse these slides
+== Reuse these slides
 
 Feel free to reuse any of these materials as you see fit to present OptaPlanner (for example to your local JUG):
 
