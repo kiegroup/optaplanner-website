@@ -10,6 +10,7 @@ canonicalBaseUrl: http://www.optaplanner.org
 googleAnalyticsId: UA-39485370-1
 
 asciidoctor:
+  :safe: safe
   :attributes:
     imagesdir: ''
 

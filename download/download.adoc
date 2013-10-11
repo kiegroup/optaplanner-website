@@ -1,0 +1,69 @@
+= Download
+:awestruct-layout: base
+:page-interpolate: true
+:showtitle:
+
+== Distribution zip
+
+The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
+
+* image:download.png[] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
+** Release date: +#{site.pom.latestFinal.releaseDate}+
+** License: link:../code/license.html[ASL 2.0]
+** Download size: Large (over 90% is due to examples, data sets and documentation)
+
+* Older community releases: Check http://download.jboss.org/drools/release/[the release archive].
+
+* Red Hat subscription releases: Check http://www.jboss.com/downloads/[the product download site].
+
+== Maven, Gradle, Ivy or Buildr
+
+The OptaPlanner jars are also available in http://search.maven.org/#search|ga|1|org.optaplanner[the central maven repository]
+(and also in https://repository.jboss.org/nexus/index.html#nexus-search;gav\~org.optaplanner\~\~\~\~[the JBoss maven repository]).
+
+If you use Maven, just add a dependency in your +pom.xml+:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+      <version>#{site.pom.latestFinal.version}</version>
+    </dependency>
+----
+
+This is similar for Gradle, Ivy and Buildr.
+
+== Non-Final releases
+
+*Non-Final releases are the best way to test drive new features and API's
+to provide feedback before we lock down the API with a Final release.*
+We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
+or link:../code/issueTracker.html[issue tracker].
+
+=== Alpha's, Beta's and CR's
+
+An Alpha can be unstable.
+A Beta should work (it passes automated testing), but its new API's might still change in the next release.
+A CR should be almost identical to the Final release.
+
+* image:download.png[] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
+** Release date: +#{site.pom.latest.releaseDate}+
+** License: link:../code/license.html[ASL 2.0]
+
+Or with Maven:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+      <version>#{site.pom.latest.version}</version>
+    </dependency>
+----
+
+=== Nightly snapshots
+
+Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].
+
+* image:download.png[] #{site.pom.nightly.distributionZip}[Download OptaPlanner #{site.pom.nightly.version}]

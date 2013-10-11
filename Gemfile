@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 # ruby '1.9.3'
 
-gem 'awestruct', '~> 0.5.1'
+gem 'awestruct', '>= 0.5.4.rc'
 gem 'rake', '>= 0.9.2'
 # gem 'less', '>= 2.2.2'           # LESS
 gem 'asciidoctor', '>= 0.1.4'      # AsciiDoc
