@@ -7,7 +7,7 @@
 This stream contains easily understood information about OptaPlanner. Includes a post for every release.
 
 [unstyled]
-* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/112724449845406009021[OptaPlanner on Google+]
+* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/+OptaPlannerOrg[OptaPlanner on Google+]
 * image:../headerFooter/twitterLogo.png[] https://twitter.com/optaplanner[OptaPlanner on Twitter] (automatically synced from Google+)
 * image:../headerFooter/facebookLogo.png[] https://www.facebook.com/OptaPlanner[OptaPlanner on Facebook] (automatically synced from Google+)
 
