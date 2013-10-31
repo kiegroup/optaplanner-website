@@ -91,14 +91,15 @@
                   %li<
                     %a{:href => relative("/code/license.html")} License
           .pull-right(style="padding: 10px 10px 10px 10px;vertical-align: middle;")
-            %div(class="g-plusone" data-href="https://plus.google.com/+OptaPlannerOrg") &nbsp;
+            -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
+            %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
           .pull-right(style="padding: 12px 10px 10px 10px;vertical-align: middle;")
             %span()
               %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
                 %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"}
-              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (G+ mirror)")<
+              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
                 %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"}
-              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (G+ mirror)")<
+              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
                 %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
 
     .body-without-header-footer

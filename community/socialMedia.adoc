@@ -7,14 +7,14 @@
 This stream contains easily understood information about OptaPlanner. Includes a post for every release.
 
 [unstyled]
-* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/+OptaPlannerOrg[OptaPlanner on Google+]
-* image:../headerFooter/twitterLogo.png[] https://twitter.com/optaplanner[OptaPlanner on Twitter] (automatically synced from Google+)
-* image:../headerFooter/facebookLogo.png[] https://www.facebook.com/OptaPlanner[OptaPlanner on Facebook] (automatically synced from Google+)
+* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/\+OptaPlannerOrg[OptaPlanner on Google+]
+* image:../headerFooter/twitterLogo.png[] https://twitter.com/optaplanner[OptaPlanner on Twitter] (Google+ mirror)
+* image:../headerFooter/facebookLogo.png[] https://www.facebook.com/OptaPlanner[OptaPlanner on Facebook] (Google+ mirror)
 
 == Developer streams
 
 These streams contain more technical information about OptaPlanner and Java™ in general.
 
 [unstyled]
-* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/112811208792575157490[Geoffrey De Smet on Google+]
+* image:../headerFooter/googlePlusLogo.png[] https://plus.google.com/\+GeoffreyDeSmet[Geoffrey De Smet on Google+]
 * image:../headerFooter/twitterLogo.png[] http://twitter.com/geoffreydesmet[Geoffrey De Smet on Twitter]
