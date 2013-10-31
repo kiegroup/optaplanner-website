@@ -15,7 +15,7 @@ Feel free to reuse any of these materials as you see fit to present OptaPlanner 
 . Download https://github.com/droolsjbpm/optaplanner-website/tree/master/learn/slides/[the source of these HTML slides].
 
     ** Do you prefer +ODP+ or +PPT+ slides instead? +
-    Most slides are a single, big +png+ image: simply copy an image as a new slide in your deck.
+    Most slides are a single, big +png+ image: simply copy the image as a new slide in your deck.
 
 . Don't forget to change the presenter name in the first and the last slide.
 
