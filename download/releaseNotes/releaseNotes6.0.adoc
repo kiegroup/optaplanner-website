@@ -12,7 +12,143 @@ to solve constraint satisfaction problems efficiently.
 Together with the Drools rule engine and the jBPM workflow engine,
 it is a strong and flexible foundation for knowledge management.
 
+=== Demo videos
+
+Each of these videos demonstrates 1 example and 1 or more features:
+
+* http://www.youtube.com/watch?v=4meWIhPRVn8&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=1[Course scheduling]: Immovable planning entities
+* http://www.youtube.com/watch?v=_2zweB9JD7c&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=2[Project job scheduling]: Build-in hard constraints
+* http://www.youtube.com/watch?v=BxO3UFmtAPg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=3[Vehicle routing with time windows]: Shadow variables and real-time planning
+* http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=6[Vehicle routing scoring]: Score function flexibility
+* http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=7[Employee rostering]: Continuous planning
+
 === New and noteworthy
 
-* Feature 1
-* Feature 2
+==== Drools Planner renamed to OptaPlanner
+
+OptaPlanner is the new name for Drools Planner.
+For more information, see http://www.optaplanner.org/community/droolsPlannerRenamed.html[the full announcement].
+
+==== Faster and easier scoreDRL
+
+The new _constraint match_ system is:
+
+* *Faster*: The average calculate count per seconds increases between 7% and 40% on average per use case.
+* *Easier* to read and write
+* *Less error-prone*: It's much harder to cause score corruption in your DRL.
+
+Before:
+
+[source,drl]
+----
+    rule "conflictingLecturesSameCourseInSamePeriod"
+        when
+            ...
+        then
+            insertLogical(new IntConstraintOccurrence("conflictingLecturesSameCourseInSamePeriod", ConstraintType.HARD,
+                    -1,
+                    $leftLecture, $rightLecture));
+    end
+----
+
+After:
+
+[source,drl]
+----
+    rule "conflictingLecturesSameCourseInSamePeriod"
+        when
+            ...
+        then
+            scoreHolder.addHardConstraintMatch(kcontext, -1);
+    end
+----
+
+Notice that you don't need to repeat the rule name or the causes (the lectures) no more.
+OptaPlanner figures out it itself through the +kcontext+ variable.
+Drools automatically exposes the +kcontext+ variable in the RHS, so you don't need any extra code for it.
+
+You also no longer need to hack the API's to get a list of all +ConstraintOcurrence+'s:
+the +ConstraintMatch+ objects (and their totals per constraint) are available directly on the +ScoreDirector+ API.
+
+For more information, see http://blog.athico.com/2013/04/score-drl-faster-and-easier-in.html[this blog post]
+and link:../../learn/documentation.html[the reference manual].
+
+==== Construction heuristics now use selectors
+
+The construction heuristics now use the selector architecture so they support selection filtering, etc.
+Sorting can be overwritten at a configuration level (very handy for benchmarking).
+
+In use cases with multiple planning variables (for example period, room and teacher),
+you can now switch to a far more scalable configuration.
+
+==== Automatic solution cloning
+
+Implementing the +Solution+'s planning clone method is now optional.
+This means there's less boilerplate code to write and it's harder to cause score corruption in your code.
+
+For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]
+and link:../../learn/documentation.html[the reference manual].
+
+==== New build-in scores
+
+There are new build-in score definitions, such as: +HardMediumSoftScore+ (3 score levels),
++BendableScore+ (configurable number of score levels), +HardSoftLongScore+, +HardSoftDoubleScore+,
++HardSoftBigDecimalScore+, ...
+
+==== Planning Variable Listener (shadow variables)
+
+A planning variable can now have a listener which updates a shadow planning variable.
+
+A shadow planning variable is a variable that is never changed directly,
+but can be calculated based on the state of the genuine planning variables.
+For example: in VRP with time windows, the +arrivalTime+ at a customer can be calculated
+based on the previous customers of that vehicle.
+
+==== Bi-directional variable relationship for chained variables
+
+A shadow planning variable can now be +mappedBy+ a genuine variable.
+OptaPlanner will automatically update the shadow variable if the genuine variable is changed.
+Currently this is only supported for chained variables.
+
+==== TSP and VRP: Chained variables are more scalable
+
+Several improvements have made use cases like TSP and VRP more scalable.
+The code has been optimized to run significantly faster.
+Also, +<subChainSelector>+ now supports +<maximumSubChainSize>+ to scale out better.
+
+==== New metaheuristic: Step Counting Hill Climbing
+
+_Step Counting Hill Climbing_ is easy to configure and has good results.
+Generally, it behaves and feels a lot like _Late Acceptance_. Try it out with the Benchmarker.
+
+==== Benchmarker improvements
+
+* Best solution mutation statistic: shows for every new best solution found,
+how many variables needed to change to improve the last best solution.
+* Step score statistic: shows how the step score evolves over time.
+* The Benchmarker now highlights infeasible solutions with an orange exclamation mark.
+* The Benchmarker now shows standard deviation per solver configuration (thanks to Miroslav Svitok).
+
+==== New examples
+
+* VRP with time windows: The VRP example can now also handle the capacitated vehicle routing problem with time windows.
+* Project job scheduling: A form of job shop scheduling, for example to schedule the production of diverse books, cars
+or other products to machines and employees (thanks to Lukáš Petrovický)
+
+==== Example improvements
+
+* The GUI's of course scheduling, exam scheduling, hospital bed planning and sport scheduling have been improved.
+* The optaplanner examples Swing GUI has been redesigned to take up less space.
+* A webapp variant of the cloud balancing example has been added to +optaplanner-webexamples.war+ (thanks to Frederic Hornain).
+
+==== Other improvements
+
+* Domain classes that extend/implement a +@PlanningEntity+ class or interface can now be used as planning entities.
+* Nullable variables support improved and fixed.
+* _Late Acceptance_ improved.
+* Ratio based entity tabu (thanks to Lukáš Petrovický).
+* Drools properties can now be optionally specified in the solver configuration XML.
+* Mimic selection: useful to create a cartesian product selection of 2 change move selectors
+that move different variables of the same entity.
+* +KieBase+ support, for example to integrate decision tables or scorecards.
+* OSGi support out-of-the-box in the optaplanner jars.
