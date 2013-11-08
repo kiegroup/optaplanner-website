@@ -36,6 +36,9 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
+          .pull-right(style="padding-top: 12px;")
+            -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
+            %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
           %nav.nav-collapse(role="navigation")
             %ul.nav(style="padding: 5px;")
               %li<
@@ -90,9 +93,6 @@
                   %li.divider
                   %li<
                     %a{:href => relative("/code/license.html")} License
-            .pull-right(style="padding: 10px 10px 10px 10px;vertical-align: middle;")
-              -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
-              %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
             %ul.nav.pull-right(style="padding: 5px;")
               %li.dropdown
                 %a.dropdown-toggle(data-toggle="dropdown" href="#")<
@@ -110,14 +110,14 @@
                       %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
 
     .body-without-header-footer
-      %div(style="position: absolute; right: 0; border: 0; max-width: 20%;" )
+      .forkMeOnGithub
         %a(href="https://github.com/droolsjbpm/optaplanner")
           %img{:src => relative("/headerFooter/forkMeOnGithub.png"), :alt => "Fork me on GitHub"}
 
       .container(style="padding-top: 20px;")
         ~ content
 
-    %footer(style="background-color: #fafafa; box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1); margin-top: 20px; padding-top: 5px;")
+    %footer
       .container
         .row-fluid
           .span6

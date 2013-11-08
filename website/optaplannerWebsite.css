@@ -14,6 +14,27 @@
  * limitations under the License.
  */
 
+html {
+    background-color: #fafafa;
+}
+body {
+}
+
+footer {
+    margin-top: 20px;
+    padding-top: 5px;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.forkMeOnGithub {
+    position: absolute;
+    right: 0;
+    border: 0;
+    max-width: 20%;
+}
+
+
 /* WORKAROUND for Twitter bootstrap's navbar-fixed-top's hides content head */
 .body-without-header-footer {
     padding-top: 50px;
