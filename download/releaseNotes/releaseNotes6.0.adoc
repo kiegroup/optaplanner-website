@@ -14,13 +14,14 @@ it is a strong and flexible foundation for knowledge management.
 
 === Demo videos
 
-Each of these videos demonstrates 1 example and 1 or more features:
+Each of these videos demonstrates an example and a feature:
 
-* http://www.youtube.com/watch?v=4meWIhPRVn8&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=1[Course scheduling]: Immovable planning entities
-* http://www.youtube.com/watch?v=_2zweB9JD7c&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=2[Project job scheduling]: Build-in hard constraints
-* http://www.youtube.com/watch?v=BxO3UFmtAPg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=3[Vehicle routing with time windows]: Shadow variables and real-time planning
-* http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=6[Vehicle routing scoring]: Score function flexibility
-* http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&index=7[Employee rostering]: Continuous planning
+* http://www.youtube.com/watch?v=xhCtuM-Hiic&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cloud optimization]: real time planning
+* http://www.youtube.com/watch?v=4meWIhPRVn8&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Course scheduling]: Immovable planning entities
+* http://www.youtube.com/watch?v=_2zweB9JD7c&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Project job scheduling]: Build-in hard constraints
+* http://www.youtube.com/watch?v=BxO3UFmtAPg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing with time windows]: Shadow variables and real-time planning
+* http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing scoring]: Score function flexibility
+* http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Employee rostering]: Continuous planning
 
 === New and noteworthy
 
@@ -152,3 +153,8 @@ or other products to machines and employees (thanks to Lukáš Petrovický)
 that move different variables of the same entity.
 * +KieBase+ support, for example to integrate decision tables or scorecards.
 * OSGi support out-of-the-box in the optaplanner jars.
+
+=== Upgrading from a previous version
+
+To upgrade from a previous version of OptaPlanner (or Drools Planner),
+just follow https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe].
