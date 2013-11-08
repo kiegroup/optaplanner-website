@@ -90,17 +90,24 @@
                   %li.divider
                   %li<
                     %a{:href => relative("/code/license.html")} License
-          .pull-right(style="padding: 10px 10px 10px 10px;vertical-align: middle;")
-            -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
-            %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
-          .pull-right(style="padding: 12px 10px 10px 10px;vertical-align: middle;")
-            %span()
-              %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
-                %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"}
-              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
-                %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"}
-              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
-                %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
+            .pull-right(style="padding: 10px 10px 10px 10px;vertical-align: middle;")
+              -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
+              %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
+            %ul.nav.pull-right(style="padding: 5px;")
+              %li.dropdown
+                %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                  = precede 'Follow us ' do
+                    %b.caret>
+                %ul.dropdown-menu
+                  %li<
+                    %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
+                      %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"} &nbsp;Google+
+                  %li<
+                    %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
+                      %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"} &nbsp;Twitter
+                  %li<
+                    %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
+                      %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
 
     .body-without-header-footer
       %div(style="position: absolute; right: 0; border: 0; max-width: 20%;" )
