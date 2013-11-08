@@ -1,0 +1,18 @@
+= Release Notes 6.0
+:awestruct-layout: base
+:showtitle:
+
+== OptaPlanner 6.0.0.Final
+
+We are happy to announce the 6.0.0.Final release of OptaPlanner
+and it's KIE sibling projects Drools and jBPM.
+
+OptaPlanner is a lightweight, embeddable planning engine written in Java™
+to solve constraint satisfaction problems efficiently.
+Together with the Drools rule engine and the jBPM workflow engine,
+it is a strong and flexible foundation for knowledge management.
+
+=== New and noteworthy
+
+* Feature 1
+* Feature 2

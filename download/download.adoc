@@ -8,8 +8,9 @@
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
 * image:download.png[] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
-** Release date: +#{site.pom.latestFinal.releaseDate}+
+** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
+** Release date: +#{site.pom.latestFinal.releaseDate}+
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 
 * Older community releases: Check http://download.jboss.org/drools/release/[the release archive].
@@ -48,6 +49,7 @@ A Beta should work (it passes automated testing), but its new API's might still 
 A CR should be almost identical to the Final release.
 
 * image:download.png[] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
+** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}]
 ** Release date: +#{site.pom.latest.releaseDate}+
 ** License: link:../code/license.html[ASL 2.0]
 
