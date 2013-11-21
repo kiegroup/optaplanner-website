@@ -1,0 +1,5 @@
+= Training
+:awestruct-layout: base
+:showtitle:
+
+The training zip isn't ready yet. Check this webpage again later today.
