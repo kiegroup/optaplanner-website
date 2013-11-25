@@ -2,4 +2,10 @@
 :awestruct-layout: base
 :showtitle:
 
+The +optaplanner-training-*.zip+ teaches OptaPlanner through an number labs.
+Each lab has an assignment with clear goals, initial code and a solution.
+
+Currently, the +optaplanner-training-*.zip+ is publicly available to the community.
+It's unclear if that will remain the case. Grab it while you can :)
+
 The training zip isn't ready yet. Check this webpage again later today.
