@@ -17,7 +17,7 @@ latestFinal:
 latest:
     version: 6.0.1.Final
     distributionZip: http://download.jboss.org/drools/release/6.0.1.Final/optaplanner-distribution-6.0.1.Final.zip
-    releaseDate: 2013-11-20
+    releaseDate: 2013-12-20
     releaseNotesVersion: 6.0
 
     documentationHtmlSingle: http://docs.jboss.org/drools/release/6.0.1.Final/optaplanner-docs/html_single/index.html
