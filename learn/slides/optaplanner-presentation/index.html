@@ -190,15 +190,10 @@
         </figure>
         <p><b>Find better solutions in time and scale out</b></p>
         <ul>
-            <li>Open source (Apache License)</li>
-            <li>Releases often</li>
-            <li>Documentation
-                <ul>
-                    <li>Reference manual</li>
-                    <li>Examples</li>
-                </ul>
-            </li>
-            <li>In Maven Central</li>
+            <li><b>Open source</b><br/>Apache License</li>
+            <li><b>Regular releases</b><br/>Download the zip or from Maven Central</li>
+            <li><b>Documented</b><br/>Reference manual, examples, ...</li>
+            <li><b>Quality coverage</b><br/>Unit, integration and stress tests</li>
         </ul>
     </section>
 
@@ -1334,6 +1329,26 @@ public class Process  {
     <section>
         <h3>Benchmark results</h3>
         <p class="demo">Demo</p>
+    </section>
+
+    <section>
+        <h3>Reuse existing business code</h3>
+        <pre><code class="java">public class Nurse {
+
+  private Country country;
+
+  public boolean isHoliday(Date date) {
+    if (country == Country.BE) {
+      // true if date is 1-JAN, easter monday, 21-JUL, ...
+    } else if (country == Country.FR) {
+      // true if date is 1-JAN, easter monday, 14-JUL, ...
+    } else if (...) {
+      ...
+    }
+    ...
+  }
+
+}</code></pre>
     </section>
 
     <section>
