@@ -32,6 +32,10 @@ This page only mentions _active contributors_, who have contributed to OptaPlann
 * image:http://www.gravatar.com/avatar/8eb1897dda40d25fd65697872e4a8480?s=50&d=mm[role=polaroid] *Frederic Hornain*
 ** Several example images, French articles
 
+* image:http://www.gravatar.com/avatar/b423d5e811dc7d6f003944b2d31df407?s=50&d=mm[role=polaroid] *Matej Čimbora*
+** Suspend-resume functionality prototype
+** Aggregator application
+
 == Historic contributors
 
 See https://www.ohloh.net/p/optaplanner/contributors/summary[all contributors on Ohloh].
