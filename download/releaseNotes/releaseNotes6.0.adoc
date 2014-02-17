@@ -2,9 +2,9 @@
 :awestruct-layout: base
 :showtitle:
 
-== OptaPlanner 6.0.0.Final
+== OptaPlanner 6.0
 
-We are happy to announce the 6.0.0.Final release of OptaPlanner.
+We are happy to announce the 6.0 release of OptaPlanner.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently.
