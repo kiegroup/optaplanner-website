@@ -2,7 +2,9 @@
 :awestruct-layout: base
 :showtitle:
 
-Red Hat is considering support subscription offerings for OptaPlanner as part of its BRMS and BPM platforms.
-A Tech Preview of OptaPlanner is targeted for BRMS 6.0.
+Red Hat offers support subscriptions for community projects through Red Hat products.
 
-http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/[More information]
+The community project OptaPlanner is now available as a technology preview with the product _Red Hat JBoss BRMS 6.0_. +
+Red Hat will shortly be offering full support for OptaPlanner with a JBoss BRMS subscription.
+
+http://www.jboss.org/products/brms[Learn more about JBoss BRMS.]
