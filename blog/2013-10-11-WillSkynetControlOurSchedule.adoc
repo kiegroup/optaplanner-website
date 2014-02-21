@@ -1,0 +1,17 @@
+= Will Skynet control our schedule if the computer optimizes it for us?
+:awestruct-author: ge0ffrey
+:awestruct-date: 2013-10-11
+:awestruct-layout: blog
+:awestruct-tags: [article, insight, course scheduling]
+
+Not every organization is comfortable with letting a computer program,
+such as http://www.optaplanner.org[OptaPlanner] (java, open source planning engine), optimize their schedules.
+Let's take a look why - and how to remedy it - on the course scheduling example.
+
+== Course scheduling
+
+In course scheduling, we need to assign each lecture to a time and a place.
+So we're basically telling teachers and students were to be at what time.
+In the example schedule below, the Math lecture will be given the Monday morning in room 36:
+
+TODO

@@ -1,0 +1,17 @@
+= False assumptions for the Vehicle Routing Problem
+:awestruct-author: ge0ffrey
+:awestruct-date: 2013-08-06
+:awestruct-layout: blog
+:awestruct-tags: [article, insight, vrp]
+
+Many companies are faced with the vehicle routing problem, when they need to:
+
+* Deliver/pick up items at multiple locations
+* Or execute repairs/maintenance at multiple locations
+
+These companies want to minimize their fuel and time usage, to reduce their costs and ecological footprint.
+Sounds easy, right? _Just take the shortest route_. Unfortunately it’s not that simple... Let’s take a closer look.
+
+== Minimize the distance
+
+TODO

@@ -1,0 +1,3 @@
+- user = site.users.find {|e| !e.userId.nil? and page.userId.eql? e.userId }
+.userBadge
+  BADGE #{user.fullName}

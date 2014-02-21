@@ -8,6 +8,7 @@ canonicalBaseUrl: http://www.optaplanner.org
 # jbossorg_bootstrap_js: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0/bootstrap-community.js
 
 googleAnalyticsId: UA-39485370-1
+disqus: optaplanner
 
 asciidoctor:
   :safe: safe
