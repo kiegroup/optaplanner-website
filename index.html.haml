@@ -3,19 +3,20 @@ title: Planning engine (Java™, Open Source)
 layout: base
 ---
 
-.alert
-  %button.close(type="button" data-dismiss="alert") &times;
+.alert.alert-info.alert-dismissable
+  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
   2013-03-21:
-  %a(href="community/droolsPlannerRenamed.html") Drools Planner has been renamed to OptaPlanner.
+  %a.alert-link(href="community/droolsPlannerRenamed.html") Drools Planner has been renamed to OptaPlanner.
 
-.alert
-  %button.close(type="button" data-dismiss="alert") &times;
+.alert.alert-info.alert-dismissable
+  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
   #{site.pom.latest.releaseDate}:
-  %a(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.releaseNotesVersion} has been released.
+  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.releaseNotesVersion} has been released.
 
-.hero-unit.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
-  .carousel.slide#whatIsCarousel(style="margin: 0;")
-    .carousel-inner(style="align: center;")
+.jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
+  .carousel.slide#whatIsCarousel(data-ride="carousel" style="background-color: white;")
+    -#.carousel-inner(style="align: center;")
+    .carousel-inner
       .item.active
         %img(src="landingPage/useCaseOverview.png" alt="Use case overview")
       .item
@@ -30,17 +31,25 @@ layout: base
         %img(src="landingPage/compatibility.png" alt="Compatibility")
       .item
         %img(src="landingPage/scalable.png" alt="Scalability")
-    %a.carousel-control.left(href="#whatIsCarousel" data-slide="prev")& &lsaquo;
-    %a.carousel-control.right(href="#whatIsCarousel" data-slide="next")& &rsaquo;
-    .carousel-indicators-toolbar
-      %ol.carousel-indicators
-        %li.active(data-target="#whatIsCarousel" data-slide-to="0")
-        %li(data-target="#whatIsCarousel" data-slide-to="1")
-        %li(data-target="#whatIsCarousel" data-slide-to="2")
-        %li(data-target="#whatIsCarousel" data-slide-to="3")
-        %li(data-target="#whatIsCarousel" data-slide-to="4")
-        %li(data-target="#whatIsCarousel" data-slide-to="5")
-        %li(data-target="#whatIsCarousel" data-slide-to="6")
+    %a.left.carousel-control(href="#whatIsCarousel" data-slide="prev")
+      %span.glyphicon.glyphicon-chevron-left
+    %a.right.carousel-control(href="#whatIsCarousel" data-slide="next")
+      %span.glyphicon.glyphicon-chevron-right
+  %ul.nav.nav-justified#whatIsCarouselButtons
+    %li.active(data-target="#whatIsCarousel" data-slide-to="0")
+      %a(href="#" data-toggle="tab") Use cases
+    %li(data-target="#whatIsCarousel" data-slide-to="1")
+      %a(href="#" data-toggle="tab") Input/output
+    %li(data-target="#whatIsCarousel" data-slide-to="2")
+      %a(href="#" data-toggle="tab") Vehicle routing
+    %li(data-target="#whatIsCarousel" data-slide-to="3")
+      %a(href="#" data-toggle="tab") Employee rostering
+    %li(data-target="#whatIsCarousel" data-slide-to="4")
+      %a(href="#" data-toggle="tab") Exam timetabling
+    %li(data-target="#whatIsCarousel" data-slide-to="5")
+      %a(href="#" data-toggle="tab") Compatibility
+    %li(data-target="#whatIsCarousel" data-slide-to="6")
+      %a(href="#" data-toggle="tab") Scalability
 
 :markdown
   ## What is OptaPlanner?
@@ -56,11 +65,11 @@ layout: base
   *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
   Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
 
-.row-fluid
-  .span6
-    .hero-unit(style="padding: 10px; margin-bottom: 10px;")
-      .pagination-centered<
-        %a.btn.btn-large.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
+.row
+  .col-md-6
+    .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+      .text-center<
+        %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
           %img(src = "download/download.png")
           Download OptaPlanner #{site.pom.latestFinal.version}
       %h3 Try the examples now
@@ -78,10 +87,10 @@ layout: base
           %a(href="http://www.java.com")< Java™
           to run.
 
-  .span6
-    .hero-unit(style="padding: 10px; margin-bottom: 10px;")
-      .pagination-centered<
-        %a.btn.btn-large.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+  .col-md-6
+    .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+      .text-center<
+        %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
           %img(src = "learn/documentation.png")
           Read documentation #{site.pom.latestFinal.version}
       :markdown

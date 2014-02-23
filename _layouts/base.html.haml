@@ -2,7 +2,7 @@
 %html(lang="en" itemscope="" itemtype="http://schema.org/Product")
   %head
     %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
     %title #{escape_once(site.title + " - " + page.title)}
     %meta(name="description"){:content => page.description ? page.description : site.description}
     %meta(name="keywords"){:content => page.keywords ? page.keywords : site.keywords}
@@ -12,102 +12,104 @@
     %meta(itemprop="description"){:content => page.description ? page.description : site.description}
     %meta(itemprop="image"){:content => relative("/headerFooter/optaPlannerLogo200px.png")}
 
-    %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap.min.css")}
-    %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/bootstrap-responsive.min.css")}
-    %link(rel="stylesheet"){:href => relative("/twitterbootstrap/css/highlight.css")}
+    %link(rel="stylesheet"){:href => relative("/website/bootstrap/css/bootstrap.min.css")}
+    %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
     -# %link(rel="stylesheet"){:href => site.jbossorg_bootstrap_css}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     :plain
-      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
     %link{:rel => "shortcut icon", :href => relative("/favicon.ico")}
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
 
-    %header.navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{:href => relative("/")}
-            %img{:src => relative("/headerFooter/optaPlannerLogo200px.png")}
+    %header.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      .container
+        .navbar-header
           -# When the screen width is too little, these 3 icon-bar spans are needed to show the collapsed navbar
-          %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
+          %a.button.navbar-toggle(data-toggle="collapse" data-target=".nav-collapse")
+            %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          .pull-right(style="padding-top: 12px;")
+          %a.navbar-brand(style="padding: 10px;"){:href => relative("/")}
+            %img{:src => relative("/headerFooter/optaPlannerLogo200px.png")}
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li<
+              %a{:href => relative("/")} Home
+            %li<
+              %a{:href => relative("/download/download.html")} Download
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'Learn ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a{:href => relative("/learn/documentation.html")} Documentation
+                %li<
+                  %a{:href => relative("/learn/video.html")} Videos
+                %li<
+                  %a{:href => relative("/learn/slides.html")} Slides
+                %li.divider
+                %li<
+                  %a{:href => relative("/learn/testimonialsAndCaseStudies.html")} Testimonials and Case Studies
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'Community ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a{:href => relative("/community/forum.html")} Forum (free support)
+                %li<
+                  %a{:href => relative("/community/chat.html")} Chat
+                %li<
+                  %a{:href => relative("/community/paidSupport.html")} Paid support
+                %li.divider
+                %li<
+                  %a{:href => relative("/community/socialMedia.html")} Social Media
+                %li<
+                  %a{:href => relative("/community/blog.html")} Blog
+                %li<
+                  %a{:href => relative("/community/team.html")} Team
+                %li<
+                  %a{:href => relative("/community/research.html")} Research
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'Code ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a{:href => relative("/code/issueTracker.html")} Report an issue
+                %li<
+                  %a{:href => relative("/code/sourceCode.html")} Source code
+                %li<
+                  %a{:href => relative("/code/continuousIntegration.html")} Continuous integration
+                %li.divider
+                %li<
+                  %a{:href => relative("/code/license.html")} License
+          .navbar-form.navbar-right(style="padding-top: 5px;")
             -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
             %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
-          %nav.nav-collapse(role="navigation")
-            %ul.nav(style="padding: 5px;")
-              %li<
-                %a{:href => relative("/")} Home
-              %li<
-                %a{:href => relative("/download/download.html")} Download
-              %li.dropdown
-                %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                  = precede 'Learn ' do
-                    %b.caret>
-                %ul.dropdown-menu
-                  %li<
-                    %a{:href => relative("/learn/documentation.html")} Documentation
-                  %li<
-                    %a{:href => relative("/learn/video.html")} Videos
-                  %li<
-                    %a{:href => relative("/learn/slides.html")} Slides
-                  %li.divider
-                  %li<
-                    %a{:href => relative("/learn/testimonialsAndCaseStudies.html")} Testimonials and Case Studies
-              %li.dropdown
-                %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                  = precede 'Community ' do
-                    %b.caret>
-                %ul.dropdown-menu
-                  %li<
-                    %a{:href => relative("/community/forum.html")} Forum (free support)
-                  %li<
-                    %a{:href => relative("/community/chat.html")} Chat
-                  %li<
-                    %a{:href => relative("/community/paidSupport.html")} Paid support
-                  %li.divider
-                  %li<
-                    %a{:href => relative("/community/socialMedia.html")} Social Media
-                  %li<
-                    %a{:href => relative("/community/blog.html")} Blog
-                  %li<
-                    %a{:href => relative("/community/team.html")} Team
-                  %li<
-                    %a{:href => relative("/community/research.html")} Research
-              %li.dropdown
-                %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                  = precede 'Code ' do
-                    %b.caret>
-                %ul.dropdown-menu
-                  %li<
-                    %a{:href => relative("/code/issueTracker.html")} Report an issue
-                  %li<
-                    %a{:href => relative("/code/sourceCode.html")} Source code
-                  %li<
-                    %a{:href => relative("/code/continuousIntegration.html")} Continuous integration
-                  %li.divider
-                  %li<
-                    %a{:href => relative("/code/license.html")} License
-            %ul.nav.pull-right(style="padding: 5px;")
-              %li.dropdown
-                %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                  = precede 'Follow us ' do
-                    %b.caret>
-                %ul.dropdown-menu
-                  %li<
-                    %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
-                      %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"} &nbsp;Google+
-                  %li<
-                    %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
-                      %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"} &nbsp;Twitter
-                  %li<
-                    %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
-                      %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'Follow us ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
+                    %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"} &nbsp;Google+
+                %li<
+                  %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
+                    %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"} &nbsp;Twitter
+                %li<
+                  %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
+                    %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
 
     .body-without-header-footer
       .forkMeOnGithub
@@ -119,8 +121,8 @@
 
     %footer
       .container
-        .row-fluid
-          .span6
+        .row
+          .col-md-6
             %p
               Development is sponsored by
               %a(href="http://www.redhat.com/")<
@@ -129,7 +131,7 @@
               OptaPlanner is part of the
               %a(href="http://www.jboss.org/")<
                 %img{:src => relative("/headerFooter/jbossCommunityLogo.png"), :alt => "JBoss Community"}
-          .span6
+          .col-md-6
             :markdown
               &copy; Copyright 2006-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
             %p
@@ -139,13 +141,14 @@
               \-
               %a(href="#{relative("/website/websiteInfo.html")}") Website info
               \-
-              %span.btn-group
-                %a.btn.btn-mini(href="https://github.com/droolsjbpm/optaplanner-website/blob/master#{page.relative_source_path}") Page source
-                %a.btn.btn-mini(href="https://github.com/droolsjbpm/optaplanner-website/edit/master#{page.relative_source_path}") Edit this page
+              %span.btn-group.btn-group-xs
+                %a.btn.btn-default(role="button" href="https://github.com/droolsjbpm/optaplanner-website/blob/master#{page.relative_source_path}") Page source
+                %a.btn.btn-default(role="button" href="https://github.com/droolsjbpm/optaplanner-website/edit/master#{page.relative_source_path}") Edit this page
 
-    %script{:src => relative("/twitterbootstrap/js/jquery.min.js")}
-    %script{:src => relative("/twitterbootstrap/js/bootstrap.min.js")}
-    %script{:src => relative("/twitterbootstrap/js/highlight.js")}
+    %script{:src => relative("/website/jquery/jquery.min.js")}
+    %script{:src => relative("/website/bootstrap/js/bootstrap.min.js")}
+    %script{:src => relative("/website/highlight/highlight.js")}
+    %script{:src => relative("/website/optaplannerWebsite.js")}
     %script
       hljs.initHighlightingOnLoad();
     -# %script{:src => site.jbossorg_bootstrap_js}
