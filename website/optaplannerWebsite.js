@@ -1,12 +1,9 @@
 $(document).ready( function() {
-    $carousel.carousel();
+    $('.carousel').carousel();
     $('#whatIsCarousel').on('slide.bs.carousel', function(e) {
-        var active = $(event.target).find('.carousel-inner > .item.active');
-        var from = active.index();
-        var next = $(event.relatedTarget);
+        var next = $(e.relatedTarget);
         var to = next.index();
-        // TODO this does NOT work
-        active.removeClass('active');
-        to.addClass('active');
+
+        $('#whatIsCarouselButtons').find('li').removeClass('active').eq(to).addClass('active');
     });
 });
