@@ -35,6 +35,8 @@ If you use Maven, just add a dependency in your +pom.xml+:
 
 This is similar for Gradle, Ivy and Buildr.
 
+'''
+
 == Non-Final releases
 
 *Non-Final releases are the best way to test drive new features and API's

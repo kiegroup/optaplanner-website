@@ -24,6 +24,8 @@
 
 * Red Hat subscription documentation: Check https://access.redhat.com/knowledge/docs/[the customer portal].
 
+'''
+
 == Non-Final releases
 
 === Alpha's, Beta's and CR's
