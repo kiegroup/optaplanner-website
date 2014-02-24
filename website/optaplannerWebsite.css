@@ -55,8 +55,16 @@ footer {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Reduce space taken by alerts */
+.alert {
+    padding: 10px;
+}
+.alert-dismissable .close {
+    top: 0;
+    right: 0;
+}
 
-/* Carousel: center images, remove gradient,  */
+/* Carousel: center images, remove gradient, tabs instead of indicators */
 #whatIsCarousel .item > img {
     margin: 0 auto;
     display: block;
