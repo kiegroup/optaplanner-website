@@ -1,3 +1,23 @@
 - user = site.users.find {|e| !e.userId.nil? and page.userId.eql? e.userId }
-.userBadge
-  BADGE #{user.fullName}
+.userBadge.container
+  .row
+    .col-md-4
+      .well.well-sm
+        .media
+          .thumbnail.pull-left
+            %img{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
+          .media-body
+            %h4.media-heading #{user.fullName}
+            %hr(style="margin:2px auto")
+            %p.small
+              #{user.role}
+            %span
+              - if !user.googlePlusId.empty?
+                %a{:href => "https://plus.google.com/" + user.googlePlusId}
+                  %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "Google+"}
+              - if !user.twitterUsername.empty?
+                %a{:href => "https://twitter.com/" + user.twitterUsername}
+                  %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "Twitter"}
+              - if !user.facebookUsername.empty?
+                %a{:href => "https://www.facebook.com/" + user.facebookUsername}
+                  %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Facebook"}
