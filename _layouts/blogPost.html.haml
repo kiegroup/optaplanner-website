@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: blogBase
 ---
 #post-navigation
   .post-navigation
@@ -28,6 +28,7 @@ layout: base
       // %a{:href=>page.author[0].primary_page.url} #{page.author[0]}
     .date
       on #{page.date.strftime('%d-%^b-%Y')}
+  %hr
   .body
     ~ content
   .tags

@@ -4,8 +4,7 @@
     .col-md-4
       .well.well-sm
         .media
-          .thumbnail.pull-left
-            %img{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
+          %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
           .media-body
             %h4.media-heading #{user.fullName}
             %hr(style="margin:2px auto")
