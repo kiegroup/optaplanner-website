@@ -32,7 +32,7 @@ layout: base
     ~ content
   .tags
     %span.glyphicon.glyphicon-tags
-    tagged as
+    &nbsp;tagged as
     - page.tags.each do |tag|
       %a{:href=>tag.primary_page.url}
         = tag

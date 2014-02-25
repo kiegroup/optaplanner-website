@@ -1,15 +1,60 @@
+# Available properties per user
+#  userId: Should be the same as githubUsername
+#  fullName: First name and last name (in that order)
+#  role: Role in this project
+#  gravatarHashId: Used to show your avatar image. Change your avatar any time at http://www.gravatar.com/
+#                  To find the gravatar hash id, use: "echo -n youremail@gmail.com | md5sum"
+#  googlePlusId (optional)
+#  twitterUsername (optional)
+#  facebookUsername (optional)
+#  githubUsername (optional)
+#  ircNickname (optional)
 - userId: ge0ffrey
   fullName: Geoffrey De Smet
-  gravatarHashId: 27147a6679a4bfb6461ff1c0ae10473e
   role: OptaPlanner lead
-  githubUsername: ge0ffrey
-  ircNickname: ge0ffrey
+  gravatarHashId: 27147a6679a4bfb6461ff1c0ae10473e
   googlePlusId: +GeoffreyDeSmet
   twitterUsername: geoffreydesmet
+  githubUsername: ge0ffrey
+  ircNickname: ge0ffrey
 - userId: triceo
   fullName: Lukáš Petrovický
-  gravatarHashId: c950743f532471ac34022e92193563c3
   role: BRMS QA lead
+  gravatarHashId: c950743f532471ac34022e92193563c3
   githubUsername: triceo
   ircNickname: triceo
+- userId: elsam
+  fullName: Sam Van Malderen
+  role: Contributor
+  gravatarHashId: ff1d2abc4474045c8cad7c95975eda63
+  githubUsername: elsam
+  ircNickname: elsam
+- userId: fhornain
+  fullName: Frederic Hornain
+  role: Contributor
+  gravatarHashId: 8eb1897dda40d25fd65697872e4a8480
+  githubUsername: fhornain
+- userId: carrot-osc
+  fullName: Matej Čimbora
+  role: Contributor
+  gravatarHashId: b423d5e811dc7d6f003944b2d31df407
+  githubUsername: carrot-osc
+- userId: mdproctor
+  fullName: Mark Proctor
+  role: KIE lead
+  gravatarHashId: 461df23df429c87550d3ce25c95d182b
+  githubUsername: mdproctor
+  ircNickname: conan
+- userId: etirelli
+  fullName: Edson Tirelli
+  role: Drools lead
+  gravatarHashId: 1b7f091584d6362942215fa51d5913ba
+  githubUsername: etirelli
+  ircNickname: etirelli
+- userId: mariofusco
+  fullName: Mario Fusco
+  role: Drools developer
+  gravatarHashId: 9eafc29df96e6aaf4a3eb4c0209086ae
+  githubUsername: mariofusco
+  ircNickname: mfusco
 

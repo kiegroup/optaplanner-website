@@ -21,3 +21,6 @@
               - if !user.facebookUsername.empty?
                 %a{:href => "https://www.facebook.com/" + user.facebookUsername}
                   %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Facebook"}
+              - if !user.githubUsername.empty?
+                %a{:href => "https://github.com/" + user.githubUsername}
+                  %img{:src => relative("/headerFooter/gitHubLogo.png"), :alt => "GitHub"}
