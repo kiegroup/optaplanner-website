@@ -14,13 +14,14 @@ layout: blogBase
     ~ page.post.content
   %hr(style="margin-bottom: 5px;")
   %div(style="margin-bottom: 20px;")
-    %a.pull-right{:href => relative(page.post.url, page.outputPage)}
-      %span.label.label-default Permalink
+    .pull-right
+      %a{:href => relative(page.post.url + '#comments', page.outputPage)}<
+        %span.label.label-default Comments
+      %a{:href => relative(page.post.url, page.outputPage)}<
+        %span.label.label-default Permalink
     .tags
       %span.glyphicon.glyphicon-tags
       &nbsp;tagged as
       - page.post.tags.each do |tag|
         %a{:href=>tag.primary_page.url}<
           %span.label.label-info #{tag}
-  .comments
-    = page.post.disqus_comments

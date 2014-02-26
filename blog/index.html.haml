@@ -2,11 +2,15 @@
 title: Blog
 layout: blogBase
 ---
-- page.posts.each do |post|
-  = partial('blogPostBody.html.haml', :outputPage => page, :post => post, :include_comments_count => post.equal?(page.posts.last))
+- for post in page.posts
+  = partial('blogPostBody.html.haml', :outputPage => page, :post => post)
 %ul.pager
   %li.previous{:class=>('disabled' unless page.posts.next_page)}
-    %a{:href=>page.posts.next_page ? page.posts.next_page.url : '#'} &laquo; Older
-  %li.pages Page #{page.posts.current_page_index + 1} of #{page.posts.pages.size}
+    %a{:href=>page.posts.next_page ? page.posts.next_page.url : '#'}
+      %span.glyphicon.glyphicon-chevron-left
+      Older
+  %li.pages #{page.posts.current_page_index + 1} / #{page.posts.pages.size}
   %li.next{:class=>('disabled' unless page.posts.previous_page)}
-    %a{:href=>page.posts.previous_page ? page.posts.previous_page.url : '#'} Newer &raquo;
+    %a{:href=>page.posts.previous_page ? page.posts.previous_page.url : '#'}
+      Newer
+      %span.glyphicon.glyphicon-chevron-right
