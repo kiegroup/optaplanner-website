@@ -1,0 +1,24 @@
+---
+layout: blogBase
+---
+.post
+  %h1.title 
+    #{page.post.title}
+  .byline
+    .author
+      by
+      = partial('userBadge.html.haml', :userId => page.post.author)
+    .date
+      on #{page.post.date.strftime('%d-%^b-%Y')}
+  %hr
+  .body
+    ~ page.post.content
+  .tags
+    %span.glyphicon.glyphicon-tags
+    &nbsp;tagged as
+    - page.post.tags.each do |tag|
+      %a{:href=>tag.primary_page.url}
+        = tag
+  %hr
+  .comments
+    = page.post.disqus_comments

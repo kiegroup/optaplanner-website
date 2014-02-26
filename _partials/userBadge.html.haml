@@ -8,9 +8,8 @@
           .media-body
             %h4.media-heading #{user.fullName}
             %hr(style="margin:2px auto")
-            %p.small
-              #{user.role}
-            %span
+            %span.small #{user.role}
+            %span.pull-right
               - if !user.googlePlusId.empty?
                 %a{:href => "https://plus.google.com/" + user.googlePlusId}
                   %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "Google+"}

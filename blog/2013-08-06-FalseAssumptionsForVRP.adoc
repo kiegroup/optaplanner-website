@@ -1,8 +1,8 @@
 = False assumptions for the Vehicle Routing Problem
 :awestruct-author: ge0ffrey
 :awestruct-date: 2013-08-06
-:awestruct-layout: blogPost
-:awestruct-tags: [article, insight, vrp]
+:awestruct-layout: blogPostBase
+:awestruct-tags: [insight, vehicle routing]
 
 Many companies are faced with the vehicle routing problem, when they need to:
 
