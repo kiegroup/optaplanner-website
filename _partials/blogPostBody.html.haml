@@ -2,23 +2,25 @@
 layout: blogBase
 ---
 .post
-  %h1.title 
-    #{page.post.title}
+  %h1.title(style="border-bottom: 1px solid #eee;")
+    %a{:href => relative(page.post.url, page.outputPage)}
+      = page.post.title
   .byline
+    .date.small.pull-right
+      #{page.post.date.strftime('%-d %B %Y')}
     .author
-      by
       = partial('userBadge.html.haml', :outputPage => page.outputPage, :userId => page.post.author)
-    .date
-      on #{page.post.date.strftime('%d-%^b-%Y')}
-  %hr
   .body
     ~ page.post.content
-  .tags
-    %span.glyphicon.glyphicon-tags
-    &nbsp;tagged as
-    - page.post.tags.each do |tag|
-      %a{:href=>tag.primary_page.url}<
-        %span.label.label-info #{tag}
+  %div
+    %a.pull-right{:href => relative(page.post.url, page.outputPage)}
+      %span.label.label-default Permalink
+    .tags
+      %span.glyphicon.glyphicon-tags
+      &nbsp;tagged as
+      - page.post.tags.each do |tag|
+        %a{:href=>tag.primary_page.url}<
+          %span.label.label-info #{tag}
   %hr
   .comments
     = page.post.disqus_comments
