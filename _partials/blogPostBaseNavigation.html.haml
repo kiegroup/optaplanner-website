@@ -1,0 +1,11 @@
+-
+%ul.pager
+  %li.previous{:class=>('disabled' unless page.post.previous_post)}
+    %a{:href => page.post.previous_post ? relative(page.post.previous_post.url, page.outputPage) : '#'}
+      %span.glyphicon.glyphicon-chevron-left
+      #{page.post.previous_post ? truncate_string(page.post.previous_post.title, 50) : "Previous"}
+  %li.pages #{site.posts.size - site.posts.index(page.outputPage)} / #{site.posts.size}
+  %li.next{:class=>('disabled' unless page.post.next_post)}
+    %a{:href => page.post.next_post ? relative(page.post.next_post.url, page.outputPage) : '#'}
+      #{page.post.next_post ? truncate_string(page.post.next_post.title, 50) : "Next"}
+      %span.glyphicon.glyphicon-chevron-right

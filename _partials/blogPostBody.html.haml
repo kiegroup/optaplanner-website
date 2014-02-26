@@ -12,7 +12,8 @@ layout: blogBase
       = partial('userBadge.html.haml', :outputPage => page.outputPage, :userId => page.post.author)
   .body
     ~ page.post.content
-  %div
+  %hr(style="margin-bottom: 5px;")
+  %div(style="margin-bottom: 20px;")
     %a.pull-right{:href => relative(page.post.url, page.outputPage)}
       %span.label.label-default Permalink
     .tags
@@ -21,6 +22,5 @@ layout: blogBase
       - page.post.tags.each do |tag|
         %a{:href=>tag.primary_page.url}<
           %span.label.label-info #{tag}
-  %hr
   .comments
     = page.post.disqus_comments
