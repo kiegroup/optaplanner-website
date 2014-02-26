@@ -3,7 +3,7 @@ layout: blogBase
 ---
 - page.description = html_to_text(page.content).split("\n").first if !page.description
 
-= partial('blogPostBody.html.haml', :parent => page, :post => page, :include_comments => true)
+= partial('blogPostBody.html.haml', :outputPage => page, :post => page, :include_comments => true)
 %ul.pager
   %li.previous{:class=>('disabled' unless page.previous_post)}
     %a{:href=>page.previous_post ? page.previous_post.url : '#'} &laquo; Previous

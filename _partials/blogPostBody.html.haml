@@ -7,7 +7,7 @@ layout: blogBase
   .byline
     .author
       by
-      = partial('userBadge.html.haml', :userId => page.post.author)
+      = partial('userBadge.html.haml', :outputPage => page.outputPage, :userId => page.post.author)
     .date
       on #{page.post.date.strftime('%d-%^b-%Y')}
   %hr
@@ -17,8 +17,8 @@ layout: blogBase
     %span.glyphicon.glyphicon-tags
     &nbsp;tagged as
     - page.post.tags.each do |tag|
-      %a{:href=>tag.primary_page.url}
-        = tag
+      %a{:href=>tag.primary_page.url}<
+        %span.label.label-info #{tag}
   %hr
   .comments
     = page.post.disqus_comments
