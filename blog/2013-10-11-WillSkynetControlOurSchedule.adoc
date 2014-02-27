@@ -1,8 +1,9 @@
 = Will Skynet control our schedule if the computer optimizes it for us?
+:page-interpolate: true
+:blogpost-imagesdir: #{relative('/blog/2013/10/11/', page)}
 :awestruct-author: ge0ffrey
-:awestruct-date: 2013-10-11
 :awestruct-layout: blogPostBase
-:awestruct-tags: [insight, course scheduling]
+:awestruct-tags: [course scheduling, insight]
 
 Not every organization is comfortable with letting a computer program,
 such as http://www.optaplanner.org[OptaPlanner] (java, open source planning engine), optimize their schedules.
@@ -14,7 +15,7 @@ In course scheduling, we need to assign each lecture to a time and a place.
 So we're basically telling teachers and students were to be at what time.
 In the example schedule below, the +Math+ lecture will be given the +Monday morning+ in room +36+:
 
-image:skynet1.png[]
+image:{blogpost-imagesdir}/skynet1.png[]
 
 In the example above, OptaPlanner has come up with a feasible schedule.
 This means that no room, nor any teacher, nor any student has 2 lectures at the same time.
@@ -24,7 +25,7 @@ This means that no room, nor any teacher, nor any student has 2 lectures at the 
 Despite that the previous schedule is optimized according to the score function (which the boss probably defined in the first place),
 the boss wants to make some ad hoc changes. The +Math+ lecture should be given on +Tuesday Morning+ instead of +Monday morning+:
 
-image:skynet2.png[]
+image:{blogpost-imagesdir}/skynet2.png[]
 
 The schedule is now infeasible because +Geo+ and +Math+ are now in the same room at the same time.
 So we ask the computer to make it feasible...
@@ -33,7 +34,7 @@ So we ask the computer to make it feasible...
 
 \... and the first thing the computer does is change the +Math+ lecture to another time and place:
 
-image:skynet3.png[]
+image:{blogpost-imagesdir}/skynet3.png[]
 
 The boss is unhappy because his commands are ignored. Let's fix that.
 
@@ -41,12 +42,12 @@ The boss is unhappy because his commands are ignored. Let's fix that.
 
 We lock the +Math+ lecture in place, making it immovable for OptaPlanner:
 
-image:skynet4.png[]
+image:{blogpost-imagesdir}/skynet4.png[]
 
 When we now solve the problem, the +Math+ lecture isn't moved.
 We get a feasible solution which makes the boss happy too:
 
-image:skynet5.png[]
+image:{blogpost-imagesdir}/skynet5.png[]
 
 == Video demo
 

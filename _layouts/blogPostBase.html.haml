@@ -5,7 +5,7 @@ layout: blogBase
 
 = partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
 = partial('blogPostBody.html.haml', :outputPage => page, :post => page, :include_comments => true)
-= partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
 .comments
   %a(name = 'comments')
   = page.disqus_comments
+= partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
