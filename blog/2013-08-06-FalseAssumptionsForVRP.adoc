@@ -1,6 +1,5 @@
 = False assumptions for the Vehicle Routing Problem
 :page-interpolate: true
-:blogpost-imagesdir: #{relative('/blog/2013/08/16/', page)}
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
 :awestruct-tags: [vehicle routing, insight]
@@ -17,13 +16,13 @@ Sounds easy, right? _Just take the shortest route_. Unfortunately it's not that 
 
 In Vehicle Routing Problem (VRP), we need to transport items from the warehouse to the customers:
 
-image:{blogpost-imagesdir}/vrpPresumptions01.png[]
+image::vrpPresumptions01.png[]
 
 In this case, we have 7 customers across the region and 2 available vehicles stationed at the warehouse.
 
 The shortest route to visit all these customers is this:
 
-image:{blogpost-imagesdir}/vrpPresumptions02.png[]
+image::vrpPresumptions02.png[]
 
 This optimal solution requires +210+ fuel (which includes each vehicle driving back to the warehouse).
 
@@ -34,14 +33,14 @@ Assumption: *An optimal VRP route uses only 1 vehicle. _(false)_*
 
 In a real-world delivery/pick up scenario, each customer needs a number of items, but a vehicle's capacity to transport items is limited.
 
-image:{blogpost-imagesdir}/vrpPresumptions03.png[]
+image::vrpPresumptions03.png[]
 
 In this case, all 7 customers need 20 items and a vehicle can transport 100 items.
 So a single vehicle cannot transport the 140 items of all customers.
 
 We need to use 2 vehicles now:
 
-image:{blogpost-imagesdir}/vrpPresumptions04.png[]
+image::vrpPresumptions04.png[]
 
 This optimal solution requires +224+ fuel, which is - of course - more than the +210+ fuel of the previous solution.
 The yellow truck transports 60 items and the green one 80 items.
@@ -51,14 +50,14 @@ Assumption: *An optimal VRP route has no crossing lines. _(false)_*
 
 Let's see what happens when some of the customers require more items than other customers.
 
-image:{blogpost-imagesdir}/vrpPresumptions05.png[]
+image::vrpPresumptions05.png[]
 
 In this case, 2 customers need 50 items and the other 5 still need 20 items.
 So the previous solution is infeasible because the yellow truck would need to transport 120 items.
 
 Now the lines do need to cross:
 
-image:{blogpost-imagesdir}/vrpPresumptions06.png[]
+image::vrpPresumptions06.png[]
 
 The optimal solution now requires even more fuel: +284+. We found a feasible solution with 2 vehicles.
 
@@ -67,7 +66,7 @@ Assumption: *An optimal, feasible VRP route with n vehicles is still optimal for
 
 Let's add a 3th vehicle to disprove that:
 
-image:{blogpost-imagesdir}/vrpPresumptions07.png[]
+image::vrpPresumptions07.png[]
 
 By adding an extra vehicle, the optimal solution now uses less fuel: only +274+. This is a paradox: buying more vehicles can reduce expenses.
 
@@ -78,7 +77,7 @@ Assumption: *An optimal VRP route has no crossing lines of the same color. _(fal
 
 In any real-world scenario, time is of the essence. Items need to be delivered on time, within the time window of each customer.
 
-image:{blogpost-imagesdir}/vrpPresumptions08.png[]
+image::vrpPresumptions08.png[]
 
 In the case above, a vehicle needs to arrive at the top left customer between 3 and 4 o'clock.
 Different customers have different time windows. For example, all 4 customers on the right are flexible:
@@ -86,7 +85,7 @@ they are available between 1 and 6 o'clock. Additionally, each delivery/pick up/
 
 In the optimal solution, the yellow truck does cross its own line now:
 
-image:{blogpost-imagesdir}/vrpPresumptions09.png[]
+image::vrpPresumptions09.png[]
 
 In the optimal solution, the yellow truck arrives at the most left customer at 1 o'clock. An hour later it leaves for the bottom left customer at which it arrives at 2:20 (because driving takes some 20 minutes). Again an hour later it departs and arrives at its 3th customer at 3:40.
 
@@ -95,11 +94,11 @@ Assumption: *We can focus on time windows before focusing on capacity (or vice v
 
 Let's see what happens if the time windowed customers also need a number of items:
 
-image:{blogpost-imagesdir}/vrpPresumptions10.png[]
+image::vrpPresumptions10.png[]
 
 Given these requirements, we need to focus on the capacity and the time windows _in parallel_:
 
-image:{blogpost-imagesdir}/vrpPresumptions11.png[]
+image::vrpPresumptions11.png[]
 
 The optimal solution now puts the bottom right customer in the yellow truck, because there was no more room in the green truck.
 
@@ -111,6 +110,6 @@ We need to be able to optimize without making assumptions.
 Yet, we cannot iterate through all possible states in a brute force manner either - even on relatively small problems - because of hardware limitations.
 So we need good, flexible algorithms - such as the heuristics and metaheuristics implemented in http://www.optaplanner.org[OptaPlanner] (Open Source, Java) - to solve bigger cases:
 
-image:{blogpost-imagesdir}/vrpPresumptions12.png[]
+image::vrpPresumptions12.png[]
 
 All screenshots are taken from the http://www.optaplanner.org[OptaPlanner] vehicle routing example.

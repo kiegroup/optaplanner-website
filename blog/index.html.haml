@@ -3,7 +3,11 @@ title: Blog
 layout: blogBase
 ---
 - for post in page.posts
+  -# Trick to make images work from blog posts work for the aggregator blog page
+  - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+  - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
   = partial('blogPostBody.html.haml', :outputPage => page, :post => post)
+  - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
 %ul.pager
   %li.previous{:class=>('disabled' unless page.posts.next_page)}
     %a{:href=>page.posts.next_page ? page.posts.next_page.url : '#'}
