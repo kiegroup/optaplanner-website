@@ -1,0 +1,45 @@
+---
+layout: base
+title: Team
+---
+
+-# To add your name on this page, also add your yourself in /_config/users.yml
+
+%h1 #{page.title}
+%p
+  This page only mentions <em>active contributors</em>, who have contributed significantly to OptaPlanner in the last year.
+%p
+  If your name belongs in this list, send in a pull request with the appropriate changes.
+
+%h2 R&D
+%ul
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'ge0ffrey', :mode => 'long')
+
+%h2 Quality Assurance
+%ul
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'triceo', :mode => 'long')
+  %li The BRMS QA team
+
+%h2 Community contributors
+%ul
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'elsam', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'fhornain', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'carrot-osc', :mode => 'long')
+
+%h2 Historic contributors
+%p
+  See <a href="https://www.ohloh.net/p/optaplanner/contributors/summary">all contributors on Ohloh</a>.
+
+%h2 Drools Expert R&D team
+%ul
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mdproctor', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'etirelli', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mariofusco', :mode => 'long')

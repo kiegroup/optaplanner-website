@@ -4,11 +4,14 @@
 #  role: Role in this project
 #  gravatarHashId: Used to show your avatar image. Change your avatar any time at http://www.gravatar.com/
 #                  To find the gravatar hash id, use: "echo -n youremail@gmail.com | md5sum"
-#  googlePlusId (optional)
-#  twitterUsername (optional)
-#  facebookUsername (optional)
-#  githubUsername (optional)
-#  ircNickname (optional)
+#  googlePlusId: (optional)
+#  twitterUsername: without the @ (optional)
+#  facebookUsername: (optional)
+#  githubUsername: (optional)
+#  employedBy: (optional)
+#  ircNickname: (optional)
+#  contributionsDescription: only work related to this project (optional)
+#  biography: (optional)
 - userId: ge0ffrey
   fullName: Geoffrey De Smet
   role: OptaPlanner lead
@@ -16,12 +19,15 @@
   googlePlusId: +GeoffreyDeSmet
   twitterUsername: geoffreydesmet
   githubUsername: ge0ffrey
+  employedBy: Red Hat
   ircNickname: ge0ffrey
+  biography: Geoffrey founded OptaPlanner in 2006 and has been working for Red Hat since 2010.
 - userId: triceo
   fullName: Lukáš Petrovický
   role: BRMS QA lead
   gravatarHashId: c950743f532471ac34022e92193563c3
   githubUsername: triceo
+  employedBy: Red Hat
   ircNickname: triceo
 - userId: elsam
   fullName: Sam Van Malderen
@@ -29,32 +35,43 @@
   gravatarHashId: ff1d2abc4474045c8cad7c95975eda63
   githubUsername: elsam
   ircNickname: elsam
+  contributionsDescription: Genetic algorithms prototype
 - userId: fhornain
   fullName: Frederic Hornain
   role: Contributor
   gravatarHashId: 8eb1897dda40d25fd65697872e4a8480
+  twitterUsername: fhornain
   githubUsername: fhornain
+  employedBy: Red Hat
+  contributionsDescription: Example improvements (code and images)
 - userId: carrot-osc
   fullName: Matej Čimbora
   role: Contributor
   gravatarHashId: b423d5e811dc7d6f003944b2d31df407
   githubUsername: carrot-osc
+  contributionsDescription: BenchmarkAggregator and more
 - userId: mdproctor
   fullName: Mark Proctor
   role: KIE lead
   gravatarHashId: 461df23df429c87550d3ce25c95d182b
+  twitterUsername: markproctor
   githubUsername: mdproctor
+  employedBy: Red Hat
   ircNickname: conan
 - userId: etirelli
   fullName: Edson Tirelli
   role: Drools lead
   gravatarHashId: 1b7f091584d6362942215fa51d5913ba
+  twitterUsername: edsontirelli
   githubUsername: etirelli
+  employedBy: Red Hat
   ircNickname: etirelli
 - userId: mariofusco
   fullName: Mario Fusco
   role: Drools developer
   gravatarHashId: 9eafc29df96e6aaf4a3eb4c0209086ae
+  twitterUsername: mariofusco
+  employedBy: Red Hat
   githubUsername: mariofusco
   ircNickname: mfusco
 
