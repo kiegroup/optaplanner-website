@@ -8,6 +8,7 @@ layout: blogBase
   - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
   = partial('blogPostBody.html.haml', :outputPage => page, :post => post)
   - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
+  %hr(style = "border-color: #000;")
 %ul.pager
   %li.previous{:class=>('disabled' unless page.posts.next_page)}
     %a{:href=>page.posts.next_page ? page.posts.next_page.url : '#'}

@@ -23,5 +23,5 @@ layout: blogBase
       %span.glyphicon.glyphicon-tags
       &nbsp;tagged as
       - page.post.tags.each do |tag|
-        %a{:href=>tag.primary_page.url}<
+        %a{:href => relative(tag.primary_page.url, page.outputPage)}<
           %span.label.label-info #{tag}
