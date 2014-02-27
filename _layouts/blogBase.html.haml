@@ -6,4 +6,19 @@ layout: base
     .col-md-9
       ~ content
     .col-md-3
-      RSS Feed TODO
+      .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+        .text-center<
+          %a.btn.btn-default.btn-lg(type="button" style="margin-top: 10px;"){:href => relative("/blog/news.atom")}
+            %img{:src => relative("/headerFooter/atomFeedIcon.png"), :alt => 'Atom'}
+            News feed
+          %nav
+            %h2 Latest posts
+            %ul.list-unstyled
+              - for post in site.posts[0,7]
+                %li(style = "margin-top: 10px;")
+                  .title
+                    %a{:href => relative(post.url)}
+                      = post.title
+                  .small
+                    = post.date.strftime('%-d %B %Y')
+
