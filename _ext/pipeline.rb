@@ -1,3 +1,4 @@
+require File.expand_path '../haml/filters/asciidoc.rb', __FILE__
 require 'optaplanner'
 
 Awestruct::Extensions::Pipeline.new do

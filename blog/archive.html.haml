@@ -1,0 +1,14 @@
+---
+title: Blog archive
+layout: blogBase
+---
+%h1 #{page.title}
+%ul
+  - for post in site.posts
+    %li(style = "margin-top: 10px;")
+      %a{:href => relative(post.url)}
+        = post.title
+      %span.small
+        = post.date.strftime('%-d %B %Y')
+:asciidoc
+  For older posts, see http://blog.athico.com/search/label/planner[the old blog].

@@ -12,7 +12,7 @@ layout: base
             %img{:src => relative("/headerFooter/atomFeedIcon.png"), :alt => 'Atom'}
             News feed
           %nav
-            %h2 Latest posts
+            %h2 Latest blog posts
             %ul.list-unstyled
               - for post in site.posts[0,7]
                 %li(style = "margin-top: 10px;")
@@ -21,4 +21,6 @@ layout: base
                       = post.title
                   .small
                     = post.date.strftime('%-d %B %Y')
+          %a.btn.btn-default(type="button" style="margin-top: 10px;"){:href => relative("/blog/archive.html")}
+            Blog archive
 

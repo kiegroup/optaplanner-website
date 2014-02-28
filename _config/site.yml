@@ -9,6 +9,7 @@ canonicalBaseUrl: http://www.optaplanner.org
 
 googleAnalyticsId: UA-39485370-1
 disqus: optaplanner
+disqus_generate_id: true
 
 asciidoctor:
   :safe: safe
