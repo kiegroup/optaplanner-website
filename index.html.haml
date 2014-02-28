@@ -73,19 +73,18 @@ layout: base
           %img(src = "download/download.png")
           Download OptaPlanner #{site.pom.latestFinal.version}
       %h3 Try the examples now
-      %ul
+      %ol
         %li Download the zip and unzip it
         %li
           On Linux/Mac, run
           %code examples/runExamples.sh
-        %li
+          %br
           On Windows, run
           %code examples/runExamples.bat
-      %p
-        %small<
-          Requires
-          %a(href="http://www.java.com")< Java™
-          to run.
+      .small
+        Requires
+        %a(href="http://www.java.com")< Java™
+        to run.
 
   .col-md-6
     .jumbotron(style="padding: 10px; margin-bottom: 10px;")
@@ -93,8 +92,10 @@ layout: base
         %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
           %img(src = "learn/documentation.png")
           Read documentation #{site.pom.latestFinal.version}
-      :markdown
-        ### Get started
-
-        * Open the documentation
-        * Read the **Quick Start** chapter
+      %h3 Get started
+      %ol
+        %li Open the documentation
+        %li
+          Read the
+          %strong Quick Start
+          chapter
