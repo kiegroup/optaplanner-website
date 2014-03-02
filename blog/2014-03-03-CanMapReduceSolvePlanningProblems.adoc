@@ -1,0 +1,69 @@
+= Can MapReduce solve planning problems?
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [tsp, insight, algorithm]
+
+TODO
+
+== About MapReduce
+
+TODO
+
+== About TSP
+
+TODO
+
+image::mapReduceTspBlogExplanation.png[]
+
+TODO
+
+== MapReduce on TSP
+
+TODO
+
+image::mapReduceTspBlog_0.png[]
+
+TODO
+
+=== Map
+
+TODO
+
+image::mapReduceTspBlog_1.png[]
+
+TODO
+
+=== Solve
+
+TODO
+
+image::mapReduceTspBlog_2.png[]
+
+TODO
+
+=== Reduce
+
+TODO
+
+image::mapReduceTspBlog_3.png[]
+
+TODO
+
+image::mapReduceTspBlog_4.png[]
+
+TODO
+
+=== Result quality
+
+TODO
+
+image::mapReduceTspBlog_5.png[]
+
+TODO
+
+== Conclusion
+
+TODO
+
+
