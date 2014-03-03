@@ -8,9 +8,20 @@ layout: base
     .col-md-3
       .jumbotron(style="padding: 10px; margin-bottom: 10px;")
         .text-center<
+          %h2 Follow our blog
           %a.btn.btn-default.btn-lg(type="button" style="margin-top: 10px;"){:href => relative("/blog/news.atom")}
             %img{:src => relative("/headerFooter/atomFeedIcon.png"), :alt => 'Atom'}
             News feed
+          %ul.list-inline(style="margin-top: 10px;")
+            %li<
+              %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
+                %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"}
+            %li<
+              %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
+                %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"}
+            %li<
+              %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
+                %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
           %nav
             %h2 Latest blog posts
             %ul.list-unstyled
