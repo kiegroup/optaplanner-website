@@ -1,8 +1,0 @@
-= Blog
-:awestruct-layout: base
-:showtitle:
-
-We regularly write articles on http://blog.athico.com/search/label/planner[the OptaPlanner blog].
-
-Each blog article also posted on link:socialMedia.html[our social media streams].
-That's the easiest way to get notified when a new blog article has been posted.
