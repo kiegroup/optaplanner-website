@@ -99,3 +99,15 @@ layout: base
           Read the
           %strong Quick Start
           chapter
+
+.panel.panel-default
+  .panel-heading Latest blog posts
+  .panel-body
+    %ul.list-unstyled
+      - for post in site.posts[0,7]
+        %li(style = "margin-top: 10px;")
+          .title
+            %a{:href => relative(post.url)}
+              = post.title
+          .small
+            = post.date.strftime('%-d %B %Y')
