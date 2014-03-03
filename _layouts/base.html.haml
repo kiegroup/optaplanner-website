@@ -102,13 +102,13 @@
                   %b.caret>
               %ul.dropdown-menu
                 %li<
-                  %a(href = "https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="Google+")<
+                  %a(href="https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="News stream via Google+")<
                     %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"} &nbsp;Google+
                 %li<
-                  %a(href = "https://twitter.com/optaplanner" target="_blank" title="Twitter (Google+ mirror)")<
+                  %a(href="https://twitter.com/optaplanner" target="_blank" title="News stream via Twitter")<
                     %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"} &nbsp;Twitter
                 %li<
-                  %a(href = "https://www.facebook.com/OptaPlanner" target="_blank" title="Facebook (Google+ mirror)")<
+                  %a(href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook")<
                     %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
 
     .body-without-header-footer
@@ -149,7 +149,7 @@
     %script{:src => relative("/website/bootstrap/js/bootstrap.min.js")}
     %script{:src => relative("/website/highlight/highlight.js")}
     %script{:src => relative("/website/optaplannerWebsite.js")}
-    %script
+    %script(type="text/javascript")<
       hljs.initHighlightingOnLoad();
     -# %script{:src => site.jbossorg_bootstrap_js}
     -# g-plusone script and google analytics script
