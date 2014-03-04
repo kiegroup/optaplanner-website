@@ -65,6 +65,8 @@ In a more realistic planning problem, sane partitioning can be hard or even impo
 * In vehicle routing with time windows, each partition should have enough vehicle time to service each customer
 and drive to each location. _Catch 22: How do we determine the drive time if we don't know the vehicle routes yet?_
 
+It's tempting to make link:#{relative('/blog/2013/08/06/FalseAssumptionsForVRP.html')}[false assumptions].
+
 === 2) *Map*: Solve each piece separately
 
 Solve each partition using a Solver:
@@ -75,12 +77,12 @@ We get 4 pieces, each with a partial solution.
 
 === 3) *Reduce*: Merge solution pieces
 
-Merge the pieces together. To merge 2 pieces together, we need to remove an arc from each piece
+Merge the pieces together. To merge 2 pieces together, we remove an arc from each piece
 and add 2 arcs to connect cities of different pieces:
 
 image::mapReduceTspBlog_3.png[]
 
-We need to do merge several times:
+We do merge several times until all pieces are merged:
 
 image::mapReduceTspBlog_4.png[]
 
