@@ -5,19 +5,22 @@
 OptaPlanner is used all over the world to optimize all kinds of planning problems.
 Some our users have shared their story:
 
-== Testimonials
-
-* Drools Planner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
-
-* Thanks to OptaPlanner we are able to provide fast and affordable automated resource planning cloud service to IT organisations in Germany. - Reinis Vicups
-
 == Case Studies
 
 * link:caseStudies/OptaPlannerCaseStudy_RJV_2013-06-14.pdf[Task assignment] for RJV (Belgium)
 
 == Articles
 
+* http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing in Practice]
+and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Germany)
+
 * http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA (Austria)
+
+== Testimonials
+
+* Drools Planner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
+
+* Thanks to OptaPlanner we are able to provide fast and affordable automated resource planning cloud service to IT organisations in Germany. - Reinis Vicups
 
 == Share your story
 
