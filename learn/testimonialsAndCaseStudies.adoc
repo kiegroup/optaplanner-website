@@ -11,7 +11,7 @@ Some our users have shared their story:
 
 == Articles
 
-* http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing in Practice]
+* http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing with real routes]
 and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Germany)
 
 * http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA (Austria)
