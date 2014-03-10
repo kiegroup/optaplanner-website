@@ -46,3 +46,35 @@ OptaPlanner is:
 ** Tabu Search: +{plus}18%+ on average, +{plus}24%+ on largest
 ** Late Acceptance: +{plus}23%+ on average, +{plus}121%+ (+x2.21+) on largest
 
+==== Declarative value ranges
+
+When the planning value range of a planning variable is a number (such as +int+, +double+ or +BigDecimal+),
+you can now declare the range by its bounds, instead of enumerating all values in the range.
+
+So instead of reserving 5000 memory spaces for all the integer values:
+
+[source,java]
+----
+    @ValueRangeProvider(id = "delayRange")
+    public List<Integer> getDelayRange() {
+        List<Integer> = new ArrayList<Integer>(5000);
+        for (int i = 0; i < 5000; i++) {
+            delayRange.add(i);
+        }
+        return delayRange;
+    }
+----
+
+You can now just reserve 2 memory spaces for the bounds of those integer values:
+
+[source,java]
+----
+    @ValueRangeProvider(id = "delayRange")
+    public CountableValueRange<Integer> getDelayRange() {
+        return ValueRangeFactory.createIntValueRange(0, 5000);
+    }
+----
+
+==== BenchmarkAggregator
+
+The BenchmarkAggregator in optaplanner-benchmark allows you to merge multiple benchmark reports into 1 report.
