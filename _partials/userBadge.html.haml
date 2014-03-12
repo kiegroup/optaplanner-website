@@ -21,6 +21,10 @@
               %img{:src => relative("/headerFooter/gitHubLogo.png", page.outputPage), :alt => "GitHub"}
         %p.small #{user.role}
         - if page.mode.eql? 'long'
+          - if !user.email.empty?
+            %p
+              %strong Email:
+              #{user.email}
           - if !user.employedBy.empty?
             %p
               %strong Employed by:

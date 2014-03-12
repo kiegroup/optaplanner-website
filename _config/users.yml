@@ -8,6 +8,7 @@
 #  twitterUsername: without the @ (optional)
 #  facebookUsername: (optional)
 #  githubUsername: (optional)
+#  email: It's best to anti-spam this (optional)
 #  employedBy: (optional)
 #  ircNickname: (optional)
 #  contributionsDescription: only work related to this project (optional)
@@ -19,6 +20,7 @@
   googlePlusId: +GeoffreyDeSmet
   twitterUsername: geoffreydesmet
   githubUsername: ge0ffrey
+  email: gds.geoffrey.de.smet AT gmail.com
   employedBy: Red Hat
   ircNickname: ge0ffrey
   biography: Geoffrey founded OptaPlanner in 2006 and has been working for Red Hat since 2010.
