@@ -1,0 +1,64 @@
+= How much faster is Java 8?
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [production]
+
+Java SE 8 was https://blogs.oracle.com/java/entry/java_se_8_is_now[released] yesterday.
+Traditionally, every new major JRE version comes with a free performance boost.
+Do we get another free lunch? And how big is the gain this time? Let's benchmark it.
+
+== Benchmark methodology
+
+* Run the same code with 3 different JRE versions (SunJDK +1.6.0_26+, OpenJDK +1.7.0_51+ and OpenJDK +1.8.0+).
+
+* Each run takes about 55 minutes.
+
+* VM arguments: +-Xmx1536M -server+
+
+* Each run solves 13 planning problems with http://www.optaplanner.org[OptaPlanner].
+Each planning problem runs for 5 to  minutes. Up to 2 planning problems are solved in parallel.
+
+* Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
+*A single CPU is completely saturated.*
+It constantly creates many short lived objects, and the GC collects them afterwards.
+
+* The benchmarks measure the number of scores that can be calculated per millisecond. Higher is better.
+Calculating a score for a proposed planning solution is non-trivial:
+it involves many calculations, including checking for conflicts between every entity and every other entity.
+
+To reproduce this benchmark locally, http://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
+and run the main class
+https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
+
+== Benchmark results
+
+=== Executive summary
+
+image::jdk6vs7vs8Summary.png[]
+
+My observations:
+
+* On the biggest dataset (Machine Reassignment B10), which dwarfs any of the other datasets in size,
+Java 8 is +20%+ faster than Java 7, which was already +17%+ faster than Java 6.
+
+* In some cases, Java 8 is slower than Java 7.
+Specially for the course scheduling datasets, Java 8 is +6%+ slower than Java 7.
+Hopefully new releases of Java 8 will resolve this performance regression soon.
+
+* On average, Java 8 is only +1%+ faster than Java 7. This while Java 7 is already +16%+ faster than Java 6.
+
+* Despite that this is the first final release of OpenJDK 8, I did not find any regressions in Java 8.
+OptaPlanner's examples are 100% reproducible, so as expected, the different JRE's give the exact same results at every single iteration.
+
+=== Raw benchmark numbers
+
+|===
+|JDK |Cloud balancing 200c |Cloud balancing 800c |Machine reassignment B1 |Machine reassignment B10 |Course scheduling c7 |Course scheduling c8 |Exam scheduling s2 |Exam scheduling s3 |Nurse rostering m1 |Nurse rostering mh1 |Sport scheduling nl14
+
+|SunJDK 1.6.0_26 |46462 |44963 |94567 |28655 |5473 |6989 |6954 |3785 |3232 |2948 |1977
+|OpenJDK 1.7.0_51 |53683 |49798 |116553 |33733 |6182 |7848 |8243 |4606 |3645 |3377 |2445
+|OpenJDK 1.8.0 |54687 |51625 |135102 |40529 |5798 |7357 |8048 |4441 |3637 |3324 |2321
+|1.6 => 1.7 |15.54% |10.75% |23.25% |17.72% |12.95% |12.29% |18.54% |21.69% |12.78% |14.55% |23.67%
+|1.7 => 1.8 |1.87% |3.67% |15.91% |20.15% |-6.21% |-6.26% |-2.37% |-3.58% |-0.22% |-1.57% |-5.07%
+|===
