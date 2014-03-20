@@ -6,11 +6,14 @@
 
 Java SE 8 was https://blogs.oracle.com/java/entry/java_se_8_is_now[released] yesterday.
 Traditionally, every new major JRE version comes with a free performance boost.
-Do we get another free lunch? And how big is the gain this time? Let's benchmark it.
+Do we get another free lunch? And how big is the gain this time?
+
+Let's benchmark it.
 
 == Benchmark methodology
 
 * Run the same code with 3 different JRE versions (SunJDK +1.6.0_26+, OpenJDK +1.7.0_51+ and OpenJDK +1.8.0+).
+The code itself was written for Java 6 (both in syntax and JDK API's usage) and compiled for Java 6 with OpenJDK 1.7.
 
 * Each run takes about 55 minutes.
 
@@ -59,6 +62,11 @@ OptaPlanner's examples are 100% reproducible, so as expected, the different JRE'
 |SunJDK 1.6.0_26 |46462 |44963 |94567 |28655 |5473 |6989 |6954 |3785 |3232 |2948 |1977
 |OpenJDK 1.7.0_51 |53683 |49798 |116553 |33733 |6182 |7848 |8243 |4606 |3645 |3377 |2445
 |OpenJDK 1.8.0 |54687 |51625 |135102 |40529 |5798 |7357 |8048 |4441 |3637 |3324 |2321
-|1.6 => 1.7 |15.54% |10.75% |23.25% |17.72% |12.95% |12.29% |18.54% |21.69% |12.78% |14.55% |23.67%
-|1.7 => 1.8 |1.87% |3.67% |15.91% |20.15% |-6.21% |-6.26% |-2.37% |-3.58% |-0.22% |-1.57% |-5.07%
+|6 => 7 |15.54% |10.75% |23.25% |17.72% |12.95% |12.29% |18.54% |21.69% |12.78% |14.55% |23.67%
+|7 => 8 |1.87% |3.67% |15.91% |20.15% |-6.21% |-6.26% |-2.37% |-3.58% |-0.22% |-1.57% |-5.07%
 |===
+
+== Conclusion
+
+On the big datasets, Java 8 is clearly faster. And this without changing a line of code.
+On average, the result is less convincing (with the current release), but a free lunch is always welcome.
