@@ -75,6 +75,22 @@ You can now just reserve 2 memory spaces for the bounds of those integer values:
     }
 ----
 
+==== Exhaustive Search: Branch And Bound
+
+Branch And Bound is a smart version of Brute Force.
+It also explores nodes in an exponential search tree,
+but it investigates more promising nodes first and prunes away worthless nodes.
+Configure it like this:
+
+[source,java]
+----
+  <exhaustiveSearch>
+    <exhaustiveSearchType>BRANCH_AND_BOUND</exhaustiveSearchType>
+  </exhaustiveSearch>
+----
+
 ==== BenchmarkAggregator
 
 The BenchmarkAggregator in optaplanner-benchmark allows you to merge multiple benchmark reports into 1 report.
+
+Contributed by Matej Čimbora.
