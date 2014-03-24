@@ -17,7 +17,9 @@ The code itself was written for Java 6 (both in syntax and JDK API's usage) and 
 
 * Each run takes about 55 minutes.
 
-* VM arguments: +-Xmx1536M -server+
+* VM arguments: +-Xmx1536M -server+ +
+Software: +Linux 3.2.0-59-generic-pae+ +
+Hardware: +Intel® Xeon(R) CPU W3550 @ 3.07GHz+
 
 * Each run solves 13 planning problems with http://www.optaplanner.org[OptaPlanner].
 Each planning problem runs for 5 to  minutes. Up to 2 planning problems are solved in parallel.
