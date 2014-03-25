@@ -519,7 +519,7 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     <section>
         <h3>Brute force scalability</h3>
         <figure>
-            <img src="exact_methods/bruteForceScalabilityCloudBalance.png"/>
+            <img src="exhaustive_search/exhaustiveSearchScalabilityCloudBalance.png"/>
         </figure>
     </section>
     <section>
@@ -1026,16 +1026,28 @@ public class Process  {
         <img src="presentation_extra/bruteForceLogo.png">
     </section>
     <section>
-        <img src="exact_methods/bruteForceNQueens04.png">
+        <img src="exhaustive_search/bruteForceNQueens04_0.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/bruteForceNQueens04_1.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/bruteForceNQueens04_2.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/bruteForceNQueens04_3.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/bruteForceNQueens04_4.png">
     </section>
     <section>
         <h3>Brute Force scalability</h3>
         <figure>
-            <img src="exact_methods/bruteForceScalabilityNQueens.png">
+            <img src="exhaustive_search/exhaustiveSearchScalabilityNQueens.png">
             <p>
-                8 queens = 8.5 seconds<br/>
-                9 queens = 3.3 minutes (times 23)<br/>
-                10 queens = 1.3 hours (times 24)
+                8 queens = 15.7 seconds<br/>
+                9 queens = 2.5 minutes (times 10)<br/>
+                10 queens = 0.83 hours (times 20)
             </p>
         </figure>
     </section>
@@ -1169,15 +1181,39 @@ public class Process  {
             </tbody>
         </table>
         <figure>
-            <img src="exact_methods/bruteForceScalabilityNQueens.png" style="width: 200px;">
+            <img src="exhaustive_search/exhaustiveSearchScalabilityNQueens.png" style="width: 200px;">
             <p>Moore's law == a drop in the ocean</p>
         </figure>
     </section>
     <section>
-        <img src="exact_methods/backtrackingDepthFirstSearchNQueens04.png">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_0.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_1.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_2.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_3.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_4.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_5.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_6.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_7.png">
+    </section>
+    <section class="immediate">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_8.png">
     </section>
     <section>
-        <h3>Exact methods don't scale</h3>
+        <h3>Exhaustive Search doesn't scale</h3>
         <ul>
             <li>Branches explode exponentially</li>
             <li>Not enough CPU</li>
