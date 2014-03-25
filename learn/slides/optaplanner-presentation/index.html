@@ -492,8 +492,7 @@ end</code></pre>
     "...SolverConfig.xml");
 Solver solver = factory.buildSolver();
 
-solver.setPlanningProblem(cloudBalance);
-solver.solve();
+solver.solve(cloudBalance);
 cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
