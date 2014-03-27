@@ -120,7 +120,7 @@ image::depthFirstBranchAndBoundNQueens04_8.png[]
 That's pretty smart and it reduces the search space a lot.
 
 Because it's not practical to calculate the size of the pruned search space,
-let's look at how both algorithm scale. First on N queens:
+let's look at how both algorithms scale. First on N queens:
 
 image::exhaustiveSearchScalabilityNQueens.png[]
 
@@ -135,5 +135,5 @@ Despite that the pruned search space is a lot smaller than the base search space
 == Conclusion
 
 Yes, the search space of planning or optimization problems is unbelievably big.
-Exhaustive algorithms don't scale. Use the other algorithms in http://www.optaplanner.org[OptaPlanner],
+Exhaustive algorithms don't scale. Instead, use the other algorithms in http://www.optaplanner.org[OptaPlanner],
 which do scale: heuristics and metaheuristics.
