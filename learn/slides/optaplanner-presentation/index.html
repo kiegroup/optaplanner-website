@@ -488,7 +488,7 @@ end</code></pre>
 
     <section>
         <h3>Solving</h3>
-        <pre><code class="java">XmlSolverFactory factory = new XmlSolverFactory(
+        <pre><code class="java">SolverFactory factory = SolverFactory.createFromXmlResource(
     "...SolverConfig.xml");
 Solver solver = factory.buildSolver();
 
