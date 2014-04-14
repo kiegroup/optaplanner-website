@@ -9,23 +9,39 @@ The blessed OptaPlanner repositories, summarized below, are hosted on GitHub.
 
 https://github.com/droolsjbpm/optaplanner[optaplanner, role=lead]::
 _The source code for OptaPlanner itself, examples and documentation._
-+
-. Get the source code locally with http://git-scm.com/[Git]:
 
+. Get the source code locally with http://git-scm.com/[Git]:
++
+----
  $ git clone git@github.com:droolsjbpm/optaplanner.git
  ...
+----
++
+If you don't have a GitHub account or your local Git installation isn't configured with it,
+use this command instead, to avoid an authentication issue:
++
+----
+ $ git clone https://github.com/droolsjbpm/optaplanner.git optaplanner
+ ...
+----
 
 . Build it with http://maven.apache.org/[Maven]:
-
++
+----
  $ cd optaplanner
  $ mvn clean install -DskipTests
  ...
+----
++
+The first time, Maven might take a lot time, because it needs to download jars.
 
 . Run the examples:
-
++
+----
  $ cd optaplanner-examples
  $ mvn exec:exec
  ...
+----
 
 . Edit the sources in your favorite IDE (such as http://www.jetbrains.com/idea/[IntelliJ IDEA], http://www.eclipse.org/[Eclipse] or https://netbeans.org/[NetBeans]).
 +
@@ -33,7 +49,7 @@ _The source code for OptaPlanner itself, examples and documentation._
 <a href="http://www.jetbrains.com/idea/" style="position: relative;display:block; width:88px; height:31px; border:0; margin:0;padding:0;text-decoration:none;text-indent:0;"><span style="margin: 0;padding: 0;position: absolute;top: 0;left: 4px;font-size: 10px; line-height: 12px;cursor:pointer; background-image:none;border:0;color: #acc4f9; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Developed with</span><img src="http://www.jetbrains.com/idea/opensource/img/all/banners/idea88x31_blue.gif" alt="IntelliJ IDEA" border="0"/></a>
 ++++
 
-. It helps to use a Java profiler (such as http://www.ej-technologies.com/products/jprofiler/overview.html[JProfiler] or http://visualvm.java.net/[VisualVM]).
+. Optional: Use a Java profiler (such as http://www.ej-technologies.com/products/jprofiler/overview.html[JProfiler] or http://visualvm.java.net/[VisualVM]).
 +
 ++++
 <a href="http://www.ej-technologies.com/products/jprofiler/overview.html"><img src="http://www.ej-technologies.com/images/banners/jprofiler_small.png" alt="JProfiler"/></a>
@@ -41,22 +57,28 @@ _The source code for OptaPlanner itself, examples and documentation._
 
 https://github.com/droolsjbpm/optaplanner-website[optaplanner-website, role=lead]::
 _The source code for this website and presentations._
-+
-. Get the source code locally with http://git-scm.com/[Git]:
 
+. Get the source code locally with http://git-scm.com/[Git]:
++
+----
  $ git clone git@github.com:droolsjbpm/optaplanner-website.git
  ...
+----
 
 . Build it with http://awestruct.org/[Awestruct]:
-
++
+----
  $ cd optaplanner-website
  $ ./build.sh clean build
  ...
+----
 
 . Show it in a browser:
-
++
+----
  $ firefox _site/index.html
  ...
+----
 
 . Edit the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] sources.
 
