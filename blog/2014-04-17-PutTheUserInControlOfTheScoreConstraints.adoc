@@ -1,0 +1,137 @@
+= Put the user in control of the score constraints
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [howto, feature]
+
+OptaPlanner optimizes towards the plan with the best score.
+But who defines the score function?
+Normally the developers do, based on the specs of the users.
+Can we empower users to define the score function themselves?
+Let's take a look how.
+
+If we're using the Drools rule engine for the score calculation in http://www.optaplanner.org[OptaPlanner],
+then we can use any of the supported features in the http://www.drools.org[Drools] ecosystem to manipulate those score rules.
+That includes _Decision Tables_, _Scorecards_ and the _Drools Workbench_ web application.
+
+I'll empower the users on the Cloud Balancing example, for which we need to assign processes to computers,
+without going above the capacity of any computer.
+For more information about this example, see https://www.youtube.com/watch?v=xhCtuM-Hiic[this video].
+
+== Static DRL rules
+
+As a developer, we can write the score rules statically in the DRL file:
+
+[source,drl]
+----
+rule "Risk for out of memory"
+    when
+        CloudComputerUsage(freeMemory < 2)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -100);
+end
+rule "Unused memory but no CPU"
+    when
+        CloudComputerUsage(freeMemory >= 8, freeCpuPower < 4)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, -10);
+end
+----
+
+However, DRL files are too difficult for a user to edit directly.
+
+== Data driven DRL rules
+
+One way to empower the user, is to create a data object for him/her to fill in:
+
+[source,java]
+----
+public class FreePenalty {
+
+    private int minFreeMemory; // Defaults to 0
+    private int maxFreeMemory; // Defaults to Integer.MAX_VALUE
+    private int minFreeCpuPower; // Defaults to 0
+    private int maxFreeCpuPower; // Defaults to Integer.MAX_VALUE
+    private int minFreeNetworkBandwidth; // Defaults to 0
+    private int maxFreeNetworkBandwidth; // Defaults to Integer.MAX_VALUE
+
+    private int softScoreImpact;
+
+    ...
+}
+----
+
+We write 1 rule to apply those +FreePenalty+ instances as score constraints:
+
+[source,drl]
+----
+rule "requiredCpuPowerTotal"
+    when
+        // Defined by the user
+        FreePenalty(
+                $minFreeMemory : minFreeMemory, $maxFreeMemory : maxFreeMemory,
+                $minFreeCpuPower : minFreeCpuPower, $maxFreeCpuPower : maxFreeCpuPower,
+                $minFreeNetworkBandwidth : minFreeNetworkBandwidth, $maxFreeNetworkBandwidth : maxFreeNetworkBandwidth)
+        // Calculated insertlogical from the process assignments
+        CloudComputerUsage(
+                freeMemory >= $minFreeMemory, freeMemory < $maxFreeMemory,
+                freeCpuPower >= $minFreeCpuPower, freeCpuPower < $maxFreeCpuPower,
+                freeMemory >= $minFreeNetworkBandwidth, freeMemory < $maxFreeNetworkBandwidth,
+                $softScoreImpact : softScoreImpact)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, $softScoreImpact);
+end
+----
+
+And of course, we build a web interface so the user can create/update/delete +FreePenalty+ records.
+So the user can use to gui to create these records:
+
+[source,txt]
+----
+User creates new FreePenalty(maxFreeMemory = 2, softScoreImpact = -100)
+User creates new FreePenalty(minFreeMemory = 8, maxFreeCpuPower = 4, softScoreImpact = -10)
+----
+
+These 2 records result in the same score function as the statically defines score function we saw earlier,
+but now the user can change them.
+
+== Decision tables
+
+Another way to expose the constraints to the user, is through a Drools _decision table_.
+The users edits an `xls` file with Excel or LibreOffice to change the score function:
+
+image::decisionTable.png[]
+
+Before sending this file to the users, we hide row 2 to 11, so the users aren't exposed to the technical side.
+
+See this video for a detailed demonstration:
+
++++
+<iframe width="853" height="480" src="http://www.youtube.com/embed/K084NKRZqkg" frameborder="0" allowfullscreen></iframe>
++++
+
+A _decision table_ is more powerful then a _data driven DRL rule_: the user decides which conditions to apply.
+The other conditions are not even included (which is faster than checking them against default values).
+
+== Rule templates
+
+If _data driven DRL rules_ aren't powerful enough for you,
+but a _decision table_'s `xls` file sticks out like sore thumb in your UI,
+take a look at using Drools _rule templates_ with a custom UI.
+
+== Drools Workbench
+
+Workbench (formerly known as Guvnor) is a full blown web application to manage rules and workflows.
+Using a web interface, business users can create and edit rules, including score rules used by OptaPlanner.
+
+This is a very interesting setup, which I 'll demonstrate in a future blog post.
+Meanwhile, for more information, see https://www.jboss.org/drools/documentation[the Drools documentation].
+
+== Conclusion
+
+In http://www.optaplanner.org[OptaPlanner], there are several ways
+to enable your users to define the score function of their planning problem themselves.
+
+This means that your users can fine tune the score function at runtime,
+by looking at the result of the `Solver`, changing the score function and solving it again.
+That enables them to evolve the business planning much faster.

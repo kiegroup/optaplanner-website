@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [course scheduling, insight]
+:awestruct-tags: [course scheduling, insight, feature]
 
 Not every organization is comfortable with letting a computer program,
 such as http://www.optaplanner.org[OptaPlanner] (java, open source planning engine), optimize their schedules.
