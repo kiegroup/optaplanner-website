@@ -84,7 +84,7 @@ end
 ----
 
 And of course, we build a web interface so the user can create/update/delete +FreePenalty+ records.
-So the user can use to gui to create these records:
+So the user can use that UI to create these records:
 
 [source,txt]
 ----
@@ -92,17 +92,17 @@ User creates new FreePenalty(maxFreeMemory = 2, softScoreImpact = -100)
 User creates new FreePenalty(minFreeMemory = 8, maxFreeCpuPower = 4, softScoreImpact = -10)
 ----
 
-These 2 records result in the same score function as the statically defines score function we saw earlier,
+These 2 records result in the same score function as the statically defines score function which we saw earlier,
 but now the user can change them.
 
 == Decision tables
 
 Another way to expose the constraints to the user, is through a Drools _decision table_.
-The users edits an `xls` file with Excel or LibreOffice to change the score function:
+The user edits an `xls` file with Excel or LibreOffice to change the score function:
 
 image::decisionTable.png[]
 
-Before sending this file to the users, we hide row 2 to 11, so the users aren't exposed to the technical side.
+Before sending this file to the users, we hide row 2 to 11, so the user isn't exposed to the technical details.
 
 See this video for a detailed demonstration:
 
@@ -110,19 +110,19 @@ See this video for a detailed demonstration:
 <iframe width="853" height="480" src="http://www.youtube.com/embed/K084NKRZqkg" frameborder="0" allowfullscreen></iframe>
 +++
 
-A _decision table_ is more powerful then a _data driven DRL rule_: the user decides which conditions to apply.
+Note that a _decision table_ is more powerful then a _data driven DRL rule_: the user decides which conditions to apply.
 The other conditions are not even included (which is faster than checking them against default values).
 
 == Rule templates
 
 If _data driven DRL rules_ aren't powerful enough for you,
 but a _decision table_'s `xls` file sticks out like sore thumb in your UI,
-take a look at using Drools _rule templates_ with a custom UI.
+use Drools _rule templates_ with a custom UI.
 
 == Drools Workbench
 
 Workbench (formerly known as Guvnor) is a full blown web application to manage rules and workflows.
-Using a web interface, business users can create and edit rules, including score rules used by OptaPlanner.
+Using a web interface, business users can create and edit rules, including the score rules used by OptaPlanner.
 
 This is a very interesting setup, which I 'll demonstrate in a future blog post.
 Meanwhile, for more information, see https://www.jboss.org/drools/documentation[the Drools documentation].
@@ -134,4 +134,4 @@ to enable your users to define the score function of their planning problem them
 
 This means that your users can fine tune the score function at runtime,
 by looking at the result of the `Solver`, changing the score function and solving it again.
-That enables them to evolve the business planning much faster.
+Those faster iterations, enables them to evolve the business planning quicker.
