@@ -95,6 +95,10 @@ User creates new FreePenalty(minFreeMemory = 8, maxFreeCpuPower = 4, softScoreIm
 These 2 records result in the same score function as the statically defines score function which we saw earlier,
 but now the user can change them.
 
+An added advantage of this approach is that the user's changes are part of the dataset.
+Multiple datasets, for the exact same Solver configuration, use separate +FreePenalty+ instances.
+This is especially useful in a multi-tenancy application.
+
 == Decision tables
 
 Another way to expose the constraints to the user, is through a Drools _decision table_.
