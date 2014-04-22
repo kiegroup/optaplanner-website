@@ -15,7 +15,7 @@ Please follow these recommendations when posting a question:
 * Get to the point. Keep it as short as possible.
 * Include _relevant_ technical details (stacktrace, short code snippet, ...).
 * Be polite, friendly and clear. Reread your question before posting it.
-* Be patient. This isn't link:paidSupport.html[paid support].
+* Be patient. This isn't link:product.html[paid support].
 
 == Development discussions
 

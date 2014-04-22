@@ -1,0 +1,10 @@
+= Product
+:awestruct-layout: base
+:showtitle:
+
+Red Hat offers support subscriptions for community _projects_ through Red Hat _products_.
+
+The community project OptaPlanner is now available as a _technology preview_ with the product *Red Hat JBoss BRMS 6.0*. +
+Red Hat will soon be offering _full support_ for OptaPlanner with a JBoss BRMS 6.1 subscription.
+
+http://www.jboss.org/products/brms[Learn more about JBoss BRMS.]
