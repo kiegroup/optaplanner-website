@@ -94,3 +94,9 @@ Configure it like this:
 The BenchmarkAggregator in optaplanner-benchmark allows you to merge multiple benchmark reports into 1 report.
 
 Contributed by Matej Čimbora.
+
+==== Other improvements
+
+* The Manners2009 example has been cleaned up and renamed to the Dinner Party example.
+* *Decision Table* example: the Dinner Party example now demonstrates how to use a Drools Decision Table (an XLS file) to allow users to define score rules.
+* New *BestScoreFeasibleTermination*: terminates when the best score is feasible. Contributed by Matej Čimbora.
