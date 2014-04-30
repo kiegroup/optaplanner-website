@@ -3,7 +3,9 @@
 :page-interpolate: true
 :showtitle:
 
-== Distribution zip
+== Final releases
+
+=== Distribution zip
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
@@ -17,7 +19,7 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 
 * Red Hat subscription releases: Check http://www.jboss.com/downloads/[the product download site].
 
-== Maven, Gradle, Ivy or Buildr
+=== Maven, Gradle, Ivy or Buildr
 
 The OptaPlanner jars are also available in http://search.maven.org/#search|ga|1|org.optaplanner[the central maven repository]
 (and also in https://repository.jboss.org/nexus/index.html#nexus-search;gav\~org.optaplanner\~\~\~\~[the JBoss maven repository]).
@@ -52,8 +54,8 @@ A CR should be almost identical to the Final release.
 
 * image:download.png[] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}]
-** Release date: +#{site.pom.latest.releaseDate}+
 ** License: link:../code/license.html[ASL 2.0]
+** Release date: +#{site.pom.latest.releaseDate}+
 
 Or with Maven:
 
