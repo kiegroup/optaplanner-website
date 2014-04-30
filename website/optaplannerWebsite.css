@@ -37,11 +37,13 @@ footer {
 
 /* WORKAROUND for Twitter bootstrap's navbar-fixed-top's hides content head */
 .body-without-header-footer {
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 /* Reduce space taken by alerts */
 .alert {
+    margin-top: 0;
+    margin-bottom: 20px;
     padding: 10px;
 }
 .alert-dismissable .close {

@@ -3,13 +3,8 @@ title: Planning engine (Java™, Open Source)
 layout: base
 ---
 
-.alert.alert-info.alert-dismissable
-  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
-  #{site.pom.latest.releaseDate}:
-  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.version} has been released.
-
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
-  .carousel.slide#whatIsCarousel(data-ride="carousel" style="background-color: white;")
+  .carousel.slide#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     -#.carousel-inner(style="align: center;")
     .carousel-inner
       .item.active
@@ -46,23 +41,29 @@ layout: base
     %li(data-target="#whatIsCarousel" data-slide-to="6")
       %a(href="#" data-toggle="tab") Scalability
 
-:markdown
-  ## What is OptaPlanner?
+%div(style="margin-bottom: 20px")
+  :markdown
+    ## What is OptaPlanner?
 
-  **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
-  services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
-  planning to do more business with less resources.
+    **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
+    services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
+    planning to do more business with less resources.
 
-  OptaPlanner is a lightweight, embeddable planning engine written in Java™. It helps normal Java™ programmers solve
-  constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
-  with very efficient score calculation.
+    OptaPlanner is a lightweight, embeddable planning engine written in Java™. It helps normal Java™ programmers solve
+    constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
+    with very efficient score calculation.
 
-  *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
-  Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
+    *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
+    Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
+
+.alert.alert-info.alert-dismissable
+  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
+  #{site.pom.latest.releaseDate}:
+  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.version} has been released.
 
 .row
   .col-md-6
-    .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
       .text-center<
         %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
           %img(src = "download/download.png")
@@ -82,7 +83,7 @@ layout: base
         to run.
 
   .col-md-6
-    .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
       .text-center<
         %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
           %img(src = "learn/documentation.png")
