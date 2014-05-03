@@ -95,6 +95,12 @@ The BenchmarkAggregator in optaplanner-benchmark allows you to merge multiple be
 
 Contributed by Matej Čimbora.
 
+==== Generic move improvements
+
+New +PillarChangeMove+:
+A pillar is a set of planning entities which have the same planning value(s) for their planning variable(s).
+The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable for all entities.
+
 ==== Other improvements
 
 * The Manners2009 example has been cleaned up and renamed to the Dinner Party example.
