@@ -97,9 +97,10 @@ Contributed by Matej Čimbora.
 
 ==== Generic move improvements
 
-New +PillarChangeMove+:
+* New +PillarChangeMove+:
 A pillar is a set of planning entities which have the same planning value(s) for their planning variable(s).
 The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable for all entities.
+* The pillar moves can now select subPillars too.
 
 ==== Other improvements
 
