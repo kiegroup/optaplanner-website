@@ -24,6 +24,8 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Ge
 
 * Speedyroute.com changed from OpenOpt to OptaPlanner to provide optimised delivery routes - https://twitter.com/magic_hat_ltd/status/460154384463441923[Magic Hat Solutions]
 
+* Using OptaPlanner for the first time, I was able to build a proof-of-concept for a complex scheduling and packing problem in less than 2 days. - Jannes Verstichel
+
 == Share your story
 
 If you would like share a case study, article or 1-line testimonial, link:../community/socialMedia.html[let us know]:
