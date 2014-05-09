@@ -3,7 +3,7 @@ title: Planning engine (Java™, Open Source)
 layout: base
 ---
 
-.well.pagination-centered(style="padding: 10px 10px 0px; margin-bottom: 20px;")
+.jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
   .carousel.slide#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     -#.carousel-inner(style="align: center;")
     .carousel-inner
@@ -41,13 +41,14 @@ layout: base
     %li(data-target="#whatIsCarousel" data-slide-to="6")
       %a(href="#" data-toggle="tab") Scalability
 
+%div(style="margin-bottom: 20px")
   :markdown
     ## What is OptaPlanner?
 
     **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
     services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
     planning to do more business with less resources.
-      
+
     OptaPlanner is a lightweight, embeddable planning engine written in Java™. It helps normal Java™ programmers solve
     constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
     with very efficient score calculation.
@@ -60,39 +61,40 @@ layout: base
   #{site.pom.latest.releaseDate}:
   %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.version} has been released.
 
-.row-fluid
-  .well.span6(style="padding: 10px; margin-bottom: 10px;")
-    .text-center<
-      %a.btn.btn-large.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
-        %img(src = "download/download.png")
-        Download OptaPlanner #{site.pom.latestFinal.version}
-    %h3 Try the examples now
-    %ol
-      %li Download the zip and unzip it
-      %li
-        On Linux/Mac, run
-        %code examples/runExamples.sh
-        %br
-        On Windows, run
-        %code examples/runExamples.bat
-    .small
-      Requires
-      %a(href="http://www.java.com")< Java™
-      to run.
+.row
+  .col-md-6
+    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
+      .text-center<
+        %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
+          %img(src = "download/download.png")
+          Download OptaPlanner #{site.pom.latestFinal.version}
+      %h3 Try the examples now
+      %ol
+        %li Download the zip and unzip it
+        %li
+          On Linux/Mac, run
+          %code examples/runExamples.sh
+          %br
+          On Windows, run
+          %code examples/runExamples.bat
+      .small
+        Requires
+        %a(href="http://www.java.com")< Java™
+        to run.
 
-
-  .well.span6(style="padding: 10px; margin-bottom: 10px;")
-    .text-center<
-      %a.btn.btn-large.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
-        %img(src = "learn/documentation.png")
-        Read documentation #{site.pom.latestFinal.version}
-    %h3 Get started
-    %ol
-      %li Open the documentation
-      %li
-        Read the
-        %strong Quick Start
-        chapter
+  .col-md-6
+    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
+      .text-center<
+        %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+          %img(src = "learn/documentation.png")
+          Read documentation #{site.pom.latestFinal.version}
+      %h3 Get started
+      %ol
+        %li Open the documentation
+        %li
+          Read the
+          %strong Quick Start
+          chapter
 
 .panel.panel-default
   .panel-heading Latest blog posts
