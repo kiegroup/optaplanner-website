@@ -1,0 +1,119 @@
+= Cheating on the N Queens benchmark
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [insight, benchmark]
+
+Many Solver distributions include an N Queens example,
+in which +n+ queens need to be placed on a +n*n+ sized chessboard, with no attack opportunities.
+So when you're looking for the fastest Solver,
+it's tempting to use the N Queens example as a benchmark to compare those solvers.
+That's a tragic mistake, because the N Queens problem is solvable in polynomial time,
+which means there's a way to cheat.
+
+That being said, *http://www.optaplanner.org[OptaPlanner] solves the +1 000 000+ queens problem in less than 3 seconds* :)
+Here's a log to prove it (with time spent in milliseconds):
+
+----
+INFO  Opened: data/nqueens/unsolved/10000queens.xml
+INFO  Solving ended: time spent (23), best score (0), ...
+
+INFO  Opened: data/nqueens/unsolved/100000queens.xml
+INFO  Solving ended: time spent (159), best score (0), ...
+
+INFO  Opened: data/nqueens/unsolved/1000000queens.xml
+INFO  Solving ended: time spent (2981), best score (0), ...
+----
+
+== How to cheat on the N Queens problem
+
+The N Queens problem is not NP-complete, nor NP-hard.
+That is _math speak_ for stating that _there's a perfect algorithm to solve this problem_:
+the http://en.wikipedia.org/wiki/Eight_queens_puzzle#Explicit_solutions[Explicits Solutions algorithm].
+Implemented with a CustomSolverPhaseCommand in OptaPlanner it looks like this:
+
+[source,java]
+----
+public class CheatingNQueensPhaseCommand implements CustomSolverPhaseCommand {
+
+    public void changeWorkingSolution(ScoreDirector scoreDirector) {
+        NQueens nQueens = (NQueens) scoreDirector.getWorkingSolution();
+        int n = nQueens.getN();
+        List<Queen> queenList = nQueens.getQueenList();
+        List<Row> rowList = nQueens.getRowList();
+
+        if (n % 2 == 1) {
+            Queen a = queenList.get(n - 1);
+            scoreDirector.beforeVariableChanged(a, "row");
+            a.setRow(rowList.get(n - 1));
+            scoreDirector.afterVariableChanged(a, "row");
+            n--;
+        }
+        int halfN = n / 2;
+        if (n % 6 != 2) {
+            for (int i = 0; i < halfN; i++) {
+                Queen a = queenList.get(i);
+                scoreDirector.beforeVariableChanged(a, "row");
+                a.setRow(rowList.get((2 * i) + 1));
+                scoreDirector.afterVariableChanged(a, "row");
+
+                Queen b = queenList.get(halfN + i);
+                scoreDirector.beforeVariableChanged(b, "row");
+                b.setRow(rowList.get(2 * i));
+                scoreDirector.afterVariableChanged(b, "row");
+            }
+        } else {
+            for (int i = 0; i < halfN; i++) {
+                Queen a = queenList.get(i);
+                scoreDirector.beforeVariableChanged(a, "row");
+                a.setRow(rowList.get((halfN + (2 * i) - 1) % n));
+                scoreDirector.afterVariableChanged(a, "row");
+
+                Queen b = queenList.get(n - i - 1);
+                scoreDirector.beforeVariableChanged(b, "row");
+                b.setRow(rowList.get(n - 1 - ((halfN + (2 * i) - 1) % n)));
+                scoreDirector.afterVariableChanged(b, "row");
+            }
+        }
+
+    }
+
+}
+----
+
+Now, one could argue that this implementation doesn't use any of OptaPlanner's algorithms
+(such as the Construction Heuristics or Local Search).
+But it's straightforward to mimic this approach in a Construction Heuristic (or even a Local Search).
+So, in a benchmark, any Solver which simulates that approach the most, is guaranteed to win when scaling out.
+
+== Why doesn't that work for other planning problems?
+
+This algorithm is perfect for N Queens, so why don't we use a perfect algorithm on other planning problems?
+Well, simply because there are _none_!
+
+Most planning problems, such as vehicle routing, employee rostering, cloud optimization, bin packing, ...
+are proven to be NP-complete (or NP-hard).
+This means that these problems are in essence the same: a perfect algorithm for one, would work for all of them.
+But no human has ever found such an algorithm (and most experts believe no such algorithm exists).
+
+Note: There are a few notable exceptions of planning problems that are not NP-complete, nor NP-hard.
+For example, finding the shortest distance between 2 points can be solved in polynomial time with A*-Search.
+But their scope is narrow: finding the shortest distance to visit n points (TSP), on the other hand,
+is not solvable in polynomial time.
+
+Because N Queens differs intrinsically from real planning problems, is a terrible use case to benchmark.
+
+== Conclusion
+
+*Benchmarks on the N Queens problem are meaningless.*
+Instead, benchmark implementations of a realistic competition.
+A realistic competition is *an official, independent competition*:
+
+. that clearly defines a real-word use case
+. with real-world constraints
+. with multiple, real-world datasets
+. that expects reproducible results within a specific time limit on specific hardware
+. that has had serious participation from the academic and/or enterprise Operations Research community
+
+http://www.optaplanner.org[OptaPlanner]'s examples implement
+http://docs.jboss.org/drools/release/latest/optaplanner-docs/html_single/index.html#examplesOverview[several cases of realistic competitions].
