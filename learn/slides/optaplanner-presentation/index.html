@@ -428,7 +428,7 @@ public class Process {
             </li>
             <li>Integration opportunities
                 <ul>
-                    <li>Guvnor</li>
+                    <li>Drools Workbench</li>
                     <li>Decision tables</li>
                 </ul>
             </li>
@@ -472,6 +472,10 @@ end</code></pre>
     </section>
 
     <section>
+        <img src="planner_configuration/inputOutputOverview.png">
+    </section>
+
+    <section>
         <h3>Solver configuration by XML</h3>
         <pre><code class="xml">&lt;solver&gt;
   &lt;solutionClass&gt;...CloudBalance&lt;/solutionClass&gt;
@@ -497,7 +501,7 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
     <section>
-        <img src="planner_configuration/inputOutputOverview.png">
+        <img src="integration/integrationOverview.png">
     </section>
 
     <section>
@@ -512,7 +516,9 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         <pre><code class="xml">&lt;solver&gt;
   ...
 
-  &lt;bruteForce /&gt;
+  &lt;exhaustiveSearch&gt;
+    &lt;exhaustiveSearchType&gt;BRUTE_FORCE&lt;/exhaustiveSearchType&gt;
+  &lt;/exhaustiveSearch&gt;
 &lt;/solver&gt;</code></pre>
     </section>
     <section>
@@ -536,6 +542,10 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
     <section class="immediate">
         <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_2.png">
+    </section>
+
+    <section>
+        <img src="optimization_algorithms/searchSpaceSizeCalculation.png">
     </section>
 
     <section>
