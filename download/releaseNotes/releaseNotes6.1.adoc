@@ -77,7 +77,19 @@ You can now just reserve 2 memory spaces for the bounds of those integer values:
     }
 ----
 
-==== Exhaustive Search: Branch And Bound
+==== New Construction Heuristic: Cheapest Insertion
+
+A new Construction Heuristic that takes considerably longer than First Fit, First Fit Decreasing,
+but often has better results.
+
+[source,java]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>CHEAPEST_INSERTION</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+==== New Exhaustive Search: Branch And Bound
 
 Branch And Bound is a smart version of Brute Force.
 It also explores nodes in an exponential search tree,
