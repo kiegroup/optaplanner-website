@@ -16,6 +16,7 @@ it is a strong and flexible foundation for knowledge management.
 === Demo videos
 
 Each of these videos demonstrates an example and a feature:
+
 * http://www.youtube.com/watch?v=u_bl6E7aiNY&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Exam timetabling]: User defined score parametrization
 * http://www.youtube.com/watch?v=L98J6HhSCXQ&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Dinner party scheduling]: Decision tables
 * http://www.youtube.com/watch?v=K084NKRZqkg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cloud optimization]: Decision tables
