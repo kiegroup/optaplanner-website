@@ -16,6 +16,10 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Ge
 
 * http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA (Austria)
 
+== 3th party open source projects
+
+* Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
+
 == Testimonials
 
 * OptaPlanner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
@@ -25,6 +29,8 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Ge
 * Speedyroute.com changed from OpenOpt to OptaPlanner to provide optimised delivery routes - https://twitter.com/magic_hat_ltd/status/460154384463441923[Magic Hat Solutions]
 
 * Using OptaPlanner for the first time, I was able to build a proof-of-concept for a complex scheduling and packing problem in less than 2 days. - Jannes Verstichel
+
+* OptaPlanner (as well as Drools) rocks! - https://twitter.com/juanignaciosl/status/471581556218544128[Juan Ignacio Sánchez]
 
 == Share your story
 
