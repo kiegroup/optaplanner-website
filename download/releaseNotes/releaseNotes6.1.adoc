@@ -34,7 +34,7 @@ OptaPlanner is:
 
 * *Stable*: Heavily tested with unit, integration and stress tests.
 * *Reliable*: Used across the world. See link:../../learn/testimonialsAndCaseStudies.html[case studies].
-* *Scalable*: One of the examples handles 50 000 variables with 5 000 variables each, multiple constraint types and billions of possible constraint matches.
+* *Scalable*: One of the examples handles 50 000 entities with 5 000 variables each, multiple constraint types and billions of possible constraint matches.
 * *Documented*: See link:../../learn/documentation.html[the detailed reference manual] or one of the many examples.
 * *Open source*: Released under link:../../code/license.html[the Apache Software License].
 
