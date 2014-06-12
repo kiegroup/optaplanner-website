@@ -3,6 +3,7 @@
 :page-interpolate: true
 :showtitle:
 
+[[FinalReleases]]
 == Final releases
 
 === Distribution zip
@@ -39,6 +40,7 @@ This is similar for Gradle, Ivy and Buildr.
 
 '''
 
+[[NonFinalReleases]]
 == Non-Final releases
 
 *Non-Final releases are the best way to test drive new features and API's
@@ -46,6 +48,7 @@ to provide feedback before we lock down the API with a Final release.*
 We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
 or link:../code/issueTracker.html[issue tracker].
 
+[[AlphasBetasCRs]]
 === Alpha's, Beta's and CR's
 
 An Alpha can be unstable.
@@ -68,6 +71,7 @@ Or with Maven:
     </dependency>
 ----
 
+[[NightlySnapshots]]
 === Nightly snapshots
 
 Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].

@@ -3,6 +3,7 @@
 :page-interpolate: true
 :showtitle:
 
+[[FinalReleases]]
 == Final releases
 
 * Documentation for OptaPlanner #{site.pom.latestFinal.version}
@@ -26,8 +27,10 @@
 
 '''
 
+[[NonFinalReleases]]
 == Non-Final releases
 
+[[AlphasBetasCRs]]
 === Alpha's, Beta's and CR's
 
 * Documentation for OptaPlanner #{site.pom.latest.version}
@@ -45,6 +48,7 @@
 #{site.pom.latest.droolsExpert_documentationHtml}[HTML] -
 #{site.pom.latest.droolsExpert_documentationPdf}[PDF]
 
+[[NightlySnapshots]]
 === Nightly snapshots
 
 Nightly snapshots are build by link:../code/continuousIntegration.html[our build server].

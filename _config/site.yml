@@ -15,6 +15,7 @@ asciidoctor:
   :safe: safe
   :attributes:
     imagesdir: ''
+#    sectanchors: ''
 
 profiles:
   development:

@@ -11,7 +11,7 @@ to solve constraint satisfaction problems efficiently.
 Together with the Drools rule engine and the jBPM workflow engine,
 it is a strong and flexible foundation for knowledge management.
 
-*link:../../download/download.html[Download OptaPlanner now]*
+*link:../../download/download.html#FinalReleases[Download it now]* or link:../../learn/documentation.html#FinalReleases[read the docs]
 
 === Demo videos
 
@@ -35,6 +35,7 @@ OptaPlanner is:
 * *Documented*: See link:../../learn/documentation.html[the detailed reference manual] or one of the many examples.
 * *Open source*: Released under link:../../code/license.html[the Apache Software License].
 
+[[NewAndNoteWorthy]]
 === New and noteworthy
 
 ==== Drools Planner renamed to OptaPlanner
