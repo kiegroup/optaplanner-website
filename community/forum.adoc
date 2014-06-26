@@ -1,4 +1,4 @@
-= Forum (free support)
+= Forum
 :awestruct-layout: base
 :showtitle:
 
@@ -6,11 +6,11 @@
 
 If you have a question about OptaPlanner, just ask our friendly community:
 
-* Ask on http://www.jboss.org/drools/lists[the Drools user mailing list] (recommended).
+* *http://stackoverflow.com/questions/tagged/optaplanner[Ask a usage question on StackOverflow.]*
 
-* Or ask on http://stackoverflow.com/questions/tagged/optaplanner[StackOverflow].
+* To start a discussion, use https://groups.google.com/forum/#!forum/optaplanner-dev[the OptaPlanner developer forum].
 
-Please follow these recommendations when posting a question:
+Please follow these recommendations when posting a question or a discussion:
 
 * Get to the point. Keep it as short as possible.
 * Include _relevant_ technical details (stacktrace, short code snippet, ...).
@@ -19,9 +19,12 @@ Please follow these recommendations when posting a question:
 
 == Development discussions
 
-If you've link:../code/sourceCode.html[build OptaPlanner from source] and you would like to improve it,
-then come talk with us:
+If you've link:../code/sourceCode.html[build OptaPlanner from source] and want to improve something, come talk with us:
 
-* Join us on http://www.jboss.org/drools/lists[the Drools developer mailing list].
+* Join https://groups.google.com/forum/#!forum/optaplanner-dev[the OptaPlanner developer google group].
+
+** Mail directly to the group via mailto:optaplanner-dev@googlegroups.com[optaplanner-dev@googlegroups.com].
 
 * And link:chat.html[chat with us] (recommended).
+
+** Or ping us on link:socialMedia.html[any social media].
