@@ -30,7 +30,7 @@ latest:
     droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.1.0.CR1/drools-expert-docs/pdf/drools-expert-docs.pdf
 
 nightly:
-    version: 6.1.0-SNAPSHOT
-    distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.1.0-SNAPSHOT.zip
+    version: 6.2.0-SNAPSHOT
+    distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.2.0-SNAPSHOT.zip
 
     documentationHtmlSingle: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html_single/index.html
