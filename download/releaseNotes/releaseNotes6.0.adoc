@@ -11,7 +11,8 @@ to solve constraint satisfaction problems efficiently.
 Together with the Drools rule engine and the jBPM workflow engine,
 it is a strong and flexible foundation for knowledge management.
 
-*link:../../download/download.html#FinalReleases[Download it now]* or link:../../learn/documentation.html#FinalReleases[read the docs]
+*link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
+or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
 === Demo videos
 
