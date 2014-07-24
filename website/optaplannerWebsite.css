@@ -178,4 +178,21 @@ footer {
     *border-left-color: #ffffff;
 }
 
+/******************************************************************************
+* Header Property
+******************************************************************************/
+
+#header {
+    height: 55px;
+    width: 100%;
+    z-index: 99;
+}
+#header .container {
+    max-width: 100%;
+    padding-left: 0;
+}
+#header .dropdown.menu-dropdown {
+    margin: 0;
+}
+
 

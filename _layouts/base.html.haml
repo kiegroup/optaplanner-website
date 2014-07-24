@@ -16,6 +16,7 @@
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
     -# %link(rel="stylesheet"){:href => site.jbossorg_bootstrap_css}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
+    %link(rel="stylesheet"){:href => ("https://static.jboss.org/css/tabzilla.css")}
     :plain
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +28,40 @@
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
 
-    %header.navbar.navbar-default.navbar-fixed-top(role="navigation")
+    .tabzilla
+      #tabnav-panel.tabnav-closed
+        #tabnav.tabnavclearfix
+          .tabcontent
+            %p.overview
+              Like
+              = succeed "?" do
+                %span#project_name Example
+              It’s part of a community of Red Hat
+              projects. Learn more about Red Hat and our open source communities:
+            .row-fluid
+              %span.span4.middlewarelogo
+                %img{:alt => "Red Hat JBoss MIDDLEWARE", :src => "../images/RHJB_Middleware_Logotype.png"}/
+              %span.span4
+              %ul.level1
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Middleware Overview
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Middleware Products
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Projects &amp; Standards
+              %span.span4
+              %ul.level1
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} redhat.com
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat Customer Portal
+                %li.leaf
+                  %a{:href => "http://example.jboss.org/index.html#"} OpenShift
+      .dropup
+        %div#ajbossproject A JBoss Project
+        %a#tab.tabnav-closed{:href => "https://www.jboss.org/"} Red Hat
+
+    .navbar.navbar-default.bgHeader.affix#header(role="navigation")
       .container
         .navbar-header
           -# When the screen width is too little, these 3 icon-bar spans are needed to show the collapsed navbar
@@ -149,6 +183,7 @@
     %script{:src => relative("/website/bootstrap/js/bootstrap.min.js")}
     %script{:src => relative("/website/highlight/highlight.js")}
     %script{:src => relative("/website/optaplannerWebsite.js")}
+    %script{:src => ("https://static.jboss.org/js/_jbossorg-tabzilla.js")}
     %script(type="text/javascript")<
       hljs.initHighlightingOnLoad();
     -# %script{:src => site.jbossorg_bootstrap_js}
