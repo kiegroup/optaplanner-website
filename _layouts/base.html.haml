@@ -27,35 +27,10 @@
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
 
-    .tabzilla
-      #tabnav-panel.tabnav-closed
-        #tabnav.tabnavclearfix
-          .tabcontent
-            %p.overview
-              Like OptaPlanner?
-              It's part of a community of Red Hat projects.
-              Learn more about Red Hat and our open source communities:
-            .row-fluid
-              %span.span4.middlewarelogo
-                %img{:alt => "Red Hat JBoss Middleware", :src => "../images/RHJB_Middleware_Logotype.png"}/
-              %span.span4
-              %ul.level1
-                %li.leaf
-                  %a{:href => "http://www.redhat.com/products/jbossenterprisemiddleware/"} Red Hat JBoss Middleware Overview
-                %li.leaf
-                  %a{:href => "http://www.redhat.com/products/jbossenterprisemiddleware/"} Red Hat JBoss Middleware Products
-                %li.leaf
-                  %a{:href => "http://www.jboss.org/projects"} Red Hat JBoss Projects &amp; Standards
-              %span.span4
-              %ul.level1
-                %li.leaf
-                  %a{:href => "http://www.redhat.com/"} redhat.com
-                %li.leaf
-                  %a{:href => "http://access.redhat.com/"} Red Hat Customer Portal
-                %li.leaf
-                  %a{:href => "http://www.openshift.com/"} OpenShift
-      .dropup
-        %a#tab.tabnav-closed{:href => "https://www.jboss.org/"} Red Hat
+    .dropup
+      %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
+      %script
+        window.addEventListener('load', function() { renderTabzilla("OptaPlanner","optaplanner") }, false);
 
     .navbar.navbar-default.bgHeader.affix#header(role="navigation")
       .container
