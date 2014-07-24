@@ -12,3 +12,9 @@ License: MIT (which can be used by Apache License v2.0 projects)
 highlight.js version: 7.3
 Downloaded from: http://softwaremaniacs.org/soft/highlight/en/
 License: BSD (which can be used by Apache License v2.0 projects)
+
+JBoss tabzilla version: 2014-07-24
+Downloaded from:
+  https://static.jboss.org/js/_jbossorg-tabzilla.js
+  https://static.jboss.org/css/tabzilla.css
+License: Mozilla Public License

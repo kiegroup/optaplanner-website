@@ -14,8 +14,7 @@
 
     %link(rel="stylesheet"){:href => relative("/website/bootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
-    -# %link(rel="stylesheet"){:href => site.jbossorg_bootstrap_css}
-    %link(rel="stylesheet"){:href => ("https://static.jboss.org/css/tabzilla.css")}
+    %link(rel="stylesheet"){:href => relative("/website/tabzilla/tabzilla.css")}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     :plain
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -179,11 +178,10 @@
     %script{:src => relative("/website/jquery/jquery.min.js")}
     %script{:src => relative("/website/bootstrap/js/bootstrap.min.js")}
     %script{:src => relative("/website/highlight/highlight.js")}
+    %script{:src => relative("/website/tabzilla/tabzilla.js")}
     %script{:src => relative("/website/optaplannerWebsite.js")}
-    %script{:src => ("https://static.jboss.org/js/_jbossorg-tabzilla.js")}
     %script(type="text/javascript")<
       hljs.initHighlightingOnLoad();
-    -# %script{:src => site.jbossorg_bootstrap_js}
     -# g-plusone script and google analytics script
     :plain
       <script type="text/javascript">
