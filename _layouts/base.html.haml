@@ -15,8 +15,8 @@
     %link(rel="stylesheet"){:href => relative("/website/bootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
     -# %link(rel="stylesheet"){:href => site.jbossorg_bootstrap_css}
-    %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     %link(rel="stylesheet"){:href => ("https://static.jboss.org/css/tabzilla.css")}
+    %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     :plain
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,32 +33,29 @@
         #tabnav.tabnavclearfix
           .tabcontent
             %p.overview
-              Like
-              = succeed "?" do
-                %span#project_name Example
-              It’s part of a community of Red Hat
-              projects. Learn more about Red Hat and our open source communities:
+              Like OptaPlanner?
+              It's part of a community of Red Hat projects.
+              Learn more about Red Hat and our open source communities:
             .row-fluid
               %span.span4.middlewarelogo
-                %img{:alt => "Red Hat JBoss MIDDLEWARE", :src => "../images/RHJB_Middleware_Logotype.png"}/
+                %img{:alt => "Red Hat JBoss Middleware", :src => "../images/RHJB_Middleware_Logotype.png"}/
               %span.span4
               %ul.level1
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Middleware Overview
+                  %a{:href => "http://www.redhat.com/products/jbossenterprisemiddleware/"} Red Hat JBoss Middleware Overview
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Middleware Products
+                  %a{:href => "http://www.redhat.com/products/jbossenterprisemiddleware/"} Red Hat JBoss Middleware Products
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat JBoss Projects &amp; Standards
+                  %a{:href => "http://www.jboss.org/projects"} Red Hat JBoss Projects &amp; Standards
               %span.span4
               %ul.level1
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} redhat.com
+                  %a{:href => "http://www.redhat.com/"} redhat.com
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} Red Hat Customer Portal
+                  %a{:href => "http://access.redhat.com/"} Red Hat Customer Portal
                 %li.leaf
-                  %a{:href => "http://example.jboss.org/index.html#"} OpenShift
+                  %a{:href => "http://www.openshift.com/"} OpenShift
       .dropup
-        %div#ajbossproject A JBoss Project
         %a#tab.tabnav-closed{:href => "https://www.jboss.org/"} Red Hat
 
     .navbar.navbar-default.bgHeader.affix#header(role="navigation")
