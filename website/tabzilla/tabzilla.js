@@ -235,9 +235,11 @@ Tabzilla.init = function()
     Tabzilla.link  = document.getElementById('tab');
     Tabzilla.panel = Tabzilla.buildPanel();
 
-    // add panel as first element of body element
-    var body = document.getElementsByTagName('body')[0];
-    body.insertBefore(Tabzilla.panel, body.firstChild);
+    // ge0ffrey change start
+    var tabzillaHolder = document.getElementById('tabzillaHolder');
+    if (tabzillaHolder == null) tabzillaHolder = document.getElementsByTagName('body')[0];
+    tabzillaHolder.insertBefore(Tabzilla.panel, tabzillaHolder.firstChild);
+    // ge0ffrey change end
 
     // set up event listeners for link
     Tabzilla.addEventListener(Tabzilla.link, 'click', function(e) {

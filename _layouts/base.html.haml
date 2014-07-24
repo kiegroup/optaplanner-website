@@ -27,12 +27,12 @@
     
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
 
-    .dropup
-      %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
-      %script
-        window.addEventListener('load', function() { renderTabzilla("OptaPlanner","optaplanner") }, false);
-
-    .navbar.navbar-default.bgHeader.affix#header(role="navigation")
+    %header.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      #tabzillaHolder
+      .dropup
+        %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
+        %script
+          window.addEventListener('load', function() { renderTabzilla("OptaPlanner","optaplanner") }, true);
       .container
         .navbar-header
           -# When the screen width is too little, these 3 icon-bar spans are needed to show the collapsed navbar
