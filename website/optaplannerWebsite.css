@@ -35,10 +35,44 @@ footer {
 }
 
 
-/* WORKAROUND for Twitter bootstrap's navbar-fixed-top's hides content head */
-.body-without-header-footer {
-    padding-top: 40px;
+/* Twitter bootstrap's navbar-fixed-top's hides content head */
+@media (max-width: 767px) {
+    .body-without-header-footer {
+        padding-top: 40px;
+    }
 }
+@media (min-width: 768px) {
+    .body-without-header-footer {
+        padding-top: 90px;
+    }
+}
+@media (min-width: 992px) {
+    .body-without-header-footer {
+        padding-top: 40px;
+    }
+}
+
+/* Menu look, especially needed on small media */
+li.navbar-form {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Tabzilla positioning */
+.dropup {
+    right: 10px;
+    z-index: 0; /* The default catches too many click events because it twice as width as it needs to be */
+}
+@media (max-width: 767px) {
+    .navbar-toggle {
+        margin-right: 100px;
+    }
+}
+
+
+/******************************************************************************
+* Components
+******************************************************************************/
 
 /* Reduce space taken by alerts */
 .alert {
@@ -177,22 +211,3 @@ footer {
     border-color: #ddd #ddd #ddd transparent;
     *border-left-color: #ffffff;
 }
-
-/******************************************************************************
-* Header Property
-******************************************************************************/
-
-#header {
-    height: 55px;
-    width: 100%;
-    z-index: 99;
-}
-#header .container {
-    max-width: 100%;
-    padding-left: 0;
-}
-#header .dropdown.menu-dropdown {
-    margin: 0;
-}
-
-

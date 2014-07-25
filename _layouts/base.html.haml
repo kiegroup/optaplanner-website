@@ -97,9 +97,6 @@
                 %li.divider
                 %li<
                   %a{:href => relative("/code/license.html")} License
-          .navbar-form.navbar-right(style="padding-top: 5px;")
-            -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
-            %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
           %ul.nav.navbar-nav.navbar-right
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
@@ -115,6 +112,9 @@
                 %li<
                   %a(href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook")<
                     %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
+            %li.navbar-form(style="padding-top: 5px;")
+              -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
+              %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
 
     .body-without-header-footer
       .forkMeOnGithub
