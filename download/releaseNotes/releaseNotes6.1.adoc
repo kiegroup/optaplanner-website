@@ -7,7 +7,7 @@
 We are happy to announce the 6.1 release of OptaPlanner.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
-to solve constraint satisfaction problems efficiently.
+to solve constraint satisfaction problems efficiently. +
 Together with the Drools rule engine and the jBPM workflow engine,
 it is a strong and flexible foundation for knowledge management.
 
