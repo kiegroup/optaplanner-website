@@ -18,7 +18,7 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 
 * Older community releases: Check http://download.jboss.org/drools/release/[the release archive].
 
-* Red Hat subscription releases: Check http://www.jboss.com/downloads/[the product download site].
+* Red Hat subscription releases: Check https://access.redhat.com/downloads[the product download site].
 
 === Maven, Gradle, Ivy or Buildr
 
