@@ -58,6 +58,11 @@ layout: base
 
 .alert.alert-info.alert-dismissable
   %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
+  #{site.pom.latestFinal.releaseDate}:
+  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html") OptaPlanner #{site.pom.latestFinal.version} has been released.
+
+.alert.alert-info.alert-dismissable
+  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
   #{site.pom.latest.releaseDate}:
   %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.version} has been released.
 
