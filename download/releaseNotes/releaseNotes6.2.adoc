@@ -42,6 +42,29 @@ OptaPlanner is:
 [[NewAndNoteWorthy]]
 === New and noteworthy
 
+==== Strategic Oscillation Tabu Search
+
+Strategic Oscillation Tabu Search is often an improvement over normal Tabu Search.
+Instead of picking the accepted move with the highest score, it employs a different mechanism:
+If there's an improving move, it picks it. If there's no improving move however,
+it prefers moves which improve a softer score level, over moves which break a harder score level less.
+
+To enable it, do this:
+
+[source,xml]
+----
+  <localSearch>
+    ...
+    <acceptor>
+      <entityTabuSize>7</entityTabuSize>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>1000</acceptedCountLimit>
+      <finalistPodiumType>STRATEGIC_OSCILLATION</finalistPodiumType>
+    </forager>
+  </localSearch>
+----
+
 ==== Other improvements
 
 * Construction Heuristics: new pick early type: +FIRST_FEASIBLE_SCORE+ which is useful for scaling.
