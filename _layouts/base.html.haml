@@ -97,6 +97,20 @@
                 %li.divider
                 %li<
                   %a{:href => relative("/code/license.html")} License
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'KIE ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a(href="http://www.drools.org/" target="_blank" title="Rule engine") Drools
+                %li<
+                  %a(href="http://www.jbpm.org/" target="_blank" title="Workflow engine") jBPM
+                %li<
+                  %a(href="http://www.optaplanner.org/" target="_blank" title="Planning engine") OptaPlanner
+                %li.divider
+                %li<
+                  %a(href="http://www.kiegroup.org/" target="_blank" title="Knowledge is everything group") KIE group
           %ul.nav.navbar-nav.navbar-right
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
