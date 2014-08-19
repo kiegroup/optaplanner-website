@@ -4,7 +4,7 @@
 
 == Usage questions
 
-If you have a question about OptaPlanner, just ask our friendly community:
+If you have a question about OptaPlanner, just ask our friendly volunteer community:
 
 * *http://stackoverflow.com/questions/tagged/optaplanner[Ask a usage question on StackOverflow.]*
 
@@ -15,7 +15,10 @@ Please follow these recommendations when posting a question or a discussion:
 * Get to the point. Keep it as short as possible.
 * Include _relevant_ technical details (stacktrace, short code snippet, ...).
 * Be polite, friendly and clear. Reread your question before posting it.
-* Be patient. This isn't link:product.html[paid support].
+* Be patient. This isn't link:product.html[paid support]. There is no SLA.
+* Do not email developers directly, unless you 've got link:product.html[a paid support subscription].
+
+Our developers are often active in the volunteer community.
 
 == Development discussions
 
