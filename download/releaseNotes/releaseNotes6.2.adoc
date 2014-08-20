@@ -67,7 +67,7 @@ To enable it, do this:
 
 ==== New example: Cheap time scheduling
 
-Schedule all tasks in time and on a machine to the minimize power cost.
+Schedule all tasks in time and on a machine to minimize the power cost.
 Each machine must have enough hardware to run all of its tasks.
 Each task and machine consumes power. The power price differs over time.
 
