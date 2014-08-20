@@ -73,6 +73,8 @@ Each task and machine consumes power. The power price differs over time.
 
 image:6.2/cheapTimeExampleScreenshot.png[]
 
+Based on contributions by Lukáš Petrovický.
+
 ==== Other improvements
 
 * Construction Heuristics: new pick early type: +FIRST_FEASIBLE_SCORE+ which is useful for scaling.
