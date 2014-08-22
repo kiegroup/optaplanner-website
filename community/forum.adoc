@@ -6,9 +6,9 @@
 
 If you have a question about OptaPlanner, just ask our friendly volunteer community:
 
-* *http://stackoverflow.com/questions/tagged/optaplanner[Ask a usage question on StackOverflow.]*
+* *http://stackoverflow.com/questions/tagged/optaplanner[Ask a technical usage question on StackOverflow.]*
 
-* To start a discussion, use https://groups.google.com/forum/#!forum/optaplanner-dev[the OptaPlanner developer forum].
+* To start a discussion or get opinions, use https://groups.google.com/forum/#!forum/optaplanner-dev[the OptaPlanner developer forum].
 
 Please follow these recommendations when posting a question or a discussion:
 
