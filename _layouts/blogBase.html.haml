@@ -6,7 +6,7 @@ layout: base
     .col-md-9
       ~ content
     .col-md-3
-      .jumbotron(style="padding: 10px; margin-bottom: 10px;")
+      .jumbotron(style="padding: 10px;")
         .text-center<
           %a.btn.btn-default.btn-lg(type="button" style="margin-top: 10px;"){:href => relative("/blog/news.atom")}
             %img{:src => relative("/headerFooter/atomFeedIcon.png"), :alt => 'Atom'}
@@ -25,16 +25,8 @@ layout: base
             %li<
               %a(href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook")<
                 %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
-          %nav
-            %h2 Latest blog posts
-            %ul.list-unstyled
-              - for post in site.posts[0,7]
-                %li(style = "margin-top: 10px;")
-                  .title
-                    %a{:href => relative(post.url)}
-                      = post.title
-                  .small
-                    = post.date.strftime('%a  %-d %B %Y')
-          %a.btn.btn-default(type="button" style="margin-top: 10px;"){:href => relative("/blog/archive.html")}
+          %a.btn.btn-default(type="button"){:href => relative("/blog/archive.html")}
             Blog archive
+      = partial('latestBlogPosts.html.haml', :outputPage => page)
+      = partial('events.html.haml', :outputPage => page)
 

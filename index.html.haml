@@ -103,17 +103,6 @@ layout: base
 
 .row
   .col-md-8
-    .panel.panel-default
-      .panel-heading Latest blog posts
-      .panel-body
-        %ul.list-unstyled
-          - for post in site.posts[0,7]
-            %li(style = "margin-top: 10px;")
-              .title
-                %a{:href => relative(post.url)}
-                  = post.title
-              .small
-                = post.date.strftime('%a %-d %B %Y')
-
+    = partial('latestBlogPosts.html.haml', :outputPage => page)
   .col-md-4
     = partial('events.html.haml', :outputPage => page)
