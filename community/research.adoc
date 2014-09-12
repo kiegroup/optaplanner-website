@@ -1,5 +1,5 @@
 = Research
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in

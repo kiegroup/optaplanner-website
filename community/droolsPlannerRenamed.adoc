@@ -1,5 +1,5 @@
 = Drools Planner renamed to OptaPlanner
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 As of version +6.0.0.Beta1+, *Drools Planner has been renamed to OptaPlanner*.

@@ -1,5 +1,5 @@
 = Chat real-time
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 Got questions? Want to discuss an issue in real-time? Then join us on IRC.

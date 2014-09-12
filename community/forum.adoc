@@ -1,5 +1,5 @@
 = Forum
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 == Usage questions

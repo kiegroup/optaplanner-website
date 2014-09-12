@@ -1,5 +1,5 @@
 = Documentation
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :page-interpolate: true
 :showtitle:
 

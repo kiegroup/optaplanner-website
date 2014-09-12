@@ -1,5 +1,5 @@
 = Training
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 == What is it?

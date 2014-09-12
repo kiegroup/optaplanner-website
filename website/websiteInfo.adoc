@@ -1,5 +1,5 @@
 = Website info
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 :experimental:
 

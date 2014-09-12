@@ -1,5 +1,5 @@
 = Testimonials and Case Studies
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 OptaPlanner is used all over the world to optimize all kinds of planning problems.

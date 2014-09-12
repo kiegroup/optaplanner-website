@@ -1,5 +1,5 @@
 = Social media
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 == OptaPlanner stream

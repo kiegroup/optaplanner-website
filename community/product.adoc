@@ -1,5 +1,5 @@
 = Product
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 Red Hat offers support subscriptions for community _projects_ through Red Hat _products_.

@@ -1,0 +1,12 @@
+---
+layout: base
+---
+.container
+  .row
+    .col-md-9
+      ~ content
+    .col-md-3
+      = partial('latestBlogPosts.html.haml', :outputPage => page)
+      = partial('latestReleases.html.haml', :outputPage => page)
+      = partial('events.html.haml', :outputPage => page)
+

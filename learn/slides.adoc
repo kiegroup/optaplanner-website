@@ -1,5 +1,5 @@
 = Slides
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 == Watch the slides

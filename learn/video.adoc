@@ -1,5 +1,5 @@
 = Videos
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 See http://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geoffrey's OptaPlanner playlist on YouTube]

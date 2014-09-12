@@ -1,5 +1,5 @@
 = Continuous integration
-:awestruct-layout: base
+:awestruct-layout: normalBase
 :showtitle:
 
 We use Jenkins for continuous integration.
