@@ -1,11 +1,11 @@
 # Available properties per event
-#  eventId: Should be in format "yyyymmdd-suffix"
+#  eventId: Should be in format "yyyymmdd-suffix". The yyyymmdd is the date
 #  eventOrganization: Name of the conference or organizer
 #  location: Should be in format "city, country" or "city, state, country"
-#  date: yyyy-mm-dd
-#  title: Session title (without the conference or organizer name)
-#  url: Link to the event page itself
-#  presenters: Comma seperated list of presenters
+#  date: Must be in format "yyyy-mm-dd". If multiple days cover our project, only note the first day
+#  title: (optional) Session title (without the conference or organizer name). If CFP not yet accepted, temporarily do not include.
+#  url: Link to the event page itself. If CFP not yet accepted, temporarily link the event organization itself.
+#  presenters: (optional) Comma separated list of presenters. If CFP not yet accepted, temporarily do not include.
 - eventId: 20140924-webinar
   eventOrganization: Red Hat Webinar
   location: Worldwide
@@ -20,3 +20,8 @@
   title: Optimizing vehicle routes, shift rosters and other NP-hard problems
   url: http://www.meetup.com/BruJUG/events/206149232/
   presenters: Geoffrey De Smet
+- eventId: 20150623-redhatsummit
+  eventOrganization: Red Hat Summit
+  location: Boston, MA, USA
+  date: 2015-06-23
+  url: http://www.redhat.com/summit/

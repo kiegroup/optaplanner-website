@@ -6,8 +6,12 @@
         %li(style = "margin-top: 10px;")
           .title
             %a{:href => event.url}
-              #{event.eventOrganization}: #{event.title}
+              - if !event.title.empty?
+                #{event.eventOrganization}: #{event.title}
+              - else
+                #{event.eventOrganization}
           %div
             #{event.location} - #{event.date.strftime('%a %-d %B %Y')}
-          .small
-            by #{event.presenters}
+          - if !event.presenters.empty?
+            .small
+              by #{event.presenters}
