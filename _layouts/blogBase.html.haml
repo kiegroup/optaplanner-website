@@ -34,7 +34,7 @@ layout: base
                     %a{:href => relative(post.url)}
                       = post.title
                   .small
-                    = post.date.strftime('%-d %B %Y')
+                    = post.date.strftime('%a  %-d %B %Y')
           %a.btn.btn-default(type="button" style="margin-top: 10px;"){:href => relative("/blog/archive.html")}
             Blog archive
 

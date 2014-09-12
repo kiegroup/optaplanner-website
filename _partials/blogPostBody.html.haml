@@ -13,7 +13,7 @@ layout: blogBase
   %div
     .pull-right
       %script(language = "javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js")
-      %p(style = "text-align: right;") #{page.post.date.strftime('%-d %B %Y')}
+      %p(style = "text-align: right;") #{page.post.date.strftime('%a %-d %B %Y')}
     = partial('userBadge.html.haml', :outputPage => page.outputPage, :userId => page.post.author)
   .body
     ~ page.post.content

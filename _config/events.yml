@@ -1,0 +1,22 @@
+# Available properties per event
+#  eventId: Should be in format "yyyymmdd-suffix"
+#  eventOrganization: Name of the conference or organizer
+#  location: Should be in format "city, country" or "city, state, country"
+#  date: yyyy-mm-dd
+#  title: Session title (without the conference or organizer name)
+#  url: Link to the event page itself
+#  presenters: Comma seperated list of presenters
+- eventId: 20140924-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide
+  date: 2014-07-24
+  title: How to solve impossible business resource planning problems
+  url: http://www.redhat.com/en/about/events/how-solve-impossible-business-resource-planning-problems
+  presenters: Geoffrey De Smet, Phil Simpson
+- eventId: 20140925-brujug
+  eventOrganization: BruJUG
+  location: Brussels, Belgium
+  date: 2014-07-25
+  title: Optimizing vehicle routes, shift rosters and other NP-hard problems
+  url: http://www.meetup.com/BruJUG/events/206149232/
+  presenters: Geoffrey De Smet
