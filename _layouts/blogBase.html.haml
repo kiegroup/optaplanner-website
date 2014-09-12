@@ -28,5 +28,6 @@ layout: base
           %a.btn.btn-default(type="button"){:href => relative("/blog/archive.html")}
             Blog archive
       = partial('latestBlogPosts.html.haml', :outputPage => page)
+      = partial('latestReleases.html.haml', :outputPage => page)
       = partial('events.html.haml', :outputPage => page)
 

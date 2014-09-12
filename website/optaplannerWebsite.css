@@ -94,12 +94,15 @@ li.navbar-form {
     background-image: none;
     color: inherit;
 }
+#whatIsCarouselButtons > li {
+    vertical-align: bottom;
+}
 #whatIsCarouselButtons > li.active a {
     background-color: white;
     color: inherit;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
 
 

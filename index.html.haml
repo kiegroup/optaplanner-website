@@ -3,7 +3,70 @@ title: Planning engine (Java™, Open Source)
 layout: base
 ---
 
+.row
+  .col-md-5
+    .jumbotron(style="padding: 10px; margin-top: 10px; margin-bottom: 20px;")
+      .text-center<
+        %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
+          %img(src = "download/download.png")
+          Download OptaPlanner #{site.pom.latestFinal.version}
+      %h4
+        Try the examples now:
+      %ol
+        %li Download the zip and unzip it
+        %li
+          On Linux/Mac, run
+          %code examples/runExamples.sh
+          %br
+          On Windows, run
+          %code examples/runExamples.bat
+      .small
+        Requires
+        %a(href="http://www.java.com")< Java™
+        to run.
+    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
+      .text-center<
+        %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+          %img(src = "learn/documentation.png")
+          Read documentation #{site.pom.latestFinal.version}
+      %h4
+        Read the
+        %a(href="#{site.pom.latestFinal.documentationHtmlSingle}#quickStart")
+          Quick Start
+        chapter
+
+  .col-md-7
+    %div(style="margin-bottom: 20px")
+      :markdown
+        ## What is OptaPlanner?
+
+        **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
+        services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
+        planning to do more business with less resources.
+
+        OptaPlanner is **a lightweight, embeddable planning engine** written in Java™. It helps normal Java™ programmers solve
+        constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
+        with very efficient score calculation.
+
+        *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
+        Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
+
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
+  %ul.nav.nav-justified#whatIsCarouselButtons
+    %li.active(data-target="#whatIsCarousel" data-slide-to="0")
+      %a(href="#" data-toggle="tab") Use cases
+    %li(data-target="#whatIsCarousel" data-slide-to="1")
+      %a(href="#" data-toggle="tab") Employee rostering
+    %li(data-target="#whatIsCarousel" data-slide-to="2")
+      %a(href="#" data-toggle="tab") Exam timetabling
+    %li(data-target="#whatIsCarousel" data-slide-to="3")
+      %a(href="#" data-toggle="tab") Usage
+    %li(data-target="#whatIsCarousel" data-slide-to="4")
+      %a(href="#" data-toggle="tab") Integration
+    %li(data-target="#whatIsCarousel" data-slide-to="5")
+      %a(href="#" data-toggle="tab") Compatibility
+    %li(data-target="#whatIsCarousel" data-slide-to="6")
+      %a(href="#" data-toggle="tab") Scalability
   .carousel.slide#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     -#.carousel-inner(style="align: center;")
     .carousel-inner
@@ -25,84 +88,11 @@ layout: base
       %span.glyphicon.glyphicon-chevron-left
     %a.right.carousel-control(href="#whatIsCarousel" data-slide="next")
       %span.glyphicon.glyphicon-chevron-right
-  %ul.nav.nav-justified#whatIsCarouselButtons
-    %li.active(data-target="#whatIsCarousel" data-slide-to="0")
-      %a(href="#" data-toggle="tab") Use cases
-    %li(data-target="#whatIsCarousel" data-slide-to="1")
-      %a(href="#" data-toggle="tab") Employee rostering
-    %li(data-target="#whatIsCarousel" data-slide-to="2")
-      %a(href="#" data-toggle="tab") Exam timetabling
-    %li(data-target="#whatIsCarousel" data-slide-to="3")
-      %a(href="#" data-toggle="tab") Usage
-    %li(data-target="#whatIsCarousel" data-slide-to="4")
-      %a(href="#" data-toggle="tab") Integration
-    %li(data-target="#whatIsCarousel" data-slide-to="5")
-      %a(href="#" data-toggle="tab") Compatibility
-    %li(data-target="#whatIsCarousel" data-slide-to="6")
-      %a(href="#" data-toggle="tab") Scalability
-
-%div(style="margin-bottom: 20px")
-  :markdown
-    ## What is OptaPlanner?
-
-    **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
-    services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
-    planning to do more business with less resources.
-
-    OptaPlanner is a lightweight, embeddable planning engine written in Java™. It helps normal Java™ programmers solve
-    constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
-    with very efficient score calculation.
-
-    *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
-    Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
-
-.alert.alert-info.alert-dismissable
-  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
-  #{site.pom.latestFinal.releaseDate}:
-  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html") OptaPlanner #{site.pom.latestFinal.version} has been released.
-
-.alert.alert-info.alert-dismissable
-  %button.close(type="button" data-dismiss="alert" aria-hidden="true") &times;
-  #{site.pom.latest.releaseDate}:
-  %a.alert-link(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html") OptaPlanner #{site.pom.latest.version} has been released.
 
 .row
-  .col-md-6
-    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
-      .text-center<
-        %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
-          %img(src = "download/download.png")
-          Download OptaPlanner #{site.pom.latestFinal.version}
-      %h3 Try the examples now
-      %ol
-        %li Download the zip and unzip it
-        %li
-          On Linux/Mac, run
-          %code examples/runExamples.sh
-          %br
-          On Windows, run
-          %code examples/runExamples.bat
-      .small
-        Requires
-        %a(href="http://www.java.com")< Java™
-        to run.
-
-  .col-md-6
-    .jumbotron(style="padding: 10px; margin-bottom: 20px;")
-      .text-center<
-        %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
-          %img(src = "learn/documentation.png")
-          Read documentation #{site.pom.latestFinal.version}
-      %h3 Get started
-      %ol
-        %li Open the documentation
-        %li
-          Read the
-          %strong Quick Start
-          chapter
-
-.row
-  .col-md-8
+  .col-md-5
     = partial('latestBlogPosts.html.haml', :outputPage => page)
-  .col-md-4
+  .col-md-2
+    = partial('latestReleases.html.haml', :outputPage => page)
+  .col-md-5
     = partial('events.html.haml', :outputPage => page)
