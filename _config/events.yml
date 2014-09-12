@@ -1,4 +1,4 @@
-# To add an event in the GitHub user interface, click on the Edit button at the top right to submit an pull request.
+# To add an event in the GitHub user interface, click on the Edit button at the top right which will submit a pull request.
 #
 # Available properties per event
 #  eventId: Should be in format "yyyymmdd-suffix". The yyyymmdd is the date

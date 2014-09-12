@@ -1,3 +1,5 @@
+# To add a user in the GitHub user interface, click on the Edit button at the top right which will submit a pull request.
+#
 # Available properties per user
 #  userId: Should be the same as githubUsername
 #  fullName: First name and last name (in that order)
@@ -13,6 +15,7 @@
 #  ircNickname: (optional)
 #  contributionsDescription: only work related to this project (optional)
 #  biography: (optional)
+
 - userId: ge0ffrey
   fullName: Geoffrey De Smet
   role: OptaPlanner lead
@@ -24,6 +27,7 @@
   employedBy: Red Hat
   ircNickname: ge0ffrey
   biography: Geoffrey founded OptaPlanner in 2006 and has been working for Red Hat since 2010.
+
 - userId: triceo
   fullName: Lukáš Petrovický
   role: BRMS QA lead
@@ -31,6 +35,7 @@
   githubUsername: triceo
   employedBy: Red Hat
   ircNickname: triceo
+
 - userId: elsam
   fullName: Sam Van Malderen
   role: Contributor
@@ -38,6 +43,7 @@
   githubUsername: elsam
   ircNickname: elsam
   contributionsDescription: Genetic algorithms prototype
+
 - userId: fhornain
   fullName: Frederic Hornain
   role: Contributor
@@ -46,12 +52,14 @@
   githubUsername: fhornain
   employedBy: Red Hat
   contributionsDescription: Example improvements (code and images)
+
 - userId: carrot-osc
   fullName: Matej Čimbora
   role: Contributor
   gravatarHashId: b423d5e811dc7d6f003944b2d31df407
   githubUsername: carrot-osc
   contributionsDescription: BenchmarkAggregator and more
+
 - userId: mdproctor
   fullName: Mark Proctor
   role: KIE lead
@@ -60,6 +68,7 @@
   githubUsername: mdproctor
   employedBy: Red Hat
   ircNickname: conan
+
 - userId: etirelli
   fullName: Edson Tirelli
   role: Drools lead
@@ -68,6 +77,7 @@
   githubUsername: etirelli
   employedBy: Red Hat
   ircNickname: etirelli
+
 - userId: mariofusco
   fullName: Mario Fusco
   role: Drools developer
@@ -76,4 +86,3 @@
   employedBy: Red Hat
   githubUsername: mariofusco
   ircNickname: mfusco
-
