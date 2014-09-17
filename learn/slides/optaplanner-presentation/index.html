@@ -1,24 +1,50 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="twitterbootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="twitterbootstrap/css/highlight.css">
-    <link rel="stylesheet" href="dzslides/dzslides-style.css">
-    <link rel="stylesheet" href="dzslides/dzslides-core.css">
+    <link rel="stylesheet" href="website/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="website/reveal/css/reveal.min.css">
+    <link rel="stylesheet" href="website/reveal/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="website/highlight/highlight.css">
+    <link rel="stylesheet" href="website/optaplannerPresentation.css">
 
     <title>OptaPlanner presentation</title>
+    <meta name="description" content="OptaPlanner is an open source constraint satisfaction solver in Java">
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'website/reveal/css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
+<div class="reveal"><div class="slides">
 
     <section>
         <figure>
             <img src="planner_introduction/optaPlannerLogo.png" alt="OptaPlanner"/>
         </figure>
-        <h1>
+        <h2>
             Do more business<br/>
             with less resources
-        </h1>
+        </h2>
         <!-- Replace with the name of the presenter -->
         <footer><span style="font-size: smaller">by</span> Geoffrey De Smet</footer>
     </section>
@@ -48,7 +74,7 @@
     </section>
 
     <section>
-        <img src="planner_introduction/useCaseOverview.png">
+        <img src="planner_introduction/useCaseOverview.png" class="fullImage">
     </section>
 
     <section>
@@ -67,59 +93,37 @@
     </section>
 
     <section>
-        <h1 class="callout">
+        <h2>
             Are planning problems<br/>
             difficult to solve?
-        </h1>
+        </h2>
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteA_0.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteA_1.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteA_0.png" class="fullImage">
+        <img src="presentation_extra/cloudBalanceNpCompleteA_1.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteB_0.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteB_1.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteB_2.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteB_3.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteB_4.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteB_5.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_0.png" class="fullImage">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_1.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_2.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_3.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_4.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteB_5.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteC_0.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteC_1.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteC_2.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteC_3.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteC_4.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteC_5.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_0.png" class="fullImage">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_1.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_2.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_3.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_4.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteC_5.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteD.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteD.png" class="fullImage">
     </section>
 
     <section>
@@ -144,43 +148,31 @@
         </ul>
     </section>
     <section>
-        <img src="presentation_extra/npCompleteInterconnection.png">
+        <img src="presentation_extra/npCompleteInterconnection.png" class="fullImage">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteE_0.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteE_1.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteE_2.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteE_3.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteE_0.png" class="fullImage">
+        <img src="presentation_extra/cloudBalanceNpCompleteE_1.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteE_2.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteE_3.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceNpCompleteF_0.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteF_1.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteF_2.png">
-    </section>
-    <section class="immediate">
-        <img src="presentation_extra/cloudBalanceNpCompleteF_3.png">
+        <img src="presentation_extra/cloudBalanceNpCompleteF_0.png" class="fullImage">
+        <img src="presentation_extra/cloudBalanceNpCompleteF_1.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteF_2.png" class="fullImage fragment">
+        <img src="presentation_extra/cloudBalanceNpCompleteF_3.png" class="fullImage fragment">
     </section>
 
     <section>
-        <h1 class="callout">
+        <h2>
             Yes,<br/>
             planning problems are<br/>
             difficult to solve!
-        </h1>
-        <p class="callout">(and humans suck at it)</p>
-        <p class="callout">(but they don't realize it)</p>
+        </h2>
+        <p>(and humans aren't good at it)</p>
+        <p>(but they don't realize it)</p>
     </section>
 
     <section>
@@ -197,7 +189,7 @@
         </ul>
     </section>
     <section>
-        <img src="planner_introduction/compatibility.png">
+        <img src="planner_introduction/compatibility.png" class="fullImage">
     </section>
 
     <section>
@@ -209,11 +201,11 @@
     </section>
 
     <section>
-        <h1>Domain model</h1>
+        <h2>Domain model</h2>
     </section>
 
     <section>
-        <img src="quick_start/cloudBalanceClassDiagram_0.png">
+        <img src="quick_start/cloudBalanceClassDiagram_0.png" class="fullImage">
     </section>
     <section>
         <h3>Computer</h3>
@@ -230,10 +222,8 @@
     </section>
 
     <section>
-        <img src="quick_start/cloudBalanceClassDiagram_1.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceClassDiagram_2.png">
+        <img src="quick_start/cloudBalanceClassDiagram_1.png" class="fullImage">
+        <img src="quick_start/cloudBalanceClassDiagram_2.png" class="fullImage fragment">
     </section>
     <section>
         <h3>Process is a planning entity</h3>
@@ -266,10 +256,8 @@ public class Process {
     </section>
 
     <section>
-        <img src="quick_start/cloudBalanceClassDiagram_3.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceClassDiagram_4.png">
+        <img src="quick_start/cloudBalanceClassDiagram_3.png" class="fullImage">
+        <img src="quick_start/cloudBalanceClassDiagram_4.png" class="fullImage fragment">
     </section>
     <section>
         <h3>Solution CloudBalance: problem facts</h3>
@@ -334,46 +322,30 @@ public class Process {
     </section>
 
     <section>
-        <img src="integration/integrationOverview.png">
+        <img src="integration/integrationOverview.png" class="fullImage">
     </section>
 
     <section>
-        <h1>Score constraints</h1>
+        <h2>Score constraints</h2>
     </section>
 
     <section>
-        <h1 class="callout">
+        <h2>
             Given 2 solutions<br/>
             which one is better?
-        </h1>
+        </h2>
     </section>
 
     <section>
-        <img src="quick_start/cloudBalanceScoreCalculation_0.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_1.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_2.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_3.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_4.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_5.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_6.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_7.png">
-    </section>
-    <section class="immediate">
-        <img src="quick_start/cloudBalanceScoreCalculation_8.png">
+        <img src="quick_start/cloudBalanceScoreCalculation_0.png" class="fullImage">
+        <img src="quick_start/cloudBalanceScoreCalculation_1.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_2.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_3.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_4.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_5.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_6.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_7.png" class="fullImage fragment">
+        <img src="quick_start/cloudBalanceScoreCalculation_8.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -475,11 +447,11 @@ end</code></pre>
     </section>
 
     <section>
-        <h1>Solving it</h1>
+        <h2>Solving it</h2>
     </section>
 
     <section>
-        <img src="planner_configuration/inputOutputOverview.png">
+        <img src="planner_configuration/inputOutputOverview.png" class="fullImage">
     </section>
 
     <section>
@@ -508,11 +480,11 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
     <section>
-        <h1>Optimization algorithms</h1>
+        <h2>Optimization algorithms</h2>
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceBruteForce.png">
+        <img src="presentation_extra/cloudBalanceBruteForce.png" class="fullImage">
     </section>
     <section>
         <h3>Brute force config</h3>
@@ -538,21 +510,17 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         </figure>
     </section>
     <section>
-        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_0.png">
-    </section>
-    <section class="immediate">
-        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_1.png">
-    </section>
-    <section class="immediate">
-        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_2.png">
+        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_0.png" class="fullImage">
+        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_1.png" class="fullImage fragment">
+        <img src="optimization_algorithms/cloudBalanceSearchSpaceSize_2.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="optimization_algorithms/searchSpaceSizeCalculation.png">
+        <img src="optimization_algorithms/searchSpaceSizeCalculation.png" class="fullImage">
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceFirstFit.png">
+        <img src="presentation_extra/cloudBalanceFirstFit.png" class="fullImage">
     </section>
     <section>
         <h3>First Fit config</h3>
@@ -579,7 +547,7 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceFirstFitDecreasing.png">
+        <img src="presentation_extra/cloudBalanceFirstFitDecreasing.png" class="fullImage">
     </section>
     <section>
         <h3>First Fit Decreasing config</h3>
@@ -622,10 +590,10 @@ public class Process  {
     </section>
 
     <section>
-        <img src="presentation_extra/cloudBalanceLocalSearch.png">
+        <img src="presentation_extra/cloudBalanceLocalSearch.png" class="fullImage">
     </section>
     <section>
-        <img src="optimization_algorithms/generalPhaseSequence_1.png">
+        <img src="optimization_algorithms/generalPhaseSequence_1.png" class="fullImage">
     </section>
     <section>
         <h3>Construction Heuristics + Local Search</h3>
@@ -642,7 +610,7 @@ public class Process  {
     </section>
 
     <section>
-        <img src="presentation_extra/hillClimbingLogo.png">
+        <img src="presentation_extra/hillClimbingLogo.png" class="fullImage">
     </section>
     <section>
         <h3>Hill Climbing config</h3>
@@ -655,7 +623,7 @@ public class Process  {
     </section>
 
     <section>
-        <img src="presentation_extra/tabuSearchLogo.png">
+        <img src="presentation_extra/tabuSearchLogo.png" class="fullImage">
     </section>
     <section>
         <h3>Tabu Search config</h3>
@@ -672,7 +640,7 @@ public class Process  {
     </section>
 
     <section>
-        <img src="presentation_extra/simulatedAnnealingLogo.png">
+        <img src="presentation_extra/simulatedAnnealingLogo.png" class="fullImage">
     </section>
     <section>
         <h3>Simulated Annealing config</h3>
@@ -731,33 +699,21 @@ public class Process  {
     </section>
 
     <section>
-        <h1>Repeated planning:<br/>continuous/real-time</h1>
+        <h2>Repeated planning:<br/>continuous/real-time</h2>
     </section>
 
     <section>
-        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_0.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_1.png">
+        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_0.png" class="fullImage">
+        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_1.png" class="fullImage fragment">
     </section>
 
     <section>
-        <img src="repeated_planning/realTimePlanningVehicleRouting_0.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_1.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_2.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_3.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_4.png">
-    </section>
-    <section class="immediate">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_5.png">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_0.png" class="fullImage">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_1.png" class="fullImage fragment">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_2.png" class="fullImage fragment">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_3.png" class="fullImage fragment">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_4.png" class="fullImage fragment">
+        <img src="repeated_planning/realTimePlanningVehicleRouting_5.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -769,7 +725,7 @@ public class Process  {
         </ul>
     </section>
     <section>
-        <img src="planner_introduction/distributionZip.png">
+        <img src="planner_introduction/distributionZip.png" class="fullImage">
     </section>
     <section>
         <h3>Build from source</h3>
@@ -817,12 +773,12 @@ $ mvn exec:exec
 
 
     <section>
-        <h1>
+        <h2>
             <span class="smaller-p-text">Introduction to</span><br/>
             heuristics and metaheuristics<br/>
             <span class="smaller-p-text">for</span><br/>
             business resource optimization
-        </h1>
+        </h2>
         <!-- Replace with the name of the presenter -->
         <footer><span style="font-size: smaller">by</span> Geoffrey De Smet</footer>
     </section>
@@ -879,121 +835,61 @@ $ mvn exec:exec
     </section>
 
     <section>
-        <img src="score_calculation/positiveAndNegativeConstraints_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/positiveAndNegativeConstraints_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/positiveAndNegativeConstraints_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/positiveAndNegativeConstraints_3.png">
+        <img src="score_calculation/positiveAndNegativeConstraints_0.png" class="fullImage">
+        <img src="score_calculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
+        <img src="score_calculation/positiveAndNegativeConstraints_2.png" class="fullImage fragment">
+        <img src="score_calculation/positiveAndNegativeConstraints_3.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreWeighting_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeighting_1.png">
+        <img src="score_calculation/scoreWeighting_0.png" class="fullImage">
+        <img src="score_calculation/scoreWeighting_1.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreWeightType_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_3.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_4.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_5.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreWeightType_6.png">
+        <img src="score_calculation/scoreWeightType_0.png" class="fullImage">
+        <img src="score_calculation/scoreWeightType_1.png" class="fullImage fragment">
+        <img src="score_calculation/scoreWeightType_2.png" class="fullImage fragment">
+        <img src="score_calculation/scoreWeightType_3.png" class="fullImage fragment">
+        <img src="score_calculation/scoreWeightType_4.png" class="fullImage fragment">
+        <img src="score_calculation/scoreWeightType_5.png" class="fullImage fragment">
+        <img src="score_calculation/scoreWeightType_6.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreLevels_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreLevels_1.png">
+        <img src="score_calculation/scoreLevels_0.png" class="fullImage">
+        <img src="score_calculation/scoreLevels_1.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreFoldingIsBroken_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_3.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_4.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_5.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreFoldingIsBroken_6.png">
+        <img src="score_calculation/scoreFoldingIsBroken_0.png" class="fullImage">
+        <img src="score_calculation/scoreFoldingIsBroken_1.png" class="fullImage fragment">
+        <img src="score_calculation/scoreFoldingIsBroken_2.png" class="fullImage fragment">
+        <img src="score_calculation/scoreFoldingIsBroken_3.png" class="fullImage fragment">
+        <img src="score_calculation/scoreFoldingIsBroken_4.png" class="fullImage fragment">
+        <img src="score_calculation/scoreFoldingIsBroken_5.png" class="fullImage fragment">
+        <img src="score_calculation/scoreFoldingIsBroken_6.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreClassDiagram_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreClassDiagram_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreClassDiagram_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreClassDiagram_3.png">
+        <img src="score_calculation/scoreClassDiagram_0.png" class="fullImage">
+        <img src="score_calculation/scoreClassDiagram_1.png" class="fullImage fragment">
+        <img src="score_calculation/scoreClassDiagram_2.png" class="fullImage fragment">
+        <img src="score_calculation/scoreClassDiagram_3.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreTrap_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreTrap_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreTrap_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreTrap_3.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreTrap_4.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreTrap_5.png">
+        <img src="score_calculation/scoreTrap_0.png" class="fullImage">
+        <img src="score_calculation/scoreTrap_1.png" class="fullImage fragment">
+        <img src="score_calculation/scoreTrap_2.png" class="fullImage fragment">
+        <img src="score_calculation/scoreTrap_3.png" class="fullImage fragment">
+        <img src="score_calculation/scoreTrap_4.png" class="fullImage fragment">
+        <img src="score_calculation/scoreTrap_5.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/paretoOptimizationScoring_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/paretoOptimizationScoring_1.png">
+        <img src="score_calculation/paretoOptimizationScoring_0.png" class="fullImage">
+        <img src="score_calculation/paretoOptimizationScoring_1.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="score_calculation/scoreComposition_0.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreComposition_1.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreComposition_2.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreComposition_3.png">
-    </section>
-    <section class="immediate">
-        <img src="score_calculation/scoreComposition_4.png">
+        <img src="score_calculation/scoreComposition_0.png" class="fullImage">
+        <img src="score_calculation/scoreComposition_1.png" class="fullImage fragment">
+        <img src="score_calculation/scoreComposition_2.png" class="fullImage fragment">
+        <img src="score_calculation/scoreComposition_3.png" class="fullImage fragment">
+        <img src="score_calculation/scoreComposition_4.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -1027,13 +923,11 @@ $ mvn exec:exec
         </div>
     </section>
     <section>
-        <img src="planner_configuration/entityVariableAndValueExamples_0.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_configuration/entityVariableAndValueExamples_1.png">
+        <img src="planner_configuration/entityVariableAndValueExamples_0.png" class="fullImage">
+        <img src="planner_configuration/entityVariableAndValueExamples_1.png" class="fullImage fragment">
     </section>
     <section>
-        <img src="use_cases_and_examples/curriculumCourseClassDiagram.png">
+        <img src="use_cases_and_examples/curriculumCourseClassDiagram.png" class="fullImage">
     </section>
 
     <section>
@@ -1048,22 +942,14 @@ $ mvn exec:exec
     </section>
 
     <section>
-        <img src="presentation_extra/bruteForceLogo.png">
+        <img src="presentation_extra/bruteForceLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="exhaustive_search/bruteForceNQueens04_0.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/bruteForceNQueens04_1.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/bruteForceNQueens04_2.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/bruteForceNQueens04_3.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/bruteForceNQueens04_4.png">
+        <img src="exhaustive_search/bruteForceNQueens04_0.png" class="fullImage">
+        <img src="exhaustive_search/bruteForceNQueens04_1.png" class="fullImage fragment">
+        <img src="exhaustive_search/bruteForceNQueens04_2.png" class="fullImage fragment">
+        <img src="exhaustive_search/bruteForceNQueens04_3.png" class="fullImage fragment">
+        <img src="exhaustive_search/bruteForceNQueens04_4.png" class="fullImage fragment">
     </section>
     <section>
         <h3>Brute Force scalability</h3>
@@ -1211,31 +1097,15 @@ $ mvn exec:exec
         </figure>
     </section>
     <section>
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_0.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_1.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_2.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_3.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_4.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_5.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_6.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_7.png">
-    </section>
-    <section class="immediate">
-        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_8.png">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_0.png" class="fullImage">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_1.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_2.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_3.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_4.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_5.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_6.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_7.png" class="fullImage fragment">
+        <img src="exhaustive_search/depthFirstBranchAndBoundNQueens04_8.png" class="fullImage fragment">
     </section>
     <section>
         <h3>Exhaustive Search doesn't scale</h3>
@@ -1247,32 +1117,26 @@ $ mvn exec:exec
     </section>
 
     <section>
-        <img src="presentation_extra/firstFitLogo.png">
+        <img src="presentation_extra/firstFitLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="construction_heuristics/firstFitNQueens04.png">
+        <img src="construction_heuristics/firstFitNQueens04.png" class="fullImage">
     </section>
     <section>
-        <img src="presentation_extra/firstFitDecreasingLogo.png">
+        <img src="presentation_extra/firstFitDecreasingLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="construction_heuristics/firstFitDecreasingNQueens04.png">
+        <img src="construction_heuristics/firstFitDecreasingNQueens04.png" class="fullImage">
     </section>
 
     <section>
-        <img src="optimization_algorithms/generalPhaseSequence_0.png">
+        <img src="optimization_algorithms/generalPhaseSequence_0.png" class="fullImage">
     </section>
     <section>
-        <img src="optimization_algorithms/scopeOverview_0.png">
-    </section>
-    <section class="immediate">
-        <img src="optimization_algorithms/scopeOverview_1.png">
-    </section>
-    <section class="immediate">
-        <img src="optimization_algorithms/scopeOverview_2.png">
-    </section>
-    <section class="immediate">
-        <img src="optimization_algorithms/scopeOverview_3.png">
+        <img src="optimization_algorithms/scopeOverview_0.png" class="fullImage">
+        <img src="optimization_algorithms/scopeOverview_1.png" class="fullImage fragment">
+        <img src="optimization_algorithms/scopeOverview_2.png" class="fullImage fragment">
+        <img src="optimization_algorithms/scopeOverview_3.png" class="fullImage fragment">
     </section>
     <section>
         <h3>Move types</h3>
@@ -1283,10 +1147,10 @@ $ mvn exec:exec
         </ul>
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/changeMove_0.png">
+        <img src="move_and_neighbourhood_selection/changeMove_0.png" class="fullImage">
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/swapMove_0.png">
+        <img src="move_and_neighbourhood_selection/swapMove_0.png" class="fullImage">
     </section>
     <section>
         <h3>All change moves</h3>
@@ -1340,54 +1204,54 @@ $ mvn exec:exec
     </section>
 
     <section>
-        <img src="presentation_extra/hillClimbingLogo.png">
+        <img src="presentation_extra/hillClimbingLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="local_search/hillClimbingNQueens04.png">
+        <img src="local_search/hillClimbingNQueens04.png" class="fullImage">
     </section>
     <section>
-        <img src="local_search/hillClimbingGetsStuckInLocalOptimaNQueens04.png">
+        <img src="local_search/hillClimbingGetsStuckInLocalOptimaNQueens04.png" class="fullImage">
     </section>
     <section>
-        <img src="presentation_extra/tabuSearchLogo.png">
+        <img src="presentation_extra/tabuSearchLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="local_search/entityTabuSearch.png">
+        <img src="local_search/entityTabuSearch.png" class="fullImage">
     </section>
     <section>
-        <img src="presentation_extra/simulatedAnnealingLogo.png">
+        <img src="presentation_extra/simulatedAnnealingLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="local_search/simulatedAnnealing.png">
+        <img src="local_search/simulatedAnnealing.png" class="fullImage">
     </section>
     <section>
-        <img src="presentation_extra/lateAcceptanceLogo.png">
+        <img src="presentation_extra/lateAcceptanceLogo.png" class="fullImage">
     </section>
     <section>
-        <img src="local_search/lateAcceptance.png">
+        <img src="local_search/lateAcceptance.png" class="fullImage">
     </section>
 
     <section>
         <h3>Performance tricks</h3>
     </section>
     <section>
-        <img src="score_calculation/deltaBasedScoreCalculationNQueens04.png">
+        <img src="score_calculation/deltaBasedScoreCalculationNQueens04.png" class="fullImage">
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/selectorTree.png">
+        <img src="move_and_neighbourhood_selection/selectorTree.png" class="fullImage">
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/cachedShuffledSelection.png">
+        <img src="move_and_neighbourhood_selection/cachedShuffledSelection.png" class="fullImage">
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/jitRandomSelection.png">
+        <img src="move_and_neighbourhood_selection/jitRandomSelection.png" class="fullImage">
     </section>
     <section>
-        <img src="move_and_neighbourhood_selection/filteredSelection.png">
+        <img src="move_and_neighbourhood_selection/filteredSelection.png" class="fullImage">
     </section>
 
     <section>
-        <img src="benchmarking_and_tweaking/benchmarkOverview.png">
+        <img src="benchmarking_and_tweaking/benchmarkOverview.png" class="fullImage">
     </section>
     <section>
         <h3>Benchmark results</h3>
@@ -1415,22 +1279,12 @@ $ mvn exec:exec
     </section>
 
     <section>
-        <img src="planner_introduction/kieFunctionalityOverview_0.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_introduction/kieFunctionalityOverview_1.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_introduction/kieFunctionalityOverview_2.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_introduction/kieFunctionalityOverview_3.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_introduction/kieFunctionalityOverview_4.png">
-    </section>
-    <section class="immediate">
-        <img src="planner_introduction/kieFunctionalityOverview_5.png">
+        <img src="planner_introduction/kieFunctionalityOverview_0.png" class="fullImage">
+        <img src="planner_introduction/kieFunctionalityOverview_1.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_2.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_3.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_4.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_5.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -1463,9 +1317,26 @@ $ mvn exec:exec
         </ul>
     </section>
 
-    <div id="progress-bar"></div>
-    <script src="dzslides/dzslides.js"></script>
-    <script src="twitterbootstrap/js/highlight.js"></script>
+</div></div>
+
+    <script src="website/reveal/js/reveal.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'linear', // page/linear/fade/none
+
+            margin: 0.05,
+            minScale: 0.2,
+            maxScale: 100.0
+        });
+    </script>
+    <script src="website/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 </html>
