@@ -36,6 +36,14 @@
   url: http://lccoelce14.sched.org/event/c25af16e16beee7b8ec566a31481c077
   presenters: Martin Sivak
 
+- eventId: 20141118-devoxx
+  eventOrganization: Devoxx
+  location: Antwerp, Belgium
+  date: 2014-11-11
+  title: Hackergarten
+  url: http://www.devoxx.be/hackergarten/
+  presenters: Geoffrey De Smet
+
 - eventId: 20150623-redhatsummit
   eventOrganization: Red Hat Summit
   location: Boston, MA, USA
