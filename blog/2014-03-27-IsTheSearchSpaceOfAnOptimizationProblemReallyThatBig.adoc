@@ -18,20 +18,20 @@ We 'll look at these 3 use cases:
 Each computer should have enough hardware capacity (CPU power, RAM, etc) for all its processes.
 Use as few computers as possible to minimize the maintenance costs.
 
-** Model: The class +Process+ has a planning variable +computer+ of type class +Computer+.
-So every +Process+ instance refers to the +Computer+ instance to which it's assigned.
+** Model: The class `Process` has a planning variable `computer` of type class `Computer`.
+So every `Process` instance refers to the `Computer` instance to which it's assigned.
 
 * *Traveling Salesman Problem (TSP)*: Find the shortest path to visit every city.
 
-** Model: The class +Visit+ has a planning variable +previousVisit+.
-All +Visit+ instances together form a single linked list.
+** Model: The class `Visit` has a planning variable `previousVisit`.
+All `Visit` instances together form a single linked list.
 
 * *Course Scheduling*: Assign lectures to periods and rooms.
 No teacher should have 2 lectures in the same period.
 No room should have 2 lectures in the same period.
 There are 6 more constraint types.
 
-** Model: The class +Lecture+ has a planning variable +period+ and a planning variable +room+.
+** Model: The class `Lecture` has a planning variable `period` and a planning variable `room`.
 
 What's the search space for each of these use cases?
 
@@ -51,11 +51,11 @@ image::searchSpaceSizeCalculation.png[]
 raised to the power of the number of lectures.
 
 The base search space is beyond gigantic.
-Let's compare it to the minimal number of atoms in the known universe, which is +10^80^+.
+Let's compare it to the minimal number of atoms in the known universe, which is `10^80^`.
 In Cloud Balancing, the base search space is already bigger than that,
-for a small dataset of +100+ computers and +300+ processes. Not to mention the big datasets.
+for a small dataset of `100` computers and `300` processes. Not to mention the big datasets.
 
-In the best case we can hope to enumerate +10^20^+ combinations per year on modern hardware,
+In the best case we can hope to enumerate `10^20^` combinations per year on modern hardware,
 so *enumerating all combinations would take an insane amount of years*.
 We don't have years, we have seconds, maybe minutes or hours.
 Can we cut any corners?
@@ -79,7 +79,7 @@ That implies that even the smartest computer scientists fail to calculate it in 
 for medium or big datasets.
 
 * *Traveling Salesman Problem (TSP)*: There are no hard constraints which aren't build-in into the model already.
-So, the feasible search space is the same as the base search space, +n!+.
+So, the feasible search space is the same as the base search space, `n!`.
 
 * *Course Scheduling*: We can successfully take into account 1 hard constraint:
 _no room should have 2 lectures in the same period_.
@@ -101,8 +101,8 @@ is arbitrary (from a mathematical point of view):
 we want to prune all solutions with a worse score from the search space.
 footnote:[Presumes the use case only has negative constraints. Most use cases do, including all those shown in this article.]
 
-** For example: as soon as we know there is a solution of score +0hard/-100soft+,
-there is no point investigating partial solutions which already have a score of +0hard/-200soft+ (which is worse).
+** For example: as soon as we know there is a solution of score `0hard/-100soft`,
+there is no point investigating partial solutions which already have a score of `0hard/-200soft` (which is worse).
 
 So instead of a using a _Brute Force_ algorithm, shown here on the N queens use case
 (where to goal is to put n queens on a chessboard so they cannot attack each other):
@@ -128,7 +128,7 @@ Then on the Cloud Balancing use case:
 
 image::exhaustiveSearchScalabilityCloudBalance.png[]
 
-That's bad. Even with *Branch And Bound*, we hit the wall at +8+ computers and +24+ processes.
+That's bad. Even with *Branch And Bound*, we hit the wall at `8` computers and `24` processes.
 Although there are number of techniques to push that wall out further, *these exhaustive algorithms don't scale*.
 Despite that the pruned search space is a lot smaller than the base search space, it's still insanely large.
 

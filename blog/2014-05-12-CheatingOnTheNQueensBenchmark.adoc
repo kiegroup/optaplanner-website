@@ -5,13 +5,13 @@
 :awestruct-tags: [insight, benchmark]
 
 Many Solver distributions include an N Queens example,
-in which +n+ queens need to be placed on a +n*n+ sized chessboard, with no attack opportunities.
+in which `n` queens need to be placed on a `n*n` sized chessboard, with no attack opportunities.
 So when you're looking for the fastest Solver,
 it's tempting to use the N Queens example as a benchmark to compare those solvers.
 That's a tragic mistake, because the N Queens problem is solvable in polynomial time,
 which means there's a way to cheat.
 
-That being said, *http://www.optaplanner.org[OptaPlanner] solves the +1 000 000+ queens problem in less than 3 seconds* :)
+That being said, *http://www.optaplanner.org[OptaPlanner] solves the `1 000 000` queens problem in less than 3 seconds* :)
 Here's a log to prove it (with time spent in milliseconds):
 
 ----
@@ -30,7 +30,7 @@ INFO  Solving ended: time spent (2981), best score (0), ...
 The N Queens problem is not NP-complete, nor NP-hard.
 That is _math speak_ for stating that _there's a perfect algorithm to solve this problem_:
 the http://en.wikipedia.org/wiki/Eight_queens_puzzle#Explicit_solutions[Explicits Solutions algorithm].
-Implemented with a +CustomPhaseCommand+ in OptaPlanner it looks like this:
+Implemented with a `CustomPhaseCommand` in OptaPlanner it looks like this:
 
 [source,java]
 ----

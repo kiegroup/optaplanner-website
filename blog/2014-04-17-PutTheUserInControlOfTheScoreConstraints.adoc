@@ -61,7 +61,7 @@ public class FreePenalty {
 }
 ----
 
-We write 1 rule to apply those +FreePenalty+ instances as score constraints:
+We write 1 rule to apply those `FreePenalty` instances as score constraints:
 
 [source,drl]
 ----
@@ -83,7 +83,7 @@ rule "requiredCpuPowerTotal"
 end
 ----
 
-And of course, we build a web interface so the user can create/update/delete +FreePenalty+ records.
+And of course, we build a web interface so the user can create/update/delete `FreePenalty` records.
 So the user can use that UI to create these records:
 
 [source,txt]
@@ -96,7 +96,7 @@ These 2 records result in the same score function as the statically defines scor
 but now the user can change them.
 
 An added advantage of this approach is that the user's changes are part of the dataset.
-Multiple datasets, for the exact same Solver configuration, use separate +FreePenalty+ instances.
+Multiple datasets, for the exact same Solver configuration, use separate `FreePenalty` instances.
 This is especially useful in a multi-tenancy application.
 
 == Decision tables

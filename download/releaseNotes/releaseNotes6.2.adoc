@@ -83,5 +83,5 @@ image:6.2/constraintMatchTotalBestScoreStatistic.png[]
 
 ==== Other improvements
 
-* Construction Heuristics: new pick early type: +FIRST_FEASIBLE_SCORE+ which is useful for scaling.
+* Construction Heuristics: new pick early type: `FIRST_FEASIBLE_SCORE` which is useful for scaling.
 * Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.

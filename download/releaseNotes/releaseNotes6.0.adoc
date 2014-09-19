@@ -79,11 +79,11 @@ After:
 ----
 
 Notice that you don't need to repeat the rule name or the causes (the lectures) no more.
-OptaPlanner figures out it itself through the +kcontext+ variable.
-Drools automatically exposes the +kcontext+ variable in the RHS, so you don't need any extra code for it.
+OptaPlanner figures out it itself through the `kcontext` variable.
+Drools automatically exposes the `kcontext` variable in the RHS, so you don't need any extra code for it.
 
-You also no longer need to hack the API's to get a list of all +ConstraintOcurrence+'s:
-the +ConstraintMatch+ objects (and their totals per constraint) are available directly on the +ScoreDirector+ API.
+You also no longer need to hack the API's to get a list of all `ConstraintOcurrence`'s:
+the `ConstraintMatch` objects (and their totals per constraint) are available directly on the `ScoreDirector` API.
 
 For more information, see http://blog.athico.com/2013/04/score-drl-faster-and-easier-in.html[this blog post]
 and link:../../learn/documentation.html[the reference manual].
@@ -98,7 +98,7 @@ you can now switch to a far more scalable configuration.
 
 ==== Automatic solution cloning
 
-Implementing the +Solution+'s planning clone method is now optional.
+Implementing the `Solution`'s planning clone method is now optional.
 This means there's less boilerplate code to write and it's harder to cause score corruption in your code.
 
 For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]
@@ -106,9 +106,9 @@ and link:../../learn/documentation.html[the reference manual].
 
 ==== New build-in scores
 
-There are new build-in score definitions, such as: +HardMediumSoftScore+ (3 score levels),
-+BendableScore+ (configurable number of score levels), +HardSoftLongScore+, +HardSoftDoubleScore+,
-+HardSoftBigDecimalScore+, ...
+There are new build-in score definitions, such as: `HardMediumSoftScore` (3 score levels),
+`BendableScore` (configurable number of score levels), `HardSoftLongScore`, `HardSoftDoubleScore`,
+`HardSoftBigDecimalScore`, ...
 
 ==== Planning Variable Listener (shadow variables)
 
@@ -116,12 +116,12 @@ A planning variable can now have a listener which updates a shadow planning vari
 
 A shadow planning variable is a variable that is never changed directly,
 but can be calculated based on the state of the genuine planning variables.
-For example: in VRP with time windows, the +arrivalTime+ at a customer can be calculated
+For example: in VRP with time windows, the `arrivalTime` at a customer can be calculated
 based on the previous customers of that vehicle.
 
 ==== Bi-directional variable relationship for chained variables
 
-A shadow planning variable can now be +mappedBy+ a genuine variable.
+A shadow planning variable can now be `mappedBy` a genuine variable.
 OptaPlanner will automatically update the shadow variable if the genuine variable is changed.
 Currently this is only supported for chained variables.
 
@@ -129,7 +129,7 @@ Currently this is only supported for chained variables.
 
 Several improvements have made use cases like TSP and VRP more scalable.
 The code has been optimized to run significantly faster.
-Also, +<subChainSelector>+ now supports +<maximumSubChainSize>+ to scale out better.
+Also, `<subChainSelector>` now supports `<maximumSubChainSize>` to scale out better.
 
 ==== New metaheuristic: Step Counting Hill Climbing
 
@@ -154,18 +154,18 @@ or other products to machines and employees (thanks to Lukáš Petrovický)
 
 * The GUI's of course scheduling, exam scheduling, hospital bed planning and sport scheduling have been improved.
 * The optaplanner examples Swing GUI has been redesigned to take up less space.
-* A webapp variant of the cloud balancing example has been added to +optaplanner-webexamples.war+ (thanks to Frederic Hornain).
+* A webapp variant of the cloud balancing example has been added to `optaplanner-webexamples.war` (thanks to Frederic Hornain).
 
 ==== Other improvements
 
-* Domain classes that extend/implement a +@PlanningEntity+ class or interface can now be used as planning entities.
+* Domain classes that extend/implement a `@PlanningEntity` class or interface can now be used as planning entities.
 * Nullable variables support improved and fixed.
 * _Late Acceptance_ improved.
 * Ratio based entity tabu (thanks to Lukáš Petrovický).
 * Drools properties can now be optionally specified in the solver configuration XML.
 * Mimic selection: useful to create a cartesian product selection of 2 change move selectors
 that move different variables of the same entity.
-* +KieBase+ support, for example to integrate decision tables or scorecards.
+* `KieBase` support, for example to integrate decision tables or scorecards.
 * OSGi support out-of-the-box in the optaplanner jars.
 
 === Upgrading from a previous version

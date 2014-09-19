@@ -13,7 +13,7 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 * image:download.png[] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
 ** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
-** Release date: +#{site.pom.latestFinal.releaseDate}+
+** Release date: `#{site.pom.latestFinal.releaseDate}`
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 
 * Older community releases: Check http://download.jboss.org/drools/release/[the release archive].
@@ -25,7 +25,7 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 The OptaPlanner jars are also available in http://search.maven.org/#search|ga|1|org.optaplanner[the central maven repository]
 (and also in https://repository.jboss.org/nexus/index.html#nexus-search;gav\~org.optaplanner\~\~\~\~[the JBoss maven repository]).
 
-If you use Maven, just add a dependency in your +pom.xml+:
+If you use Maven, just add a dependency in your `pom.xml`:
 
 [source,xml]
 ----
@@ -58,7 +58,7 @@ A CR should be almost identical to the Final release.
 * image:download.png[] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
-** Release date: +#{site.pom.latest.releaseDate}+
+** Release date: `#{site.pom.latest.releaseDate}`
 
 Or with Maven:
 

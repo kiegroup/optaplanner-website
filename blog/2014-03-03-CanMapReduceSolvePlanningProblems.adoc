@@ -31,18 +31,18 @@ For example, suppose we need to find the most expensive invoice record in a data
 The http://en.wikipedia.org/wiki/Travelling_salesman_problem[Traveling Salesman Problem] (TSP) is a very basic planning problem.
 Given a list of cities, find the shortest path to visit all cities.
 
-For example, here's a dataset with +68+ cities and its optimal tour with a distance of +674+:
+For example, here's a dataset with `68` cities and its optimal tour with a distance of `674`:
 
 image::mapReduceTspBlogExplanation.png[]
 
-The search space of this small dataset has +68!+ (= +10^96^+) combinations. That's a lot.
+The search space of this small dataset has `68!` (= `10^96^`) combinations. That's a lot.
 
 A more realistic planning problem, such vehicle routing, has more constraints (both in number as in complexity),
 such as: vehicle capacity, vehicle type limitations, time windows, driver limits, etc.
 
 == MapReduce on TSP
 
-Even though most solvers probably won't go out of memory on only +68+ variables,
+Even though most solvers probably won't go out of memory on only `68` variables,
 the small size of this problem allows us to visualize it clearly:
 
 image::mapReduceTspBlog_0.png[]
@@ -51,9 +51,9 @@ Let's apply MapReduce on it:
 
 === 1) *Partition*: Divide the problem into n pieces
 
-First, we take the problem and split it into +n+ pieces.
-Usually, +n+ is the number of computer nodes in our system.
-For visual reasons, we divide it into only +4+ pieces:
+First, we take the problem and split it into `n` pieces.
+Usually, `n` is the number of computer nodes in our system.
+For visual reasons, we divide it into only `4` pieces:
 
 image::mapReduceTspBlog_1.png[]
 

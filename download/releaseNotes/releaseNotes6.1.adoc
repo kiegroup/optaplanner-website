@@ -46,28 +46,28 @@ OptaPlanner is:
 
 There is now a public API:
 
-* Public API: All classes in the package namespace +org.optaplanner.core.api+ are 100% backwards compatible in future releases.
+* Public API: All classes in the package namespace `org.optaplanner.core.api` are 100% backwards compatible in future releases.
 
-* Impl classes: All classes in the package namespace +org.optaplanner.core.impl+ are not backwards compatible: they might change in future releases.
-The recipe called +UpgradeFromPreviousVersionRecipe.txt+ describes every such change and on how to quickly deal with it
+* Impl classes: All classes in the package namespace `org.optaplanner.core.impl` are not backwards compatible: they might change in future releases.
+The recipe called `UpgradeFromPreviousVersionRecipe.txt` describes every such change and on how to quickly deal with it
 when upgrading to a newer version. That recipe file is included in every release zip.
 
 * XML configuration: The XML solver configuration is backwards compatible for all elements,
 except for elements that require the use of non public API classes.
-The XML solver configuration is defined by the classes in the package namespace +org.optaplanner.core.config+.
+The XML solver configuration is defined by the classes in the package namespace `org.optaplanner.core.config`.
 
 ==== Performance speedups
 
 * *EntitySelector caching speedup for large datasets*: Benchmarked on MachineReassignment's B datasets.
-** Tabu Search: +{plus}3%+ on average, +{plus}4%+ on largest
-** Late Acceptance: +{plus}234%+ (+x3.34+) on average, +{plus}430%+ (+x5.3+) on largest
+** Tabu Search: `+3%` on average, `+4%` on largest
+** Late Acceptance: `+234%` (`x3.34`) on average, `+430%` (`x5.3`) on largest
 * *Generic cloning speedup for large datasets*: Benchmarked on MachineReassignment's B datasets.
-** Tabu Search: +{plus}18%+ on average, +{plus}24%+ on largest
-** Late Acceptance: +{plus}23%+ on average, +{plus}121%+ (+x2.21+) on largest
+** Tabu Search: `+18%` on average, `+24%` on largest
+** Late Acceptance: `+23%` on average, `+121%` (`x2.21`) on largest
 
 ==== Declarative value ranges
 
-When the planning value range of a planning variable is a number (such as +int+, +double+ or +BigDecimal+),
+When the planning value range of a planning variable is a number (such as `int`, `double` or `BigDecimal`),
 you can now declare the range by its bounds, instead of enumerating all values in the range.
 
 So instead of reserving 5000 memory spaces for all the integer values:
@@ -128,7 +128,7 @@ Contributed by Matej Čimbora.
 
 ==== Generic move improvements
 
-* New +PillarChangeMove+:
+* New `PillarChangeMove`:
 A pillar is a set of planning entities which have the same planning value(s) for their planning variable(s).
 The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable for all entities.
 * The pillar moves can now select subPillars too.

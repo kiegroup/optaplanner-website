@@ -7,12 +7,12 @@
 The optaplanner-training teaches OptaPlanner through an number labs.
 Each lab has an assignment with clear goals, initial code and a solution.
 
-Currently, the +optaplanner-training-*.zip+ is publicly available to the community.
+Currently, the `optaplanner-training-*.zip` is publicly available to the community.
 It's unclear if that will remain the case. Grab it while you can :)
 
 http://download.jboss.org/optaplanner/training/optaplanner-training-6.0.0.Final-training-1.zip[*Download optaplanner-training-6.0.0.Final-training-1.zip*]
 
 == Usage
 
-. Download and unzip +optaplanner-training-*.zip+
-. Open +instructions/training.html+ and follow those instructions.
+. Download and unzip `optaplanner-training-*.zip`
+. Open `instructions/training.html` and follow those instructions.

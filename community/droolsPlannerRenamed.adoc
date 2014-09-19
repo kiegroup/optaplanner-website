@@ -2,7 +2,7 @@
 :awestruct-layout: normalBase
 :showtitle:
 
-As of version +6.0.0.Beta1+, *Drools Planner has been renamed to OptaPlanner*.
+As of version `6.0.0.Beta1`, *Drools Planner has been renamed to OptaPlanner*.
 
 == Why change the name?
 
@@ -56,11 +56,11 @@ From a business point of view, there's *little or no change*:
 
 ** Maven identification groupId's and artifactId's changes:
 
-*** groupId +org.drools.planner+ is now +org.optaplanner+
+*** groupId `org.drools.planner` is now `org.optaplanner`
 
-*** artifactId +drools-planner-core+ is now +optaplanner-core+
+*** artifactId `drools-planner-core` is now `optaplanner-core`
 
-*** artifactId +drools-planner-benchmark+ is now +optaplanner-benchmark+
+*** artifactId `drools-planner-benchmark` is now `optaplanner-benchmark`
 
 ** As usual, for more information see the Upgrade Recipe in the download zip.
 
@@ -72,6 +72,6 @@ From a business point of view, there's *little or no change*:
 
 * OptaPlanner gets its own IRC channels on http://freenode.net/[Freenode]:
 
-** +#optaplanner+
+** `#optaplanner`
 
-** +#optaplanner-dev+
+** `#optaplanner-dev`

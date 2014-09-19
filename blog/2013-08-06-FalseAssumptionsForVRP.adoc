@@ -24,7 +24,7 @@ The shortest route to visit all these customers is this:
 
 image::vrpPresumptions02.png[]
 
-This optimal solution requires +210+ fuel (which includes each vehicle driving back to the warehouse).
+This optimal solution requires `210` fuel (which includes each vehicle driving back to the warehouse).
 
 Notice that we only use 1 vehicle. Let's continue from that assumption. +
 Assumption: *An optimal VRP route uses only 1 vehicle. _(false)_*
@@ -42,7 +42,7 @@ We need to use 2 vehicles now:
 
 image::vrpPresumptions04.png[]
 
-This optimal solution requires +224+ fuel, which is - of course - more than the +210+ fuel of the previous solution.
+This optimal solution requires `224` fuel, which is - of course - more than the `210` fuel of the previous solution.
 The yellow truck transports 60 items and the green one 80 items.
 
 Notice that none of the lines cross. Let's assume that's always the case. +
@@ -59,7 +59,7 @@ Now the lines do need to cross:
 
 image::vrpPresumptions06.png[]
 
-The optimal solution now requires even more fuel: +284+. We found a feasible solution with 2 vehicles.
+The optimal solution now requires even more fuel: `284`. We found a feasible solution with 2 vehicles.
 
 So we don't seem to need any more vehicles. +
 Assumption: *An optimal, feasible VRP route with n vehicles is still optimal for n+1 vehicles. _(false)_*
@@ -68,7 +68,7 @@ Let's add a 3th vehicle to disprove that:
 
 image::vrpPresumptions07.png[]
 
-By adding an extra vehicle, the optimal solution now uses less fuel: only +274+. This is a paradox: buying more vehicles can reduce expenses.
+By adding an extra vehicle, the optimal solution now uses less fuel: only `274`. This is a paradox: buying more vehicles can reduce expenses.
 
 Notice that in both solutions above, no vehicle crosses its own line. +
 Assumption: *An optimal VRP route has no crossing lines of the same color. _(false)_*
