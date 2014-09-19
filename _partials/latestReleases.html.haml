@@ -4,14 +4,14 @@
     %ul.list-unstyled
       %li(style = "margin-top: 10px;")
         .title
-          %a(href="download/releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html")
+          %a{:href => relative("/download/releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html", page.outputPage)}
             #{site.pom.latestFinal.version} released
         .small
           #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
       - if !(site.pom.latest.version == site.pom.latestFinal.version)
         %li(style = "margin-top: 10px;")
           .title
-            %a(href="download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html")
+            %a{:href => relative("/download/releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html", page.outputPage)}
               #{site.pom.latest.version} released
           .small
             #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
