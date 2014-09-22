@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="website/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="website/reveal/css/reveal.min.css">
     <link rel="stylesheet" href="website/reveal/css/theme/simple.css" id="theme">
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            document.write('<link rel="stylesheet" href="website/reveal/css/print/pdf.css">');
+        }
+    </script>
     <link rel="stylesheet" href="website/highlight/highlight.css">
     <link rel="stylesheet" href="website/optaplannerPresentation.css">
 
@@ -16,17 +21,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-    <script>
-        if (window.location.search.match(/print-pdf/gi)) {
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = 'website/reveal/css/print/pdf.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        }
-    </script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
