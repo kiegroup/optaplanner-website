@@ -66,7 +66,8 @@
         <h3>What is business resource optimization?</h3>
         <figure>
             <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
-            <p>TSP and VRP demo</p>
+            <p>demo</p>
+            <p>Traveling Salesman Problem (TSP)</p>
         </figure>
     </section>
 
@@ -75,6 +76,31 @@
         <img src="use_cases_and_examples/tspOptimalSolutionVolatility_1.png" class="fullImage fragment">
         <img src="use_cases_and_examples/tspOptimalSolutionVolatility_2.png" class="fullImage fragment">
         <img src="use_cases_and_examples/tspOptimalSolutionVolatility_3.png" class="fullImage fragment">
+    </section>
+
+    <section>
+        <h2>
+            TSP<br/>
+            is an academic problem
+        </h2>
+    </section>
+
+    <section>
+        <h3>
+            What is realistic<br/>
+            business resource optimization?
+        </h3>
+        <figure>
+            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+            <p>VRP demo</p>
+        </figure>
+    </section>
+
+    <section>
+        <img src="use_cases_and_examples/vehicleRoutingDistanceType_0.png" class="fullImage">
+        <img src="use_cases_and_examples/vehicleRoutingDistanceType_1.png" class="fullImage fragment">
+        <img src="use_cases_and_examples/vehicleRoutingDistanceType_2.png" class="fullImage fragment">
+        <img src="use_cases_and_examples/vehicleRoutingDistanceType_3.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -130,10 +156,11 @@
     </section>
 
     <section>
-        <img src="use_cases_and_examples/vehicleRoutingDistanceType_0.png" class="fullImage">
-        <img src="use_cases_and_examples/vehicleRoutingDistanceType_1.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/vehicleRoutingDistanceType_2.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/vehicleRoutingDistanceType_3.png" class="fullImage fragment">
+        <h3>What is business resource optimization?</h3>
+        <figure>
+            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+            <p>cloud balancing demo</p>
+        </figure>
     </section>
 
     <section>
@@ -207,7 +234,7 @@
             Planning problems are<br/>
             difficult to solve!
         </h2>
-        <p>And human results aren't good</p>
+        <p>And human aren't good at it</p>
         <!-- Public domain from http://en.wikipedia.org/wiki/File:Ishihara_9.png -->
         <img src="presentation_extra/colorBlind.png">
         <p>But they don't realize it<br/>(nor does their manager)</p>
@@ -227,18 +254,30 @@
         </ul>
     </section>
     <section>
+        <img src="planner_introduction/kieFunctionalityOverview_0.png" class="fullImage">
+        <img src="planner_introduction/kieFunctionalityOverview_1.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_2.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_3.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_4.png" class="fullImage fragment">
+        <img src="planner_introduction/kieFunctionalityOverview_5.png" class="fullImage fragment">
+    </section>
+    <section>
         <img src="planner_introduction/compatibility.png" class="fullImage">
     </section>
-
     <section>
-        <h3>CloudBalancing demo</h3>
-        <figure>
-            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
-            <p>CloudBalancing demo</p>
-        </figure>
+        <img src="integration/integrationOverview_0.png" class="fullImage">
+        <img src="integration/integrationOverview_1.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_2.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_3.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_4.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_5.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_6.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_7.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_8.png" class="fullImage fragment">
     </section>
 
     <section>
+        <h3>Cloud Balancing example</h3>
         <h2>Domain model</h2>
     </section>
 
@@ -360,18 +399,7 @@ public class Process {
     </section>
 
     <section>
-        <img src="integration/integrationOverview_0.png" class="fullImage">
-        <img src="integration/integrationOverview_1.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_2.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_3.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_4.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_5.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_6.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_7.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_8.png" class="fullImage fragment">
-    </section>
-
-    <section>
+        <h3>Cloud Balancing example</h3>
         <h2>Score constraints</h2>
     </section>
 
@@ -493,6 +521,36 @@ end</code></pre>
     </section>
 
     <section>
+        <h3>Score calculation is very flexible</h3>
+        <ul>
+            <li><b>Optimal solution for <i>almost</i> your business problem is useless</b></li>
+            <li>
+                Model supports:
+                <ul>
+                    <li>Reusing existing classes</li>
+                    <li>Rich, OO class hierarchies (including polymorphism)</li>
+                </ul>
+            </li>
+            <li>
+                Constraints supports:
+                <ul>
+                    <li>Any constraint (no linear or quadratic restrictions!)</li>
+                    <li>Reusing existing code</li>
+                </ul>
+            </li>
+            <li>
+                Scoring supports:
+                <ul>
+                    <li>Positive/negative mix</li>
+                    <li>Score weights</li>
+                    <li>Unlimited score levels</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Cloud Balancing example</h3>
         <h2>Solving it</h2>
     </section>
 
@@ -526,6 +584,7 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
     </section>
 
     <section>
+        <h3>Cloud Balancing example</h3>
         <h2>Optimization algorithms</h2>
     </section>
 
@@ -1327,15 +1386,6 @@ $ mvn exec:exec
   }
 
 }</code></pre>
-    </section>
-
-    <section>
-        <img src="planner_introduction/kieFunctionalityOverview_0.png" class="fullImage">
-        <img src="planner_introduction/kieFunctionalityOverview_1.png" class="fullImage fragment">
-        <img src="planner_introduction/kieFunctionalityOverview_2.png" class="fullImage fragment">
-        <img src="planner_introduction/kieFunctionalityOverview_3.png" class="fullImage fragment">
-        <img src="planner_introduction/kieFunctionalityOverview_4.png" class="fullImage fragment">
-        <img src="planner_introduction/kieFunctionalityOverview_5.png" class="fullImage fragment">
     </section>
 
     <section>
