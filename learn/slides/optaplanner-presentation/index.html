@@ -264,17 +264,6 @@
     <section>
         <img src="planner_introduction/compatibility.png" class="fullImage">
     </section>
-    <section>
-        <img src="integration/integrationOverview_0.png" class="fullImage">
-        <img src="integration/integrationOverview_1.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_2.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_3.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_4.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_5.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_6.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_7.png" class="fullImage fragment">
-        <img src="integration/integrationOverview_8.png" class="fullImage fragment">
-    </section>
 
     <section>
         <h3>Cloud Balancing example</h3>
@@ -311,9 +300,9 @@ public class Process {
   private int requiredMemory;
   private int requiredNetworkBandwidth;
 
-  ...
-
   // getters
+
+  ...
 }</code></pre>
     </section>
     <section>
@@ -321,14 +310,17 @@ public class Process {
         <pre><code class="java">@PlanningEntity
 public class Process {
   ...
+
   private Computer computer;
 
   @PlanningVariable(valueRangeProviderRefs = {"computerRange"})
   public Computer getComputer() {
     return computer;
   }
-  public void setComputer(Computer computer) {...}
-  ...
+  public void setComputer(Computer computer) {
+    this.computer = computer;
+  }
+
 }</code></pre>
     </section>
 
@@ -337,27 +329,16 @@ public class Process {
         <img src="quick_start/cloudBalanceClassDiagram_4.png" class="fullImage fragment">
     </section>
     <section>
-        <h3>Solution CloudBalance: problem facts</h3>
-        <pre><code class="java">public class CloudBalance
-    implements Solution&lt;HardSoftScore&gt; {
+        <h3>Solution CloudBalance</h3>
+        <pre><code class="java">public class CloudBalance implements Solution&lt;HardSoftScore&gt; {
 
   private List&lt;Computer&gt; computerList;
+  private List&lt;Process&gt; processList;
 
   @ValueRangeProvider(id = "computerRange")
   public List&lt;Computer&gt; getComputerList() {
     return computerList;
   }
-
-  ...
-}</code></pre>
-    </section>
-    <section>
-        <h3>Solution CloudBalance: planning entities</h3>
-        <pre><code class="java">public class CloudBalance
-    implements Solution&lt;HardSoftScore&gt; {
-  ...
-
-  private List&lt;Process&gt; processList;
 
   @PlanningEntityCollectionProperty
   public List&lt;Process&gt; getProcessList() {
@@ -368,34 +349,35 @@ public class Process {
 }</code></pre>
     </section>
     <section>
-        <h3>Solution CloudBalance: getProblemFacts()</h3>
-        <pre><code class="java">public class CloudBalance
-    implements Solution&lt;HardSoftScore&gt; {
-  ...
-
-  // Used in score constraints
-  public Collection&lt;Object&gt; getProblemFacts() {
-    List&lt;Object&gt; facts = new ArrayList&lt;Object&gt;();
-    facts.addAll(computerList);
-    return facts;
-  }
-
-  ...
-}</code></pre>
-    </section>
-    <section>
         <h3>Solution CloudBalance: score</h3>
-        <pre><code class="java">public class CloudBalance
-    implements Solution&lt;HardSoftScore&gt; {
+        <pre><code class="java">public class CloudBalance implements Solution&lt;HardSoftScore&gt; {
   ...
 
   private HardSoftScore score;
 
-  public HardSoftScore getScore() {...}
-  public void setScore(HardSoftScore score) {...}
+  public HardSoftScore getScore() {
+    return score;
+  }
+  public void setScore(HardSoftScore score) {
+    this.score = score;
+  }
 
-  ...
 }</code></pre>
+    </section>
+
+    <section>
+        <img src="use_cases_and_examples/machineReassignmentClassDiagram.png" class="fullImage">
+    </section>
+    <section>
+        <img src="integration/integrationOverview_0.png" class="fullImage">
+        <img src="integration/integrationOverview_1.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_2.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_3.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_4.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_5.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_6.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_7.png" class="fullImage fragment">
+        <img src="integration/integrationOverview_8.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -488,6 +470,24 @@ public class Process {
         </ul>
     </section>
     <section>
+        <h3>Solution CloudBalance: getProblemFacts()</h3>
+        <pre><code class="java">public class CloudBalance implements Solution&lt;HardSoftScore&gt; {
+
+  private List&lt;Computer&gt; computerList;
+  private List&lt;Process&gt; processList;
+  ...
+
+  // Used in Drools score rules (DRL)
+  public Collection&lt;Object&gt; getProblemFacts() {
+    List&lt;Object&gt; facts = new ArrayList&lt;Object&gt;();
+    facts.addAll(computerList);
+    return facts;
+  }
+
+  ...
+}</code></pre>
+    </section>
+    <section>
         <h3>DRL soft constraint: computer cost</h3>
         <pre><code class="drl">rule "computerCost"
   when
@@ -497,8 +497,7 @@ public class Process {
     exists Process(computer == $s)
   then
     // lower soft score by the maintenance cost
-    scoreHolder.addSoftConstraintMatch(kcontext,
-        - $cost);
+    scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
 end</code></pre>
     </section>
     <section>
@@ -509,8 +508,7 @@ end</code></pre>
     $s : Computer($cpu : cpuPower)
     // with too little cpu for its processes
     $total : Number(intValue > $cpu) from accumulate(
-      Process(computer == $s,
-          $requiredCpu : requiredCpuPower),
+      Process(computer == $s, $requiredCpu : requiredCpuPower),
       sum($requiredCpu)
     )
   then
@@ -734,11 +732,11 @@ public class Process  {
         <h3>Tabu Search config</h3>
         <pre><code class="xml">&lt;localSearch&gt;
   &lt;acceptor&gt;
-    &lt;!-- Untweaked standard value --&gt;
+    &lt;!-- Typical standard value --&gt;
     &lt;entityTabuSize&gt;7&lt;/entityTabuSize&gt;
   &lt;/acceptor&gt;
   &lt;forager&gt;
-    &lt;!-- Untweaked standard value --&gt;
+    &lt;!-- Typical value --&gt;
     &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
   &lt;/forager&gt;
 &lt;/localSearch&gt;</code></pre>
@@ -757,7 +755,24 @@ public class Process  {
     &lt;/simulatedAnnealingStartingTemperature&gt;
   &lt;/acceptor&gt;
   &lt;forager&gt;
-    &lt;!-- Untweaked standard value --&gt;
+    &lt;!-- Typical value --&gt;
+    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+    </section>
+
+    <section>
+        <img src="presentation_extra/lateAcceptanceLogo.png" class="fullImage">
+    </section>
+    <section>
+        <h3>Late Acceptance config</h3>
+        <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Typical standard value --&gt;
+    &lt;lateAcceptanceSize&gt;400&lt;/lateAcceptanceSize&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Typical value --&gt;
     &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
   &lt;/forager&gt;
 &lt;/localSearch&gt;</code></pre>
