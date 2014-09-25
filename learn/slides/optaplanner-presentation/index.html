@@ -425,8 +425,7 @@ public class Process {
 
   public Score calculateScore(CloudBalance cb) {
     ...
-    return DefaultHardSoftScore.valueOf(
-        hardScore, softScore);
+    return HardSoftScore.valueOf(hardScore, softScore);
   }
 
 }</code></pre>
@@ -497,7 +496,7 @@ public class Process {
     exists Process(computer == $s)
   then
     // lower soft score by the maintenance cost
-    scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
+    scoreHolder.addSoftConstraintMatch(kcontext, - $c);
 end</code></pre>
     </section>
     <section>
@@ -880,6 +879,7 @@ public class Process  {
 $ cd optaplanner
 $ mvn clean install -DskipTests
 ...
+$ cd optaplanner-examples
 $ mvn exec:exec
 ...</code></pre>
     </section>
