@@ -6,7 +6,9 @@
 
 These slides are viewable in your browser:
 
-*link:slides/optaplanner-presentation/index.html[Show the OptaPlanner presentation]*
+* *OptaPlanner slide deck:
+link:slides/optaplanner-presentation/index.html[HTML (recommended)] -
+link:slides/optaplanner-presentation.pdf[PDF]*
 
 == Reuse these slides
 
