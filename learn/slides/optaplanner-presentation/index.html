@@ -31,7 +31,7 @@
 <body>
 <div class="reveal"><div class="slides">
 
-    <section>
+    <section class="excludeFromPrintPdf">
         <h2>
             Presentation instructions
         </h2>
@@ -1453,6 +1453,11 @@ $ mvn exec:exec
     <script src="website/reveal/js/reveal.min.js"></script>
 
     <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var slides = document.querySelector('.reveal .slides');
+            var excludeFromPrintPdfSlide = slides.querySelector('section.excludeFromPrintPdf');
+            slides.removeChild(excludeFromPrintPdfSlide);
+        }
         Reveal.initialize({
             controls: true,
             progress: true,
