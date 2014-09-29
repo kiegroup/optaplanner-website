@@ -2,6 +2,7 @@
 title: Blog
 layout: blogBase
 ---
+- page.title = "Blog tag #{page.selected_tag}" if !page.selected_tag.nil?
 %h1 #{page.title}
 - for post in page.posts
   -# Trick to make images work from blog posts work for the aggregator blog page
