@@ -12,14 +12,6 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20140925-brujug
-  eventOrganization: BruJUG
-  location: Brussels, Belgium
-  date: 2014-09-25
-  title: Optimizing vehicle routes, shift rosters and other NP-hard problems
-  url: http://www.meetup.com/BruJUG/events/206149232/
-  presenters: Geoffrey De Smet
-
 - eventId: 20141014-cloudopen
   eventOrganization: CloudOpen Europe
   location: Düsseldorf, Germany
