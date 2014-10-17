@@ -12,20 +12,12 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20141014-cloudopen
-  eventOrganization: CloudOpen Europe
-  location: Düsseldorf, Germany
-  date: 2014-10-14
-  title: Smart VM Scheduling in oVirt Cluster
-  url: http://lccoelce14.sched.org/event/c25af16e16beee7b8ec566a31481c077
-  presenters: Martin Sivak
-
 - eventId: 20141020-openblend
-  eventOrganization: Open Blend
+  eventOrganization: OpenBlend JavaSi
   location: Ljubljana, Slovenia
   date: 2014-10-20
   title: OptaPlanner introduction
-  url: http://www.openblend.org/
+  url: http://www.sioug.si/index.php/javasi-14
   presenters: Geoffrey De Smet
 
 - eventId: 20141118-devoxx
