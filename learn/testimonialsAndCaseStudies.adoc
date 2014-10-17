@@ -3,7 +3,7 @@
 :showtitle:
 
 OptaPlanner is used all over the world to optimize all kinds of planning problems.
-Some our users have shared their story:
+Some of our users have shared their story:
 
 == Case Studies
 
@@ -31,6 +31,8 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Ge
 * Using OptaPlanner for the first time, I was able to build a proof-of-concept for a complex scheduling and packing problem in less than 2 days. - Jannes Verstichel
 
 * OptaPlanner (as well as Drools) rocks! - https://twitter.com/juanignaciosl/status/471581556218544128[Juan Ignacio Sánchez]
+
+* There are few things more satisfying in life than getting an OptaPlanner system up and running. It's like magic. - https://twitter.com/divideby0/status/522952030932189185[Cedric Hurst]
 
 == Share your story
 
