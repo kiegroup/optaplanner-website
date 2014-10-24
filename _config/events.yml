@@ -12,20 +12,20 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20141020-openblend
-  eventOrganization: OpenBlend JavaSi
-  location: Ljubljana, Slovenia
-  date: 2014-10-20
-  title: OptaPlanner introduction
-  url: http://www.sioug.si/index.php/javasi-14
-  presenters: Geoffrey De Smet
-
-- eventId: 20141118-devoxx
+- eventId: 20141111-devoxx
   eventOrganization: Devoxx
   location: Antwerp, Belgium
   date: 2014-11-11
   title: Hackergarten
   url: http://www.devoxx.be/hackergarten/
+  presenters: Geoffrey De Smet
+
+- eventId: 20141117-redhatbenelux
+  eventOrganization: Red Hat Benelux
+  location: Antwerp, Belgium
+  date: 2014-11-17
+  title: Technical User Group
+  url: https://www.linkedin.com/groups?home=&gid=3290274
   presenters: Geoffrey De Smet
 
 - eventId: 20150623-redhatsummit
