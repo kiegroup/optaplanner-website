@@ -10,7 +10,7 @@ Each lab has an assignment with clear goals, initial code and a solution.
 Currently, the `optaplanner-training-*.zip` is publicly available to the community.
 It's unclear if that will remain the case. Grab it while you can :)
 
-http://download.jboss.org/optaplanner/training/optaplanner-training-6.0.0.Final-training-1.zip[*Download optaplanner-training-6.0.0.Final-training-1.zip*]
+http://download.jboss.org/optaplanner/training/optaplanner-training-6.2.0.CR1-training-2.zip[*Download optaplanner-training-6.2.0.CR1-training-2.zip*]
 
 == Usage
 
