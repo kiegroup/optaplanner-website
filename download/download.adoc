@@ -6,6 +6,8 @@
 [[FinalReleases]]
 == Final releases
 
+Interested in commercial support? Check out link:../community/product.html[Red Hat's offering].
+
 === Distribution zip
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
@@ -15,8 +17,6 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 ** License: link:../code/license.html[ASL 2.0]
 ** Release date: `#{site.pom.latestFinal.releaseDate}`
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
-
-* Older community releases: Check http://download.jboss.org/drools/release/[the release archive].
 
 * Red Hat subscription releases: Check https://access.redhat.com/downloads[the product download site].
 
@@ -77,3 +77,8 @@ Or with Maven:
 Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].
 
 * image:download.png[] #{site.pom.nightly.distributionZip}[Download OptaPlanner #{site.pom.nightly.version}]
+
+[[OlderReleases]]
+== Older releases
+
+For older community releases, check http://download.jboss.org/drools/release/[the release archive].
