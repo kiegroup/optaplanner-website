@@ -3,10 +3,10 @@
 :page-interpolate: true
 :showtitle:
 
+Interested in commercial support? Check out link:../community/product.html[Red Hat's offering].
+
 [[FinalReleases]]
 == Final releases
-
-Interested in commercial support? Check out link:../community/product.html[Red Hat's offering].
 
 === Distribution zip
 
