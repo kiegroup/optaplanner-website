@@ -60,6 +60,16 @@
   githubUsername: carrot-osc
   contributionsDescription: BenchmarkAggregator and more
 
+- userId: oskopek
+  fullName: Ondrej Škopek
+  role: Contributor
+  gravatarHashId: fa169c92202fdd8203f45daa96e69933
+  googlePlusId: +OndrejSkopekOS
+  twitterUsername: oskopek
+  githubUsername: oskopek
+  ircNickname: oskopek
+  contributionsDescription: Logarithmic scale in benchmarks and more
+
 - userId: mdproctor
   fullName: Mark Proctor
   role: KIE lead
