@@ -11,6 +11,8 @@ Some of our users have shared their story:
 
 == Articles
 
+* http://community.redhat.com/blog/2014/11/smart-vm-scheduling-in-ovirt-clusters/[oVirt OptaPlanner plugin: Cloud optimization of Virtual Machines]
+
 * http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing with real routes]
 and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Germany)
 
