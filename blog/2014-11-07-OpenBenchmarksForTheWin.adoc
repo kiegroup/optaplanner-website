@@ -58,7 +58,7 @@ _Should we therefor prevent everyone from benchmarking our Solver?_ *No*, of cou
 Computer science - like any other science - is build on empirical evidence:
 *the promise that any experiment I publish can be repeated by others independently*.
 If we prevent people from publishing such repeated experiments, we undermine our science.
-In fact, the more which people report their benchmarks, the clearer our strengths and weaknesses show.
+In fact, the more people which report their benchmarks, the clearer our strengths and weaknesses show.
 Historically, this approach has already enabled us to diagnose and fix weaknesses,
 regardless whether those were caused by our Solver or the user's domain specific implementation.
 
@@ -66,14 +66,14 @@ Therefore, http://www.optaplanner.org[OptaPlanner] welcomes external benchmark r
 I believe in Open Science, as strongly as I believe in Open Source.
 I do ask the courtesy of allowing public comments/feedback on a public report website,
 as well as to publicize the details (such as the Solver configuration).
-If you use the OptaPlanner Benchmarker toolkit (for your own convenience), simply share the benchmarker HTML report.
+If you use the OptaPlanner Benchmarker toolkit (which you will find convenient), simply share the benchmarker HTML report.
 
 To run any of the benchmarks of the OptaPlanner Examples locally,
 simply run a `*BenchmarkApp` executable class, for example `CloudBalancingBenchmarkApp`.
 Notice how a small change in the `*BenchmarkConfig.xml`, such as switching score calculation
 from Easy Java to Drools or from Drools to Incremental Java, can have a serious effect in the results.
 
-In short: I like external benchmarks, but dislike competitive benchmarks.
+In short: I like external benchmarks, but dislike competitive benchmarks, except for ...
 
 == Independent research challenges
 
@@ -93,22 +93,23 @@ And as an added bonus, we get to learn from and compare with the academic resear
 
 In the past, OptaPlanner has done well on these challenges, despite the limited weekend time we have to spend on them.
 In the last challenge, http://iconchallenge.insight-centre.org/[the ICON power scheduling challenge], we (Lukas, Matej and me) finished 2th place.
-A minority of the researchers (with their innovative algorithms in their experimental contraptions and massive time to tweak/build those) still beat us,
+A minority of the researchers still beat us (with their innovative algorithms in their experimental contraptions and massive time to tweak/build those),
 but it's been years since a competitive Solver has beaten us.
 
 == Long term vision
 
-Sharing our benchmarks and enabling others to easily reproduce them, is part of a bigger vision.
+Sharing our benchmarks and enabling others to easily reproduce them, is part of a bigger vision:
 Too many research papers (on metaheuristics and other optimization algorithms) are hard to reproduce.
 That's the paradox in computer science research: to reproduce the findings of a research paper, all we really need
-is a computer and the code. Yet, in practice, the code is usually closed and the raw benchmark data is not accessible.
+is a computer and the code. We don't need an expensive laboratory.
+Yet, in practice, the code is usually closed and the raw benchmark data is not accessible.
 It's like everyone is scared of sharing the dirty secrets of their code and their benchmarks.
 
-I believe we - the worldwide optimization research community - need to create a *benchmark repository*:
-a centralized repository of benchmarks for every use case, for every dataset, for every algorithm, for every implementation version, for every amount of time.
+I believe that we - the worldwide optimization research community - need to create a *benchmark repository*:
+a centralized repository of benchmarks for every use case, for every dataset, for every algorithm, for every implementation version, for any amount of running time.
 That, together with a good statistical interface, will give us some _real insight as to which optimization algorithms are good under which circumstances_.
 
-We - in OptaPlanner - are well on our way to do exactly that:
+We - in OptaPlanner - are well on our way to build exactly that:
 
 * OptaPlanner Examples already implements 14 distinct use cases.
 * For each example, we're already benchmarking on many different optimization algorithms.
