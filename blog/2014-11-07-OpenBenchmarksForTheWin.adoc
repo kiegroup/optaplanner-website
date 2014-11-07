@@ -53,7 +53,7 @@ make a strong argument:
 
 _Are all competitive benchmark reports lying?_ *Yes*, they are probably misrepresenting the truth.
 
-_Should we therefor prevent everyone from benchmarking our Solver?_ *No*, of course not (even if our http://www.optaplanner.org/code/license.html[licence] would allow such conditions, which it does not).
+_Should we therefor prevent everyone from benchmarking our Solver?_ *No*, of course not (even if our http://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
 
 Computer science - like any other science - is build on empirical evidence:
 *the promise that any experiment I publish can be repeated by others independently*.
@@ -112,7 +112,7 @@ That, together with a good statistical interface, will give us some _real insigh
 We - in OptaPlanner - are well on our way to build exactly that:
 
 * OptaPlanner Examples already implements 14 distinct use cases.
-* For each example, we're already benchmarking on many different optimization algorithms.
+* For each use case, we're already benchmarking on many different optimization algorithms.
 * Our benchmarker HTML report already includes many useful statistics to analyse the raw benchmark data.
 
 http://www.optaplanner.org/code/sourceCode.html[Join us] :)
