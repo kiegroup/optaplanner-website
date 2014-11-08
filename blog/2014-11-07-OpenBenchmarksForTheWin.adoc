@@ -5,7 +5,7 @@
 :awestruct-tags: [community]
 
 Recently, there was some commotion on https://twitter.com/fbahr/status/529976664022081536[Twitter]
-because *a competitor explicitly forbids publicising benchmarks of their Solver* as part of the license.
+because *a competitor heavily restricts publicising benchmarks of their Solver* as part of their license.
 That might seem harsh, but I can understand the sentiment:
 when a competitor publicizes a benchmark report comparing our product against their own, I know we're gonna get screwed.
 Unlike single product benchmarking, competitive benchmarking is inherently dishonest...
@@ -53,7 +53,7 @@ make a strong argument:
 
 _Are all competitive benchmark reports lying?_ *Yes*, they are probably misrepresenting the truth.
 
-_Should we therefor prevent everyone from benchmarking our Solver?_ *No*, of course not (even if our http://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
+_Should we therefor restrict users from publicizing benchmarks on our Solver?_ *No*, of course not (even if our http://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
 
 Computer science - like any other science - is build on empirical evidence:
 *the promise that any experiment I publish can be repeated by others independently*.
