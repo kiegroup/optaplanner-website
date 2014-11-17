@@ -92,7 +92,7 @@ Above is the original Devoxx 2014 schedule for Wednesday.
 
 Notice how in the first timeslot, there are 2 Web & HTML5 talks (purple) at the same time.
 And in the second timeslot, there are 2 Cloud & BigData talks (brown) at the same time.
-And there are no Methodology talks (green) on Wednesday! That means they are be almost unavoidable on Thursday... oh, the horror!
+And there are no Methodology talks (green) on Wednesday! That means Methodology talks are almost unavoidable on Thursday... oh, the horror!
 
 === After: the POC optimized Devoxx 2014 schedule
 
