@@ -10,7 +10,7 @@ So at the Hackergarten at Devoxx, between attending talks, a few of us started b
 We're calling the prototype https://github.com/ge0ffrey/optaconf[OptaConf] and it's under Apache License.
 
 For the past 4 years, I 've been working in my corner of the world (OptaPlanner, Drools, etc),
-so my experience on other enterprise Java technologies (JEE) is getting a bit stale.
+so my experience on other enterprise Java technologies (JavaEE) is getting a bit stale.
 Presentations (such as those at Devoxx) keep me in touch with the ever changing Java enterprise world,
 but nothing beats getting some personal hands-on experience by writing a realistic webapp.
 
@@ -21,7 +21,7 @@ and to other Hackergarten attendees (sometimes the project lead of the specific 
 
 == Backend
 
-Writing the backend turned out to be a breeze, using JEE 7 technologies:
+Writing the backend turned out to be a breeze, using JavaEE 7 technologies:
 
 * *Plain Java* to model the *domain classes*, such as `Speaker`, `Room`, etc.
 * *JAXRS* to expose a *REST service* to serve data to the webUI.
@@ -30,7 +30,7 @@ Writing the backend turned out to be a breeze, using JEE 7 technologies:
 * *JsonReader* to import the talks data from the http://cfp.devoxx.be/api[Devoxx CFP API] which is then transformed to our domain classes.
 ** I didn't use JAXRS to read that REST stream, because JsonReader gives me a DOM approach to the data,
 which I then directly map to our domain classes, without having to model their domain class too (which have no further use to us).
-** Thanks to Arun and the https://github.com/javaee-samples/javaee7-samples[JEE 7 samples] to point me in the direction of the right tech for the job.
+** Thanks to Arun and the https://github.com/javaee-samples/javaee7-samples[JavaEE 7 samples] to point me in the direction of the right tech for the job.
 * *OptaPlanner* to optimize the schedule
 ** This was also very easy to use for me ;)
 ** For more info, see the http://www.optaplanner.org[OptaPlanner documentation].
@@ -115,7 +115,7 @@ We just need more input data, such as: which talks are popular, which speakers a
 
 == Conclusion
 
-On the backend, it has become a lot simpler. JEE 7 just works. It's much simpler than it's predecessors. Most rough edges are gone.
+On the backend, it has become a lot simpler. JavaEE 7 just works. It's much simpler than it's predecessors. Most rough edges are gone.
 For full disclosure: I work for Red Hat, so I stuck to their implementations whenever there was a choice.
 
 On the frontend however... there's just so much choice and so many trade-offs between the technologies,
