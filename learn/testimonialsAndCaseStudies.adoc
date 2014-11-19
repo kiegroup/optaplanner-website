@@ -22,6 +22,8 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Ge
 
 * Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
 
+* https://github.com/ge0ffrey/optaconf[OptaConf Conference Planner] uses OptaPlanner with JavaEE 7 (JAXRS, CDI, WildFly) to expose a REST service.
+
 == Testimonials
 
 * OptaPlanner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
