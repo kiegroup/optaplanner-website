@@ -12,14 +12,6 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20141117-redhatbenelux
-  eventOrganization: Red Hat Benelux
-  location: Antwerp, Belgium
-  date: 2014-11-17
-  title: Technical User Group
-  url: http://www.redhatonline.com/benelux/events.php
-  presenters: Geoffrey De Smet
-
 - eventId: 20150518-voxxedticino
   eventOrganization: Voxxed Days Ticino
   location: Lugano, Switzerland
@@ -31,3 +23,9 @@
   location: Boston, MA, USA
   date: 2015-06-23
   url: http://www.redhat.com/summit/
+
+- eventId: 20151110-devoxxbe
+  eventOrganization: Devoxx Be
+  location: Antwerp, Belgium
+  date: 2015-11-10
+  url: http://www.devoxx.be
