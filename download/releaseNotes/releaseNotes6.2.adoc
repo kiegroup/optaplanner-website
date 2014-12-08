@@ -53,10 +53,9 @@ image:6.2/nearbySelectionRandomDistribution.png[]
 Several nearby selection probability distributions are supported:
 block distribution, linear distribution, parabolic distribution and beta distribution.
 
-==== Improved build-in variable listener efficiency.
+==== Improved build-in variable listener efficiency
 
-VRP with a `@InverseRelationShadowVariable` is now more efficient.
-In same cases (incremental score calculation and only change and swap moves), it's up to *`32%` faster* on average.
+VRP with a `@InverseRelationShadowVariable` is now more efficient. In some cases, it's up to *`32%` faster*.
 
 ==== Strategic Oscillation Tabu Search
 
@@ -96,6 +95,8 @@ Based on contributions by Lukáš Petrovický.
 These new statistics visualize how the individual constraint types change over time.
 
 image:6.2/constraintMatchTotalBestScoreStatistic.png[]
+
+This gives a better insight as to which constraints impact the score the most.
 
 ==== Other improvements
 
