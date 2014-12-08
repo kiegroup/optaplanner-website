@@ -30,6 +30,12 @@ task :publish => :check do
   system "bundle exec awestruct -P production --deploy --force"
 end
 
+desc "Travis continuous integration task"
+task :travis do
+  clean
+  build
+end
+
 task :check do
   begin
     require 'bundler'
