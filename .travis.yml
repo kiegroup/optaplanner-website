@@ -5,5 +5,5 @@ branches:
   only:
   - master
 script: rake travis
-notifications:
-  irc: chat.freenode.net#optaplanner-dev
+#notifications:
+#  irc: chat.freenode.net#optaplanner-dev

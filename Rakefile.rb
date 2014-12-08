@@ -31,9 +31,7 @@ task :publish => :check do
 end
 
 desc "Travis continuous integration task"
-task :travis do
-  clean
-  build
+task :travis => [:clean, :build] do
 end
 
 task :check do
