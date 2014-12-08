@@ -42,6 +42,22 @@ OptaPlanner is:
 [[NewAndNoteWorthy]]
 === New and noteworthy
 
+==== Scalable VRP with nearby selection
+
+Nearby selection allows a vehicle routing problem to scale out gracefully beyond 1000 locations,
+without the need for partitioning.
+It works by focusing on move selections that modify locations that are near each other:
+
+image:6.2/nearbySelectionRandomDistribution.png[]
+
+Several nearby selection probability distributions are supported:
+block distribution, linear distribution, parabolic distribution and beta distribution.
+
+==== Improved build-in variable listener efficiency.
+
+VRP with a `@InverseRelationShadowVariable` is now more efficient.
+In same cases (incremental score calculation and only change and swap moves), it's up to *`32%` faster* on average.
+
 ==== Strategic Oscillation Tabu Search
 
 Strategic Oscillation Tabu Search is often an improvement over normal Tabu Search.
