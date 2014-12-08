@@ -5,6 +5,7 @@
 /.*
 !.gitignore
 !.awestruct_ignore
+!.travis.yml
 /nbproject
 /*.ipr
 /*.iws
