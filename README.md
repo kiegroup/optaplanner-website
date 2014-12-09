@@ -26,5 +26,3 @@ Then build the website (before and after your changes):
 And publish your changes:
 
     $ rake publish
-
-    Note: this doesn't work, use `./build.sh publish` instead.

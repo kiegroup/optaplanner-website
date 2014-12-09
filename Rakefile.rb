@@ -15,11 +15,6 @@ task :clean do
   end
 end
 
-desc "Run in developer mode"
-task :dev => :check do
-  system "bundle exec awestruct -P development --dev"
-end
-
 desc "Build the site"
 task :build => :check do
   system "bundle exec awestruct -P production --force"
@@ -27,7 +22,10 @@ end
 
 desc "Build the site and publish"
 task :publish => :check do
-  system "bundle exec awestruct -P production --deploy --force"
+  system("echo Publishing...")
+  deploy_url = "optaplanner@filemgmt.jboss.org:/www_htdocs/optaplanner/"
+  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+  fail unless success
 end
 
 desc "Travis continuous integration task"

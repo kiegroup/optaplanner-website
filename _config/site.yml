@@ -23,6 +23,3 @@ profiles:
   production:
     developmentMode: false
     base_url: http://www.optaplanner.org
-    deploy:
-      host: optaplanner@filemgmt.jboss.org
-      path: /www_htdocs/optaplanner/
