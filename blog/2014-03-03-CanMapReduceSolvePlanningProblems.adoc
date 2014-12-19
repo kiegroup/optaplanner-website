@@ -65,7 +65,7 @@ In a more realistic planning problem, sane partitioning can be hard or even impo
 * In vehicle routing with time windows, each partition should have enough vehicle time to service each customer
 and drive to each location. _Catch 22: How do we determine the drive time if we don't know the vehicle routes yet?_
 
-It's tempting to make link:#{relative('/blog/2013/08/06/FalseAssumptionsForVRP.html')}[false assumptions].
+It's tempting to make http://www.optaplanner.org/blog/2013/08/06/FalseAssumptionsForVRP.html[false assumptions].
 
 === 2) *Map*: Solve each piece separately
 
