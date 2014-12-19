@@ -13,12 +13,12 @@ layout: blogBase
   - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
   %hr(style = "border-color: #000;")
 %ul.pager
-  %li.previous{:class => ('disabled' unless page.posts.next_page)}
-    %a{:href => (page.posts.next_page ? page.posts.next_page.url : '#')}
+  %li.previous{:class => ('disabled' unless page.posts.previous_page)}
+    %a{:href => (page.posts.previous_page ? relative(page.posts.previous_page.url, page) : '#')}
       %span.glyphicon.glyphicon-chevron-left
-      Older
-  %li.pages #{page.posts.current_page_index + 1} / #{page.posts.pages.size}
-  %li.next{:class => ('disabled' unless page.posts.previous_page)}
-    %a{:href => (page.posts.previous_page ? page.posts.previous_page.url : '#')}
       Newer
+  %li.pages #{page.posts.current_page_index + 1} / #{page.posts.pages.size}
+  %li.next{:class => ('disabled' unless page.posts.next_page)}
+    %a{:href => (page.posts.next_page ? relative(page.posts.next_page.url, page) : '#')}
+      Older
       %span.glyphicon.glyphicon-chevron-right
