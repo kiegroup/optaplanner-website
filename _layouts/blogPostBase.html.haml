@@ -1,7 +1,7 @@
 ---
 layout: blogBase
 ---
-- page.description = html_to_text(page.content).split("\n").first if !page.description
+- page.description = summarize(html_to_text(page.content).strip, 100) if !page.description
 
 = partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
 = partial('blogPostBody.html.haml', :outputPage => page, :post => page, :include_comments => true)
