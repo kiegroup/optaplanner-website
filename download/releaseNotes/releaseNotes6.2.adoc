@@ -102,3 +102,4 @@ This gives a better insight as to which constraints impact the score the most.
 
 * Construction Heuristics: new pick early type: `FIRST_FEASIBLE_SCORE` which is useful for scaling.
 * Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.
+* BendableLongScore: Bendable score with long types. Contributed by Dieter De Paepe.
