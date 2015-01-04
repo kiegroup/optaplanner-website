@@ -49,6 +49,34 @@ footer {
     display: block;
 }
 
+.reveal .watermark {
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    z-index: -100;
+}
+
+.reveal .watermark-left {
+    left: 10px;
+    right: auto;
+}
+
+.reveal .watermark-right {
+    left: auto;
+    right: 10px;
+}
+
+.reveal .watermark p {
+    text-align: center;
+}
+
+.reveal .watermark p img {
+    vertical-align: middle;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 /******************************************************************************
 * Images
 ******************************************************************************/
