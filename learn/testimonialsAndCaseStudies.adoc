@@ -9,14 +9,20 @@ Some of our users have shared their story:
 
 * link:caseStudies/OptaPlannerCaseStudy_RJV_2013-06-14.pdf[Task assignment] for RJV (Belgium)
 
-== Articles
+== Articles (English)
 
 * http://community.redhat.com/blog/2014/11/smart-vm-scheduling-in-ovirt-clusters/[oVirt OptaPlanner plugin: Cloud optimization of Virtual Machines]
 
 * http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing with real routes]
-and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (Germany)
+and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (before nearby selection) in Germany
 
-* http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA (Austria)
+* http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA in Austria
+
+== Articles (non-English)
+
+* German: http://jaxenter.de/artikel/jboss-optaplanner-optimierung-2-0-176855[Optimierung 2.0] (published in https://jaxenter.de/Java-Magazin-215-178070[Java Magazin 2.15])
+
+* Japanese: http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[Combinatorial optimization]
 
 == 3rd party open source projects
 
