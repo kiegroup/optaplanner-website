@@ -24,6 +24,8 @@ and http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (be
 
 * Japanese: http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[Combinatorial optimization]
 
+* Japanese: http://d.hatena.ne.jp/tokobayashi/searchdiary?word=%5BOptaPlanner%5D[Kobayashi's blog]
+
 == 3rd party open source projects
 
 * Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
