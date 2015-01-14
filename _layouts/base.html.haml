@@ -8,9 +8,13 @@
     %meta(name="keywords"){:content => page.keywords ? page.keywords : site.keywords}
     %link(rel="canonical"){:href => "#{site.canonicalBaseUrl}#{page.url}"}
     -# Social media: make it look good when shared
-    %meta(itemprop="name"){:content => escape_once(site.title + " - " + page.title)}
-    %meta(itemprop="description"){:content => page.description ? page.description : site.description}
-    %meta(itemprop="image"){:content => relative("/headerFooter/optaPlannerLogo200px.png")}
+    %meta(property="og:title"){:content => escape_once(site.title + " - " + page.title)}
+    %meta(property="og:description"){:content => page.description ? page.description : site.description}
+    %meta(property="og:url"){:content => "#{site.canonicalBaseUrl}#{page.url}"}
+    %meta(property="og:type"){:content => page.ogType ? page.ogType : "website"}
+    %meta(property="og:image"){:content => "#{site.canonicalBaseUrl}/headerFooter/optaPlannerIcon.png"}
+    %meta(name="twitter:card"){:content => "summary"}
+    %meta(name="twitter:site"){:content => "@OptaPlanner"}
 
     %link(rel="stylesheet"){:href => relative("/website/bootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
@@ -24,7 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
     %link{:rel => "shortcut icon", :href => relative("/favicon.ico")}
-    
+
   %body(data-spy="scroll" data-target=".bs-docs-sidebar")
 
     %header.navbar.navbar-default.navbar-fixed-top(role="navigation")
