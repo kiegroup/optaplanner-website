@@ -36,9 +36,10 @@
   employedBy: Red Hat
   ircNickname: triceo
 
-  userId: snurkabill
+- userId: snurkabill
   fullName: Jiří Vahala
   role: BRMS QA
+  gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
   employedBy: Red Hat
   ircNickname: jvahala/snurkabill
