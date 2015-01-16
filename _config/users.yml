@@ -36,6 +36,13 @@
   employedBy: Red Hat
   ircNickname: triceo
 
+  userId: snurkabill
+  fullName: Jiří Vahala
+  role: BRMS QA
+  githubUsername: snurkabill
+  employedBy: Red Hat
+  ircNickname: jvahala/snurkabill
+
 - userId: elsam
   fullName: Sam Van Malderen
   role: Contributor
