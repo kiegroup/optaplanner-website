@@ -5,7 +5,7 @@ layout: blogBase
 %h1 #{page.title}
 %ul
   - for post in site.posts
-    %li(style = "margin-top: 10px;")
+    %li(style="margin-top: 10px;")
       %a{:href => relative(post.url)}
         = post.title
       %span.small

@@ -3,7 +3,7 @@
   .panel-body
     %ul.list-unstyled
       - for post in site.posts[0,7]
-        %li(style = "margin-top: 10px;")
+        %li(style="margin-top: 10px;")
           .title
             %a{:href => relative(post.url, page.outputPage)}
               = post.title

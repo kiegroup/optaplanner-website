@@ -8,7 +8,7 @@
 
 * Documentation for OptaPlanner #{site.pom.latestFinal.version}
 
-** image:documentation.png[] *OptaPlanner reference manual #{site.pom.latestFinal.version}:
+** image:documentation.png[Documentation] *OptaPlanner reference manual #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.documentationHtmlSingle}[HTML Single] -
 #{site.pom.latestFinal.documentationHtml}[HTML] -
 #{site.pom.latestFinal.documentationPdf}[PDF]*
@@ -35,7 +35,7 @@
 
 * Documentation for OptaPlanner #{site.pom.latest.version}
 
-** image:documentation.png[] OptaPlanner reference manual #{site.pom.latest.version}:
+** image:documentation.png[Documentation] OptaPlanner reference manual #{site.pom.latest.version}:
 #{site.pom.latest.documentationHtmlSingle}[HTML Single] -
 #{site.pom.latest.documentationHtml}[HTML] -
 #{site.pom.latest.documentationPdf}[PDF]
@@ -55,5 +55,5 @@ Nightly snapshots are build by link:../code/continuousIntegration.html[our build
 
 * Documentation for OptaPlanner #{site.pom.nightly.version}
 
-** image:documentation.png[] OptaPlanner reference manual #{site.pom.nightly.version}:
+** image:documentation.png[Documentation] OptaPlanner reference manual #{site.pom.nightly.version}:
 #{site.pom.nightly.documentationHtmlSingle}[HTML Single]

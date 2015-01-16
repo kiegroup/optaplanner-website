@@ -12,7 +12,7 @@ Interested in commercial support? Check out link:../community/product.html[Red H
 
 The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
 
-* image:download.png[] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
+* image:download.png[Download] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
 ** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
 ** Release date: `#{site.pom.latestFinal.releaseDate}`
@@ -55,7 +55,7 @@ An Alpha can be unstable.
 A Beta should work (it passes automated testing), but its new API's might still change in the next release.
 A CR should be almost identical to the Final release.
 
-* image:download.png[] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
+* image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
 ** Release date: `#{site.pom.latest.releaseDate}`
@@ -76,7 +76,7 @@ Or with Maven:
 
 Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].
 
-* image:download.png[] #{site.pom.nightly.distributionZip}[Download OptaPlanner #{site.pom.nightly.version}]
+* image:download.png[Download] #{site.pom.nightly.distributionZip}[Download OptaPlanner #{site.pom.nightly.version}]
 
 [[OlderReleases]]
 == Older releases

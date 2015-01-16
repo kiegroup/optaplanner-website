@@ -3,7 +3,7 @@
   .panel-body
     %ul.list-unstyled
       - for event in site.events
-        %li(style = "margin-top: 10px;")
+        %li(style="margin-top: 10px;")
           .title
             %a{:href => event.url}
               - if !event.title.empty?

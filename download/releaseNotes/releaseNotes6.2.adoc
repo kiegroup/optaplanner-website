@@ -48,7 +48,7 @@ Nearby selection allows a vehicle routing problem to scale out gracefully beyond
 without the need for partitioning.
 It works by focusing on move selections that modify locations that are near each other:
 
-image:6.2/nearbySelectionRandomDistribution.png[]
+image:6.2/nearbySelectionRandomDistribution.png[Nearby selection random distribution]
 
 Several nearby selection probability distributions are supported:
 block distribution, linear distribution, parabolic distribution and beta distribution.
@@ -86,7 +86,7 @@ Schedule all tasks in time and on a machine to minimize the power cost.
 Each machine must have enough hardware to run all of its tasks.
 Each task and machine consumes power. The power price differs over time.
 
-image:6.2/cheapTimeExampleScreenshot.png[]
+image:6.2/cheapTimeExampleScreenshot.png[Cheap time example]
 
 Based on contributions by Lukáš Petrovický.
 
@@ -94,7 +94,7 @@ Based on contributions by Lukáš Petrovický.
 
 These new statistics visualize how the individual constraint types change over time.
 
-image:6.2/constraintMatchTotalBestScoreStatistic.png[]
+image:6.2/constraintMatchTotalBestScoreStatistic.png[constraint match total best score statistic]
 
 This gives a better insight as to which constraints impact the score the most.
 
