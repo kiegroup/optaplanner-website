@@ -39,7 +39,7 @@
           - for tag in entry.tags
             %category{:term=>"#{tag}"}
         %summary
-          #{summarize( html_to_text( entry.content ).strip, 100 )}
+          #{summarize( html_to_text( entry.content ).strip, 50 )}
         %content{:type=>'html'}
           -# Trick to make images work from blog posts work in the atom feed
           - default_imagesdir = site.asciidoctor.attributes['imagesdir']

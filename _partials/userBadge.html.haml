@@ -1,44 +1,49 @@
 - user = site.users.find {|e| !e.userId.nil? and page.userId.eql? e.userId }
 .userBadge
-  .well.well-sm(style= "padding: 5px; width: #{(page.mode.eql? 'long') ? '600px' : '320px'};")
-    .media
-      %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
-      .media-body
-        %h4.media-heading #{user.fullName}
-        %hr(style="margin:2px auto; border-color: #ddd;")
-        %span.pull-right
-          - if !user.googlePlusId.empty?
-            %a{:href => "https://plus.google.com/" + user.googlePlusId}<
-              %img{:src => relative("/headerFooter/googlePlusLogo.png", page.outputPage), :alt => "Google+"}
-          - if !user.twitterUsername.empty?
-            %a{:href => "https://twitter.com/" + user.twitterUsername}<
-              %img{:src => relative("/headerFooter/twitterLogo.png", page.outputPage), :alt => "Twitter"}
-          - if !user.facebookUsername.empty?
-            %a{:href => "https://www.facebook.com/" + user.facebookUsername}<
-              %img{:src => relative("/headerFooter/facebookLogo.png", page.outputPage), :alt => "Facebook"}
-          - if !user.githubUsername.empty?
-            %a{:href => "https://github.com/" + user.githubUsername}<
-              %img{:src => relative("/headerFooter/gitHubLogo.png", page.outputPage), :alt => "GitHub"}
-        %p.small #{user.role}
-        - if page.mode.eql? 'long'
-          - if !user.email.empty?
-            %p
-              %strong Email:
-              #{user.email}
-          - if !user.employedBy.empty?
-            %p
-              %strong Employed by:
-              #{user.employedBy}
-          - if !user.ircNickname.empty?
-            %p
-              %strong IRC nickname:
-              #{user.ircNickname}
-          - if !user.contributionsDescription.empty?
-            %p
-              %strong Contributions:
-              #{user.contributionsDescription}
-          - if !user.biography.empty?
-            %p
-              %strong Bio:
-              #{user.biography}
+  - if page.mode.eql? 'inline'
+    .span
+      %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=20&d=mm"}
+      &nbsp;#{user.fullName}
+  - else
+    .well.well-sm(style= "padding: 5px; width: #{(page.mode.eql? 'long') ? '600px' : '320px'};")
+      .media
+        %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
+        .media-body
+          %h4.media-heading #{user.fullName}
+          %hr(style="margin:2px auto; border-color: #ddd;")
+          %span.pull-right
+            - if !user.googlePlusId.empty?
+              %a{:href => "https://plus.google.com/" + user.googlePlusId}<
+                %img{:src => relative("/headerFooter/googlePlusLogo.png", page.outputPage), :alt => "Google+"}
+            - if !user.twitterUsername.empty?
+              %a{:href => "https://twitter.com/" + user.twitterUsername}<
+                %img{:src => relative("/headerFooter/twitterLogo.png", page.outputPage), :alt => "Twitter"}
+            - if !user.facebookUsername.empty?
+              %a{:href => "https://www.facebook.com/" + user.facebookUsername}<
+                %img{:src => relative("/headerFooter/facebookLogo.png", page.outputPage), :alt => "Facebook"}
+            - if !user.githubUsername.empty?
+              %a{:href => "https://github.com/" + user.githubUsername}<
+                %img{:src => relative("/headerFooter/gitHubLogo.png", page.outputPage), :alt => "GitHub"}
+          %p.small #{user.role}
+          - if page.mode.eql? 'long'
+            - if !user.email.empty?
+              %p
+                %strong Email:
+                #{user.email}
+            - if !user.employedBy.empty?
+              %p
+                %strong Employed by:
+                #{user.employedBy}
+            - if !user.ircNickname.empty?
+              %p
+                %strong IRC nickname:
+                #{user.ircNickname}
+            - if !user.contributionsDescription.empty?
+              %p
+                %strong Contributions:
+                #{user.contributionsDescription}
+            - if !user.biography.empty?
+              %p
+                %strong Bio:
+                #{user.biography}
 
