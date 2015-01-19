@@ -1,4 +1,5 @@
 = Documentation
+:awestruct-description: Read the reference manual of OptaPlanner, including the Quick Start chapter.
 :awestruct-layout: normalBase
 :page-interpolate: true
 :showtitle:

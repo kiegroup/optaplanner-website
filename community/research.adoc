@@ -1,4 +1,5 @@
 = Research
+:awestruct-description: Academic research for papers and articles.
 :awestruct-layout: normalBase
 :showtitle:
 

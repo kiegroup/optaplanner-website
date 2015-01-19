@@ -1,4 +1,5 @@
 = Social media
+:awestruct-description: Follow us on Google+, Twitter or Facebook.
 :awestruct-layout: normalBase
 :showtitle:
 

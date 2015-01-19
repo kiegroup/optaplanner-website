@@ -1,4 +1,5 @@
 = Training
+:awestruct-description: Do these labs and workshops to improve your OptaPlanner skills.
 :awestruct-layout: normalBase
 :showtitle:
 

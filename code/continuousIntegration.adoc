@@ -1,9 +1,16 @@
 = Continuous integration
+:awestruct-description: Check if the latest nightly build passes all automated tests.
 :awestruct-layout: normalBase
 :showtitle:
+
+== OptaPlanner
 
 We use Jenkins for continuous integration.
 
 *Show https://hudson.jboss.org/hudson/job/optaplanner/[the Jenkins job].*
 
 Keep the build blue!
+
+== Project website (www.optaplanner.org)
+
+We use Travis to build this project website, see https://travis-ci.org/droolsjbpm/optaplanner-website[the travis job].

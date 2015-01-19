@@ -1,4 +1,5 @@
 = Chat real-time
+:awestruct-description: Real-time community discussions.
 :awestruct-layout: normalBase
 :showtitle:
 

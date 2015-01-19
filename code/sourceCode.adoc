@@ -1,4 +1,5 @@
 = Source code
+:awestruct-description: Build OptaPlanner or the website (optaplanner.org) from source.
 :awestruct-layout: normalBase
 :linkattrs:
 :showtitle:

@@ -1,4 +1,5 @@
 = Forum
+:awestruct-description: Community support and developer mailing list.
 :awestruct-layout: normalBase
 :showtitle:
 

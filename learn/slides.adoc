@@ -1,4 +1,5 @@
 = Slides
+:awestruct-description: Watch the slide deck, reuse it for your own presentation.
 :awestruct-layout: normalBase
 :showtitle:
 

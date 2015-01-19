@@ -1,4 +1,5 @@
 = Report an issue
+:awestruct-description: Submit issues in JIRA or contribute a pull request on GitHub.
 :awestruct-layout: normalBase
 :showtitle:
 

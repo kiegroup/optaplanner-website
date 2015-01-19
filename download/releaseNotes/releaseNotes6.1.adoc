@@ -1,4 +1,5 @@
 = Release Notes 6.1
+:awestruct-description: New and noteworthy, demo's and status for OptaPlanner 6.1.
 :awestruct-layout: normalBase
 :showtitle:
 

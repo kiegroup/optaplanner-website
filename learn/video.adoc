@@ -1,4 +1,5 @@
 = Videos
+:awestruct-description: Watch these video's to see a demonstration of the examples.
 :awestruct-layout: normalBase
 :showtitle:
 
