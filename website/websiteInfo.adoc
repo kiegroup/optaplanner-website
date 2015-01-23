@@ -21,4 +21,4 @@ This website was generated on _{localdatetime}_.
 
 We welcome any feedback about this website on the link:../community/forum.html[forum], link:../community/chat.html[chat] or link:../code/issueTracker.html[issue tracker].
 
-To submit a change to any page in this website, click on the button [.btn.btn-mini]#Edit this page# on the bottom of that page.
+To submit a change to any page in this website, click on the button _Edit this page_ on the bottom of that page.
