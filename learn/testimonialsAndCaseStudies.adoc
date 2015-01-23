@@ -22,7 +22,7 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 == Articles (non-English)
 
-* German: http://jaxenter.de/artikel/jboss-optaplanner-optimierung-2-0-176855[Optimierung 2.0] (published in https://jaxenter.de/Java-Magazin-215-178070[Java Magazin 2.15])
+* German: http://www.viadee.de/news/aktuelle-meldungen/nachricht/archiv/2015/januar/artikel/optimal-geplant.html[Webbasierte Schichtplan - Optimierung mit Smart GWT und OptaPlanner] (published in http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html[JavaSPEKTRUM]) and http://jaxenter.de/artikel/jboss-optaplanner-optimierung-2-0-176855[Optimierung 2.0] (published in https://jaxenter.de/Java-Magazin-215-178070[Java Magazin 2.15])
 
 * Japanese: http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[Combinatorial optimization]
 

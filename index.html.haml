@@ -7,9 +7,12 @@ layout: base
   .col-md-5
     .jumbotron(style="padding: 10px; margin-top: 10px; margin-bottom: 20px;")
       .text-center<
-        %a.btn.btn-lg.btn-success(href="#{site.pom.latestFinal.distributionZip}")<
+        %a.btn.btn-lg.btn-success.versionedButton(href="#{site.pom.latestFinal.distributionZip}")<
           %img(src="download/download.png" alt="Download")
-          Download OptaPlanner #{site.pom.latestFinal.version}
+          %div
+            %span Download OptaPlanner
+            %br
+            %span.small #{site.pom.latestFinal.version}
       %h4
         Try the examples now:
       %ol
@@ -26,14 +29,17 @@ layout: base
         to run.
     .jumbotron(style="padding: 10px; margin-bottom: 20px;")
       .text-center<
-        %a.btn.btn-lg.btn-primary(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+        %a.btn.btn-lg.btn-primary.versionedButton(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
           %img(src="learn/documentation.png" alt="Documentation")
-          Read documentation #{site.pom.latestFinal.version}
+          %div
+            %span Read documentation
+            %br
+            %span.small #{site.pom.latestFinal.version}
       %h4
         Read the
         %a(href="#{site.pom.latestFinal.documentationHtmlSingle}#quickStart")
           Quick Start
-        chapter
+        chapter.
 
   .col-md-7
     %div(style="margin-bottom: 20px")

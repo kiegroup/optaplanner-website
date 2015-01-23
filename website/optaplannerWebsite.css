@@ -34,6 +34,15 @@ footer {
     max-width: 20%;
 }
 
+.versionedButton > img {
+    vertical-align: top;
+}
+
+.versionedButton > div {
+    text-align: left;
+    display: inline-block;
+}
+
 
 /* Twitter bootstrap's navbar-fixed-top's hides content head */
 @media (max-width: 767px) {
