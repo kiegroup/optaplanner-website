@@ -54,6 +54,14 @@ image:6.2/nearbySelectionRandomDistribution.png[Nearby selection random distribu
 Several nearby selection probability distributions are supported:
 block distribution, linear distribution, parabolic distribution and beta distribution.
 
+==== TailChainSwapMove (2-opt) for VRP
+
+TailChainSwapMove is a new move type for chained variables.
+It's a subset of SubchainChangeMove and SubchainSwapMove, but it's generally more efficient,
+especially for time windowed cases.
+
+For the best effects, combine union ChangeMove and SwapMove with TailChainSwapMove, and apply nearby selection on all 3.
+
 ==== Improved build-in variable listener efficiency
 
 VRP with a `@InverseRelationShadowVariable` is now more efficient. In some cases, it's up to *`32%` faster*.
