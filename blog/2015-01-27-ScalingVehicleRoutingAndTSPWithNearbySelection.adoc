@@ -1,0 +1,18 @@
+= Scaling Vehicle Routing with Nearby Selection
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [vehicle routing, algorithm, feature]
+
+http://www.optaplanner.org[OptaPlanner] 6.2 has made big step forward for the Vehicle Routing Problem (VRP),
+Traveling Salesman Problem (TSP) and similar use cases.
+A new feature, called *Nearby Selection, enables it to scale to bigger problems much more efficiently*
+without sacrificing potential optimal solutions (which is common for inferior techniques such as partitioning).
+
+== Opposite ends of the map
+
+== Partitioning, Geo-fencing, etc
+
+== Nearby Selection
+
+

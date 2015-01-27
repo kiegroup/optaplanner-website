@@ -3,9 +3,9 @@
 :awestruct-layout: normalBase
 :showtitle:
 
-== OptaPlanner 6.2 (currently still Beta)
+== OptaPlanner 6.2 (currently still CR)
 
-We are happy to announce a 6.2 Beta release of OptaPlanner.
+We are happy to announce a 6.2 CR release of OptaPlanner.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently. +
