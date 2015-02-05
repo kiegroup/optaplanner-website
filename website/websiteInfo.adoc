@@ -1,7 +1,6 @@
 = Website info
 :awestruct-layout: normalBase
 :showtitle:
-:experimental:
 
 == Website technology
 
@@ -15,6 +14,7 @@ This website uses:
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
+// TODO Use ruby expression {Time.now.strftime('%a %-d %B %Y')} instead of AsciiDoctor variable
 This website was generated on _{localdatetime}_.
 
 == Website feedback

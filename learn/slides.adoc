@@ -10,6 +10,9 @@ These slides are viewable in your browser:
 * *OptaPlanner slide deck:
 link:slides/optaplanner-presentation/index.html[HTML (recommended)] -
 link:slides/optaplanner-presentation.pdf[PDF]*
+** License: link:../code/license.html[ASL 2.0]
+// TODO Use ruby expression {Time.now.strftime('%a %-d %B %Y')} instead of AsciiDoctor variable
+** Last modification date: `{localdatetime}`
 
 == Reuse these slides
 
