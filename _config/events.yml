@@ -12,14 +12,6 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20150131-fosdem
-  eventOrganization: FOSDEM
-  location: Brussels, Belgium
-  date: 2015-01-31
-  title: Smart VM scheduling in oVirt cluster
-  url: https://fosdem.org/2015/schedule/event/smartvmsched/
-  presenters: Roy Golan
-
 - eventId: 20150206-devconf
   eventOrganization: DevConf
   location: Brno, Czech Republic
