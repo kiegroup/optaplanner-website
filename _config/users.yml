@@ -113,3 +113,11 @@
   githubUsername: mbiarnes
   employedBy: Red Hat
   ircNickname: mbiarnes
+
+- userId: rbourner
+  fullName: Richard Bourner
+  role: Domain Architect
+  gravatarHashId: df02e4b2e357e04e322e6b66bb24d795
+  googlePlusId: rialbo
+  githubUsername: rbourner
+  employedBy: Red Hat
