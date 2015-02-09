@@ -4,7 +4,7 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [vehicle routing, algorithm, feature]
 
-http://www.optaplanner.org[OptaPlanner] 6.2 has made big step forward for the Vehicle Routing Problem (VRP),
+http://www.optaplanner.org[OptaPlanner] 6.2 has made a big step forward for the Vehicle Routing Problem (VRP),
 Traveling Salesman Problem (TSP) and similar use cases.
 The new feature *_nearby selection_ enables it to scale to bigger problems much more efficiently*
 without sacrificing potential optimal solutions (which is common for inferior techniques).
