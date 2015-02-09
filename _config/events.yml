@@ -12,14 +12,6 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20150206-devconf
-  eventOrganization: DevConf
-  location: Brno, Czech Republic
-  date: 2015-02-07
-  title: Scheduling your clouds with Optaplanner - How we (almost) beat academia
-  url: http://sched.co/2B1s
-  presenters: Lukáš Petrovický
-
 - eventId: 20150219-scale13x
   eventOrganization: SCALE 13x
   location: Los Angeles, CA
