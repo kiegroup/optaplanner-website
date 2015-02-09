@@ -3,9 +3,9 @@
 :awestruct-layout: normalBase
 :showtitle:
 
-== OptaPlanner 6.2 (currently still CR)
+== OptaPlanner 6.2
 
-We are happy to announce a 6.2 CR release of OptaPlanner.
+We are happy to announce a 6.2 release of OptaPlanner.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently. +
@@ -50,6 +50,10 @@ without the need for partitioning.
 It works by focusing on move selections that modify locations that are near each other:
 
 image:6.2/nearbySelectionRandomDistribution.png[Nearby selection random distribution]
+
+It results in much better scalability to larger datasets, for example a VRP with 2750 customers:
+
+image:6.2/belgium-road-time-n2750-k55_nearbyWithLA.png[Nearby selection random distribution]
 
 Several nearby selection probability distributions are supported:
 block distribution, linear distribution, parabolic distribution and beta distribution.
