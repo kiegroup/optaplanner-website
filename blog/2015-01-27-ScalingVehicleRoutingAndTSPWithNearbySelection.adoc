@@ -43,7 +43,7 @@ Do notice that the set of nearby locations differ from location to location.
 Suppose we have `2 000` locations in our VRP problem. That results `4 000 000` moves to change a single location.
 If we can evaluate `100 000` moves per second and we need to `40` seconds to try all moves of just 1 location.
 Our algorithms will need to change each location multiple times: let's presume just `4` times,
-resulting in `8 000` steps, which results into `3 20 000` seconds or over `3` days.
+resulting in `8 000` steps, which results into `320 000` seconds or over `3` days.
 And it gets worse when the dataset grows:
 the number of moves per location grows, evaluation time drops and the number of steps increases too...
 
@@ -82,7 +82,7 @@ OptaPlanner supports different forms of probability distributions:
 == Benchmark results
 
 Below are the results in a big VRP dataset with real-world time distances (collected from OpenStreetMap with GraphHopper)
-with 2750 locations. In the nearby selection configuration, I 've use a parabolic distribution of the 40 nearest locations.
+with 2750 locations. In the nearby selection configuration, I 've used a parabolic distribution of the 40 nearest locations.
 
 image::belgium-road-time-n2750-k55_nearbyWithLA.png[]
 
