@@ -1,5 +1,5 @@
 = Testimonials and Case Studies
-:awestruct-description: Usage across the world: case studies, articles, related open source projects and testimonials
+:awestruct-description: Usage across the world, such as case studies, articles, related open source projects and testimonials
 :awestruct-layout: normalBase
 :showtitle:
 
