@@ -1,4 +1,5 @@
 = Website info
+:awestruct-description: Website technology and feedback
 :awestruct-layout: normalBase
 :showtitle:
 

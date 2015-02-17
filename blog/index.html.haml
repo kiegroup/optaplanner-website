@@ -5,6 +5,8 @@ layout: blogBase
 ---
 - page.title = "Blog tag #{page.selected_tag}" if !page.selected_tag.nil?
 - page.title = "#{page.title} - page #{page.posts.current_page_index + 1}" if (!page.posts.current_page.nil?) and (page.posts.current_page_index != 0)
+- page.description = "#{page.description} Filtered on the tag #{page.selected_tag}." if !page.selected_tag.nil?
+- page.description = "#{page.description} - page #{page.posts.current_page_index + 1}" if (!page.posts.current_page.nil?) and (page.posts.current_page_index != 0)
 %h1 #{page.title}
 - for post in page.posts
   -# Trick to make images work from blog posts work for the aggregator blog page
