@@ -1,5 +1,5 @@
 ---
-title: Planning engine (Java™, Open Source)
+title: Constraint satisfaction solver (Java™, Open Source)
 layout: base
 ---
 
@@ -44,18 +44,22 @@ layout: base
   .col-md-7
     %div(style="margin-bottom: 20px")
       :markdown
-        ## What is OptaPlanner?
+        # What is OptaPlanner?
 
-        **OptaPlanner optimizes business resource usage.** Every organization faces planning problems: provide products or
-        services with a limited set of *constrained* resources (employees, assets, time and money). OptaPlanner optimizes such
-        planning to do more business with less resources.
+        OptaPlanner is **a constraint satisfaction solver.** It optimizes business resource planning.
+        Every organization faces scheduling puzzles: assign a limited set of *constrained* resources (employees, assets,
+        time and money) to provide products or services to customers.
+        OptaPlanner optimizes such planning problems to **do more business with less resources**.
+        Use cases include Vehicle Routing, Employee Rostering, Job Scheduling, Bin Packing and many more.
 
-        OptaPlanner is **a lightweight, embeddable planning engine** written in Java™. It helps normal Java™ programmers solve
-        constraint satisfaction problems efficiently. Under the hood, it combines optimization heuristics and metaheuristics
-        with very efficient score calculation.
+        OptaPlanner is **a lightweight, embeddable planning engine**. It enables normal Java™ programmers to solve
+        optimization problems efficiently. Constraints apply on plain domain objects and can reuse existing code.
+        There's no need to input difficult mathematical equations.
+        Under the hood, OptaPlanner combines sophisticated optimization heuristics and metaheuristics
+        (such as Tabu Search, Simulated Annealing and Late Acceptance) with very efficient score calculation.
 
-        *OptaPlanner is open source software, released under [the Apache Software License](code/license.html). It is 100% pure
-        Java™, runs on any JVM and is available in [the Maven Central Repository](download/download.html) too.*
+        OptaPlanner is **open source software**, released under [the Apache Software License](code/license.html).
+        It is written in 100% pure Java™, runs on any JVM and is available in [the Maven Central repository](download/download.html) too.
 
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
   %ul.nav.nav-justified#whatIsCarouselButtons
