@@ -22,7 +22,7 @@ Software: `Linux 3.2.0-59-generic-pae` +
 Hardware: `Intel® Xeon(R) CPU W3550 @ 3.07GHz`
 
 * Each run solves 13 planning problems with http://www.optaplanner.org[OptaPlanner].
-Each planning problem runs for 5 to  minutes. Up to 2 planning problems are solved in parallel.
+Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up which is discarded.
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
 *A single CPU is completely saturated.*
@@ -32,7 +32,7 @@ It constantly creates many short lived objects, and the GC collects them afterwa
 Calculating a score for a proposed planning solution is non-trivial:
 it involves many calculations, including checking for conflicts between every entity and every other entity.
 
-To reproduce this benchmark locally, http://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
+To reproduce these benchmarks locally, http://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
 and run the main class
 https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
 
