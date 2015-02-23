@@ -12,16 +12,8 @@
 # Order events by date.
 # Remove past events.
 
-- eventId: 20150219-scale13x
-  eventOrganization: SCALE 13x
-  location: Los Angeles, CA
-  date: 2015-02-19
-  title: Solving (NP-Hard) Scheduling Problems with oVirt and OptaPlanner
-  url: http://www.socallinuxexpo.org/scale/13x/presentations/solving-np-hard-scheduling-problems-ovirt-and-optaplanner
-  presenters: Jason Brooks
-
 - eventId: 20150408-devoxxfr
-  eventOrganization: DevoxxFR
+  eventOrganization: Devoxx Fr
   location: Paris, France
   date: 2015-04-08
   title: OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore...
