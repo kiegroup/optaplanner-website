@@ -173,7 +173,7 @@ In the worst case (Machine reassignment B1), trace logging to a file is 90% slow
 
 == Conclusion
 
-Like all diagnostic information, logging comes as at performance cost.
+Like all diagnostic information, logging comes at a performance cost.
 Good libraries carefully select the logging level of each statement
 to balance out diagnostic needs, verbosity and performance impact.
 
