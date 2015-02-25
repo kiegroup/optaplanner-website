@@ -72,13 +72,13 @@ I ran the same benchmark set several times with a different http://www.optaplann
   <logger name="org.optaplanner" level="error|warn|info|debug|trace"/>
 ----
 
-All other libraries (including http://drools.org[Drools]) were set to warn logging.
+All other libraries (including http://drools.org[Drools]) were set to `warn` logging.
 The logging verbosity of OptaPlanner differs greatly per level:
 
 * *`error`* and *`warn`*: *0 lines*
 * *`info`*: 4 lines per benchmark, so *less than 1 line per minute*.
-* *`debug`*: 1 line per step, so *about 1 per second for Tabu Search and more for Late Acceptance*
-* *`trace`*: 1 line per move, so *between 1k and 120k per second*
+* *`debug`*: 1 line per step, so *about 1 line per second for Tabu Search and more for Late Acceptance*
+* *`trace`*: 1 line per move, so *between 1k and 120k lines per second*
 
 These are the raw benchmark numbers, measured in average score calculation count per second (higher is better):
 
