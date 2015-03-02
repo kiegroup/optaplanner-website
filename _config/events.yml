@@ -12,6 +12,14 @@
 # Order events by date.
 # Remove past events.
 
+- eventId: 20150318-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide
+  date: 2015-03-18
+  title: Business resource planning for Java developers
+  url: https://vts.inxpo.com/Launch/QReg.htm?ShowKey=24231&AffiliateData=socialmedia
+  presenters: Geoffrey De Smet
+
 - eventId: 20150408-devoxxfr
   eventOrganization: Devoxx Fr
   location: Paris, France
