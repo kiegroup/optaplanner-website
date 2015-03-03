@@ -129,7 +129,7 @@ Workbench (formerly known as Guvnor) is a full blown web application to manage r
 Using a web interface, business users can create and edit rules, including the score rules used by OptaPlanner.
 
 This is a very interesting setup, which I 'll demonstrate in a future blog post.
-Meanwhile, for more information, see https://www.jboss.org/drools/documentation[the Drools documentation].
+Meanwhile, for more information, see http://www.drools.org/learn/documentation.html[the Drools documentation].
 
 == Conclusion
 
