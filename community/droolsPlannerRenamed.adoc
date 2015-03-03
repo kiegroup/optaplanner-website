@@ -5,6 +5,10 @@
 
 As of version `6.0.0.Beta1`, *Drools Planner has been renamed to OptaPlanner*.
 
+== What is OptaPlanner (AKA Drools Planner)?
+
+http://www.optaplanner.org[Visit www.optaplanner.org for an explanation.]
+
 == Why change the name?
 
 OptaPlanner is the new name for Drools Planner.
@@ -76,3 +80,7 @@ From a business point of view, there's *little or no change*:
 ** `#optaplanner`
 
 ** `#optaplanner-dev`
+
+== Learn more
+
+http://www.optaplanner.org[Visit www.optaplanner.org to learn more about OptaPlanner.]
