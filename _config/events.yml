@@ -28,6 +28,14 @@
   url: http://www.devoxx.fr
   presenters: Frederic Hornain, Geoffrey De Smet
 
+- eventId: 20150423-workshop
+  eventOrganization: Red Hat workshop
+  location: Brussels, Belgium
+  date: 2015-04-23
+  title: JBoss Business Resource Planner
+  url: http://www.redhatonline.com/benelux/workshops.php
+  presenters: Geoffrey De Smet, Eric D. Schabell
+
 - eventId: 20150518-voxxedticino
   eventOrganization: Voxxed Days Ticino
   location: Lugano, Switzerland
