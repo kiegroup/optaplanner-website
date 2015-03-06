@@ -52,7 +52,8 @@ It works by focusing on move selections that modify locations that are near each
 
 image:6.2/nearbySelectionRandomDistribution.png[Nearby selection random distribution]
 
-It results in much better scalability to larger datasets, for example a VRP with 2750 customers:
+It results in much better scalability to larger datasets, for example a VRP with 2750 customers
+(higher is better), which reduces fuel and labor expenses by `15%` in a 5 minute run:
 
 image:6.2/belgium-road-time-n2750-k55_nearbyWithLA.png[Nearby selection random distribution]
 
