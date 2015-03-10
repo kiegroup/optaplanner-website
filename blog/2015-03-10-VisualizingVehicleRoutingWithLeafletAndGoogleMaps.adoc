@@ -5,20 +5,24 @@
 :awestruct-tags: [vehicle routing]
 
 After http://www.optaplanner.org[OptaPlanner] finds the best solution for a Vehicle Routing Problem,
-users want to see that solution on a real map, such as Google Maps or OpenStreetMap.
-The `optaplanner-webexamples.war` for OptaPlanner 6.3 now demonstrates both.
+users usually want to see it on a real map, such as Google Maps or OpenStreetMap.
+The `optaplanner-webexamples.war` for OptaPlanner 6.3 now demonstrates that.
 
 == Visualization
 
 In the case below, I've solved a VRP problem with `50` locations and `8` vehicles
 and projected the best solution with Leaflet and Google Maps.
-It's capacitated vehicle routing: each vehicle can carry `100` items and each location needs a number of items picked up.
+It's a case of capacitated vehicle routing: each vehicle can carry `100` items
+and each location needs a number of items picked up.
 
 image::vehicleRoutingLeafletAndGoogleMaps.png[]
 
 Despite that the lines are shown as straight between locations,
 http://www.optaplanner.org/blog/2014/09/02/VehicleRoutingWithRealRoadDistances.html[actual road distances]
 were used in the optimization calculations.
+In total, the vehicles drive a little under `32` hours, so on average `4` hours per vehicle (includes location service time).
+This solution doesn't take into account rush hour yet, but if such traffic prediction data were available,
+we can make OptaPlanner apply that too, which could result in a different best solution.
 
 In the web UI, we can zoom in on a specific location, such as the `Landegem` town center,
 where we need to pickup 25 items. In this solution, those items are picked up by the yellow vehicle.
