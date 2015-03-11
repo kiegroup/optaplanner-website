@@ -4,7 +4,7 @@
 :page-interpolate: true
 :showtitle:
 
-Interested in commercial support? Check out link:../community/product.html[Red Hat's offering].
+Interested in enterprise support? Check out link:../community/product.html[Red Hat's offering].
 
 [[FinalReleases]]
 == Final releases

@@ -32,3 +32,8 @@ If you've link:../code/sourceCode.html[build OptaPlanner from source] and want t
 * And link:chat.html[chat with us] (recommended).
 
 ** Or ping us on link:socialMedia.html[any social media].
+
+== Enterprise support
+
+If you 've got link:product.html[a Red Hat support subscription],
+then https://access.redhat.com[open a support case] to get priority support.
