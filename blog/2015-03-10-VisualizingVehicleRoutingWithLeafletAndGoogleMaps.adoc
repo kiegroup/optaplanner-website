@@ -37,9 +37,15 @@ http://leafletjs.com[Leaflet.js] is an open source JavaScript that uses http://w
 
 https://developers.google.com/maps/[Google Maps] is a proprietary JavaScript that uses Google data.
 
-=== Apply it now in your case
+== Apply it now in your case
 
 If you're using the latest OptaPlanner final release (`6.2.0.Final` at the time of writing),
 you easily do such visualization too: those webexamples don't require any API's new in optaplanner-core 6.3,
 so http://www.optaplanner.org/download/download.html[download the nightly snapshot] and look for `webexamples/sources`
 to see how it's done.
+
+== Update
+
+With Google Map Directions we can also visualize the actual roads used:
+
+image::vehicleRoutingGoogleMapsDirections.png[]
