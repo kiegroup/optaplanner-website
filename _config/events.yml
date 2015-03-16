@@ -12,6 +12,78 @@
 # Order events by date.
 # Remove past events.
 
+- eventId: 20140924-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide
+  date: 2014-09-24
+  title: How to solve impossible business resource planning problems
+  url: http://www.redhat.com/en/about/events/how-solve-impossible-business-resource-planning-problems
+  presenters: Geoffrey De Smet, Phil Simpson
+
+- eventId: 20140925-brujug
+  eventOrganization: BruJUG
+  location: Brussels, Belgium
+  date: 2014-09-25
+  title: Optimizing vehicle routes, shift rosters and other NP-hard problems
+  url: http://www.meetup.com/BruJUG/events/206149232/
+  presenters: Geoffrey De Smet
+
+- eventId: 20141014-cloudopen
+  eventOrganization: CloudOpen Europe
+  location: Düsseldorf, Germany
+  date: 2014-10-14
+  title: Smart VM Scheduling in oVirt Cluster
+  url: http://lccoelce14.sched.org/event/c25af16e16beee7b8ec566a31481c077
+  presenters: Martin Sivak
+
+- eventId: 20141020-openblend
+  eventOrganization: OpenBlend JavaSi
+  location: Ljubljana, Slovenia
+  date: 2014-10-20
+  title: OptaPlanner introduction
+  url: http://www.sioug.si/index.php/javasi-14
+  presenters: Geoffrey De Smet
+
+- eventId: 20141111-devoxx
+  eventOrganization: Devoxx
+  location: Antwerp, Belgium
+  date: 2014-11-11
+  title: Hackergarten
+  url: http://www.devoxx.be/hackergarten/
+  presenters: Geoffrey De Smet
+
+- eventId: 20141117-redhatbenelux
+  eventOrganization: Red Hat Benelux
+  location: Antwerp, Belgium
+  date: 2014-11-17
+  title: Technical User Group
+  url: http://www.redhatonline.com/benelux/events.php
+  presenters: Geoffrey De Smet
+
+- eventId: 20150131-fosdem
+  eventOrganization: FOSDEM
+  location: Brussels, Belgium
+  date: 2015-01-31
+  title: Smart VM scheduling in oVirt cluster
+  url: https://fosdem.org/2015/schedule/event/smartvmsched/
+  presenters: Roy Golan
+
+- eventId: 20150206-devconf
+  eventOrganization: DevConf
+  location: Brno, Czech Republic
+  date: 2015-02-07
+  title: Scheduling your clouds with Optaplanner - How we (almost) beat academia
+  url: http://sched.co/2B1s
+  presenters: Lukáš Petrovický
+
+- eventId: 20150219-scale13x
+  eventOrganization: SCALE 13x
+  location: Los Angeles, CA
+  date: 2015-02-19
+  title: Solving (NP-Hard) Scheduling Problems with oVirt and OptaPlanner
+  url: http://www.socallinuxexpo.org/scale/13x/presentations/solving-np-hard-scheduling-problems-ovirt-and-optaplanner
+  presenters: Jason Brooks
+
 - eventId: 20150318-webinar
   eventOrganization: Red Hat Webinar
   location: Worldwide

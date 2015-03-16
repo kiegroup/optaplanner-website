@@ -3,18 +3,19 @@
   .panel-body
     %ul.list-unstyled
       - for event in site.events
-        %li(style="margin-top: 10px;")
-          .title
-            %a{:href => event.url}
-              - if !event.title.empty?
-                #{event.eventOrganization}: #{event.title}
-              - else
-                #{event.eventOrganization}
-          %div
-            #{event.location} - #{event.date.strftime('%a %-d %B %Y')}
-          - if !event.presenters.empty?
-            .small
-              by #{event.presenters}
+        - if event.date >= Date.today
+          %li(style="margin-top: 10px;")
+            .title
+              %a{:href => event.url}
+                - if !event.title.empty?
+                  #{event.eventOrganization}: #{event.title}
+                - else
+                  #{event.eventOrganization}
+            %div
+              #{event.location} - #{event.date.strftime('%a %-d %B %Y')}
+            - if !event.presenters.empty?
+              .small
+                by #{event.presenters}
     .small.pull-right
       %a{:href => "https://github.com/droolsjbpm/optaplanner-website/blob/master/_config/events.yml"}
         Add an event
