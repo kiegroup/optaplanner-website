@@ -1,0 +1,16 @@
+---
+title: Events archive
+description: A list of all past and future OptaPlanner events.
+layout: normalBase
+---
+%h1 #{page.title}
+%ul
+  - for event in site.events
+    %li(style="margin-top: 10px;")
+      %a{:href => event.url}
+        - if !event.title.empty?
+          #{event.eventOrganization}: #{event.title}
+        - else
+          #{event.eventOrganization}
+      %span.small
+        #{event.location} - #{event.date.strftime('%a %-d %B %Y')}

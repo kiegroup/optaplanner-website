@@ -3,9 +3,12 @@
   .panel-body
     %ul.list-unstyled
       - for post in site.posts[0,7]
-        %li(style="margin-top: 10px;")
+        %li(style="margin-bottom: 10px;")
           .title
             %a{:href => relative(post.url, page.outputPage)}
               = post.title
           .small
             = post.date.strftime('%a %-d %B %Y')
+    .small.pull-right
+      %a{:href => relative("/blog/archive.html")}
+        Archive
