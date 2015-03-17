@@ -1540,6 +1540,87 @@ $ mvn exec:exec
     </section>
 
     <section>
+        <img src="use_cases_and_examples/curriculumCourseClassDiagram_0.png" class="fullImage">
+    </section>
+    <section>
+        <h3>Teacher, Course, Room</h3>
+        <pre><code class="java">class Teacher {
+            ...
+            }</code></pre>
+        <pre><code class="java">class Course {
+            Teacher teacher;
+            ...
+            }</code></pre>
+        <pre><code class="java">class Period {
+            ...
+            }</code></pre>
+        <pre><code class="java">class Room {
+            ...
+            }</code></pre>
+    </section>
+    <section>
+        <img src="use_cases_and_examples/curriculumCourseClassDiagram_0.png" class="fullImage">
+        <img src="use_cases_and_examples/curriculumCourseClassDiagram_1.png" class="fullImage fragment">
+    </section>
+    <section>
+        <h3>Lecture</h3>
+        <pre><code class="java">@PlanningEntity
+            class Lecture {
+            Course course;
+            int lectureIndexInCourse;
+
+            @PlanningVariable(...) Period period;
+            @PlanningVariable(...) Room room;
+            ...
+            }</code></pre>
+    </section>
+    <section>
+        <h2>Add a constraint</h2>
+    </section>
+    <section>
+        <img src="use_cases_and_examples/curriculumCourseClassDiagram_1.png" class="fullImage">
+    </section>
+    <section>
+        <h3>With Java</h3>
+        <pre><code class="java">class UnavailablePeriodPenalty {
+            Course course;
+            Period period;
+            ...
+            }</code></pre>
+        <pre><code class="java">public HardSoftScore calculateScore(Schedule schedule);
+            int hardScore = 0;
+            for (UnavailablePeriodPenalty penalty : schedule.getPenaltyList()) {
+            for (Lecture lecture : schedule.getLectureList()) {
+            if (penalty.getCourse() == lecture.getCourse()
+            &amp;&amp; penalty.getPeriod() == lecture.getPeriod()) {
+            hardScore--;
+            }
+            }
+            }
+            ...
+            return HardSoftScore.valueOf(hardScore, softScore);
+            }</code></pre>
+    </section>
+    <section>
+        <h3>With Drools rule engine</h3>
+        <pre><code class="java">class UnavailablePeriodPenalty {
+            Course course;
+            Period period;
+            ...
+            }</code></pre>
+        <pre><code class="java">rule "unavailablePeriodPenalty"
+            when
+            // When a course is unavailable for a certain period ...
+            UnavailablePeriodPenalty($c : course, $p : period)
+            // ... and a lecture of that course is scheduled in that period ...
+            Lecture(course == $c, period == $p)
+            then
+            // ... then we lose 1 hard score point
+            scoreHolder.addHardConstraintMatch(kcontext, -1);
+            end</code></pre>
+    </section>
+
+    <section>
         <h3>Q & A</h3>
         <ul>
             <li>OptaPlanner homepage
