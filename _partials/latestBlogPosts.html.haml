@@ -10,5 +10,5 @@
           .small
             = post.date.strftime('%a %-d %B %Y')
     .small.pull-right
-      %a{:href => relative("/blog/archive.html")}
+      %a{:href => relative("/blog/archive.html", page.outputPage)}
         Archive
