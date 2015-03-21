@@ -76,16 +76,29 @@ That's when a customizable solver such as http://www.optaplanner.org[OptaPlanner
 
 == Conclusion
 
-By using better algorithms and a more accurate model, *we gain `2h 25m 16s` in the trip*:
+By using better algorithms and a more accurate model (without ghost driving), *our trip is `2h 25m 16s` faster*:
 
 |===
 |Dataset |Time |Total time gain |Distance |Total distance gain
 
-|Olson |`232h 42m 23s` | |`22'601km 929m` |
-|Iowa fix |`231h 6m 43s` |`1h 35m 40s` |`22'567km 414m` |`34km 515m`
-|Iowa and Carolina fix |`230h 17m 7s` |`2h 25m 16s` |`22'568km 219m` |`33km 710m`
+|Olson (Counterclockwise) |`232h 42m 23s` | |`22'601km 929m` |
+|Iowa fix (Counterclockwise) |`231h 6m 43s` |`1h 35m 40s` |`22'567km 414m` |`34km 515m`
+|Iowa and Carolina fix (Counterclockwise) |*`230h 17m 7s`* |*`2h 25m 16s`* |`22'568km 219m` |`33km 710m`
+|===
+
+Interestingly enough, if we're looking for the shortest trip (and we ignore bug 3 because we prefer highways),
+we notice that the same trip (with both fixes), but executed in the reverse direction is the shortest:
+
+|===
+|Dataset |Time |Total time gain |Distance |Total distance gain
+
+|Olson (Clockwise) |`232h 46m 35s` | |`22'612km 488m` |
+|Iowa fix (Clockwise) |`231h 16m 29s` |`1h 30m 6s` |`22'563km 086m` |`49km 402m`
+|Iowa and Carolina fix (Clockwise) |`230h 27m 3s` |`2h 19m 32s` |`22'561km 106m` |`51km 382m`
 |===
 
 This is my solution to the Ultimate American Road Trip (with those fixes):
 
 image::americanRoadTrip-road-time-asymmetric-optaplanner.png[]
+
+Drive it counterclockwise to optimize time!
