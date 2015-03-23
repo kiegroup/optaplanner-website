@@ -47,7 +47,7 @@ If we take this into account, the fastest path near Carolina changes:
 
 image::americanRoadTrip-carolina-comparison.png[]
 
-On the left is the path found by both Olson and Cook (and by myself when using symmetrical distances).
+On the left is the path found by both Olson and Cook (and by myself when using Olson's symmetrical distances).
 On the right is my path, which reduces the total time by another `49m 36s` (if both paths are computed using asymmetric distances),
 but increases the distance by `805m`.
 
@@ -81,24 +81,24 @@ By using better algorithms and a more accurate model (without ghost driving), *o
 |===
 |Dataset |Time |Total time gain |Distance |Total distance gain
 
-|Olson (Counterclockwise) |`232h 42m 23s` | |`22'601km 929m` |
-|Iowa fix (Counterclockwise) |`231h 6m 43s` |`1h 35m 40s` |`22'567km 414m` |`34km 515m`
-|Iowa and Carolina fix (Counterclockwise) |*`230h 17m 7s`* |*`2h 25m 16s`* |`22'568km 219m` |`33km 710m`
+|Olson (Clockwise) |`232h 43m 10s` | |`22'602km 201m` |
+|Iowa fix (Clockwise) |`231h 7m 30s` |`1h 35m 40s` |`22'567km 686m` |`34km 515m`
+|Iowa and Carolina fix (Clockwise) |*`230h 17m 54s` (best)* |*`2h 25m 16s`* |`22'568km 491m` |`33km 710m`
 |===
 
 Interestingly enough, if we're looking for the shortest trip (and we ignore bug 3 because we prefer highways),
-we notice that the same trip (with both fixes), but executed in the reverse direction is the shortest:
+we notice that the same trip (with both fixes) in the reverse direction is the shortest:
 
 |===
 |Dataset |Time |Total time gain |Distance |Total distance gain
 
-|Olson (Clockwise) |`232h 46m 35s` | |`22'612km 488m` |
-|Iowa fix (Clockwise) |`231h 16m 29s` |`1h 30m 6s` |`22'563km 086m` |`49km 402m`
-|Iowa and Carolina fix (Clockwise) |`230h 27m 3s` |`2h 19m 32s` |`22'561km 106m` |`51km 382m`
+|Olson (Counterclockwise) |`232h 46m 58s` | |`22'612km 070m` |
+|Iowa fix (Counterclockwise) |`231h 16m 52s` |`1h 30m 06s` |`22'562km 668m` |`49km 402m`
+|Iowa and Carolina fix (Counterclockwise) |`230h 27m 26s` |`2h 19m 32s` |*`22'560km 688m` (best)* |`51km 382m`
 |===
 
 This is my solution to the Ultimate American Road Trip (with those fixes):
 
 image::americanRoadTrip-road-time-asymmetric-optaplanner.png[]
 
-Drive it counterclockwise to optimize time!
+Drive it clockwise to optimize time!
