@@ -140,3 +140,7 @@ The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable
 * *Decision Table* example: the Dinner Party example now demonstrates how to use a Drools Decision Table (an XLS file) to allow users to define score rules.
 * New *BestScoreFeasibleTermination*: terminates when the best score is feasible. Contributed by Matej Čimbora.
 * Real-time planning improvements, such as a daemon mode.
+
+==== Archive
+
+For older releases, check link:releaseNotesArchive.html[the release notes archive].

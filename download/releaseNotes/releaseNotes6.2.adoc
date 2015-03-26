@@ -12,7 +12,7 @@ to solve constraint satisfaction problems efficiently. +
 Together with the Drools rule engine and the jBPM workflow engine,
 it is a strong and flexible foundation for knowledge management.
 
-*link:../../download/download.html#NonFinalReleases[Download it now]*, link:../../learn/documentation.html#NonFinalReleases[read the docs]
+*link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
 or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
 === Demo videos
@@ -119,3 +119,7 @@ This gives a better insight as to which constraints impact the score the most.
 * Construction Heuristics: new pick early type: `FIRST_FEASIBLE_SCORE` which is useful for scaling.
 * Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.
 * BendableLongScore: Bendable score with long types. Contributed by Dieter De Paepe.
+
+==== Archive
+
+For older releases, check link:releaseNotesArchive.html[the release notes archive].

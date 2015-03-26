@@ -1,0 +1,9 @@
+= Release Notes Archive
+:awestruct-description: A list of all release notes for each OptaPlanner version.
+:awestruct-layout: normalBase
+:showtitle:
+
+* link:releaseNotes6.3.html[Release Notes 6.3]
+* link:releaseNotes6.2.html[Release Notes 6.2]
+* link:releaseNotes6.1.html[Release Notes 6.1]
+* link:releaseNotes6.0.html[Release Notes 6.0]

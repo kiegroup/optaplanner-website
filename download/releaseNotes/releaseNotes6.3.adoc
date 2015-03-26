@@ -46,3 +46,7 @@ OptaPlanner is:
 
 * `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)`
 * More JavaDocs
+
+==== Archive
+
+For older releases, check link:releaseNotesArchive.html[the release notes archive].
