@@ -44,7 +44,8 @@ OptaPlanner is:
 
 ==== Other improvements
 
-* `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)`
+* A bi-directional relationship with a planning variable is now also supported for a non-chained variable.
+* `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)` too.
 * More JavaDocs
 
 ==== Archive
