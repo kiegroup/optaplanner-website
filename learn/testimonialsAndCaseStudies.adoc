@@ -34,6 +34,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 * Finnish: http://www.alfame.com/blog/optaplanner-rajallisten-resurssien-optimointiin[Limited resources optimization]
 
+* French: http://blog.soat.fr/2015/04/devoxx-france-2015-optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore/[Devoxx France 2015 : OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore]
+
 == 3rd party open source projects
 
 * Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
