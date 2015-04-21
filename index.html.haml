@@ -64,28 +64,25 @@ layout: base
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
   %ul.nav.nav-justified#whatIsCarouselButtons
     %li.active(data-target="#whatIsCarousel" data-slide-to="0")
-      %a(href="#" data-toggle="tab") Use cases
+      %a(href="#" data-toggle="tab") Video
     %li(data-target="#whatIsCarousel" data-slide-to="1")
-      %a(href="#" data-toggle="tab") Employee rostering
+      %a(href="#" data-toggle="tab") Use cases
     %li(data-target="#whatIsCarousel" data-slide-to="2")
-      %a(href="#" data-toggle="tab") Exam timetabling
-    %li(data-target="#whatIsCarousel" data-slide-to="3")
       %a(href="#" data-toggle="tab") Usage
-    %li(data-target="#whatIsCarousel" data-slide-to="4")
+    %li(data-target="#whatIsCarousel" data-slide-to="3")
       %a(href="#" data-toggle="tab") Integration
-    %li(data-target="#whatIsCarousel" data-slide-to="5")
+    %li(data-target="#whatIsCarousel" data-slide-to="4")
       %a(href="#" data-toggle="tab") Compatibility
-    %li(data-target="#whatIsCarousel" data-slide-to="6")
+    %li(data-target="#whatIsCarousel" data-slide-to="5")
       %a(href="#" data-toggle="tab") Scalability
   .carousel.slide#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     -#.carousel-inner(style="align: center;")
     .carousel-inner
       .item.active
+        %div(style="min-width: 800px; min-height: 600px; text-align: center; padding-top: 75px;")
+          %iframe(width="800" height="450" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0" frameborder="0" allowfullscreen)
+      .item
         %img(src="landingPage/useCaseOverview.png" alt="Use case overview" width="800" height="600")
-      .item
-        %img(src="landingPage/employeeShiftRosteringUseCase.png" alt="Employee shift rostering use case" width="800" height="600")
-      .item
-        %img(src="landingPage/examinationTimetablingUseCase.png" alt="Exam timetabling use case" width="800" height="600")
       .item
         %img(src="landingPage/inputOutputOverview.png" alt="Usage" width="800" height="600")
       .item
