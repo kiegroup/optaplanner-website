@@ -100,6 +100,14 @@
   url: http://cfp.devoxx.fr/2015/talk/ZUC-9786/OptaPlanner_ou_comment_optimiser_les_itineraires,_les_plannings_et_bien_plus_encore...
   presenters: Frederic Hornain, Geoffrey De Smet
 
+- eventId: 20150422-jaxcon
+  eventOrganization: JaxCon
+  location: Mainz, Germany
+  date: 2015-04-22
+  title: Optimierung 2.0 - Lösung von Optimierungsproblemen mit JBoss OptaPlanner
+  url: https://jax.de/2015/sessions/optimierung-20-loesung-von-optimierungsproblemen-mit-jboss-optaplanner
+  presenters: David Jorch
+
 - eventId: 20150423-workshop
   eventOrganization: Red Hat workshop
   location: Brussels, Belgium
