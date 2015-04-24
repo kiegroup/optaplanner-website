@@ -121,3 +121,12 @@
   googlePlusId: rialbo
   githubUsername: rbourner
   employedBy: Red Hat
+
+- userId: tdavid
+  fullName: Tomáš David
+  role: Contributor
+  gravatarHashId: 2cfce770aad70db47b7613dd20010c98
+  googlePlusId: +tomasdavidorg
+  githubUsername: tomasdavidorg
+  ircNickname: tdavid
+  contributionsDescription: Vehicle routing problem android application
