@@ -511,11 +511,11 @@
         <section>
             <h3>Lab: Try Branch And Bound</h3>
         <pre><code class="xml">&lt;solver&gt;
-            ...
-            &lt;exhaustiveSearch&gt;
-            &lt;exhaustiveSearchType&gt;BRANCH_AND_BOUND&lt;/exhaustiveSearchType&gt;
-            &lt;/exhaustiveSearch&gt;
-            &lt;/solver&gt;</code></pre>
+  ...
+  &lt;exhaustiveSearch&gt;
+    &lt;exhaustiveSearchType&gt;BRANCH_AND_BOUND&lt;/exhaustiveSearchType&gt;
+  &lt;/exhaustiveSearch&gt;
+&lt;/solver&gt;</code></pre>
             <ul>
                 <li>Optional: Try a different <code>nodeExplorationType</code></li>
             </ul>
@@ -897,6 +897,10 @@
             <h3>VRP</h3>
             <!-- TODO -->
         </section>
+        <section>
+            <h3>OpenStreetMap and Google Maps</h3>
+            <!-- TODO -->
+        </section>
 
         <section>
             <h3>Project Job Scheduling</h3>
@@ -910,6 +914,7 @@
         <ul>
             <li>Repeated planning</li>
             <li>Integration</li>
+            <li>Clustering</li>
             <li>Multitenancy</li>
             <li>Competition</li>
         </ul>
@@ -917,8 +922,94 @@
     <section>
         <section>
             <h3>Repeated planning</h3>
+            <ul>
+                <li>Backup planning</li>
+                <li>Continuous planning</li>
+                <li>Real-time planning</li>
+            </ul>
         </section>
-        <!-- TODO -->
+
+        <section>
+            <h2>Backup planning</h2>
+            <p>Not really repeated planning, but score calculation</p>
+            <ul>
+                <li>Reserve assignments</li>
+                <li>Balancing remaining space</li>
+                <li>Train/flight layovers</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Continuous planning</h2>
+            <p>Plan until the end of time?</p>
+        </section>
+        <section>
+            <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_0.png" class="fullImage">
+            <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Continuous planning demo</h3>
+            <figure>
+                <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+                <p>Nurse rostering demo</p>
+            </figure>
+        </section>
+        <section>
+            <h2>Immovable entities</h2>
+            <ul>
+                <li>Move <code>Filter</code> that is always applied</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Non-disruptive repeated planning</h2>
+            <p>AKA semi-movable entities</p>
+        </section>
+        <section>
+            <img src="repeated_planning/nonvolatileReplanning_0.png" class="fullImage">
+            <img src="repeated_planning/nonvolatileReplanning_1.png" class="fullImage fragment">
+            <img src="repeated_planning/nonvolatileReplanning_2.png" class="fullImage fragment">
+            <img src="repeated_planning/nonvolatileReplanning_3.png" class="fullImage fragment">
+            <img src="repeated_planning/nonvolatileReplanning_4.png" class="fullImage fragment">
+            <img src="repeated_planning/nonvolatileReplanning_5.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <h2>Real-time planning</h2>
+            <p>When you need an answer in milliseconds</p>
+        </section>
+        <section>
+            <img src="repeated_planning/realTimePlanningVehicleRouting_0.png" class="fullImage">
+            <img src="repeated_planning/realTimePlanningVehicleRouting_1.png" class="fullImage fragment">
+            <img src="repeated_planning/realTimePlanningVehicleRouting_2.png" class="fullImage fragment">
+            <img src="repeated_planning/realTimePlanningVehicleRouting_3.png" class="fullImage fragment">
+            <img src="repeated_planning/realTimePlanningVehicleRouting_4.png" class="fullImage fragment">
+            <img src="repeated_planning/realTimePlanningVehicleRouting_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>ProblemFactChange</h3>
+            <ul>
+                <li>Callback that is executed on the solver thread</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Lab: real-time planning</h3>
+            <ul>
+                <li>Delete a warehouse</li>
+                <li>How long to become initialized and feasible again?</li>
+                <li>Optional: click to add a store</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Daemon mode</h3>
+            <ul>
+                <li>Start with an empty problem</li>
+                <li>All problem facts come in through a ProblemFactChange</li>
+                <li>Configure no termination</li>
+                <li><code>solve()</code> does not return ...</li>
+                <li>... until <code>terminateEarly()</code> is called</li>
+            </ul>
+        </section>
 
         <section>
             <h3>Integration</h3>
@@ -942,8 +1033,98 @@
             </ul>
         </section>
         <section>
-            <h3>Humans</h3>
-            <!-- TODO -->
+            <h3>Camel OptaPlanner</h3>
+            <ul>
+                <li><a href="http://camel.apache.org/optaplanner.html">http://camel.apache.org/optaplanner.html</a></li>
+                <li>Unit tested</li>
+                <li>Works on Karaf too</li>
+            </ul>
+        </section>
+        <section>
+            <h3>JBoss modules</h3>
+            <ul>
+                <li>Do It Yourself (see docs)</li>
+            </ul>
+        </section>
+        <section>
+            <h3>OSGi</h3>
+            <ul>
+                <li>Engine jars support it</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Android</h3>
+            <ul>
+                <li>Works (use documented workaround)</li>
+                <li>Demo</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Humans planners and politics</h3>
+            <p>The easiest ways to fail (or win) a project...</p>
+        </section>
+        <section>
+            <h3>Who will win a quiz?</h3>
+            <ul>
+                <li>Very smart, experienced quizmaster without internet access</li>
+                <li>Smart teenager with internet access</li>
+            </ul>
+            <p>OptaPlanner enhances the human planner</p>
+        </section>
+        <section>
+            <h3>Business is king</h3>
+            <ul>
+                <li>The human planner defines the score function</li>
+                <li>The human planner is your best friend! You need him/her.</li>
+                <li>The human planner validates the score function</li>
+                <li>business will change ⇒ the score function will change too</li>
+                <li>The human planner redefines the score function in the future.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Who's in control?</h3>
+        </section>
+        <section>
+            <h3>The user is in control</h3>
+            <figure>
+                <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+                <p>Course scheduling demo</p>
+            </figure>
+        </section>
+        <section>
+            <h3>Who's in control?</h3>
+            <ul>
+                <li>The human planner outranks OptaPlanner</li>
+                <li>Use immovable entities again</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Multi-threaded</h3>
+        </section>
+        <!-- TODO -->
+        <section>
+            <h3>Clusters</h3>
+        </section>
+        <!-- TODO -->
+        <section>
+            <h3>Partitioning</h3>
+        </section>
+        <section>
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_0.png" class="fullImage">
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_1.png" class="fullImage fragment">
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_2.png" class="fullImage fragment">
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_3.png" class="fullImage fragment">
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_4.png" class="fullImage fragment">
+            <img src="partitioned_search/mapReduceIsTerribleForTsp_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Partitioning</h3>
+            <ul>
+                <li>Sign of weakness</li>
+                <li>Might be the only solution</li>
+            </ul>
         </section>
 
         <section>
@@ -1043,15 +1224,6 @@
             Are planning problems<br/>
             difficult to solve?
         </h2>
-    </section>
-
-    <section>
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_0.png" class="fullImage">
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_1.png" class="fullImage fragment">
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_2.png" class="fullImage fragment">
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_3.png" class="fullImage fragment">
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_4.png" class="fullImage fragment">
-        <img src="partitioned_search/mapReduceIsTerribleForTsp_5.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -1679,43 +1851,6 @@ public class Process  {
     </section>
 
     <section>
-        <h2>Repeated planning:<br/>continuous/real-time</h2>
-    </section>
-
-    <section>
-        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_0.png" class="fullImage">
-        <img src="repeated_planning/continuousPlanningPatientAdmissionSchedule_1.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>
-            Continuous planning demo
-        </h3>
-        <figure>
-            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
-            <p>Nurse rostering demo</p>
-        </figure>
-    </section>
-
-    <section>
-        <img src="repeated_planning/realTimePlanningVehicleRouting_0.png" class="fullImage">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_1.png" class="fullImage fragment">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_2.png" class="fullImage fragment">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_3.png" class="fullImage fragment">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_4.png" class="fullImage fragment">
-        <img src="repeated_planning/realTimePlanningVehicleRouting_5.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <img src="repeated_planning/nonvolatileReplanning_0.png" class="fullImage">
-        <img src="repeated_planning/nonvolatileReplanning_1.png" class="fullImage fragment">
-        <img src="repeated_planning/nonvolatileReplanning_2.png" class="fullImage fragment">
-        <img src="repeated_planning/nonvolatileReplanning_3.png" class="fullImage fragment">
-        <img src="repeated_planning/nonvolatileReplanning_4.png" class="fullImage fragment">
-        <img src="repeated_planning/nonvolatileReplanning_5.png" class="fullImage fragment">
-    </section>
-
-    <section>
         <h3>Summary</h3>
         <ul>
             <li>OptaPlanner solves planning and scheduling problems</li>
@@ -2140,16 +2275,6 @@ $ mvn exec:exec
         <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_3.png" class="fullImage fragment">
     </section>
 
-    <section>
-        <h2>Who's in control?</h2>
-    </section>
-    <section>
-        <h3>The user is in control</h3>
-        <figure>
-            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
-            <p>Course scheduling demo</p>
-        </figure>
-    </section>
 
     <section>
         <img src="use_cases_and_examples/curriculumCourseClassDiagram_0.png" class="fullImage">
