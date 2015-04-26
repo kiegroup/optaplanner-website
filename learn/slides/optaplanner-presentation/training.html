@@ -839,7 +839,105 @@
     <section>
         <section>
             <h3>Local Search</h3>
-            <!-- TODO -->
+        </section>
+        <section>
+            <h3>Making moves</h3>
+            <figure>
+                <img src="local_search/decideNextStepNQueens04.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>Making steps</h3>
+            <figure>
+                <img src="local_search/allStepsNQueens04.png"/>
+            </figure>
+        </section>
+        <!-- TODO -->
+        <section>
+            <img src="presentation_extra/hillClimbingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Hill Climbing config</h3>
+            <pre><code class="xml">&lt;localSearch&gt;
+  &lt;forager&gt;
+    &lt;!-- Untweaked standard value --&gt;
+    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+        </section>
+        <section>
+            <h3>Lab Hill Climbing</h3>
+        </section>
+        <section>
+            <img src="presentation_extra/tabuSearchLogo.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Tabu Search config</h3>
+            <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Typical standard value --&gt;
+    &lt;entityTabuSize&gt;7&lt;/entityTabuSize&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Typical value --&gt;
+    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+        </section>
+        <section>
+            <h3>Lab Tabu Search</h3>
+        </section>
+        <section>
+            <img src="presentation_extra/simulatedAnnealingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Simulated Annealing config</h3>
+            <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Tweaked value --&gt;
+    &lt;simulatedAnnealingStartingTemperature&gt;
+        0hard/400soft
+    &lt;/simulatedAnnealingStartingTemperature&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Typical value --&gt;
+    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+        </section>
+        <section>
+            <h3>Lab Simulated Annealing</h3>
+        </section>
+        <section>
+            <img src="presentation_extra/lateAcceptanceLogo.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Late Acceptance config</h3>
+            <pre><code class="xml">&lt;localSearch&gt;
+  &lt;acceptor&gt;
+    &lt;!-- Typical standard value --&gt;
+    &lt;lateAcceptanceSize&gt;400&lt;/lateAcceptanceSize&gt;
+  &lt;/acceptor&gt;
+  &lt;forager&gt;
+    &lt;!-- Typical value --&gt;
+    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
+  &lt;/forager&gt;
+&lt;/localSearch&gt;</code></pre>
+        </section>
+        <section>
+            <h3>Lab Late Acceptance</h3>
+        </section>
+        <section>
+            <h3>Local Search results</h3>
+            <figure>
+                <img src="presentation_extra/cloudBalanceResults_2.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>Cost ($) reduction</h3>
+            <figure>
+                <img src="presentation_extra/cloudBalanceResultsROI.png"/>
+            </figure>
         </section>
 
         <section>
@@ -1741,85 +1839,6 @@ public class Process  {
     ...
   &lt;localSearch&gt;
 &lt;/solver&gt;</code></pre>
-    </section>
-
-    <section>
-        <img src="presentation_extra/hillClimbingLogo.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Hill Climbing config</h3>
-        <pre><code class="xml">&lt;localSearch&gt;
-  &lt;forager&gt;
-    &lt;!-- Untweaked standard value --&gt;
-    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
-  &lt;/forager&gt;
-&lt;/localSearch&gt;</code></pre>
-    </section>
-
-    <section>
-        <img src="presentation_extra/tabuSearchLogo.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Tabu Search config</h3>
-        <pre><code class="xml">&lt;localSearch&gt;
-  &lt;acceptor&gt;
-    &lt;!-- Typical standard value --&gt;
-    &lt;entityTabuSize&gt;7&lt;/entityTabuSize&gt;
-  &lt;/acceptor&gt;
-  &lt;forager&gt;
-    &lt;!-- Typical value --&gt;
-    &lt;acceptedCountLimit&gt;1000&lt;/acceptedCountLimit&gt;
-  &lt;/forager&gt;
-&lt;/localSearch&gt;</code></pre>
-    </section>
-
-    <section>
-        <img src="presentation_extra/simulatedAnnealingLogo.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Simulated Annealing config</h3>
-        <pre><code class="xml">&lt;localSearch&gt;
-  &lt;acceptor&gt;
-    &lt;!-- Tweaked value --&gt;
-    &lt;simulatedAnnealingStartingTemperature&gt;
-        0hard/400soft
-    &lt;/simulatedAnnealingStartingTemperature&gt;
-  &lt;/acceptor&gt;
-  &lt;forager&gt;
-    &lt;!-- Typical value --&gt;
-    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
-  &lt;/forager&gt;
-&lt;/localSearch&gt;</code></pre>
-    </section>
-
-    <section>
-        <img src="presentation_extra/lateAcceptanceLogo.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Late Acceptance config</h3>
-        <pre><code class="xml">&lt;localSearch&gt;
-  &lt;acceptor&gt;
-    &lt;!-- Typical standard value --&gt;
-    &lt;lateAcceptanceSize&gt;400&lt;/lateAcceptanceSize&gt;
-  &lt;/acceptor&gt;
-  &lt;forager&gt;
-    &lt;!-- Typical value --&gt;
-    &lt;acceptedCountLimit&gt;4&lt;/acceptedCountLimit&gt;
-  &lt;/forager&gt;
-&lt;/localSearch&gt;</code></pre>
-    </section>
-
-    <section>
-        <h3>Local Search results</h3>
-        <figure>
-            <img src="presentation_extra/cloudBalanceResults_2.png"/>
-        </figure>
-    </section>
-    <section>
-        <h3>Cost ($) reduction</h3>
-        <figure>
-            <img src="presentation_extra/cloudBalanceResultsROI.png"/>
-        </figure>
     </section>
 
     <section>
