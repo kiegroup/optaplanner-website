@@ -1051,15 +1051,36 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         <section>
             <h3>Domain modelling</h3>
         </section>
-        <!-- TODO -->
+        <section>
+            <h3>Terminology</h3>
+            <ul>
+                <li>Planning entity class: Process</li>
+                <li>Planning entity: Process-7</li>
+                <li>Planning variable: Process.getComputer()</li>
+                <li>Planning value: Computer-3</li>
+                <li>Planning value range: from Computer-0 to Computer-8</li>
+            </ul>
+        </section>
+        <section>
+            <h3>What changing during planning?</h3>
+            <ul>
+                <li>Which class is a planning entity?</li>
+                <li>Which property is a planning variable?</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Tips</h3>
+            <ul>
+                <li>Normalize</li>
+                <li>OneToMany relationship that changes during planning:<br/>Many side is probably planning entity class</li>
+                <li>Planning entity needs at least 1 business problem fact property</li>
+                <li>Fixed number of planning entities during planning</li>
+            </ul>
+        </section>
         <section>
             <img src="planner_configuration/entityVariableAndValueExamples_0.png" class="fullImage">
             <img src="planner_configuration/entityVariableAndValueExamples_1.png" class="fullImage fragment">
         </section>
-        <section>
-            <h3>ValueRangeProvider</h3>
-        </section>
-        <!-- TODO -->
         <section>
             <h3>Training lab2* exercises</h3>
         </section>
@@ -1089,6 +1110,27 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
             </ul>
         </section>
         <section>
+            <h3>ValueRangeProvider</h3>
+            <ul>
+                <li>From Solution</li>
+                <li>From Entity</li>
+            </ul>
+        </section>
+        <section>
+            <h3>ValueRangeProvider</h3>
+            <ul>
+                <li>Returns Collection</li>
+                <li>Returns ValueRange</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Lab: refactor N queens to IntValueRange</h3>
+            <ul>
+                <li>Delete Row class</li>
+                <li>Use ValueRangeFactory.createIntValueRange(..., ...)</li>
+            </ul>
+        </section>
+        <section>
             <h3>Planning clone</h3>
         </section>
         <section>
@@ -1105,10 +1147,6 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
             <img src="planner_configuration/solutionCloning_0.png" class="fullImage">
             <img src="planner_configuration/solutionCloning_1.png" class="fullImage fragment">
         </section>
-        <section>
-            <h3>Employee rostering</h3>
-        </section>
-        <!-- TODO -->
         <section>
             <h3>Curriculum course timetabling</h3>
         </section>
@@ -1197,6 +1235,10 @@ class Lecture {
     scoreHolder.addHardConstraintMatch(kcontext, -1);
 end</code></pre>
         </section>
+        <section>
+            <h3>Employee rostering</h3>
+        </section>
+        <!-- TODO -->
 
         <section>
             <h3>Lab901: Facility Location Problem</h3>
@@ -1214,7 +1256,6 @@ end</code></pre>
         <section>
             <h3>Score calculation advanced</h3>
         </section>
-        <!-- TODO -->
         <section>
             <img src="score_calculation/positiveAndNegativeConstraints_0.png" class="fullImage">
             <img src="score_calculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
