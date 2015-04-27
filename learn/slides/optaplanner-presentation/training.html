@@ -1607,6 +1607,90 @@ end</code></pre>
         </section>
         <!-- TODO -->
         <section>
+            <img src="presentation_extra/cloudBalanceFirstFit.png" class="fullImage">
+        </section>
+        <section>
+            <h3>First Fit config</h3>
+            <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+&lt;/solver&gt;</code></pre>
+        </section>
+        <section>
+            <h3>First Fit scalability</h3>
+            <figure>
+                <img src="construction_heuristics/firstFitScalabilityCloudBalance.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>First Fit results</h3>
+            <figure>
+                <img src="presentation_extra/cloudBalanceResults_0.png"/>
+                <p>All hard constraints satisfied: maintenance cost shown</p>
+            </figure>
+        </section>
+        <section>
+            <img src="presentation_extra/cloudBalanceFirstFitDecreasing.png" class="fullImage">
+        </section>
+        <section>
+            <h3>First Fit Decreasing config</h3>
+            <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+&lt;/solver&gt;</code></pre>
+        </section>
+        <section>
+        <h3>DifficultyComparator</h3>
+        <pre><code class="java">public class ProcessDifficultyComparator
+    implements Comparator&lt;Process&gt; {
+  public int compare(Process a, Process b) {
+    // Compare on requiredCpuPower * requiredMemory
+    //     * requiredNetworkBandwidth
+  }
+}
+
+@PlanningEntity(difficultyComparatorClass
+    = ProcessDifficultyComparator.class)
+public class Process  {
+  ...
+}</code></pre>
+        </section>
+        <section>
+            <h3>First Fit Decreasing scalability</h3>
+            <figure>
+                <img src="construction_heuristics/firstFitDecreasingScalabilityCloudBalance.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>First Fit Decreasing results</h3>
+            <figure>
+                <img src="presentation_extra/cloudBalanceResults_1.png"/>
+            </figure>
+        </section>
+
+        <section>
+            <img src="presentation_extra/cloudBalanceLocalSearch.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Construction Heuristics + Local Search</h3>
+            <pre><code class="xml">&lt;solver&gt;
+  ...
+
+  &lt;constructionHeuristic&gt;
+    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+  &lt;/constructionHeuristic&gt;
+  &lt;localSearch&gt;
+    ...
+  &lt;localSearch&gt;
+&lt;/solver&gt;</code></pre>
+        </section>
+        <section>
             <img src="presentation_extra/firstFitLogo.png" class="fullImage">
         </section>
         <section>
@@ -1943,6 +2027,44 @@ $ mvn exec:exec
                 <img src="presentation_extra/cloudBalanceResultsROI.png"/>
             </figure>
         </section>
+        <section>
+            <h3>Optimization algorithms</h3>
+            <ul>
+                <li>
+                    Exhaustive Search
+                    <ul>
+                        <li>Brute Force</li>
+                        <li>Branch And Bound</li>
+                    </ul>
+                </li>
+                <li>
+                    Construction Heuristics
+                    <ul>
+                        <li>First Fit (Decreasing)</li>
+                        <li>Weakest/Strongest Fit (Decreasing)</li>
+                        <li>Cheapest Insertion</li>
+                    </ul>
+                </li>
+                <li>
+                    Metaheuristics (Local Search, ...)
+                    <ul>
+                        <li>Hill Climbing</li>
+                        <li>Tabu Search</li>
+                        <li>Strategic Oscillation Tabu Search</li>
+                        <li>Simulated Annealing</li>
+                        <li>Late Acceptance</li>
+                        <li>Step Counting Hill Climbing</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_0.png" class="fullImage">
+            <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_1.png" class="fullImage fragment">
+            <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_2.png" class="fullImage fragment">
+            <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_3.png" class="fullImage fragment">
+        </section>
+
 
         <section>
             <h3>Score traps</h3>
@@ -2436,150 +2558,6 @@ $ mvn exec:exec
             <!-- TODO -->
         </section>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section>
-        <h3>Cloud Balancing example</h3>
-        <h2>Optimization algorithms</h2>
-    </section>
-
-    <section>
-        <img src="presentation_extra/cloudBalanceFirstFit.png" class="fullImage">
-    </section>
-    <section>
-        <h3>First Fit config</h3>
-        <pre><code class="xml">&lt;solver&gt;
-  ...
-
-  &lt;constructionHeuristic&gt;
-    &lt;constructionHeuristicType&gt;FIRST_FIT&lt;/constructionHeuristicType&gt;
-  &lt;/constructionHeuristic&gt;
-&lt;/solver&gt;</code></pre>
-    </section>
-    <section>
-        <h3>First Fit scalability</h3>
-        <figure>
-            <img src="construction_heuristics/firstFitScalabilityCloudBalance.png"/>
-        </figure>
-    </section>
-    <section>
-        <h3>First Fit results</h3>
-        <figure>
-            <img src="presentation_extra/cloudBalanceResults_0.png"/>
-            <p>All hard constraints satisfied: maintenance cost shown</p>
-        </figure>
-    </section>
-
-    <section>
-        <img src="presentation_extra/cloudBalanceFirstFitDecreasing.png" class="fullImage">
-    </section>
-    <section>
-        <h3>First Fit Decreasing config</h3>
-        <pre><code class="xml">&lt;solver&gt;
-  ...
-
-  &lt;constructionHeuristic&gt;
-    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
-  &lt;/constructionHeuristic&gt;
-&lt;/solver&gt;</code></pre>
-    </section>
-
-    <section>
-        <h3>DifficultyComparator</h3>
-        <pre><code class="java">public class ProcessDifficultyComparator
-    implements Comparator&lt;Process&gt; {
-  public int compare(Process a, Process b) {
-    // Compare on requiredCpuPower * requiredMemory
-    //     * requiredNetworkBandwidth
-  }
-}
-
-@PlanningEntity(difficultyComparatorClass
-    = ProcessDifficultyComparator.class)
-public class Process  {
-  ...
-}</code></pre>
-    </section>
-    <section>
-        <h3>First Fit Decreasing scalability</h3>
-        <figure>
-            <img src="construction_heuristics/firstFitDecreasingScalabilityCloudBalance.png"/>
-        </figure>
-    </section>
-    <section>
-        <h3>First Fit Decreasing results</h3>
-        <figure>
-            <img src="presentation_extra/cloudBalanceResults_1.png"/>
-        </figure>
-    </section>
-
-    <section>
-        <img src="presentation_extra/cloudBalanceLocalSearch.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Construction Heuristics + Local Search</h3>
-        <pre><code class="xml">&lt;solver&gt;
-  ...
-
-  &lt;constructionHeuristic&gt;
-    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
-  &lt;/constructionHeuristic&gt;
-  &lt;localSearch&gt;
-    ...
-  &lt;localSearch&gt;
-&lt;/solver&gt;</code></pre>
-    </section>
-
-    <section>
-        <h3>Optimization algorithms</h3>
-        <ul>
-            <li>
-                Exhaustive Search
-                <ul>
-                    <li>Brute Force</li>
-                    <li>Branch And Bound</li>
-                </ul>
-            </li>
-            <li>
-                Construction Heuristics
-                <ul>
-                    <li>First Fit (Decreasing)</li>
-                    <li>Weakest/Strongest Fit (Decreasing)</li>
-                    <li>Cheapest Insertion</li>
-                </ul>
-            </li>
-            <li>
-                Metaheuristics (Local Search, ...)
-                <ul>
-                    <li>Hill Climbing</li>
-                    <li>Tabu Search</li>
-                    <li>Strategic Oscillation Tabu Search</li>
-                    <li>Simulated Annealing</li>
-                    <li>Late Acceptance</li>
-                    <li>Step Counting Hill Climbing</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_0.png" class="fullImage">
-        <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_1.png" class="fullImage fragment">
-        <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_2.png" class="fullImage fragment">
-        <img src="optimization_algorithms/scalabilityOfOptimizationAlgorithms_3.png" class="fullImage fragment">
-    </section>
-
 
     <section>
         <h3>Summary</h3>
