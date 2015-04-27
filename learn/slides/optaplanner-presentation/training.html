@@ -292,7 +292,6 @@
                 difficult to solve?
             </h2>
         </section>
-
         <section>
             <h3>What is business resource optimization?</h3>
             <figure>
@@ -300,12 +299,10 @@
                 <p>Cloud Balancing demo</p>
             </figure>
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteA_0.png" class="fullImage">
             <img src="presentation_extra/cloudBalanceNpCompleteA_1.png" class="fullImage fragment">
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteB_0.png" class="fullImage">
             <img src="presentation_extra/cloudBalanceNpCompleteB_1.png" class="fullImage fragment">
@@ -314,7 +311,6 @@
             <img src="presentation_extra/cloudBalanceNpCompleteB_4.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteB_5.png" class="fullImage fragment">
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteC_0.png" class="fullImage">
             <img src="presentation_extra/cloudBalanceNpCompleteC_1.png" class="fullImage fragment">
@@ -323,11 +319,9 @@
             <img src="presentation_extra/cloudBalanceNpCompleteC_4.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteC_5.png" class="fullImage fragment">
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteD.png" class="fullImage">
         </section>
-
         <section>
             <h3>
                 Find optimal solution and scale out<br/>
@@ -352,21 +346,18 @@
         <section>
             <img src="presentation_extra/npCompleteInterconnection.png" class="fullImage">
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteE_0.png" class="fullImage">
             <img src="presentation_extra/cloudBalanceNpCompleteE_1.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteE_2.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteE_3.png" class="fullImage fragment">
         </section>
-
         <section>
             <img src="presentation_extra/cloudBalanceNpCompleteF_0.png" class="fullImage">
             <img src="presentation_extra/cloudBalanceNpCompleteF_1.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteF_2.png" class="fullImage fragment">
             <img src="presentation_extra/cloudBalanceNpCompleteF_3.png" class="fullImage fragment">
         </section>
-
         <section>
             <h2>
                 Planning problems are<br/>
@@ -377,7 +368,6 @@
             <img src="presentation_extra/colorBlind.png">
             <p>But they don't realize it<br/>(nor does their manager)</p>
         </section>
-
         <section>
             <h3>Reuse optimization algorithms</h3>
             <figure>
@@ -499,14 +489,12 @@ public class Process {
             <h3>Cloud Balancing example</h3>
             <h2>Score constraints</h2>
         </section>
-
         <section>
             <h2>
                 Given 2 solutions<br/>
                 which one is better?
             </h2>
         </section>
-
         <section>
             <img src="quick_start/cloudBalanceScoreCalculation_0.png" class="fullImage">
             <img src="quick_start/cloudBalanceScoreCalculation_1.png" class="fullImage fragment">
@@ -527,7 +515,6 @@ public class Process {
                 <li>Drools</li>
             </ul>
         </section>
-
         <section>
             <h3>Easy Java score calculation</h3>
             <ul>
@@ -545,7 +532,6 @@ public class Process {
 
 }</code></pre>
         </section>
-
         <section>
             <h3>Incremental Java score calculation</h3>
             <ul>
@@ -631,7 +617,6 @@ end</code></pre>
         $cpu - $total.intValue());
 end</code></pre>
         </section>
-
         <section>
             <h3>Score calculation must be flexible</h3>
             <ul>
@@ -661,19 +646,16 @@ end</code></pre>
             </ul>
         </section>
 
-
         <section>
             <h3>Cloud Balancing example</h3>
             <h2>Solving it</h2>
         </section>
-
         <section>
             <img src="planner_configuration/inputOutputOverview_0.png" class="fullImage">
             <img src="planner_configuration/inputOutputOverview_1.png" class="fullImage fragment">
             <img src="planner_configuration/inputOutputOverview_2.png" class="fullImage fragment">
             <img src="planner_configuration/inputOutputOverview_3.png" class="fullImage fragment">
         </section>
-
         <section>
             <h3>Solver configuration by XML</h3>
             <pre><code class="xml">&lt;solver&gt;
@@ -688,7 +670,6 @@ end</code></pre>
   &lt;!-- optimization algorithms --&gt;
 &lt;/solver&gt;</code></pre>
         </section>
-
         <section>
             <h3>Solving</h3>
             <pre><code class="java">SolverFactory factory = SolverFactory.createFromXmlResource(
@@ -697,6 +678,15 @@ Solver solver = factory.buildSolver();
 
 solver.solve(cloudBalance);
 cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
+        </section>
+        <section>
+            <h3>Lab: Switch score calculation type</h3>
+            <ul>
+                <li>Edit Cloud Balancing's solver configuration xml</li>
+                <li>Switch to Easy Java Score calculation</li>
+                <li>Switch to Incremental Java Score calculation</li>
+                <li>Let them run in parallel.</li>
+            </ul>
         </section>
 
 
