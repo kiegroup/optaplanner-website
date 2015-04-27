@@ -113,7 +113,6 @@
         <ul>
             <li>Understanding planning problems</li>
             <li>Quick start: Cloud Balancing</li>
-
             <li>N queens</li>
             <li>Exhaustive Search</li>
         </ul>
@@ -704,12 +703,88 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         </section>
 
         <section>
-            <h3>Score calculation introduction</h3>
+            <h3>N Queens</h3>
         </section>
-        <!-- TODO -->
-
-
-
+        <section>
+            <h3>N Queens demo</h3>
+            <figure>
+                <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
+                <p>demo</p>
+            </figure>
+        </section>
+        <section>
+            <h3>N Queens</h3>
+            <ul>
+                <li>Imperfect example
+                    <ul>
+                        <li>Not NP-complete (shortcuts exist)</li>
+                        <li>Score function is too simple (too black and white)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>What solution is better?</h3>
+            <figure>
+                <img src="presentation_extra/someSolutionsNQueens04_0.png">
+            </figure>
+            <ul class="fragment">
+                <li>Need for <b>objective scoring</b></li>
+                <li>Better score ⇔ better solution</li>
+                <li>Highest score ⇔ optimal solution</li>
+            </ul>
+        </section>
+        <section>
+            <h3>N Queens</h3>
+            <ul>
+                <li>Hard constraints:
+                    <ul>
+                        <li>-1 for every pair of conflicting queens</li>
+                    </ul>
+                </li>
+                <li>Soft constraints:
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <figure>
+                        <img src="use_cases_and_examples/partiallySolvedNQueens04Explained.png"/>
+                        <p>Score = -2</p>
+                        <p>Conflicts: A-B, B-D</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure>
+                        <img src="use_cases_and_examples/solvedNQueens04.png"/>
+                        <p>Score = 0</p>
+                        <p>No conflicts</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>How do we find the best solution?</h3>
+            <figure>
+                <img src="presentation_extra/someSolutionsNQueens04_1.png">
+            </figure>
+            <ul class="fragment">
+                <li>Need for <b>optimization algorithms</b></li>
+                <li>Best solution in available time</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Lab: Reward knight attacks</h3>
+            <ul>
+                <li>Use N Queens example</li>
+                <li>For every pair of queens that can knight attack each other: +1 score </li>
+                <li>Implement with Drools score calculation</li>
+                <li>Optional: implement Easy Java Score calculation too</li>
+                <li>Optional: implement Incremental Java Score calculation too</li>
+            </ul>
+        </section>
         <section>
             <h3>Exhaustive Search</h3>
         </section>
@@ -977,6 +1052,10 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         </section>
         <!-- TODO -->
         <section>
+            <img src="planner_configuration/entityVariableAndValueExamples_0.png" class="fullImage">
+            <img src="planner_configuration/entityVariableAndValueExamples_1.png" class="fullImage fragment">
+        </section>
+        <section>
             <h3>ValueRangeProvider</h3>
         </section>
         <!-- TODO -->
@@ -1024,6 +1103,9 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         </section>
         <section>
             <img src="use_cases_and_examples/curriculumCourseClassDiagram_0.png" class="fullImage">
+            <img src="use_cases_and_examples/curriculumCourseClassDiagram_1.png" class="fullImage fragment">
+            <img src="use_cases_and_examples/curriculumCourseClassDiagram_2.png" class="fullImage fragment">
+            <img src="use_cases_and_examples/curriculumCourseClassDiagram_3.png" class="fullImage fragment">
         </section>
         <section>
             <h3>Teacher, Course, Room</h3>
@@ -1122,6 +1204,67 @@ end</code></pre>
             <h3>Score calculation advanced</h3>
         </section>
         <!-- TODO -->
+        <section>
+            <img src="score_calculation/positiveAndNegativeConstraints_0.png" class="fullImage">
+            <img src="score_calculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
+            <img src="score_calculation/positiveAndNegativeConstraints_2.png" class="fullImage fragment">
+            <img src="score_calculation/positiveAndNegativeConstraints_3.png" class="fullImage fragment">
+            <img src="score_calculation/positiveAndNegativeConstraints_4.png" class="fullImage fragment">
+            <img src="score_calculation/positiveAndNegativeConstraints_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreWeighting_0.png" class="fullImage">
+            <img src="score_calculation/scoreWeighting_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreTradeoffInPerspective_0.png" class="fullImage">
+            <img src="score_calculation/scoreTradeoffInPerspective_1.png" class="fullImage fragment">
+            <img src="score_calculation/scoreTradeoffInPerspective_2.png" class="fullImage fragment">
+            <img src="score_calculation/scoreTradeoffInPerspective_3.png" class="fullImage fragment">
+            <img src="score_calculation/scoreTradeoffInPerspective_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreWeightType_0.png" class="fullImage">
+            <img src="score_calculation/scoreWeightType_1.png" class="fullImage fragment">
+            <img src="score_calculation/scoreWeightType_2.png" class="fullImage fragment">
+            <img src="score_calculation/scoreWeightType_3.png" class="fullImage fragment">
+            <img src="score_calculation/scoreWeightType_4.png" class="fullImage fragment">
+            <img src="score_calculation/scoreWeightType_5.png" class="fullImage fragment">
+            <img src="score_calculation/scoreWeightType_6.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreLevels_0.png" class="fullImage">
+            <img src="score_calculation/scoreLevels_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreFoldingIsBroken_0.png" class="fullImage">
+            <img src="score_calculation/scoreFoldingIsBroken_1.png" class="fullImage fragment">
+            <img src="score_calculation/scoreFoldingIsBroken_2.png" class="fullImage fragment">
+            <img src="score_calculation/scoreFoldingIsBroken_3.png" class="fullImage fragment">
+            <img src="score_calculation/scoreFoldingIsBroken_4.png" class="fullImage fragment">
+            <img src="score_calculation/scoreFoldingIsBroken_5.png" class="fullImage fragment">
+            <img src="score_calculation/scoreFoldingIsBroken_6.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreClassDiagram_0.png" class="fullImage">
+            <img src="score_calculation/scoreClassDiagram_1.png" class="fullImage fragment">
+            <img src="score_calculation/scoreClassDiagram_2.png" class="fullImage fragment">
+            <img src="score_calculation/scoreClassDiagram_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/paretoOptimizationScoring_0.png" class="fullImage">
+            <img src="score_calculation/paretoOptimizationScoring_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="score_calculation/scoreComposition_0.png" class="fullImage">
+            <img src="score_calculation/scoreComposition_1.png" class="fullImage fragment">
+            <img src="score_calculation/scoreComposition_2.png" class="fullImage fragment">
+            <img src="score_calculation/scoreComposition_3.png" class="fullImage fragment">
+            <img src="score_calculation/scoreComposition_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Training lab1*</h3>
+        </section>
         <section>
             <h3>Do we need to implement all constraints?</h3>
         </section>
@@ -2229,165 +2372,6 @@ public class Process  {
     </section>
 
 
-
-    <section>
-        <h2>
-            <span class="smaller-p-text">Introduction to</span><br/>
-            heuristics and metaheuristics<br/>
-            <span class="smaller-p-text">for</span><br/>
-            business resource optimization
-        </h2>
-        <div style="margin-top: 80px;">
-            <p>
-                <span style="font-size: smaller">by</span> Geoffrey De Smet<br/>
-                <span style="font-size: smaller">OptaPlanner lead</span>
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h3>N Queens demo</h3>
-        <figure>
-            <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
-            <p>demo</p>
-        </figure>
-    </section>
-
-    <section>
-        <h4>N Queens</h4>
-        <ul class="incremental" style="clear: both;">
-            <li>Imperfect example
-                <ul>
-                    <li>Not NP-complete (shortcuts exist)</li>
-                    <li>Score function is too simple (too black and white)</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>What solution is better?</h3>
-        <figure>
-            <img src="presentation_extra/someSolutionsNQueens04_0.png">
-        </figure>
-        <ul class="incremental">
-            <li>Need for <b>objective scoring</b></li>
-            <li>Better score ⇔ better solution</li>
-            <li>Highest score ⇔ optimal solution</li>
-        </ul>
-    </section>
-
-    <section>
-        <img src="score_calculation/positiveAndNegativeConstraints_0.png" class="fullImage">
-        <img src="score_calculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
-        <img src="score_calculation/positiveAndNegativeConstraints_2.png" class="fullImage fragment">
-        <img src="score_calculation/positiveAndNegativeConstraints_3.png" class="fullImage fragment">
-        <img src="score_calculation/positiveAndNegativeConstraints_4.png" class="fullImage fragment">
-        <img src="score_calculation/positiveAndNegativeConstraints_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreWeighting_0.png" class="fullImage">
-        <img src="score_calculation/scoreWeighting_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreTradeoffInPerspective_0.png" class="fullImage">
-        <img src="score_calculation/scoreTradeoffInPerspective_1.png" class="fullImage fragment">
-        <img src="score_calculation/scoreTradeoffInPerspective_2.png" class="fullImage fragment">
-        <img src="score_calculation/scoreTradeoffInPerspective_3.png" class="fullImage fragment">
-        <img src="score_calculation/scoreTradeoffInPerspective_4.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreWeightType_0.png" class="fullImage">
-        <img src="score_calculation/scoreWeightType_1.png" class="fullImage fragment">
-        <img src="score_calculation/scoreWeightType_2.png" class="fullImage fragment">
-        <img src="score_calculation/scoreWeightType_3.png" class="fullImage fragment">
-        <img src="score_calculation/scoreWeightType_4.png" class="fullImage fragment">
-        <img src="score_calculation/scoreWeightType_5.png" class="fullImage fragment">
-        <img src="score_calculation/scoreWeightType_6.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreLevels_0.png" class="fullImage">
-        <img src="score_calculation/scoreLevels_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreFoldingIsBroken_0.png" class="fullImage">
-        <img src="score_calculation/scoreFoldingIsBroken_1.png" class="fullImage fragment">
-        <img src="score_calculation/scoreFoldingIsBroken_2.png" class="fullImage fragment">
-        <img src="score_calculation/scoreFoldingIsBroken_3.png" class="fullImage fragment">
-        <img src="score_calculation/scoreFoldingIsBroken_4.png" class="fullImage fragment">
-        <img src="score_calculation/scoreFoldingIsBroken_5.png" class="fullImage fragment">
-        <img src="score_calculation/scoreFoldingIsBroken_6.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreClassDiagram_0.png" class="fullImage">
-        <img src="score_calculation/scoreClassDiagram_1.png" class="fullImage fragment">
-        <img src="score_calculation/scoreClassDiagram_2.png" class="fullImage fragment">
-        <img src="score_calculation/scoreClassDiagram_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/paretoOptimizationScoring_0.png" class="fullImage">
-        <img src="score_calculation/paretoOptimizationScoring_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="score_calculation/scoreComposition_0.png" class="fullImage">
-        <img src="score_calculation/scoreComposition_1.png" class="fullImage fragment">
-        <img src="score_calculation/scoreComposition_2.png" class="fullImage fragment">
-        <img src="score_calculation/scoreComposition_3.png" class="fullImage fragment">
-        <img src="score_calculation/scoreComposition_4.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>N Queens</h3>
-        <ul>
-            <li>Hard constraints:
-                <ul>
-                    <li>-1 for every pair of conflicting queens</li>
-                </ul>
-            </li>
-            <li>Soft constraints:
-                <ul>
-                    <li>None</li>
-                </ul>
-            </li>
-        </ul>
-        <div class="row">
-            <div class="col-md-6">
-                <figure>
-                    <img src="use_cases_and_examples/partiallySolvedNQueens04Explained.png"/>
-                    <p>Score = -2</p>
-                    <p>Conflicts: A-B, B-D</p>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure>
-                    <img src="use_cases_and_examples/solvedNQueens04.png"/>
-                    <p>Score = 0</p>
-                    <p>No conflicts</p>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <section>
-        <img src="planner_configuration/entityVariableAndValueExamples_0.png" class="fullImage">
-        <img src="planner_configuration/entityVariableAndValueExamples_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="use_cases_and_examples/curriculumCourseClassDiagram_0.png" class="fullImage">
-        <img src="use_cases_and_examples/curriculumCourseClassDiagram_1.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/curriculumCourseClassDiagram_2.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/curriculumCourseClassDiagram_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>How do we find the best solution?</h3>
-        <figure>
-            <img src="presentation_extra/someSolutionsNQueens04_1.png">
-        </figure>
-        <ul class="incremental">
-            <li>Need for <b>optimization algorithms</b></li>
-            <li>Best solution in available time</li>
-        </ul>
-    </section>
 
     <section>
         <img src="presentation_extra/firstFitLogo.png" class="fullImage">
