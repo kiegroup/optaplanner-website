@@ -1054,6 +1054,7 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         <section>
             <h3>Terminology</h3>
             <ul>
+                <li>Problem fact</li>
                 <li>Planning entity class: Process</li>
                 <li>Planning entity: Process-7</li>
                 <li>Planning variable: Process.getComputer()</li>
@@ -1265,6 +1266,19 @@ end</code></pre>
             <img src="score_calculation/positiveAndNegativeConstraints_5.png" class="fullImage fragment">
         </section>
         <section>
+            <h3>Mirror principle</h3>
+            <ul>
+                <li>-1 for every pair of queens that can attack each other</li>
+                <li>+1 for every pair of queens that cannot attack each other</li>
+                <li>⇒ Same optimal solution</li>
+            </ul>
+            <ul class="fragment">
+                <li>Different <code>initializingScoreTrend</code></li>
+                <li>⇒ possibly different performance</li>
+                <li>Default to negative constraints (if it feels natural)</li>
+            </ul>
+        </section>
+        <section>
             <img src="score_calculation/scoreWeighting_0.png" class="fullImage">
             <img src="score_calculation/scoreWeighting_1.png" class="fullImage fragment">
         </section>
@@ -1302,6 +1316,13 @@ end</code></pre>
             <img src="score_calculation/scoreClassDiagram_1.png" class="fullImage fragment">
             <img src="score_calculation/scoreClassDiagram_2.png" class="fullImage fragment">
             <img src="score_calculation/scoreClassDiagram_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Bendable score</h3>
+            <ul>
+                <li>Any number of score levels</li>
+                <li>Decide at bootstrap time</li>
+            </ul>
         </section>
         <section>
             <img src="score_calculation/paretoOptimizationScoring_0.png" class="fullImage">
@@ -1371,27 +1392,39 @@ end</code></pre>
 
         <section>
             <h3>Tennis club scheduling</h3>
+            <p>Demo</p>
         </section>
-        <!-- TODO -->
         <section>
             <h3>Parametrization</h3>
         </section>
         <!-- TODO -->
         <section>
             <h3>Exam timetabling</h3>
+            <p>Demo</p>
         </section>
         <!-- TODO -->
         <section>
             <h3>Overconstrained planning</h3>
         </section>
         <section>
-            <h3>@PlanningVariable(nullable=true)</h3>
+            <h3>Overconstrained planning</h3>
+            <ul>
+                <li>@PlanningVariable(nullable=true)</li>
+                <li>Extra score level</li>
+                <li>Feasible &gt; Assigned &gt; Cheap</li>
+            </ul>
         </section>
-        <!-- TODO -->
         <section>
             <h3>Hospital bed planning</h3>
+            <p>Demo</p>
         </section>
-        <!-- TODO -->
+        <section>
+            <h3>Lab: overconstrained FLP</h3>
+            <ul>
+                <li>Multiple all demands by 10</li>
+                <li>Solve it but don't break hard constraints</li>
+            </ul>
+        </section>
 
         <section>
             <h3>Methodology</h3>
@@ -1436,11 +1469,16 @@ end</code></pre>
             <img src="optimization_algorithms/architectureOverview_1.png" class="fullImage fragment">
             <img src="optimization_algorithms/architectureOverview_2.png" class="fullImage fragment">
         </section>
-        <!-- TODO -->
+        <section>
+            <h3>ScoreDirectorFactoryConfig</h3>
+            <ul>
+                <li>setKieBase(...)</li>
+            </ul>
+        </section>
         <section>
             <h3>Dinner party</h3>
+            <p>Demo</p>
         </section>
-        <!-- TODO -->
     </section>
 
     <section id="trainingSession3">
@@ -1525,7 +1563,7 @@ end</code></pre>
         </section>
 
         <section>
-            <h3>What is the best optimzation algorithm?</h3>
+            <h3>What is the best optimization algorithm?</h3>
         </section>
         <section>
             <h3>Optimization algorithms</h3>
@@ -1619,15 +1657,20 @@ end</code></pre>
         </section>
         <section>
             <h3>Lab Benchmarker</h3>
-            <!-- TODO -->
+            <ul>
+                <li>On Cloud Balancing</li>
+                <li>Compare Brute Force with Branch And Bound</li>
+                <li>Or different score directors</li>
+                <li>Use 30 second termination</li>
+            </ul>
         </section>
         <section>
             <h3>Blueprints</h3>
-            <!-- TODO -->
+            <p>Demo</p>
         </section>
         <section>
             <h3>Matrix benchmarking</h3>
-            <!-- TODO -->
+            <p>Demo</p>
         </section>
         <section>
             <h3>Benchmark aggregator</h3>
