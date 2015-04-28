@@ -1127,8 +1127,8 @@ cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
         <section>
             <h3>Lab: refactor N queens to IntValueRange</h3>
             <ul>
-                <li>Delete Row class</li>
-                <li>Use ValueRangeFactory.createIntValueRange(..., ...)</li>
+                <li>Use ValueRangeFactory.createIntValueRange(..., ...) on NQueens</li>
+                <li>Use Integer on Queen instead of Row</li>
             </ul>
         </section>
         <section>
@@ -1336,6 +1336,25 @@ end</code></pre>
             <img src="score_calculation/scoreComposition_4.png" class="fullImage fragment">
         </section>
         <section>
+            <h3>Reuse existing business code</h3>
+            <pre><code class="java">public class Nurse {
+
+  private Country country;
+
+  public boolean isHoliday(Date date) {
+    if (country == Country.BE) {
+      // true if date is 1-JAN, easter monday, 21-JUL, ...
+    } else if (country == Country.FR) {
+      // true if date is 1-JAN, easter monday, 14-JUL, ...
+    } else if (...) {
+      ...
+    }
+    ...
+  }
+
+}</code></pre>
+        </section>
+        <section>
             <h3>Training lab1*</h3>
         </section>
         <section>
@@ -1369,25 +1388,6 @@ end</code></pre>
                 <li>Optional: load balance relative to warehouse capacity</li>
                 <li>Optional: use the distanceCost as the load in loading balancing</li>
             </ul>
-        </section>
-        <section>
-            <h3>Reuse existing business code</h3>
-            <pre><code class="java">public class Nurse {
-
-  private Country country;
-
-  public boolean isHoliday(Date date) {
-    if (country == Country.BE) {
-      // true if date is 1-JAN, easter monday, 21-JUL, ...
-    } else if (country == Country.FR) {
-      // true if date is 1-JAN, easter monday, 14-JUL, ...
-    } else if (...) {
-      ...
-    }
-    ...
-  }
-
-}</code></pre>
         </section>
 
         <section>
@@ -1692,6 +1692,17 @@ end</code></pre>
         </section>
         <!-- TODO -->
         <section>
+            <img src="presentation_extra/firstFitLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="construction_heuristics/firstFitNQueens04_0.png" class="fullImage">
+            <img src="construction_heuristics/firstFitNQueens04_1.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitNQueens04_2.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitNQueens04_3.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitNQueens04_4.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitNQueens04_5.png" class="fullImage fragment">
+        </section>
+        <section>
             <img src="presentation_extra/cloudBalanceFirstFit.png" class="fullImage">
         </section>
         <section>
@@ -1716,6 +1727,17 @@ end</code></pre>
                 <img src="presentation_extra/cloudBalanceResults_0.png"/>
                 <p>All hard constraints satisfied: maintenance cost shown</p>
             </figure>
+        </section>
+        <section>
+            <img src="presentation_extra/firstFitDecreasingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_0.png" class="fullImage">
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_1.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_2.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_3.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_4.png" class="fullImage fragment">
+            <img src="construction_heuristics/firstFitDecreasingNQueens04_5.png" class="fullImage fragment">
         </section>
         <section>
             <img src="presentation_extra/cloudBalanceFirstFitDecreasing.png" class="fullImage">
@@ -1757,45 +1779,6 @@ public class Process  {
             <figure>
                 <img src="presentation_extra/cloudBalanceResults_1.png"/>
             </figure>
-        </section>
-
-        <section>
-            <img src="presentation_extra/cloudBalanceLocalSearch.png" class="fullImage">
-        </section>
-        <section>
-            <h3>Construction Heuristics + Local Search</h3>
-            <pre><code class="xml">&lt;solver&gt;
-  ...
-
-  &lt;constructionHeuristic&gt;
-    &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
-  &lt;/constructionHeuristic&gt;
-  &lt;localSearch&gt;
-    ...
-  &lt;localSearch&gt;
-&lt;/solver&gt;</code></pre>
-        </section>
-        <section>
-            <img src="presentation_extra/firstFitLogo.png" class="fullImage">
-        </section>
-        <section>
-            <img src="construction_heuristics/firstFitNQueens04_0.png" class="fullImage">
-            <img src="construction_heuristics/firstFitNQueens04_1.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitNQueens04_2.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitNQueens04_3.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitNQueens04_4.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitNQueens04_5.png" class="fullImage fragment">
-        </section>
-        <section>
-            <img src="presentation_extra/firstFitDecreasingLogo.png" class="fullImage">
-        </section>
-        <section>
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_0.png" class="fullImage">
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_1.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_2.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_3.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_4.png" class="fullImage fragment">
-            <img src="construction_heuristics/firstFitDecreasingNQueens04_5.png" class="fullImage fragment">
         </section>
         <section>
             <!-- Note: the LS side doesn't do Nearby Selection so it's not representative -->
@@ -1894,6 +1877,25 @@ $ mvn exec:exec
     <section>
         <section>
             <h3>Local Search</h3>
+        </section>
+        <section>
+            <img src="presentation_extra/cloudBalanceLocalSearch.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Construction Heuristics + Local Search</h3>
+            <pre><code class="xml">&lt;solver&gt;
+                ...
+
+                &lt;constructionHeuristic&gt;
+                &lt;constructionHeuristicType&gt;FIRST_FIT_DECREASING&lt;/constructionHeuristicType&gt;
+                &lt;/constructionHeuristic&gt;
+                &lt;localSearch&gt;
+                ...
+                &lt;localSearch&gt;
+                &lt;/solver&gt;</code></pre>
+        </section>
+        <section>
+            <img src="optimization_algorithms/generalPhaseSequence_1.png" class="fullImage">
         </section>
         <section>
             <img src="optimization_algorithms/generalPhaseSequence_0.png" class="fullImage">
@@ -2169,6 +2171,12 @@ $ mvn exec:exec
             <!-- TODO -->
         </section>
         <section>
+            <img src="move_and_neighbourhood_selection/changeMove.png" class="fullImage">
+        </section>
+        <section>
+            <img src="move_and_neighbourhood_selection/swapMove.png" class="fullImage">
+        </section>
+        <section>
             <img src="move_and_neighbourhood_selection/selectorTree_0.png" class="fullImage">
             <img src="move_and_neighbourhood_selection/selectorTree_1.png" class="fullImage fragment">
             <img src="move_and_neighbourhood_selection/selectorTree_2.png" class="fullImage fragment">
@@ -2214,6 +2222,15 @@ $ mvn exec:exec
             <img src="move_and_neighbourhood_selection/probabilisticSelection_4.png" class="fullImage fragment">
         </section>
         <section>
+            <h3>Mimic Selection</h3>
+        </section>
+        <section>
+            <h3>Limited Selection</h3>
+        </section>
+        <section>
+            <h3>Generic moves</h3>
+        </section>
+        <section>
             <img src="move_and_neighbourhood_selection/changeMove.png" class="fullImage">
         </section>
         <section>
@@ -2226,9 +2243,6 @@ $ mvn exec:exec
             <img src="move_and_neighbourhood_selection/pillarSwapMove.png" class="fullImage">
         </section>
         <section>
-            <h3>Cartesian Product</h3>
-        </section>
-        <section>
             <h3>TailChainSwapMove</h3>
         </section>
         <section>
@@ -2237,7 +2251,6 @@ $ mvn exec:exec
         <section>
             <h3>SubChainSwapMove</h3>
         </section>
-
         <section>
             <h3>Custom moves</h3>
             <!-- TODO -->
@@ -2261,8 +2274,14 @@ $ mvn exec:exec
             <img src="score_calculation/incrementalScoreCalculatorSequenceDiagram_5.png" class="fullImage fragment">
         </section>
         <section>
-            <h3>Assertion modes</h3>
-            <!-- TODO -->
+            <h3>EnvironmentMode</h3>
+            <p>Are there bugs in my code?</p>
+            <ul>
+                <li>Production</li>
+                <li>Reproducible (default)</li>
+                <li>Fast assert</li>
+                <li>Full assert</li>
+            </ul>
         </section>
         <section>
             <h3>Machine Reassignment</h3>
