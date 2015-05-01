@@ -56,6 +56,11 @@ The first time, Maven might take a lot time, because it needs to download jars.
 <a href="http://www.ej-technologies.com/products/jprofiler/overview.html"><img src="http://www.ej-technologies.com/images/banners/jprofiler_small.png" alt="JProfiler"/></a>
 ++++
 
+
+https://github.com/droolsjbpm/optaplanner-wb[optaplanner-wb, role=lead]::
+_The source code for OptaPlanner Workbench._
+
+
 https://github.com/droolsjbpm/optaplanner-website[optaplanner-website, role=lead]::
 _The source code for this website and presentations._
 
