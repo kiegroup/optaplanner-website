@@ -40,7 +40,7 @@ The first time, Maven might take a lot time, because it needs to download jars.
 +
 ----
  $ cd optaplanner-examples
- $ mvn exec:exec
+ $ mvn exec:java
  ...
 ----
 
