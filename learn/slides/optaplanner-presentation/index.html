@@ -862,6 +862,56 @@ public class Process  {
         <h3>Benchmark results</h3>
         <p>Demo</p>
     </section>
+    <section>
+        <h3>Gain by using OptaPlanner</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Use case</th>
+                <th>Gain type</th>
+                <th>Avg</th>
+                <th style="font-size: smaller;">Min</th>
+                <th style="font-size: smaller;">Max</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Cloud Balancing</td>
+                <td>Maintenance cost <sup>1</sup></td>
+                <td>-18%</td>
+                <td style="font-size: smaller;">-16%</td>
+                <td style="font-size: smaller;">-21%</td>
+            </tr>
+            <tr>
+                <td>Machine Reassignment</td>
+                <td>Unbalanced load <sup>2</sup></td>
+                <td>-63%</td>
+                <td style="font-size: smaller;">-25%</td>
+                <td style="font-size: smaller;">-97%</td>
+            </tr>
+            <tr>
+                <td>Vehicle Routing<br/><span style="font-size: smaller;">(Belgium datasets)</span></td>
+                <td>Distance <sup>1</sup></td>
+                <td>-20%</td>
+                <td style="font-size: smaller;">-7%</td>
+                <td style="font-size: smaller;">-27%</td>
+            </tr>
+            <tr>
+                <td>Course scheduling</td>
+                <td>Unhappiness <sup>1</sup></td>
+                <td>-66%</td>
+                <td style="font-size: smaller;">-26%</td>
+                <td style="font-size: smaller;">-100%</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr/>
+        <p style="text-align: left; font-size: medium;">
+            OptaPlanner in a 5 minute run<br/>
+            <sup>1</sup> Compared to traditional algorithms with domain knowledge.<br/>
+            <sup>2</sup> Compared to initial assignments.
+        </p>
+    </section>
 
     <section>
         <h2>Repeated planning:<br/>continuous/real-time</h2>
