@@ -1,0 +1,82 @@
+= OptaPlanner on Android
+:page-interpolate: true
+:awestruct-author: tdavid
+:awestruct-layout: blogPostBase
+:awestruct-tags: [android, vehicle routing]
+
+Currently, developing of mobile applications on Android in very popular. One of the reasons for this popularity is Java
+programming language. Although OptaPlanner is written in Java, it is not so simple to use it on Android. In the
+following paragraphs, I will show how to use OptaPlanner on Android and demonstrate simple application.
+
+== How to use OptaPlanner on Android
+Android is not a complete JVM. Some JDK libraries of the `java.beans` package are missing for proper Planner
+functionality. However, it is possible to use Planner with Java score calculation by adding missing libraries to your
+Android project. The Drools rule engine does not work on Android yet, so Drools score calculation doesn't work on
+Android.
+
+If you would like to use OptaPlanner in your Anroid project, follow these steps:
+
+* Download https://openbeans.googlecode.com/files/openbeans-1.0.jar[OpenBeans] redistribution of the `java.beans`
+package.
+* Download https://jarjar.googlecode.com/files/jarjar-1.4.jar[Jar Jar Links] utility for repacking the redistribution.
+* Create a `jarJarRule.txt` text file with a single line:
+
+[source,txt]
+----
+rule com.googlecode.openbeans.** java.beans.@1
+----
+
+* Place all the files in the same folder and run the command:
+
+[source,txt]
+----
+$ java -jar jarjar-1.4.jar process jarJarRule.txt openbeans-1.0.jar javabeans-1.0.jar
+----
+
+* Move the created `javabeans-1.0.jar` into the `libs` folder in your Android project.
+* Add lines to `android` area in the `build.gradle` file in your Android project to allow classes of `java.*` package
+inside the `javabeans-1.0.jar` file, because otherwise file will not be accepted:
+
+[source,txt]
+----
+android {
+...
+    dexOptions {
+        preDexLibraries = false
+    }
+    project.tasks.withType(com.android.build.gradle.tasks.Dex) {
+        additionalParameters=['--core-library']
+    }
+...
+}
+----
+
+* Add dependency to the `build.gradle` file in your Android project and exclude `org.drools` and `xmlpull` dependencies:
+
+[source,txt]
+----
+dependencies {
+...
+    compile('org.optaplanner:optaplanner-core:...') {
+        exclude group: 'xmlpull'
+        exclude group: 'org.drools'
+    }
+...
+}
+----
+
+== Vehicle Routing Problem application
+I have created an OptaPlanner Android application named Vehicle Routing Problem. It is based on Vehicle routing
+application from OptaPlanner Examples. See this video for a detailed demonstration:
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/WpfjS6I5HGg" frameborder="0" allowfullscreen></iframe>
++++
+
+You can download this application on Google play store on this
+https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[link] and source code can be found
+on GitHub, see this https://github.com/tomasdavidorg/android-vehicle-routing-problem[link].
+
+== Conclusion
+Now you can create your own Android applications which use OptaPlanner. Follow the steps written above or get inspired
+by the mentioned example.
