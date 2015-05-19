@@ -10,6 +10,8 @@ Although OptaPlanner is written completely in pure Java (Standard Edition),
 the current version (6.2.0.Final) requires a workaround to work on Android due to a limitation in the Android platform.
 In this article, I will show how to use OptaPlanner on Android and demonstrate a simple Vehicle Routing app.
 
+https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[Try the app on the Google Play app store.]
+
 == How to use OptaPlanner on Android
 
 Android is not a complete JVM. Some JDK libraries of the `java.beans` package are missing for OptaPlanner to work out of the box.
@@ -76,8 +78,8 @@ application from OptaPlanner Examples. See this video for a detailed demonstrati
 <iframe width="853" height="480" src="https://www.youtube.com/embed/WpfjS6I5HGg" frameborder="0" allowfullscreen></iframe>
 +++
 
-https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[Download and run this application from the Google Play app store now.]
-The source code is https://github.com/tomasdavidorg/android-vehicle-routing-problem[on GitHub.]
+https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[Get this app from the Google Play app store now.]
+The source code is https://github.com/tomasdavidorg/android-vehicle-routing-problem[on GitHub].
 
 == Conclusion
 
