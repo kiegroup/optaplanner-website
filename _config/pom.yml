@@ -1,36 +1,40 @@
 latestFinal:
-    version: 6.2.0.Final
-    distributionZip: http://download.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-distribution-6.2.0.Final.zip
-    releaseDate: 2015-03-06
-    releaseNotesVersion: 6.2
+  version: 6.2.0.Final
+  distributionZip: http://download.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-distribution-6.2.0.Final.zip
+  releaseDate: 2015-03-06
+  releaseNotesVersion: 6.2
 
-    documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html_single/index.html
-    documentationHtml: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html/index.html
-    documentationPdf: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-    javadocs: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html_single/index.html
+  documentationHtml: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html/index.html
+  documentationPdf: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-javadoc/index.html
 
-    droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html_single/index.html
-    droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html/index.html
-    droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html/index.html
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/pdf/drools-docs.pdf
 
 # latest.version can be equal to latestFinal.version
 latest:
-    version: 6.2.0.Final
-    distributionZip: http://download.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-distribution-6.2.0.Final.zip
-    releaseDate: 2015-03-06
-    releaseNotesVersion: 6.2
+  version: 6.2.0.Final
+  distributionZip: http://download.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-distribution-6.2.0.Final.zip
+  releaseDate: 2015-03-06
+  releaseNotesVersion: 6.2
 
-    documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html_single/index.html
-    documentationHtml: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html/index.html
-    documentationPdf: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-    javadocs: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html_single/index.html
+  documentationHtml: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/html/index.html
+  documentationPdf: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.jboss.org/optaplanner/release/6.2.0.Final/optaplanner-javadoc/index.html
 
-    droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html_single/index.html
-    droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html/index.html
-    droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/html/index.html
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.2.0.Final/drools-docs/pdf/drools-docs.pdf
 
 nightly:
-    version: 6.3.0-SNAPSHOT
-    distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.3.0-SNAPSHOT.zip
+  version: 6.3.0-SNAPSHOT
+  # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
+  # distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.3.0-SNAPSHOT.zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.3.0-SNAPSHOT&e=zip
 
-    documentationHtmlSingle: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html_single/index.html
+  # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus, which is not a html but a zip
+  # documentationHtmlSingle: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html_single/index.html
+  documentationHtmlSingle: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.3.0-SNAPSHOT&e=zip
