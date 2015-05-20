@@ -44,16 +44,16 @@ This is similar for Gradle, Ivy and Buildr.
 [[NonFinalReleases]]
 == Non-Final releases
 
-*Non-Final releases are the best way to test drive new features and API's
+*Non-Final releases are the best way to test drive new features and APIs
 to provide feedback before we lock down the API with a Final release.*
 We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
 or link:../code/issueTracker.html[issue tracker].
 
 [[AlphasBetasCRs]]
-=== Alpha's, Beta's and CR's
+=== Alphas, Betas and CRs
 
 An Alpha can be unstable.
-A Beta should work (it passes automated testing), but its new API's might still change in the next release.
+A Beta should work (it passes automated testing), but its new APIs might still change in the next release.
 A CR should be almost identical to the Final release.
 
 * image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
