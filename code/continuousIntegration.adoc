@@ -11,6 +11,6 @@ We use Jenkins for continuous integration.
 
 Keep the build blue!
 
-== Project website (www.optaplanner.org)
+== Project website (optaplanner.org)
 
 We use Travis to build this project website, see https://travis-ci.org/droolsjbpm/optaplanner-website[the travis job].

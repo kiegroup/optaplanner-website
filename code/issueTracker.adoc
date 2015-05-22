@@ -5,31 +5,28 @@
 
 == Issue tracker (JIRA)
 
-We welcome all issue reports (bugs, improvements, new feature requests, ...) in https://issues.jboss.org/browse/PLANNER[our JIRA issue tracker]:
-
-*Show https://issues.jboss.org/browse/PLANNER[the JIRA issue tracker].* Log in and click on the button _Create Issue_.
+*We welcome all issue reports (bugs, improvements, new feature requests, ...) in https://issues.jboss.org/browse/PLANNER[our JIRA issue tracker]*.
+Log in and click on the button _Create Issue_.
 
 We prioritize issues based on:
 
 * Is it a link:../community/product.html[customer request]?
-* Is there https://github.com/droolsjbpm/optaplanner/pulls[a Pull Request] or https://issues.jboss.org/browse/PLANNER[a JIRA issue] with a reproducer?
+* Is there https://github.com/droolsjbpm/optaplanner/pulls[a Pull Request]?
+* Or is there a https://issues.jboss.org/browse/PLANNER[a JIRA issue]? Does it include a reproducer?
 * Severity
 * How many community users are affected?
 
 We prefer issues with:
 
-* A *clear, specific title* (for our release notes later)
-** Specify the context (to avoid confusing it with other similar issues)
+* A *clear, specific title*
+** Specify the context
 ** Distinguish between the old behaviour and the desired behaviour: use the words _should_ or _should not_.
 ** For example:
 *** Bad: _OptaPlanner throws a NullPointerException_
 *** Good: _Exhaustive Search with FULL_ASSERT should not throw a NullPointerException_
 * A clear *reproduce recipe*
-** If possible, adjust an existing example to reproduce the issue
-*** For example, change the `cloudBalancingSolverConfig.xml` to reproduce it and attach that file to the JIRA issue.
-** Otherwise, attach a standalone project zip with:
-*** A Maven or Gradle file which we can easily import in our IDE to set the classpath correctly
-*** A main class to reproduce the issue. Specify the main class name in the JIRA issue description.
+** If possible, adjust an existing example to reproduce the issue and attach the modified files to the JIRA issue.
+** Otherwise, attach a standalone project zip with a Maven or Gradle file and specify in the JIRA issue which main class to run.
 
 == Pull requests on GitHub
 
