@@ -42,6 +42,11 @@ OptaPlanner is:
 [[NewAndNoteWorthy]]
 === New and noteworthy
 
+=== Easier configuration
+
+* Defining the optimization algorithms and their parameters is now optional (but still possible and desirable for power users).
+If you don't define any solver phases, a default Construction Heuristic followed by a default Local Search is used.
+
 ==== New Benchmarker bluePrints
 
 There are 2 new benchmarker blueprints:
