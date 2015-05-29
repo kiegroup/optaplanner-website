@@ -77,6 +77,7 @@ It's now even easier to try out all Local Search algorithms:
 * Improved Move.toString() methods for more clearer log messages.
 * Benchmarker report mentions logging level used. Contributed by Matej Čimbora.
 * Documentation for Android. Contributed by Tomáš David.
+* Benchmarker's `<solverBenchmark>` name now allows non-ASCII characters too (for example Japanese characters)
 
 ==== Archive
 
