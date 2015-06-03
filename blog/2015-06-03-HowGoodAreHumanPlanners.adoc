@@ -14,7 +14,7 @@ to introduce them to the difficulty of planning optimization.
 
 I gave them a Traveling Salesman Problem (TSP) and asked them to *connect the dots* to find the shortest tour possible:
 
-image::humanPlannersTspAssignmentBlog.png[]
+image::humanPlannersTspAssignmentBlog.png[align="center"]
 
 They laughed. _Isn't this a kids game? Yes, except that the dots are not numbered and you're not looking for Mickey Mouse._
 
@@ -25,7 +25,7 @@ You can try this assignment yourself: right-click in the example's UI to manuall
 Their first attempt and their best attempt in a time window of almost 30 minutes was recorded.
 This is the optimal solution that we hoped to find:
 
-image::humanPlannersTspGoalBlog.png[]
+image::humanPlannersTspGoalBlog.png[align="center"]
 
 == Results
 
@@ -50,7 +50,7 @@ and custom business constraints. All of these make it harder.
 
 Below are the individual results:
 
-image::humanPlannerTspResults.png[]
+image::humanPlannerTspResults.png[align="center"]
 
 |===
 |First attempt|Best attempt
