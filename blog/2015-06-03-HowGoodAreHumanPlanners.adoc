@@ -29,7 +29,7 @@ image::humanPlannersTspGoalBlog.png[align="center"]
 
 == Results
 
-No one found the optimal solution. Most people didn't even find a near optimal solution:
+No one found the optimal solution. Most people didn't even find a near optimal solution (including me):
 
 |===
 ||First attempt|Best attempt
@@ -40,7 +40,7 @@ No one found the optimal solution. Most people didn't even find a near optimal s
 |===
 
 *On average, a human's best result was 9% worse than the optimal solution.
-That's mean it roughly takes 9% more time and 9% more fuel to visit those locations. That's expensive.*
+That means it roughly takes 9% more time and 9% more fuel to visit those locations. That's expensive.*
 
 That's just on a small problem with only 1 constraint!
 In the real world, other constraints need to be taken into account,
