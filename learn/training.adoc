@@ -1,6 +1,7 @@
 = Training
 :awestruct-description: Complete these labs and workshops to improve your OptaPlanner experience.
 :awestruct-layout: normalBase
+:awestruct-priority: 0.4
 :showtitle:
 
 == What is it?

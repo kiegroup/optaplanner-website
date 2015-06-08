@@ -1,6 +1,8 @@
 = Download
 :awestruct-layout: normalBase
 :awestruct-description: Download the community release of OptaPlanner, including examples, sources and documentation.
+:awestruct-priority: 1.0
+:awestruct-change_frequency: weekly
 :page-interpolate: true
 :showtitle:
 

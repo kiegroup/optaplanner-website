@@ -1,6 +1,7 @@
 = Videos
 :awestruct-description: Watch these video's for example demonstrations, feature explanations and more.
 :awestruct-layout: normalBase
+:awestruct-priority: 0.8
 :showtitle:
 
 See http://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geoffrey's OptaPlanner playlist on YouTube]

@@ -1,6 +1,7 @@
 = 404 Page not found
 :awestruct-description: The requested page does not exist.
 :awestruct-layout: normalBase
+:awestruct-priority: 0.0
 :page-interpolate: true
 :showtitle:
 

@@ -1,6 +1,7 @@
 = Website info
 :awestruct-description: Website technology and feedback
 :awestruct-layout: normalBase
+:awestruct-priority: 0.1
 :showtitle:
 
 == Website technology

@@ -1,6 +1,7 @@
 = Slides
 :awestruct-description: Watch or print our OptaPlanner slide deck. Reuse slides or images in your own presentation.
 :awestruct-layout: normalBase
+:awestruct-priority: 0.4
 :showtitle:
 
 == Watch the slides

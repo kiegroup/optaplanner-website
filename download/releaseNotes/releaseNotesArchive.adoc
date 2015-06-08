@@ -1,6 +1,7 @@
 = Release Notes Archive
 :awestruct-description: A list of all release notes for each OptaPlanner version.
 :awestruct-layout: normalBase
+:awestruct-priority: 0.1
 :showtitle:
 
 This is a list of all past and upcoming release notes:

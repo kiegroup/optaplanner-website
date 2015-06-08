@@ -1,6 +1,8 @@
 = Documentation
 :awestruct-description: Reference manual (user guide) of OptaPlanner, also includes quick start, use cases and examples overview, ...
 :awestruct-layout: normalBase
+:awestruct-priority: 1.0
+:awestruct-change_frequency: weekly
 :page-interpolate: true
 :showtitle:
 

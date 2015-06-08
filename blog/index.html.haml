@@ -2,11 +2,13 @@
 title: Blog
 description: Opinionated blog about Operations Research, optimization solvers and OptaPlanner.
 layout: blogBase
+priority: 1.0
 ---
 - page.title = "Blog tag #{page.selected_tag}" if !page.selected_tag.nil?
 - page.title = "#{page.title} - page #{page.posts.current_page_index + 1}" if (!page.posts.current_page.nil?) and (page.posts.current_page_index != 0)
 - page.description = "#{page.description} Filtered on the tag #{page.selected_tag}." if !page.selected_tag.nil?
 - page.description = "#{page.description} - page #{page.posts.current_page_index + 1}" if (!page.posts.current_page.nil?) and (page.posts.current_page_index != 0)
+- page.priority = "0.1" if !page.selected_tag.nil?
 %h1 #{page.title}
 - for post in page.posts
   -# Trick to make images work from blog posts work for the aggregator blog page
