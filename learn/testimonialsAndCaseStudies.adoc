@@ -43,6 +43,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 * https://github.com/ge0ffrey/optaconf[OptaConf Conference Planner] uses OptaPlanner with JavaEE 7 (JAXRS, CDI, WildFly) to expose a REST service.
 
+* https://github.com/gemoc/farmingmodeling[Farm optimization] uses OptaPlanner with Drools DSL and EMF.
+
 == Podcasts
 
 * http://pca.st/akwU[JBoss Asylum: OptaPlanner for the masses]
