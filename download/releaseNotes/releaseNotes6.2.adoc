@@ -4,7 +4,7 @@
 :awestruct-priority: 1.0
 :showtitle:
 
-== OptaPlanner 6.2
+== OptaPlanner 6.2 announcement
 
 We are happy to announce the 6.2 release of OptaPlanner.
 
@@ -16,7 +16,7 @@ it is a strong and flexible foundation for knowledge management.
 *link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
 or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
-=== Demo videos
+== Demo videos
 
 Each of these videos demonstrates an example and/or a special feature:
 
@@ -32,7 +32,7 @@ Each of these videos demonstrates an example and/or a special feature:
 * http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing scoring]: Score function flexibility
 * http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Employee rostering]: Continuous planning
 
-=== Status
+== Status
 
 OptaPlanner is:
 
@@ -43,9 +43,9 @@ OptaPlanner is:
 * *Open source*: Released under link:../../code/license.html[the Apache Software License].
 
 [[NewAndNoteWorthy]]
-=== New and noteworthy
+== New and noteworthy
 
-==== Scalable VRP with nearby selection
+=== Scalable VRP with nearby selection
 
 Nearby selection allows a vehicle routing problem to scale out gracefully beyond 1000 locations,
 without the need for partitioning.
@@ -61,7 +61,7 @@ image:6.2/belgium-road-time-n2750-k55_nearbyWithLA.png[Nearby selection random d
 Several nearby selection probability distributions are supported:
 block distribution, linear distribution, parabolic distribution and beta distribution.
 
-==== TailChainSwapMove (2-opt) for VRP
+=== TailChainSwapMove (2-opt) for VRP
 
 TailChainSwapMove is a new move type for chained variables.
 It's a subset of SubchainChangeMove and SubchainSwapMove, but it's generally more efficient,
@@ -70,11 +70,11 @@ especially for time windowed cases.
 In our benchmarks, a union of ChangeMove, SwapMove and TailChainSwapMove (using nearby selection on all 3)
 performed best.
 
-==== Improved build-in variable listener efficiency
+=== Improved build-in variable listener efficiency
 
 VRP with a `@InverseRelationShadowVariable` is now more efficient. In some cases, it's up to *`32%` faster*.
 
-==== Strategic Oscillation Tabu Search
+=== Strategic Oscillation Tabu Search
 
 Strategic Oscillation Tabu Search is often an improvement over normal Tabu Search.
 Instead of picking the accepted move with the highest score, it employs a different mechanism:
@@ -97,7 +97,7 @@ To enable it, do this:
   </localSearch>
 ----
 
-==== New example: Cheap time scheduling
+=== New example: Cheap time scheduling
 
 Schedule all tasks in time and on a machine to minimize the power cost.
 Each machine must have enough hardware to run all of its tasks.
@@ -107,7 +107,7 @@ image:6.2/cheapTimeExampleScreenshot.png[Cheap time example]
 
 Based on contributions by Lukáš Petrovický.
 
-==== New benchmarker statistics: Constraint Match Total Best/Step score
+=== New benchmarker statistics: Constraint Match Total Best/Step score
 
 These new statistics visualize how the individual constraint types change over time.
 
@@ -115,12 +115,12 @@ image:6.2/constraintMatchTotalBestScoreStatistic.png[constraint match total best
 
 This gives a better insight as to which constraints impact the score the most.
 
-==== Other improvements
+=== Other improvements
 
 * Construction Heuristics: new pick early type: `FIRST_FEASIBLE_SCORE` which is useful for scaling.
 * Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.
 * BendableLongScore: Bendable score with long types. Contributed by Dieter De Paepe.
 
-==== Archive
+== Archive
 
 For older releases, check link:releaseNotesArchive.html[the release notes archive].

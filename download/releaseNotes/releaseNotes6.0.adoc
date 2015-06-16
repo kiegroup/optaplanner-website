@@ -4,7 +4,7 @@
 :awestruct-priority: 1.0
 :showtitle:
 
-== OptaPlanner 6.0
+== OptaPlanner 6.0 announcement
 
 We are happy to announce the 6.0 release of OptaPlanner.
 
@@ -16,7 +16,7 @@ it is a strong and flexible foundation for knowledge management.
 *link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
 or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
-=== Demo videos
+== Demo videos
 
 Each of these videos demonstrates an example and a feature:
 
@@ -28,7 +28,7 @@ Each of these videos demonstrates an example and a feature:
 * http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing scoring]: Score function flexibility
 * http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Employee rostering]: Continuous planning
 
-=== Status
+== Status
 
 OptaPlanner is:
 
@@ -39,14 +39,14 @@ OptaPlanner is:
 * *Open source*: Released under link:../../code/license.html[the Apache Software License].
 
 [[NewAndNoteWorthy]]
-=== New and noteworthy
+== New and noteworthy
 
-==== Drools Planner renamed to OptaPlanner
+=== Drools Planner renamed to OptaPlanner
 
 OptaPlanner is the new name for Drools Planner.
 For more information, see http://www.optaplanner.org/community/droolsPlannerRenamed.html[the full announcement].
 
-==== Faster and easier scoreDRL
+=== Faster and easier scoreDRL
 
 The new _constraint match_ system is:
 
@@ -90,7 +90,7 @@ the `ConstraintMatch` objects (and their totals per constraint) are available di
 For more information, see http://blog.athico.com/2013/04/score-drl-faster-and-easier-in.html[this blog post]
 and link:../../learn/documentation.html[the reference manual].
 
-==== Construction heuristics now use selectors
+=== Construction heuristics now use selectors
 
 The construction heuristics now use the selector architecture so they support selection filtering, etc.
 Sorting can be overwritten at a configuration level (very handy for benchmarking).
@@ -98,7 +98,7 @@ Sorting can be overwritten at a configuration level (very handy for benchmarking
 In use cases with multiple planning variables (for example period, room and teacher),
 you can now switch to a far more scalable configuration.
 
-==== Automatic solution cloning
+=== Automatic solution cloning
 
 Implementing the `Solution`'s planning clone method is now optional.
 This means there's less boilerplate code to write and it's harder to cause score corruption in your code.
@@ -106,13 +106,13 @@ This means there's less boilerplate code to write and it's harder to cause score
 For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]
 and link:../../learn/documentation.html[the reference manual].
 
-==== New build-in scores
+=== New build-in scores
 
 There are new build-in score definitions, such as: `HardMediumSoftScore` (3 score levels),
 `BendableScore` (configurable number of score levels), `HardSoftLongScore`, `HardSoftDoubleScore`,
 `HardSoftBigDecimalScore`, ...
 
-==== Planning Variable Listener (shadow variables)
+=== Planning Variable Listener (shadow variables)
 
 A planning variable can now have a listener which updates a shadow planning variable.
 
@@ -121,24 +121,24 @@ but can be calculated based on the state of the genuine planning variables.
 For example: in VRP with time windows, the `arrivalTime` at a customer can be calculated
 based on the previous customers of that vehicle.
 
-==== Bi-directional variable relationship for chained variables
+=== Bi-directional variable relationship for chained variables
 
 A shadow planning variable can now be `mappedBy` a genuine variable.
 OptaPlanner will automatically update the shadow variable if the genuine variable is changed.
 Currently this is only supported for chained variables.
 
-==== TSP and VRP: Chained variables are more scalable
+=== TSP and VRP: Chained variables are more scalable
 
 Several improvements have made use cases like TSP and VRP more scalable.
 The code has been optimized to run significantly faster.
 Also, `<subChainSelector>` now supports `<maximumSubChainSize>` to scale out better.
 
-==== New metaheuristic: Step Counting Hill Climbing
+=== New metaheuristic: Step Counting Hill Climbing
 
 _Step Counting Hill Climbing_ is easy to configure and has good results.
 Generally, it behaves and feels a lot like _Late Acceptance_. Try it out with the Benchmarker.
 
-==== Benchmarker improvements
+=== Benchmarker improvements
 
 * Best solution mutation statistic: shows for every new best solution found,
 how many variables needed to change to improve the last best solution.
@@ -146,19 +146,19 @@ how many variables needed to change to improve the last best solution.
 * The Benchmarker now highlights infeasible solutions with an orange exclamation mark.
 * The Benchmarker now shows standard deviation per solver configuration (thanks to Miroslav Svitok).
 
-==== New examples
+=== New examples
 
 * VRP with time windows: The VRP example can now also handle the capacitated vehicle routing problem with time windows.
 * Project job scheduling: A form of job shop scheduling, for example to schedule the production of diverse books, cars
 or other products to machines and employees (thanks to Lukáš Petrovický)
 
-==== Example improvements
+=== Example improvements
 
 * The GUI's of course scheduling, exam scheduling, hospital bed planning and sport scheduling have been improved.
 * The optaplanner examples Swing GUI has been redesigned to take up less space.
 * A webapp variant of the cloud balancing example has been added to `optaplanner-webexamples.war` (thanks to Frederic Hornain).
 
-==== Other improvements
+=== Other improvements
 
 * Domain classes that extend/implement a `@PlanningEntity` class or interface can now be used as planning entities.
 * Nullable variables support improved and fixed.
@@ -170,11 +170,11 @@ that move different variables of the same entity.
 * `KieBase` support, for example to integrate decision tables or scorecards.
 * OSGi support out-of-the-box in the optaplanner jars.
 
-=== Upgrading from a previous version
+== Upgrade from a previous version
 
 To upgrade from a previous version of OptaPlanner (or Drools Planner),
 just follow https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe].
 
-==== Archive
+== Archive
 
 For older releases, check link:releaseNotesArchive.html[the release notes archive].

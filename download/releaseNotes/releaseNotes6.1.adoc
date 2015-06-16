@@ -4,7 +4,7 @@
 :awestruct-priority: 1.0
 :showtitle:
 
-== OptaPlanner 6.1
+== OptaPlanner 6.1 announcement
 
 We are happy to announce the 6.1 release of OptaPlanner.
 
@@ -16,7 +16,7 @@ it is a strong and flexible foundation for knowledge management.
 *link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
 or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
-=== Demo videos
+== Demo videos
 
 Each of these videos demonstrates an example and a feature:
 
@@ -31,7 +31,7 @@ Each of these videos demonstrates an example and a feature:
 * http://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing scoring]: Score function flexibility
 * http://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Employee rostering]: Continuous planning
 
-=== Status
+== Status
 
 OptaPlanner is:
 
@@ -42,9 +42,9 @@ OptaPlanner is:
 * *Open source*: Released under link:../../code/license.html[the Apache Software License].
 
 [[NewAndNoteWorthy]]
-=== New and noteworthy
+== New and noteworthy
 
-==== Public API
+=== Public API
 
 There is now a public API:
 
@@ -58,7 +58,7 @@ when upgrading to a newer version. That recipe file is included in every release
 except for elements that require the use of non public API classes.
 The XML solver configuration is defined by the classes in the package namespace `org.optaplanner.core.config`.
 
-==== Performance speedups
+=== Performance speedups
 
 * *EntitySelector caching speedup for large datasets*: Benchmarked on MachineReassignment's B datasets.
 ** Tabu Search: `+3%` on average, `+4%` on largest
@@ -67,7 +67,7 @@ The XML solver configuration is defined by the classes in the package namespace 
 ** Tabu Search: `+18%` on average, `+24%` on largest
 ** Late Acceptance: `+23%` on average, `+121%` (`x2.21`) on largest
 
-==== Declarative value ranges
+=== Declarative value ranges
 
 When the planning value range of a planning variable is a number (such as `int`, `double` or `BigDecimal`),
 you can now declare the range by its bounds, instead of enumerating all values in the range.
@@ -96,7 +96,7 @@ You can now just reserve 2 memory spaces for the bounds of those integer values:
     }
 ----
 
-==== New Construction Heuristic: Cheapest Insertion
+=== New Construction Heuristic: Cheapest Insertion
 
 A new Construction Heuristic that takes considerably longer than First Fit, First Fit Decreasing,
 but often has better results.
@@ -108,7 +108,7 @@ but often has better results.
   </constructionHeuristic>
 ----
 
-==== New Exhaustive Search: Branch And Bound
+=== New Exhaustive Search: Branch And Bound
 
 Branch And Bound is a smart version of Brute Force.
 It also explores nodes in an exponential search tree,
@@ -122,26 +122,31 @@ Configure it like this:
   </exhaustiveSearch>
 ----
 
-==== BenchmarkAggregator
+=== BenchmarkAggregator
 
 The BenchmarkAggregator in optaplanner-benchmark allows you to merge multiple benchmark reports into 1 report.
 
 Contributed by Matej Čimbora.
 
-==== Generic move improvements
+=== Generic move improvements
 
 * New `PillarChangeMove`:
 A pillar is a set of planning entities which have the same planning value(s) for their planning variable(s).
 The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable for all entities.
 * The pillar moves can now select subPillars too.
 
-==== Other improvements
+=== Other improvements
 
 * The Manners2009 example has been cleaned up and renamed to the Dinner Party example.
 * *Decision Table* example: the Dinner Party example now demonstrates how to use a Drools Decision Table (an XLS file) to allow users to define score rules.
 * New *BestScoreFeasibleTermination*: terminates when the best score is feasible. Contributed by Matej Čimbora.
 * Real-time planning improvements, such as a daemon mode.
 
-==== Archive
+== Upgrade from a previous version
+
+To upgrade from a previous version of OptaPlanner,
+just follow https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe].
+
+== Archive
 
 For older releases, check link:releaseNotesArchive.html[the release notes archive].
