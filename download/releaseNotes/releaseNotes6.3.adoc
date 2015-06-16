@@ -69,8 +69,7 @@ Instead of getter annotations (on JavaBean properties), Planner now also support
 ----
 public class CloudProcess {
 
-    @PlanningVariable(valueRangeProviderRefs = {"computerRange"},
-            strengthComparatorClass = CloudComputerStrengthComparator.class)
+    @PlanningVariable(valueRangeProviderRefs = {"computerRange"})
     private CloudComputer computer;
 
     ...
