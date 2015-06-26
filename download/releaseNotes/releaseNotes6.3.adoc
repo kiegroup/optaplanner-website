@@ -43,7 +43,7 @@ OptaPlanner is:
 [[NewAndNoteWorthy]]
 == New and noteworthy
 
-=== Easier configuration
+=== Easier solver configuration
 
 Defining the optimization algorithms and their parameters is now optional (but still possible and desirable for power users).
 If you don't define any solver phases, a default Construction Heuristic followed by a default Local Search is used.
@@ -52,11 +52,10 @@ If you don't define any solver phases, a default Construction Heuristic followed
 ----
 <solver>
   ...
+  <scoreDirectorFactory>
+    ...
+  </scoreDirectorFactory>
 
-  <!-- Optimization algorithms configuration -->
-  <termination>
-    <secondsSpentLimit>120</secondsSpentLimit>
-  </termination>
   <!-- No longer required to configure <constructionHeuristic> and <localSearch> -->
 </solver>
 ----
@@ -89,6 +88,67 @@ public class CloudBalance ... {
     ...
 }
 ----
+
+=== Unfolding move selectors for multiple entity classes or multiple planning variables
+
+With multiple planning variables, it's no longer needed to specify each variable name:
+
+[source,xml]
+----
+      <changeMoveSelector>
+        <valueSelector>
+          <variableName>period</variableName>
+        </valueSelector>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <valueSelector>
+          <variableName>room</variableName>
+        </valueSelector>
+      </changeMoveSelector>
+----
+
+Instead, this now works:
+
+[source,xml]
+----
+      <changeMoveSelector/>
+----
+
+With multiple entity classes, it's no longer needed to specify each entity class:
+
+[source,xml]
+----
+      <changeMoveSelector>
+        <entitySelector>
+          <entityClass>...CoachEntity</entityClass>
+        </entitySelector>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <entitySelector>
+          <entityClass>...ShuttleEntity</entityClass>
+        </entitySelector>
+      </changeMoveSelector>
+      <swapMoveSelector>
+        <entitySelector>
+          <entityClass>...CoachEntity</entityClass>
+        </entitySelector>
+      </swapMoveSelector>
+      <swapMoveSelector>
+        <entitySelector>
+          <entityClass>...ShuttleEntity</entityClass>
+        </entitySelector>
+      </swapMoveSelector>
+----
+
+Instead, this now works:
+
+[source,xml]
+----
+      <changeMoveSelector/>
+      <swapMoveSelector/>
+----
+
+This applies to the programmatic API too, of course.
 
 === New Benchmarker bluePrints
 
