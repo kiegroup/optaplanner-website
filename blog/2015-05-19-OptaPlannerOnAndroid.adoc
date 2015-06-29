@@ -14,7 +14,9 @@ https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingprobl
 
 == How to use OptaPlanner on Android
 
-Android is not a complete JVM. Some JDK libraries of the `java.beans` package are missing for OptaPlanner to work out of the box.
+*Update: as of OptaPlanner `6.3.0.Beta2`, this workaround is no longer needed, because OptaPlanner does not import the `java.beans` package any more.*
+
+Android is not a complete JVM. Some JDK libraries of the `java.beans` package are missing for OptaPlanner 6.2 to work out of the box.
 However, it is possible to use OptaPlanner with Java score calculation by adding those missing libraries to your
 Android project. The Drools rule engine does not work on Android yet, so Drools score calculation doesn't work on Android.
 
