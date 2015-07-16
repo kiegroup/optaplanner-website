@@ -60,6 +60,31 @@ If you don't define any solver phases, a default Construction Heuristic followed
 </solver>
 ----
 
+=== Automatic scanning for annotated classes
+
+Instead of declaring all annotated classes:
+
+[source,xml]
+----
+<solver>
+  <solutionClass>org.optaplanner.examples.cloudbalancing.domain.CloudBalance</solutionClass>
+  <entityClass>org.optaplanner.examples.cloudbalancing.domain.CloudProcess</entityClass>
+  ...
+</solver>
+----
+
+Planner can now also automatically scan for them instead:
+
+[source,xml]
+----
+<solver>
+  <scanAnnotatedClasses/>
+  ...
+</solver>
+----
+
+It's even possible to limit the scan to specific packages.
+
 === Field annotations
 
 Instead of getter annotations (on JavaBean properties), Planner now also supports field annotations:
