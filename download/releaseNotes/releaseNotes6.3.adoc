@@ -18,6 +18,7 @@ or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
 Each of these videos demonstrates an example and/or a special feature:
 
+* http://www.youtube.com/watch?v=NdyIf0JG94Y&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Investment portfolio optimization]
 * http://www.youtube.com/watch?v=r6KsveB6v-g&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cheap power time scheduling]
 * http://www.youtube.com/watch?v=u_bl6E7aiNY&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Exam timetabling]: User defined score parametrization
 * http://www.youtube.com/watch?v=L98J6HhSCXQ&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Dinner party scheduling]: Decision tables
@@ -196,6 +197,11 @@ It's now even easier to try out all Local Search algorithms:
   </solverBenchmarkBluePrint>
 </plannerBenchmark>
 ----
+
+=== New example: Investment asset class allocation
+
+To optimize an investment portfolio. See http://www.youtube.com/watch?v=NdyIf0JG94Y[this video].
+Partially contributed by Satish Irrinki.
 
 === Other improvements
 
