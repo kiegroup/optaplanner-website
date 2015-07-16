@@ -1,0 +1,9 @@
+---
+layout: normalBase
+---
+- page.disqus_identifier = page.url
+~ content
+.comments
+  %a(name = 'comments')
+  %h2 Comments
+  = page.disqus_comments

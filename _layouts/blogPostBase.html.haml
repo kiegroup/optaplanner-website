@@ -8,5 +8,6 @@ change_frequency: yearly
 = partial('blogPostBody.html.haml', :outputPage => page, :post => page, :include_comments => true)
 .comments
   %a(name = 'comments')
+  %h2 Comments
   = page.disqus_comments
 = partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
