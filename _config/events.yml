@@ -127,3 +127,21 @@
   location: Antwerp, Belgium
   date: 2015-11-10
   url: http://www.devoxx.be
+
+- eventId: 20160130-fosdem
+  eventOrganization: FOSDEM
+  location: Brussels, Belgium
+  date: 2016-01-30
+  url: https://fosdem.org
+
+- eventId: 20160205-devconf
+  eventOrganization: DevConf
+  location: Brno, Czech Republic
+  date: 2016-02-05
+  url: http://www.devconf.cz
+
+- eventId: 20160308-javaland
+  eventOrganization: JavaLand
+  location: Phantasialand, Germany
+  date: 2016-03-08
+  url: http://www.javaland.eu

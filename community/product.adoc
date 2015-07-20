@@ -7,6 +7,8 @@ https://www.redhat.com[Red Hat] employs the core developers of this open source 
 Red Hat offers enterprise support and consultancy for this community _project_,
 as part of Red Hat _product_ subscriptions.
 
+image:kieFunctionalityOverview.png[KIE functionality overview]
+
 OptaPlanner is a fully supported component (called _Business Resource Planner_) of the following products:
 
 * http://www.redhat.com/en/technologies/jboss-middleware/business-rules[Red Hat JBoss BRMS]
