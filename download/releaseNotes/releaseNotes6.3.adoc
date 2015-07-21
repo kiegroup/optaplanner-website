@@ -207,6 +207,7 @@ Partially contributed by Satish Irrinki.
 
 * A bi-directional relationship with a planning variable is now also supported for a non-chained variable.
 * `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)` too.
+* `ValueRangeProvider` now supports `BigInteger` ranges with `createBigIntegerValueRange(from, to)` too.
 * Improved Move.toString() methods for more clearer log messages.
 * Benchmarker report mentions logging level used. Contributed by Matej Čimbora.
 * Documentation for Android. Contributed by Tomáš David.
