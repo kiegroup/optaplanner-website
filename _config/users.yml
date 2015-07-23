@@ -70,11 +70,12 @@
 
 - userId: oskopek
   fullName: Ondrej Škopek
-  role: Contributor
+  role: OptaPlanner developer
   gravatarHashId: fa169c92202fdd8203f45daa96e69933
   googlePlusId: +OndrejSkopekOS
   twitterUsername: oskopek
   githubUsername: oskopek
+  employedBy: Red Hat
   ircNickname: oskopek
   contributionsDescription: Logarithmic scale in benchmarks and more
 
