@@ -23,5 +23,6 @@
 *.ogg binary
 
 # Other binary files
+*.pdf binary
 *.xls binary
 *.xlsx binary
