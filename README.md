@@ -15,6 +15,8 @@ Follow the instructions of Awestruct's [getting started guide](http://awestruct.
 First set up your environment correctly:
 
     $ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+    # This only works on Fedora
+    $ sudo dnf install gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel rubygem-nokogiri
     $ gem install awestruct bundler
     $ rake setup
 
