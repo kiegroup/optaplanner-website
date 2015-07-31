@@ -75,7 +75,7 @@ The results are clear: *That default (Parallel GC) is the fastest.*
 == Should Java 9 default to G1?
 
 There is a proposal to *http://openjdk.java.net/jeps/248[make G1 the default Garbage Collector in OpenJDK9 for servers]*.
-My first reaction to *reject this proposal*:
+My first reaction is to *reject this proposal*:
 
 * G1 is `17.60%` is slower on average.
 
