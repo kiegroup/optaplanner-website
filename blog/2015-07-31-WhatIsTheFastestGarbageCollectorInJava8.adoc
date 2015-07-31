@@ -86,7 +86,7 @@ G1 is `34.07%` is slower.
 
 * If the default GC differs between developer machines and servers, then developer benchmarks become less trustworthy.
 
-On the other hand, there a few nuances to note:
+On the other hand, there are a few nuances to note:
 
 * G1 focuses on limiting GC pauses, instead of throughput.
 For these use cases (with heavy calculations) GC pause length mostly doesn't matter.
