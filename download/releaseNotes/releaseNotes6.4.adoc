@@ -48,6 +48,7 @@ TODO before Beta1 is released
 
 === Other improvements
 
+* Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
 * TODO before Beta1 is released
 
 == Archive
