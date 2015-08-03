@@ -206,6 +206,7 @@ Partially contributed by Satish Irrinki.
 === Other improvements
 
 * A bi-directional relationship with a planning variable is now also supported for a non-chained variable.
+* 2 shadow variables can now share a VariableListener
 * `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)` too.
 * `ValueRangeProvider` now supports `BigInteger` ranges with `createBigIntegerValueRange(from, to)` too.
 * Improved Move.toString() methods for more clearer log messages.
