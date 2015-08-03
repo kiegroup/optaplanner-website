@@ -1,5 +1,5 @@
 = Release Notes 6.4
-:awestruct-description: New and noteworthy, demo's and status for OptaPlanner 6.3.
+:awestruct-description: New and noteworthy, demo's and status for OptaPlanner 6.4.
 :awestruct-layout: normalBaseWithComments
 :awestruct-priority: 1.0
 :showtitle:
