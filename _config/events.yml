@@ -122,6 +122,14 @@
   date: 2015-06-23
   url: http://www.redhat.com/summit/
 
+- eventId: 20150917-berlinexpertdays
+  eventOrganization: Berlin Expert Days
+  location: Berlin, Germany
+  date: 2015-09-17
+  title: OptaPlanner hilft bei verteilten Schulstandorten
+  url: http://www.bed-con.org/2015/talks/OptaPlanner-hilft-bei-verteilten-Schulstandorten
+  presenters: Torsten Fink, Markus Müller
+
 - eventId: 20151110-devoxxbe
   eventOrganization: Devoxx Be
   location: Antwerp, Belgium
