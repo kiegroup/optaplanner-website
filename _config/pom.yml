@@ -15,26 +15,26 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 6.3.0.Beta2
-  distributionZip: http://download.jboss.org/optaplanner/release/6.3.0.Beta2/optaplanner-distribution-6.3.0.Beta2.zip
-  releaseDate: 2015-07-07
+  version: 6.3.0.CR1
+  distributionZip: http://download.jboss.org/optaplanner/release/6.3.0.CR1/optaplanner-distribution-6.3.0.CR1.zip
+  releaseDate: 2015-08-11
   releaseNotesVersion: 6.3
 
-  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.3.0.Beta2/optaplanner-docs/html_single/index.html
-  documentationHtml: http://docs.jboss.org/optaplanner/release/6.3.0.Beta2/optaplanner-docs/html/index.html
-  documentationPdf: http://docs.jboss.org/optaplanner/release/6.3.0.Beta2/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: http://docs.jboss.org/optaplanner/release/6.3.0.Beta2/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.3.0.CR1/optaplanner-docs/html_single/index.html
+  documentationHtml: http://docs.jboss.org/optaplanner/release/6.3.0.CR1/optaplanner-docs/html/index.html
+  documentationPdf: http://docs.jboss.org/optaplanner/release/6.3.0.CR1/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.jboss.org/optaplanner/release/6.3.0.CR1/optaplanner-javadoc/index.html
 
-  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.3.0.Beta2/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.3.0.Beta2/drools-docs/html/index.html
-  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.3.0.Beta2/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.3.0.CR1/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.3.0.CR1/drools-docs/html/index.html
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.3.0.CR1/drools-docs/pdf/drools-docs.pdf
 
 nightly:
-  version: 6.3.0-SNAPSHOT
+  version: 6.4.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
   # distributionZip: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-distribution/target/optaplanner-distribution-6.3.0-SNAPSHOT.zip
-  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.3.0-SNAPSHOT&e=zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.4.0-SNAPSHOT&e=zip
 
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus, which is not a html but a zip
   # documentationHtmlSingle: https://hudson.jboss.org/hudson/job/optaplanner/lastSuccessfulBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html_single/index.html
-  documentationHtmlSingle: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.3.0-SNAPSHOT&e=zip
+  documentationHtmlSingle: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=6.4.0-SNAPSHOT&e=zip
