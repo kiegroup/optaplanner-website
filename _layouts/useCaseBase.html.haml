@@ -5,6 +5,8 @@ layout: base
   .col-md-9
     ~ content
   .col-md-3
+    = partial('downloadJumbotron.html.haml', :outputPage => page)
+    = partial('documentationJumbotron.html.haml', :outputPage => page)
     = partial('latestBlogPosts.html.haml', :outputPage => page)
     = partial('latestReleases.html.haml', :outputPage => page)
     = partial('events.html.haml', :outputPage => page)

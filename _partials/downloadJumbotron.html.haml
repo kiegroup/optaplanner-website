@@ -1,0 +1,22 @@
+.jumbotron(style="padding: 10px; margin-bottom: 20px;")
+  .text-center<
+    %a.btn.btn-lg.btn-success.versionedButton(href="#{site.pom.latestFinal.distributionZip}")<
+      %img{:src => relative("/download/download.png", page.outputPage), :alt => "Download"}
+      %div
+        %span Download OptaPlanner
+        %br
+        %span.small #{site.pom.latestFinal.version}
+  %h4
+    Try the examples now:
+  %ol
+    %li Download the zip and unzip it
+    %li
+      On Linux/Mac, run
+      %code examples/runExamples.sh
+      %br
+      On Windows, run
+      %code examples/runExamples.bat
+  .small
+    Requires
+    %a(href="http://www.java.com")< Java™
+    to run.

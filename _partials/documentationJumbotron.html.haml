@@ -1,0 +1,13 @@
+.jumbotron(style="padding: 10px; margin-bottom: 20px;")
+  .text-center<
+    %a.btn.btn-lg.btn-primary.versionedButton(href="#{site.pom.latestFinal.documentationHtmlSingle}")<
+      %img{:src => relative("/learn/documentation.png", page.outputPage), :alt => "Documentation"}
+      %div
+        %span Read documentation
+        %br
+        %span.small #{site.pom.latestFinal.version}
+  %h4
+    Read the
+    %a(href="#{site.pom.latestFinal.documentationHtmlSingle}#quickStart")
+      Quick Start
+    chapter.

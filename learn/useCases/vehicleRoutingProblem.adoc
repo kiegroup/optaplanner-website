@@ -1,0 +1,37 @@
+= Vehicle Routing Problem
+:awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize Vehicle Routing Problem and Traveling Salesman Problem variants.
+:awestruct-layout: useCaseBase
+:awestruct-priority: 1.0
+:showtitle:
+
+== What is OptaPlanner?
+
+OptaPlanner is the leading Open Source Java™ engine to optimize Vehicle Routing Problem and Traveling Salesman Problem variants.
+
+OptaPlanner is *a lightweight, embeddable planning engine*.
+It works with your domain classes and your custom constraints (which can reuse existing code).
+There's no need to input difficult mathematical equations.
+Under the hood, OptaPlanner combines sophisticated optimization heuristics and metaheuristics
+(such as Tabu Search, Simulated Annealing and Late Acceptance) with very efficient score calculation.
+
+OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache Software License].
+It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
+
+== What is the Vehicle Routing Problem?
+
+Many enterprises face a vehicle routing problem daily:
+*determine the optimal order to deliver a number of items to number of locations with a fleet of vehicles*.
+They face this problem to restock their shops, to deliver products/services to customers, to fulfill maintenance on their devices, ...
+
+image:vehicleRoutingGoogleMapsDirections.png[Vehicle routing with Google Maps]
+
+== Scaling out
+
+OptaPlanner scales out on the Vehicle Routing Problem thanks to incremental score calculation, nearby selection, shadow variables
+and - of course - advanced construction heuristics and metaheuristics.
+
+== Integration with real maps
+
+As demonstrated in the web examples, integration with Google Maps or OpenStreetMap is straightforward:
+
+image:integrationWithRealMaps.png[Integration with real maps]
