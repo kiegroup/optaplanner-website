@@ -3,7 +3,7 @@ priority: 0.2
 change_frequency: monthly
 ---
 !!! 5
-%html(lang="en" itemscope="" itemtype="http://schema.org/Product")
+%html(itemscope="" itemtype="http://schema.org/Product"){:lang => page.lang ? page.lang : site.lang}
   %head
     %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1")

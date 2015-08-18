@@ -1,0 +1,29 @@
+= Solveur de satisfaction (Java ™, Open Source)
+:awestruct-description: OptaPlanner est un moteur léger, intégrable, ouvert la planification de la source, écrit en 100% Java.
+:awestruct-layout: normalBase
+:awestruct-lang: fr
+:awestruct-priority: 1.0
+:showtitle:
+
+== Quel est OptaPlanner?
+
+OptaPlanner est un solveur de satisfaction de contraintes.
+Il optimise la planification des ressources de l'entreprise.
+Chaque organisation est confrontée à des puzzles de planification:
+attribuer un ensemble limité de ressources limitées (employés, actifs, temps et argent) pour fournir des produits ou des services à des clients.
+OptaPlanner optimise ces problèmes de planification à faire plus d'affaires avec moins de ressources.
+Les cas d'utilisation sont tournées de véhicules, employés Rostering, Job Scheduling, Bin Emballage et beaucoup plus.
+
+OptaPlanner est un moteur de planification léger, intégrable.
+Il permet aux programmeurs Java ™ normales pour résoudre des problèmes d'optimisation efficace.
+Contraintes appliquent sur les objets de domaine plaine et peuvent réutiliser le code existant.
+Il n'y a pas besoin d'équations mathématiques difficiles d'entrée.
+Sous le capot, OptaPlanner combine heuristiques et métaheuristiques (tels que Tabu Search, Simulated Annealing et Late Acceptance) avec calcul du score très efficace d'optimisation sophistiquées.
+
+OptaPlanner est un logiciel open source, sous licence Apache Software.
+Il est écrit dans 100% pure Java ™, fonctionne sur tout JVM et est disponible dans le dépôt central Maven trop.
+
+== Articles
+
+* http://blog.soat.fr/2015/04/devoxx-france-2015-optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore/[Devoxx France 2015 : OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore]
+Aussi https://www.parleys.com/tutorial/optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore[voir la vidéo de cette présentation].

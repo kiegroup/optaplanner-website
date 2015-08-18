@@ -1,0 +1,20 @@
+= 制約充足ソルバ（Javaの™、オープンソース）
+:awestruct-description: OptaPlannerは100％Javaで書かれた、軽量、組み込み可能な、オープンソースの計画エンジンです。
+:awestruct-layout: normalBase
+:awestruct-lang: jp
+:awestruct-priority: 1.0
+:showtitle:
+
+== OptaPlannerとは何ですか？
+
+OptaPlannerは制約充足ソルバです。これは、ビジネス・リソース・プランニングを最適化します。すべての組織は、スケジューリングパズルに直面している：顧客に製品やサービスを提供するために、制約資源の限定セット（従業員、資産、時間とお金）を割り当てます。 OptaPlannerは、少ないリソースでより多くのビジネスを行うには、そのような計画の問題を最適化します。ユースケースは、車両ルーティング、従業員Rostering、ジョブスケジューリング、ビンパッキングと、より多くを含みます。
+
+OptaPlannerは、軽量、組み込み可能な計画エンジンです。それは、効率的に最適化問題を解決するために、通常のJava™プログラマを可能にします。制約は、プレーンドメインオブジェクトに適用され、既存のコードを再利用することができます。入力が難しい数学の方程式の必要はありません。水面下では、OptaPlannerは非常に効率的なスコア計算を（そのようなタブーサーチ、シミュレーテッドアニーリングと後期の受け入れなど）、高度な最適化ヒューリスティックとメタ戦略を兼ね備えています。
+
+OptaPlannerは、Apache Software Licenseの下でリリース、オープンソースソフトウェアです。それは100％ピュアJava™で記述されている、任意のJVM上で実行され、あまりにもMavenのセントラルリポジトリで利用可能です。
+
+== 記事
+
+* http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[Combinatorial optimization]
+
+* http://d.hatena.ne.jp/tokobayashi/searchdiary?word=%5BOptaPlanner%5D[Kobayashi's blog]
