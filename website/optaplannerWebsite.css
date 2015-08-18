@@ -41,6 +41,7 @@ footer {
 .versionedButton > div {
     text-align: left;
     display: inline-block;
+    white-space: normal;
 }
 
 
