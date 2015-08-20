@@ -178,7 +178,19 @@ Instead, this now works:
 
 This applies to the programmatic API too, of course.
 
-=== New Benchmarker bluePrints
+== VariableListeners now trigger in a smart order
+
+In advanced use cases with multiple custom shadow variables (or even just one),
+the immediate order in which a `VariableListener` was triggered could drive a developer insane
+because (s)he had to deal with intermediate, inconsistent states for which not all of the genuine variables were already changed.
+
+This has been fixed. OptaPlanner now triggers the `VariableListener.after*()` methods in the order defined by the shadow variable dependency graph.
+It guarantees that the first VariableListener triggers _after_ the last genuine variable has changed.
+It also guarantees that the second VariableListener triggers _after_ all the first VariableListener calls are done, and so on.
+
+image:6.3/shadowVariableOrder.png[Shadow variable order]
+
+== New Benchmarker bluePrints
 
 There are 2 new benchmarker blueprints:
 
