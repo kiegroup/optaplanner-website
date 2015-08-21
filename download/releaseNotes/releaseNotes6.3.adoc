@@ -228,6 +228,7 @@ Partially contributed by Satish Irrinki.
 * Documentation for Android. Contributed by Tomáš David.
 * Benchmarker's `<solverBenchmark>` name now allows non-ASCII characters too (for example Japanese characters)
 * An OSGi `features.xml` that includes `optaplanner-engine`
+* Drools score calculation now support multiple constraint matches in the consequences part of a rule.
 * More JavaDocs, including package JavaDocs.
 * Various bugs resolved. See https://issues.jboss.org/browse/PLANNER?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel[the Change Log on JIRA].
 
