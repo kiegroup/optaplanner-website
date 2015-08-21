@@ -44,12 +44,10 @@ OptaPlanner is:
 [[NewAndNoteWorthy]]
 == New and noteworthy
 
-TODO before Beta1 is released
-
 === Other improvements
 
 * Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
-* TODO before Beta1 is released
+* Apache Camel's camel-optaplanner 2.16 supports async solving, daemon mode and ProblemFactChange processing. Contributed by Bilgin Ibryam.
 
 == Archive
 
