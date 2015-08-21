@@ -178,7 +178,7 @@ Instead, this now works:
 
 This applies to the programmatic API too, of course.
 
-== VariableListeners now trigger in a smart order
+=== VariableListeners now trigger in a smart order
 
 In advanced use cases with multiple custom shadow variables (or even just one),
 the immediate order in which a `VariableListener` was triggered could drive a developer insane
@@ -190,7 +190,7 @@ It also guarantees that the second VariableListener triggers _after_ all the fir
 
 image:6.3/shadowVariableOrder.png[Shadow variable order]
 
-== New Benchmarker bluePrints
+=== New Benchmarker bluePrints
 
 There are 2 new benchmarker blueprints:
 
