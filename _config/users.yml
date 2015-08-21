@@ -130,3 +130,13 @@
   githubUsername: tomasdavidorg
   ircNickname: tdavid
   contributionsDescription: Vehicle routing problem android application
+
+- userId: bibryam
+fullName: Bilgin Ibryam
+role: Contributor
+gravatarHashId: 279246bd111a7c211134179eddb94afa
+googlePlusId: bibryam
+githubUsername: bibryam
+ircNickname: bibryam
+employedBy: Red Hat
+contributionsDescription: Camel-optaplanner improvements
