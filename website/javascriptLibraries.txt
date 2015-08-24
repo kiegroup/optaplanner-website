@@ -18,3 +18,7 @@ Downloaded from:
   https://static.jboss.org/js/_jbossorg-tabzilla.js
   https://static.jboss.org/css/tabzilla.css
 License: Mozilla Public License
+
+Flag icons version: 2015-08-21
+Downloaded from: http://www.famfamfam.com
+License: Public Domain (free for any use, attribution appreciated but not required)
