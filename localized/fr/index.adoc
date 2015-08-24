@@ -1,6 +1,6 @@
 = Solveur de satisfaction (Java ™, Open Source)
 :awestruct-description: OptaPlanner est un moteur léger, intégrable, ouvert la planification de la source, écrit en 100% Java.
-:awestruct-layout: normalBase
+:awestruct-layout: localizedBase
 :awestruct-lang: fr
 :awestruct-priority: 1.0
 :showtitle:
