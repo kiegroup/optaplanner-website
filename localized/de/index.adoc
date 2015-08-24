@@ -1,6 +1,6 @@
 = Bedingungserfüllungslöser (Java™, Open Source)
 :awestruct-description: OptaPlanner ist ein leichtgewichtiger, einbaubarer, Open Source Planung Engine, geschrieben in 100% Java.
-:awestruct-layout: normalBase
+:awestruct-layout: localizedBase
 :awestruct-lang: de
 :awestruct-priority: 1.0
 :showtitle:
