@@ -18,3 +18,7 @@ OptaPlannerは、link:../../code/license.html[Apache Software License]の下で�
 * http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[OptaPlannerによる組み合わせ最適化]
 
 * http://d.hatena.ne.jp/tokobayashi/searchdiary?word=%5BOptaPlanner%5D[tokobayashiの日記]
+
+== 勉強会
+
+* https://groups.google.com/forum/#!forum/optaplanner-study-jp[OptaPlanner 勉強会]
