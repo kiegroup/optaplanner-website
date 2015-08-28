@@ -38,7 +38,7 @@ https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/m
 
 === Executive summary
 
-For your convenience, I 've compared each Garbage Collector type to the default in Java 8 (Parallel GC).
+For your convenience, I've compared each Garbage Collector type to the default in Java 8 (Parallel GC).
 
 image::garbageCollectorTypesJava8.png[]
 
