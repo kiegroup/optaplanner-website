@@ -13,6 +13,8 @@ A fraction of our users have shared their story publicly:
 
 == Articles (English)
 
+* http://www.lshift.net/blog/2015/07/14/automatic-scheduling-of-people-and-rooms/[Automatic scheduling of people and rooms]
+
 * http://community.redhat.com/blog/2014/11/smart-vm-scheduling-in-ovirt-clusters/[oVirt OptaPlanner plugin: Cloud optimization of Virtual Machines]
 
 * http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing with real routes],
