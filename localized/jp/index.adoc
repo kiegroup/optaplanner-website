@@ -13,6 +13,10 @@ OptaPlannerは、**軽量、組み込み可能な計画エンジン**です。�
 
 OptaPlannerは、link:../../code/license.html[Apache Software License]の下でリリースしている**オープンソースソフトウェア**です。100％ pure Java™で記述され、任意のJVM上で実行され、link:../../download/download.html[Mavenのセントラルリポジトリ]からも入手可能です。
 
+==  ユーザガイド日本語訳
+* link:UserGuide-chapter1.html[Chapter 1 : OptaPlanner イントロダクション]
+* link:UserGuide-chapter2.html[Chapter 2 : クイックスタート]
+
 == 記事
 
 * http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[OptaPlannerによる組み合わせ最適化]

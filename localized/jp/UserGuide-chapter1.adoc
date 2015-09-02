@@ -1,0 +1,39 @@
+= Chapter 1. OptaPlanner イントロダクション
+:awestruct-description: Chapter 1. OptaPlanner イントロダクション
+:awestruct-layout: localizedBase
+:awestruct-lang: jp
+:awestruct-priority: 1.0
+:showtitle:
+
+* 1.1. What is OptaPlanner?
+* 1.2. Requirements
+* 1.3. What is a Planning Problem?
+**  1.3.1. A Planning Problem is NP-complete or NP-hard
+**  1.3.2. A Planning Problem Has (Hard and Soft) Constraints
+**  1.3.3. A Planning Problem Has a Huge Search Space
+* 1.4. Download and Run the Examples
+** 1.4.1. Get the Release .zip and Run the Examples
+** 1.4.2. Run the Examples in an IDE (IntelliJ, Eclipse, NetBeans)
+** 1.4.3. Use OptaPlanner with Maven, Gradle, Ivy, Buildr or ANT
+** 1.4.4. Build OptaPlanner from Source
+* 1.5. Governance
+** 1.5.1. Status of OptaPlanner
+** 1.5.2. Backwards Compatibility
+** 1.5.3. Community and Support
+** 1.5.4. Relationship with Drools and jBPM
+
+== 1.1 OptaPlanner とは何ですか？
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
+
+OptaPlanner is a lightweight, embeddable constraint satisfaction engine which optimizes planning problems. It solves use cases such as:
+
+* Employee shift rostering: timetabling nurses, repairmen, ...
+* Agenda scheduling: scheduling meetings, appointments, maintenance jobs, advertisements, ...
+* Educational timetabling: scheduling lessons, courses, exams, conference presentations, ...
+* Vehicle routing: planning vehicles (trucks, trains, boats, airplanes, ...) with freight and/or people
+* Bin packing: filling containers, trucks, ships and storage warehouses, but also cloud computers nodes, ...
+* Job shop scheduling: planning car assembly lines, machine queue planning, workforce task planning, ...
+* Cutting stock: minimizing waste while cutting paper, steel, carpet, ...
+* Sport scheduling: planning football leagues, baseball leagues, ...
+* Financial optimization: investment portfolio optimization, risk spreading, ...
