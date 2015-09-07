@@ -17,6 +17,7 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 
 * image:download.png[Download] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
 ** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}]
+** link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html[Upgrade recipe for #{site.pom.latestFinal.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
 ** Release date: `#{site.pom.latestFinal.releaseDate}`
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
@@ -60,6 +61,7 @@ A CR should be almost identical to the Final release.
 
 * image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}]
+** link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe for #{site.pom.latest.releaseNotesVersion}]
 ** License: link:../code/license.html[ASL 2.0]
 ** Release date: `#{site.pom.latest.releaseDate}`
 
