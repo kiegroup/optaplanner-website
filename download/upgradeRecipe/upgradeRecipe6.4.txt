@@ -1,0 +1,98 @@
+From 6.3.0.Final to 6.4.0.Beta1
+-------------------------------
+
+[MINOR] If you have a custom ScoreDefinition: that interface has new method getLevelLabels().
+AbstractScoreDefinition and AbstractFeasibilityScoreDefinition now expect those levelLabels as a constructor parameter.
+Before in *.java:
+    public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<HardSoftScore> {
+
+        public HardSoftScoreDefinition() {}
+
+        public int getLevelsSize() {
+            return 2;
+        }
+
+        ...
+    }
+After in *.java:
+    public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<HardSoftScore> {
+
+        public HardSoftScoreDefinition() {
+            super(new String[]{"hard score", "soft score"});
+        }
+
+        ...
+    }
+
+[MAJOR] If you're using SolutionFileIO: that class has been moved from the optaplanner-benchmark jar to optaplanner-persistence-common jar.
+After in pom.xml:
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-persistence-common</artifactId>
+    </dependency>
+
+[MINOR] If you're using XStreamScoreConverter: that class has been moved from the optaplanner-benchmark jar to optaplanner-persistence-xstream jar.
+After in pom.xml:
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-persistence-xstream</artifactId>
+    </dependency>
+
+[MINOR] If you're using BendableScore and XStream: XStreamBendableScoreConverter (which only supported BendableScore) has been deleted.
+The generic XStreamScoreConverter now supports BendableScore, BendableLongScore and BendableBigDecimalScore too.
+Before in *.java:
+    @XStreamConverter(value = XStreamBendableScoreConverter.class, ints = {1, 2})
+    private BendableScore score;
+After in *.java:
+    @XStreamConverter(value = XStreamScoreConverter.class, types = {BendableScoreDefinition.class}, ints = {1, 2})
+    private BendableScore score;
+
+[MINOR] If you have a custom ScoreDefinition: that interface has another new method fromLevelNumbers().
+It does the opposite of Score.toLevelNumbers().
+After in *.java:
+    public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<HardSoftScore> {
+        ...
+
+        @Override
+        public HardSoftScore fromLevelNumbers(Number[] levelNumbers) {
+            if (levelNumbers.length != getLevelsSize()) {
+                throw new IllegalStateException("The levelNumbers (" + Arrays.toString(levelNumbers)
+                        + ")'s length (" + levelNumbers.length + ") must equal the levelSize (" + getLevelsSize() + ").");
+            }
+            return HardSoftScore.valueOf((Integer) levelNumbers[0], (Integer) levelNumbers[1]);
+        }
+    }
+
+[README] If you're using JPA-Hibernate with OptaPlanner, you'll want to take advantage of the new module optaplanner-persistence-jpa.
+See docs chapter "Integration" for more information.
+
+[MINOR] If you're using SingleBenchmarkResult: the functionality of the method getScore() and getUninitializedVariableCount() has moved to
+getAverageScore() and getAverageUninitializedVariableCount() because of the addition of SubSingleBenchmarkResult (Statistical benchmarking).
+Before in *.java:
+    singleBenchmarkResult.getScore();
+    singleBenchmarkResult.getUninitializedVariableCount();
+After in *.java:
+    singleBenchmarkResult.getAverageScore();
+    singleBenchmarkResult.getAverageUninitializedVariableCount();
+
+[IMPL_DETAIL] If you're using SingleStatistic or any of it's subclasses: all of them were renamed to include "Sub" as a part of
+Statistical benchmarking. The package org.optaplanner.benchmark.impl.statistic.single was also renamed to
+org.optaplanner.benchmark.impl.statistic.subsingle. SingleStatisticType has not been changed, therefore no changes
+in the configuration are needed.
+Before in *.java:
+    import org.optaplanner.benchmark.impl.statistic.single.*;
+    *SingleStatistic singleStatistic;
+After in *.java:
+    import org.optaplanner.benchmark.impl.statistic.subsingle.*;
+    *SubSingleStatistic subSingleStatistic;
+
+[MINOR] If you're configuring the SolverFactory dynamically for each user request with differ settings,
+use SolverFactory.cloneSolverFactory() to avoid a race condition.
+
+[MINOR] The method TerminationConfig.clone() has been removed.
+The inherit() method now guarantees that afterwards changing the child or parent will not affect the other.
+Before in *.java:
+    TerminationConfig clone = terminationConfig.clone();
+After in *.java:
+    TerminationConfig clone = new TerminationConfig();
+    clone.inherit(terminationConfig);
