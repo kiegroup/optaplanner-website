@@ -1,0 +1,15 @@
+= Upgrade Recipes Archive
+:awestruct-description: A list of all upgrade recipes for each OptaPlanner version.
+:awestruct-layout: normalBase
+:awestruct-priority: 0.1
+:showtitle:
+
+This is a list of all past and upcoming upgrade recipes:
+
+* link:upgradeRecipe6.4.html[Upgrade Recipe for OptaPlanner 6.4]
+* link:upgradeRecipe6.3.html[Upgrade Recipe for OptaPlanner 6.3]
+* link:upgradeRecipe6.2.html[Upgrade Recipe for OptaPlanner 6.2]
+* link:upgradeRecipe6.1.html[Upgrade Recipe for OptaPlanner 6.1]
+* link:upgradeRecipe6.0.html[Upgrade Recipe for OptaPlanner 6.0]
+
+Older upgrade recipes (for Drools Planner) are available in the old Drools documentation.
