@@ -145,7 +145,7 @@ The PillarChangeMove selects 1 entity pillar and changes the value of 1 variable
 == Upgrade from a previous version
 
 To upgrade from a previous version of OptaPlanner,
-just follow https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe].
+just follow link:../upgradeRecipe/upgradeRecipe6.1.html[the upgrade recipe].
 
 == Archive
 

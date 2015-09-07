@@ -234,6 +234,11 @@ Partially contributed by Satish Irrinki.
 * More JavaDocs, including package JavaDocs.
 * Various bugs resolved. See https://issues.jboss.org/browse/PLANNER?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel[the Change Log on JIRA].
 
+== Upgrade from a previous version
+
+To upgrade from a previous version of OptaPlanner,
+just follow link:../upgradeRecipe/upgradeRecipe6.3.html[the upgrade recipe].
+
 == Archive
 
 For older releases, check link:releaseNotesArchive.html[the release notes archive].

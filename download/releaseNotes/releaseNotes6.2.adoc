@@ -121,6 +121,11 @@ This gives a better insight as to which constraints impact the score the most.
 * Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.
 * BendableLongScore: Bendable score with long types. Contributed by Dieter De Paepe.
 
+== Upgrade from a previous version
+
+To upgrade from a previous version of OptaPlanner,
+just follow link:../upgradeRecipe/upgradeRecipe6.2.html[the upgrade recipe].
+
 == Archive
 
 For older releases, check link:releaseNotesArchive.html[the release notes archive].
