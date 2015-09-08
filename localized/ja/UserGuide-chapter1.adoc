@@ -5,35 +5,50 @@
 :awestruct-priority: 1.0
 :showtitle:
 
-* 1.1. What is OptaPlanner?
-* 1.2. Requirements
-* 1.3. What is a Planning Problem?
-**  1.3.1. A Planning Problem is NP-complete or NP-hard
-**  1.3.2. A Planning Problem Has (Hard and Soft) Constraints
-**  1.3.3. A Planning Problem Has a Huge Search Space
-* 1.4. Download and Run the Examples
-** 1.4.1. Get the Release .zip and Run the Examples
-** 1.4.2. Run the Examples in an IDE (IntelliJ, Eclipse, NetBeans)
-** 1.4.3. Use OptaPlanner with Maven, Gradle, Ivy, Buildr or ANT
-** 1.4.4. Build OptaPlanner from Source
-* 1.5. Governance
-** 1.5.1. Status of OptaPlanner
-** 1.5.2. Backwards Compatibility
-** 1.5.3. Community and Support
-** 1.5.4. Relationship with Drools and jBPM
+* 1.1. OptaPlanner とは何ですか？
+* 1.2. 必要なもの
+* 1.3. 計画問題とは？
+**  1.3.1. 計画問題は NP 完全またはNP困難
+**  1.3.2. 計画問題には制約がある（ハード, ソフト制約）
+**  1.3.3. 計画問題は巨大な探索空間を持つ
+* 1.4. サンプルのダウンロードと実行
+** 1.4.1. 公開 .zip の入手とサンプルの実行
+** 1.4.2. IDE (IntelliJ, Eclipse, NetBeans) でのサンプルの実行
+** 1.4.3. OptaPlanner を Maven や Gradle, Ivy, Buildr, ANT とともに使う
+** 1.4.4. OptaPlanner をソースからビルドする
+* 1.5. 管理・運営
+** 1.5.1. OptaPlanner のレベルの高さ
+** 1.5.2. 後方互換性
+** 1.5.3. コミュニティとサポート
+** 1.5.4. Drools や jBPM との関係
 
 == 1.1 OptaPlanner とは何ですか？
 
 image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
 
-OptaPlanner is a lightweight, embeddable constraint satisfaction engine which optimizes planning problems. It solves use cases such as:
+OptaPlanner は、計画問題の最適解を得る、組み込み可能で軽量な制約充足エンジンです。次のようなユースケースを解きます。
+// 150907 by Takugo //
+// Source: which optimizes planning problems //
+// Interpreted as: which obtains optimized solutions for planning problems //
+// “問題”を最適化するのではないから。//
 
-* Employee shift rostering: timetabling nurses, repairmen, ...
-* Agenda scheduling: scheduling meetings, appointments, maintenance jobs, advertisements, ...
-* Educational timetabling: scheduling lessons, courses, exams, conference presentations, ...
-* Vehicle routing: planning vehicles (trucks, trains, boats, airplanes, ...) with freight and/or people
-* Bin packing: filling containers, trucks, ships and storage warehouses, but also cloud computers nodes, ...
-* Job shop scheduling: planning car assembly lines, machine queue planning, workforce task planning, ...
-* Cutting stock: minimizing waste while cutting paper, steel, carpet, ...
-* Sport scheduling: planning football leagues, baseball leagues, ...
-* Financial optimization: investment portfolio optimization, risk spreading, ...
+* 従業員シフト勤務計画： 看護士や修理工などの予定表作成
+* 実施スケジューリング：会議, 設備, メンテナンス作業, 広告などのスケジューリング
+* 教育時間割り：授業, 講座, 試験, 会議プレゼンテーションなどのスケジューリング
+* 輸送経路計画：荷物および／または人を乗せた乗り物 (トラック, 列車, 船舶, 飛行機など) の計画
+* 箱詰め：コンテナ, トラック, 船舶への積載や倉庫への保管, さらにはクラウドコンピュータのノードなども
+* 注文生産スケジューリング：自動車組立ライン, 機械処理, 人員作業などの計画
+* 在庫削減：紙や鋼, カーペットなどの切断で生じる無駄の最少化
+* スポーツにおけるスケジューリング：フットボールや野球などのリーグ戦計画
+// 150907 by Takugo //
+// Source: planning football leagues, baseball leagues, ... //
+// Interpreted as: planning the league games of football, baseball, ... //
+* 財務最適化：投資ポートフォリオの最適化, リスク分散など
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
+
+あらゆる組織が計画問題に直面しています。制約で限定されたリソース (従業員, 資産, 時間, 金) を使って製品やサービスを提供しているのです。OptaPlanner は、そのような計画を最適化することによって、より少ないリソースでより多くの業務を実行できるようにします。これは、オペレーションズリサーチ分野の一つである制約充足プログラミングとして知られています。
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
+
+OptaPlanner の助けがあれば、普通の Java™ プログラマーでも制約充足問題を効率よく解くことができます。OptaPlanner の内部では、最適化のためのヒューリスティック法およびメタヒューリスティック法が非常に効果的なスコア計算と組み合わされています。
