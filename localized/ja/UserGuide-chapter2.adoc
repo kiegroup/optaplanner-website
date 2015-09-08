@@ -1,7 +1,7 @@
 = Chapter 2. クイックスタート
 :awestruct-description: Chapter 2. クイックスタート
 :awestruct-layout: localizedBase
-:awestruct-lang: jp
+:awestruct-lang: ja
 :awestruct-priority: 1.0
 :showtitle:
 
