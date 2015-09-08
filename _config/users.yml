@@ -140,3 +140,12 @@
   ircNickname: bibryam
   employedBy: Red Hat
   contributionsDescription: Camel-optaplanner improvements
+
+- userId: psiroky
+  fullName: Petr Široký
+  role: Release engineer
+  gravatarHashId: e8eb2caefbe452befc919ea0977864c1
+  employedBy: Red Hat
+  githubUsername: psiroky
+  employedBy: Red Hat
+  ircNickname: psiroky
