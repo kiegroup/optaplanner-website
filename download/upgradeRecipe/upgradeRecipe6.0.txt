@@ -9,7 +9,7 @@ In 6.0.0.Beta1, Drools Planner has been renamed to OptaPlanner and the java pack
 Instead, upgrade the jars to 6.0.0.Alpha9 first.
 Once that compiles, immediately upgrade the jars to your desired version and continue following the upgrade recipe.
 The 6.0.0.Alpha9 jars are available in the maven repository and in this zip:
-  http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
+http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
 
 [README] `ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY` now works. The regression in 5.5 from 5.4 has been fixed.
 
@@ -225,24 +225,20 @@ The method `createDifficultyWeight` has been replaced by the method `createSorte
 Sorting direction (difficulty ascending) has not changed.
 Before in *.java:
     public class QueenDifficultyWeightFactory implements PlanningEntityDifficultyWeightFactory {
-
         public Comparable createDifficultyWeight(Solution solution, Object planningEntity) {
             NQueens nQueens = (NQueens) solution;
             Queen queen = (Queen) planningEntity;
             ...
             return ...;
         }
-
         ...
     }
 After in *.java:
     public class QueenDifficultyWeightFactory implements SelectionSorterWeightFactory<NQueens, Queen> {
-
         public Comparable createSorterWeight(NQueens nQueens, Queen queen) {
             ...
             return ...;
         }
-
         ...
     }
 
