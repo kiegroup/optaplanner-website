@@ -10,7 +10,7 @@
 OptaPlanner ist **ein Bedingungserfüllungslöser**.
 Es optimiert Business Geschäfts-Ressourcen Planung.
 Jede Organisation steht vor einem Zeitplan Rätsel: eine limitierte Menge von *gezwungenen* Ressourcen (Arbeiter, Kapital, Zeit und Geld) verteilen,
-um Produkte un Dienste dem Kunden zu liefern.
+um Produkte und Dienste dem Kunden zu liefern.
 OptaPlanner optimiert solche Planungsprobleme um **mehr Business mit weniger Ressourcen** zu machen.
 Zu Anwendungsfälle gehören link:../../learn/useCases/vehicleRoutingProblem.html[Tourenplanung], Arbeiter Dienstplanung, Aufgaben Zeitplanung,
 Behälter verpacken und viel mehr.
