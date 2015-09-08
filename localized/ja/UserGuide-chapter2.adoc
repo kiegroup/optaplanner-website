@@ -1,0 +1,29 @@
+= Chapter 2. クイックスタート
+:awestruct-description: Chapter 2. クイックスタート
+:awestruct-layout: localizedBase
+:awestruct-lang: ja
+:awestruct-priority: 1.0
+:showtitle:
+
+* 2.1. Cloud Balancing Tutorial
+**  2.1.1. Problem Description
+** 2.1.2. Problem Size
+** 2.1.3. Domain Model Design
+** 2.1.4. Main Method
+** 2.1.5. Solver Configuration
+** 2.1.6. Domain Model Implementation
+** 2.1.7. Score Configuration
+** 2.1.8. Beyond this Tutorial
+
+== 2.1. Cloud Balancing チュートリアル
+
+2.1.1. Problem Description
+
+Suppose your company owns a number of cloud computers and needs to run a number of processes on those computers. Assign each process to a computer under the following four constraints.
+
+The following hard constraints must be fulfilled:
+
+* Every computer must be able to handle the minimum hardware requirements of the sum of its processes:
+** The CPU power of a computer must be at least the sum of the CPU power required by the processes assigned to that computer.
+** The RAM memory of a computer must be at least the sum of the RAM memory required by the processes assigned to that computer.
+** The network bandwidth of a computer must be at least the sum of the network bandwidth required by the processes assigned to that computer.

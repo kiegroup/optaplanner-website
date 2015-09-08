@@ -1,0 +1,149 @@
+= Chapter 1. OptaPlanner イントロダクション
+:awestruct-description: Chapter 1. OptaPlanner イントロダクション
+:awestruct-layout: localizedBase
+:awestruct-lang: jp
+:awestruct-priority: 1.0
+:showtitle:
+xxx
+
+////
+
+Failed, to be deleted soon >>>>>
+
+// <<whatIsOptaPlanner>> //
+// * 1.1. OptaPlanner とは何ですか？ //
+// * xref:whatIsOptaPlanner[1.1. OptaPlanner とは何ですか？] //
+// * link:#whatIsOptaPlanner[1.1. OptaPlanner とは何ですか？] //
+
+// <<requirements>> //
+// * 1.2. 必要なもの //
+// * xref:requirements[1.2. 必要なもの] //
+// * link:#requirements[1.2. 必要なもの] //
+
+// <<whatIsAPlanningProblem>> //
+// * 1.3. 計画問題とは？ //
+// * xref:whatIsAPlanningProblem[1.3. 計画問題とは？] //
+// * link:#whatIsAPlanningProblem[1.3. 計画問題とは？] //
+
+// <<aPlanningProblemIsNPCompleteOrNPHard>> //
+// ** 1.3.1. 計画問題は NP 完全またはNP困難 //
+// ** xref:aPlanningProblemIsNPCompleteOrNPHard[1.3.1. 計画問題は NP 完全またはNP困難] //
+// **  link:#aPlanningProblemIsNPCompleteOrNPHard[1.3.1. 計画問題は NP 完全またはNP困難] //
+
+// <<aPlanningProblemHasConstraints,1.3.2>> //
+// ** 1.3.2. 計画問題には制約がある（ハード, ソフト制約） //
+// ** xref:aPlanningProblemHasConstraints[1.3.2. 計画問題には制約がある（ハード, ソフト制約）] //
+// **  link:#aPlanningProblemHasConstraints[1.3.2. 計画問題には制約がある（ハード, ソフト制約）] //
+
+// <<aPlanningProblemHasAHugeSearchSpace>> //
+// ** 1.3.3. 計画問題は巨大な探索空間を持つ //
+// ** xref:aPlanningProblemHasAHugeSearchSpace[1.3.3. 計画問題は巨大な探索空間を持つ] //
+// **  link:#aPlanningProblemHasAHugeSearchSpace[1.3.3. 計画問題は巨大な探索空間を持つ] //
+
+// <<downloadAndRunTheExamples>> //
+// * 1.4. サンプルのダウンロードと実行 //
+// * xref:downloadAndRunTheExamples[1.4. サンプルのダウンロードと実行] //
+// * link:#downloadAndRunTheExamples[1.4. サンプルのダウンロードと実行] //
+
+// <<getTheReleaseZipAndRunTheExamples>> //
+// ** 1.4.1. 公開 .zip の入手とサンプルの実行 //
+// ** xref:getTheReleaseZipAndRunTheExamples[1.4.1. 公開 .zip の入手とサンプルの実行] //
+// ** link:#getTheReleaseZipAndRunTheExamples[1.4.1. 公開 .zip の入手とサンプルの実行] //
+
+// <<runTheExamplesInAnIDE>> //
+// ** 1.4.2. IDE (IntelliJ, Eclipse, NetBeans) でのサンプルの実行 //
+// ** xref:runTheExamplesInAnIDE[1.4.2. IDE (IntelliJ, Eclipse, NetBeans) でのサンプルの実行] //
+// ** link:#runTheExamplesInAnIDE[1.4.2. IDE (IntelliJ, Eclipse, NetBeans) でのサンプルの実行] //
+
+// <<useWithMavenGradleEtc>> //
+// ** 1.4.3. OptaPlanner を Maven や Gradle, Ivy, Buildr, ANT とともに使う //
+// ** xref:useWithMavenGradleEtc[1.4.3. OptaPlanner を Maven や Gradle, Ivy, Buildr, ANT とともに使う] //
+// ** link:#useWithMavenGradleEtc[1.4.3. OptaPlanner を Maven や Gradle, Ivy, Buildr, ANT とともに使う] //
+
+// <<buildFromSource>> //
+// ** 1.4.4. OptaPlanner をソースからビルドする //
+// ** xref:buildFromSource[1.4.4. OptaPlanner をソースからビルドする] //
+// ** link:#buildFromSource[1.4.4. OptaPlanner をソースからビルドする] //
+
+// <<governance>> //
+// * 1.5. 管理・運営 //
+// * xref:governance[1.5. 管理・運営] //
+// * link:#governance[1.5. 管理・運営] //
+
+// <<statusOfOptaPlanner>> //
+// ** 1.5.1. OptaPlanner のレベルの高さ //
+// ** xref:statusOfOptaPlanner[1.5.1. OptaPlanner のレベルの高さ] //
+// ** link:#statusOfOptaPlanner[1.5.1. OptaPlanner のレベルの高さ] //
+
+// <<backwardsCompatibility>> //
+// ** 1.5.2. 後方互換性 //
+// ** xref:backwardsCompatibility[1.5.2. 後方互換性] //
+// ** link:#backwardsCompatibility[1.5.2. 後方互換性] //
+
+// <<communityAndSupport>> //
+// ** 1.5.3. コミュニティとサポート //
+// ** xref:communityAndSupport[1.5.3. コミュニティとサポート] //
+// ** link:#communityAndSupport[1.5.3. コミュニティとサポート] //
+
+// <<relationshipWithKie>> //
+// ** 1.5.4. Drools や jBPM との関係 //
+// ** xref:relationshipWithKie[1.5.4. Drools や jBPM との関係] //
+// ** link:#relationshipWithKie[1.5.4. Drools や jBPM との関係] //
+
+<<<<< Failed, to be deleted soon
+
+////
+
+* xref:whatIsOptaPlanner[1.1. OptaPlanner とは何ですか？] 
+* xref:requirements[1.2. 必要なもの] 
+* xref:whatIsAPlanningProblem[1.3. 計画問題とは？] 
+** xref:aPlanningProblemIsNPCompleteOrNPHard[1.3.1. 計画問題は NP 完全またはNP困難] 
+** xref:aPlanningProblemHasConstraints[1.3.2. 計画問題には制約がある（ハード, ソフト制約）] 
+** xref:aPlanningProblemHasAHugeSearchSpace[1.3.3. 計画問題は巨大な探索空間を持つ] 
+* xref:downloadAndRunTheExamples[1.4. サンプルのダウンロードと実行] 
+** xref:getTheReleaseZipAndRunTheExamples[1.4.1. 公開 .zip の入手とサンプルの実行] 
+** xref:runTheExamplesInAnIDE[1.4.2. IDE (IntelliJ, Eclipse, NetBeans) でのサンプルの実行] 
+** xref:useWithMavenGradleEtc[1.4.3. OptaPlanner を Maven や Gradle, Ivy, Buildr, ANT とともに使う] 
+** xref:buildFromSource[1.4.4. OptaPlanner をソースからビルドする] 
+* xref:governance[1.5. 管理・運営] 
+** xref:statusOfOptaPlanner[1.5.1. OptaPlanner のレベルの高さ] 
+** xref:backwardsCompatibility[1.5.2. 後方互換性] 
+** xref:communityAndSupport[1.5.3. コミュニティとサポート] 
+** xref:relationshipWithKie[1.5.4. Drools や jBPM との関係] 
+
+
+[[whatIsOptaPlanner]]
+== 1.1 OptaPlanner とは何ですか？
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
+
+*link:http://www.optaplanner.org/[OptaPlanner] は、計画問題の最適解を得る、組み込み可能で軽量な制約充足エンジンです。* 次のようなユースケースを解きます。
+////
+150907 by Takugo
+Source: which optimizes planning problems
+Interpreted as: which obtains optimized solutions for planning problems
+“問題”を最適化するのではないから。
+////
+
+* *従業員シフト勤務計画：* 看護士や修理工などの勤務表作成
+* *実施スケジューリング：* 会議, 設備, メンテナンス作業, 広告などのスケジューリング
+* *教育時間割り：* 授業, 講座, 試験, 会議プレゼンテーションなどのスケジューリング
+* *輸送経路計画：* 荷物および／または人を乗せた乗り物 (トラック, 列車, 船舶, 飛行機など) の計画
+* *箱詰め：* コンテナ, トラック, 船舶への積載や倉庫への保管, さらにはクラウドコンピュータのノードなども
+* *注文生産スケジューリング：* 自動車組立ライン, 機械処理, 人員作業などの計画
+* *在庫削減：* 紙や鋼, カーペットなどの切断で生じる無駄の最少化
+* *スポーツにおけるスケジューリング：* フットボールや野球などのリーグ戦計画
+////
+150907 by Takugo
+Source: planning football leagues, baseball leagues, ...
+Interpreted as: planning the league games of football, baseball, ...
+* *財務最適化：* 投資ポートフォリオの最適化, リスク分散など
+////
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
+
+あらゆる組織が計画問題に直面しています。_制約を受け_ 、限定されたリソース (従業員, 資産, 時間, 金) を使って製品やサービスを提供しています。OptaPlanner は、そのような計画を最適化することによって、より少ないリソースでより多くの業務を実行できるようにします。これは、_オペレーションズリサーチ_ 分野の一つである_制約充足プログラミング_ として知られています。
+
+image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
+
+OptaPlanner の助けがあれば、普通の Java™ プログラマーでも制約充足問題を効率よく解くことができます。OptaPlanner の内部では、最適化のためのヒューリスティック法およびメタヒューリスティック法が非常に効率的なスコア計算と組み合わされています。
