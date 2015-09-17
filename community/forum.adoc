@@ -12,15 +12,16 @@ If you have a question about OptaPlanner, just ask our friendly volunteer commun
 * To start an opinionated discussion, use https://groups.google.com/forum/#!forum/optaplanner-dev[the OptaPlanner developer forum] instead.
 Do not cross post to both channels.
 
-Please follow these recommendations when posting a question or a discussion:
+Community support is privilege, not a right. Please *follow these recommendations* when posting a question or a discussion
+to increase your chance to get a helpful answer:
 
 * Get to the point. Keep it as short as possible.
-* Include _relevant_ technical details (stacktrace, short code snippet, ...).
+* Include _relevant_ technical details (stacktrace, short code snippet, configuration snippet, ...).
 * Be polite, friendly and clear. Reread your question before posting it.
 * Be patient. This isn't link:product.html[paid support]. There is no SLA.
-* Do not email developers directly, unless you 've got link:product.html[a paid support subscription].
+* Do not email or tweet developers directly for support, unless you 've got link:product.html[a paid support subscription].
 
-Our developers are often active in the volunteer community.
+Our developers are active in the volunteer community.
 
 == Development discussions
 
