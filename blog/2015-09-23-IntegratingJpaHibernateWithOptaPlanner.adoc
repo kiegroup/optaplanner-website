@@ -21,10 +21,10 @@ On each problem fact class, there are usually only JPA annotations:
 @Entity // JPA annotation
 public class Computer {
 
-    private int cpuPower; // in gigahertz
-    private int memory; // in gigabyte RAM
-    private int networkBandwidth; // in gigabyte per hour
-    private int cost; // in euro per month
+    private int cpuPower;
+    private int memory;
+    private int networkBandwidth;
+    private int cost;
 
     ...
 }
@@ -51,15 +51,15 @@ public class Process {
 ----
 
 Don't confuse a JPA entity (anything object that gets persisted in the database)
-with an OptaPlanner entity (an object that gets changed by OptaPlanner during solving).
+with an OptaPlanner planning entity (an object that gets changed by OptaPlanner during solving).
 
 == Persisting a score
 
 By default, JPA Hibernate will put a `Score` in a `BLOB` column through Java serialization.
-This is undesirable because it prevents using the score in an JPA-QL query.
+This is undesirable because it prevents using the score in a JPA-QL query.
 Furthermore, it triggers database issues when upgrading the OptaPlanner version.
 
-Therefore, OptaPlanner `6.4.0.Beta1` has a new jar `optaplanner-persistence-jpa` to contains a Hibernate type for each score type.
+Therefore, OptaPlanner `6.4.0.Beta1` has a new jar `optaplanner-persistence-jpa` that contains a Hibernate type for each score type.
 Use it like this:
 
 [source,java]
@@ -77,7 +77,7 @@ public class CloudBalance implements Solution<HardSoftScore> {
 ----
 
 This puts the `HardSoftScore` into 2 `INTEGER` columns, instead of a `BLOB` column.
-The docs contain more information on how to deal with `BigDecimal` and/or bendable scores properly.
+The OptaPlanner reference manual contain more information on how to deal with `BigDecimal` and/or bendable scores properly.
 
 == Cloning pitfall
 
