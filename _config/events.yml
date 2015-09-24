@@ -130,6 +130,14 @@
   url: http://www.bed-con.org/2015/talks/OptaPlanner-hilft-bei-verteilten-Schulstandorten
   presenters: Torsten Fink, Markus Müller
 
+- eventId: 20151012-javavienna
+  eventOrganization: Java Vienna
+  location: Vienna, Austria
+  date: 2015-10-12
+  title: Smart load balancing in the cloud with OptaPlanner
+  url: http://www.meetup.com/Java-Vienna/events/225365483/
+  presenters: Lukáš Petrovický
+
 - eventId: 20151110-devoxxbe
   eventOrganization: Devoxx Be
   location: Antwerp, Belgium
