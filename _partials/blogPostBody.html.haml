@@ -5,22 +5,14 @@ layout: blogBase
   %h1.title(style="border-bottom: 1px solid #eee;")
     %a{:href => relative(page.post.url, page.outputPage)}
       = page.post.title
-  %script(type="text/javascript")<
-    var dzone_url = '#{site.canonicalBaseUrl}#{page.post.url}';
-    var dzone_title = '#{page.post.title}';
-    var dzone_blurb = '';
-    var dzone_style = '2';
   %div
     .pull-right
-      %script(language="javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js")
       %p(style="text-align: right;") #{page.post.date.strftime('%a %-d %B %Y')}
     = partial('userBadge.html.haml', :outputPage => page.outputPage, :userId => page.post.author)
   .body
     ~ page.post.content
   %hr(style="margin-bottom: 5px;")
   %div(style="margin-bottom: 20px;")
-    .pull-right(style="margin-left: 5px;")
-      %script(language="javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js")
     .pull-right
       %a{:href => relative(page.post.url + '#comments', page.outputPage)}<
         %span.label.label-default Comments
