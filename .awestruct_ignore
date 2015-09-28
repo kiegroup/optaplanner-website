@@ -1,5 +1,5 @@
 LICENSE-ASL-2.0.txt
-README.md
+README.adoc
 build.sh
 Gemfile
 Gemfile.lock
