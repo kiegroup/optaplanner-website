@@ -6,7 +6,7 @@
 
 == OptaPlanner 6.3 announcement
 
-We are happy to announce a 6.3 *CR* release of OptaPlanner.
+We are happy to announce a 6.3 *Final* release of OptaPlanner.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently.
