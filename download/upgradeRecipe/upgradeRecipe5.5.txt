@@ -2,4 +2,4 @@ From 5.* to 5.5.0.Final
 -----------------------
 
 To see the upgrade path from an older version (5.0, 5.1, 5.2, 5.3 or 5.4) to 5.5.0.Final, see an older revision of this file:
-  https://github.com/droolsjbpm/optaplanner/blob/6.1.0.Final/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt
+https://github.com/droolsjbpm/optaplanner/blob/6.1.0.Final/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt

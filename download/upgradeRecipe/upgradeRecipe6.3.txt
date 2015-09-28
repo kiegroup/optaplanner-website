@@ -1,9 +1,9 @@
 From 6.2.0.Final to 6.3.0.Beta1
 -------------------------------
 
-[MINOR] @InverseRelationShadowVariable is now also supported for non-chained planning variables,
-in which case it the inverse property must be Collection (Set or List).
-So it's no longer needed to use a CustomShadowVariable to implement the bi-directional relationship behaviour.
+[MINOR] `@InverseRelationShadowVariable` is now also supported for non-chained planning variables,
+in which case it the inverse property must be `Collection` (`Set` or `List`).
+So it's no longer needed to use a `CustomShadowVariable` to implement the bi-directional relationship behaviour.
 Before in *.java:
     public class CloudComputer {
         ...
@@ -24,65 +24,65 @@ After in *.java:
     }
 
 [MAJOR] To adhere to Java best practices,
-which state that an Object.toString() should identify an instance and be short
+which state that an `Object.toString()` should identify an instance and be short
 (instead of trying to verbalize it's entire state),
-the Move.toString() methods have been modified to mention the old value too (as well as the entity and the new value).
+the `Move.toString()` methods have been modified to mention the old value too (as well as the entity and the new value).
 Their notations have also been made consistent:
-    ChangeMove:         "a {v1 -> v2}"
-    SwapMove:           "a {v1} <-> b {v2}"
-    PillarChangeMove:   "[a, b] {v1 -> v2}"
-    PillarSwapMove:     "[a, b] {v1} <-> [c, d, e] {v2}"
-    TailChainSwapMove:  "a3 {a2} <-tailChainSwap-> b1 {b0}"
-    SubChainChangeMove: "[a2..a5] {a1 -> b0}"
-             Reversing: "[a2..a5] {a1 -reversing-> b0}"
-    SubChainSwapMove:   "[a2..a5] {a1} <-> [b1..b3] {b0}"
-             Reversing: "[a2..a5] {a1} <-reversing-> [b1..b3] {b0}"
+
+* `ChangeMove`:         `a {v1 -> v2}`
+* `SwapMove`:           `a {v1} <-> b {v2}`
+* `PillarChangeMove`:   `[a, b] {v1 -> v2}`
+* `PillarSwapMove`:     `[a, b] {v1} <-> [c, d, e] {v2}`
+* `TailChainSwapMove`:  `a3 {a2} <-tailChainSwap-> b1 {b0}`
+* `SubChainChangeMove`: `[a2..a5] {a1 -> b0}`
+** Reversing: `[a2..a5] {a1 -reversing-> b0}`
+* `SubChainSwapMove`:   `[a2..a5] {a1} <-> [b1..b3] {b0}`
+** Reversing: `[a2..a5] {a1} <-reversing-> [b1..b3] {b0}`
+
 This mainly affects the logging output.
-In the examples, the toString() method of planning entities and planning values has been modified accordingly
+In the examples, the `toString()` method of planning entities and planning values has been modified accordingly
 to avoid mentioning the old value twice:
 Before in *.java:
     public class CloudProcess {
         ...
-
-        public String toString() {
+        public String `toString()` {
             return processName + "@" + computer.getName();
         }
     }
 After in *.java:
     public class CloudProcess {
         ...
-
         public String toString() {
             return processName;
         }
     }
 
-[MINOR] Default parameter tweaked: a empty <constructionHeuristic>'s default changed from FIRST_FIT to ALLOCATE_ENTITY_FROM_QUEUE.
+[MINOR] Default parameter tweaked: an empty `<constructionHeuristic>`'s default changed from `FIRST_FIT` to `ALLOCATE_ENTITY_FROM_QUEUE`.
 If no entity difficulty comparison and no planning value strength comparison is defined, the behavior is exactly the same.
-Otherwise, the behaviour is FIRST_FIT_DECREASING or WEAKEST_FIT(_DECREASING).
+Otherwise, the behaviour is `FIRST_FIT_DECREASING` or `WEAKEST_FIT(_DECREASING)`.
 
-[MINOR] The solverBenchmarkBluePrintType ALL_CONSTRUCTION_HEURISTIC_TYPES has been renamed to EVERY_CONSTRUCTION_HEURISTIC_TYPE.
-The old name ALL_CONSTRUCTION_HEURISTIC_TYPES is deprecated and will be removed in 7.0.
+[MINOR] The `solverBenchmarkBluePrintType` `ALL_CONSTRUCTION_HEURISTIC_TYPES` has been renamed to `EVERY_CONSTRUCTION_HEURISTIC_TYPE`.
+The old name `ALL_CONSTRUCTION_HEURISTIC_TYPES` is deprecated and will be removed in 7.0.
 Before in *BenchmarkConfig.xml:
     <solverBenchmarkBluePrintType>ALL_CONSTRUCTION_HEURISTIC_TYPES</solverBenchmarkBluePrintType>
 After in *BenchmarkConfig.xml:
     <solverBenchmarkBluePrintType>EVERY_CONSTRUCTION_HEURISTIC_TYPE</solverBenchmarkBluePrintType>
 
-[MINOR] In real-time planning, calling addProblemFactChange() now resets the time spent terminations too.
+[MINOR] In real-time planning, calling `addProblemFactChange()` now resets the time spent terminations too.
 It did already reset all other terminations (despite that the docs claimed otherwise).
 The docs have also been fixed to reflect reality, which is also the desired behaviour by users.
 
-[MINOR] In real-time planning, addProblemFactChange() no longer causes the ScoreDirector to be replaced
-(so it no longer creates a new KieSession) upon solver restart.
-This might expose a hidden bug in your ProblemFactChange implementation.
-Enable environmentMode FULL_ASSERT and do a few addProblemFactChange() calls to validate that there are no such bugs.
+[MINOR] In real-time planning, `addProblemFactChange()` no longer causes the `ScoreDirector` to be replaced
+(so it no longer creates a new `KieSession`) upon solver restart.
+This might expose a hidden bug in your `ProblemFactChange` implementation.
+Enable `environmentMode` `FULL_ASSERT` and do a few `addProblemFactChange()` calls to validate that there are no such bugs.
 
 
 From 6.3.0.Beta1 to 6.3.0.Beta2
 -------------------------------
 
-[MINOR] If you implemented a custom ValueRange, also implement the method isEmpty().
-Normally, you should not have any need for a custom ValueRange, because ValueRangeFactory supports all sensible ranges.
+[MINOR] If you implemented a custom `ValueRange`, also implement the method `isEmpty()`.
+Normally, you should not have any need for a custom `ValueRange`, because `ValueRangeFactory` supports all sensible ranges.
 Before in *.java:
     public class MyDoubleValueRange extends AbstractUncountableValueRange<Double> {
         ...
@@ -90,7 +90,6 @@ Before in *.java:
 After in *.java:
     public class MyDoubleValueRange extends AbstractUncountableValueRange<Double> {
         ...
-
         @Override
         public boolean isEmpty() {
             return from == to;
@@ -98,7 +97,7 @@ After in *.java:
     }
 
 [MAJOR] If you use multiple planning variables, consider switching to the folded configuration.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <changeMoveSelector>
         <valueSelector>
           <variableName>period</variableName>
@@ -109,11 +108,11 @@ Before in *SolverConfig.xml and *BenchmarkConfig.xml:
           <variableName>room</variableName>
         </valueSelector>
       </changeMoveSelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <changeMoveSelector/>
 
 [MAJOR] If you use multiple entity classes, consider switching to the folded configuration.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <changeMoveSelector>
         <entitySelector>
           <entityClass>...CoachEntity</entityClass>
@@ -134,14 +133,14 @@ Before in *SolverConfig.xml and *BenchmarkConfig.xml:
           <entityClass>...ShuttleEntity</entityClass>
         </entitySelector>
       </swapMoveSelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <changeMoveSelector/>
       <swapMoveSelector/>
 
 [MINOR] If your planning solution has a superclass with planner annotations,
 those will now be ignored (just like solution subclass annotations are ignored
 and just like entity superclass or subclass annotations are ignored unless they are a declare planning entity class too).
-Declare the @PlanningSolution on the superclass instead, the solver will handle subclass instances gracefully
+Declare the `@PlanningSolution` on the superclass instead, the solver will handle subclass instances gracefully
 (presuming there are no planner annotations in the subclass).
 Before in *.java:
     public abstract class ParentSolution {
@@ -150,7 +149,7 @@ Before in *.java:
     }
     @PlanningSolution
     public class ChildSolution extends ParentSolution {...}
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <solutionClass>...ChildSolution</solutionClass>
 After in *.java:
     @PlanningSolution
@@ -159,15 +158,15 @@ After in *.java:
         public List<Computer> getComputers() {...}
     }
     public class ChildSolution extends ParentSolution {...}
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <solutionClass>...ParentSolution</solutionClass>
 
 
 From 6.3.0.Beta2 to 6.3.0.CR1
 -----------------------------
 
-[MINOR] If a custom VariableListener changes 2 shadow variables, use the new variableListenerRef property accordingly
-to indicate that the VariableListener class of another shadow variable also updates this shadow variable:
+[MINOR] If a custom `VariableListener` changes 2 shadow variables, use the new `variableListenerRef` property accordingly
+to indicate that the `VariableListener` class of another shadow variable also updates this shadow variable:
 Before in *.java:
     @PlanningVariable(...)
     public Standstill getPreviousStandstill() {
@@ -201,36 +200,32 @@ After in *.java:
 From 6.3.0.CR1 to 6.3.0.CR2
 ---------------------------
 
-[README] VariableListeners no longer trigger chaotically. This applies to both out of the box shadow variables and custom shadow variables.
-Planner now guarantees that the first VariableListener's after*() method triggers AFTER the last genuine variable has been modified.
-This means a VariableListener is no longer exposed to intermediate state.
-The before*() methods still trigger immediately (otherwise they would not be able to capture the source variable's orginal state).
-Furthermore, Planner guarantees this triggering in stages also for VariableListener for a shadow variable that depend on earlier shadow variables.
+[README] `VariableListeners` no longer trigger chaotically. This applies to both out of the box shadow variables and custom shadow variables.
+Planner now guarantees that the first `VariableListener` 's `after*()` method triggers *AFTER* the last genuine variable has been modified.
+This means a `VariableListener` is no longer exposed to intermediate state.
+The `before*()` methods still trigger immediately (otherwise they would not be able to capture the source variable's orginal state).
+Furthermore, Planner guarantees this triggering in stages also for `VariableListener` for a shadow variable that depend on earlier shadow variables.
 
-[MAJOR] If you have a custom Move, its doMove() method must now call scoreDirector.triggerVariableListeners() at the end.
-In practice, you should have extended AbstractMove - which does the triggerVariableListeners() call for you -
-but you'll need to rename your doMove() method to doMoveOnGenuineVariables().
+[MAJOR] If you have a custom `Move`, its `doMove()` method must now call `scoreDirector.triggerVariableListeners()` at the end.
+In practice, you should have extended `AbstractMove` - which does the `triggerVariableListeners()` call for you -
+but you'll need to rename your `doMove()` method to `doMoveOnGenuineVariables()`.
 Before in *.java:
     public class CloudComputerChangeMove extends AbstractMove {
         ...
-
         public void doMove(ScoreDirector scoreDirector) {
             CloudBalancingMoveHelper.moveCloudComputer(scoreDirector, cloudProcess, toCloudComputer);
         }
-
     }
 After in *.java:
     public class CloudComputerChangeMove extends AbstractMove {
         ...
-
         protected void doMoveOnGenuineVariables(ScoreDirector scoreDirector) {
             CloudBalancingMoveHelper.moveCloudComputer(scoreDirector, cloudProcess, toCloudComputer);
         }
-
     }
 
-[MAJOR] If you have a ProblemFactChange, its doChange() method must now call scoreDirector.triggerVariableListeners()
-after every set of changes (before calling calculateScore() or relying on shadow variables).
+[MAJOR] If you have a `ProblemFactChange`, its `doChange()` method must now call `scoreDirector.triggerVariableListeners()`
+after every set of changes (before calling `calculateScore()` or relying on shadow variables).
 Before in *.java:
     public void deleteComputer(final CloudComputer computer) {
         doProblemFactChange(new ProblemFactChange() {
@@ -267,22 +262,19 @@ After in *.java:
         });
     }
 
-[MAJOR] If you have a CustomPhaseCommand, its changeWorkingSolution() method must now call scoreDirector.triggerVariableListeners()
-after every set of changes (before calling calculateScore() or relying on shadow variables).
+[MAJOR] If you have a `CustomPhaseCommand`, its `changeWorkingSolution()` method must now call `scoreDirector.triggerVariableListeners()`
+after every set of changes (before calling `calculateScore()` or relying on shadow variables).
 Before in *.java:
     public class MyCustomPhase implements CustomPhaseCommand {
-
         public void changeWorkingSolution(ScoreDirector scoreDirector) {
             scoreDirector.beforeVariableChanged(processAssignment, "machine");
             processAssignment.setMachine(machine);
             scoreDirector.afterVariableChanged(processAssignment, "machine");
             Score score = scoreDirector.calculateScore();
         }
-
     }
 After in *.java:
     public class MyCustomPhase implements CustomPhaseCommand {
-
         public void changeWorkingSolution(ScoreDirector scoreDirector) {
             scoreDirector.beforeVariableChanged(processAssignment, "machine");
             processAssignment.setMachine(machine);
@@ -290,15 +282,14 @@ After in *.java:
             scoreDirector.triggerVariableListeners();
             Score score = scoreDirector.calculateScore();
         }
-
     }
 
-[MINOR] A custom Move must now read any shadow variables it needs before its first beforeVariableChanged() call.
-It no longer needs to assign genuine variables to intermediate values to avoid errors in the VariableListeners that update shadow variables.
+[MINOR] A custom `Move` must now read any shadow variables it needs before its first `beforeVariableChanged()` call.
+It no longer needs to assign genuine variables to intermediate values to avoid errors in the `VariableListeners` that update shadow variables.
 
-[IMPL_DETAIL] All build-in moves that affect chained variables have been greatly simplified due to the new VariableListener guarantee.
+[IMPL_DETAIL] All built-in moves that affect chained variables have been greatly simplified due to the new `VariableListener` guarantee.
 
-[IMPL_DETAIL] The constructor of ChainedChangeMove, ChainedSwapMove, SubChainChangeMove and SubChainSwapMove now require the SingletonInverseVariableSupply parameter.
+[IMPL_DETAIL] The constructor of `ChainedChangeMove`, `ChainedSwapMove`, `SubChainChangeMove` and `SubChainSwapMove` now require the `SingletonInverseVariableSupply` parameter.
 Before in *.java:
     return new ChainedChangeMove(entity, variableDescriptor, toValue);
 After in *.java:
@@ -306,9 +297,9 @@ After in *.java:
             .demand(new SingletonInverseVariableDemand(variableDescriptor));
     return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, toValue);
 
-[IMPL_DETAIL] ChainedSwapMove's constructor now requires a List instead of Collection of VariableDescriptors.
+[IMPL_DETAIL] `ChainedSwapMove` 's constructor now requires a `List` instead of `Collection` of `VariableDescriptor` s.
 
-[IMPL_DETAIL] The method InnerScoreDirector.getTrailingEntity() has been removed. Use SingletonInverseVariableSupply instead.
+[IMPL_DETAIL] The method `InnerScoreDirector.getTrailingEntity()` has been removed. Use `SingletonInverseVariableSupply` instead.
 
 [MINOR] One score rule can now change 2 score levels in its RHS
 Before in *.drl:
@@ -336,8 +327,8 @@ After in *.drl:
 From 6.3.0.CR2 to 6.3.0.CR3
 ---------------------------
 
-[MINOR] If you build a Solver entirely from API (not recommended - it's better to load it partially from XML),
-use SolverFactory.createEmpty() and solverFactory.getSolverConfig() accordingly.
+[MINOR] If you build a `Solver` entirely from API (not recommended - it's better to load it partially from XML),
+use `SolverFactory.createEmpty()` and `solverFactory.getSolverConfig()` accordingly.
 Before in *.java:
         SolverConfig solverConfig = new SolverConfig();
         ...

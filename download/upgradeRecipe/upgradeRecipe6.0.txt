@@ -1,7 +1,7 @@
 From 5.5.0.Final to 6.0.0.Alpha7
 --------------------------------
 
-[README] Starting from 6.1.0.Final for 6.2, .6.3, ..., planner will have a backwards compatible API.
+[README] Starting from 6.1.0.Final for 6.2, 6.3, ..., planner will have a backwards compatible API.
 As preparation for that, every part of the API is being reviewed.
 
 [RECOMMENDED] Don't directly upgrade the jars to 6.0.0.Final.
@@ -11,18 +11,18 @@ Once that compiles, immediately upgrade the jars to your desired version and con
 The 6.0.0.Alpha9 jars are available in the maven repository and in this zip:
   http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
 
-[README] ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY now works. The regression in 5.5 from 5.4 has been fixed.
+[README] `ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY` now works. The regression in 5.5 from 5.4 has been fixed.
 
 [RECOMMENDED] Planning variables can now have a null value when initialized.
 If you have any custom hacks for that, take a look at the reference manual how to replace them with a nullable variable.
 
-[MINOR] <assertionScoreDirectorFactory> no longer needs a <scoreDefinition*>: it inherits it from its parent.
+[MINOR] `<assertionScoreDirectorFactory>` no longer needs a `<scoreDefinition*>`: it inherits it from its parent.
 
-[MAJOR] If you are using Drools and HardAndSoft*Score:
-ConstraintType no longer has NEGATIVE_HARD, NEGATIVE_SOFT and POSITIVE. It only has HARD and SOFT now.
+[MAJOR] If you are using Drools and `HardAndSoft*Score`:
+`ConstraintType` no longer has `NEGATIVE_HARD`, `NEGATIVE_SOFT` and `POSITIVE`. It only has `HARD` and `SOFT` now.
 As a result, all negative weights are now a negative number. All positive weights are now a positive number.
-HardAndSoft*ScoreHolder replaced setHardConstraintsBroken() and setSoftConstraintsBroken()
-with setHardScore() and setSoftScore().
+`HardAndSoft*ScoreHolder` replaced `setHardConstraintsBroken()` and `setSoftConstraintsBroken()`
+with `setHardScore()` and `setSoftScore()`.
 Before in *ScoreRules.drl:
         insertLogical(new IntConstraintOccurrence(..., ConstraintType.NEGATIVE_HARD,
                 $x,
@@ -85,16 +85,16 @@ After in *ScoreRules.drl:
         then
             scoreHolder.setSoftScore($softTotal.intValue());
     end
-Refactor similarly for LongConstraintOccurrence and longValue().
+Refactor similarly for `LongConstraintOccurrence` and `longValue()`.
 
-[MAJOR] Your Solution implementation class now needs a @PlanningSolution annotation
+[MAJOR] Your `Solution` implementation class now needs a `@PlanningSolution` annotation
 Before in *.java:
     public class ... implements Solution<...Score> {...}
 After in *.java:
     @PlanningSolution
     public class ... implements Solution<...Score> {...}
 
-[MAJOR] A Solution no longer need to implement the method cloneSolution(Solution)
+[MAJOR] A `Solution` no longer need to implement the method `cloneSolution(Solution)`
 Before in *.java:
     @PlanningSolution
     public class Examination implements Solution<...> {
@@ -150,15 +150,15 @@ After in *.java, option 2: if you want keep your code:
         }
     }
 
-[MINOR] If you've defined a custom ScoreDefinition to be able to use 3 score levels of int's,
-consider using the new HardMediumSoftScoreDefinition instead.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MINOR] If you've defined a custom `ScoreDefinition` to be able to use 3 score levels of ints,
+consider using the new `HardMediumSoftScoreDefinition` instead.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
         <scoreDefinitionClass>...</scoreDefinitionClass>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
         <scoreDefinitionType>HARD_MEDIUM_SOFT</scoreDefinitionType>
 
 [MAJOR] The construction heuristics now immediately add all uninitialized entities
-into the ScoreDirector (so into the WorkingMemory), instead of adding each entity just before initializing it.
+into the `ScoreDirector` (so into the `WorkingMemory`), instead of adding each entity just before initializing it.
 This change improves consistency and compatibility of construction heuristics with multiple variables,
 because they can now initialize 1 variable at a time instead of all variables.
 Also, this change improves support for nullable variables.
@@ -203,13 +203,13 @@ After in *ScoreRules.drl:
         $rightLecture : Lecture(period == $period, room == $room, ...) // no null check needed on period and room
     then
 
-[MINOR] @PlanningVariable's property uninitializedEntityFilter has been renamed to reinitializeVariableEntityFilter
+[MINOR] `@PlanningVariable` 's property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
 Before in *.java:
     @PlanningVariable(uninitializedEntityFilter = ...)
 After in *.java:
     @PlanningVariable(reinitializeVariableEntityFilter = ...)
 
-[MINOR] The Default*Score class have become more encapsulated.
+[MINOR] The `Default*Score` class have become more encapsulated.
 In the unlikely case that you've used any of them directly, do these changes:
 Before in *.java:
     ... = DefaultHardAndSoftScore.valueOf(-100);
@@ -220,8 +220,8 @@ Before in *.java:
 After in *.java:
     ... = DefaultHardAndSoftScore.valueOf(-100, -20);
 
-[MAJOR] The interface PlanningEntityDifficultyWeightFactory has been replaced by SelectionSorterWeightFactory.
-The method createDifficultyWeight has been replaced by the method createSorterWeight.
+[MAJOR] The interface `PlanningEntityDifficultyWeightFactory` has been replaced by `SelectionSorterWeightFactory`.
+The method `createDifficultyWeight` has been replaced by the method `createSorterWeight`.
 Sorting direction (difficulty ascending) has not changed.
 Before in *.java:
     public class QueenDifficultyWeightFactory implements PlanningEntityDifficultyWeightFactory {
@@ -246,105 +246,101 @@ After in *.java:
         ...
     }
 
-[MAJOR] The interface PlanningValueStrengthWeightFactory has been replaced by SelectionSorterWeightFactory.
-The method createStrengthWeight has been replaced by the method createSorterWeight.
+[MAJOR] The interface `PlanningValueStrengthWeightFactory` has been replaced by `SelectionSorterWeightFactory`.
+The method `createStrengthWeight` has been replaced by the method `createSorterWeight`.
 Sorting direction (strength ascending) has not changed.
 Before in *.java:
     public class RowStrengthWeightFactory implements PlanningValueStrengthWeightFactory {
-
         public Comparable createStrengthWeight(Solution solution, Object planningValue) {
             NQueens nQueens = (NQueens) solution;
             Row row = (Queen) planningValue;
             ...
             return ...;
         }
-
         ...
     }
 After in *.java:
     public class RowStrengthWeightFactory implements SelectionSorterWeightFactory<NQueens, Row> {
-
         public Comparable createSorterWeight(NQueens nQueens, Row row) {
             ...
             return ...;
         }
-
         ...
     }
 
-[MAJOR] The EnvironmentMode DEBUG and TRACE have been renamed to FAST_ASSERT and FULL_ASSERT
+[MAJOR] The `EnvironmentMode` `DEBUG` and `TRACE` have been renamed to `FAST_ASSERT` and `FULL_ASSERT`
 to avoid confusion with the logging levels debug and trace.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <environmentMode>DEBUG</environmentMode>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <environmentMode>FAST_ASSERT</environmentMode>
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <environmentMode>TRACE</environmentMode>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <environmentMode>FULL_ASSERT</environmentMode>
 
-[MAJOR] Configuration property entityFilterClass has been renamed to filterClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MAJOR] Configuration property `entityFilterClass` has been renamed to `filterClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <entityFilterClass>...</entityFilterClass>
     </entitySelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <filterClass>...</filterClass>
     </entitySelector>
 
-[MAJOR] Configuration property moveFilterClass has been renamed to filterClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MAJOR] Configuration property `moveFilterClass` has been renamed to `filterClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <...MoveSelector>
       <moveFilterClass>...</moveFilterClass>
     </...MoveSelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <...MoveSelector>
       <filterClass>...</filterClass>
     </...MoveSelector>
 
-[MINOR] Configuration property entityProbabilityWeightFactoryClass has been renamed to probabilityWeightFactoryClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MINOR] Configuration property `entityProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <entityProbabilityWeightFactoryClass>...</entityProbabilityWeightFactoryClass>
     </entitySelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <probabilityWeightFactoryClass>...</probabilityWeightFactoryClass>
     </entitySelector>
 
-[MINOR] Configuration property valueProbabilityWeightFactoryClass has been renamed to probabilityWeightFactoryClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MINOR] Configuration property `valueProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <valueSelector>
       <valueProbabilityWeightFactoryClass>...</valueProbabilityWeightFactoryClass>
     </valueSelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <valueSelector>
       <valueProbabilityWeightFactoryClass>...</valueProbabilityWeightFactoryClass>
     </valueSelector>
 
-[MINOR] Configuration property moveProbabilityWeightFactoryClass has been renamed to probabilityWeightFactoryClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MINOR] Configuration property `moveProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <...MoveSelector>
       <moveProbabilityWeightFactoryClass>...</moveProbabilityWeightFactoryClass>
     </...MoveSelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <...MoveSelector>
       <probabilityWeightFactoryClass>...</probabilityWeightFactoryClass>
     </...MoveSelector>
 
-[MINOR] For entitySelector, configuration property planningEntityClass has been renamed to entityClass.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MINOR] For `entitySelector`, configuration property `planningEntityClass` has been renamed to `entityClass`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <planningEntityClass>...Lecture</planningEntityClass>
     </entitySelector>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <entitySelector>
       <entityClass>...Lecture</entityClass>
     </entitySelector>
 
-[MAJOR] Configuration property planningVariableName has been renamed to variableName.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MAJOR] Configuration property `planningVariableName` has been renamed to `variableName`.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <valueSelector>
       <planningVariableName>period</planningVariableName>
     </valueSelector>
@@ -353,12 +349,12 @@ After in *SolverConfig.xml and *BenchmarkConfig.xml:
       <variableName>period</variableName>
     </valueSelector>
 
-[MAJOR] HardAndSoftScore has been renamed to HardSoftScore.
-Similarly, HardAndSoftLongScore has been renamed to HardSoftLongScore.
-The package, ScoreDefinitionType, *ScoreDefinition and *ScoreDefinition have been renamed accordingly.
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+[MAJOR] `HardAndSoftScore` has been renamed to `HardSoftScore`.
+Similarly, `HardAndSoftLongScore` has been renamed to `HardSoftLongScore`.
+The package, `ScoreDefinitionType`, `*ScoreDefinition` and `*ScoreDefinition` have been renamed accordingly.
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
         <scoreDefinitionType>HARD_AND_SOFT</scoreDefinitionType>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
         <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
 Before in *.java:
     import org.drools.planner.core.score.buildin.hardandsoft.HardAndSoftScore;
@@ -366,11 +362,9 @@ Before in *.java:
     public class CloudBalance ... implements Solution<HardAndSoftScore> {
         ...
         private HardAndSoftScore score;
-
         public HardAndSoftScore getScore() {
             return score;
         }
-
         public void setScore(HardAndSoftScore score) {
             this.score = score;
         }
@@ -381,11 +375,9 @@ After in *.java:
     public class CloudBalance ... implements Solution<HardSoftScore> {
         ...
         private HardSoftScore score;
-
         public HardSoftScore getScore() {
             return score;
         }
-
         public void setScore(HardSoftScore score) {
             this.score = score;
         }
@@ -405,7 +397,7 @@ After in *ScoreCalculator.java:
         return DefaultHardSoftScore.valueOf(hardScore, softScore);
     }
 
-[MAJOR] The Default*Score classes have been removed: they have been merged into their *Score interface.
+[MAJOR] The `Default*Score` classes have been removed: they have been merged into their `*Score` interface.
 Before in *.java:
     ... DefaultSimpleScore.valueOf(...)
     ... DefaultSimpleDoubleScore.valueOf(...)
@@ -421,8 +413,10 @@ After in *.java:
 
 [RECOMMENDED] If you store your solutions as XML and reused the example's XStream serialization technique,
 you probably want to have a score serialized as such:
+[source, xml]
+----
     <score>0hard/-130870soft</score>
-instead of the current way (which writes the full classname of the Score implementation in the XML).
+instead of the current way (which writes the full classname of the `Score` implementation in the XML).
 Before in *.java:
     public class CloudBalance ... implements Solution<SimpleScore> {
         ...
@@ -452,7 +446,9 @@ After in *.java:
 
 [MAJOR] If you store your solutions as XML and reused the example's XStream serialization technique,
 then you'll also need to change all those xml files which mention the full score class name.
-Here's a bash script to automate that change to the new @XStreamConverter way in the recommended change above:
+Here's a bash script to automate that change to the new `@XStreamConverter` way in the recommended change above:
+[source, bash]
+----
     for f in *.xml
     do
         sed 's/<score class="[^"]*Score"/<score/g' $f > $f.modifiedMigration
@@ -460,16 +456,16 @@ Here's a bash script to automate that change to the new @XStreamConverter way in
         rm -f $f.modifiedMigration
     done
 
-[MINOR] Interface ScoreDefinition has a new method formatScore(Score).
-It's implemented by default by AbstractScoreDefinition to use Score.toString().
+[MINOR] Interface `ScoreDefinition` has a new method `formatScore(Score)`.
+It's implemented by default by `AbstractScoreDefinition` to use `Score.toString()`.
 
-[MINOR] XStreamProblemIO has moved package
+[MINOR] `XStreamProblemIO` has moved package
 Before in *.java:
     import org.drools.planner.benchmark.core.XStreamProblemIO;
 After in *.java:
     import org.drools.planner.persistence.xstream.XStreamProblemIO;
 
-[MAJOR] ValueRange and ValueRangeType have moved package
+[MAJOR] `ValueRange` and `ValueRangeType` have moved package
 Before in *.java:
     import org.drools.planner.api.domain.variable.ValueRange;
     import org.drools.planner.api.domain.variable.ValueRangeType;
@@ -477,7 +473,7 @@ After in *.java:
     import org.drools.planner.api.domain.value.ValueRange;
     import org.drools.planner.api.domain.value.ValueRangeType;
 
-[MAJOR] Interface ScoreDefinition has a new method getScoreClass().
+[MAJOR] Interface `ScoreDefinition` has a new method `getScoreClass()`.
 After in *ScoreDefinition.java:
     public Class<HardSoftScore> getScoreClass() {
         return HardSoftScore.class;
@@ -493,21 +489,22 @@ Before in *.java:
 After in *.java:
         TerminationConfig terminationConfig = new TerminationConfig();
         solverConfig.setTerminationConfig(terminationConfig);
-Generally this applies to ScoreDirectorFactoryConfig, AcceptorConfig, ForagerConfig, EntitySelectorConfig, ValueSelectorConfig, ...:
+Generally this applies to `ScoreDirectorFactoryConfig`, `AcceptorConfig`, `ForagerConfig`, `EntitySelectorConfig`,
+`ValueSelectorConfig`, ...
 Before in *.java:
         FooConfig fooConfig = ...Config.getFooConfig();
 After in *.java:
         FooConfig fooConfig = new FooConfig();
         ...Config.setFooConfig(fooConfig);
 
-[MINOR] XML solver configuration: ScoreDirectorFactoryConfig no longer supports setScoreDefinition(...).
-Everyone used setScoreDefinitionClass(...) instead.
+[MINOR] XML solver configuration: `ScoreDirectorFactoryConfig` no longer supports `setScoreDefinition(...)`.
+Everyone used `setScoreDefinitionClass(...)` instead.
 Before in *ScoreDefinition.java:
     scoreDirectorFactoryConfig.setScoreDefinition(...);
 
-[MINOR] XML solver configuration: ScoreDirectorFactoryConfig no longer supports setSimpleScoreCalculator(...).
-Everyone used setSimpleScoreCalculatorClass(...) instead, except maybe for score weighting parametrization,
-which can be done through the Solution (which enables real-time tweaking), see the InstitutionParametrization in the examples.
+[MINOR] XML solver configuration: `ScoreDirectorFactoryConfig` no longer supports `setSimpleScoreCalculator(...)`.
+Everyone used `setSimpleScoreCalculatorClass(...)` instead, except maybe for score weighting parametrization,
+which can be done through the `Solution` (which enables real-time tweaking), see the `InstitutionParametrization` in the examples.
 Before in *ScoreDefinition.java:
     scoreDirectorFactoryConfig.setSimpleScoreCalculator(...);
 
@@ -517,7 +514,7 @@ From 6.0.0.Alpha9 to 6.0.0.Beta1
 
 [README] Drools Planner has been renamed to OptaPlanner.
 See the official announcement here:
-  http://www.optaplanner.org/community/droolsPlannerRenamed.html
+http://www.optaplanner.org/community/droolsPlannerRenamed.html
 
 [MAJOR] The maven dependencies their groupId and artifactId's have been renamed.
 Before in pom.xml:
@@ -545,11 +542,11 @@ After in pom.xml:
         ...
     </dependency>
 And resync your IDE (IntelliJ, Eclipse, NetBeans) from the pom.xml files.
-If you're still using ANT, replace drools-planner-*.jar with optaplanner-*.jar
+If you're still using ANT, replace `drools-planner-\*.jar` with `optaplanner-*.jar`
 and adjust your ANT script and your IDE's classpath accordingly.
 Note: because of package name changes (see below), you 'll get a lot of compile errors at this point.
 
-[MAJOR] The logging category org.drools.planner has been renamed to org.optaplanner
+[MAJOR] The logging category `org.drools.planner` has been renamed to `org.optaplanner`
 Before in logback*.xml:
   <logger name="org.drools.planner" level="debug"/>
 After in logback*.xml:
@@ -562,7 +559,7 @@ Before:
 After:
   https://github.com/droolsjbpm/optaplanner
 
-[MAJOR] The package org.drools.planner has been renamed to org.optaplanner
+[MAJOR] The package `org.drools.planner` has been renamed to `org.optaplanner`
 Before in *.java, *.drl:
     import org.drools.planner...
 After in *.java, *.drl:
@@ -579,25 +576,28 @@ Note: because of other package name changes (see below), you 'll get a lot of co
 
 [README] The packages now make a clear distinction between api, config and implementation classes.
 Starting from 6.1 for future versions (6.2, 6.3, ...):
-  The api namespaced classes will be backwards compatible.
-  The config namespaced classes will be backwards compatible on an XML level only.
-  The impl namespaced classes will NOT be backwards compatible.
-Also, each artifact now has a unique package namespace. For example:
-optaplanner-core*.jar:
-  org.optaplanner.core: this package contains all classes from this jar
-    .api
-    .config
-    .impl
-optaplanner-benchmark*.jar:
-  org.optaplanner.benchmark: this package contains all classes from this jar
-    .api
-    .config
-    .impl
 
-[MAJOR] The package org.optaplanner.core has been renamed to org.optaplanner.core.impl
-Before in *.java, *.drl:
+* The `api` namespaced classes *will* be backwards compatible.
+* The `config` namespaced classes *will* be backwards compatible on an XML level only.
+* The `impl` namespaced classes *will NOT* be backwards compatible.
+
+Also, each artifact now has a unique package namespace. For example:
+
+* `optaplanner-core*.jar`:
+** `org.optaplanner.core`: this package contains all classes from this jar
+*** `.api`
+*** `.config`
+*** `.impl`
+* `optaplanner-benchmark*.jar`:
+** `org.optaplanner.benchmark`: this package contains all classes from this jar
+*** `.api`
+*** `.config`
+*** `.impl`
+
+[MAJOR] The package `org.optaplanner.core` has been renamed to `org.optaplanner.core.impl`
+Before in *.java`, `*.drl:
     import org.optaplanner.core...
-After in *.java, *.drl:
+After in *.java`, `*.drl:
     import org.optaplanner.core.impl...
 Before in *.java:
     "/org/optaplanner/core/..."
@@ -608,10 +608,10 @@ Before in *.xml:
 After in *.xml:
     <...>org.optaplanner.core.impl...</...>
 
-[MAJOR] The package org.optaplanner.api has been renamed to org.optaplanner.core.api
-Before in *.java, *.drl:
+[MAJOR] The package `org.optaplanner.api` has been renamed to `org.optaplanner.core.api`
+Before in \*.java`, `*.drl:
     import org.optaplanner.api...
-After in *.java, *.drl:
+After in \*.java`, `*.drl:
     import org.optaplanner.core.api...
 Before in *.java:
     "/org/optaplanner/api/..."
@@ -622,10 +622,10 @@ Before in *.xml:
 After in *.xml:
     <...>org.optaplanner.core.api...</...>
 
-[MAJOR] The package org.optaplanner.config has been renamed to org.optaplanner.core.config
-Before in *.java, *.drl:
+[MAJOR] The package `org.optaplanner.config` has been renamed to `org.optaplanner.core.config`
+Before in \*.java`, `*.drl:
     import org.optaplanner.config...
-After in *.java, *.drl:
+After in \*.java, *.drl:
     import org.optaplanner.core.config...
 Before in *.java:
     "/org/optaplanner/config/..."
@@ -636,25 +636,25 @@ Before in *.xml:
 After in *.xml:
     <...>org.optaplanner.core.config...</...>
 
-[MINOR] The package org.optaplanner.benchmark.core has been renamed to org.optaplanner.benchmark.impl
-Before in *.java, *.drl:
+[MINOR] The package `org.optaplanner.benchmark.core` has been renamed to `org.optaplanner.benchmark.impl`
+Before in \*.java`, `*.drl:
     import org.optaplanner.benchmark.core...
-After in *.java, *.drl:
+After in \*.java`, `*.drl:
     import org.optaplanner.benchmark.impl...
 
-[MAJOR] The interface Solver has been moved from the package ...core.impl to ...core.api.solver
+[MAJOR] The interface `Solver` has been moved from the package `...core.impl` to `...core.api.solver`
 Before in *.java:
     import org.optaplanner.core.impl.Solver;
 After in *.java:
     import org.optaplanner.core.api.solver.Solver;
 
-[MAJOR] The interface SolverFactory has been moved from the package ...core.config to ...core.api.solver
+[MAJOR] The interface `SolverFactory` has been moved from the package `...core.config` to `...core.api.solver`
 Before in *.java:
     import org.optaplanner.core.config.SolverFactory;
 After in *.java:
     import org.optaplanner.core.api.solver.SolverFactory;
 
-[MAJOR] The classes EnvironmentMode and XmlSolverFactory has been moved from the package ...core.config to ...core.config.solver
+[MAJOR] The classes `EnvironmentMode` and `XmlSolverFactory` has been moved from the package `...core.config` to `...core.config.solver`
 Before in *.java:
     import org.optaplanner.core.config.EnvironmentMode;
     import org.optaplanner.core.config.XmlSolverFactory;
@@ -662,40 +662,40 @@ After in *.java:
     import org.optaplanner.core.config.solver.EnvironmentMode;
     import org.optaplanner.core.config.solver.XmlSolverFactory;
 
-[RECOMMENDED] Use the interface PlannerBenchmarkFactory in favor of XmlPlannerBenchmarkFactory
+[RECOMMENDED] Use the interface `PlannerBenchmarkFactory` in favor of `XmlPlannerBenchmarkFactory`
 Before in *.java:
     XmlPlannerBenchmarkFactory plannerBenchmarkFactory = new XmlPlannerBenchmarkFactory("...BenchmarkConfig.xml");
 After in *.java:
     PlannerBenchmarkFactory plannerBenchmarkFactory = new XmlPlannerBenchmarkFactory("...BenchmarkConfig.xml");
 
-[MAJOR] The interfaces Score and ScoreHolder and their subclasses have been promoted from the impl to the api package.
-Before in *.java and *.drl:
+[MAJOR] The interfaces `Score` and `ScoreHolder` and their subclasses have been promoted from the `impl` to the `api` package.
+Before in \*.java` and `*.drl:
     import org.optaplanner.core.impl.score...Score;
     import org.optaplanner.core.impl.score...SimpleScore;
     import org.optaplanner.core.impl.score...HardAndSoftScore;
     ...
-After in *.java and *.drl:
+After in \*.java` and `*.drl:
     import org.optaplanner.core.api.score...Score;
     import org.optaplanner.core.api.score...SimpleScore;
     import org.optaplanner.core.api.score...HardAndSoftScore;
     ...
-Before in *.java and *.drl:
+Before in \*.java` and `*.drl:
     import org.optaplanner.core.impl.score...ScoreHolder;
     import org.optaplanner.core.impl.score...SimpleScoreHolder;
     import org.optaplanner.core.impl.score...HardAndSoftScoreHolder;
     ...
-After in *.java and *.drl:
+After in \*.java` and `*.drl:
     import org.optaplanner.core.api.score...ScoreHolder;
     import org.optaplanner.core.api.score...SimpleScoreHolder;
     import org.optaplanner.core.api.score...HardAndSoftScoreHolder;
     ...
-Note: ScoreDefinition has not been promoted (yet), even though you might use that in @XStreamConverter.
-Note: ConstraintOccurrence hasn't been promoted yet, even though you use it in the drl files.
+Note: `ScoreDefinition` has not been promoted (yet), even though you might use that in `@XStreamConverter`.
+Note: `ConstraintOccurrence` hasn't been promoted yet, even though you use it in the drl files.
 
-[README] Planner has upgraded from the drools 4 RuleBase API to the drools 6 KieBase API.
-It has skipped the Drools 5 KnowledgeBase API.
+[README] Planner has upgraded from the Drools 4 `RuleBase` API to the Drools 6 `KieBase` API.
+It has skipped the Drools 5 `KnowledgeBase` API.
 
-[MAJOR] ScoreDirectorFactoryConfig's method setRuleBase() has been replaced by setKieBase()
+[MAJOR] `ScoreDirectorFactoryConfig` 's method `setRuleBase()` has been replaced by `setKieBase()`
 Before in *.java:
     RuleBase ruleBase = ...;
     solverFactory.getSolverConfig().getScoreDirectorFactoryConfig.setRuleBase(ruleBase);
@@ -703,7 +703,7 @@ After in *.java:
     KieBase kieBase = ...;
     solverFactory.getSolverConfig().getScoreDirectorFactoryConfig.setKieBase(kieBase);
 
-[MINOR] If you used the hack from the examples to extract the ConstraintOccurrences from the guiScoreDirectory.
+[MINOR] If you used the hack from the examples to extract the `ConstraintOccurrences` from the `guiScoreDirectory`.
 Before in *.java:
     import org.drools.core.ClassObjectFilter;
     import org.drools.core.WorkingMemory;
@@ -732,17 +732,18 @@ After in *.java:
                 ...
             }
 
-[README] In score DRL's, the insertLogical ConstraintOccurrence technique has been replaced with the ConstraintMatch technique.
+[README] In score DRL's, the insertLogical `ConstraintOccurrence` technique has been replaced with the `ConstraintMatch` technique.
 That new technique is much faster (see blog for details), easier to use and far less error-prone.
-Unlike ConstraintOccurrence, ConstraintMatch doesn't care about the equals/hashcode implementations of your classes.
-Also, the ConstraintMatch and ConstraintMatchTotal instances are designed to be reused outside Planner.
+Unlike `ConstraintOccurrence`, `ConstraintMatch` doesn't care about the equals/hashcode implementations of your classes.
+Also, the `ConstraintMatch` and `ConstraintMatchTotal` instances are designed to be reused outside Planner.
 
-[MAJOR] Change your scoreDrl's to use the ConstraintMatch technique.
-Instead of doing an insertLogical of a ConstraintOccurrence, they now call scoreHolder.add*ConstraintMatch()
+[MAJOR] Change your scoreDrl's to use the `ConstraintMatch` technique.
+Instead of doing an insertLogical of a `ConstraintOccurrence`, they now call `scoreHolder.add*ConstraintMatch()`
 and no longer need to supply the infamous causes parameter.
 In the DRL, the LHS (= when parts) remain unchanged: only the RHS (= then parts) change
-and the accumulate*Score rules are removed.
+and the `accumulate*Score` rules are removed.
 First, backup the old DRL, so you can easily verify that the new DRL works exactly the same as the old one:
+----
     cp cloudBalancingScoreRules.drl cloudBalancingScoreRulesOld.drl
 Before in *ScoreRules.drl, to delete:
     import org.optaplanner.core.impl.score.constraint.IntConstraintOccurrence;
@@ -807,11 +808,11 @@ After in *ScoreRules.drl:
         then
             scoreHolder.addConstraintMatch(kcontext, -1);
     end
-Note: kcontext is a magic variable name automatically made available by Drools Expert in the RHS (= then part).
-Note: The causes array parameter (for example $leftLecture, $rightLecture, $computer) is gone,
-because it is automatically deduced from kcontext.
-WARNING: Because ConstraintMatch doesn't do an insertLogical, nor does it depends on the equals/hashcode of your objects,
-there is a small chance that the ConstraintOccurrence counted a lower score (often unintentional by the author).
+Note: `kcontext` is a magic variable name automatically made available by Drools Expert in the RHS (= then part).
+Note: The causes array parameter (for example `$leftLecture`, `$rightLecture`, `$computer`) is gone,
+because it is automatically deduced from `kcontext`.
+WARNING: Because `ConstraintMatch` doesn't do an `insertLogical`, nor does it depends on the equals/hashcode of your objects,
+there is a small chance that the `ConstraintOccurrence` counted a lower score (often unintentional by the author).
 To detect this uncomment this code in *SolverConfig.xml to verify that the new DRL works exactly the same as the old one:
     <!--<environmentMode>FULL_ASSERT</environmentMode>-->
     ...
@@ -823,16 +824,16 @@ To detect this uncomment this code in *SolverConfig.xml to verify that the new D
       <!--</assertionScoreDirectorFactory>-->
     </scoreDirectorFactory>
 In 6.0 (not in 6.1), the score corruption analysis helps to identify the rule which behaves differently.
-If it fails, it is because in the old way, 2 or more different fire events of a score rule inserted equal ConstraintOccurrences.
-In the new way, every fire event of a score rule adds a unique ConstraintMatch
+If it fails, it is because in the old way, 2 or more different fire events of a score rule inserted equal `ConstraintOccurrences`.
+In the new way, every fire event of a score rule adds a unique `ConstraintMatch`
 (there's a 1 to 1 relationship - which is expected by most users anyway).
-IMPORTANT: The class ConstraintOccurrence will be removed in 6.1.0.Final, so switch to ConstraintMatch now.
-The only reason why ConstraintOccurrence has not been removed already,
-is to make the migration easier: so you can easily verify that after migration to ConstraintMatch, it gives the exact same scores, but faster.
+IMPORTANT: The class `ConstraintOccurrence` will be removed in 6.1.0.Final, so switch to `ConstraintMatch` now.
+The only reason why `ConstraintOccurrence` has not been removed already,
+is to make the migration easier: so you can easily verify that after migration to `ConstraintMatch`, it gives the exact same scores, but faster.
 NOTE: The examples still include their old drl variant too until 6.0.0.Beta4, if you want to use it for comparison.
 
-[MINOR] If you use ConstraintOccurrence outside of Planner itself, in the gui or your middleware,
-for example, to show the user the constraint matches, switch to using ConstraintMatch and ConstraintMatchTotal instead.
+[MINOR] If you use `ConstraintOccurrence` outside of Planner itself, in the gui or your middleware,
+for example, to show the user the constraint matches, switch to using `ConstraintMatch` and `ConstraintMatchTotal` instead.
 Before in *.java:
     public List<ScoreDetail> getScoreDetailList() {
         if (!(guiScoreDirector instanceof DroolsScoreDirector)) {
@@ -867,10 +868,10 @@ Before in *.java:
     ... constraintOccurrence.getCauses()
 After in *.java:
     ... constraintMatch.getJustificationList()
-Note: the justificationList might have more or different elements than the causes,
+Note: the `justificationList` might have more or different elements than the causes,
 but it should be possible to extract the same information.
 
-[MINOR] If you use a DRL query to extract the ConstraintOccurrence, use ConstraintMatch and ConstraintMatchTotal instead.
+[MINOR] If you use a DRL query to extract the `ConstraintOccurrence`, use `ConstraintMatch` and `ConstraintMatchTotal` instead.
 Before in *.drl:
     query "selectAllBrokenRules"
        $brokenRule : IntConstraintOccurrence(constraintType == ConstraintType.HARD)
@@ -878,7 +879,7 @@ Before in *.drl:
 After in *.java:
     guiScoreDirector.getConstraintMatchTotals()
 
-[MINOR] If you have a custom ScoreDefinition implementation: the method buildScoreHolder() has changed signature.
+[MINOR] If you have a custom `ScoreDefinition` implementation: the method `buildScoreHolder()` has changed signature.
 Before in *ScoreDefinition.java:
     public ScoreHolder buildScoreHolder() {
         return new HardSoftScoreHolder();
@@ -893,8 +894,8 @@ After in *ScoreDefinition.java:
 From 6.0.0.Beta1 to 6.0.0.Beta2
 -------------------------------
 
-[MINOR] optaplanner-examples: The class XStreamSolutionDaoImpl has been renamed to XStreamSolutionDao.
-This should not affect you because you should not be depending on optaplanner-examples.
+[MINOR] `optaplanner-examples`: The class `XStreamSolutionDaoImpl` has been renamed to `XStreamSolutionDao`.
+This should not affect you because you should not be depending on `optaplanner-examples`.
 Before in *.java:
     public class ...DaoImpl extends XStreamSolutionDaoImpl {...}
 After in *.java:
@@ -909,7 +910,7 @@ After in *.java:
     PlannerBenchmarkFactory plannerBenchmarkFactory = new FreemarkerXmlPlannerBenchmarkFactory(
             benchmarkConfigTemplate);
 
-[MAJOR] The forager property minimalAcceptedSelection has been renamed to acceptedCountLimit.
+[MAJOR] The `forager` property `minimalAcceptedSelection` has been renamed to `acceptedCountLimit`.
 Before in *Config.xml:
     <forager>
       <minimalAcceptedSelection>1000</minimalAcceptedSelection>
@@ -923,15 +924,15 @@ After in *Config.xml:
 From 6.0.0.Beta2 to 6.0.0.Beta3
 -------------------------------
 
-[MINOR] If you have a custom ScoreDefinition implementation: the interface Score has a new method power(double).
+[MINOR] If you have a custom `ScoreDefinition` implementation: the interface `Score` has a new method `power(double)`.
 After in *Score.java:
     public HardSoftScore power(double exponent) {
         return new HardSoftScore((int) Math.floor(Math.pow(hardScore, exponent)),
                 (int) Math.floor(Math.pow(softScore, exponent)));
     }
 
-[MINOR] If you have a custom Score implementation: Score's method toDoubleLevels() has been renamed to toLevelNumbers().
-Now it returns an array of Number instead of an array of doubles.
+[MINOR] If you have a custom `Score` implementation: Score's method `toDoubleLevels()` has been renamed to `toLevelNumbers()`.
+Now it returns an array of `Number` instead of an array of doubles.
 Before in *Score.java:
     public double[] toDoubleLevels() {
         return new double[]{hardScore, softScore};
@@ -941,11 +942,11 @@ After in *Score.java:
         return new Number[]{hardScore, softScore};
     }
 
-[MINOR] The LateAcceptanceAcceptor now also accepts any move that improves the current solution.
-If you use <lateAcceptanceSize> in your config, this will impact your results (normally in a good way).
+[MINOR] The `LateAcceptanceAcceptor` now also accepts any move that improves the current solution.
+If you use `<lateAcceptanceSize>` in your config, this will impact your results (normally in a good way).
 
-[MAJOR] The tabu search acceptor properties planningEntityTabuSize and planningValueTabuSize have been renamed
-to entityTabuSize and valueTabuSize.
+[MAJOR] The tabu search acceptor properties `planningEntityTabuSize` and `planningValueTabuSize` have been renamed
+to `entityTabuSize` and `valueTabuSize`.
 Before in *Config.xml:
     <acceptor>
       <planningEntityTabuSize>...</planningEntityTabuSize>
@@ -961,22 +962,22 @@ After in *Config.xml:
       <fadingValueTabuSize>...</fadingValueTabuSize>
     </acceptor>
 
-[MINOR] The implementation classes PlanningEntityTabuAcceptor and PlanningValueTabuAcceptor have been renamed
-to EntityTabuAcceptor and ValueTabuAcceptor
+[MINOR] The implementation classes `PlanningEntityTabuAcceptor` and `PlanningValueTabuAcceptor` have been renamed
+to `EntityTabuAcceptor` and `ValueTabuAcceptor`
 
-[MINOR] <subChainChangeMoveSelector> and <subChainSwapMoveSelector> combined with a <maximumSubChainSize> value
+[MINOR] `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>` combined with a `<maximumSubChainSize>` value
 did not select all possible moves previously. If you use this, you might want to rerun benchmarks.
 
 
 From 6.0.0.Beta3 to 6.0.0.Beta4
 -------------------------------
 
-[MINOR] *Descriptor classes's methods have dropped the Planning prefix verbosity:
-Methods like getPlanningEntityDescriptor() have been renamed to getEntityDescriptor()
-Methods like getPlanningVariableDescriptor() have been renamed to getVariableDescriptor()
+[MINOR] `*Descriptor` classes' methods have dropped the Planning prefix verbosity:
+Methods like `getPlanningEntityDescriptor()` have been renamed to `getEntityDescriptor()`
+Methods like `getPlanningVariableDescriptor()` have been renamed to `getVariableDescriptor()`
 Normally, your code should not be using those classes/methods.
 
-[MAJOR] Benchmarker: the <problemStatisticType> BEST_SOLUTION_CHANGED has been renamed to BEST_SCORE
+[MAJOR] Benchmarker: the `<problemStatisticType>` `BEST_SOLUTION_CHANGED` has been renamed to `BEST_SCORE`
 Before in *BenchmarkConfig.xml:
     <problemBenchmarks>
        ...
@@ -988,14 +989,13 @@ After in *BenchmarkConfig.xml:
       <problemStatisticType>BEST_SCORE</problemStatisticType>
     </problemBenchmarks>
 
-[MAJOR] The methods beforeAllVariablesChanged() and afterAllVariablesChanged() have been removed
-from IncrementalScoreCalculator and ScoreDirector.
+[MAJOR] The methods `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` have been removed
+from `IncrementalScoreCalculator` and `ScoreDirector`.
 This was needed to make planning variable listeners work efficiently.
 Before in *IncrementalScoreCalculator.java:
     public void beforeAllVariablesChanged(Object entity) {
         ...
     }
-
     public void afterAllVariablesChanged(Object entity) {
         ...
     }
@@ -1016,27 +1016,24 @@ After in *Move.java:
         scoreDirector.afterVariableChanged(lecture, "room");
     }
 
-[README] The VehicleRouting example has been rewritten to take advantage of Variable Listeners.
+[README] The `VehicleRouting` example has been rewritten to take advantage of Variable Listeners.
 This makes it easier to implement time windowed vehicle routing.
-A variable listener is triggered when the variable (previousStandstill) changes
-and updates a shadow variable (vehicle, arrivalTime) accordingly.
+A variable listener is triggered when the variable (`previousStandstill`) changes
+and updates a shadow variable (`vehicle`, `arrivalTime`) accordingly.
 
-[MAJOR] The generic moves <subChainChangeMoveSelector> and <subChainSwapMoveSelector>
-no longer signal Drools/IncrementalScoreCalculator that an entity has changed when the anchor of an entity changes
+[MAJOR] The generic moves `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`
+no longer signal `Drools/IncrementalScoreCalculator` that an entity has changed when the anchor of an entity changes
 if none of the actual planning variables of the entity changed.
 So if you have shadow variable representing the anchor (for example the vehicle in VRP) this might cause score corruption.
-Instead, add a variable listener to update the shadow variable and signal the ScoreDirector accordingly.
+Instead, add a variable listener to update the shadow variable and signal the `ScoreDirector` accordingly.
 Before in *.java:
     public class VrpCustomer ... {
-
         // Planning variables: changes during planning, between score calculations.
         protected VrpStandstill previousStandstill;
-
         @PlanningVariable(chained = true) ...
         public VrpStandstill getPreviousStandstill() {
             return previousStandstill;
         }
-
         public VrpVehicle getVehicle() {
             // HACK
             VrpStandstill firstStandstill = getPreviousStandstill();
@@ -1052,26 +1049,22 @@ Before in *.java:
     }
 After in *.java:
     public class VrpCustomer ... {
-
         // Planning variables: changes during planning, between score calculations.
         protected VrpStandstill previousStandstill;
-
         // Shadow variable
         protected VrpVehicle vehicle;
-
         @PlanningVariable(chained = true, variableListenerClasses = {VehicleUpdatingVariableListener.class}) ...
         public VrpStandstill getPreviousStandstill() {
             return previousStandstill;
         }
-
         public VrpVehicle getVehicle() {
             return vehicle;
         }
         ...
     }
-To make it easier to implement that listener, a bi-directional relationship was introduced on VrpStandstill,
-which made VrpStandstill a @PlanningEntity (which effectively makes VrpVehicle a planning entity too)
-and Solution.getVehicleList()'s method annotated with @PlanningEntityCollectionProperty:
+To make it easier to implement that listener, a bi-directional relationship was introduced on `VrpStandstill`,
+which made `VrpStandstill` a `@PlanningEntity` (which effectively makes `VrpVehicle` a planning entity too)
+and `Solution.getVehicleList()` 's method annotated with `@PlanningEntityCollectionProperty`:
 Before in VrpStandstill.java:
     public interface VrpStandstill {
         ...
@@ -1088,7 +1081,6 @@ Before in VrpSchedule.java:
     public List<VrpVehicle> getVehicleList() {
         return vehicleList;
     }
-
     public Collection<? extends Object> getProblemFacts() {
         ...
         facts.addAll(vehicleList);
@@ -1099,22 +1091,25 @@ After in VrpSchedule.java:
     public List<VrpVehicle> getVehicleList() {
         return vehicleList;
     }
-
     public Collection<? extends Object> getProblemFacts() {
         ...
         return facts;
     }
-Before in *SolverConfig.java and *BenchmarkConfig.java:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <solver>
       ...
       <planningEntityClass>org.optaplanner.examples.vehiclerouting.domain.VrpCustomer</planningEntityClass>
-After in *SolverConfig.java and *BenchmarkConfig.java:
+      ...
+    </solver>
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
     <solver>
       ...
       <planningEntityClass>org.optaplanner.examples.vehiclerouting.domain.VrpCustomer</planningEntityClass>
       <planningEntityClass>org.optaplanner.examples.vehiclerouting.domain.VrpStandstill</planningEntityClass>
+      ...
+    </solver>
 
-[MINOR] SolverConfig's method setPlanningEntityClassSet() has changed into setPlanningEntityClassList()
+[MINOR] `SolverConfig` 's method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
 because the order is important.
 Before in *.java:
     ... = solverConfig.getPlanningEntityClassSet()
@@ -1127,7 +1122,7 @@ After in *.java:
 From 6.0.0.Beta4 to 6.0.0.Beta5
 -------------------------------
 
-[MINOR] If you extended a Config class: the build*() method's parameters have been wrapped into a HeuristicConfigPolicy instance.
+[MINOR] If you extended a Config class: the `build*()` method's parameters have been wrapped into a `HeuristicConfigPolicy` instance.
 Before in *Config.java:
     public ... build...(EnvironmentMode environmentMode, ScoreDefinition scoreDefinition) {
 After in *Config.java:
@@ -1137,12 +1132,16 @@ After in *Config.java:
 From 6.0.0.Beta5 to 6.0.0.CR1
 -----------------------------
 
-[MINOR] XStreamProblemIO has been modified to use a vanilla XStream instance (but still with ID_REFERENCES)
+[MINOR] `XStreamProblemIO` has been modified to use a vanilla `XStream` instance (but still with ID_REFERENCES)
 instead of a complex construction to avoid an issue that has been fixed meanwhile.
 Before it did:
+[source, java]
+----
     xStream = new XStream(new PureJavaReflectionProvider(new FieldDictionary(new NativeFieldKeySorter())));
     xStream.setMode(XStream.ID_REFERENCES);
 Now it simply does:
+[source, java]
+----
     xStream = new XStream();
     xStream.setMode(XStream.ID_REFERENCES);
 Normally this should have no relevant impact on your XML dataset files or your code.
@@ -1152,15 +1151,15 @@ The basic configuration hasn't changed much, but power users can now optionally 
 These advanced options allow you to use construction heuristics with multiple entity classes,
 a higher number of variables, nullable variables, ...
 
-[MAJOR] The construction heuristic property <constructionHeuristicPickEarlyType> has been renamed to <pickEarlyType>.
-The value FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING has been renamed to FIRST_NON_DETERIORATING_SCORE.
-The <pickEarlyType> has been nested into a <forager> element (similar like for Local Search).
-Before in *SolverConfig.java and *BenchmarkConfig.java:
+[MAJOR] The construction heuristic property `<constructionHeuristicPickEarlyType>` has been renamed to `<pickEarlyType>`.
+The value `FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING` has been renamed to `FIRST_NON_DETERIORATING_SCORE`.
+The `<pickEarlyType>` has been nested into a `<forager>` element (similar like for Local Search).
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <constructionHeuristic>
         ...
         <constructionHeuristicPickEarlyType>FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING</constructionHeuristicPickEarlyType>
       </constructionHeuristic>
-After in *SolverConfig.java and *BenchmarkConfig.java:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
       <constructionHeuristic>
         ...
         <forager>
@@ -1168,14 +1167,16 @@ After in *SolverConfig.java and *BenchmarkConfig.java:
         </forager>
       </constructionHeuristic>
 
-[MINOR] The class ConstructionHeuristicPickEarlyType has moved to another package.
+[MINOR] The class `ConstructionHeuristicPickEarlyType` has moved to another package.
 
 [MINOR] If you have multiple variables, the result of the construction heuristic is likely to differ.
 Even though the default still does a cartesian production over the variables for the FIT algorithm you choose,
 it will order the combinations in the original order (instead of reverse order as the old implementation did by accident),
 which might cause it to take a totally different path.
 Note: Through advanced configuration it's possible to make the new implementation behave exactly the same as the old,
-but this is NOT recommended:
+but this is *NOT* recommended:
+[source, xml]
+----
       <constructionHeuristic>
          ...
          <queuedEntityPlacer>
@@ -1202,7 +1203,7 @@ but this is NOT recommended:
          </queuedEntityPlacer>
        </constructionHeuristic>
 
-[MAJOR] The @ValueRange property excludeUninitializedPlanningEntity has been removed.
+[MAJOR] The `@ValueRange` property `excludeUninitializedPlanningEntity` has been removed.
 Planner now does the right thing automatically for a chained variable.
 Before in *.java:
     @PlanningVariable(chained = true, ...)
@@ -1215,17 +1216,16 @@ After in *.java:
     @ValueRanges({...,
             @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "customerList")})
     public VrpStandstill getPreviousStandstill() {...}
-If you used it on a non-chained variable (which is highly unlikely), look into ValueSelector filtering
+If you used it on a non-chained variable (which is highly unlikely), look into `ValueSelector` filtering
 and let us know that such use cases exist (by creating a jira in our issue tracker).
 
-[MAJOR] The annotation @ValueRange on a planning variable has been replaced by
-@ValueRangeProvider on the providing method itself and @PlanningVariable(valueRangeProviderRefs) on planning variable.
-ValueRangeType.FROM_SOLUTION_PROPERTY has been removed:
+[MAJOR] The annotation `@ValueRange` on a planning variable has been replaced by
+`@ValueRangeProvider` on the providing method itself and `@PlanningVariable(valueRangeProviderRefs)` on planning variable.
+`ValueRangeType.FROM_SOLUTION_PROPERTY` has been removed:
 Before in *.java:
     @PlanningEntity
     public class CloudProcess ... {
         ...
-
         @PlanningVariable()
         @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "computerList")
         public CloudComputer getComputer() {
@@ -1234,9 +1234,7 @@ Before in *.java:
     }
     @PlanningSolution
     public class CloudBalance ... {
-
         ...
-
         public List<CloudComputer> getComputerList() {
             return computerList;
         }
@@ -1245,7 +1243,6 @@ After in *.java:
     @PlanningEntity
     public class CloudProcess ... {
         ...
-
         @PlanningVariable(valueRangeProviderRefs = {"computerRange"})
         public CloudComputer getComputer() {
             return computer;
@@ -1254,18 +1251,16 @@ After in *.java:
     @PlanningSolution
     public class CloudBalance ... {
         ...
-
         @ValueRangeProvider(id = "computerRange")
         public List<CloudComputer> getComputerList() {
             return computerList;
         }
     }
-Consequently, the annotation @ValueRanges has been removed.
+Consequently, the annotation `@ValueRanges` has been removed.
 Before in *.java:
     @PlanningEntity
     public class Visit ... {
         ...
-
         @PlanningVariable(chained = true)
         @ValueRanges({
                 @ValueRange(type = ValueRangeType.FROM_SOLUTION_PROPERTY, solutionProperty = "domicileList"),
@@ -1275,9 +1270,7 @@ Before in *.java:
     @PlanningSolution
     public class TravelingSalesmanTour ... {
         ...
-
         public List<Domicile> getDomicileList() {...}
-
         @PlanningEntityCollectionProperty
         public List<Visit> getVisitList() {...}
     }
@@ -1285,33 +1278,28 @@ After in *.java:
     @PlanningEntity
     public class Visit ... {
         ...
-
         @PlanningVariable(chained = true, valueRangeProviderRefs = {"domicileRange", "visitRange"})
         public Standstill getPreviousStandstill() {...}
     }
     @PlanningSolution
     public class TravelingSalesmanTour ... {
         ...
-
         @ValueRangeProvider(id = "domicileRange")
         public List<Domicile> getDomicileList() {...}
-
         @PlanningEntityCollectionProperty
         @ValueRangeProvider(id = "visitRange")
         public List<Visit> getVisitList() {...}
     }
-ValueRangeType.FROM_ENTITY_PROPERTY has been removed too:
+`ValueRangeType.FROM_ENTITY_PROPERTY` has been removed too:
 Before in *.java:
     @PlanningEntity
     public class Allocation ... {
         ...
-
         @PlanningVariable()
         @ValueRange(type = ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY, planningEntityProperty = "executionModeRange")
         public ExecutionMode getExecutionMode() {
             return executionMode;
         }
-
         public List<ExecutionMode> getExecutionModeRange() {
             return job.getExecutionModeList();
         }
@@ -1320,21 +1308,19 @@ After in *.java:
     @PlanningEntity
     public class Allocation ... {
         ...
-
         @PlanningVariable(valueRangeProviderRefs = {"executionModeRange"})
         public ExecutionMode getExecutionMode() {
             return executionMode;
         }
-
         @ValueRangeProvider(id = "executionModeRange")
         public List<ExecutionMode> getExecutionModeRange() {
             return job.getExecutionModeList();
         }
     }
 
-[MINOR] The ValueRangeType.UNDEFINED has been removed: it is no longer supported.
+[MINOR] The `ValueRangeType.UNDEFINED` has been removed: it is no longer supported.
 
-[IMPL_DETAIL] DefaultDecider has been renamed to LocalSearchDecider.
+[IMPL_DETAIL] `DefaultDecider` has been renamed to `LocalSearchDecider`.
 
 
 From 6.0.0.CR1 to 6.0.0.CR2
@@ -1344,33 +1330,33 @@ From 6.0.0.CR1 to 6.0.0.CR2
 From 6.0.0.CR2 to 6.0.0.CR3
 ---------------------------
 
-[MINOR] If you combine a @PlanningVariable(mappedBy = ...) with a Java IncrementalScoreCalculator:
-it now calls before/afterVariableChanged methods correctly.
+[MINOR] If you combine a `@PlanningVariable(mappedBy = ...)` with a Java `IncrementalScoreCalculator`:
+it now calls `before/afterVariableChanged` methods correctly.
 
 
 From 6.0.0.CR3 to 6.0.0.CR4
 ---------------------------
 
-[MINOR] The examples data dir "input" has been renamed to "import" and "output" has been renamed to "export".
+[MINOR] The examples data dir `input` has been renamed to `import` and `output` has been renamed to `export`.
 
 [MINOR] The VRP example's now calculates the distance and time more accurately.
-To avoid floating-point arithmetic with HardSoftDoubleScore (which causes rounding errors and score corruption)
-and to avoid a performance loss with HardSoftBigDecimalScore,
-all distances and times have been multiplied by 1000 so it can continue to use HardSoftScore (which uses ints).
+To avoid floating-point arithmetic with `HardSoftDoubleScore` (which causes rounding errors and score corruption)
+and to avoid a performance loss with `HardSoftBigDecimalScore`,
+all distances and times have been multiplied by 1000 so it can continue to use `HardSoftScore` (which uses ints).
 
 
 From 6.0.0.CR4 to 6.0.0.CR5
 ---------------------------
 
-[MINOR] If the <acceptor> element has no configuration, it now fail-fast.
-It used to default to entityTabuSize 7. To continue that behaviour, configure it explicitly.
+[MINOR] If the `<acceptor>` element has no configuration, it now fail-fast.
+It used to default to `entityTabuSize` 7. To continue that behaviour, configure it explicitly.
 For good advice on what to configure, see the docs section "Which optimization algorithms should I use?".
-Before in *SolverConfig.xml and *BenchmarkConfig.xml:
+Before in *SolverConfig.xml` and `*BenchmarkConfig.xml:
   <localSearch>
     <acceptor/>
     ...
   </localSearch>
-After in *SolverConfig.xml and *BenchmarkConfig.xml:
+After in *SolverConfig.xml` and `*BenchmarkConfig.xml:
   <localSearch>
     <acceptor>
       <entityTabuSize>7</entityTabuSize>
@@ -1385,26 +1371,22 @@ From 6.0.0.CR5 to 6.0.0.Final
 [MINOR] The hospital bed planning (PAS) example's score function has severally changed.
 It now has more hard constraints and demonstrates overconstrained planning (with a nullable variable).
 
-[MAJOR] The interface MoveListFactory now has a generic type (which extends Solution)
-that is used as the parameter in the createMoveList() method.
+[MAJOR] The interface `MoveListFactory` now has a generic type (which extends `Solution`)
+that is used as the parameter in the `createMoveList()` method.
 Before in *.java:
     public class RowChangeMoveFactory implements MoveListFactory {
-
         public List<Move> createMoveList(Solution solution) {
             NQueens nQueens = (NQueens) solution;
             ...
         }
-
     }
 After in *.java:
     public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
-
         public List<Move> createMoveList(NQueens nQueens) {
             ...
         }
-
     }
 
-[MINOR] ConstraintMatch no longer has a getConstraintMatchTotal() method
-because a ConstraintMatch can survive many Local Search steps, but its Total (which holds a Set) should not survive.
-Instead it has getConstraintPackage(), getConstraintName() and getScoreLevel().
+[MINOR] `ConstraintMatch` no longer has a `getConstraintMatchTotal()` method
+because a `ConstraintMatch` can survive many Local Search steps, but its Total (which holds a `Set`) should not survive.
+Instead it has `getConstraintPackage()`, `getConstraintName()` and `getScoreLevel()`.
