@@ -1,5 +1,5 @@
 = Release Notes 6.4
-:awestruct-description: New and noteworthy, demo's and status for OptaPlanner 6.4.
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 6.4.
 :awestruct-layout: normalBaseWithComments
 :awestruct-priority: 1.0
 :showtitle:
@@ -43,6 +43,30 @@ OptaPlanner is:
 
 [[NewAndNoteWorthy]]
 == New and noteworthy
+
+=== Statistical benchmarking
+
+Statistical benchmarking allows you to rerun your single benchmarks multiple times.
+This can be useful to eliminate influences of the environment and verify the results of your benchmarks.
+
+The report visualizes the results of the runs in the "Best score" table,
+and also compares the results of sub single benchmarks for each problem benchmark in a box plot chart:
+
+image:6.4/subSingleBenchmarkSummaryStatistic.png[sub single benchmark summary statistic]
+
+To enable it, add the following line with a positive integer as a parameter to your `<inheritedSolverBenchmark>`
+or to individual `<solverBenchmark>` elements.
+
+[source,xml]
+----
+<inheritedSolverBenchmark>
+  <name>...</name>
+  <solver>
+    ...
+  </solver>
+  <subSingleCount>N</subSingleCount>
+</inheritedSolverBenchmark>
+----
 
 === Other improvements
 
