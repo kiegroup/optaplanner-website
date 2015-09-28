@@ -72,6 +72,7 @@ or to individual `<solverBenchmark>` elements.
 
 * Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
 * Apache Camel's camel-optaplanner 2.16 supports async solving, daemon mode and ProblemFactChange processing. Contributed by Bilgin Ibryam.
+* A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
 
 == Archive
 
