@@ -2,7 +2,7 @@
 
 convertToAdoc () {
     while read line; do
-        eval echo "$line"
+        eval "echo ""$line"""
     done < header
     echo
     awk '
@@ -46,7 +46,7 @@ s/IMPORTANT: /Important: /g; # Dont create a block
 }
 
 previous=""
-version='5.*'
+version='5.5'
 
 for file in `ls upgradeRecipe*.txt`; do
     newfile=`echo "$file" | sed 's/\.txt/.adoc/g'`

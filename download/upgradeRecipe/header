@@ -2,5 +2,6 @@
 :awestruct-description: New and noteworthy, demos and status for OptaPlanner $version.
 :awestruct-layout: upgradeRecipeBase
 :awestruct-priority: 1.0
-:showtitle:
+:awestruct-upgrade_recipe_version: $version
+:awestruct-upgrade_recipe_previous_version: $previous
 :icons: font
