@@ -13,7 +13,7 @@ and the http://www.jbpm.org[jBPM] workflow engine (http://kverlaen.blogspot.be/2
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently.
 
-*link:../../download/download.html#NonFinalReleases[Download it now]*, link:../../learn/documentation.html#NonFinalReleases[read the docs]
+*link:../../download/download.html#FinalReleases[Download it now]*, link:../../learn/documentation.html#FinalReleases[read the docs]
 or link:#NewAndNoteWorthy[scroll to the new and noteworthy].
 
 == Demo videos
