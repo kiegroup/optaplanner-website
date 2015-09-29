@@ -6,7 +6,7 @@
 
 == OptaPlanner 6.3 announcement
 
-We are happy to announce the 6.3 *Final* release of OptaPlanner.
+We are happy to announce the 6.3 *Final* release of http://www.optaplanner.org[OptaPlanner].
 It is released alongside the http://www.drools.org[Drools] rule engine (http://blog.athico.com/2015/09/drools-630final-released.html[release notes])
 and the http://www.jbpm.org[jBPM] workflow engine (http://kverlaen.blogspot.be/2015/09/jbpm-63-released.html[release notes]).
 
