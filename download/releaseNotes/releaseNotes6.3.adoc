@@ -7,6 +7,7 @@
 == OptaPlanner 6.3 announcement
 
 We are happy to announce the 6.3 *Final* release of OptaPlanner.
+It is released alongside the Drools rule engine and the jBPM workflow engine.
 
 OptaPlanner is a lightweight, embeddable planning engine written in Java™
 to solve constraint satisfaction problems efficiently.
