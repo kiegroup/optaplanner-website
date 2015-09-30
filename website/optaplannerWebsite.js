@@ -3,7 +3,7 @@ function toggleShowHiddenSection(hiddenSection) {
     hiddenSection.toggle();
 }
 
-function insertShowSolutionButtons() {
+function insertShowHiddenSectionButtons() {
     $('.hidden-section').each(function(idx, node) {
         var hiddenSection = $(node);
         var showHiddenSectionButton = $('<a class="show-hidden-section" href="#">Show/hide</a>');
@@ -16,7 +16,7 @@ function insertShowSolutionButtons() {
     });
 }
 
-$(insertShowSolutionButtons);
+$(insertShowHiddenSectionButtons);
 
 $(document).ready( function() {
     $('.carousel').carousel();
