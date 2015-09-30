@@ -1,0 +1,17 @@
+= Upgrade recipe 5.5
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 5.5.
+:awestruct-layout: upgradeRecipeBase
+:awestruct-priority: 1.0
+:awestruct-upgrade_recipe_version: 5.5
+:awestruct-upgrade_recipe_previous_version: 5.5
+:icons: font
+
+
+
+== From 5.* to 5.5.0.Final
+====
+
+To see the upgrade path from an older version (5.0, 5.1, 5.2, 5.3 or 5.4) to 5.5.0.Final, see an older revision of this file:
+https://github.com/droolsjbpm/optaplanner/blob/6.1.0.Final/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt
+====
+
