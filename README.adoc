@@ -1,6 +1,6 @@
 image:https://travis-ci.org/droolsjbpm/optaplanner-website.svg["Build Status", link="https://travis-ci.org/droolsjbpm/optaplanner-website"]
 
-=  Developing Drools and jBPM
+== Developing Drools and jBPM
 
 *If you want to build or contribute to a droolsjbpm project, https://github.com/droolsjbpm/droolsjbpm-build-bootstrap/blob/master/README.md[read this document].*
 
@@ -9,7 +9,7 @@ It solves all known pitfalls that can disrupt your development.
 It also describes all guidelines, tips and tricks.
 If you want your pull requests (or patches) to be merged into master, please respect those guidelines.
 
-= How to build with Awestruct
+== How to build with Awestruct
 
 Follow the instructions of Awestruct's http://awestruct.org/getting_started/[getting started guide].
 
