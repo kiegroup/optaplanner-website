@@ -11,5 +11,6 @@ This is a list of all past and upcoming upgrade recipes:
 * link:upgradeRecipe6.2.html[Upgrade Recipe for OptaPlanner 6.2]
 * link:upgradeRecipe6.1.html[Upgrade Recipe for OptaPlanner 6.1]
 * link:upgradeRecipe6.0.html[Upgrade Recipe for OptaPlanner 6.0]
+* link:upgradeRecipe5.5.html[Upgrade Recipe for OptaPlanner 5.5]
 
 Older upgrade recipes (for Drools Planner) are available in the old Drools documentation.
