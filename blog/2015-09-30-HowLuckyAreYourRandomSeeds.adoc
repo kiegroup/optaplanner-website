@@ -93,16 +93,17 @@ we can see that there are no outliers (they would be drawn as circles in the cha
 *** Specifically, Tabu Search on this use-case is prone to finding an infeasible solution - Late Acceptance only had 5
 infeasible runs (4 of them on the `comp05` dataset and 1 on `comp02`) as compared to Tabu Search's 13 infeasible runs.
 ** There were no outliers on the hard score level.
-** There were 2 outliers in runs of the Late Acceptance solver configuration:
-the relative percentage change in `comp07` being 25%, in `comp01` 104%.
-** The largest relative percentage score change between runs was about 37.5% (Tabu Search on `comp07`)
+** There were 2 outliers: 1 in a run of the Late Acceptance solver configuration
+(in `comp07`, the relative percentage change being 25%) and 1 in a run of the Tabu Search solver configuration
+(in `comp01` with a relative percentage change of 104%).
+** The largest relative percentage score change between runs (without outliers) was about 37.5% (Tabu Search on `comp07`).
 
 * https://docs.jboss.org/optaplanner/blog/benchmark/2015-09-30/machinereassignment[Machine Reassignment benchmark report]
 ** This benchmark solves 10 datasets of the same use-case with 2 different solver configurations.
 ** There were no differences in hard scores between runs.
 ** The only outlier was in a run of the Late Acceptance solver configuration in `model_b_7`:
-the relative percentage change was still only ~3%
-** The largest relative percentage score change between runs was about 8% (Tabu Search on `model_b_3`)
+the relative percentage change was still only ~3%.
+** The largest relative percentage score change between runs was about 8% (Tabu Search on `model_b_3`).
 ** All the problem benchmark score distribution charts, the reliability comparison of different solver configurations
 is visualized very nicely (see for example `model_b_8` -- Late Acceptance is a lot more reliable in that dataset).
 ** In this use-case, we can see a significant triumph of one solver configuration against the other:
