@@ -84,8 +84,8 @@ You can view the individual benchmark reports at the following links:
 ** There were no differences in hard scores between runs.
 ** In the problem benchmark score distribution charts of runs,
 we can see that there are no outliers (they would be drawn as circles in the charts).
-** The relative percentage change from worst to best soft score
-`(|worstScore|-|bestScore|)/|bestScore|)` was at most 13% in Curriculum Course (`comp08`).
+** The biggest difference between runs was in the CurriculumCourse use-case, dataset `comp08`:
+the best run was 17% better than the worst one.
 
 * https://docs.jboss.org/optaplanner/blog/benchmark/2015-09-30/curriculumcourse[Curriculum Course benchmark report]
 ** This benchmark solves 7 datasets of the same use-case with 2 different solver configurations.
@@ -94,16 +94,17 @@ we can see that there are no outliers (they would be drawn as circles in the cha
 infeasible runs (4 of them on the `comp05` dataset and 1 on `comp02`) as compared to Tabu Search's 13 infeasible runs.
 ** There were no outliers on the hard score level.
 ** There were 2 outliers: 1 in a run of the Late Acceptance solver configuration
-(in `comp07`, the relative percentage change being 25%) and 1 in a run of the Tabu Search solver configuration
-(in `comp01` with a relative percentage change of 104%).
-** The largest relative percentage score change between runs (without outliers) was about 37.5% (Tabu Search on `comp07`).
+(in `comp07`, where the worst run was 25% worse than the best) and 1 in a run of the Tabu Search solver configuration
+(in `comp01` where the best run was 91% better than the worst).
+** The biggest difference between runs (without outliers) in a single dataset was using Tabu Search on `comp07`,
+where the best run was about 27% better than the worst.
 
 * https://docs.jboss.org/optaplanner/blog/benchmark/2015-09-30/machinereassignment[Machine Reassignment benchmark report]
 ** This benchmark solves 10 datasets of the same use-case with 2 different solver configurations.
 ** There were no differences in hard scores between runs.
-** The only outlier was in a run of the Late Acceptance solver configuration in `model_b_7`:
-the relative percentage change was still only ~3%.
-** The largest relative percentage score change between runs was about 8% (Tabu Search on `model_b_3`).
+** The only outlier was in a run of the Late Acceptance solver configuration in `model_b_7`,
+where the best run was still only ~3% better than the worst.
+** The biggest difference between runs was about 8% (Tabu Search on `model_b_3`).
 ** All the problem benchmark score distribution charts, the reliability comparison of different solver configurations
 is visualized very nicely (see for example `model_b_8` -- Late Acceptance is a lot more reliable in that dataset).
 ** In this use-case, we can see a significant triumph of one solver configuration against the other:
@@ -112,9 +113,7 @@ f.e. on the datasets `model_b_5` and `model_b_9`
 
 === Summary
 
-The relative percentage score change can seem large
-(the largest one in the General benchmark was 13%, in the CurriculumCourse 104%),
-but this measurement varies wildly per dataset
+The difference between the best and worst run can seem large, but this measurement varies wildly per dataset
 -- there are datasets, where all solver configuration runs vary greatly
 (`comp01` of CurriculumCourse) and then there are datasets,
 where all solver configuration runs vary only by a tiny bit (`model_b_4` of MachineReassignment).
