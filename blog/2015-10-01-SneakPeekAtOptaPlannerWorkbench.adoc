@@ -54,7 +54,7 @@ then the Execution Server solves it on one of its servers and returns the soluti
 
 == Conclusion
 
-OptaPlanner Workbench is build on top of the OptaPlanner engine, but it will not replace it, nor curtail it:
+OptaPlanner Workbench is built on top of the OptaPlanner engine, but it will not replace it, nor curtail it:
 You'll still be able to embed the OptaPlanner engine as before, without the Workbench, if you so desire.
 But the Workbench will offer new opportunities for many use cases.
 
