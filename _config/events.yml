@@ -130,6 +130,14 @@
   url: http://www.bed-con.org/2015/talks/OptaPlanner-hilft-bei-verteilten-Schulstandorten
   presenters: Torsten Fink, Markus Müller
 
+- eventId: 20151006-barcelonajug
+  eventOrganization: Barcelona JUG
+  location: Barcelona, Spain
+  date: 2015-10-06
+  title: Drools, OptaPlanner, jBPM and KIE Workbench
+  url: http://www.barcelonajug.org/2015/10/drools-jbpm-and-friends.html
+  presenters: Drools, OptaPlanner and jBPM team
+
 - eventId: 20151012-javavienna
   eventOrganization: Java Vienna
   location: Vienna, Austria
