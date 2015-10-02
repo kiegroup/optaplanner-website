@@ -163,3 +163,9 @@
   location: Brno, Czech Republic
   date: 2016-02-05
   url: http://www.devconf.cz
+
+- eventId: 20160628-redhatsummit
+  eventOrganization: Red Hat Summit
+  location: San Francisco, US
+  date: 2016-06-28
+  url: http://www.redhat.com/summit/
