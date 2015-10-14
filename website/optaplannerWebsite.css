@@ -44,7 +44,6 @@ footer {
     white-space: normal;
 }
 
-
 /* Twitter bootstrap's navbar-fixed-top's hides content head */
 @media (max-width: 380px) {
     .navbar-brand img {
@@ -82,6 +81,20 @@ li.navbar-form {
     .navbar-toggle {
         margin-right: 100px;
     }
+}
+
+/******************************************************************************
+* Upgrade recipe
+******************************************************************************/
+
+.upgrade-recipe-label-list > li {
+    list-style: none;
+}
+
+.upgrade-recipe-major > .label, .upgrade-recipe-minor > .label, .upgrade-recipe-impl-detail > .label, .upgrade-recipe-recommended > .label, .upgrade-recipe-readme > .label {
+    float: left;
+    margin-right: 10px;
+    font-size: large;
 }
 
 /******************************************************************************

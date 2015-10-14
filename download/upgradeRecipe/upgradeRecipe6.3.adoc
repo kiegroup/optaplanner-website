@@ -4,11 +4,11 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.3
 :awestruct-upgrade_recipe_previous_version: 6.2
-:icons: font
 
 == From 6.2.0.Final to 6.3.0.Beta1
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `@InverseRelationShadowVariable` now supports non-chained planning variables too
 
 [.hidden-section]
 ====
@@ -44,9 +44,9 @@ public class CloudComputer {
 
 ====
 
-=== icon:exclamation-circle[] Major
+[.upgrade-recipe-major]
+=== `Move.toString()` changes
 
-====
 To adhere to Java best practices,
 which state that an `Object.toString()` should identify an instance and be short
 (instead of trying to verbalize it's entire state),
@@ -72,6 +72,7 @@ Before in `*.java`:
 ----
 public class CloudProcess {
     ...
+
     public String `toString()` {
         return processName + "@" + computer.getName();
     }
@@ -83,15 +84,15 @@ After in `*.java`:
 ----
 public class CloudProcess {
     ...
+
     public String toString() {
         return processName;
     }
 }
 ----
 
-====
-
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Empty `<constructionHeuristic>`'s default changed
 
 [.hidden-section]
 ====
@@ -101,7 +102,8 @@ Otherwise, the behaviour is `FIRST_FIT_DECREASING` or `WEAKEST_FIT(_DECREASING)`
 
 ====
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `solverBenchmarkBluePrintType` `ALL_CONSTRUCTION_HEURISTIC_TYPES` has been renamed
 
 [.hidden-section]
 ====
@@ -122,7 +124,8 @@ After in `*BenchmarkConfig.xml`:
 
 ====
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== In real-time planning, calling `addProblemFactChange()` now resets the time spent terminations too
 
 [.hidden-section]
 ====
@@ -132,7 +135,8 @@ The docs have also been fixed to reflect reality, which is also the desired beha
 
 ====
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== In real-time planning, `addProblemFactChange()` no longer replaces the `ScoreDirector`
 
 [.hidden-section]
 ====
@@ -145,7 +149,8 @@ Enable `environmentMode` `FULL_ASSERT` and do a few `addProblemFactChange()` cal
 
 == From 6.3.0.Beta1 to 6.3.0.Beta2
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== If you implemented a custom `ValueRange`, also implement the method `isEmpty()`
 
 [.hidden-section]
 ====
@@ -174,9 +179,9 @@ public class MyDoubleValueRange extends AbstractUncountableValueRange<Double> {
 
 ====
 
-=== icon:exclamation-circle[] Major
+[.upgrade-recipe-major]
+=== If you use multiple planning variables, consider switching to the folded configuration.
 
-====
 If you use multiple planning variables, consider switching to the folded configuration.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -200,11 +205,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   <changeMoveSelector/>
 ----
 
-====
 
-=== icon:exclamation-circle[] Major
+[.upgrade-recipe-major]
+=== If you use multiple entity classes, consider switching to the folded configuration
 
-====
 If you use multiple entity classes, consider switching to the folded configuration.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -239,9 +243,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   <swapMoveSelector/>
 ----
 
-====
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== If your planning solution has a superclass with planner annotations, those will now be ignored
 
 [.hidden-section]
 ====
@@ -289,7 +293,8 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 
 == From 6.3.0.Beta2 to 6.3.0.CR1
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== If a custom `VariableListener` changes 2 shadow variables, use the new `variableListenerRef` property accordingly
 
 [.hidden-section]
 ====
@@ -336,20 +341,19 @@ public Integer getCapacity() {
 
 == From 6.3.0.CR1 to 6.3.0.CR2
 
-=== icon:book[] Readme
+[.upgrade-recipe-readme]
+=== `VariableListeners` no longer trigger chaotically
 
-====
 `VariableListeners` no longer trigger chaotically. This applies to both out of the box shadow variables and custom shadow variables.
 Planner now guarantees that the first `VariableListener` 's `after*()` method triggers *AFTER* the last genuine variable has been modified.
 This means a `VariableListener` is no longer exposed to intermediate state.
 The `before*()` methods still trigger immediately (otherwise they would not be able to capture the source variable's orginal state).
 Furthermore, Planner guarantees this triggering in stages also for `VariableListener` for a shadow variable that depend on earlier shadow variables.
 
-====
 
-=== icon:exclamation-circle[] Major
+[.upgrade-recipe-major]
+=== If you have a custom `Move`, its `doMove()` method must now call `scoreDirector.triggerVariableListeners()`
 
-====
 If you have a custom `Move`, its `doMove()` method must now call `scoreDirector.triggerVariableListeners()` at the end.
 In practice, you should have extended `AbstractMove` - which does the `triggerVariableListeners()` call for you -
 but you'll need to rename your `doMove()` method to `doMoveOnGenuineVariables()`.
@@ -376,11 +380,9 @@ public class CloudComputerChangeMove extends AbstractMove {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== If you have a `ProblemFactChange`, its `doChange()` method must now call `scoreDirector.triggerVariableListeners()`
 
-=== icon:exclamation-circle[] Major
-
-====
 If you have a `ProblemFactChange`, its `doChange()` method must now call `scoreDirector.triggerVariableListeners()`
 after every set of changes (before calling `calculateScore()` or relying on shadow variables).
 
@@ -427,11 +429,9 @@ public void deleteComputer(final CloudComputer computer) {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== If you have a `CustomPhaseCommand`, its `changeWorkingSolution()` method must now call `scoreDirector.triggerVariableListeners()`
 
-=== icon:exclamation-circle[] Major
-
-====
 If you have a `CustomPhaseCommand`, its `changeWorkingSolution()` method must now call `scoreDirector.triggerVariableListeners()`
 after every set of changes (before calling `calculateScore()` or relying on shadow variables).
 
@@ -462,9 +462,8 @@ public class MyCustomPhase implements CustomPhaseCommand {
 }
 ----
 
-====
-
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== A custom `Move` must now read any shadow variables it needs first
 
 [.hidden-section]
 ====
@@ -473,7 +472,8 @@ It no longer needs to assign genuine variables to intermediate values to avoid e
 
 ====
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== All built-in moves that affect chained variables have been greatly simplified
 
 [.hidden-section]
 ====
@@ -481,7 +481,8 @@ All built-in moves that affect chained variables have been greatly simplified du
 
 ====
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== Constructor of `ChainedChangeMove`, `ChainedSwapMove`, `SubChainChangeMove` and `SubChainSwapMove` changed
 
 [.hidden-section]
 ====
@@ -503,7 +504,8 @@ return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, 
 
 ====
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== `ChainedSwapMove` 's constructor changed
 
 [.hidden-section]
 ====
@@ -511,7 +513,8 @@ return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, 
 
 ====
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== Method `InnerScoreDirector.getTrailingEntity()` has been removed
 
 [.hidden-section]
 ====
@@ -519,11 +522,12 @@ The method `InnerScoreDirector.getTrailingEntity()` has been removed. Use `Singl
 
 ====
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== One score rule can now change 2 score levels in its RHS
 
 [.hidden-section]
 ====
-One score rule can now change 2 score levels in its RHS
+One score rule can now change 2 score levels in its RHS.
 
 Before in `*.drl`:
 [source, drl]
@@ -558,7 +562,8 @@ end
 
 == From 6.3.0.CR2 to 6.3.0.CR3
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== If you build a `Solver` entirely from API, use `SolverFactory.createEmpty()`
 
 [.hidden-section]
 ====

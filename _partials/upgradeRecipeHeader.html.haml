@@ -28,42 +28,22 @@
 %p
   Every migration change has an indication how likely your code is going to be affected by this change:
 
-%h2
-  %i(class="fa fa-exclamation-circle")
-  Major
-
-%p
-  Very likely affects your code.
-
-%h2
-  %i(class="fa fa-info-circle")
-  Minor
-
-%p
-  Probably does not affect your code (especially if you followed the examples), unless you have hacks.
-
-%h2
-  %i(class="fa fa-user-secret")
-  Implementation detail
-
-%p
-  Should not affect your code, unless you have very deep hacks.
-
-%h2
-  %i(class="fa fa-thumbs-up")
-  Recommended
-
-%p
-  Not a backward incompatible change, but you probably want to do this.
-
-%h2
-  %i(class="fa fa-book")
-  Readme
-
-%p
-  Read this to better understand why the following
-  %i(class="fa fa-exclamation-circle")
-  Major change was made.
+%ul.upgrade-recipe-label-list
+  %li
+    %span.label.label-danger.label-as-badge Major
+    Likely to affect your code.
+  %li
+    %span.label.label-warning.label-as-badge Minor
+    Unlikely to affect your code (especially if you followed the examples), unless you have hacks.
+  %li
+    %span.label.label-info.label-as-badge Impl detail
+    Will not affect your code, unless you have very deep hacks.
+  %li
+    %span.label.label-primary.label-as-badge Recommended
+    Not a backward incompatible change, but you probably want to do this.
+  %li
+    %span.label.label-success.label-as-badge Readme
+    Read this to better understand why the subsequent major changes were made.
 
 %h2
   Important note for BRMS/BPMS customers
