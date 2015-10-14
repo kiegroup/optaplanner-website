@@ -173,8 +173,8 @@ that move different variables of the same entity.
 == Upgrade from a previous version
 
 To upgrade from a previous version of OptaPlanner (or Drools Planner),
-just follow https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe].
+just follow link:../upgradeRecipe/upgradeRecipe6.0.html[the upgrade recipe].
 
 == Archive
 
-For older releases, check link:releaseNotesArchive.html[the release notes archive].
+For older releases, check link:index.html[the release notes archive].

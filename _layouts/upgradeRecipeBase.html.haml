@@ -1,0 +1,8 @@
+---
+layout: normalBase
+---
+%h1
+  #{page.title}
+= partial('upgradeRecipeHeader.html.haml', :outputPage => page, :upgrade_recipe_version => page.upgrade_recipe_version,
+  :upgrade_recipe_previous_version => page.upgrade_recipe_previous_version)
+~ content

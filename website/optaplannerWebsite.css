@@ -139,6 +139,40 @@ th, td {
     border-radius: 4px 4px 0 0;
 }
 
+/******************************************************************************
+* Release notes (hidden sections)
+******************************************************************************/
+
+.show-hidden-section {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid #285E8E;
+    border-radius: 4px;
+}
+
+.show-hidden-section:link {
+    color: #3276B1;
+    background-color: #FFF;
+}
+
+.show-hidden-section:hover {
+    color: #FFF;
+    background-color: #3276B1;
+}
+
+.hidden-section {
+    background-color: #FFFFCC;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
 
 /******************************************************************************
 * Tabs left, right and below (not supported in Twitter Bootstrap 3.1)
