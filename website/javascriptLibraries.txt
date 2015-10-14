@@ -3,26 +3,26 @@ Javascript libraries
 
 Twitter bootstrap version: 3.1.1
 Downloaded from: http://twitter.github.com/bootstrap/
-License: MIT (which can be used by Apache License v2.0 projects)
+License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
 jQuery version: 1.11.0
 Downloaded from: http://jquery.com/
-License: MIT (which can be used by Apache License v2.0 projects)
+License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
 highlight.js version: 7.3
 Downloaded from: http://softwaremaniacs.org/soft/highlight/en/
-License: BSD (which can be used by Apache License v2.0 projects)
+License: BSD - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
 JBoss tabzilla version: 2014-07-24
 Downloaded from:
   https://static.jboss.org/js/_jbossorg-tabzilla.js
   https://static.jboss.org/css/tabzilla.css
-License: Mozilla Public License
+License: Mozilla Public License - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-b
 
 Flag icons version: 2015-08-21
 Downloaded from: http://www.famfamfam.com
 License: Public Domain (free for any use, attribution appreciated but not required)
 
 Font-awesome version: 4.4.0
-Downloaded from: http://fortawesome.github.io/Font-Awesome//assets/font-awesome-4.4.0.zip
-License: MIT (which can be used by Apache License v2.0 projects)
+Downloaded from: http://fontawesome.io
+License: OFL - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-b
