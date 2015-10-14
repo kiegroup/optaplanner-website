@@ -1,15 +1,12 @@
 = Upgrade recipe 6.0
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 6.0.
+:awestruct-description: Upgrade to OptaPlanner 6.0 from a previous version.
 :awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 1.0
+:awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.0
 :awestruct-upgrade_recipe_previous_version: 5.5
 :icons: font
 
-
-
 == From 5.5.0.Final to 6.0.0.Alpha7
-
 
 === icon:book[] Readme
 
@@ -918,11 +915,9 @@ public Class<HardSoftScore> getScoreClass() {
 }
 ----
 
-
 ====
 
 == From 6.0.0.Alpha7 to 6.0.0.Alpha8
-
 
 === icon:info-circle[] Minor
 
@@ -989,11 +984,9 @@ Before in `*ScoreDefinition.java`:
 scoreDirectorFactoryConfig.setSimpleScoreCalculator(...);
 ----
 
-
 ====
 
 == From 6.0.0.Alpha9 to 6.0.0.Beta1
-
 
 === icon:book[] Readme
 
@@ -1761,11 +1754,9 @@ public ScoreHolder buildScoreHolder(boolean constraintMatchEnabled) {
 ----
 6.0 supports a bunch more score types: it's easier (as well as recommended) to switch to a build-in one if you can.
 
-
 ====
 
 == From 6.0.0.Beta1 to 6.0.0.Beta2
-
 
 === icon:info-circle[] Minor
 
@@ -1831,11 +1822,9 @@ After in `*Config.xml`:
 </forager>
 ----
 
-
 ====
 
 == From 6.0.0.Beta2 to 6.0.0.Beta3
-
 
 === icon:info-circle[] Minor
 
@@ -1934,11 +1923,9 @@ to `EntityTabuAcceptor` and `ValueTabuAcceptor`
 `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>` combined with a `<maximumSubChainSize>` value
 did not select all possible moves previously. If you use this, you might want to rerun benchmarks.
 
-
 ====
 
 == From 6.0.0.Beta3 to 6.0.0.Beta4
-
 
 === icon:info-circle[] Minor
 
@@ -2176,11 +2163,9 @@ After in `*.java`:
 solverConfig.setPlanningEntityClassList(...)
 ----
 
-
 ====
 
 == From 6.0.0.Beta4 to 6.0.0.Beta5
-
 
 === icon:info-circle[] Minor
 
@@ -2200,11 +2185,9 @@ After in `*Config.java`:
 public ... build...(HeuristicConfigPolicy configPolicy) {
 ----
 
-
 ====
 
 == From 6.0.0.Beta5 to 6.0.0.CR1
-
 
 === icon:info-circle[] Minor
 
@@ -2488,17 +2471,14 @@ The `ValueRangeType.UNDEFINED` has been removed: it is no longer supported.
 ====
 `DefaultDecider` has been renamed to `LocalSearchDecider`.
 
-
 ====
 
 == From 6.0.0.CR1 to 6.0.0.CR2
 ====
 
-
 ====
 
 == From 6.0.0.CR2 to 6.0.0.CR3
-
 
 === icon:info-circle[] Minor
 
@@ -2507,11 +2487,9 @@ The `ValueRangeType.UNDEFINED` has been removed: it is no longer supported.
 If you combine a `@PlanningVariable(mappedBy = ...)` with a Java `IncrementalScoreCalculator`:
 it now calls `before/afterVariableChanged` methods correctly.
 
-
 ====
 
 == From 6.0.0.CR3 to 6.0.0.CR4
-
 
 === icon:info-circle[] Minor
 
@@ -2530,11 +2508,9 @@ To avoid floating-point arithmetic with `HardSoftDoubleScore` (which causes roun
 and to avoid a performance loss with `HardSoftBigDecimalScore`,
 all distances and times have been multiplied by 1000 so it can continue to use `HardSoftScore` (which uses ints).
 
-
 ====
 
 == From 6.0.0.CR4 to 6.0.0.CR5
-
 
 === icon:info-circle[] Minor
 
@@ -2564,11 +2540,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </localSearch>
 ----
 
-
 ====
 
 == From 6.0.0.CR5 to 6.0.0.Final
-
 
 === icon:info-circle[] Minor
 

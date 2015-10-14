@@ -1,15 +1,12 @@
 = Upgrade recipe 6.2
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 6.2.
+:awestruct-description: Upgrade to OptaPlanner 6.2 from a previous version.
 :awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 1.0
+:awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.2
 :awestruct-upgrade_recipe_previous_version: 6.1
 :icons: font
 
-
-
 == From 6.1.0.Final to 6.2.0.Beta1
-
 
 === icon:info-circle[] Minor
 
@@ -120,11 +117,9 @@ Instead, to get a pretty score corruption analysis, implement the new interface 
 This also enable your GUI to explain the score with an `IncrementalScoreCalculator`.
 See the example code in `MachineReassignmentIncrementalScoreCalculator.getConstraintMatchTotals()`.
 
-
 ====
 
 == From 6.2.0.Beta1 to 6.2.0.Beta2
-
 
 === icon:info-circle[] Minor
 
@@ -179,11 +174,9 @@ If the `uninitializedVariableCount` is still needed for some reason, use the `Sc
 ====
 Before calling `ScoreDirector.getConstraintMatchTotals()`, it's no longer expected to call `ScoreDirector.calculateScore()` first.
 
-
 ====
 
 == From 6.2.0.CR1 to 6.2.0.CR2
-
 
 === icon:info-circle[] Minor
 
@@ -224,11 +217,9 @@ After in `*.java`:
 `InverseRelationShadowVariableListener` renamed to `SingletonInverseVariableListener`.
 It and `InverseRelationShadowVariableDescriptor` moved to the package `...impl.domain.variable.inverserelation`.
 
-
 ====
 
 == From 6.2.0.CR3 to 6.2.0.CR4
-
 
 === icon:exclamation-circle[] Major
 
@@ -265,11 +256,9 @@ public class Customer implements Standstill {
 }
 ----
 
-
 ====
 
 == From 6.2.0.CR4 to 6.2.0.Final
-
 
 === icon:info-circle[] Minor
 

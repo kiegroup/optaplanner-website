@@ -1,15 +1,12 @@
 = Upgrade recipe 6.3
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 6.3.
+:awestruct-description: Upgrade to OptaPlanner 6.3 from a previous version.
 :awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 1.0
+:awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.3
 :awestruct-upgrade_recipe_previous_version: 6.2
 :icons: font
 
-
-
 == From 6.2.0.Final to 6.3.0.Beta1
-
 
 === icon:info-circle[] Minor
 
@@ -144,11 +141,9 @@ In real-time planning, `addProblemFactChange()` no longer causes the `ScoreDirec
 This might expose a hidden bug in your `ProblemFactChange` implementation.
 Enable `environmentMode` `FULL_ASSERT` and do a few `addProblemFactChange()` calls to validate that there are no such bugs.
 
-
 ====
 
 == From 6.3.0.Beta1 to 6.3.0.Beta2
-
 
 === icon:info-circle[] Minor
 
@@ -290,11 +285,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <solutionClass>...ParentSolution</solutionClass>
 ----
 
-
 ====
 
 == From 6.3.0.Beta2 to 6.3.0.CR1
-
 
 === icon:info-circle[] Minor
 
@@ -339,11 +332,9 @@ public Integer getCapacity() {
 }
 ----
 
-
 ====
 
 == From 6.3.0.CR1 to 6.3.0.CR2
-
 
 === icon:book[] Readme
 
@@ -567,7 +558,6 @@ end
 
 == From 6.3.0.CR2 to 6.3.0.CR3
 
-
 === icon:info-circle[] Minor
 
 [.hidden-section]
@@ -591,4 +581,3 @@ After in `*.java`:
     ...
     return solverFactory.buildSolver();
 ====
-
