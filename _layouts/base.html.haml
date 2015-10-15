@@ -24,7 +24,7 @@ change_frequency: monthly
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
     %link(rel="stylesheet"){:href => relative("/website/tabzilla/tabzilla.css")}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
-    %link(rel="stylesheet"){:href => relative("/website/font-awesome/css/font-awesome.min.css")}
+    -#%link(rel="stylesheet"){:href => relative("/website/font-awesome/css/font-awesome.min.css")}
     :plain
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,8 +59,18 @@ change_frequency: monthly
           %ul.nav.navbar-nav
             %li<
               %a{:href => relative("/")} Home
-            %li<
-              %a{:href => relative("/download/download.html")} Download
+            %li.dropdown
+              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
+                = precede 'Download ' do
+                  %b.caret>
+              %ul.dropdown-menu
+                %li<
+                  %a{:href => relative("/download/download.html")} Download
+                %li.divider
+                %li<
+                  %a{:href => relative("/download/releaseNotes/")} Release notes
+                %li<
+                  %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                 = precede 'Learn ' do

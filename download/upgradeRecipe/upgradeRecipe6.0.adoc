@@ -4,21 +4,18 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.0
 :awestruct-upgrade_recipe_previous_version: 5.5
-:icons: font
 
 == From 5.5.0.Final to 6.0.0.Alpha7
 
-=== icon:book[] Readme
+[.upgrade-recipe-readme]
+=== Backwards compatible API in sight
 
-====
 Starting from 6.1.0.Final for 6.2, 6.3, ..., planner will have a backwards compatible API.
 As preparation for that, every part of the API is being reviewed.
 
-====
+[.upgrade-recipe-recommended]
+=== Important upgrade advice
 
-=== icon:thumbs-up[] Recommended
-
-====
 Don't directly upgrade the jars to 6.0.0.Final.
 In 6.0.0.Beta1, Drools Planner has been renamed to OptaPlanner and the java package structure has been changed severely.
 Instead, upgrade the jars to 6.0.0.Alpha9 first.
@@ -26,34 +23,25 @@ Once that compiles, immediately upgrade the jars to your desired version and con
 The 6.0.0.Alpha9 jars are available in the maven repository and in this zip:
 http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
 
-====
+[.upgrade-recipe-readme]
+=== `ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY` fixed
 
-=== icon:book[] Readme
-
-====
 `ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY` now works. The regression in 5.5 from 5.4 has been fixed.
 
-====
+[.upgrade-recipe-recommended]
+=== Planning variables `null` when initialized
 
-=== icon:thumbs-up[] Recommended
-
-====
-Planning variables can now have a null value when initialized.
+Planning variables can now have a `null` value when initialized.
 If you have any custom hacks for that, take a look at the reference manual how to replace them with a nullable variable.
 
-====
+[.upgrade-recipe-minor]
+=== `<assertionScoreDirectorFactory>`: config simplified
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `<assertionScoreDirectorFactory>` no longer needs a `<scoreDefinition*>`: it inherits it from its parent.
 
-====
+[.upgrade-recipe-major]
+=== Drools and `HardAndSoft*Score`: usage changed
 
-=== icon:exclamation-circle[] Major
-
-====
 If you are using Drools and `HardAndSoft*Score`:
 `ConstraintType` no longer has `NEGATIVE_HARD`, `NEGATIVE_SOFT` and `POSITIVE`. It only has `HARD` and `SOFT` now.
 As a result, all negative weights are now a negative number. All positive weights are now a positive number.
@@ -155,11 +143,9 @@ end
 ----
 Refactor similarly for `LongConstraintOccurrence` and `longValue()`.
 
-====
+[.upgrade-recipe-major]
+=== `Solution`: new annotation needed
 
-=== icon:exclamation-circle[] Major
-
-====
 Your `Solution` implementation class now needs a `@PlanningSolution` annotation
 
 Before in `*.java`:
@@ -175,11 +161,9 @@ After in `*.java`:
 public class ... implements Solution<...Score> {...}
 ----
 
-====
+[.upgrade-recipe-major]
+=== `Solution`: `cloneSolution(Solution)` removed
 
-=== icon:exclamation-circle[] Major
-
-====
 A `Solution` no longer need to implement the method `cloneSolution(Solution)`
 
 Before in `*.java`:
@@ -248,12 +232,9 @@ public class Exam implements PlanningCloneable<Exam> {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition` with 3 levels: use `HardMediumSoftScoreDefinition`
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you've defined a custom `ScoreDefinition` to be able to use 3 score levels of ints,
 consider using the new `HardMediumSoftScoreDefinition` instead.
 
@@ -269,11 +250,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
     <scoreDefinitionType>HARD_MEDIUM_SOFT</scoreDefinitionType>
 ----
 
-====
+[.upgrade-recipe-major]
+=== Construction Heuristics: behaviour change
 
-=== icon:exclamation-circle[] Major
-
-====
 The construction heuristics now immediately add all uninitialized entities
 into the `ScoreDirector` (so into the `WorkingMemory`), instead of adding each entity just before initializing it.
 This change improves consistency and compatibility of construction heuristics with multiple variables,
@@ -345,12 +324,9 @@ when
 then
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `@PlanningVariable`: `uninitializedEntityFilter` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `@PlanningVariable` 's property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
 
 Before in `*.java`:
@@ -365,12 +341,9 @@ After in `*.java`:
 @PlanningVariable(reinitializeVariableEntityFilter = ...)
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `Default*Score`: refactored
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The `Default*Score` class have become more encapsulated.
 In the unlikely case that you've used any of them directly, do these changes:
 
@@ -398,11 +371,9 @@ After in `*.java`:
 ... = DefaultHardAndSoftScore.valueOf(-100, -20);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `PlanningEntityDifficultyWeightFactory` replaced
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `PlanningEntityDifficultyWeightFactory` has been replaced by `SelectionSorterWeightFactory`.
 The method `createDifficultyWeight` has been replaced by the method `createSorterWeight`.
 Sorting direction (difficulty ascending) has not changed.
@@ -433,11 +404,9 @@ public class QueenDifficultyWeightFactory implements SelectionSorterWeightFactor
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== `PlanningValueStrengthWeightFactory`: replaced
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `PlanningValueStrengthWeightFactory` has been replaced by `SelectionSorterWeightFactory`.
 The method `createStrengthWeight` has been replaced by the method `createSorterWeight`.
 Sorting direction (strength ascending) has not changed.
@@ -468,11 +437,9 @@ public class RowStrengthWeightFactory implements SelectionSorterWeightFactory<NQ
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== `EnvironmentMode`: `DEBUG` and `TRACE` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `EnvironmentMode` `DEBUG` and `TRACE` have been renamed to `FAST_ASSERT` and `FULL_ASSERT`
 to avoid confusion with the logging levels debug and trace.
 
@@ -500,12 +467,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <environmentMode>FULL_ASSERT</environmentMode>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<entityFilterClass>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
-Configuration property `entityFilterClass` has been renamed to `filterClass`.
+Configuration property `<entityFilterClass>` has been renamed to `<filterClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -523,12 +488,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </entitySelector>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<moveFilterClass>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
-Configuration property `moveFilterClass` has been renamed to `filterClass`.
+Configuration property `<moveFilterClass>` has been renamed to `<filterClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -546,13 +509,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </...MoveSelector>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<entityProbabilityWeightFactoryClass>` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-Configuration property `entityProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Configuration property `<entityProbabilityWeightFactoryClass>` has been renamed to `<probabilityWeightFactoryClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -570,13 +530,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </entitySelector>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<valueProbabilityWeightFactoryClass>` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-Configuration property `valueProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Configuration property `<valueProbabilityWeightFactoryClass>` has been renamed to `<probabilityWeightFactoryClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -594,13 +551,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </valueSelector>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<moveProbabilityWeightFactoryClass>` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-Configuration property `moveProbabilityWeightFactoryClass` has been renamed to `probabilityWeightFactoryClass`.
+Configuration property `<moveProbabilityWeightFactoryClass>` has been renamed to `<probabilityWeightFactoryClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -618,13 +572,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </...MoveSelector>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<planningEntityClass>` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-For `entitySelector`, configuration property `planningEntityClass` has been renamed to `entityClass`.
+For `<entitySelector>`, configuration property `<planningEntityClass>` has been renamed to `<entityClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -642,12 +593,10 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </entitySelector>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<planningVariableName>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
-Configuration property `planningVariableName` has been renamed to `variableName`.
+Configuration property `<planningVariableName>` has been renamed to `<variableName>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -665,11 +614,9 @@ After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
 </valueSelector>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `HardAndSoftScore` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 `HardAndSoftScore` has been renamed to `HardSoftScore`.
 Similarly, `HardAndSoftLongScore` has been renamed to `HardSoftLongScore`.
 The package, `ScoreDefinitionType`, `*ScoreDefinition` and `*ScoreDefinition` have been renamed accordingly.
@@ -750,11 +697,9 @@ public HardSoftScore calculateScore() {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+===  `Default*Score` classes removed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `Default*Score` classes have been removed: they have been merged into their `*Score` interface.
 
 Before in `*.java`:
@@ -777,11 +722,9 @@ After in `*.java`:
 ... HardMediumSoftScore.valueOf(...)
 ----
 
-====
+[.upgrade-recipe-recommended]
+=== XStream serialization of a `Solution`
 
-=== icon:thumbs-up[] Recommended
-
-====
 If you store your solutions as XML and reused the example's XStream serialization technique,
 you probably want to have a score serialized as such:
 [source, xml]
@@ -832,11 +775,9 @@ public class CloudBalance ... implements Solution<HardSoftScore> {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== XStream serialization of a `Solution`: file impact
 
-=== icon:exclamation-circle[] Major
-
-====
 If you store your solutions as XML and reused the example's XStream serialization technique,
 then you'll also need to change all those xml files which mention the full score class name.
 Here's a bash script to automate that change to the new `@XStreamConverter` way in the recommended change above:
@@ -850,21 +791,15 @@ do
 done
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `formatScore(Score)` added
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Interface `ScoreDefinition` has a new method `formatScore(Score)`.
 It's implemented by default by `AbstractScoreDefinition` to use `Score.toString()`.
 
-====
+[.upgrade-recipe-minor]
+=== `XStreamProblemIO`: moved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `XStreamProblemIO` has moved package
 
 Before in `*.java`:
@@ -879,11 +814,9 @@ After in `*.java`:
 import org.drools.planner.persistence.xstream.XStreamProblemIO;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `ValueRange` and `ValueRangeType`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 `ValueRange` and `ValueRangeType` have moved package
 
 Before in `*.java`:
@@ -900,11 +833,9 @@ import org.drools.planner.api.domain.value.ValueRange;
 import org.drools.planner.api.domain.value.ValueRangeType;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `ScoreDefinition`: `getScoreClass()` added
 
-=== icon:exclamation-circle[] Major
-
-====
 Interface `ScoreDefinition` has a new method `getScoreClass()`.
 
 After in `*ScoreDefinition.java`:
@@ -915,14 +846,11 @@ public Class<HardSoftScore> getScoreClass() {
 }
 ----
 
-====
-
 == From 6.0.0.Alpha7 to 6.0.0.Alpha8
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Config properties null by default
 
-[.hidden-section]
-====
 If you're using solver configuration by API (instead of XML): the Config properties are now null by default.
 
 Before in `*.java`:
@@ -953,12 +881,9 @@ After in `*.java`:
     ...Config.setFooConfig(fooConfig);
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ScoreDirectorFactoryConfig`: `setScoreDefinition(...)` removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 XML solver configuration: `ScoreDirectorFactoryConfig` no longer supports `setScoreDefinition(...)`.
 Everyone used `setScoreDefinitionClass(...)` instead.
 
@@ -968,12 +893,9 @@ Before in `*ScoreDefinition.java`:
 scoreDirectorFactoryConfig.setScoreDefinition(...);
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ScoreDirectorFactoryConfig`: `setSimpleScoreCalculator(...)` removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 XML solver configuration: `ScoreDirectorFactoryConfig` no longer supports `setSimpleScoreCalculator(...)`.
 Everyone used `setSimpleScoreCalculatorClass(...)` instead, except maybe for score weighting parametrization,
 which can be done through the `Solution` (which enables real-time tweaking), see the `InstitutionParametrization` in the examples.
@@ -984,22 +906,18 @@ Before in `*ScoreDefinition.java`:
 scoreDirectorFactoryConfig.setSimpleScoreCalculator(...);
 ----
 
-====
-
 == From 6.0.0.Alpha9 to 6.0.0.Beta1
 
-=== icon:book[] Readme
+[.upgrade-recipe-readme]
+=== Drools Planner has been renamed to OptaPlanner
 
-====
 Drools Planner has been renamed to OptaPlanner.
 See the official announcement here:
 http://www.optaplanner.org/community/droolsPlannerRenamed.html
 
-====
+[.upgrade-recipe-major]
+=== Maven dependencies renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The maven dependencies their groupId and artifactId's have been renamed.
 
 Before in `pom.xml`:
@@ -1047,11 +965,9 @@ and adjust your ANT script and your IDE's classpath accordingly.
 
 Note: because of package name changes (see below), you 'll get a lot of compile errors at this point.
 
-====
+[.upgrade-recipe-major]
+=== Loggign category renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The logging category `org.drools.planner` has been renamed to `org.optaplanner`
 
 Before in `logback*.xml`:
@@ -1067,13 +983,10 @@ After in `logback*.xml`:
 ----
 Similar for log4j files.
 
-====
+[.upgrade-recipe-minor]
+=== GitHub repository renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-The github repository has been renamed.
+The GitHub repository has been renamed.
 Before:
   https://github.com/droolsjbpm/drools-planner
 ----
@@ -1081,11 +994,9 @@ After:
   https://github.com/droolsjbpm/optaplanner
 ----
 
-====
+[.upgrade-recipe-major]
+=== Package `org.drools.planner` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The package `org.drools.planner` has been renamed to `org.optaplanner`
 
 Before in `*.java, *.drl`:
@@ -1126,11 +1037,9 @@ After in `*.xml`:
 
 Note: because of other package name changes (see below), you 'll get a lot of compile errors after these changes.
 
-====
+[.upgrade-recipe-readme]
+=== Packages split up into api, config and implementation classes
 
-=== icon:book[] Readme
-
-====
 The packages now make a clear distinction between api, config and implementation classes.
 Starting from 6.1 for future versions (6.2, 6.3, ...):
 
@@ -1151,11 +1060,9 @@ Also, each artifact now has a unique package namespace. For example:
 *** `.config`
 *** `.impl`
 
-====
+[.upgrade-recipe-major]
+=== Package `org.optaplanner.core` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The package `org.optaplanner.core` has been renamed to `org.optaplanner.core.impl`
 
 Before in `*.java`, `*.drl`:
@@ -1194,11 +1101,9 @@ After in `*.xml`:
 <...>org.optaplanner.core.impl...</...>
 ----
 
-====
+[.upgrade-recipe-major]
+=== Package `org.optaplanner.api` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The package `org.optaplanner.api` has been renamed to `org.optaplanner.core.api`
 
 Before in `\*.java`, `*.drl`:
@@ -1237,11 +1142,9 @@ After in `*.xml`:
 <...>org.optaplanner.core.api...</...>
 ----
 
-====
+[.upgrade-recipe-major]
+=== Package `org.optaplanner.config` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The package `org.optaplanner.config` has been renamed to `org.optaplanner.core.config`
 
 Before in `\*.java`, `*.drl`:
@@ -1280,12 +1183,9 @@ After in `*.xml`:
 <...>org.optaplanner.core.config...</...>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Package `org.optaplanner.benchmark.core` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The package `org.optaplanner.benchmark.core` has been renamed to `org.optaplanner.benchmark.impl`
 
 Before in `\*.java`, `*.drl`:
@@ -1300,11 +1200,9 @@ After in `\*.java`, `*.drl`:
 import org.optaplanner.benchmark.impl...
 ----
 
-====
+[.upgrade-recipe-major]
+=== `Solver` moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `Solver` has been moved from the package `...core.impl` to `...core.api.solver`
 
 Before in `*.java`:
@@ -1319,11 +1217,9 @@ After in `*.java`:
 import org.optaplanner.core.api.solver.Solver;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `SolverFactory` moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `SolverFactory` has been moved from the package `...core.config` to `...core.api.solver`
 
 Before in `*.java`:
@@ -1338,11 +1234,9 @@ After in `*.java`:
 import org.optaplanner.core.api.solver.SolverFactory;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `EnvironmentMode` and `XmlSolverFactory` moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The classes `EnvironmentMode` and `XmlSolverFactory` has been moved from the package `...core.config` to `...core.config.solver`
 
 Before in `*.java`:
@@ -1359,11 +1253,9 @@ import org.optaplanner.core.config.solver.EnvironmentMode;
 import org.optaplanner.core.config.solver.XmlSolverFactory;
 ----
 
-====
+[.upgrade-recipe-recommended]
+=== `XmlPlannerBenchmarkFactory` replaced
 
-=== icon:thumbs-up[] Recommended
-
-====
 Use the interface `PlannerBenchmarkFactory` in favor of `XmlPlannerBenchmarkFactory`
 
 Before in `*.java`:
@@ -1378,11 +1270,9 @@ After in `*.java`:
 PlannerBenchmarkFactory plannerBenchmarkFactory = new XmlPlannerBenchmarkFactory("...BenchmarkConfig.xml");
 ----
 
-====
+[.upgrade-recipe-major]
+=== `Score` and `ScoreHolder` moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The interfaces `Score` and `ScoreHolder` and their subclasses have been promoted from the `impl` to the `api` package.
 
 Before in `\*.java` and `*.drl`:
@@ -1425,19 +1315,15 @@ Note: `ScoreDefinition` has not been promoted (yet), even though you might use t
 
 Note: `ConstraintOccurrence` hasn't been promoted yet, even though you use it in the drl files.
 
-====
+[.upgrade-recipe-readme]
+=== Drools 4 `RuleBase` API replaced
 
-=== icon:book[] Readme
-
-====
 Planner has upgraded from the Drools 4 `RuleBase` API to the Drools 6 `KieBase` API.
 It has skipped the Drools 5 `KnowledgeBase` API.
 
-====
+[.upgrade-recipe-major]
+=== `ScoreDirectorFactoryConfig`: `setRuleBase()` replaced
 
-=== icon:exclamation-circle[] Major
-
-====
 `ScoreDirectorFactoryConfig` 's method `setRuleBase()` has been replaced by `setKieBase()`
 
 Before in `*.java`:
@@ -1454,12 +1340,9 @@ KieBase kieBase = ...;
 solverFactory.getSolverConfig().getScoreDirectorFactoryConfig.setKieBase(kieBase);
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Better way to extract the `ConstraintOccurrences`
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you used the hack from the examples to extract the `ConstraintOccurrences` from the `guiScoreDirectory`.
 
 Before in `*.java`:
@@ -1497,21 +1380,17 @@ import org.kie.api.runtime.KieSession;
         }
 ----
 
-====
+[.upgrade-recipe-readme]
+===  `ConstraintOccurrence` replaced
 
-=== icon:book[] Readme
-
-====
 In score DRL's, the insertLogical `ConstraintOccurrence` technique has been replaced with the `ConstraintMatch` technique.
 That new technique is much faster (see blog for details), easier to use and far less error-prone.
 Unlike `ConstraintOccurrence`, `ConstraintMatch` doesn't care about the equals/hashcode implementations of your classes.
 Also, the `ConstraintMatch` and `ConstraintMatchTotal` instances are designed to be reused outside Planner.
 
-====
+[.upgrade-recipe-major]
+=== scoreDrl's: use `ConstraintMatch` technique
 
-=== icon:exclamation-circle[] Major
-
-====
 Change your scoreDrl's to use the `ConstraintMatch` technique.
 Instead of doing an insertLogical of a `ConstraintOccurrence`, they now call `scoreHolder.add*ConstraintMatch()`
 and no longer need to supply the infamous causes parameter.
@@ -1645,12 +1524,9 @@ is to make the migration easier: so you can easily verify that after migration t
 
 Note: The examples still include their old drl variant too until 6.0.0.Beta4, if you want to use it for comparison.
 
-====
+[.upgrade-recipe-minor]
+=== `ConstraintOccurrence` outside usage: use `ConstraintMatch`
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you use `ConstraintOccurrence` outside of Planner itself, in the gui or your middleware,
 for example, to show the user the constraint matches, switch to using `ConstraintMatch` and `ConstraintMatchTotal` instead.
 
@@ -1707,12 +1583,9 @@ After in `*.java`:
 Note: the `justificationList` might have more or different elements than the causes,
 but it should be possible to extract the same information.
 
-====
+[.upgrade-recipe-minor]
+=== DRL query to extract `ConstraintOccurrence`: use `ConstraintMatch`
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you use a DRL query to extract the `ConstraintOccurrence`, use `ConstraintMatch` and `ConstraintMatchTotal` instead.
 
 Before in `*.drl`:
@@ -1729,12 +1602,9 @@ After in `*.java`:
 guiScoreDirector.getConstraintMatchTotals()
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `buildScoreHolder()` changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you have a custom `ScoreDefinition` implementation: the method `buildScoreHolder()` has changed signature.
 
 Before in `*ScoreDefinition.java`:
@@ -1754,14 +1624,11 @@ public ScoreHolder buildScoreHolder(boolean constraintMatchEnabled) {
 ----
 6.0 supports a bunch more score types: it's easier (as well as recommended) to switch to a build-in one if you can.
 
-====
-
 == From 6.0.0.Beta1 to 6.0.0.Beta2
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `XStreamSolutionDaoImpl` renamed
 
-[.hidden-section]
-====
 `optaplanner-examples`: The class `XStreamSolutionDaoImpl` has been renamed to `XStreamSolutionDao`.
 This should not affect you because you should not be depending on `optaplanner-examples`.
 
@@ -1777,11 +1644,9 @@ After in `*.java`:
 public class ...Dao extends XStreamSolutionDao {...}
 ----
 
-====
+[.upgrade-recipe-major]
+=== Benchmarker from a Freemarker Template: usage changed
 
-=== icon:exclamation-circle[] Major
-
-====
 The API to configure a Benchmarker from a Freemarker Template has moved to a separate calls
 and the methods have been renamed.
 
@@ -1799,12 +1664,10 @@ PlannerBenchmarkFactory plannerBenchmarkFactory = new FreemarkerXmlPlannerBenchm
         benchmarkConfigTemplate);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<minimalAcceptedSelection>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
-The `forager` property `minimalAcceptedSelection` has been renamed to `acceptedCountLimit`.
+The `<forager>` property `<minimalAcceptedSelection>` has been renamed to `<acceptedCountLimit>`.
 
 Before in `*Config.xml`:
 [source, xml]
@@ -1822,14 +1685,11 @@ After in `*Config.xml`:
 </forager>
 ----
 
-====
-
 == From 6.0.0.Beta2 to 6.0.0.Beta3
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `Score.power(double)` added
 
-[.hidden-section]
-====
 If you have a custom `ScoreDefinition` implementation: the interface `Score` has a new method `power(double)`.
 
 After in `*Score.java`:
@@ -1841,12 +1701,9 @@ public HardSoftScore power(double exponent) {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `toDoubleLevels()` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you have a custom `Score` implementation: Score's method `toDoubleLevels()` has been renamed to `toLevelNumbers()`.
 Now it returns an array of `Number` instead of an array of doubles.
 
@@ -1866,21 +1723,16 @@ public Number[] toLevelNumbers() {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Late Acceptance: behaviour changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The `LateAcceptanceAcceptor` now also accepts any move that improves the current solution.
 If you use `<lateAcceptanceSize>` in your config, this will impact your results (normally in a good way).
 
-====
+[.upgrade-recipe-major]
+=== `<planningEntityTabuSize>` and `<planningValueTabuSize>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
-The tabu search acceptor properties `planningEntityTabuSize` and `planningValueTabuSize` have been renamed
+The tabu search acceptor properties `<planningEntityTabuSize>` and `<planningValueTabuSize>` have been renamed
 to `entityTabuSize` and `valueTabuSize`.
 
 Before in `*Config.xml`:
@@ -1905,42 +1757,31 @@ After in `*Config.xml`:
 </acceptor>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `PlanningEntityTabuAcceptor` and `PlanningValueTabuAcceptor` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The implementation classes `PlanningEntityTabuAcceptor` and `PlanningValueTabuAcceptor` have been renamed
 to `EntityTabuAcceptor` and `ValueTabuAcceptor`
 
-====
+[.upgrade-recipe-minor]
+=== `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: `<maximumSubChainSize>` behaviour changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>` combined with a `<maximumSubChainSize>` value
 did not select all possible moves previously. If you use this, you might want to rerun benchmarks.
 
-====
-
 == From 6.0.0.Beta3 to 6.0.0.Beta4
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-impl-detail]
+=== `Descriptor` classes: method renamed
 
-[.hidden-section]
-====
 `*Descriptor` classes' methods have dropped the Planning prefix verbosity:
 Methods like `getPlanningEntityDescriptor()` have been renamed to `getEntityDescriptor()`
 Methods like `getPlanningVariableDescriptor()` have been renamed to `getVariableDescriptor()`
 Normally, your code should not be using those classes/methods.
 
-====
+[.upgrade-recipe-major]
+=== `<problemStatisticType>` `BEST_SOLUTION_CHANGED` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 Benchmarker: the `<problemStatisticType>` `BEST_SOLUTION_CHANGED` has been renamed to `BEST_SCORE`
 
 Before in `*BenchmarkConfig.xml`:
@@ -1961,11 +1802,9 @@ After in `*BenchmarkConfig.xml`:
 </problemBenchmarks>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `ScoreDirector`: `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` revmoed
 
-=== icon:exclamation-circle[] Major
-
-====
 The methods `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` have been removed
 from `IncrementalScoreCalculator` and `ScoreDirector`.
 This was needed to make planning variable listeners work efficiently.
@@ -2005,21 +1844,17 @@ public void doMove(ScoreDirector scoreDirector) {
 }
 ----
 
-====
+[.upgrade-recipe-readme]
+=== `VehicleRouting` example rewritten
 
-=== icon:book[] Readme
-
-====
 The `VehicleRouting` example has been rewritten to take advantage of Variable Listeners.
 This makes it easier to implement time windowed vehicle routing.
 A variable listener is triggered when the variable (`previousStandstill`) changes
 and updates a shadow variable (`vehicle`, `arrivalTime`) accordingly.
 
-====
+[.upgrade-recipe-major]
+=== `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: behaviour changed
 
-=== icon:exclamation-circle[] Major
-
-====
 The generic moves `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`
 no longer signal `Drools/IncrementalScoreCalculator` that an entity has changed when the anchor of an entity changes
 if none of the actual planning variables of the entity changed.
@@ -2140,12 +1975,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </solver>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `SolverConfig`: `setPlanningEntityClassSet()` changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `SolverConfig` 's method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
 because the order is important.
 
@@ -2163,14 +1995,11 @@ After in `*.java`:
 solverConfig.setPlanningEntityClassList(...)
 ----
 
-====
-
 == From 6.0.0.Beta4 to 6.0.0.Beta5
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Extending a Config class: `build*()` signature changed
 
-[.hidden-section]
-====
 If you extended a Config class: the `build*()` method's parameters have been wrapped into a `HeuristicConfigPolicy` instance.
 
 Before in `*Config.java`:
@@ -2185,14 +2014,11 @@ After in `*Config.java`:
 public ... build...(HeuristicConfigPolicy configPolicy) {
 ----
 
-====
-
 == From 6.0.0.Beta5 to 6.0.0.CR1
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `XStreamProblemIO` uses a vanilla `XStream`
 
-[.hidden-section]
-====
 `XStreamProblemIO` has been modified to use a vanilla `XStream` instance (but still with ID_REFERENCES)
 instead of a complex construction to avoid an issue that has been fixed meanwhile.
 Before it did:
@@ -2209,21 +2035,17 @@ xStream.setMode(XStream.ID_REFERENCES);
 ----
 Normally this should have no relevant impact on your XML dataset files or your code.
 
-====
+[.upgrade-recipe-readme]
+=== Construction Heuristics rewritten
 
-=== icon:book[] Readme
-
-====
 The construction heuristics have been rewritten from scratch to take advantage of the selector architecture.
 The basic configuration hasn't changed much, but power users can now optionally do advanced configuration too.
 These advanced options allow you to use construction heuristics with multiple entity classes,
 a higher number of variables, nullable variables, ...
 
-====
+[.upgrade-recipe-major]
+=== `<constructionHeuristicPickEarlyType>` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The construction heuristic property `<constructionHeuristicPickEarlyType>` has been renamed to `<pickEarlyType>`.
 The value `FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING` has been renamed to `FIRST_NON_DETERIORATING_SCORE`.
 The `<pickEarlyType>` has been nested into a `<forager>` element (similar like for Local Search).
@@ -2248,21 +2070,15 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </constructionHeuristic>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ConstructionHeuristicPickEarlyType` moved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The class `ConstructionHeuristicPickEarlyType` has moved to another package.
 
-====
+[.upgrade-recipe-minor]
+=== Multiple planning variables: impact by Construction Heuristics refactor
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-If you have multiple variables, the result of the construction heuristic is likely to differ.
+If you have multiple variables, the result of the Construction Heuristics is likely to differ.
 Even though the default still does a cartesian production over the variables for the FIT algorithm you choose,
 it will order the combinations in the original order (instead of reverse order as the old implementation did by accident),
 which might cause it to take a totally different path.
@@ -2298,11 +2114,9 @@ but this is *NOT* recommended:
    </constructionHeuristic>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `@ValueRange`: `excludeUninitializedPlanningEntity` removed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `@ValueRange` property `excludeUninitializedPlanningEntity` has been removed.
 Planner now does the right thing automatically for a chained variable.
 
@@ -2327,11 +2141,9 @@ public VrpStandstill getPreviousStandstill() {...}
 If you used it on a non-chained variable (which is highly unlikely), look into `ValueSelector` filtering
 and let us know that such use cases exist (by creating a jira in our issue tracker).
 
-====
+[.upgrade-recipe-major]
+=== `ValueRangeType.FROM_SOLUTION_PROPERTY` and `ValueRangeType.FROM_ENTITY_PROPERTY` removed
 
-=== icon:exclamation-circle[] Major
-
-====
 The annotation `@ValueRange` on a planning variable has been replaced by
 `@ValueRangeProvider` on the providing method itself and `@PlanningVariable(valueRangeProviderRefs)` on planning variable.
 `ValueRangeType.FROM_SOLUTION_PROPERTY` has been removed:
@@ -2455,67 +2267,38 @@ public class Allocation ... {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ValueRangeType.UNDEFINED` removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The `ValueRangeType.UNDEFINED` has been removed: it is no longer supported.
 
-====
+[.upgrade-recipe-impl-detail]
+=== `DefaultDecider` renamed
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `DefaultDecider` has been renamed to `LocalSearchDecider`.
 
-====
-
 == From 6.0.0.CR1 to 6.0.0.CR2
-====
-
-====
-
-== From 6.0.0.CR2 to 6.0.0.CR3
-
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-If you combine a `@PlanningVariable(mappedBy = ...)` with a Java `IncrementalScoreCalculator`:
-it now calls `before/afterVariableChanged` methods correctly.
-
-====
 
 == From 6.0.0.CR3 to 6.0.0.CR4
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Examples data dirs renamed
 
-[.hidden-section]
-====
 The examples data dir `input` has been renamed to `import` and `output` has been renamed to `export`.
 
-====
+[.upgrade-recipe-minor]
+=== VRP example calculations improved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The VRP example's now calculates the distance and time more accurately.
 To avoid floating-point arithmetic with `HardSoftDoubleScore` (which causes rounding errors and score corruption)
 and to avoid a performance loss with `HardSoftBigDecimalScore`,
 all distances and times have been multiplied by 1000 so it can continue to use `HardSoftScore` (which uses ints).
 
-====
-
 == From 6.0.0.CR4 to 6.0.0.CR5
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `<acceptor>` requires configuration
 
-[.hidden-section]
-====
 If the `<acceptor>` element has no configuration, it now fail-fast.
 It used to default to `entityTabuSize` 7. To continue that behaviour, configure it explicitly.
 For good advice on what to configure, see the docs section "Which optimization algorithms should I use?".
@@ -2540,22 +2323,17 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </localSearch>
 ----
 
-====
-
 == From 6.0.0.CR5 to 6.0.0.Final
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Hospital bed planning (PAS) example does overconstrained planning
 
-[.hidden-section]
-====
 The hospital bed planning (PAS) example's score function has severally changed.
 It now has more hard constraints and demonstrates overconstrained planning (with a nullable variable).
 
-====
+[.upgrade-recipe-major]
+=== `MoveListFactory` generified
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `MoveListFactory` now has a generic type (which extends `Solution`)
 that is used as the parameter in the `createMoveList()` method.
 
@@ -2580,14 +2358,10 @@ public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ConstraintMatch`: `getConstraintMatchTotal()` removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `ConstraintMatch` no longer has a `getConstraintMatchTotal()` method
 because a `ConstraintMatch` can survive many Local Search steps, but its Total (which holds a `Set`) should not survive.
 Instead it has `getConstraintPackage()`, `getConstraintName()` and `getScoreLevel()`.
-====
 

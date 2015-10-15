@@ -4,14 +4,12 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.2
 :awestruct-upgrade_recipe_previous_version: 6.1
-:icons: font
 
 == From 6.1.0.Final to 6.2.0.Beta1
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `ScoreHolder.register*ConstraintMatch` refactored
 
-[.hidden-section]
-====
 If you have a custom `ScoreDefinition`: the methods `ScoreHolder.register*ConstraintMatch` have been refactored.
 
 Before in `*.java`:
@@ -40,11 +38,9 @@ public void addConstraintMatch(RuleContext kcontext, final int weight) {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== Custom `Move`: extract `AbstractMove`
 
-=== icon:exclamation-circle[] Major
-
-====
 If you have a custom `Move` implementation, now extract `AbstractMove`
 
 Before in `*.java`:
@@ -59,21 +55,15 @@ After in `*.java`:
 public class CloudComputerChangeMove extends AbstractMove {...}
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom `Move`: new method `getSimpleMoveTypeDescription()`
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The interface `Move` has a new method `getSimpleMoveTypeDescription()`.
 Extend `AbstractMove` so to avoid having to implement it.
 
-====
+[.upgrade-recipe-minor]
+=== `@ValueRangeProvider` on an entity class: use pillar selectors as is
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you have a `@ValueRangeProvider` on an entity class (instead of the `Solution` class),
 then it's now safe to use the `<pillarChangeMoveSelector>` and `<pillarSwapMoveSelector>` as is.
 It's no longer needed to filter out swaps or changes
@@ -97,34 +87,25 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   <pillarSwapMoveSelector/>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ConstraintMatchTotal` natural comparison changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `ConstraintMatchTotal` are now naturally compared by `scoreLevel`, then `constraintPackage`, then `constraintName`
 (instead of by `constraintPackage`, then `constraintName`, then `scoreLevel`) for readability.
 
-====
+[.upgrade-recipe-minor]
+=== `IncrementalScoreCalculator`: method `buildScoreCorruptionAnalysis(...)` replaced
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The optional method `IncrementalScoreCalculator.buildScoreCorruptionAnalysis(IncrementalScoreCalculator)` has been removed.
 Instead, to get a pretty score corruption analysis, implement the new interface `ConstraintMatchAwareIncrementalScoreCalculator`.
 This also enable your GUI to explain the score with an `IncrementalScoreCalculator`.
 See the example code in `MachineReassignmentIncrementalScoreCalculator.getConstraintMatchTotals()`.
 
-====
-
 == From 6.2.0.Beta1 to 6.2.0.Beta2
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `<deciderScoreComparatorFactory>` removed
 
-[.hidden-section]
-====
 The element `<deciderScoreComparatorFactory>` (which was deprecated, not documented, broken and clearly marked as not backwards compatible) has been removed.
 Instead, use strategic oscillation.
 
@@ -154,34 +135,25 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </localSearch>
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `ScoreBounder` methods changed
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 The `ScoreBounder` methods `calculateOptimisticBound()` and `calculatePessimisticBound()`
 no longer have an `uninitializedVariableCount` parameter.
 Instead, if all the variables for a branch and bound algorithm are initialized,
 those methods are no called to determine the bounds (because the bound is the working score).
 If the `uninitializedVariableCount` is still needed for some reason, use the `ScoreDirector` to calculate it accurately.
 
-====
+[.upgrade-recipe-minor]
+=== `ScoreDirector.getConstraintMatchTotals()` behaviour changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Before calling `ScoreDirector.getConstraintMatchTotals()`, it's no longer expected to call `ScoreDirector.calculateScore()` first.
-
-====
 
 == From 6.2.0.CR1 to 6.2.0.CR2
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `CompositeMove` now uses a `Move` array
 
-[.hidden-section]
-====
 `CompositeMove` now uses a `Move` array instead of a `List<Move>` for performance reasons.
 
 Before in `*.java`:
@@ -208,22 +180,17 @@ After in `*.java`:
 ... = new CompositeMove(moves); // Not recommended
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `InverseRelationShadowVariableListener` renamed
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `InverseRelationShadowVariableListener` renamed to `SingletonInverseVariableListener`.
 It and `InverseRelationShadowVariableDescriptor` moved to the package `...impl.domain.variable.inverserelation`.
 
-====
-
 == From 6.2.0.CR3 to 6.2.0.CR4
 
-=== icon:exclamation-circle[] Major
+[.upgrade-recipe-major]
+=== New anchor shadow variable support
 
-====
 There is now out-of-the-box support for a shadow variable representing the anchor of a chained variable.
 For example, in a VRP each `Customer` (= entity) needs to know to which `Vehicle` (= anchor) it belongs.
 This declarative support allows build-in selectors to reuse that knowledge without duplicating the calculation.
@@ -256,22 +223,16 @@ public class Customer implements Standstill {
 }
 ----
 
-====
-
 == From 6.2.0.CR4 to 6.2.0.Final
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `<twoOptMoveSelector>` replaced
 
-[.hidden-section]
-====
 The undocumented, experimental `<twoOptMoveSelector>` has been replaced by `<tailChainSwapMoveSelector>`,
 which is documented.
 
-====
+[.upgrade-recipe-readme]
+=== VRP: Nearby Selection
 
-=== icon:book[] Readme
-
-====
 To scale VRP cases, Nearby Selection is critical. It is now finally completely supported and documented.
-====
 

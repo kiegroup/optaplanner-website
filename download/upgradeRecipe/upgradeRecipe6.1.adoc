@@ -4,42 +4,33 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.1
 :awestruct-upgrade_recipe_previous_version: 6.0
-:icons: font
 
 == From 6.0.0.Final to 6.1.0.Beta1
 
-=== icon:book[] Readme
+[.upgrade-recipe-readme]
+=== Backwards Compatible Public API
 
-====
 As promised, starting from OptaPlanner 6.1.0.Final, there will be a public API,
 which will be backwards compatible in later versions (such as 6.2, 6.3, etc).
 The public API are all classes in the package `org.optaplanner.core.api` (or subpackages thereof).
 For more information, see the documentation, chapter "Status of OptaPlanner".
 Bear with us: this should be the last time we require you to do a large number of migrations during upgrading.
 
-====
+[.upgrade-recipe-impl-detail]
+=== Simulated Annealing behaviour change
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 Simulated Annealing now uses the time gradient of the current step instead of the time gradient of the last step.
 The impact of this change is negligible.
 
-====
+[.upgrade-recipe-impl-detail]
+=== `AbstractScore`: methods changes
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 On `AbstractScore`, the methods `parseLevelStrings(...)` and `buildScorePattern(...)` have been changed from public to protected.
 It's highly unlikely that this affects your code.
 
-====
+[.upgrade-recipe-recommended]
+=== `@ValueRangeProvider` that returns numbers: use `ValueRange`
 
-=== icon:thumbs-up[] Recommended
-
-====
 If you have `@ValueRangeProvider` that returns a collection of numbers (for example `List<Integer>` or `List<BigDecimal>`),
 then you probably want to switch to a `ValueRange`, which uses less memory and offers additional opportunities.
 
@@ -65,11 +56,9 @@ public CountableValueRange<Integer> getDelayRange() {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== `@ValueRangeProvider`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The annotation `@ValueRangeProvider` has been moved into another package
 
 Before in `*.java`:
@@ -84,37 +73,25 @@ After in `*.java`:
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `Descriptor` classes: moved
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 The `*Descriptor` classes have been moved into a descriptor package.
 
-====
+[.upgrade-recipe-minor]
+=== `Selector`: `isContinuous()` renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `Selector.isContinuous()` has been renamed to `isCountable` and its boolean return value has been inverted.
 It's highly unlikely that your code uses `isContinuous()` because uncountable value ranges weren't supported yet.
 
-====
+[.upgrade-recipe-impl-detail]
+=== `SolutionDescriptor`: `isInitialized(...)` changed
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `SolutionDescriptor.isInitialized(Solution)` now requires a `ScoreDirector` parameter too
 
-====
+[.upgrade-recipe-minor]
+=== `IMPROVING_STEP_PERCENTAGE` removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The deprecated `statisticType` `IMPROVING_STEP_PERCENTAGE` has been removed.
 
 Before in `*BenchmarkConfig.xml`:
@@ -126,12 +103,9 @@ Before in `*BenchmarkConfig.xml`:
 </problemBenchmarks>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Custom Benchmarker ranking: `Benchmark` classes renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you have custom Benchmarker ranking:
 `SolverBenchmark` has been renamed to `SolverBenchmarkResult`.
 `ProblemBenchmark` has been renamed to `ProblemBenchmarkResult`.
@@ -162,12 +136,9 @@ After in `*.java`:
 public Comparable createRankingWeight(List<SolverBenchmarkResult> solverBenchmarkResultList, SolverBenchmarkResult solverBenchmarkResult) {...}
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Non-default Benchmarker rank: config change
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you explicitly specify Benchmarker rankings:
 All `solverBenchmarkRanking*` properties have been renamed to `solverRanking*`.
 
@@ -219,28 +190,19 @@ After in `*.java`:
    ... implements SolverBenchmarkRankingWeightFactory
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `optaplanner-benchmark` refactoring
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 The internals of `optaplanner-benchmark` have been deeply refactored to support the new aggregator functionality.
 
-====
+[.upgrade-recipe-minor]
+=== Benchmarker: output report directory structure changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The benchmark output report directory structure is slightly different: the CSV files have been renamed.
 
-====
+[.upgrade-recipe-minor]
+=== Non-default Benchmarker ranking or report locale: config change
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you explicitly specify Benchmarker rankings or report locale:
 The elements `<benchmarkReportLocale>`, `<solverRankingType>`, `<solverRankingComparatorClass>`
 and `<solverRankingWeightFactoryClass>` have been moved inside the new element `<benchmarkReport>`.
@@ -273,12 +235,9 @@ After in `*BenchmarkConfig.xml`:
 </benchmarkReport>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<entitySelector>`: `<cacheType>PHASE</cacheType>` obsolete
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you explicitly configured all your `<entitySelector>` elements with `<cacheType>PHASE</cacheType>` for performance,
 you know no longer have to do that, as OptaPlanner does the fast thing out of the box,
 if and only if no other properties (such as filtering) were specified on that `<entitySelector>`.
@@ -309,19 +268,15 @@ After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
 </unionMoveSelector>
 ----
 
-====
+[.upgrade-recipe-readme]
+=== _time spend_ typo fixed
 
-=== icon:book[] Readme
-
-====
 The phrase "time spend" has been renamed to "time spent".
 This includes the log output and the benchmark report.
 
-====
+[.upgrade-recipe-major]
+=== `<termination>`: config changed
 
-=== icon:exclamation-circle[] Major
-
-====
 All child elements of `<termination>` have been renamed:
 The element `<maximumTimeMillisSpend>` has been renamed to `<millisecondsSpentLimit>`
 The element `<maximumSecondsSpend>` has been renamed to `<secondsSpentLimit>`
@@ -359,11 +314,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 </termination>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `Solver` and `BestSolutionChangedEvent`: `getTimeMillisSpend()` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 In `Solver` and `BestSolutionChangedEvent`, the method `getTimeMillisSpend()` has been renamed to `getTimeMillisSpent()`.
 
 Before in `*.java`:
@@ -394,11 +347,9 @@ After in `*.java`:
     }
 ----
 
-====
+[.upgrade-recipe-major]
+=== Benchmarker: `<warmUp*>` config renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 Benchmarker: the `<warmUp*>` elements have been renamed:
 The element `<warmUpTimeMillisSpend>` has been renamed to `<warmUpMillisecondsSpentLimit>`
 The element `<warmUpSecondsSpend>` has been renamed to `<warmUpSecondsSpentLimit>`
@@ -429,20 +380,15 @@ After in `*BenchmarkConfig.xml`:
 <//plannerBenchmark>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Real time planning: `addProblemFactChange(...)` behaviour changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Real time planning: `addProblemFactChange(...)` no longer causes solver `Termination`s to reset
 (but it still causes phase terminations to reset).
 
-====
+[.upgrade-recipe-major]
+=== `BestSolutionChangedEvent` and `SolverEventListener`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 Classes `BestSolutionChangedEvent` and `SolverEventListener` moved from package `impl.event` to `api.solver.event`.
 They are now part of the public api.
 
@@ -460,12 +406,9 @@ import org.optaplanner.core.api.solver.event.BestSolutionChangedEvent;
 import org.optaplanner.core.api.solver.event.SolverEventListener;
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Package `config.termination`: moved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The package `config.termination` has been moved to `config.solver.termination`.
 Similarly, the package `impl.termination` has been moved to `impl.solver.termination`.
 
@@ -483,27 +426,19 @@ import org.optaplanner.core.config.solver.termination....;
 import org.optaplanner.core.impl.solver.termination....;
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `RandomUtils`: moved
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `RandomUtils` moved from package `impl.util` to `impl.solver.random`.
 
-====
+[.upgrade-recipe-impl-detail]
+=== `AbstractSolverPhaseScope` and `AbstractStepScope`: moved
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `AbstractSolverPhaseScope` and `AbstractStepScope` moved to package `impl.phase.scope`.
 
-====
+[.upgrade-recipe-major]
+=== Package `impl.move`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 All classes in the package `impl.move` have been moved to `impl.heuristic.move`.
 None of them are future-proof enough at this time to be added the public API.
 Prefer generic moves whenever possible.
@@ -524,12 +459,9 @@ import org.optaplanner.core.impl.heuristic.move.CompositeMove;
 import org.optaplanner.core.impl.heuristic.move.NoChangeMove;
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `PLANNING_ENTITY_TABU` and `PLANNING_VALUE_TABU`: renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The `<acceptorType>` values `PLANNING_ENTITY_TABU` and `PLANNING_VALUE_TABU` are renamed to `ENTITY_TABU` and `VALUE_TABU`.
 It's very unlikely that you're using either, because neither specifies the tabu size.
 
@@ -557,12 +489,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <acceptorType>VALUE_TABU</acceptorType>
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `BestSolutionRecaller`: moved
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `BestSolutionRecaller` moved from package `impl.bestsolution` to `impl.solver.recaller`.
 
 Before in `*.java`:
@@ -577,28 +506,21 @@ After in `*.java`:
 import org.optaplanner.core.impl.solver.recaller.BestSolutionRecaller;
 ----
 
-====
-
 == From 6.1.0.Beta1 to 6.1.0.Beta2
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== `PlanningEntityDescriptor`: renamed
 
-[.hidden-section]
-====
 `PlanningEntityDescriptor` has been renamed to `EntityDescriptor`.
-====
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== `PlanningVariableDescriptor`: renamed
 
-[.hidden-section]
-====
 `PlanningVariableDescriptor` has been renamed to `GenuineVariableDescriptor`.
 
-====
+[.upgrade-recipe-major]
+=== `PlanningVariableListener`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `PlanningVariableListener` has been renamed to `VariableListener`.
 
 Before in `*.java`:
@@ -613,11 +535,9 @@ After in `*.java`:
 public class VehicleUpdatingVariableListener implements VariableListener<Customer> {
 ----
 
-====
+[.upgrade-recipe-major]
+=== `AbstractPlanningVariableListener`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The class `AbstractPlanningVariableListener` has been removed.
 
 Before in `*.java`:
@@ -632,31 +552,22 @@ After in `*.java`:
 public class VehicleUpdatingVariableListener implements VariableListener<Customer> {
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `solutionEquals()` and `solutionHashCode()`: removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you've copied the `solutionEquals()` and `solutionHashCode()` from the examples,
 it's safe to remove it if you're not using `solutionTabu` (which is often pointless to use).
 Also remove the `equals()` and `hashCode()` method on your `Solution` implementation.
 
-====
+[.upgrade-recipe-minor]
+=== `DEBUG` logging: changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 In `DEBUG` logging, each step now mentions it's phase type first:
 CH is Construction Heuristic, LS is Local Search, EH is Exhaustive Search.
 
-====
+[.upgrade-recipe-minor]
+=== `GreatDelugeAcceptor`: removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `GreatDelugeAcceptor`, an experimental implementation, has been removed. Use Late Acceptance instead.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -666,11 +577,9 @@ Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   <greatDelugeWaterRisingRate>...</greatDelugeWaterRisingRate>
 ----
 
-====
+[.upgrade-recipe-recommended]
+=== Specify an `<initializingScoreTrend>`
 
-=== icon:thumbs-up[] Recommended
-
-====
 Specify an `<initializingScoreTrend>` in the `<scoreDirectorFactory>`,
 to increase performance of some algorithms (Construction Heuristics and Exhaustive Search).
 See the documentation section on `InitializingScoreTrend` when to use `ANY`, `ONLY_UP` or `ONLY_DOWN`.
@@ -694,11 +603,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </scoreDirectorFactory>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<pickEarlyType>`: replaced
 
-=== icon:exclamation-circle[] Major
-
-====
 Replace `<pickEarlyType>` `FIRST_NON_DETERIORATING_SCORE` with `<initializingScoreTrend>` `ONLY_DOWN`.
 If the `<initializingScoreTrend>` is specified,
 the `<constructionHeuristic>` will automatically use the most appropriate `<pickEarlyType>`.
@@ -731,11 +638,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </constructionHeuristic>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<bruteForce>`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The solver phase `<bruteForce>` has been replaced by `<exhaustiveSearch>` 's `BRUTE_FORCE` type.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -753,20 +658,16 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 ----
 There is now a better alternative to Brute Force: Branch And Bound, see docs for more information.
 
-====
+[.upgrade-recipe-major]
+=== `ConstraintOccurrence` classes: removed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `ConstraintOccurrence` classes (which were deprecated) have been removed.
 If you hadn't switch them to the `ConstraintMatch` system yet,
 scroll up to the section *From 6.0.0.Alpha9 to 6.0.0.Beta1* for instructions.
 
-====
+[.upgrade-recipe-major]
+=== `Solver`: `setPlanningProblem(Solution)` and `solve()` merged
 
-=== icon:exclamation-circle[] Major
-
-====
 `Solver` interface: the methods `setPlanningProblem(Solution)` and `solve()` have been merged
 as the method `solve(Solution)`.
 
@@ -786,14 +687,11 @@ solver.solve(planningProblem);
 Note: you still need to use `solver.getBestSolution()` to retrieve the best solution.
 That is intentional due to real-time planning and to support pareto optimization in the future.
 
-====
-
 == From 6.1.0.Beta2 to 6.1.0.Beta3
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== `@ValueRangeProvider` on an entity class: use `<swapMoveSelector>` as is
 
-[.hidden-section]
-====
 If you have a `@ValueRangeProvider` on an entity class (instead of the `Solution` class),
 then it's now safe to use the `<swapMoveSelector>` as is.
 It's no longer needed to filter out swaps which could put a value in an entity's variable that's not in its value range.
@@ -812,23 +710,17 @@ After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
   <swapMoveSelector/>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `ScoreDirector`: split up
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The interface `ScoreDirector` has been split up in `ScoreDirector` and `InnerScoreDirector`.
 `ScoreDirector` now only has methods which might make the public API in a future version.
 `InnerScoreDirector` extends `ScoreDirector` and it holds all methods which will never be made part of the public API.
 Similarly, `ScoreDirectorFactory` has been split up in `ScoreDirectorFactory` and `InnerScoreDirectorFactory`.
 
-====
+[.upgrade-recipe-minor]
+=== Programmatic configuration: usage changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you're doing programmatic configuration (instead of by XML),
 Config methods that accepted a property wrapped in a singleton list (due to XStream limitations),
 now no longer need the property wrapped in a list.
@@ -845,11 +737,9 @@ After in `*.java`:
   localSearchSolverPhaseConfig.setMoveSelectorConfig(moveSelectorConfig);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `XmlSolverFactory`: removed
 
-=== icon:exclamation-circle[] Major
-
-====
 The class `XmlSolverFactory` (which was not part of the public API) has been removed
 and replaced by static methods on `SolverFactory` (which are part of the public API).
 
@@ -891,11 +781,9 @@ SolverFactory solverFactory = SolverFactory.createFromXmlReader(reader);
 
 Note: If you used the method `addXstreamAnnotations()`, take a look at the non-public API class `XStreamXmlSolverFactory`.
 
-====
+[.upgrade-recipe-major]
+=== `XmlPlannerBenchmarkFactory`: removed
 
-=== icon:exclamation-circle[] Major
-
-====
 Benchmarker: The class `XmlPlannerBenchmarkFactory` has been removed
 and replaced by static methods on `PlannerBenchmarkFactory`.
 
@@ -913,12 +801,9 @@ PlannerBenchmarkFactory plannerBenchmarkFactory = PlannerBenchmarkFactory.create
 
 Note: If you used the method `addXstreamAnnotations()`, take a look at the non-public API class XStreamXmlPlannerBenchmarkFactory.
 
-====
+[.upgrade-recipe-minor]
+=== `FreemarkerXmlPlannerBenchmarkFactory`: removed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Benchmarker: The class `FreemarkerXmlPlannerBenchmarkFactory` has been removed
 and replaced by static methods on `PlannerBenchmarkFactory`.
 
@@ -934,11 +819,9 @@ After in `*.java`:
 PlannerBenchmarkFactory plannerBenchmarkFactory = PlannerBenchmarkFactory.createFromFreemarkerXmlResource(...);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<xstreamAnnotatedClass>`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 Benchmarker configuration: the element `<xstreamAnnotatedClass>` has been renamed to `<xStreamAnnotatedClass>`.
 
 Before in `*BenchmarkConfig.xml`:
@@ -959,19 +842,15 @@ After in `*BenchmarkConfig.xml`:
 </problemBenchmarks>
 ----
 
-====
+[.upgrade-recipe-readme]
+=== Classpath resources configuration changed
 
-=== icon:book[] Readme
-
-====
 All classpath resources must lose their leading slash,
 because OptaPlanner now expects them to adhere to `ClassLoader.getResource(String)` instead of `Class.getResource(String)`.
 
-====
+[.upgrade-recipe-major]
+=== `SolverFactory.createFromXmlResource(String)`: changed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `SolverFactory.createFromXmlResource(String)` parameter must lose its leading slash.
 
 Before in `*.java`:
@@ -988,11 +867,9 @@ After in `*.java`:
         "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<scoreDrl>`: changed
 
-=== icon:exclamation-circle[] Major
-
-====
 All elements `<scoreDrl>` must lose their leading slash.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -1007,11 +884,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules.drl</scoreDrl>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory.createFromXmlResource(String)`: changed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `PlannerBenchmarkFactory.createFromXmlResource(String)` parameter must lose its leading slash.
 
 Before in `*.java`:
@@ -1028,11 +903,9 @@ After in `*.java`:
         "org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfig.xml");
 ----
 
-====
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory.createFromFreemarkerXmlResource(String)`: changed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `PlannerBenchmarkFactory.createFromFreemarkerXmlResource(String)` parameter must lose its leading slash.
 
 Before in `*.java`:
@@ -1049,11 +922,9 @@ After in `*.java`:
         "org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfigTemplate.xml.ftl");
 ----
 
-====
+[.upgrade-recipe-major]
+=== `SimpleScoreCalculator`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `SimpleScoreCalculator` has been renamed to `EasyScoreCalculator`
 to avoid confusion with `SimpleScore` and `SimpleScore`: it can return other `Score` types too.
 The package name has changed too.
@@ -1088,32 +959,23 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <easyScoreCalculatorClass>org.optaplanner.examples.cloudbalancing.solver.score.CloudBalancingEasyScoreCalculator<easyScoreCalculatorClass>
 ----
 
-====
-
 == From 6.1.0.Beta3 to 6.1.0.Beta4
 
-=== icon:info-circle[] Minor
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `Score` changed
 
-[.hidden-section]
-====
 If you have a custom `ScoreDefinition`: the `Score` interface has an extra method `negate()`.
 
-====
+[.upgrade-recipe-minor]
+=== Simulated Annealing with `<bestScoreLimit>`: behaviour changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 If you combine Simulated Annealing with `<bestScoreLimit>`:
 The `timeGradient` (used only by Simulated Annealing) calculation has changed for `BestScoreTermination`.
 On average, this should be for the better.
 
-====
+[.upgrade-recipe-minor]
+=== `BestSolutionChangedEvent` and `SolverEventListener`: generified
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `BestSolutionChangedEvent` and `SolverEventListener` now have a generic parameter which you can optionally use.
 
 Before in `*.java`:
@@ -1136,12 +998,9 @@ solver.addEventListener(new SolverEventListener<CloudBalance>() {
 });
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` and `isEveryProblemFactChangeProcessed()` added
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `BestSolutionChangedEvent` now has the methods `isNewBestSolutionInitialized()` and `isEveryProblemFactChangeProcessed()`.
 In real-time planning, if you're only interested in processing valid solutions, you'll want to filter and check those.
 
@@ -1162,33 +1021,24 @@ After in `*.java`:
     }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `<writeOutputSolutionEnabled>`: output location changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-A benchmark configuration with `writeOutputSolutionEnabled=true` now writes the solution files
+A benchmark configuration with `<writeOutputSolutionEnabled>true</...>` now writes the solution files
 in the single benchmark directory (instead of the problem benchmark directory)
 and no longer alters the filename.
 
-====
+[.upgrade-recipe-minor]
+=== `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: default parameters changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-`<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`'s `<subChainSelector>`s now default
+`<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>` 's `<subChainSelector>`s now default
 to a `<minimumSubChainSize>` of 1 instead of 2.
 This is to enable `<subChainSwapMoveSelector>` to swap a subchain of size 1 and a subchain of at least size 2 too.
 
-====
+[.upgrade-recipe-minor]
+=== `<pillarSwapMoveSelector>`: default parameters changed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
-`<pillarSwapMoveSelector>'s `<pillarSelector>` now selects subpillars too by default.
+`<pillarSwapMoveSelector>`:'s `<pillarSelector>` now selects subpillars too by default.
 Normally, that's an improvement.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -1209,12 +1059,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml` (if you don't want this 
 
 Note: `<pillarChangeMoveSelector>` is not supported too
 
-====
+[.upgrade-recipe-minor]
+=== `SolverPhase`: renamed
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 `SolverPhase` has been renamed to `Phase`. `SolverPhaseConfig` has been renamed to `PhaseConfig`.
 
 Before in `*.java`:
@@ -1239,11 +1086,9 @@ After in `*.java`:
     solverConfig.setPhaseConfigList(phaseConfigList);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `CustomSolverPhaseCommand`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `CustomSolverPhaseCommand` has been renamed to `CustomPhaseCommand`.
 The element `<customSolverPhase>` has been renamed to `<customPhase>`.
 The element `<customSolverPhaseCommandClass>` has been renamed to `<customPhaseCommandClass>`.
@@ -1280,21 +1125,16 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </customPhase>
 ----
 
-====
-
 == From 6.1.0.Beta4 to 6.1.0.CR1
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== `ScoreDefinition`: `getLevelCount()` renamed
 
-[.hidden-section]
-====
 The method `ScoreDefinition.getLevelCount()` has been renamed to `ScoreDefinition.getLevelsSize()`.
 
-====
+[.upgrade-recipe-major]
+=== `BendableScore`: configuration changed
 
-=== icon:exclamation-circle[] Major
-
-====
 `BendableScore`: the configuration has changed: `...LevelCount` has been renamed to `...LevelsSize`
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -1319,20 +1159,14 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </scoreDirectorFactory>
 ----
 
-====
+[.upgrade-recipe-minor]
+=== `SolverRankingWeightFactory`: moved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 The interface `SolverRankingWeightFactory` has moved package (but almost nobody uses that).
 
-====
+[.upgrade-recipe-minor]
+=== Programmatic configuration: classes moved
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Configuration by Java (instead of XML):
 Enums for the Config classes have been moved into the config package
 and any inner classes of those enums have been moved to the top level.
@@ -1367,19 +1201,14 @@ import org.optaplanner.benchmark.config.statistic.ProblemStatisticType;
 import org.optaplanner.benchmark.config.ranking.SolverRankingType;
 ----
 
-====
+[.upgrade-recipe-impl-detail]
+=== `ForagerConfig`: renamed
 
-=== icon:user-secret[] Implementation detail
-
-[.hidden-section]
-====
 `ForagerConfig` has been renamed to `LocalSearchForagerConfig`
 
-====
+[.upgrade-recipe-major]
+=== `Solution`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 The interface `Solution` has been promoted to the public API.
 It has also moved package from `impl.solution` to `api.domain.solution`
 
@@ -1395,12 +1224,10 @@ After in `*.java`:
 import org.optaplanner.core.api.domain.solution.Solution;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `@PlanningVariable`: `chained` refactored
 
-=== icon:exclamation-circle[] Major
-
-====
-The `@PlanningVariable` property chained has been refactored to `graphType`.
+The `@PlanningVariable` property `chained` has been refactored to `graphType`.
 This is to allow support for other graph types (such as `TREE`) in the future.
 
 Before in `*.java`:
@@ -1421,11 +1248,9 @@ public Standstill getPreviousStandstill() {
 }
 ----
 
-====
+[.upgrade-recipe-major]
+=== `BEST_FIT`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `constructionHeuristicType` `BEST_FIT` has been renamed into `WEAKEST_FIT`.
 The terminology "Best Fit" was not correct and did not allow for `STRONGEST_FIT`.
 
@@ -1445,11 +1270,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </constructionHeuristic>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `BEST_FIT_DECREASING`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The `constructionHeuristicType` `BEST_FIT_DECREASING` has been renamed into `WEAKEST_FIT_DECREASING`.
 The terminology "Best Fit" was not correct and did not allow for `STRONGEST_FIT_DECREASING`.
 
@@ -1469,11 +1292,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </constructionHeuristic>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `@PlanningVariable(mappedBy)` renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 For the shadow variable of a bi-directional relationship,
 the declaration has changed from `@PlanningVariable(mappedBy)` to `@InverseRelationShadowVariable(sourceVariableName)`.
 
@@ -1493,11 +1314,9 @@ Customer getNextCustomer();
 void setNextCustomer(Customer nextCustomer);
 ----
 
-====
+[.upgrade-recipe-major]
+=== `VariableListener`: usage changed
 
-=== icon:exclamation-circle[] Major
-
-====
 `VariableListener`: the `VariableListener` is now declared on the shadow side, instead of the `@PlanningVariable` side.
 This way, OptaPlanner recognizes the shadow variables, and all shadow variables are declared in a consistent matter.
 Furthermore, it allows a shadow variable to based on other shadow variable.
@@ -1538,12 +1357,9 @@ public Integer getArrivalTime() {
 }
 ----
 
-====
+[.upgrade-recipe-minor]
+=== Shadow entities
 
-=== icon:info-circle[] Minor
-
-[.hidden-section]
-====
 Even classes that only have shadow variables (and extend a planning entity class),
 now need to be explicitly registered as planning entities.
 Previously, it was only required for inverse relationship shadow variables. Now it's required for all shadow variables.
@@ -1567,11 +1383,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <planningEntityClass>org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedCustomer</planningEntityClass>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<planningEntityClass>`: ordering changed
 
-=== icon:exclamation-circle[] Major
-
-====
 Multiple `<planningEntityClass>` elements now need to be ordered by superclasses (and superinterfaces) first,
 instead of superclasses (and superinterfaces) last.
 
@@ -1591,11 +1405,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <planningEntityClass>...TimeWindowedCustomer</planningEntityClass>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `<planningEntityClass>`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 The element `<planningEntityClass>` has been renamed to `<entityClass>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -1610,11 +1422,9 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <entityClass>org.optaplanner.examples.cloudbalancing.domain.CloudProcess</entityClass>
 ----
 
-====
+[.upgrade-recipe-major]
+=== `XStreamScoreConverter` and `XStreamBendableScoreConverter`: moved
 
-=== icon:exclamation-circle[] Major
-
-====
 `XStreamScoreConverter` and `XStreamBendableScoreConverter` have moved package.
 
 Before in `*.java`:
@@ -1641,11 +1451,9 @@ After in `*.java`:
 import org.optaplanner.persistence.xstream.impl.score.XStreamBendableScoreConverter;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `ProblemIO`: renamed
 
-=== icon:exclamation-circle[] Major
-
-====
 `ProblemIO` has been renamed to `SolutionFileIO` and moved package (into the public API).
 
 Before in `*.java`:
@@ -1696,11 +1504,9 @@ After in `*.java`:
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 ----
 
-====
+[.upgrade-recipe-major]
+=== `SolutionFileIO`: `getFileExtension()` split up
 
-=== icon:exclamation-circle[] Major
-
-====
 The method `SolutionFileIO.getFileExtension()` has been split up in `getInputFileExtension()` and `getOutputFileExtension()`;
 It's still highly recommended to use the same input and output file extension.
 
@@ -1723,14 +1529,10 @@ public String getOutputFileExtension() {
 }
 ----
 
-====
-
 == From 6.1.0.CR1 to 6.1.0.CR2
 
-=== icon:user-secret[] Implementation detail
+[.upgrade-recipe-impl-detail]
+=== `SolutionDescriptor`: `getEntityDescriptor(...)` renamed
 
-[.hidden-section]
-====
 `SolutionDescriptor.getEntityDescriptor(...)` has been renamed to `SolutionDescriptor.findEntityDescriptorOrFail(...)`
-====
 

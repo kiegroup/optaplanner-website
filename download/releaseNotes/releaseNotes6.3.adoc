@@ -241,4 +241,4 @@ just follow link:../upgradeRecipe/upgradeRecipe6.3.html[the upgrade recipe].
 
 == Archive
 
-For older releases, check link:index.html[the release notes archive].
+For older releases, check link:./[the release notes archive].

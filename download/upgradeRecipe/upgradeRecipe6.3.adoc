@@ -8,10 +8,8 @@
 == From 6.2.0.Final to 6.3.0.Beta1
 
 [.upgrade-recipe-minor]
-=== `@InverseRelationShadowVariable` now supports non-chained planning variables too
+=== `@InverseRelationShadowVariable` for non-chained planning variables
 
-[.hidden-section]
-====
 `@InverseRelationShadowVariable` is now also supported for non-chained planning variables,
 in which case it the inverse property must be `Collection` (`Set` or `List`).
 So it's no longer needed to use a `CustomShadowVariable` to implement the bi-directional relationship behaviour.
@@ -42,10 +40,8 @@ public class CloudComputer {
 }
 ----
 
-====
-
 [.upgrade-recipe-major]
-=== `Move.toString()` changes
+=== `Move.toString()` changed
 
 To adhere to Java best practices,
 which state that an `Object.toString()` should identify an instance and be short
@@ -92,22 +88,16 @@ public class CloudProcess {
 ----
 
 [.upgrade-recipe-minor]
-=== Empty `<constructionHeuristic>`'s default changed
+=== Empty `<constructionHeuristic>`: default algorithm changed
 
-[.hidden-section]
-====
-Default parameter tweaked: an empty `<constructionHeuristic>`'s default changed from `FIRST_FIT` to `ALLOCATE_ENTITY_FROM_QUEUE`.
+Default parameter tweaked: an empty `<constructionHeuristic>` changes its default algorithm from `FIRST_FIT` to `ALLOCATE_ENTITY_FROM_QUEUE`.
 If no entity difficulty comparison and no planning value strength comparison is defined, the behavior is exactly the same.
 Otherwise, the behaviour is `FIRST_FIT_DECREASING` or `WEAKEST_FIT(_DECREASING)`.
 
-====
-
 [.upgrade-recipe-minor]
-=== `solverBenchmarkBluePrintType` `ALL_CONSTRUCTION_HEURISTIC_TYPES` has been renamed
+=== `<solverBenchmarkBluePrintType>`: `ALL_CONSTRUCTION_HEURISTIC_TYPES` renamed
 
-[.hidden-section]
-====
-The `solverBenchmarkBluePrintType` `ALL_CONSTRUCTION_HEURISTIC_TYPES` has been renamed to `EVERY_CONSTRUCTION_HEURISTIC_TYPE`.
+The `<solverBenchmarkBluePrintType>` `ALL_CONSTRUCTION_HEURISTIC_TYPES` has been renamed to `EVERY_CONSTRUCTION_HEURISTIC_TYPE`.
 The old name `ALL_CONSTRUCTION_HEURISTIC_TYPES` is deprecated and will be removed in 7.0.
 
 Before in `*BenchmarkConfig.xml`:
@@ -122,38 +112,26 @@ After in `*BenchmarkConfig.xml`:
 <solverBenchmarkBluePrintType>EVERY_CONSTRUCTION_HEURISTIC_TYPE</solverBenchmarkBluePrintType>
 ----
 
-====
-
 [.upgrade-recipe-minor]
-=== In real-time planning, calling `addProblemFactChange()` now resets the time spent terminations too
+=== Real-time planning: `addProblemFactChange()` resets time spent terminations
 
-[.hidden-section]
-====
 In real-time planning, calling `addProblemFactChange()` now resets the time spent terminations too.
 It did already reset all other terminations (despite that the docs claimed otherwise).
 The docs have also been fixed to reflect reality, which is also the desired behaviour by users.
 
-====
-
 [.upgrade-recipe-minor]
-=== In real-time planning, `addProblemFactChange()` no longer replaces the `ScoreDirector`
+=== Real-time plannin: `addProblemFactChange()` keeps the `ScoreDirector`
 
-[.hidden-section]
-====
 In real-time planning, `addProblemFactChange()` no longer causes the `ScoreDirector` to be replaced
 (so it no longer creates a new `KieSession`) upon solver restart.
 This might expose a hidden bug in your `ProblemFactChange` implementation.
 Enable `environmentMode` `FULL_ASSERT` and do a few `addProblemFactChange()` calls to validate that there are no such bugs.
 
-====
-
 == From 6.3.0.Beta1 to 6.3.0.Beta2
 
 [.upgrade-recipe-minor]
-=== If you implemented a custom `ValueRange`, also implement the method `isEmpty()`
+=== Custom `ValueRange`: new method `isEmpty()`
 
-[.hidden-section]
-====
 If you implemented a custom `ValueRange`, also implement the method `isEmpty()`.
 Normally, you should not have any need for a custom `ValueRange`, because `ValueRangeFactory` supports all sensible ranges.
 
@@ -177,10 +155,8 @@ public class MyDoubleValueRange extends AbstractUncountableValueRange<Double> {
 }
 ----
 
-====
-
 [.upgrade-recipe-major]
-=== If you use multiple planning variables, consider switching to the folded configuration.
+=== Multiple planning variables: use new folded configuration
 
 If you use multiple planning variables, consider switching to the folded configuration.
 
@@ -207,7 +183,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 
 
 [.upgrade-recipe-major]
-=== If you use multiple entity classes, consider switching to the folded configuration
+=== Multiple entity classes: use new folded configuration
 
 If you use multiple entity classes, consider switching to the folded configuration.
 
@@ -245,10 +221,8 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 
 
 [.upgrade-recipe-minor]
-=== If your planning solution has a superclass with planner annotations, those will now be ignored
+=== Planning solution with a superclass with planner annotations: behaviour change
 
-[.hidden-section]
-====
 If your planning solution has a superclass with planner annotations,
 those will now be ignored (just like solution subclass annotations are ignored
 and just like entity superclass or subclass annotations are ignored unless they are a declare planning entity class too).
@@ -289,15 +263,11 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 <solutionClass>...ParentSolution</solutionClass>
 ----
 
-====
-
 == From 6.3.0.Beta2 to 6.3.0.CR1
 
 [.upgrade-recipe-minor]
-=== If a custom `VariableListener` changes 2 shadow variables, use the new `variableListenerRef` property accordingly
+=== Custom `VariableListener` that changes 2 shadow variables: use `variableListenerRef`
 
-[.hidden-section]
-====
 If a custom `VariableListener` changes 2 shadow variables, use the new `variableListenerRef` property accordingly
 to indicate that the `VariableListener` class of another shadow variable also updates this shadow variable:
 
@@ -337,8 +307,6 @@ public Integer getCapacity() {
 }
 ----
 
-====
-
 == From 6.3.0.CR1 to 6.3.0.CR2
 
 [.upgrade-recipe-readme]
@@ -352,7 +320,7 @@ Furthermore, Planner guarantees this triggering in stages also for `VariableList
 
 
 [.upgrade-recipe-major]
-=== If you have a custom `Move`, its `doMove()` method must now call `scoreDirector.triggerVariableListeners()`
+=== Custom `Move`: `doMove()` must call `triggerVariableListeners()`
 
 If you have a custom `Move`, its `doMove()` method must now call `scoreDirector.triggerVariableListeners()` at the end.
 In practice, you should have extended `AbstractMove` - which does the `triggerVariableListeners()` call for you -
@@ -381,7 +349,7 @@ public class CloudComputerChangeMove extends AbstractMove {
 ----
 
 [.upgrade-recipe-major]
-=== If you have a `ProblemFactChange`, its `doChange()` method must now call `scoreDirector.triggerVariableListeners()`
+=== Real-time planning `ProblemFactChange`: `doChange()` must  call `triggerVariableListeners()`
 
 If you have a `ProblemFactChange`, its `doChange()` method must now call `scoreDirector.triggerVariableListeners()`
 after every set of changes (before calling `calculateScore()` or relying on shadow variables).
@@ -430,7 +398,7 @@ public void deleteComputer(final CloudComputer computer) {
 ----
 
 [.upgrade-recipe-major]
-=== If you have a `CustomPhaseCommand`, its `changeWorkingSolution()` method must now call `scoreDirector.triggerVariableListeners()`
+=== Custom phase `CustomPhaseCommand`: `changeWorkingSolution()` must  call `triggerVariableListeners()`
 
 If you have a `CustomPhaseCommand`, its `changeWorkingSolution()` method must now call `scoreDirector.triggerVariableListeners()`
 after every set of changes (before calling `calculateScore()` or relying on shadow variables).
@@ -463,29 +431,19 @@ public class MyCustomPhase implements CustomPhaseCommand {
 ----
 
 [.upgrade-recipe-minor]
-=== A custom `Move` must now read any shadow variables it needs first
+=== Custom `Move`: read shadow variables first
 
-[.hidden-section]
-====
 A custom `Move` must now read any shadow variables it needs before its first `beforeVariableChanged()` call.
 It no longer needs to assign genuine variables to intermediate values to avoid errors in the `VariableListeners` that update shadow variables.
 
-====
-
 [.upgrade-recipe-impl-detail]
-=== All built-in moves that affect chained variables have been greatly simplified
+=== All built-in chained moves simplified
 
-[.hidden-section]
-====
 All built-in moves that affect chained variables have been greatly simplified due to the new `VariableListener` guarantee.
 
-====
-
 [.upgrade-recipe-impl-detail]
-=== Constructor of `ChainedChangeMove`, `ChainedSwapMove`, `SubChainChangeMove` and `SubChainSwapMove` changed
+=== Chained moves: constructors changed
 
-[.hidden-section]
-====
 The constructor of `ChainedChangeMove`, `ChainedSwapMove`, `SubChainChangeMove` and `SubChainSwapMove` now require the `SingletonInverseVariableSupply` parameter.
 
 Before in `*.java`:
@@ -502,31 +460,16 @@ SingletonInverseVariableSupply inverseVariableSupply = ((InnerScoreDirector) sco
 return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, toValue);
 ----
 
-====
+Furthermore, a `ChainedSwapMove` 's constructor now requires a `List` instead of `Collection` of `VariableDescriptor` s.
 
 [.upgrade-recipe-impl-detail]
-=== `ChainedSwapMove` 's constructor changed
+=== `InnerScoreDirector`: `getTrailingEntity()` removed
 
-[.hidden-section]
-====
-`ChainedSwapMove` 's constructor now requires a `List` instead of `Collection` of `VariableDescriptor` s.
-
-====
-
-[.upgrade-recipe-impl-detail]
-=== Method `InnerScoreDirector.getTrailingEntity()` has been removed
-
-[.hidden-section]
-====
 The method `InnerScoreDirector.getTrailingEntity()` has been removed. Use `SingletonInverseVariableSupply` instead.
 
-====
-
 [.upgrade-recipe-minor]
-=== One score rule can now change 2 score levels in its RHS
+=== One score rule that affects 2 score levels
 
-[.hidden-section]
-====
 One score rule can now change 2 score levels in its RHS.
 
 Before in `*.drl`:
@@ -558,15 +501,11 @@ then
 end
 ----
 
-====
-
 == From 6.3.0.CR2 to 6.3.0.CR3
 
 [.upgrade-recipe-minor]
-=== If you build a `Solver` entirely from API, use `SolverFactory.createEmpty()`
+=== Build a `Solver` from API: use `SolverFactory.createEmpty()`
 
-[.hidden-section]
-====
 If you build a `Solver` entirely from API (not recommended - it's better to load it partially from XML),
 use `SolverFactory.createEmpty()` and `solverFactory.getSolverConfig()` accordingly.
 
@@ -585,4 +524,4 @@ After in `*.java`:
     SolverConfig solverConfig = solverFactory.getSolverConfig();
     ...
     return solverFactory.buildSolver();
-====
+----

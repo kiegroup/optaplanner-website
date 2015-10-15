@@ -26,3 +26,4 @@ License: Public Domain (free for any use, attribution appreciated but not requir
 Font-awesome version: 4.4.0
 Downloaded from: http://fontawesome.io
 License: OFL - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-b
+Note that font-awesome is currently NOT enabled (in base.html.haml)
