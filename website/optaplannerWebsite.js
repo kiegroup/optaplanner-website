@@ -1,49 +1,49 @@
+function toggleCollapseSection(collapseButton, collapseSection) {
+    if ($(collapseButton).hasClass("glyphicon-chevron-down")) {
+        $(collapseButton).removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+    } else {
+        $(collapseButton).removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+    }
+    $(collapseSection).prev().toggleClass('stacked');
+    $(collapseSection).toggle();
+}
+
+function formatUpgradeRecipeItem(node, badge, collapseByDefault) {
+    $(node).addClass('upgrade-recipe-note');
+    var noteBody = $(node).children().not('h3:first').wrapAll('<div class="upgrade-recipe-note-body"></div>');
+    var noteHeader = $(node).find('h3:first').wrap('<a class="upgrade-recipe-note-header" href="#"></a>');
+    $(noteHeader).prepend(badge);
+    var collapseButton = $('<span class="glyphicon glyphicon-chevron-up pull-right"/>');
+    $(noteHeader).append(collapseButton);
+    noteHeader.on('click', function(event) {
+        event.preventDefault();
+        toggleCollapseSection(collapseButton, noteBody);
+    });
+    if (collapseByDefault) {
+        toggleCollapseSection(collapseButton, noteBody);
+    }
+}
+
 function insertUpgradeRecipePriorities() {
     $('.upgrade-recipe-major').each(function(idx, node) {
-        var badge = $('<span class="label label-danger label-as-badge">Major</span>');
-        $(node).prepend(badge);
+        formatUpgradeRecipeItem(node, $('<span class="label label-danger label-as-badge">Major</span>'), false);
     });
     $('.upgrade-recipe-minor').each(function(idx, node) {
-        $(node).children().not('h3:first').wrapAll('<div class="hidden-section"></div>');
-        var badge = $('<span class="label label-warning label-as-badge">Minor</span>');
-        $(node).prepend(badge);
+        formatUpgradeRecipeItem(node, $('<span class="label label-warning label-as-badge">Minor</span>'), true);
     });
     $('.upgrade-recipe-impl-detail').each(function(idx, node) {
-        $(node).children().not('h3:first').wrapAll('<div class="hidden-section"></div>');
-        var badge = $('<span class="label label-info label-as-badge">Impl detail</span>');
-        $(node).prepend(badge);
+        formatUpgradeRecipeItem(node, $('<span class="label label-info label-as-badge">Impl detail</span>'), true);
     });
     $('.upgrade-recipe-recommended').each(function(idx, node) {
-        var badge = $('<span class="label label-primary label-as-badge">Recommended</span>');
-        $(node).prepend(badge);
+        formatUpgradeRecipeItem(node, $('<span class="label label-primary label-as-badge">Recommended</span>'), false);
     });
     $('.upgrade-recipe-readme').each(function(idx, node) {
-        var badge = $('<span class="label label-success label-as-badge">Readme</span>');
-        $(node).prepend(badge);
-    });
-}
-
-function toggleShowHiddenSection(hiddenSection) {
-    hiddenSection.prev().toggleClass('stacked');
-    hiddenSection.toggle();
-}
-
-function insertShowHiddenSectionButtons() {
-    $('.hidden-section').each(function(idx, node) {
-        var hiddenSection = $(node);
-        var showHiddenSectionButton = $('<a class="show-hidden-section" href="#">Show/hide</a>');
-        showHiddenSectionButton.insertBefore(hiddenSection);
-        showHiddenSectionButton.on('click', function(event) {
-            event.preventDefault();
-            toggleShowHiddenSection(hiddenSection);
-        });
-        toggleShowHiddenSection(hiddenSection);
+        formatUpgradeRecipeItem(node, $('<span class="label label-success label-as-badge">Readme</span>'), false);
     });
 }
 
 $(document).ready( function() {
     $(insertUpgradeRecipePriorities);
-    $(insertShowHiddenSectionButtons);
 
     $('.carousel').carousel();
     $('#whatIsCarousel').on('slide.bs.carousel', function(e) {

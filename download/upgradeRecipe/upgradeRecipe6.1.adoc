@@ -271,7 +271,7 @@ After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
 [.upgrade-recipe-readme]
 === _time spend_ typo fixed
 
-The phrase "time spend" has been renamed to "time spent".
+The phrase _time spend_ has been renamed to _time spent_.
 This includes the log output and the benchmark report.
 
 [.upgrade-recipe-major]

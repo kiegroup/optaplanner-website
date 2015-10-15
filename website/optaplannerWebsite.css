@@ -91,11 +91,56 @@ li.navbar-form {
     list-style: none;
 }
 
-.upgrade-recipe-major > .label, .upgrade-recipe-minor > .label, .upgrade-recipe-impl-detail > .label, .upgrade-recipe-recommended > .label, .upgrade-recipe-readme > .label {
-    float: left;
-    margin-right: 10px;
-    font-size: large;
+.upgrade-recipe-note {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
 }
+
+a.upgrade-recipe-note-header {
+    text-decoration: none;
+    color: #333;
+}
+
+.upgrade-recipe-note-header > h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.upgrade-recipe-note-header > h3 > span:first-child {
+    margin-right: 5px;
+}
+
+.upgrade-recipe-note-header > h3 > span:last-child {
+    margin-left: 5px;
+}
+
+/*.upgrade-recipe-collapse-button {*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    /*font-weight: 400;*/
+    /*font-size: 14px;*/
+    /*margin-bottom: 6px;*/
+    /*padding: 6px 12px;*/
+    /*cursor: pointer;*/
+    /*box-sizing: border-box;*/
+    /*border: 1px solid #285E8E;*/
+    /*border-radius: 4px;*/
+/*}*/
+
+/*.upgrade-recipe-collapse-button:link {*/
+    /*color: #3276B1;*/
+    /*background-color: #FFF;*/
+/*}*/
+
+/*.upgrade-recipe-collapse-button:hover {*/
+    /*color: #FFF;*/
+    /*background-color: #3276B1;*/
+/*}*/
+
 
 /******************************************************************************
 * Blog content
@@ -150,41 +195,6 @@ th, td {
     -webkit-border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
-}
-
-/******************************************************************************
-* Release notes (hidden sections)
-******************************************************************************/
-
-.show-hidden-section {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 6px;
-    padding: 6px 12px;
-    cursor: pointer;
-    box-sizing: border-box;
-    border: 1px solid #285E8E;
-    border-radius: 4px;
-}
-
-.show-hidden-section:link {
-    color: #3276B1;
-    background-color: #FFF;
-}
-
-.show-hidden-section:hover {
-    color: #FFF;
-    background-color: #3276B1;
-}
-
-.hidden-section {
-    background-color: #FFFFCC;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
 }
 
 /******************************************************************************
