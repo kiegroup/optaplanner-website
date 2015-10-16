@@ -44,7 +44,7 @@ public class CloudComputer {
 
 To adhere to Java best practices,
 which state that an `Object.toString()` should identify an instance and be short
-(instead of trying to verbalize it's entire state),
+(instead of trying to verbalize its entire state),
 the `Move.toString()` methods have been modified to mention the old value too (as well as the entity and the new value).
 Their notations have also been made consistent:
 
