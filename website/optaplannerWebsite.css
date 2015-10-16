@@ -83,9 +83,17 @@ li.navbar-form {
     }
 }
 
+.summaryParagraph {
+    font-size: larger;
+}
+
 /******************************************************************************
 * Upgrade recipe
 ******************************************************************************/
+
+ul.upgrade-recipe-label-list {
+    padding-left: 10px;
+}
 
 .upgrade-recipe-label-list > li {
     list-style: none;
@@ -116,30 +124,6 @@ a.upgrade-recipe-note-header {
 .upgrade-recipe-note-header > h3 > span:last-child {
     margin-left: 5px;
 }
-
-/*.upgrade-recipe-collapse-button {*/
-    /*display: inline-block;*/
-    /*text-align: center;*/
-    /*text-decoration: none;*/
-    /*font-weight: 400;*/
-    /*font-size: 14px;*/
-    /*margin-bottom: 6px;*/
-    /*padding: 6px 12px;*/
-    /*cursor: pointer;*/
-    /*box-sizing: border-box;*/
-    /*border: 1px solid #285E8E;*/
-    /*border-radius: 4px;*/
-/*}*/
-
-/*.upgrade-recipe-collapse-button:link {*/
-    /*color: #3276B1;*/
-    /*background-color: #FFF;*/
-/*}*/
-
-/*.upgrade-recipe-collapse-button:hover {*/
-    /*color: #FFF;*/
-    /*background-color: #3276B1;*/
-/*}*/
 
 
 /******************************************************************************

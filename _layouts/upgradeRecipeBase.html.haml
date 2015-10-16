@@ -3,6 +3,55 @@ layout: normalBase
 ---
 %h1
   #{page.title}
-= partial('upgradeRecipeHeader.html.haml', :outputPage => page, :upgrade_recipe_version => page.upgrade_recipe_version,
-  :upgrade_recipe_previous_version => page.upgrade_recipe_previous_version)
+:asciidoc
+  [.summaryParagraph]
+  *OptaPlanner's public API classes are backwards compatible*,
+  but many implementations use impl classes (which are documented in the reference manual too).
+  This upgrade recipe _minimizes the pain_ to upgrade such older code
+  as well as take advantage of the newest features in OptaPlanner.
+
+.row
+  .col-md-6
+    %h2(style="margin-top: 0px;") Legend
+    %p Every upgrade note has an indication how likely your code will be affected by that change:
+    %ul.upgrade-recipe-label-list
+      %li
+        %span.label.label-danger.label-as-badge Major
+        Likely to affect your code.
+      %li
+        %span.label.label-warning.label-as-badge Minor
+        Unlikely to affect your code (especially if you followed the examples), unless you have hacks.
+      %li
+        %span.label.label-info.label-as-badge Impl detail
+        Will not affect your code, unless you have very deep hacks.
+      %li
+        %span.label.label-primary.label-as-badge Recommended
+        Not a backward incompatible change, but you probably want to do this.
+      %li
+        %span.label.label-success.label-as-badge Readme
+        Read this to better understand why the subsequent major changes were made.
+
+  .col-md-6
+    .panel.panel-default
+      .panel-heading Note for BRMS/BPMS customers
+      .panel-body
+        :asciidoc
+          The BRMS/BPMS version does *NOT* match the OptaPlanner version:
+
+          |===
+          |BRMS/BPMS version |OptaPlanner version
+
+          |6.0 | 6.0
+          |6.1 | 6.2
+          |6.2 | 6.3
+          |===
+
+          Apply the recipe of the appropriate OptaPlanner version.
+
+:asciidoc
+  == Upgrade from an older version
+
+  To upgrade from a version before (#{page.upgrade_recipe_previous_version}),
+  first apply link:./[the previous upgrade recipes].
+
 ~ content

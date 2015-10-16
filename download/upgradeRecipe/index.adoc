@@ -1,4 +1,4 @@
-= Upgrade Recipes Archive
+= Upgrade Recipe Archive
 :awestruct-description: A list of all upgrade recipes for each OptaPlanner version.
 :awestruct-layout: normalBase
 :awestruct-priority: 0.1

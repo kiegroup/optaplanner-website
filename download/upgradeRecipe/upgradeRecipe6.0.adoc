@@ -2364,4 +2364,3 @@ public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
 `ConstraintMatch` no longer has a `getConstraintMatchTotal()` method
 because a `ConstraintMatch` can survive many Local Search steps, but its Total (which holds a `Set`) should not survive.
 Instead it has `getConstraintPackage()`, `getConstraintName()` and `getScoreLevel()`.
-

@@ -1535,4 +1535,3 @@ public String getOutputFileExtension() {
 === `SolutionDescriptor`: `getEntityDescriptor(...)` renamed
 
 `SolutionDescriptor.getEntityDescriptor(...)` has been renamed to `SolutionDescriptor.findEntityDescriptorOrFail(...)`
-

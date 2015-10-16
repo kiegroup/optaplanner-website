@@ -235,4 +235,3 @@ which is documented.
 === VRP: Nearby Selection
 
 To scale VRP cases, Nearby Selection is critical. It is now finally completely supported and documented.
-
