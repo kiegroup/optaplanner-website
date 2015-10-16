@@ -3,7 +3,6 @@
 :awestruct-layout: upgradeRecipeBase
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 6.0
-:awestruct-upgrade_recipe_previous_version: 5.5
 
 == From 5.5.0.Final to 6.0.0.Alpha7
 

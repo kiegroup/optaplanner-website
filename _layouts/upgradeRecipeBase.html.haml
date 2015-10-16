@@ -8,10 +8,10 @@ layout: normalBase
   *OptaPlanner's public API classes are backwards compatible*,
   but many implementations use impl classes (which are documented in the reference manual too).
   This upgrade recipe _minimizes the pain_ to upgrade such older code
-  as well as take advantage of the newest features in OptaPlanner.
+  as well as take advantage of link:../releaseNotes/releaseNotes#{page.upgrade_recipe_version}.html[the newest features in OptaPlanner #{page.upgrade_recipe_version}].
 
 .row
-  .col-md-6
+  .col-md-7
     %h2(style="margin-top: 0px;") Legend
     %p Every upgrade note has an indication how likely your code will be affected by that change:
     %ul.upgrade-recipe-label-list
@@ -31,8 +31,14 @@ layout: normalBase
         %span.label.label-success.label-as-badge Readme
         Read this to better understand why the subsequent major changes were made.
 
-  .col-md-6
-    .panel.panel-default
+    :asciidoc
+      == Upgrade from an older version
+
+      To upgrade from an older version,
+      first apply link:./[the previous upgrade recipes].
+
+  .col-md-5
+    .panel.panel-default.pull-right
       .panel-heading Note for BRMS/BPMS customers
       .panel-body
         :asciidoc
@@ -47,11 +53,5 @@ layout: normalBase
           |===
 
           Apply the recipe of the appropriate OptaPlanner version.
-
-:asciidoc
-  == Upgrade from an older version
-
-  To upgrade from a version before (#{page.upgrade_recipe_previous_version}),
-  first apply link:./[the previous upgrade recipes].
 
 ~ content
