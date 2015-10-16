@@ -16,7 +16,7 @@ latestFinal:
 # latest.version can be equal to latestFinal.version
 latest:
   version: 6.3.0.Final
-  distributionZip: http://download.jboss.org/optaplanner/release/6.3.0.CR2/optaplanner-distribution-6.3.0.CR2.zip
+  distributionZip: http://download.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-distribution-6.3.0.Final.zip
   releaseDate: 2015-09-05
   releaseNotesVersion: 6.3
 
