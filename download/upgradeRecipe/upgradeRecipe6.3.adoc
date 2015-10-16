@@ -119,7 +119,7 @@ It did already reset all other terminations (despite that the docs claimed other
 The docs have also been fixed to reflect reality, which is also the desired behaviour by users.
 
 [.upgrade-recipe-minor]
-=== Real-time plannin: `addProblemFactChange()` keeps the `ScoreDirector`
+=== Real-time planning: `addProblemFactChange()` keeps the `ScoreDirector`
 
 In real-time planning, `addProblemFactChange()` no longer causes the `ScoreDirector` to be replaced
 (so it no longer creates a new `KieSession`) upon solver restart.
