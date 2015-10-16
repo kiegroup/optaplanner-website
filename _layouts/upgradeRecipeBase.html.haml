@@ -1,13 +1,13 @@
 ---
-layout: normalBase
+layout: normalBaseWithComments
 ---
 %h1
   #{page.title}
 :asciidoc
   [.summaryParagraph]
   *OptaPlanner's public API classes are backwards compatible*,
-  but many implementations use impl classes (which are documented in the reference manual too).
-  This upgrade recipe _minimizes the pain_ to upgrade such older code
+  but users often also use impl classes (which are documented in the reference manual too).
+  This upgrade recipe _minimizes the pain_ to upgrade such code
   as well as take advantage of link:../releaseNotes/releaseNotes#{page.upgrade_recipe_version}.html[the newest features in OptaPlanner #{page.upgrade_recipe_version}].
 
 .row
@@ -34,24 +34,17 @@ layout: normalBase
     :asciidoc
       == Upgrade from an older version
 
-      To upgrade from an older version,
-      first apply link:./[the previous upgrade recipes].
+      To upgrade from an older version, first apply link:./[the previous upgrade recipes].
 
   .col-md-5
-    .panel.panel-default.pull-right
+    .panel.panel-default
       .panel-heading Note for Red Hat customers
       .panel-body
-        :asciidoc
-          The BRMS/BPMS version does *NOT* match the OptaPlanner version:
-
-          |===
-          |BRMS/BPMS version |OptaPlanner version
-
-          |6.0 | 6.0
-          |6.1 | 6.2
-          |6.2 | 6.3
-          |===
-
-          Apply the recipe of the appropriate OptaPlanner version.
+        %p
+          The BRMS/BPMS version does
+          %strong NOT
+          match the OptaPlanner version:
+        = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
+        %p Apply the recipe of the appropriate OptaPlanner version.
 
 ~ content
