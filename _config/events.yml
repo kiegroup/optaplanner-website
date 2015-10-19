@@ -146,11 +146,13 @@
   url: http://www.meetup.com/Java-Vienna/events/225365483/
   presenters: Lukáš Petrovický
 
-- eventId: 20151110-devoxxbe
+- eventId: 20151112-devoxxbe
   eventOrganization: Devoxx Be
   location: Antwerp, Belgium
-  date: 2015-11-10
-  url: http://www.devoxx.be
+  date: 2015-11-12
+  title: False assumptions for the Vehicle Routing Problem
+  url: http://cfp.devoxx.be/2015/talk/OXN-8472/False_assumptions_for_the_Vehicle_Routing_Problem
+  presenters: Geoffrey De Smet
 
 - eventId: 20160130-fosdem
   eventOrganization: FOSDEM
