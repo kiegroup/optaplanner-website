@@ -180,3 +180,40 @@ After in `*.java`:
 ----
 TerminationConfig clone = new TerminationConfig();
 clone.inherit(terminationConfig);
+
+[.upgrade-recipe-minor]
+=== `SwingUtils` and `SwingUncaughtExceptionHandler`: moved
+
+If you've copy pasted the examples Swing UI, you might be using `SwingUtils` and `SwingUncaughtExceptionHandler`.
+These classes are now in a different package (in the same jar for now).
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.benchmark.impl.aggregator.swingui.SwingUncaughtExceptionHandler;
+import org.optaplanner.benchmark.impl.aggregator.swingui.SwingUtils;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.swing.impl.SwingUncaughtExceptionHandler;
+import org.optaplanner.swing.impl.SwingUtils;
+----
+
+[.upgrade-recipe-minor]
+=== `TangoColorFactory`: moved
+
+The class `TangoColorFactory` has moved to a different package and from optaplanner-examples into optaplanner-benchmark.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.examples.common.swingui.TangoColorFactory;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.swing.impl.TangoColorFactory;
+----
