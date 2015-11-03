@@ -59,6 +59,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 * There are few things more satisfying in life than getting an OptaPlanner system up and running. It's like magic. - https://twitter.com/divideby0/status/522952030932189185[Cedric Hurst]
 
+* It is very easy to add custom modules on top of OptaPlanner's elegant framework. - Isaac Zhang
+
 == Share your story
 
 If you would like share a case study, article or 1-line testimonial, link:../community/socialMedia.html[let us know]:
