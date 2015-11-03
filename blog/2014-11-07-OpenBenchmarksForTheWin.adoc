@@ -92,7 +92,7 @@ It's fair: each jockey rides his own horse. Most of the arguments against compet
 And as an added bonus, we get to learn from and compare with the academic research community.
 
 In the past, OptaPlanner has done well on these challenges, despite the limited weekend time we have to spend on them.
-In the last challenge, http://iconchallenge.insight-centre.org/[the ICON power scheduling challenge], we (Lukas, Matej and me) finished in 2nd place.
+In the last challenge, http://iconchallenge.insight-centre.org/challenge-energy[the ICON power scheduling challenge], we (Lukas, Matej and me) finished in 2nd place.
 A minority of the researchers still beat us (with their innovative algorithms in their experimental contraptions and massive time to tweak/build those),
 but it's been years since a competitive Solver has beaten us.
 
