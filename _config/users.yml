@@ -149,3 +149,14 @@
   githubUsername: psiroky
   employedBy: Red Hat
   ircNickname: psiroky
+  
+- userId: mdanter
+  fullName: Matyas Danter
+  role: Contributor
+  gravatarHashId: bd0aa87d8591be9c05a5409bba500bad
+  googlePlusId: +matyasdanter
+  twitterUsername: mdanter
+  githubUsername: mdanter
+  email: mdanter AT redhat.com
+  employedBy: Red Hat
+  ircNickname: mdanter
