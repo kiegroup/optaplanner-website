@@ -3,9 +3,54 @@
 :awestruct-layout: normalBase
 :showtitle:
 
-https://www.redhat.com[Red Hat] employs the core developers of this open source project.
-Red Hat offers enterprise support and consultancy for this community _project_,
+[.summaryParagraph]
+https://www.redhat.com[Red Hat] sponsors this Open Source project
+and employs its core developers.
+Additionally, Red Hat offers enterprise support and consultancy for this community _project_,
 as part of Red Hat _product_ subscriptions.
+
+== Community and product comparison
+
+The community download delivers everything you would expect from an Open Source project,
+including all features. The product subscription fills the missing gaps for enterprise use.
+Both community and product use the same code base.
+
+|===
+| |Community |Product subscription
+
+|*Functionality* | |
+|All features |image:checkYes.png[Yes] Includes all enterprise features too |image:checkYes.png[Yes]
+|All bugfixes |image:checkYes.png[Yes] Master branch only |image:checkYes.png[Yes] Supported maintenance branches too
+|Documentation |image:checkYes.png[Yes] |image:checkYes.png[Yes]
+|Backport bugfixes to maintenance branches |image:checkNo.png[No] Not released |image:checkYes.png[Yes] Released in maintenance releases
+|Security (CVE) watch for maintenance branches |image:checkNo.png[No] Eventually released from master branch only |image:checkYes.png[Yes] Released as backported bugfix
+
+|*Testing* | |
+|Unit testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
+|Integration testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
+|Stress testing |image:checkYes.png[Yes] |image:checkYes.png[Yes]
+|Performance testing and sizing |image:checkNo.png[No] |image:checkYes.png[Yes]
+|QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application servers, databases, ...
+
+|*Help* | |
+|Roadmap impact |image:checkYes.png[Yes] Use mailing list, issue tracker or send a Pull Request |image:checkYes.png[Yes] Prioritized above community requests
+|Forum questions |image:checkYes.png[Yes] Community driven |image:checkYes.png[Yes] Call 24/7 support instead
+|24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] Guaranteed response time (SLA)
+|One-off patch for a specific customer |image:checkNo.png[No] |image:checkYes.png[Yes] Often within hours. Rolled up in next maintenance release too
+|Red Hat consultancy, training and POC assistance |image:checkNo.png[No] |image:checkYes.png[Yes]
+
+|*Release schedule* | |
+|Beta/CR releases |image:checkYes.png[Yes] Usually every few weeks |image:checkYes.png[Yes] After Final community release
+|Final/GA releases |image:checkYes.png[Yes] Usually every 3 months |image:checkYes.png[Yes] Usually 2 months after community release (if it is productized)
+|Maintenance releases |image:checkNo.png[No] Use latest Beta/CR instead |image:checkYes.png[Yes] Usually every 6 weeks
+
+|*Information* | |
+|Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution portal available to customers only
+|Target audience |Free use |Mission critical enterprise use
+|*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat]*
+|===
+
+== Product overview
 
 image:kieFunctionalityOverview.png[KIE functionality overview]
 
