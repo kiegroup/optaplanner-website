@@ -30,23 +30,23 @@ Both community and product use the same code base.
 |Integration testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
 |Stress testing |image:checkYes.png[Yes] |image:checkYes.png[Yes]
 |Performance testing and sizing |image:checkNo.png[No] |image:checkYes.png[Yes]
-|QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application servers, databases, ...
+|QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application containers, databases, ... See https://access.redhat.com/documentation/en/red-hat-jboss-brms/[supported configurations].
 
 |*Help* | |
-|Roadmap impact |image:checkYes.png[Yes] Use mailing list, issue tracker or send a Pull Request |image:checkYes.png[Yes] Prioritized above community requests
-|Forum questions |image:checkYes.png[Yes] Community driven |image:checkYes.png[Yes] Call 24/7 support instead
-|24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] Guaranteed response time (SLA)
-|One-off patch for a specific customer |image:checkNo.png[No] |image:checkYes.png[Yes] Often within hours. Rolled up in next maintenance release too
+|Roadmap impact |image:checkYes.png[Yes] Use link:forum.html[mailing list], link:../code/issueTracker.html[issue tracker] or send a link:../code/sourceCode.html[Pull Request] |image:checkYes.png[Yes] Prioritized above community requests
+|Public forum |image:checkYes.png[Yes] Use link:forum.html[community forum] |image:checkYes.png[Yes] Or call 24/7 support instead
+|Private 24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] https://access.redhat.com/[By web or phone], guaranteed response time (SLA)
+|One-off patch for an urgent customer critical issue |image:checkNo.png[No] |image:checkYes.png[Yes] Also rolled up in the next maintenance release
 |Red Hat consultancy, training and POC assistance |image:checkNo.png[No] |image:checkYes.png[Yes]
 
 |*Release schedule* | |
 |Beta/CR releases |image:checkYes.png[Yes] Usually every few weeks |image:checkYes.png[Yes] After Final community release
-|Final/GA releases |image:checkYes.png[Yes] Usually every 3 months |image:checkYes.png[Yes] Usually 2 months after community release (if it is productized)
+|Stable releases |image:checkYes.png[Yes] Final usually every 3 months |image:checkYes.png[Yes] GA usually 2 months after community Final release (if it is productized)
 |Maintenance releases |image:checkNo.png[No] Use latest Beta/CR instead |image:checkYes.png[Yes] Usually every 6 weeks
 
 |*Information* | |
-|Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution portal available to customers only
-|Target audience |Free use |Mission critical enterprise use
+|Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution available from customer portal only
+|Target audience |Free use |Enterprise production use
 |*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat]*
 |===
 
