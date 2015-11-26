@@ -5,5 +5,19 @@
 
 OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in
 http://www.orcomplete.com/research/geoffrey-de-smet/open-source-metaheuristics-research-on-drools-planner[this article].
+Especially https://www.youtube.com/watch?v=JpcPEieU3Cg[OptaPlanner Benchmarker] and our big set of already implemented use cases,
+make it easy to test your new algorithm objectively against the existing algorithms.
 
 If you're doing academic or professional research on top of OptaPlanner, link:../community/socialMedia.html[let us know].
+
+To reference OptaPlanner or the user manual, please use this BibTeX reference:
+
+----
+@manual{optaplanner,
+  author        = {Geoffrey De Smet et al},
+  title         = {OptaPlanner User Guide},
+  organization  = {Red Hat and the community},
+  url           = {http://www.optaplanner.org},
+  note          = {OptaPlanner is an open source constraint satisfaction solver in Java}
+}
+----
