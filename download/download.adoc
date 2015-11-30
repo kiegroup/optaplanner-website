@@ -6,7 +6,7 @@
 :page-interpolate: true
 :showtitle:
 
-Interested in enterprise support? Check out link:../community/product.html[Red Hat's offering].
+Interested in enterprise support or consulting? Check out link:../community/product.html[Red Hat's offering].
 
 [[FinalReleases]]
 == Final releases
@@ -18,11 +18,10 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 * image:download.png[Download] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner #{site.pom.latestFinal.version}]*
 ** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}] -
 link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latestFinal.releaseNotesVersion}]
-** License: link:../code/license.html[ASL 2.0]
-** Release date: `#{site.pom.latestFinal.releaseDate}`
+** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 
-* Red Hat subscription releases: Check https://access.redhat.com/downloads[the product download site].
+* For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
 
 === Maven, Gradle, Ivy or Buildr
 
@@ -62,8 +61,7 @@ A CR should be almost identical to the Final release.
 * image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}] -
 link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
-** License: link:../code/license.html[ASL 2.0]
-** Release date: `#{site.pom.latest.releaseDate}`
+** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
 
 Or with Maven:
 

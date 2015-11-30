@@ -59,18 +59,8 @@ change_frequency: monthly
           %ul.nav.navbar-nav
             %li<
               %a{:href => relative("/")} Home
-            %li.dropdown
-              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                = precede 'Download ' do
-                  %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => relative("/download/download.html")} Download
-                %li.divider
-                %li<
-                  %a{:href => relative("/download/releaseNotes/")} Release notes
-                %li<
-                  %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
+            %li<
+              %a{:href => relative("/download/download.html")} Download
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                 = precede 'Learn ' do
@@ -121,6 +111,10 @@ change_frequency: monthly
                 %li.divider
                 %li<
                   %a{:href => relative("/code/license.html")} License
+                %li<
+                  %a{:href => relative("/download/releaseNotes/")} Release notes
+                %li<
+                  %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                 = precede 'KIE ' do
