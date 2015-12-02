@@ -39,3 +39,4 @@ or to individual `<solverBenchmark>` elements.
 * A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
 * Examples application has switched to a more modern look and feel.
 * Several design patterns to deal with scheduling in time have been documented in the manual.
+* Various bugs resolved. See https://issues.jboss.org/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].
