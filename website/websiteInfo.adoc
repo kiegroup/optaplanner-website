@@ -2,6 +2,7 @@
 :awestruct-description: Website technology and feedback
 :awestruct-layout: normalBase
 :awestruct-priority: 0.1
+:page-interpolate: true
 :showtitle:
 
 == Website technology
@@ -16,8 +17,7 @@ This website uses:
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
-// TODO Use ruby expression {Time.now.strftime('%a %-d %B %Y')} instead of AsciiDoctor variable
-This website was generated on _{localdatetime}_.
+This website was generated on #{Time.now.strftime('%a %-d %B %Y at %H:%M:%S %Z')}.
 
 == Website feedback
 
