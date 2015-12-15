@@ -32,6 +32,11 @@ or to individual `<solverBenchmark>` elements.
 </inheritedSolverBenchmark>
 ----
 
+=== New example: Meeting scheduling
+
+Assign meetings of different durations to starting times and rooms.
+See https://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
+
 === Other improvements
 
 * Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
@@ -39,4 +44,5 @@ or to individual `<solverBenchmark>` elements.
 * A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
 * Examples application has switched to a more modern look and feel.
 * Several design patterns to deal with scheduling in time have been documented in the manual.
+* New Construction Heuristic: Allocate To Value From Queue
 * Various bugs resolved. See https://issues.jboss.org/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].
