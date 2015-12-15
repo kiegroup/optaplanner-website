@@ -36,6 +36,10 @@ For most human activities, scheduling on second or subsecond accuracy is pointle
 for example in meeting scheduling, expecting people to show up at exactly 3 seconds after 9 o'clock for a meeting is overly optimistic.
 Therefore scheduling on such a fine-grained accuracy would actually be counter-productive.
 
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
++++
+
 == Chained Through Time pattern
 
 In the _Chained Through Time_ pattern, a person or machine continuously works on 1 planning entity at time in sequence.

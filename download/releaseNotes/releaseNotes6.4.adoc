@@ -35,7 +35,7 @@ or to individual `<solverBenchmark>` elements.
 === New example: Meeting scheduling
 
 Assign meetings of different durations to starting times and rooms.
-See https://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
+See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
 
 === Other improvements
 
