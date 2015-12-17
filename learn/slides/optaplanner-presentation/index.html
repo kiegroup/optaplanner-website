@@ -612,12 +612,11 @@ end</code></pre>
 
     <section>
         <h3>Solving</h3>
-        <pre xml:space="preserve"><code class="java">SolverFactory factory = SolverFactory.createFromXmlResource(
-    "...SolverConfig.xml");
-Solver solver = factory.buildSolver();
+        <pre xml:space="preserve"><code class="java">SolverFactory&lt;CloudBalance&gt; factory
+        = SolverFactory.createFromXmlResource("...SolverConfig.xml");
+Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
 
-solver.solve(cloudBalance);
-cloudBalance = (CloudBalance) solver.getBestSolution();</code></pre>
+cloudBalance = solver.solve(cloudBalance);</code></pre>
     </section>
 
     <section>
