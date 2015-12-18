@@ -154,7 +154,7 @@ public class MyDoubleValueRange extends AbstractUncountableValueRange<Double> {
 }
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-recommended]
 === Multiple planning variables: use new folded configuration
 
 If you use multiple planning variables, consider switching to the folded configuration.
@@ -181,7 +181,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 ----
 
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-recommended]
 === Multiple entity classes: use new folded configuration
 
 If you use multiple entity classes, consider switching to the folded configuration.

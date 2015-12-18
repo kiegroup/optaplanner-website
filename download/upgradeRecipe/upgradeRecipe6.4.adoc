@@ -248,7 +248,7 @@ After in `*.java`:
 The old code still works too, because this is part of the public API which is backwards compatible.
 
 [.upgrade-recipe-recommended]
-=== `Solver`: the `solve()` method returns the bet solution
+=== `Solver`: `solve()` method returns the best solution
 
 The `solve()` method now returns the best solution,
 in which case calling `getBestSolution()` is no longer needed:
@@ -267,3 +267,28 @@ After in `*.java`:
 ----
 
 The old code still works too, because this is part of the public API which is backwards compatible.
+
+[.upgrade-recipe-major]
+=== `CustomPhaseCommand`: new method `applyCustomProperties()` added
+
+The `CustomPhaseCommand` has a new method `applyCustomProperties()`
+to allow custom properties to be defined in the solver configuration.
+Instead of implementing that method, you can also extend the new abstract class `AbstractCustomPhaseCommand`
+which implements `CustomPhaseCommand` and implements that method to do nothing (except a validation check).
+
+Before in `*.java`:
+[source, java]
+----
+public class ToOriginalMachineSolutionInitializer implements CustomPhaseCommand {
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class ToOriginalMachineSolutionInitializer extends AbstractCustomPhaseCommand {
+    ...
+}
+----
+
