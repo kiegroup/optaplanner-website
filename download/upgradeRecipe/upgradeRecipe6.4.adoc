@@ -218,3 +218,52 @@ After in `*.java`:
 ----
 import org.optaplanner.swing.impl.TangoColorFactory;
 ----
+
+[.upgrade-recipe-recommended]
+=== `SolverFactory` and `Solver`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation,
+both `SolverFactory` and `Solver` now optionally support a generic type parameter.
+
+Before in `*.java`:
+[source, java]
+----
+    SolverFactory solverFactory = SolverFactory.createFromXmlResource(
+            "org/.../cloudBalancingSolverConfig.xml");
+    Solver solver = solverFactory.buildSolver();
+    solver.solve(unsolvedCloudBalance);
+    CloudBalance solvedCloudBalance = (CloudBalance) solver.getBestSolution();
+----
+
+After in `*.java`:
+[source, java]
+----
+    SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
+            "org/.../cloudBalancingSolverConfig.xml");
+    Solver<CloudBalance> solver = solverFactory.buildSolver();
+    solver.solve(unsolvedCloudBalance);
+    CloudBalance solvedCloudBalance = solver.getBestSolution();
+----
+
+The old code still works too, because this is part of the public API which is backwards compatible.
+
+[.upgrade-recipe-recommended]
+=== `Solver`: the `solve()` method returns the bet solution
+
+The `solve()` method now returns the best solution,
+in which case calling `getBestSolution()` is no longer needed:
+
+Before in `*.java`:
+[source, java]
+----
+    solver.solve(unsolvedCloudBalance);
+    CloudBalance solvedCloudBalance = solver.getBestSolution();
+----
+
+After in `*.java`:
+[source, java]
+----
+    CloudBalance solvedCloudBalance = solver.solve(unsolvedCloudBalance);
+----
+
+The old code still works too, because this is part of the public API which is backwards compatible.

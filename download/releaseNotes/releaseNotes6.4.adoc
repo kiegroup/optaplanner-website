@@ -8,6 +8,24 @@
 [[NewAndNoteWorthy]]
 == New and noteworthy
 
+=== Generic API
+
+The `SolverFactory` and `Solver` now optionally support a generic type parameter,
+to avoid the awkward cast to your `Solution` implementation:
+
+[source,java]
+----
+    // Build solver
+    SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
+            "org/.../cloudBalancingSolverConfig.xml");
+    Solver<CloudBalance> solver = solverFactory.buildSolver();
+
+    // Solve it
+    CloudBalance solvedCloudBalance = solver.solve(unsolvedCloudBalance);
+----
+
+The old style still works too, of course.
+
 === Statistical benchmarking
 
 Statistical benchmarking allows you to rerun your single benchmarks multiple times.
@@ -42,7 +60,7 @@ See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
 * Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
 * Apache Camel's camel-optaplanner 2.16 supports async solving, daemon mode and ProblemFactChange processing. Contributed by Bilgin Ibryam.
 * A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
-* Examples application has switched to a more modern look and feel.
+* The examples application has switched to a more modern look and feel.
 * Several design patterns to deal with scheduling in time have been documented in the manual.
 * New Construction Heuristic: Allocate To Value From Queue
 * Various bugs resolved. See https://issues.jboss.org/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].
