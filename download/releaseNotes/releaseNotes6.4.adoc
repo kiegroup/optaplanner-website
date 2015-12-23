@@ -57,6 +57,7 @@ See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
 
 === Other improvements
 
+* Nearby selection in Local Search now uses a lot less memory. It can now scaling above 10k+ entities on normal hardware, as long as any `distributionSizeMaximum` is configured.
 * Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
 * Apache Camel's camel-optaplanner 2.16 supports async solving, daemon mode and ProblemFactChange processing. Contributed by Bilgin Ibryam.
 * A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
