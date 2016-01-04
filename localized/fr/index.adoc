@@ -25,4 +25,4 @@ Il est écrit 100% en Java ™, fonctionne sur toute JVM et est également dispo
 == Articles
 
 * http://blog.soat.fr/2015/04/devoxx-france-2015-optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore/[Devoxx France 2015 : OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore]
-Aussi https://www.parleys.com/tutorial/optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore[voir la vidéo de cette présentation].
+Aussi https://www.youtube.com/watch?v=sJHPjHsSsXQ[voir la vidéo de cette présentation].
