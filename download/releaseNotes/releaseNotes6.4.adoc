@@ -50,6 +50,15 @@ or to individual `<solverBenchmark>` elements.
 </inheritedSolverBenchmark>
 ----
 
+=== Nearby Selection memory consumption reduced
+
+When Nearby Selection is used in Local Search, it's memory consumption is heavily reduced,
+especially when scaling out:
+
+image:6.2/nearbySelectionMemoryConsumptionFrom6_3To6_4.png[Nearby Selection memory consumption from 6.3 to 6.4]
+
+Furthermore, it's bootstrap performance is much better too for Local Search.
+
 === New example: Meeting scheduling
 
 Assign meetings of different durations to starting times and rooms.
