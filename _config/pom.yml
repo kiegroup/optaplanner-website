@@ -15,19 +15,19 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 6.3.0.Final
-  distributionZip: http://download.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-distribution-6.3.0.Final.zip
-  releaseDate: 2015-09-25
-  releaseNotesVersion: 6.3
+  version: 6.4.0.Beta1
+  distributionZip: http://download.jboss.org/optaplanner/release/6.4.0.Beta1/optaplanner-distribution-6.4.0.Beta1.zip
+  releaseDate: 2016-01-19
+  releaseNotesVersion: 6.4
 
-  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-docs/html_single/index.html
-  documentationHtml: http://docs.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-docs/html/index.html
-  documentationPdf: http://docs.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: http://docs.jboss.org/optaplanner/release/6.3.0.Final/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.4.0.Beta1/optaplanner-docs/html_single/index.html
+  documentationHtml: http://docs.jboss.org/optaplanner/release/6.4.0.Beta1/optaplanner-docs/html/index.html
+  documentationPdf: http://docs.jboss.org/optaplanner/release/6.4.0.Beta1/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.jboss.org/optaplanner/release/6.4.0.Beta1/optaplanner-javadoc/index.html
 
-  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.3.0.Final/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.3.0.Final/drools-docs/html/index.html
-  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.3.0.Final/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.4.0.Beta1/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.4.0.Beta1/drools-docs/html/index.html
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/6.4.0.Beta1/drools-docs/pdf/drools-docs.pdf
 
 nightly:
   version: 6.4.0-SNAPSHOT
