@@ -154,6 +154,14 @@
   url: http://cfp.devoxx.be/2015/talk/OXN-8472/False_assumptions_for_the_Vehicle_Routing_Problem
   presenters: Geoffrey De Smet
 
+- eventId: 20160126-juggraz
+  eventOrganization: JUG Graz
+  location: Graz, Austria
+  date: 2016-01-26
+  title: Smart load balancing in the cloud with OptaPlanner
+  url: http://www.meetup.com/Java-User-Group-Graz/events/227269536/
+  presenters: Lukáš Petrovický
+
 - eventId: 20160130-fosdem
   eventOrganization: FOSDEM
   location: Brussels, Belgium
