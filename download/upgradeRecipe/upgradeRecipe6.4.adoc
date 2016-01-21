@@ -292,3 +292,11 @@ public class ToOriginalMachineSolutionInitializer extends AbstractCustomPhaseCom
 }
 ----
 
+[.upgrade-recipe-readme] KieContainer and kjar support for Solver
+
+OptaPlanner now supports kjars,
+to consume a kjar produced by OptaPlanner Workbench
+or to deploy a kjar to OptaPlanner Execution Server.
+
+If you need to load a solver configuration or score rules that change more often than your application is released,
+take a look at the reference manual and `SolverFactory.createFromKieContainerXmlResource(...)`.

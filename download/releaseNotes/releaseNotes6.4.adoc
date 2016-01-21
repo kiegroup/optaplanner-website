@@ -59,6 +59,39 @@ image:6.4/nearbySelectionMemoryConsumptionFrom6_3To6_4.png[Nearby Selection memo
 
 Furthermore, it's bootstrap performance is much better too for Local Search.
 
+=== Kjar and KieContainer support
+
+OptaPlanner now supports kjars, so it can
+consume a kjar produced by OptaPlanner Workbench
+or deploy a kjar to OptaPlanner Execution Server
+at runtime.
+
+A kjar can now contain Solver configurations and the `SolverFactory` can now load them from it with a `KieContainer`.
+This allows to load a solver configuration or score rules at runtime that are not in the original classpath:
+
+[source, java]
+----
+        KieServices kieServices = KieServices.Factory.get();
+        ReleaseId releaseId = kieServices.newReleaseId("org.nqueens", "nqueens-kjar", "1.0.0");
+        KieContainer kieContainer = kieServices.newKieContainer(releaseId);
+        SolverFactory<NQueens> solverFactory = SolverFactory.createFromKieContainerXmlResource(
+                kieContainer, "org/nqueens/solverConfig.solver");
+        Solver<NQueens> solver = solverFactory.buildSolver();
+----
+
+A ksession defined in `META-INF/kmodule.xml` can now be referenced from a Solver configuration:
+
+[source, java]
+----
+<solver>
+  ...
+  <scoreDirectorFactory>
+    ...
+    <ksessionName>nqueensKsession</ksessionName>
+  </scoreDirectorFactory>
+</solver>
+----
+
 === New example: Meeting scheduling
 
 Assign meetings of different durations to starting times and rooms.
