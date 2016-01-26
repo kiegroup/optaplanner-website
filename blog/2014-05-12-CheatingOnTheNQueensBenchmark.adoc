@@ -101,7 +101,7 @@ For example, finding the shortest distance between 2 points can be solved in pol
 But their scope is narrow: finding the shortest distance to visit n points (TSP), on the other hand,
 is not solvable in polynomial time.
 
-Because N Queens differs intrinsically from real planning problems, is a terrible use case to benchmark.
+Because N Queens differs intrinsically from real planning problems, it is a terrible use case to benchmark.
 
 == Conclusion
 
