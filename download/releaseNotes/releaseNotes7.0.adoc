@@ -1,0 +1,17 @@
+= Release Notes 7.0
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.0.
+:awestruct-layout: releaseNotesBase
+:awestruct-priority: 1.0
+:awestruct-release_notes_version: 7.0
+:awestruct-release_notes_version_qualifier: Beta
+
+[[NewAndNoteWorthy]]
+== New and noteworthy
+
+=== Java 8 or higher
+
+OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain compatible with Java 6 or higher.
+
+=== Other improvements
+
+* None yet

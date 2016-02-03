@@ -1,0 +1,13 @@
+= Upgrade recipe 7.0
+:awestruct-description: Upgrade to OptaPlanner 7.0 from a previous version.
+:awestruct-layout: upgradeRecipeBase
+:awestruct-priority: 0.5
+:awestruct-upgrade_recipe_version: 7.0
+
+== From 6.4.0.Final to 7.0.0.Beta1
+
+[.upgrade-recipe-major]
+=== Java 8 or higher required
+
+If you're using JRE or JDK 6 or 7, upgrade it to JDK 8 or higher.
+We intend to support a minimal version of Java 8 throughout the entire 7.x series.
