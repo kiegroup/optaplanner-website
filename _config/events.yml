@@ -175,14 +175,13 @@
   url: http://devconfcz2016.sched.org/event/5m1J
   presenters: Martin Sivák
 
-# Session not yet approved
-#- eventId: 20160307-eclipsecon
-#  eventOrganization: EclipseCon
-#  location: Reston, VA, USA
-#  date: 2016-03-07
-#  title: Modeling Avengers : Open Source Technology Mix for Saving the World
-#  url: https://www.eclipsecon.org/na2016/session/modeling-avengers-open-source-technology-mix-saving-world
-#  presenters: Cedric Brun, Benoit Combemale
+- eventId: 20160308-eclipsecon
+  eventOrganization: EclipseCon
+  location: Reston, VA, USA
+  date: 2016-03-08
+  title: Modeling Avengers: Open Source Technology Mix for Saving the World
+  url: https://www.eclipsecon.org/na2016/session/modeling-avengers-open-source-technology-mix-saving-world
+  presenters: Cedric Brun, Benoit Combemale
 
 - eventId: 20160628-redhatsummit
   eventOrganization: Red Hat Summit
