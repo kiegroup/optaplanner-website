@@ -25,6 +25,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 * http://www.schabell.org/search/label/Planner[Eric Schabell's blog]
 
+* http://appwriter.com/new-easier-optaplanner-example-project[Hello world example of OptaPlanner] (do look at `CloudBalancingHelloWorld` in our examples too)
+
 == Articles (non-English)
 
 * French, German and Japanese: see the language specific pages linked from link:../[the homepage].
