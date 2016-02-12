@@ -47,7 +47,7 @@ Both community and product use the same code base.
 |*Information* | |
 |Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution available from customer portal only
 |Target audience |Free use |Enterprise production use
-|*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat]*
+|*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat] and ask about BRMS*
 |===
 
 == Product overview
