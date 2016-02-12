@@ -26,7 +26,7 @@ Es ist in 100% pur Java™ geschrieben, läuft auf jeder JVM und ist auch in lin
 
 == Beiträge
 
-* http://de.slideshare.net/tnfink/optaplanner-hilft-bei-verteilten-schulstandorten[OptaPlanner hilft bei verteilten Schulstandorten]
+* http://blog-de.akquinet.de/2015/02/17/optaplanner-teil1/[OptaPlanner hilft bei verteilten Schulstandorten] - http://de.slideshare.net/tnfink/optaplanner-hilft-bei-verteilten-schulstandorten[slides] (JBoss Premier Business Partner)
 
 * http://www.viadee.de/news/aktuelle-meldungen/nachricht/archiv/2015/januar/artikel/optimal-geplant.html[Webbasierte Schichtplan - Optimierung mit Smart GWT und OptaPlanner]
 (veröffentlicht in http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html[JavaSPEKTRUM])
