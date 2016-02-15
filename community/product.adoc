@@ -50,6 +50,14 @@ Both community and product use the same code base.
 |*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat] and ask about BRMS*
 |===
 
+Upgrading from community to product is easy.
+If you use Maven, Gradle, Ivy or Buildr, simply add the customer maven repository and change the dependency version number.
+If you use ANT, swap the jars.
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/9gYLKxJ9NbY?rel=0" frameborder="0" allowfullscreen></iframe>
++++
+
 == Product overview
 
 image:kieFunctionalityOverview.png[KIE functionality overview]
