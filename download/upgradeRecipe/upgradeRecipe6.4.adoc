@@ -300,3 +300,12 @@ or to deploy a kjar to OptaPlanner Execution Server.
 
 If you need to load a solver configuration or score rules that change more often than your application is released,
 take a look at the reference manual and `SolverFactory.createFromKieContainerXmlResource(...)`.
+
+== From 6.4.0.Beta1 to 6.4.0.CR1
+
+[.upgrade-recipe-minor]
+=== Thread interruption is now detected
+
+If the thread that called `Solver.solve(...)` is interrupted,
+the solver now terminates early.
+This ensures a graceful shutdown of each solver when `shutdownNow()` is called on an `ExecutorService` of solvers.
