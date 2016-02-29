@@ -362,7 +362,7 @@ public void deleteComputer(final CloudComputer computer) {
             CloudBalance cloudBalance = (CloudBalance) scoreDirector.getWorkingSolution();
             // First remove the problem fact from all planning entities that use it
             for (CloudProcess process : cloudBalance.getProcessList()) {
-                if (ObjectUtils.equals(process.getComputer(), computer)) {
+                if (Objects.equals(process.getComputer(), computer)) {
                     scoreDirector.beforeVariableChanged(process, "computer");
                     process.setComputer(null);
                     scoreDirector.afterVariableChanged(process, "computer");
@@ -383,7 +383,7 @@ public void deleteComputer(final CloudComputer computer) {
             CloudBalance cloudBalance = (CloudBalance) scoreDirector.getWorkingSolution();
             // First remove the problem fact from all planning entities that use it
             for (CloudProcess process : cloudBalance.getProcessList()) {
-                if (ObjectUtils.equals(process.getComputer(), computer)) {
+                if (Objects.equals(process.getComputer(), computer)) {
                     scoreDirector.beforeVariableChanged(process, "computer");
                     process.setComputer(null);
                     scoreDirector.afterVariableChanged(process, "computer");
