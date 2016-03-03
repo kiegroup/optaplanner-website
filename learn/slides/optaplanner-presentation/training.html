@@ -2712,11 +2712,77 @@ $ mvn exec:java
     <section id="trainingSession8">
         <h3>Agenda: Training session 8</h3>
         <ul>
+            <li>KieContainer and kjars</li>
             <li>Optaplanner Workbench</li>
             <li>OptaPlanner Execution Server</li>
         </ul>
     </section>
     <section>
+        <section>
+            <h3>KieContainer and kjars</h3>
+        </section>
+        <section>
+            <h3>KieContainer support: classpath container</h3>
+            <pre xml:space="preserve"><code class="java">SolverFactory&lt;CloudSolution&gt; solverFactory
+        = SolverFactory.createFromKieContainerXmlResource(
+                "opta/optacloud/cloudSolverConfig.solver.xml");
+
+// For every dataset
+Solver&lt;CloudSolution&gt; solver = solverFactory.buildSolver();
+CloudSolution problem = loadProblem();
+solver.solve(problem);
+CloudSolution solution = solver.getBestSolution();</code></pre>
+            <p class="fragment"><code>optacloud-1.0.0.jar</code> is in the classpath</p>
+        </section>
+        <section>
+            <h3>KieContainer support: from Maven repo</h3>
+            <pre xml:space="preserve"><code class="java">KieServices kieServices = KieServices.Factory.get();
+SolverFactory&lt;Solution&gt; solverFactory
+        = SolverFactory.createFromKieContainerXmlResource(
+                kieServices.newReleaseId("opta", "optacloud", "1.0.0"),
+                "opta/optacloud/cloudSolverConfig.solver.xml");
+
+// For every dataset
+Solver&lt;Solution&gt; solver = solverFactory.buildSolver();
+Solution problem = loadProblem();
+solver.solve(problem);
+Solution solution = solver.getBestSolution();</code></pre>
+            <p class="fragment">
+                <code>optacloud-1.0.0.jar</code> is not in the classpath<br/>
+                Downloaded from a Maven repository
+            </p>
+        </section>
+        <section>
+            <h3>Kmodule support</h3>
+            <p>kmodule.xml</p>
+            <pre xml:space="preserve"><code class="xml">&lt;kmodule xmlns="http://www.drools.org/xsd/kmodule"&gt;
+  &lt;kbase packages="opta.optacloud"&gt;
+    &lt;ksession name="cloudKsession"/&gt;
+  &lt;/kbase&gt;
+&lt;/kmodule&gt;</code></pre>
+            <p>cloudSolverConfig.solver.xml</p>
+            <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
+  &lt;scanAnnotatedClasses/&gt;
+
+  &lt;scoreDirectorFactory&gt;
+    &lt;scoreDefinitionType&gt;HARD_SOFT&lt;/scoreDefinitionType&gt;
+    &lt;ksessionName&gt;cloudKsession&lt;/ksessionName&gt;
+  &lt;/scoreDirectorFactory&gt;
+&lt;/solver></code></pre>
+        </section>
+        <section>
+            <h3>Kmodule support (defaulted)</h3>
+            <p>kmodule.xml</p>
+            <pre xml:space="preserve"><code class="xml">&lt;kmodule xmlns="http://www.drools.org/xsd/kmodule"/&gt;</code></pre>
+            <p>cloudSolverConfig.solver.xml</p>
+            <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
+  &lt;scanAnnotatedClasses/&gt;
+
+  &lt;scoreDirectorFactory&gt;
+    &lt;scoreDefinitionType&gt;HARD_SOFT&lt;/scoreDefinitionType&gt;
+  &lt;/scoreDirectorFactory&gt;
+&lt;/solver></code></pre>
+        </section>
         <section>
             <h3>Workbench and Execution Server</h3>
         </section>
