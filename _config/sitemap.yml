@@ -1,8 +1,10 @@
 excluded_extensions: ['.svg', '.map', '.eot', '.ttf', '.woff']
 excluded_files: [
+  # Keep in sync with robots.txt
+  '/website/jbossorg.properties',
   '/website/javascriptLibraries.txt',
   '/learn/slides/optaplanner-presentation/website/javascriptLibraries.txt',
-  # Workaround issues in sitemap that all explicitly configured pages should be excluded too to avoid mapping them twice
+  # Workaround an issue in sitemap that all explicitly configured pages need to be excluded too to avoid mapping them twice
   '/learn/slides/optaplanner-presentation.pdf',
   '/learn/slides/optaplanner-presentation/index.html',
   '/learn/slides/optaplanner-presentation/training.html'
