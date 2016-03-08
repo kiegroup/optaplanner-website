@@ -5,12 +5,10 @@ description: OptaPlanner optimizes business resource usage. It is a lightweight,
 keywords: metaheuristic, heuristic, constraint satisfaction, constraint programming, operations research, NP-complete, NP-hard, optimization, planning, scheduling, java, open source, software, library, solver, tabu search, simulated annealing, pareto
 canonicalBaseUrl: http://www.optaplanner.org
 
-# jbossorg_bootstrap_css: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0/bootstrap-community.css
-# jbossorg_bootstrap_js: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0/bootstrap-community.js
-
 googleAnalyticsId: UA-39485370-1
 googleTagManagerId: GTM-NJWS5L
 googleTagManagerChannel: OptaPlanner
+googleWebmasterToolsVerificationId: 7maFZB6ae01GhEGx5Go9FO7fnTHZhY--_9rkLLawXbk
 disqus: optaplanner
 disqus_generate_id: true
 
@@ -18,7 +16,6 @@ asciidoctor:
   :safe: safe
   :attributes:
     imagesdir: ''
-#    sectanchors: ''
 
 profiles:
   development:

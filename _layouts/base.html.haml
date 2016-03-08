@@ -11,6 +11,8 @@ change_frequency: monthly
     %meta(name="description"){:content => page.description ? page.description : site.description}
     %meta(name="keywords"){:content => page.keywords ? page.keywords : site.keywords}
     %link(rel="canonical"){:href => "#{site.canonicalBaseUrl}#{page.url}"}
+    - if page.url.eql? '/'
+      %meta(name="google-site-verification"){:content => "#{site.googleWebmasterToolsVerificationId}"}
     -# Social media: make it look good when shared
     %meta(property="og:title"){:content => escape_once(site.title + " - " + page.title)}
     %meta(property="og:description"){:content => page.description ? page.description : site.description}
