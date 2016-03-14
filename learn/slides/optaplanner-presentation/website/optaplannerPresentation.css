@@ -132,6 +132,18 @@ footer {
     max-height: 70%;
 }
 
+.reveal .fullImagePara {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal .sourceUrl {
+    font-size: x-small;
+}
 
 /******************************************************************************
 * Tables
