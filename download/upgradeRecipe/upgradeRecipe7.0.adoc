@@ -4,10 +4,253 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 7.0
 
-== From 6.4.0.Final to 7.0.0.Beta1
+== Backwards incompatible changes to the public API
+
+Because this is a new major version number (7.0), which is the foundation for the 7.x series,
+it allows us to make backwards incompatible changes to the public API for the long term benefit of this project.
+
+Our current intention is to keep these backwards incompatible changes to a strict minimum
+(by favoring deprecation over removal). Our current intention is also to work on the 7.x series for several years
+(during which time we won't make backwards incompatible changes to the API).
 
 [.upgrade-recipe-major]
 === Java 8 or higher required
 
-If you're using JRE or JDK 6 or 7, upgrade it to JDK 8 or higher.
-We intend to support a minimal version of Java 8 throughout the entire 7.x series.
+If you're using JRE or JDK 6 or 7, upgrade to JDK 8 or higher.
+
+We currently intend to support a minimal version of Java 8 throughout the entire 7.x series.
+
+[.upgrade-recipe-minor]
+===  `Solver`: return values no longer implement `Solution`
+
+Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
+the `Solver.solve(...)` and `Solver.getBestSolution()` methods now return an `Object` instead of a `Solution` instance
+(if and only if no type parameter is specified for the `Solver`).
+
+*This only applies if you're still using a `Solver` without a type parameter
+and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
+
+Before in `*.java`:
+[source, java]
+----
+Solution s = solver.solve(problem);
+CloudBalance solution = (CloudBalance) s;
+----
+
+After in `*.java` (quick and dirty fix):
+[source, java]
+----
+CloudBalance solution = (CloudBalance) solver.solve(problem);
+----
+
+After in `*.java` (recommended fix):
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+...
+CloudBalance solution = solver.solve(problem);
+----
+
+
+[.upgrade-recipe-minor]
+===  `BestSolutionChangedEvent.getNewBestSolution()`: return value no longer implement `Solution`
+
+Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
+the `BestSolutionChangedEvent.getNewBestSolution()` method now returns an `Object`
+(if and only if no type parameter is specified for the `SolverEventListener`).
+
+*This only applies if you're still using a `SolverEventListener` without a type parameter
+and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory factory = SolverFactory.createFromXmlResource(...);
+Solver solver = factory.buildSolver();
+solver.addEventListener(new SolverEventListener() {
+    @Override
+    public void bestSolutionChanged(BestSolutionChangedEvent event) {
+        Solution s = event.getNewBestSolution();
+        CloudBalance solution = (CloudBalance) s;
+        ...
+    }
+});
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+solver.addEventListener(new SolverEventListener<CloudBalance>() {
+    @Override
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        CloudBalance solution = event.getNewBestSolution();
+        ...
+    }
+});
+----
+
+And you'll probably want to use a lamdba here:
+
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+solver.addEventListener(event -> {
+    CloudBalance solution = event.getNewBestSolution();
+    ...
+});
+----
+
+[.upgrade-recipe-readme]
+=== Don't stop here
+
+For usability and performance reasons, we strongly recommend to apply this entire upgrade recipe
+to replace your use of any deprecated API's with the newer and better API's.
+
+== From 6.4.0.Final to 7.0.0.Beta1
+
+[.upgrade-recipe-major]
+=== `Solution` interface removed (deprecated)
+
+Your solution class needs to have both the `@PlanningSolution` annotation and implement the `Solution` interface,
+only the annotation suffices. The `Solution` interface has been deprecated and will be removed in a future version.
+
+Remove the `Solution` interface, annotate the `getScore()` method with `@PlanningScore`
+and replace the `getProblemFacts()` method with a `@ProblemFactCollectionProperty` annotation directly on every problem fact getter (or field).
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class CloudBalance implements Solution<HardSoftScore> {
+
+    private List<CloudComputer> computerList;
+    ...
+
+    private HardSoftScore score;
+
+    @ValueRangeProvider(id = "computerRange")
+    public List<CloudComputer> getComputerList() {...}
+
+    public HardSoftScore getScore() {...}
+    public void setScore(HardSoftScore score) {...}
+
+    public Collection<? extends Object> getProblemFacts() {
+        List<Object> facts = new ArrayList<Object>();
+        facts.addAll(computerList);
+        ...
+        return facts;
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class CloudBalance {
+
+    private List<CloudComputer> computerList;
+    ...
+
+    private HardSoftScore score;
+
+    @ValueRangeProvider(id = "computerRange")
+    @ProblemFactCollectionProperty
+    public List<CloudComputer> getComputerList() {...}
+
+    @PlanningScore
+    public HardSoftScore getScore() {...}
+    public void setScore(HardSoftScore score) {...}
+
+}
+----
+
+For a single problem fact (which is not wrapped in a `Collection`), use the `@ProblemFactProperty` annotation,
+as shown below (with field annotations this time).
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class CloudBalance implements Solution<HardSoftScore> {
+
+    private CloudParametrization parametrization;
+    private List<CloudBuilding> buildingList;
+    @ValueRangeProvider(id = "computerRange")
+    private List<CloudComputer> computerList;
+    ...
+
+    public Collection<? extends Object> getProblemFacts() {
+        List<Object> facts = new ArrayList<Object>();
+        facts.add(parametrization); // not a Collection
+        facts.addAll(buildingList);
+        facts.addAll(computerList);
+        ...
+        return facts;
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class CloudBalance {
+
+    @ProblemFactProperty
+    private CloudParametrization parametrization;
+    @ProblemFactCollectionProperty
+    private List<CloudBuilding> buildingList;
+    @ValueRangeProvider(id = "computerRange")
+    @ProblemFactCollectionProperty
+    private List<CloudComputer> computerList;
+    ...
+
+}
+----
+
+Don't add the `@ProblemFactCollectionProperty` annotation on getters (or fields)
+that have a `@PlanningEntityCollectionProperty` annotation.
+
+[.upgrade-recipe-major]
+=== `SolutionFileIO`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation,
+`SolutionFileIO` now optionally supports a generic type parameter.
+
+Before in `*.java`:
+[source, java]
+----
+public class TspFileIO implements SolutionFileIO {
+    ...
+
+    public Solution read(File inputSolutionFile) {...}
+
+    public void write(Solution solution, File outputSolutionFile) {
+        TspSolution tspSolution = (TspSolution) solution;
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class TspFileIO implements SolutionFileIO<TspSolution> {
+    ...
+
+    public TspSolution read(File inputSolutionFile) {...}
+
+    public void write(TspSolution tspSolution, File outputSolutionFile) {
+        ...
+    }
+
+}
+----

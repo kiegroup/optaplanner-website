@@ -3,7 +3,7 @@
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 6.4
-:awestruct-release_notes_version_qualifier: Beta
+:awestruct-release_notes_version_qualifier: CR
 
 [[NewAndNoteWorthy]]
 == New and noteworthy

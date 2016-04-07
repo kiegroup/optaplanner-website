@@ -12,6 +12,51 @@
 
 OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain compatible with Java 6 or higher.
 
+The API and implementation now make use of Java 7 and Java 8 features (such as lamdba's).
+
+=== No longer needed to implement the `Solution` interface
+
+Your solution class no longer needs both have the `@PlanningSolution` annotation and implement the `Solution` interface.
+No need to repeat yourself any more.
+The `Solution` interface is now deprecated (but still works for backwards compatibility):
+only the `@PlanningSolution` annotation suffices.
+
+Instead of implementing the old interface methods, annotate your `Score` getter with `@PlanningScore`.
+If you're using Drools score calculation, annotate all problem fact getters (or fields)
+with `@ProblemFactCollectionProperty` or `@ProblemFactProperty`.
+
+[source, java]
+----
+@PlanningSolution
+public class CloudBalance {
+
+    private List<CloudComputer> computerList;
+    ...
+
+    private HardSoftScore score;
+
+    @ValueRangeProvider(id = "computerRange")
+    @ProblemFactCollectionProperty
+    public List<CloudComputer> getComputerList() {...}
+
+    @PlanningScore
+    public HardSoftScore getScore() {...}
+    public void setScore(HardSoftScore score) {...}
+
+}
+----
+
+Solving hasn't changed:
+
+[source,java]
+----
+    SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(...);
+    Solver<CloudBalance> solver = solverFactory.buildSolver();
+    CloudBalance solvedCloudBalance = solver.solve(unsolvedCloudBalance);
+----
+
+Contributed by Lukáš Petrovický.
+
 === Other improvements
 
 * None yet
