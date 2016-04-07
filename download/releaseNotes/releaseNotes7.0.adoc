@@ -59,4 +59,4 @@ Contributed by Lukáš Petrovický.
 
 === Other improvements
 
-* None yet
+* Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`

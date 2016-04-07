@@ -221,8 +221,8 @@ that have a `@PlanningEntityCollectionProperty` annotation.
 [.upgrade-recipe-major]
 === `SolutionFileIO`: added optional generic type parameter
 
-To avoid the awkward cast to your `Solution` implementation,
-`SolutionFileIO` now optionally supports a generic type parameter.
+To avoid the awkward cast to your `Solution` implementation and to get rid of that deprecated interface,
+`SolutionFileIO` now optionally supports a generic type parameter (which is the solution class).
 
 Before in `*.java`:
 [source, java]
@@ -253,4 +253,91 @@ public class TspFileIO implements SolutionFileIO<TspSolution> {
     }
 
 }
+----
+
+[.upgrade-recipe-minor]
+=== `XStreamSolutionFileIO`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation and to get rid of that deprecated interface,
+`XStreamSolutionFileIO` now optionally supports a generic type parameter (which is the solution class).
+
+Before in `*.java`:
+[source, java]
+----
+SolutionFileIO solutionFileIO = new XStreamSolutionFileIO(CloudBalance.class);
+----
+
+After in `*.java`:
+[source, java]
+----
+SolutionFileIO<CloudBalance> solutionFileIO = new XStreamSolutionFileIO<>(CloudBalance.class);
+----
+
+[.upgrade-recipe-minor]
+=== `CustomPhaseCommand`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation and to get rid of that deprecated interface,
+`CustomPhaseCommand` now optionally supports a generic type parameter (which is the solution class).
+
+Before in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand {
+
+    public void changeWorkingSolution(ScoreDirector scoreDirector) {
+        DinnerParty dinnerParty = (DinnerParty) scoreDirector.getWorkingSolution();
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+
+    public void changeWorkingSolution(ScoreDirector<DinnerParty> scoreDirector) {
+        DinnerParty dinnerParty = scoreDirector.getWorkingSolution();
+        ...
+    }
+
+}
+----
+
+[.upgrade-recipe-major]
+=== `ProblemFactChange`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation and to get rid of that deprecated interface,
+`ProblemFactChange` now optionally supports a generic type parameter (which is the solution class).
+
+Before in `*.java`:
+[source, java]
+----
+        solver.addProblemFactChange(new ProblemFactChange() {
+            public void doChange(ScoreDirector scoreDirector) {
+                CloudBalance cloudBalance = (CloudBalance) scoreDirector.getWorkingSolution();
+                ...
+            }
+        });
+----
+
+After in `*.java`:
+[source, java]
+----
+        solver.addProblemFactChange(new ProblemFactChange<CloudBalance>() {
+            public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+                CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
+                ...
+            }
+        });
+----
+
+After in `*.java` (with lamdba):
+[source, java]
+----
+        solver.addProblemFactChange(scoreDirector -> {
+            CloudBalance cloudBalance = scoreDirector.getWorkingSolution();
+            ...
+        });
 ----
