@@ -191,6 +191,14 @@
   url: https://www.eclipsecon.org/na2016/session/modeling-avengers-open-source-technology-mix-saving-world
   presenters: Cedric Brun, Benoit Combemale
 
+- eventId: 20160602-euregjug
+  eventOrganization: EuregJUG
+  location: Aachen, Germany
+  date: 2016-06-02
+  title: Solving constraint satisfaction business puzzles in Java with OptaPlanner
+  url: http://www.euregjug.eu/
+  presenters: Geoffrey De Smet
+
 - eventId: 20160628-redhatsummit
   eventOrganization: Red Hat Summit
   location: San Francisco, CA, USA
