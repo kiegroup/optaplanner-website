@@ -60,4 +60,4 @@ Contributed by Lukáš Petrovický.
 === Other improvements
 
 * Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
-* `TemporalValueRange` for value ranges of Java8's date and time API. Contributed by Kevin Wallis.
+* `ValueRangeFactory.createTemporalValueRange(...)` for value ranges of Java8's date and time API. Contributed by Kevin Wallis.
