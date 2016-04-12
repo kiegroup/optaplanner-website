@@ -341,3 +341,42 @@ After in `*.java` (with lamdba):
             ...
         });
 ----
+
+
+
+
+
+[.upgrade-recipe-minor]
+=== `Bendable*Score`: `toString()` changed
+
+A bendable score (`BendableScore`, `BendableLongScore` or `BendableBigDecimalScore`) 's `String`
+has changed so it can be parsed without the ScoreDefinition
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <termination>
+        <bestScoreLimit>0/0/-1/-2/-3</bestScoreLimit>
+      </termination>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <termination>
+        <bestScoreLimit>[0/0]hard/[-1/-2/-3]soft</bestScoreLimit>
+      </termination>
+----
+
+Before in XStream `*.xml` output with `optaplanner-persistence-xstream`:
+[source, xml]
+----
+      <score>0/0/-1/-2/-3</score>
+----
+
+After in in XStream `*.xml` output with `optaplanner-persistence-xstream`:
+[source, xml]
+----
+      <score>[0/0]hard/[-1/-2/-3]soft</score>
+----
+
