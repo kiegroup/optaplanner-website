@@ -12,21 +12,21 @@ Let's take a look why they might do that.
 
 There are 7 common ways to fail your optimization project:
 
-* Ignore the user's plan
+. Ignore the user's plan
 
-* Neglect a hard constraint
+. Neglect a hard constraint
 
-* Decide all score weights up front
+. Decide all score weights up front
 
-* Change tentative plans drastically
+. Change tentative plans drastically
 
-* Presume there is always a feasible plan
+. Presume there is always a feasible plan
 
-* Average out fairness or load balancing
+. Average out fairness or load balancing
 
-* Focus on only 1 stakeholder
+. Focus on only 1 stakeholder
 
-Let's take a look at each one in detail and how to do it right:
+Let's take a look at each one in detail and *the 7 ways to make your project a success*:
 
 
 == 1. Keep the user in control
@@ -93,12 +93,13 @@ For example in Cloud Balancing, a computer might break down:
 image::nonvolatileReplanningSubset.png[]
 
 The middle solution is slightly more cost effective, but the last solution is far less disruptive.
+*Especially when scheduling people, who planned their social life based on the tentative schedule,
+it's important to minimize disruption.*
 
 Technically, we penalize the number of processes that moved,
 by keeping track of the old tentative computer assignment for each process too.
 
-Especially when scheduling people (who planned their social life based on the tentative schedule you gave them),
-it's key to minimize disruption. Another way to make this easier is to also do backup planning.
+Another way to make this easier is to also do backup planning.
 For example in employee rostering, we assign 3 reserve shifts as backups to 3 employees:
 if another employee calls in sick, one of the reserve employees takes over automatically,
 without replanning. Only when more than 3 employees call in sick, we actually need to do (non disruptive) replanning.
@@ -107,7 +108,7 @@ without replanning. Only when more than 3 employees call in sick, we actually ne
 == 5. Account for overconstrained planning
 
 It can happen that there aren't enough resources to solve a planning problem without breaking a hard constraint.
-In that case, it's often better to leave some entities unassigned (as little as possible of course).
+In that case, *instead of delivering an infeasible plan, it's often better to leave some entities unassigned* (as little as possible of course).
 
 For example in employee rostering, when we need to assign 4 late shifts on the same day and we only have 3 employees,
 it's better to leave 1 shift unassigned than to assign an employee to 2 shifts at the same time.
@@ -124,7 +125,7 @@ and add a medium score level (between hard and soft) to penalize the number of u
 == 6. Be fair (load balancing)
 
 When distributing work across humans (or machines), don't use averages.
-Instead, the worst off human (or machine) counts the most.
+Instead, *the worst off human (or machine) counts the most.*
 
 For example in employee rostering we want to distribute the shifts evenly,
 but we can't make it perfectly fair due to skill and other hard constraints.
