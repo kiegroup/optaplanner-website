@@ -1,0 +1,163 @@
+= 7 ways to fail your optimization project
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [insight, feature, howto]
+
+When you put your optimization project into production,
+your enterprise will decrease expenses, increase customer satisfaction,
+improve employee happiness and/or reduce its ecological footprint.
+But if the end-users reject your implementation, none of that will happen.
+Let's take a look why they might do that.
+
+There are 7 common ways to fail your optimization project:
+
+* Ignore the user's plan
+
+* Neglect a hard constraint
+
+* Decide all score weights up front
+
+* Change tentative plans drastically
+
+* Presume there is always a feasible plan
+
+* Average out fairness or load balancing
+
+* Focus on 1 stakeholder
+
+Let's take a look at each one in detail and how to do it right:
+
+
+== 1. Keep the user in control
+
+Initially, nobody thrusts a new system that takes input (the planning problem) and produces output (the solution)
+through a non-obvious transformation.
+To build this thrust, allow the user to override OptaPlanner's choices.
+
+For example in Cloud Balancing, if the user locks the green process to computer Y,
+the planning engine must respect that:
+
+image::keepTheUserInControlSubset.png[]
+
+It's not an all-or-nothing situation: *the user and OptaPlanner work together*
+(and the user is in charge). For a detailed use case, see http://www.optaplanner.org/blog/2013/10/11/WillSkynetControlOurSchedule.html[this blog with video].
+
+Technically, this is implemented through _immovable planning entities_ (as explained in http://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]):
+a simple boolean method that checks if the process is locked.
+
+
+== 2. Implement all hard constraints
+
+*An optimal solution that takes only 99% of the hard constraints into account is 100% useless.*
+So implement at least all hard constraints.
+
+For example in Vehicle Routing, let's suppose we need to pickup nuclear cargo too,
+but forget to add a hard constraint to pick those up with a special vehicle:
+
+image::optimalWithIncompleteConstraintsSubset.png[]
+
+As you can see, taking that extra hard constraint into account can change the optimal solution entirely.
+
+Technically, OptaPlanner supports any type of constraint: unlike other solvers, it doesn't care if the constraint is linear, quadratic or worse.
+As long as it can compare the score of any 2 solutions, it can find the best one.
+The enables you t implement all constraints: none will be out reach.
+
+
+== 3. Don't hard code the score weights
+
+Most business people can't tell us the best score weights until they've seen the impact of the weights on their schedule.
+So allow to user to change the score weights and quickly see the effect of his/her changes on the solution.
+
+For example in Cloud Balancing: Should we focus on load balancing or on cost reduction?
+
+image::parameterizeTheScoreWeightsSubset.png[]
+
+Some constraints work together, others work against each other.
+Especially for that last kind (as shown above), *different stakeholders within the same enterprise can disagree on the score weights*.
+Empower the project owner to settle those negotiations by changing the weights in the UI.
+
+Technically, simply add a singleton in the dataset with the score weights and use those weights in the constraints.
+Look for a `*Parametrization` class in some of the OptaPlanner examples.
+
+
+== 4. Avoid disruption when replanning
+
+At some point, a plan becomes tentative or even final.
+Any changes after that point can be very disruptive to anyone involved in that plan.
+But ad hoc changes, such as an employee calling in sick or malfunctioning equipment,
+will make your plan infeasible and force you to replan it.
+
+For example in Cloud Balancing, a computer might break down:
+
+image::nonvolatileReplanningSubset.png[]
+
+The middle solution is slightly more cost effective, but the last solution is far less disruptive.
+
+Technically, we penalize the number of processes that moved,
+by keeping track of the old tentative computer assignment for each process too.
+
+Especially when scheduling people (who planned their social life based on the tentative schedule you gave them),
+it's key to minimize disruption. Another way to make this easier is to also do backup planning.
+
+For example in employee rostering, we assign 3 reserve shifts as backups to 3 employees:
+if another employee calls in sick, one of the reserve employees takes over automatically,
+without replanning. Only when more than 3 employees call in sick, we actually need to do (non disruptive) replanning.
+
+
+== 5. Account for overconstrained planning
+
+It can happen that there aren't enough resources to solve a planning problem without breaking hard constraints.
+In that case, it's often better to leave some entities unassigned (as a little as possible of course).
+
+For example in employee rostering, when we need to assign 4 late shifts on the same day and we only have 3 employees,
+it's better to leave 1 shift unassigned than to assign an employee to 2 shifts at the same time.
+
+Going one step further, we can add virtual resources to indicate how many extra resources to buy/hire.
+For example in the same employee rostering case, we could add 2 virtual employees. It will use only one of these
+and tell us that we can make the schedule feasible again by hiring 1 extra employee.
+
+Technically, we need to treat unassigned (or virtual assigned) entities differently in the constraints
+and add a medium score level (between hard and soft) to penalize the number of unassigned (or virtual assigned) entities.
+
+
+== 6. Be fair (load balancing)
+
+When distributing work across humans (or machines), don't use averages.
+The worst off human (or machine) counts the most.
+
+For example in employee rostering we want to distribute the shifts evenly,
+but we can't make it perfectly fair due to skill and other hard constraints.
+It's not about minimizing overtime on average,
+but about minimizing overtime of the worst off employee:
+
+image::fairnessScoreConstraintPitfallSubset.png[]
+
+In the last solution, more employees are happy, but the worst employee is worse off, so it's less fair than the middle solution.
+
+Technically, implement it as explained in http://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]:
+penalize the square of the number of shifts per employee.
+
+
+== 7. Create a win-win for all stakeholders
+
+In a big organization, many different groups will want to tune the constraint weights in their favor.
+For example: management will often want to maximize cost reduction,
+but unions will want to maximize employee happiness and job security.
+Whenever possible, *aim for a solution that improves the status quo for all stakeholders*.
+They can always negotiate the tuning of the score weights later.
+
+In a war story that came to my ear, I've heard about a VRP case for inspectors
+that heavily reduced driving time to inspection sites, allowing the same work to be done in less time.
+*Because the prototype focused only on using less inspectors, the unions shot it down.*
+If instead the prototype had focused on increasing inspection time,
+it would have increased inspection quality, reduced worker stress, lowered fuel expenses
+and decreased the need for new hires. That's far more acceptable to all stakeholders.
+
+
+== Conclusion
+
+Project success doesn't depend on solution quality alone. There are a lot of factors that can make or break a project.
+In this article I highlighted some of the more social ones.
+Luckily, you can handle these additional requirements with http://www.optaplanner.org/[OptaPlanner] too.
+Don't let them catch off guard!
