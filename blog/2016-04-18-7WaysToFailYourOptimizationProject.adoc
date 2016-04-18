@@ -61,7 +61,7 @@ As you can see, taking that extra hard constraint into account can change the op
 
 Technically, OptaPlanner supports any type of constraint: unlike other solvers, it doesn't care if the constraint is linear, quadratic or worse.
 As long as it can compare the score of any 2 solutions, it finds the best one.
-The enables you to implement all constraints: none will be out reach.
+The enables you to implement all constraints: none will be out of reach.
 
 
 == 3. Don't hard-code the score weights
