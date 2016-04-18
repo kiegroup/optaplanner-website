@@ -64,10 +64,10 @@ As long as it can compare the score of any 2 solutions, it finds the best one.
 The enables you to implement all constraints: none will be out reach.
 
 
-== 3. Don't hard code the score weights
+== 3. Don't hard-code the score weights
 
 Most business people can't tell us the best score weights until they've seen the impact of those weights on their schedule.
-So allow to user to change the score weights at runtime and quickly see the effect of his/her changes on the solution.
+So allow the user to change the score weights at runtime and quickly see the effect of his/her changes on the solution.
 
 For example in Cloud Balancing: should we focus on load balancing or on cost reduction?
 
@@ -107,7 +107,7 @@ without replanning. Only when more than 3 employees call in sick, we actually ne
 == 5. Account for overconstrained planning
 
 It can happen that there aren't enough resources to solve a planning problem without breaking a hard constraint.
-In that case, it's often better to leave some entities unassigned (as a little as possible of course).
+In that case, it's often better to leave some entities unassigned (as little as possible of course).
 
 For example in employee rostering, when we need to assign 4 late shifts on the same day and we only have 3 employees,
 it's better to leave 1 shift unassigned than to assign an employee to 2 shifts at the same time.
