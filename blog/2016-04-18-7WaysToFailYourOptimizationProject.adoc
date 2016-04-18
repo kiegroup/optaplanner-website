@@ -31,9 +31,9 @@ Let's take a look at each one in detail and how to do it right:
 
 == 1. Keep the user in control
 
-Initially, nobody thrusts a new system that takes input (the planning problem) and produces output (the solution)
+Initially, nobody trusts a new system that takes input (the planning problem) and produces output (the solution)
 through a non-obvious transformation.
-To build this thrust, allow the user to override OptaPlanner's choices.
+To build this trust, allow the user to override OptaPlanner's choices.
 
 For example in Cloud Balancing, if the user locks the green process to computer Y,
 the planning engine must respect that:
