@@ -30,6 +30,8 @@
 
 '''
 
+////
+
 [[NonFinalReleases]]
 == Non-Final releases
 
@@ -50,6 +52,8 @@
 #{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single] -
 #{site.pom.latest.droolsExpert_documentationHtml}[HTML] -
 #{site.pom.latest.droolsExpert_documentationPdf}[PDF]
+
+////
 
 [[NightlySnapshots]]
 === Nightly snapshots
