@@ -19,6 +19,8 @@ OptaPlannerは、link:../../code/license.html[Apache Software License]の下で�
 
 == 記事
 
+* http://www.scsk.jp/news/2016/press/product/20160418.html[Red Hat JBoss BRMSの新機能Business Resource Plannerを利用した]
+
 * http://www.ogis-ri.co.jp/otc/hiroba/technical/optaplanner[OptaPlannerによる組み合わせ最適化]
 
 * http://d.hatena.ne.jp/tokobayashi/searchdiary?word=%5BOptaPlanner%5D[tokobayashiの日記]
