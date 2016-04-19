@@ -20,6 +20,14 @@ The OptaPlanner distribution zip includes binaries, documentation, examples and 
 link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latestFinal.releaseNotesVersion}]
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
+* KIE Workbench #{site.pom.latestFinal.version}:
+#{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly] -
+#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP] -
+#{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat] -
+#{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic] -
+#{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere]
+* KIE Execution Server #{site.pom.latestFinal.version}:
+#{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
 
 * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
 
@@ -62,6 +70,14 @@ A CR should be almost identical to the Final release.
 ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}] -
 link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
+* KIE Workbench #{site.pom.latest.version}:
+#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly] -
+#{site.pom.latest.kieWorkbenchEAPWar}[EAP] -
+#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat] -
+#{site.pom.latest.kieWorkbenchWASWar}[WebLogic] -
+#{site.pom.latest.kieWorkbenchWLSWar}[WebSphere]
+* KIE Execution Server #{site.pom.latest.version}:
+#{site.pom.latest.kieExecutionServerZip}[Any application server]
 
 Or with Maven:
 

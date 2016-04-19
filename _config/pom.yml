@@ -4,6 +4,13 @@ latestFinal:
   releaseDate: 2016-04-14
   releaseNotesVersion: 6.4
 
+  kieWorkbenchWildFlyWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-wildfly8.war
+  kieWorkbenchEAPWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-eap6_4.war
+  kieWorkbenchTomcatWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-tomcat7.war
+  kieWorkbenchWLSWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-weblogic12.war
+  kieWorkbenchWASWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-was8.war
+  kieExecutionServerZip: http://download.jboss.org/drools/release/6.4.0.Final/kie-server-distribution-6.4.0.Final.zip
+
   documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/index.html
   documentationHtml: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html/index.html
   documentationPdf: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
@@ -19,6 +26,13 @@ latest:
   distributionZip: http://download.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-distribution-6.4.0.Final.zip
   releaseDate: 2016-04-14
   releaseNotesVersion: 6.4
+
+  kieWorkbenchWildFlyWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-wildfly8.war
+  kieWorkbenchEAPWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-eap6_4.war
+  kieWorkbenchTomcatWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-tomcat7.war
+  kieWorkbenchWLSWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-weblogic12.war
+  kieWorkbenchWASWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-was8.war
+  kieExecutionServerZip: http://download.jboss.org/drools/release/6.4.0.Final/kie-server-distribution-6.4.0.Final.zip
 
   documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/index.html
   documentationHtml: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html/index.html

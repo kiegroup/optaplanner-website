@@ -97,7 +97,8 @@ A ksession defined in `META-INF/kmodule.xml` can now be referenced from a Solver
 === New example: Meeting scheduling
 
 Assign meetings of different durations to starting times and rooms.
-See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
+See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video] and the blog about
+http://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[time scheduling design patterns].
 
 === Other improvements
 
@@ -108,3 +109,19 @@ See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video].
 * Several design patterns to deal with scheduling in time have been documented in the manual.
 * New Construction Heuristic: Allocate To Value From Queue
 * Various bugs resolved. See https://issues.jboss.org/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].
+
+=== Workbench and Execution server
+
+As http://www.optaplanner.org/blog/2015/10/01/SneakPeekAtOptaPlannerWorkbench.html[mentioned in our blog],
+we 've build first version of OptaPlanner Workbench and OptaPlanner Execution Server. Take a look at what it can do:
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/t8Qu9J2D2aA?rel=0" frameborder="0" allowfullscreen></iframe>
++++
+
+To try out OptaPlanner Workbench, link:../../download/download.html[download] and deploy the KIE Workbench war and create a user with the role `plannermgmt`.
+Note that a user with the `admin` role currently doesn't see OptaPlanner screens yet.
+
+To try out OptaPlanner Execution Server, link:../../download/download.html[download] and deploy the KIE Execution Server war
+and use the KIE and OptaPlanner REST API (both are currently documented in http://drools.org/learn/documentation.html[the drools documentation]).
+It's enabled by default (although it can be disabled with a configuration property).
