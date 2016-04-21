@@ -380,3 +380,28 @@ After in in XStream `*.xml` output with `optaplanner-persistence-xstream`:
       <score>[0/0]hard/[-1/-2/-3]soft</score>
 ----
 
+
+[.upgrade-recipe-major]
+=== `EnvironmentMode`: `PRODUCTION` renamed
+
+The `EnvironmentMode` `PRODUCTION` has been renamed to `NON_REPRODUCIBLE`
+because most enterprises use `REPRODUCIBLE` in production.
+For backwards compatibility, `PRODUCTION` still exists, but it's deprecated and will be removed in a future version.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<solver>
+  <environmentMode>PRODUCTION</environmentMode>
+  ...
+</solver>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<solver>
+  <environmentMode>NON_REPRODUCIBLE</environmentMode>
+  ...
+</solver>
+----
