@@ -32,7 +32,7 @@ configuration reliability in production are correct.
 == Benchmark methodology
 
 * To reproduce, we need OptaPlanner 6.4.0.Beta1 or newer.
-* We run 3 of OptaPlanner's use cases with a `subSingleCount` greater than 1 in environment mode `PRODUCTION`.
+* We run 3 of OptaPlanner's use cases with a `subSingleCount` greater than 1 in environment mode `PRODUCTION` (as of 7.0 renamed to `NON_REPRODUCIBLE`).
 ** OptaPlanner supports several so called *environment modes*.
 One of them, `PRODUCTION`,
 is obviously meant for runs in a production environment.
