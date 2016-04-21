@@ -38,11 +38,18 @@
 
 - userId: snurkabill
   fullName: Jiří Vahala
-  role: BRMS QA
+  role: Ex BRMS QA
   gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
-  employedBy: Red Hat
   ircNickname: jvahala/snurkabill
+
+- userId: yurloc
+  fullName: Jiří Locker
+  role: BRMS QA
+  gravatarHashId: c4e5f1a35064cb21de3b3e4bf5bd7ae8
+  githubUsername: yurloc
+  employedBy: Red Hat
+  ircNickname: jlocker
 
 - userId: elsam
   fullName: Sam Van Malderen
@@ -63,9 +70,11 @@
 
 - userId: carrot-osc
   fullName: Matej Čimbora
-  role: Contributor
+  role: OptaPlanner Workbench developer
   gravatarHashId: b423d5e811dc7d6f003944b2d31df407
   githubUsername: carrot-osc
+  employedBy: Red Hat
+  ircNickname: mcimbora
   contributionsDescription: BenchmarkAggregator and more
 
 - userId: oskopek
