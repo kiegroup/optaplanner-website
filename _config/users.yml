@@ -68,11 +68,11 @@
   employedBy: Red Hat
   contributionsDescription: Example improvements (code and images)
 
-- userId: carrot-osc
+- userId: mcimbora
   fullName: Matej Čimbora
   role: OptaPlanner Workbench developer
   gravatarHashId: b423d5e811dc7d6f003944b2d31df407
-  githubUsername: carrot-osc
+  githubUsername: mcimbora
   employedBy: Red Hat
   ircNickname: mcimbora
   contributionsDescription: BenchmarkAggregator and more
