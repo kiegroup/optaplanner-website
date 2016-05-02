@@ -61,3 +61,4 @@ Contributed by Lukáš Petrovický.
 
 * Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
 * Dates and time now supported by `ValueRangeFactory` too: `createTemporalValueRange()`. Contributed by Kevin Wallis.
+* `@ValueRangeProvider` now supports methods that return an array too.
