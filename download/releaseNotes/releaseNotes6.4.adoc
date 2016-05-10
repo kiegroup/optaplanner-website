@@ -97,7 +97,12 @@ A ksession defined in `META-INF/kmodule.xml` can now be referenced from a Solver
 === New example: Meeting scheduling
 
 Assign meetings of different durations to starting times and rooms.
-See http://www.youtube.com/watch?v=wLK2-4IGtWY[this video] and the blog about
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
++++
+
+Also see the blog about
 http://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[time scheduling design patterns].
 
 === Other improvements

@@ -57,6 +57,15 @@ Solving hasn't changed:
 
 Contributed by Lukáš Petrovický.
 
+=== New example: Task assigning
+
+Assign tasks to employee and take into account required skills, affinity with the customer and task priority.
+This example also demonstrates real-time producing and consuming of tasks.
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/ksXjQ851RAU?rel=0" frameborder="0" allowfullscreen></iframe>
++++
+
 === Other improvements
 
 * Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
