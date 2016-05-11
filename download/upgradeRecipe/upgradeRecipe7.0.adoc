@@ -115,7 +115,7 @@ to replace your use of any deprecated API's with the newer and better API's.
 [.upgrade-recipe-major]
 === `Solution` interface removed (deprecated)
 
-Your solution class needs to have both the `@PlanningSolution` annotation and implement the `Solution` interface,
+Your solution class no longer needs to have both the `@PlanningSolution` annotation and implement the `Solution` interface,
 only the annotation suffices. The `Solution` interface has been deprecated and will be removed in a future version.
 
 Remove the `Solution` interface, annotate the `getScore()` method with `@PlanningScore`
