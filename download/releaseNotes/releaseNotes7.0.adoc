@@ -71,3 +71,4 @@ This example also demonstrates real-time producing and consuming of tasks.
 * Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
 * Dates and time now supported by `ValueRangeFactory` too: `createTemporalValueRange()`. Contributed by Kevin Wallis.
 * `@ValueRangeProvider` now supports methods that return an array too.
+* The log now outputs the score calculation speed for each solver phase too.
