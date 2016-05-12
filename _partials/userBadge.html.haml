@@ -7,7 +7,7 @@
   - else
     .well.well-sm(style= "padding: 5px; width: #{(page.mode.eql? 'long') ? '600px' : '320px'};")
       .media
-        %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm"}
+        %img.img-rounded.pull-left{:src => "http://www.gravatar.com/avatar/" + user.gravatarHashId + "?s=50&d=mm", :alt => "Avatar #{user.fullName}"}
         .media-body
           %h4.media-heading #{user.fullName}
           %hr(style="margin:2px auto; border-color: #ddd;")
