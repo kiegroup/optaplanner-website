@@ -405,3 +405,51 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   ...
 </solver>
 ----
+
+
+[.upgrade-recipe-readme]
+=== Average calculate count renamed to score calculation speed
+
+In the logs and the benchmark report, the _average calculate count per second_ has been renamed to _score calculation speed_.
+
+
+[.upgrade-recipe-minor]
+=== `Termination`: `calculateCountLimit` renamed
+
+The termination configuration property `calculateCountLimit` has been renamed to `scoreCalculationCountLimit`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <termination>
+    <calculateCountLimit>100000</calculateCountLimit>
+  </termination>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <termination>
+    <scoreCalculationCountLimit>100000</scoreCalculationCountLimit>
+  </termination>
+----
+
+
+[.upgrade-recipe-minor]
+=== `ProblemStatisticType`: `CALCULATE_COUNT_PER_SECOND` renamed
+
+The benchmark ProblemStatisticType `SCORE_CALCULATION_SPEED` has been renamed to `SCORE_CALCULATION_SPEED`.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <problemStatisticType>CALCULATE_COUNT_PER_SECOND</problemStatisticType>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <problemStatisticType>SCORE_CALCULATION_SPEED</problemStatisticType>
+----
+
+
