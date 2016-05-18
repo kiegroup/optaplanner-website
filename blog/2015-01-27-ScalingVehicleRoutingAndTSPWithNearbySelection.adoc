@@ -22,7 +22,7 @@ in the hope to find a better solution:
 
 image::nearbySelectionMotivation.png[]
 
-With normal move selectors, each of these 3 moves has the same change of being selected. Some observations:
+With normal move selectors, each of these 3 moves has the same chance of being selected. Some observations:
 
 * Moving location `A` behind the *nearby* location `B` is likely to be an improvement.
 Still, we need to consider other moves too, because other constraints (such as time windows)
