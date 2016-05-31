@@ -472,6 +472,38 @@ With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably 
 The method `FeasibleScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
 
 
+----[.upgrade-recipe-major]
+=== `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
+
+
+
+Before in `*.java`:
+[source, java]
+----
+        SimpleScore score = SimpleScore.valueOf(1234);
+
+----
+
+After in `*.java`:
+[source, java]
+----
+        SimpleScore score = SimpleScore.valueOfInitialized(1234);
+----
+
+Before in `*.java`:
+[source, java]
+----
+        HardSoftScore score = HardSoftScore.valueOf(1200, 34);
+
+----
+
+After in `*.java`:
+[source, java]
+----
+        HardSoftScore score = HardSoftScore.valueOfInitialized(1200, 34);
+----
+
+
 [.upgrade-recipe-major]
 === `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` replaced
 
@@ -500,7 +532,7 @@ After in `*.java`:
     }
 ----
 
-However, if you also check `isFeasible()`, that suffices because it also now guarantees the solution is initialized.
+However, if you also check `isFeasible()`, that suffices because it now guarantees the solution is initialized.
 
 After in `*.java` for a `FeasibleScore`:
 [source, java]
@@ -560,4 +592,35 @@ public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
     }
 
 }
+----
+
+
+
+
+
+
+----[.upgrade-recipe-minor]
+=== Hibernate integration: extra `@Column` needed
+
+Because a `Score` now also contains an `initScore` of type `int` (regardless of the type of the other fields),
+add an extra `@Column` annotation to the beginning of the `@Columns` list to map that field to a database column.
+
+Set it to `0` for all existing records (unless you have reason to believe that some scores weren't calculated on a fully initialized solution).
+
+Before in `*.java`:
+[source, java]
+----
+        @Columns(columns = {@Column(name = "hardScore"), @Column(name = "softScore")})
+        public HardSoftScore getScore() {
+            return score;
+        }
+----
+
+After in `*.java`:
+[source, java]
+----
+        @Columns(columns = {@Column(name = "initScore"), @Column(name = "hardScore"), @Column(name = "softScore")})
+        public HardSoftScore getScore() {
+            return score;
+        }
 ----
