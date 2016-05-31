@@ -94,4 +94,8 @@ _The source code for this website and presentations._
 
 . Edit the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] sources.
 
-Want to improve our sources? *Pull requests are welcome!*
+== Contribute
+
+Want to improve our sources? *GitHub Pull Requests are welcome!*
+If you don't know where to start, take a look at
+https://issues.jboss.org/issues/?filter=12327406[the list of starter issues for new contributors].
