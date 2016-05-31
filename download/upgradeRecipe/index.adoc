@@ -6,12 +6,12 @@
 
 These are all past, present and future upgrade recipes:
 
-* link:upgradeRecipe7.0.html[Upgrade recipe from OptaPlanner 6.4 to 7.0]
+* link:upgradeRecipe7.0.html[Upgrade recipe from OptaPlanner 6.4 to 7.0] (work in progress)
 * link:upgradeRecipe6.4.html[Upgrade recipe from OptaPlanner 6.3 to 6.4]
 * link:upgradeRecipe6.3.html[Upgrade recipe from OptaPlanner 6.2 to 6.3]
 * link:upgradeRecipe6.2.html[Upgrade recipe from OptaPlanner 6.1 to 6.2]
 * link:upgradeRecipe6.1.html[Upgrade recipe from OptaPlanner 6.0 to 6.1]
 * link:upgradeRecipe6.0.html[Upgrade recipe from Drools Planner 5.5 to OptaPlanner 6.0]
 
-To upgrade path from an even older version (5.0, 5.1, 5.2, 5.3 or 5.4) to 5.5.0.Final, see
+To upgrade path from an even older version (`5.0`, `5.1`, `5.2`, `5.3` or `5.4`) to `5.5.0.Final`, see
 https://github.com/droolsjbpm/optaplanner/blob/6.1.0.Final/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[an older revision of the upgrade recipe text file].

@@ -104,6 +104,14 @@ solver.addEventListener(event -> {
 });
 ----
 
+[.upgrade-recipe-minor]
+===  Deprecated methods removed
+
+The following long term deprecated methods have been finally removed:
+
+* Setters on `ScoreHolder` implementations, such as `HardSoftScoreHolder`'s `setHardScore(int)` and `setSoftScore(int)`.
+Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` instead.
+
 [.upgrade-recipe-readme]
 === Don't stop here
 
@@ -453,3 +461,103 @@ After in `*BenchmarkConfig.xml`:
 ----
 
 
+[.upgrade-recipe-readme]
+=== `Score`: uninitialized variable count
+
+A solution's `Score` now also contains the number of uninitialized variables (usually `0`) as a negative `getInitScore()`.
+This is useful in exotic cases with multiple phases to fully initialize a solution.
+It also prevents bugs in multi-threaded use cases.
+
+With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably determine if a solution is fully initialized.
+The method `FeasibleScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
+
+
+[.upgrade-recipe-major]
+=== `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` replaced
+
+The method `BestSolutionChangedEvent.isNewBestSolutionInitialized()`
+has been deprecated in favor of `BestSolutionChangedEvent.getNewBestSolution().getScore().isSolutionInitialized()`.
+
+Before in `*.java`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.isNewBestSolutionInitialized()) {
+            ...
+        }
+    }
+----
+
+After in `*.java`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.getNewBestSolution().getScore().isSolutionInitialized()) {
+            ...
+        }
+    }
+----
+
+However, if you also check `isFeasible()`, that suffices because it also now guarantees the solution is initialized.
+
+After in `*.java` for a `FeasibleScore`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.getNewBestSolution().getScore().isFeasible()) { // isFeasible() checks isSolutionInitialized() too
+            ...
+        }
+    }
+----
+
+
+----[.upgrade-recipe-minor]
+=== `Score` and `ScoreDefinition`: methods changed
+
+The `ScoreDefinition.fromLevelNumbers(...)` method now requires an `initScore` parameter.
+
+Before in `*.java`:
+[source, java]
+----
+Score score = scoreDefinition.fromLevelNumbers(new int[]{0, -200});
+----
+
+After in `*.java` (quick and dirty fix):
+[source, java]
+----
+Score score = scoreDefinition.fromLevelNumbers(0, new int[]{0, -200});
+----
+
+The `Score.negate()` method is now deprecated.
+
+
+[.upgrade-recipe-minor]
+=== Custom `Score`: methods added
+
+If you have a custom `Score`:
+The `Score` interface has several new methods: `getInitScore()`, `isSolutionInitialized()` and `toInitializedScore()`.
+The first two methods are implemented by `AbstractScore`, but the last one is implementation specific.
+
+Before in `*.java`:
+[source, java]
+----
+public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
+    ...
+
+    public HardSoftScore toInitializedScore() {
+        return initScore == 0 ? this : new HardSoftScore(0, hardScore, softScore);
+    }
+
+}
+----
