@@ -456,9 +456,9 @@ public class CloudBalance {
         <pre xml:space="preserve"><code class="java">public class CloudBalancingEasyScoreCalculator
     implements EasyScoreCalculator&lt;CloudBalance&gt; {
 
-  public Score calculateScore(CloudBalance cb) {
+  public Score calculateScore(CloudBalance cb, int initScore) {
     ...
-    return HardSoftScore.valueOf(hardScore, softScore);
+    return HardSoftScore.valueOf(initScore, hardScore, softScore);
   }
 
 }</code></pre>
@@ -1693,7 +1693,7 @@ class Lecture {
   Period period;
   ...
 }</code></pre>
-        <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule);
+        <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule, int initScore);
   int hardScore = 0;
   for (UnavailablePeriodPenalty penalty : schedule.getPenaltyList()) {
     for (Lecture lecture : schedule.getLectureList()) {
@@ -1704,7 +1704,7 @@ class Lecture {
     }
   }
   ...
-  return HardSoftScore.valueOf(hardScore, softScore);
+  return HardSoftScore.valueOf(initScore, hardScore, softScore);
 }</code></pre>
     </section>
     <section>
