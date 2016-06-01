@@ -393,8 +393,8 @@ After in in XStream `*.xml` output with `optaplanner-persistence-xstream`:
 === `EnvironmentMode`: `PRODUCTION` renamed
 
 The `EnvironmentMode` `PRODUCTION` has been renamed to `NON_REPRODUCIBLE`
-because most enterprises use `REPRODUCIBLE` in production.
-For backwards compatibility, `PRODUCTION` still exists, but it's deprecated and will be removed in a future version.
+because most enterprises use `REPRODUCIBLE` in production and that's fine.
+For backwards compatibility, `PRODUCTION` still exists, but it's deprecated and it will be removed in a future version.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -472,16 +472,85 @@ With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably 
 The method `FeasibleScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
 
 
-----[.upgrade-recipe-major]
+[.upgrade-recipe-major]
+=== `EasyScoreCalculator`: `calculateScore()` changed
+
+The `EasyScoreCalculator` interface method `calculateScore(solution)` has been changed to `calculateScore(solution, initScore)`.
+Change the method signature to add the `initScore` and then pass it to the `Score.valueOf()` method.
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(CloudBalance cloudBalance) {
+        ...
+        return HardSoftScore.valueOf(hardScore, softScore);
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(CloudBalance cloudBalance, int initScore) {
+        ...
+        return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    }
+
+}
+----
+
+OptaPlanner keeps track of the `initScore` internally, but it needs to be passed into the `Score` creation because a `Score` is immutable by design.
+
+
+[.upgrade-recipe-minor]
+=== IncrementalScoreCalculator`: `calculateScore()` changed
+
+The `IncrementalScoreCalculator` interface method `calculateScore()` has been changed `calculateScore(initScore)`.
+Change the method signature to add the `initScore` and then pass it to the `Score.valueOf()` method.
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore() {
+        return HardSoftScore.valueOf(hardScore, softScore);
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(int initScore) {
+        return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    }
+
+}
+----
+
+
+[.upgrade-recipe-major]
 === `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
 
+Each `Score` implementation now requires an `initScore` parameter.
+Inside a `ScoreCalculator`, it's must be passed from the `calculateScore()` method (see above).
 
+Outside of a `ScoreCalculator`, if you're constructing a score for an initialized solution,
+just replace `valueOf()` with `valueOfInitialized()`:
 
 Before in `*.java`:
 [source, java]
 ----
         SimpleScore score = SimpleScore.valueOf(1234);
-
 ----
 
 After in `*.java`:
@@ -490,11 +559,12 @@ After in `*.java`:
         SimpleScore score = SimpleScore.valueOfInitialized(1234);
 ----
 
+Or with a `HardSoftScore`:
+
 Before in `*.java`:
 [source, java]
 ----
         HardSoftScore score = HardSoftScore.valueOf(1200, 34);
-
 ----
 
 After in `*.java`:
@@ -502,6 +572,9 @@ After in `*.java`:
 ----
         HardSoftScore score = HardSoftScore.valueOfInitialized(1200, 34);
 ----
+
+It is intentional that `valueOfInitialized()` doesn't just overload `valueOf()`,
+to avoid that a `EasyScoreCalculator` implementation forgets to pass the `initScore` parameter.
 
 
 [.upgrade-recipe-major]
@@ -513,7 +586,7 @@ has been deprecated in favor of `BestSolutionChangedEvent.getNewBestSolution().g
 Before in `*.java`:
 [source, java]
 ----
-    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
         if (event.isEveryProblemFactChangeProcessed()
                 && event.isNewBestSolutionInitialized()) {
             ...
@@ -524,7 +597,7 @@ Before in `*.java`:
 After in `*.java`:
 [source, java]
 ----
-    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
         if (event.isEveryProblemFactChangeProcessed()
                 && event.getNewBestSolution().getScore().isSolutionInitialized()) {
             ...
@@ -532,21 +605,80 @@ After in `*.java`:
     }
 ----
 
-However, if you also check `isFeasible()`, that suffices because it now guarantees the solution is initialized.
+However, if you also check `isFeasible()`, that's enough because it now also checks if the solution is initialized.
 
 After in `*.java` for a `FeasibleScore`:
 [source, java]
 ----
-    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) { // In solver thread
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
         if (event.isEveryProblemFactChangeProcessed()
-                && event.getNewBestSolution().getScore().isFeasible()) { // isFeasible() checks isSolutionInitialized() too
+                // isFeasible() checks isSolutionInitialized() too
+                && event.getNewBestSolution().getScore().isFeasible()) {
             ...
         }
     }
 ----
 
 
-----[.upgrade-recipe-minor]
+[.upgrade-recipe-minor]
+=== Custom initializer: `Score.compareTo()` behaviour changed
+
+The `Score.compareTo()` now also takes the uninitialized variable count into account.
+If you have a `CustomPhaseCommand` that implements a custom solution initializer (instead of using a Construction Heuristic),
+it will need to transform all scores with `Score.toInitializedScore()` before comparison to avoid making the wrong decision:
+
+Before in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+    ...
+
+    private void initializeSeatDesignationList(ScoreDirector<DinnerParty> scoreDirector, DinnerParty dinnerParty) {
+        ...
+        for (SeatDesignation seatDesignation : dinnerParty.getSeatDesignationList()) {
+            Score bestScore = SimpleScore.valueOf(Integer.MIN_VALUE);
+            ...
+            for (Seat seat : undesignatedSeatList) {
+                ...
+                if (score.compareTo(bestScore) > 0) {
+                    bestScore = score;
+                    ...
+                }
+            }
+            ...
+        }
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+    ...
+
+    private void initializeSeatDesignationList(ScoreDirector<DinnerParty> scoreDirector, DinnerParty dinnerParty) {
+        ...
+        for (SeatDesignation seatDesignation : dinnerParty.getSeatDesignationList()) {
+            Score bestScore = SimpleScore.valueOfInitialized(Integer.MIN_VALUE);
+            ...
+            for (Seat seat : undesignatedSeatList) {
+                ...
+                if (score.toInitializedScore().compareTo(bestScore.toInitializedScore()) > 0) {
+                    bestScore = score;
+                    ...
+                }
+            }
+            ...
+        }
+    }
+
+}
+----
+
+
+[.upgrade-recipe-minor]
 === `Score` and `ScoreDefinition`: methods changed
 
 The `ScoreDefinition.fromLevelNumbers(...)` method now requires an `initScore` parameter.
@@ -563,15 +695,13 @@ After in `*.java` (quick and dirty fix):
 Score score = scoreDefinition.fromLevelNumbers(0, new int[]{0, -200});
 ----
 
-The `Score.negate()` method is now deprecated.
-
 
 [.upgrade-recipe-minor]
 === Custom `Score`: methods added
 
 If you have a custom `Score`:
 The `Score` interface has several new methods: `getInitScore()`, `isSolutionInitialized()` and `toInitializedScore()`.
-The first two methods are implemented by `AbstractScore`, but the last one is implementation specific.
+The first two methods are implemented by `AbstractScore`, but the last method needs to be specifically implemented.
 
 Before in `*.java`:
 [source, java]
@@ -594,12 +724,10 @@ public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
 }
 ----
 
+Furthermore, a score that implements `FeasibleScore` needs to take the `initScore` into account in the `isFeasible()` method implementation.
 
 
-
-
-
-----[.upgrade-recipe-minor]
+[.upgrade-recipe-minor]
 === Hibernate integration: extra `@Column` needed
 
 Because a `Score` now also contains an `initScore` of type `int` (regardless of the type of the other fields),
@@ -610,7 +738,9 @@ Set it to `0` for all existing records (unless you have reason to believe that s
 Before in `*.java`:
 [source, java]
 ----
-        @Columns(columns = {@Column(name = "hardScore"), @Column(name = "softScore")})
+        @Columns(columns = {
+                @Column(name = "hardScore"),
+                @Column(name = "softScore")})
         public HardSoftScore getScore() {
             return score;
         }
@@ -619,7 +749,10 @@ Before in `*.java`:
 After in `*.java`:
 [source, java]
 ----
-        @Columns(columns = {@Column(name = "initScore"), @Column(name = "hardScore"), @Column(name = "softScore")})
+        @Columns(columns = {
+                @Column(name = "initScore"),
+                @Column(name = "hardScore"),
+                @Column(name = "softScore")})
         public HardSoftScore getScore() {
             return score;
         }
