@@ -508,9 +508,9 @@ OptaPlanner keeps track of the `initScore` internally, but it needs to be passed
 
 
 [.upgrade-recipe-minor]
-=== IncrementalScoreCalculator`: `calculateScore()` changed
+=== `IncrementalScoreCalculator`: `calculateScore()` changed
 
-The `IncrementalScoreCalculator` interface method `calculateScore()` has been changed `calculateScore(initScore)`.
+The `IncrementalScoreCalculator` interface method `calculateScore()` has been changed to `calculateScore(initScore)`.
 Change the method signature to add the `initScore` and then pass it to the `Score.valueOf()` method.
 
 Before in `*.java`:
@@ -542,7 +542,7 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
 === `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
 
 Each `Score` implementation now requires an `initScore` parameter.
-Inside a `ScoreCalculator`, it's must be passed from the `calculateScore()` method (see above).
+Inside a `ScoreCalculator`, it must be passed from the `calculateScore()` method (see above).
 
 Outside of a `ScoreCalculator`, if you're constructing a score for an initialized solution,
 just replace `valueOf()` with `valueOfInitialized()`:
@@ -574,7 +574,7 @@ After in `*.java`:
 ----
 
 It is intentional that `valueOfInitialized()` doesn't just overload `valueOf()`,
-to avoid that a `EasyScoreCalculator` implementation forgets to pass the `initScore` parameter.
+to avoid that an `EasyScoreCalculator` implementation forgets to pass the `initScore` parameter.
 
 
 [.upgrade-recipe-major]
