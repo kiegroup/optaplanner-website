@@ -105,7 +105,7 @@ In fact, the results aren't even near optimal, especially as we scale out with a
 
 * More variables result in a lower result quality.
 * More constraints result in a lower result quality, presuming it's even possible to partition and reduce sanely.
-* More partitions, result in a lower result quality.
+* More partitions result in a lower result quality.
 
 == Conclusion
 
@@ -119,4 +119,4 @@ For example, in a depth-first search algorithm, MapReduce can make sense to expl
 (although the search tree scales exponentially bad which dwarfs any gain of MapReduce).
 
 To solve a big planning problem, use a Solver (such as http://www.optaplanner.org/[OptaPlanner])
-that scales well in memory, so you don't to resort to partitioning at the expense of solution quality.
+that scales well in memory, so you don't need to resort to partitioning at the expense of solution quality.

@@ -40,8 +40,8 @@ image::letTheBestScoreStatisticGuideYou.png[]
 It's probably too low, maybe due to a bottleneck in just one of your score constraints.
 Using faster hardware well help in this case (although improving score calculation speed is usually better).
 
-* If local optima are the problem (middle pattern), try adding course grained moves
-(but don't remove the fine grained moves).
+* If local optima are the problem (middle pattern), try adding coarse-grained moves
+(but don't remove the fine-grained moves).
 
 * If the optimization algorithm is the problem (right pattern), try different optimization algorithms in the solver configuration.
 
