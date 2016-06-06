@@ -38,7 +38,7 @@
 
 - userId: snurkabill
   fullName: Jiří Vahala
-  role: Ex BRMS QA
+  role: Ex-QA for BRMS
   gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
   ircNickname: jvahala/snurkabill
@@ -79,13 +79,13 @@
 
 - userId: oskopek
   fullName: Ondrej Škopek
-  role: OptaPlanner Benchmarker developer
+  role: Contributor and ex-intern
   gravatarHashId: fa169c92202fdd8203f45daa96e69933
   googlePlusId: +OndrejSkopekOS
   twitterUsername: oskopek
   githubUsername: oskopek
-  employedBy: Red Hat
   ircNickname: oskopek
+  contributionsDescription: OptaPlanner Benchmarker improvements
 
 - userId: mdproctor
   fullName: Mark Proctor
