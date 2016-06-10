@@ -112,6 +112,8 @@ The following long term deprecated methods have been finally removed:
 * Setters on `ScoreHolder` implementations, such as `HardSoftScoreHolder`'s `setHardScore(int)` and `setSoftScore(int)`.
 Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` instead.
 
+If you're encountering any of these, check link:./[the previous upgrade recipes] on how to change your code.
+
 [.upgrade-recipe-readme]
 === Don't stop here
 
@@ -425,6 +427,7 @@ In the logs and the benchmark report, the _average calculate count per second_ h
 === `Termination`: `calculateCountLimit` renamed
 
 The termination configuration property `calculateCountLimit` has been renamed to `scoreCalculationCountLimit`.
+The property `calculateCountLimit`  has been deprecated and will be removed in a future version.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
