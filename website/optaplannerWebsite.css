@@ -165,6 +165,10 @@ td > p:last-child {
     right: 0;
 }
 
+.label-public-api {
+    background-color: #6f5499;
+}
+
 /* Carousel: center images, remove gradient, tabs instead of indicators */
 #whatIsCarousel .item > img {
     margin: 0 auto;

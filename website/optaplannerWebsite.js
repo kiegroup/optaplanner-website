@@ -12,6 +12,9 @@ function formatUpgradeRecipeItem(node, badge, collapseByDefault) {
     $(node).addClass('upgrade-recipe-note');
     var noteBody = $(node).children().not('h3:first').wrapAll('<div class="upgrade-recipe-note-body"></div>');
     var noteHeader = $(node).find('h3:first').wrap('<a class="upgrade-recipe-note-header" href="#"></a>');
+    if ($(node).hasClass("upgrade-recipe-public-api")) {
+        $(noteHeader).prepend($('<span class="label label-danger label-as-badge label-public-api" style="margin-right: 5px;">Public API</span>'));
+    }
     $(noteHeader).prepend(badge);
     var collapseButton = $('<span class="glyphicon glyphicon-chevron-up pull-right"/>');
     $(noteHeader).append(collapseButton);

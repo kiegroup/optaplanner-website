@@ -6,121 +6,35 @@
 
 == Backwards incompatible changes to the public API
 
-Because this is a new major version number (7.0), which is the foundation for the 7.x series,
-it allows us to make backwards incompatible changes to the public API for the long term benefit of this project.
+Because this is a new major version number (7.0), which is the foundation for the 7.x series for the next few years,
+it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
 
 Our current intention is to keep these backwards incompatible changes to a strict minimum
-(by favoring deprecation over removal). Our current intention is also to work on the 7.x series for several years
-(during which time we won't make backwards incompatible changes to the API).
+(by favoring deprecation over removal) and do not introduce any additional ones after 7.0.
 
-[.upgrade-recipe-major]
+Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
+
+
+== From 6.4.0.Final to 7.0.0.Beta1
+
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === Java 8 or higher required
 
 If you're using JRE or JDK 6 or 7, upgrade to JDK 8 or higher.
 
 We currently intend to support a minimal version of Java 8 throughout the entire 7.x series.
 
-[.upgrade-recipe-minor]
-===  `Solver`: return values no longer implement `Solution`
 
-Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
-the `Solver.solve(...)` and `Solver.getBestSolution()` methods now return an `Object` instead of a `Solution` instance
-(if and only if no type parameter is specified for the `Solver`).
-
-*This only applies if you're still using a `Solver` without a type parameter
-and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
-
-Before in `*.java`:
-[source, java]
-----
-Solution s = solver.solve(problem);
-CloudBalance solution = (CloudBalance) s;
-----
-
-After in `*.java` (quick and dirty fix):
-[source, java]
-----
-CloudBalance solution = (CloudBalance) solver.solve(problem);
-----
-
-After in `*.java` (recommended fix):
-[source, java]
-----
-SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
-Solver<CloudBalance> solver = factory.buildSolver();
-...
-CloudBalance solution = solver.solve(problem);
-----
-
-
-[.upgrade-recipe-minor]
-===  `BestSolutionChangedEvent.getNewBestSolution()`: return value no longer implement `Solution`
-
-Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
-the `BestSolutionChangedEvent.getNewBestSolution()` method now returns an `Object`
-(if and only if no type parameter is specified for the `SolverEventListener`).
-
-*This only applies if you're still using a `SolverEventListener` without a type parameter
-and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
-
-Before in `*.java`:
-[source, java]
-----
-SolverFactory factory = SolverFactory.createFromXmlResource(...);
-Solver solver = factory.buildSolver();
-solver.addEventListener(new SolverEventListener() {
-    @Override
-    public void bestSolutionChanged(BestSolutionChangedEvent event) {
-        Solution s = event.getNewBestSolution();
-        CloudBalance solution = (CloudBalance) s;
-        ...
-    }
-});
-----
-
-After in `*.java`:
-[source, java]
-----
-SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
-Solver<CloudBalance> solver = factory.buildSolver();
-solver.addEventListener(new SolverEventListener<CloudBalance>() {
-    @Override
-    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
-        CloudBalance solution = event.getNewBestSolution();
-        ...
-    }
-});
-----
-
-And you'll probably want to use a lamdba here:
-
-[source, java]
-----
-SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
-Solver<CloudBalance> solver = factory.buildSolver();
-solver.addEventListener(event -> {
-    CloudBalance solution = event.getNewBestSolution();
-    ...
-});
-----
-
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 ===  Deprecated methods removed
 
 The following long term deprecated methods have been finally removed:
 
-* Setters on `ScoreHolder` implementations, such as `HardSoftScoreHolder`'s `setHardScore(int)` and `setSoftScore(int)`.
-Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` instead.
+* Setters on `ScoreHolder` implementations, such as `HardSoftScoreHolder.setHardScore(int)` and `setSoftScore(int)`.
+Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` in your score rules instead.
+See link:./upgradeRecipe6.0.html[this upgrade recipe].
 
-If you're encountering any of these, check link:./[the previous upgrade recipes] on how to change your code.
-
-[.upgrade-recipe-readme]
-=== Don't stop here
-
-For usability and performance reasons, we strongly recommend to apply this entire upgrade recipe
-to replace your use of any deprecated API's with the newer and better API's.
-
-== From 6.4.0.Final to 7.0.0.Beta1
 
 [.upgrade-recipe-major]
 === `Solution` interface removed (deprecated)
@@ -228,6 +142,92 @@ public class CloudBalance {
 Don't add the `@ProblemFactCollectionProperty` annotation on getters (or fields)
 that have a `@PlanningEntityCollectionProperty` annotation.
 
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+===  `Solver`: return values no longer implement `Solution`
+
+Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
+the `Solver.solve(...)` and `Solver.getBestSolution()` methods now return an `Object` instead of a `Solution` instance
+(if and only if no type parameter is specified for the `Solver`).
+
+*This only applies if you're still using a `Solver` without a type parameter
+and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
+
+Before in `*.java`:
+[source, java]
+----
+Solution s = solver.solve(problem);
+CloudBalance solution = (CloudBalance) s;
+----
+
+After in `*.java` (quick and dirty fix):
+[source, java]
+----
+CloudBalance solution = (CloudBalance) solver.solve(problem);
+----
+
+After in `*.java` (recommended fix):
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+...
+CloudBalance solution = solver.solve(problem);
+----
+
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+===  `BestSolutionChangedEvent.getNewBestSolution()`: return value no longer implement `Solution`
+
+Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
+the `BestSolutionChangedEvent.getNewBestSolution()` method now returns an `Object`
+(if and only if no type parameter is specified for the `SolverEventListener`).
+
+*This only applies if you're still using a `SolverEventListener` without a type parameter
+and if you're not casting the return value immediately to your solution implementation (which is unlikely).*
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory factory = SolverFactory.createFromXmlResource(...);
+Solver solver = factory.buildSolver();
+solver.addEventListener(new SolverEventListener() {
+    @Override
+    public void bestSolutionChanged(BestSolutionChangedEvent event) {
+        Solution s = event.getNewBestSolution();
+        CloudBalance solution = (CloudBalance) s;
+        ...
+    }
+});
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+solver.addEventListener(new SolverEventListener<CloudBalance>() {
+    @Override
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        CloudBalance solution = event.getNewBestSolution();
+        ...
+    }
+});
+----
+
+And you'll probably want to use a lamdba here:
+
+[source, java]
+----
+SolverFactory<CloudBalance> factory = SolverFactory.createFromXmlResource(...);
+Solver<CloudBalance> solver = factory.buildSolver();
+solver.addEventListener(event -> {
+    CloudBalance solution = event.getNewBestSolution();
+    ...
+});
+----
+
+
 [.upgrade-recipe-major]
 === `SolutionFileIO`: added optional generic type parameter
 
@@ -265,6 +265,7 @@ public class TspFileIO implements SolutionFileIO<TspSolution> {
 }
 ----
 
+
 [.upgrade-recipe-minor]
 === `XStreamSolutionFileIO`: added optional generic type parameter
 
@@ -282,6 +283,7 @@ After in `*.java`:
 ----
 SolutionFileIO<CloudBalance> solutionFileIO = new XStreamSolutionFileIO<>(CloudBalance.class);
 ----
+
 
 [.upgrade-recipe-minor]
 === `CustomPhaseCommand`: added optional generic type parameter
@@ -314,6 +316,7 @@ public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<D
 
 }
 ----
+
 
 [.upgrade-recipe-major]
 === `ProblemFactChange`: added optional generic type parameter
@@ -351,9 +354,6 @@ After in `*.java` (with lamdba):
             ...
         });
 ----
-
-
-
 
 
 [.upgrade-recipe-minor]
@@ -541,11 +541,11 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
 ----
 
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
 
 Each `Score` implementation now requires an `initScore` parameter.
-Inside a `ScoreCalculator`, it must be passed from the `calculateScore()` method (see above).
+Inside a `ScoreCalculator`, the `initScore` must be passed from the `calculateScore()` method (see the 2 previous notes above).
 
 Outside of a `ScoreCalculator`, if you're constructing a score for an initialized solution,
 just replace `valueOf()` with `valueOfInitialized()`:
