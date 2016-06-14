@@ -27,6 +27,10 @@ footer {
     color: #BABDB6;
 }
 
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+    line-height: 1.2em;
+}
+
 .reveal sup {
     font-size: 50%;
 }
