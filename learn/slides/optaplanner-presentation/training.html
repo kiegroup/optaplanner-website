@@ -683,9 +683,10 @@ end</code></pre>
             <h3>Solving</h3>
         <pre xml:space="preserve"><code class="java">SolverFactory&lt;CloudBalance&gt; factory
         = SolverFactory.createFromXmlResource("...SolverConfig.xml");
-Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
 
-cloudBalance = solver.solve(cloudBalance);</code></pre>
+Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
+CloudBalance problem = loadProblem()
+CloudBalance solution = solver.solve(problem);</code></pre>
         </section>
         <section>
             <h3>Lab: Switch score calculation type</h3>

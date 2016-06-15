@@ -117,8 +117,7 @@
 
     <section>
         <h3>
-            What is realistic<br/>
-            business resource optimization?
+            Realistic business resource optimization
         </h3>
         <figure>
             <img src="planner_introduction/plannerExamplesAppScreenshot.png"/>
@@ -162,19 +161,6 @@
     </section>
 
     <section>
-        <img src="use_cases_and_examples/employeeRosteringValueProposition_0.png" class="fullImage">
-        <img src="use_cases_and_examples/employeeRosteringValueProposition_1.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/employeeRosteringValueProposition_2.png" class="fullImage fragment">
-        <img src="use_cases_and_examples/employeeRosteringValueProposition_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="quick_start/cloudOptimizationValueProposition_0.png" class="fullImage">
-        <img src="quick_start/cloudOptimizationValueProposition_1.png" class="fullImage fragment">
-        <img src="quick_start/cloudOptimizationValueProposition_2.png" class="fullImage fragment">
-        <img src="quick_start/cloudOptimizationValueProposition_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
         <h3>Planning problem use cases</h3>
         <ul style="font-size: smaller;">
             <li><b>Agenda scheduling</b>: doctor appointments, court hearings,<br/>maintenance jobs, TV advertisements, ...</li>
@@ -195,6 +181,13 @@
             Are planning problems<br/>
             difficult to solve?
         </h2>
+    </section>
+
+    <section>
+        <img src="quick_start/cloudOptimizationValueProposition_0.png" class="fullImage">
+        <img src="quick_start/cloudOptimizationValueProposition_1.png" class="fullImage fragment">
+        <img src="quick_start/cloudOptimizationValueProposition_2.png" class="fullImage fragment">
+        <img src="quick_start/cloudOptimizationValueProposition_3.png" class="fullImage fragment">
     </section>
 
     <section>
@@ -612,7 +605,8 @@ end</code></pre>
         = SolverFactory.createFromXmlResource("...SolverConfig.xml");
 
 Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
-cloudBalance = solver.solve(cloudBalance);</code></pre>
+CloudBalance problem = loadProblem();
+CloudBalance solution = solver.solve(problem);</code></pre>
     </section>
 
     <section>
@@ -856,8 +850,11 @@ public class Process  {
         <img src="benchmarking_and_tweaking/benchmarkOverview.png" class="fullImage">
     </section>
     <section>
-        <h3>Benchmark results</h3>
-        <p>Demo</p>
+        <h3>Benchmarker toolkit</h3>
+        <figure>
+            <img src="presentation_extra/benchmarkReportScreenshot.png"/>
+            <p>Benchmark report demo</p>
+        </figure>
     </section>
     <section>
         <h3>Gain by using OptaPlanner</h3>
@@ -919,6 +916,13 @@ public class Process  {
 
     <section>
         <h2>Repeated planning:<br/>continuous/real-time</h2>
+    </section>
+
+    <section>
+        <img src="use_cases_and_examples/employeeRosteringValueProposition_0.png" class="fullImage">
+        <img src="use_cases_and_examples/employeeRosteringValueProposition_1.png" class="fullImage fragment">
+        <img src="use_cases_and_examples/employeeRosteringValueProposition_2.png" class="fullImage fragment">
+        <img src="use_cases_and_examples/employeeRosteringValueProposition_3.png" class="fullImage fragment">
     </section>
 
     <section>
