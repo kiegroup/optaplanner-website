@@ -760,3 +760,16 @@ After in `*.java`:
             return score;
         }
 ----
+
+
+[.upgrade-recipe-impl-detail]
+=== `XStreamSolutionFileIO`: no-arg constructor removed
+
+The no-arg constructor of `XStreamSolutionFileIO` has been removed because it's useless.
+
+
+[.upgrade-recipe-minor]
+=== JAXB support added
+
+If you're using JAXB, take advantage the new JAXB Score bindings etc.
+See the reference manual, chapter _Integration_.
