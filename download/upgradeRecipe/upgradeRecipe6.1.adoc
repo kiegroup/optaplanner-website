@@ -1435,7 +1435,7 @@ import org.optaplanner.persistence.xstream.XStreamScoreConverter;
 After in `*.java`:
 [source, java]
 ----
-import org.optaplanner.persistence.xstream.impl.score.XStreamScoreConverter;
+import org.optaplanner.persistence.xstream.api.score.XStreamScoreConverter;
 ----
 
 Before in `*.java`:
@@ -1447,7 +1447,7 @@ import org.optaplanner.persistence.xstream.XStreamBendableScoreConverter;
 After in `*.java`:
 [source, java]
 ----
-import org.optaplanner.persistence.xstream.impl.score.XStreamBendableScoreConverter;
+import org.optaplanner.persistence.xstream.api.score.XStreamBendableScoreConverter;
 ----
 
 [.upgrade-recipe-major]
