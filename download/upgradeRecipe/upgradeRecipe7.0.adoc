@@ -773,3 +773,67 @@ The no-arg constructor of `XStreamSolutionFileIO` has been removed because it's 
 
 If you're using JAXB, take advantage the new JAXB Score bindings etc.
 See the reference manual, chapter _Integration_.
+
+These new `ScoreJaxbXmlAdapter` implementations have been promoted to the public API,
+so they are guaranteed to be backwards compatible in future versions.
+
+
+[.upgrade-recipe-major]
+=== `XStreamScoreConverter` replaced
+
+The general purpose `XStreamScoreConverter` to bind `Score` implementations
+has been replaced by specific implementations, such as `HardSoftScoreXStreamConverter` and `SimpleScoreXStreamConverter`
+that are easier to use.
+
+Furthermore, these  new `ScoreXStreamConverter` implementations have been promoted to the public API,
+so they are now guaranteed to be backwards compatible in future versions.
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalance {
+
+    @XStreamConverter(value = XStreamScoreConverter.class, types = {HardSoftScoreDefinition.class})
+    private HardSoftScore score;
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalance {
+
+    @XStreamConverter(value = HardSoftScoreXStreamConverter.class)
+    private HardSoftScore score;
+
+    ...
+}
+----
+
+For a bendable score, it's no longer needed to configure the `hardLevelSize` and `softLevelSize`.
+
+Before in `*.java`:
+[source, java]
+----
+public class Schedule {
+
+    @XStreamConverter(value = XStreamScoreConverter.class, types = {BendableScoreDefinition.class}, ints = {1, 2})
+    private BendableScore score;
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class Schedule {
+
+    @XStreamConverter(value = BendableScoreXStreamConverter.class)
+    private BendableScore score;
+
+    ...
+}
+----
