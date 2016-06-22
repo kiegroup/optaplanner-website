@@ -805,7 +805,7 @@ After in `*.java`:
 ----
 public class CloudBalance {
 
-    @XStreamConverter(value = HardSoftScoreXStreamConverter.class)
+    @XStreamConverter(HardSoftScoreXStreamConverter.class)
     private HardSoftScore score;
 
     ...
@@ -831,7 +831,7 @@ After in `*.java`:
 ----
 public class Schedule {
 
-    @XStreamConverter(value = BendableScoreXStreamConverter.class)
+    @XStreamConverter(BendableScoreXStreamConverter.class)
     private BendableScore score;
 
     ...
