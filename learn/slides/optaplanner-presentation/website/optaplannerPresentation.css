@@ -149,6 +149,20 @@ footer {
     font-size: x-small;
 }
 
+.reveal li img {
+    vertical-align: middle;
+    margin: 0;
+}
+
+table.links tr th {
+    border: 0;
+}
+
+.reveal td img {
+    vertical-align: middle;
+    margin: 0;
+}
+
 /******************************************************************************
 * Tables
 ******************************************************************************/
