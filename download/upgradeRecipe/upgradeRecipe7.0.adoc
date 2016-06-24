@@ -35,6 +35,9 @@ The following long term deprecated methods have been finally removed:
 Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` in your score rules instead.
 See link:./upgradeRecipe6.0.html[this upgrade recipe].
 
+* The experimental, deprecated, hybrid metaheuristic called `LATE_SIMULATED_ANNEALING`
+(which was inspired by both Late Acceptance and Simulated Annealing) has be removed.
+
 
 [.upgrade-recipe-major]
 === `Solution` interface removed (deprecated)
