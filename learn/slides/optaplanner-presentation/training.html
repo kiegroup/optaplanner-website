@@ -685,7 +685,7 @@ end</code></pre>
         = SolverFactory.createFromXmlResource("...SolverConfig.xml");
 
 Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
-CloudBalance problem = loadProblem()
+CloudBalance problem = ... // Load problem
 CloudBalance solution = solver.solve(problem);</code></pre>
         </section>
         <section>
@@ -2763,7 +2763,7 @@ $ mvn exec:java
 
 // For every dataset
 Solver&lt;CloudSolution&gt; solver = solverFactory.buildSolver();
-CloudSolution problem = loadProblem();
+CloudBalance problem = ... // Load problem
 CloudSolution solution = solver.solve(problem);</code></pre>
             <p class="fragment"><code>optacloud-1.0.0.jar</code> is in the classpath</p>
         </section>
@@ -2777,7 +2777,7 @@ SolverFactory&lt;Object&gt; solverFactory
 
 // For every dataset
 Solver&lt;Object&gt; solver = solverFactory.buildSolver();
-Object problem = loadProblem();
+CloudBalance problem = ... // Load problem
 Object solution = solver.solve(problem);</code></pre>
             <p class="fragment">
                 <code>optacloud-1.0.0.jar</code> is not in the classpath<br/>
