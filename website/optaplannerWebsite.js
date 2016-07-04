@@ -51,8 +51,8 @@ function insertEmailSupportPopover() {
             html: true,
             trigger: 'hover',
             title: '<b>Don\'t ask for free support</b>',
-            content: '<p>Do not contact me for free support, please use <a href="./forum.html">our free community forum</a> or <a href="./product.html">our paid enterprise support</a> instead.</p>'
-                    + '<p>Contact me for contribution and academic discussions.</p>'});
+            content: '<p>Do not contact me directly for free support, please use <a href="./forum.html">our free community forum</a> or <a href="./product.html">our paid enterprise support</a> instead.</p>'
+                    + '<p>Feel free to contact me directly for academic or contribution conversations.</p>'});
     });
 }
 
