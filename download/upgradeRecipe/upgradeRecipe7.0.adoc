@@ -781,6 +781,16 @@ These new `ScoreJaxbXmlAdapter` implementations have been promoted to the public
 so they are guaranteed to be backwards compatible in future versions.
 
 
+[.upgrade-recipe-minor]
+=== Jackson support added
+
+If you're using Jackson, take advantage the new Jackson Score bindings etc.
+See the reference manual, chapter _Integration_.
+
+These new `ScoreJacksonJsonSerializer` and `ScoreJacksonJsonDeserializer` implementations have been promoted to the public API,
+so they are guaranteed to be backwards compatible in future versions.
+
+
 [.upgrade-recipe-major]
 === `XStreamScoreConverter` replaced
 

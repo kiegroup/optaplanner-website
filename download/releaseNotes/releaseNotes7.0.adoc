@@ -57,6 +57,33 @@ Solving hasn't changed:
 
 Contributed by Lukáš Petrovický.
 
+=== New JAXB and Jackson support and improved XStream support
+
+To marshall a `Score` from or to XML or JSON, use the appropriate binder
+for XStream, JAXB or Jackson in `optaplanner-persistence-xstream`, `optaplanner-persistence-jaxb` and `optaplanner-persistence-jackson`.
+
+These will create pretty XML:
+
+[source,xml]
+----
+<CloudBalance>
+   ...
+   <score>0hard/-200soft</score>
+</CloudBalance>
+----
+
+And beautiful JSON:
+
+[source,json]
+----
+{
+   ...
+   "score":"0hard/-200soft"
+}
+----
+
+See documentation on how to configure them.
+
 === New example: Task assigning
 
 Assign tasks to employee and take into account required skills, affinity with the customer and task priority.
