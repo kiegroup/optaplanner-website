@@ -45,8 +45,20 @@ function insertUpgradeRecipePriorities() {
     });
 }
 
+function insertEmailSupportPopover() {
+    $('.emailSupportPopover').each(function(idx, node) {
+        $(node).popover({
+            html: true,
+            trigger: 'hover',
+            title: '<b>Don\'t ask for free support</b>',
+            content: '<p>Do not contact me for free support, please use <a href="./forum.html">our free community forum</a> or <a href="./product.html">our paid enterprise support</a> instead.</p>'
+                    + '<p>Contact me for contribution and academic discussions.</p>'});
+    });
+}
+
 $(document).ready( function() {
     $(insertUpgradeRecipePriorities);
+    $(insertEmailSupportPopover);
 
     $('.carousel').carousel();
     $('#whatIsCarousel').on('slide.bs.carousel', function(e) {
