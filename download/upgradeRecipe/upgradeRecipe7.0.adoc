@@ -880,3 +880,31 @@ After in `*.java`:
             return arrivalTime;
         }
 ----
+
+
+[.upgrade-recipe-minor]
+===  `ProblemFactChange`: `before/afterProblemFactChanged` renamed
+
+The `ScoreDirector` methods `beforeProblemFactChanged()` and `afterProblemFactChanged()`
+have been renamed to `beforeProblemPropertyChanged()` and `afterProblemPropertyChanged()`.
+This can affect your `ProblemFactChange` implementations.
+
+A problem fact is a class that doesn't change during planning.
+A problem property is a property on a problem fact or a planning entity that doesn't change during planning
+(so it's not a planning variable).
+
+Before in `*.java`:
+[source, java]
+----
+        scoreDirector.beforeProblemFactChanged(computer);
+        computer.setMemory(newMemoryCapacity);
+        scoreDirector.afterProblemFactChanged(computer);
+----
+
+After in `*.java`:
+[source, java]
+----
+        scoreDirector.beforeProblemPropertyChanged(computer);
+        computer.setMemory(newMemoryCapacity);
+        scoreDirector.afterProblemPropertyChanged(computer);
+----
