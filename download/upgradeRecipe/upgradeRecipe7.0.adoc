@@ -882,6 +882,9 @@ After in `*.java`:
 ----
 
 
+== From 7.0.0.Beta1 to 7.0.0.Beta2
+
+
 [.upgrade-recipe-minor]
 ===  `ProblemFactChange`: `before/afterProblemFactChanged` renamed
 
@@ -907,4 +910,78 @@ After in `*.java`:
         scoreDirector.beforeProblemPropertyChanged(computer);
         computer.setMemory(newMemoryCapacity);
         scoreDirector.afterProblemPropertyChanged(computer);
+----
+
+
+[.upgrade-recipe-major]
+=== Solver configuration: `<scoreDefinitionType>` removed
+
+Don't specify the `scoreDefinitionType` in the solver configuration any more
+because OptaPlanner will now figure out it automatically from the domain.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+    <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+    <scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+    <scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+----
+
+For a bendable score, also move the `bendableHardLevelsSize` and `bendableSoftLevelsSize` lines from the solver configuration XML
+into the `@PlanningScore` annotation on your domain class.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+    <scoreDefinitionType>BENDABLE</scoreDefinitionType>
+    <bendableHardLevelsSize>1</bendableHardLevelsSize>
+    <bendableSoftLevelsSize>2</bendableSoftLevelsSize>
+    <scoreDrl>org/optaplanner/examples/projectjobscheduling/solver/projectJobSchedulingScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+    <scoreDrl>org/optaplanner/examples/projectjobscheduling/solver/projectJobSchedulingScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+----
+
+Before in `*.java`:
+[source, java]
+----
+    @PlanningScore
+    private BendableScore score;
+----
+
+After in `*.java`:
+[source, java]
+----
+    @PlanningScore(bendableHardLevelsSize = 1, bendableSoftLevelsSize = 2)
+    private BendableScore score;
+----
+
+In the rare case that you're using a custom score, also move its declaration into the domain:
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <scoreDefinitionClass>...MyCustomScoreDefinition</scoreDefinitionClass>
+----
+
+After in `*.java`:
+[source, java]
+----
+    @PlanningScore(scoreDefinitionClass = MyCustomScoreDefinition.class)
 ----

@@ -672,7 +672,6 @@ end</code></pre>
   &lt;entityClass&gt;...Process&lt;/entityClass&gt;
 
   &lt;scoreDirectorFactory&gt;
-    &lt;scoreDefinitionType&gt;HARD_AND_SOFT&lt;/scoreDefinitionType&gt;
     &lt;scoreDrl&gt;...ScoreRules.drl&lt;/scoreDrl&gt;
   &lt;/scoreDirectorFactory&gt;
 
@@ -2803,7 +2802,6 @@ Object solution = solver.solve(problem);</code></pre>
   &lt;scanAnnotatedClasses/&gt;
 
   &lt;scoreDirectorFactory&gt;
-    &lt;scoreDefinitionType&gt;HARD_SOFT&lt;/scoreDefinitionType&gt;
     &lt;ksessionName&gt;cloudKsession&lt;/ksessionName&gt;
   &lt;/scoreDirectorFactory&gt;
 &lt;/solver></code></pre>
@@ -2815,10 +2813,6 @@ Object solution = solver.solve(problem);</code></pre>
             <p>cloudSolverConfig.solver.xml</p>
             <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
   &lt;scanAnnotatedClasses/&gt;
-
-  &lt;scoreDirectorFactory&gt;
-    &lt;scoreDefinitionType&gt;HARD_SOFT&lt;/scoreDefinitionType&gt;
-  &lt;/scoreDirectorFactory&gt;
 &lt;/solver></code></pre>
         </section>
         <section>
