@@ -72,7 +72,6 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgr
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
 * KIE Workbench #{site.pom.latest.version}:
 #{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly] -
-#{site.pom.latest.kieWorkbenchEAPWar}[EAP] -
 #{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat] -
 #{site.pom.latest.kieWorkbenchWASWar}[WebLogic] -
 #{site.pom.latest.kieWorkbenchWLSWar}[WebSphere]
