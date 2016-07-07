@@ -25,7 +25,7 @@ latest:
   version: 7.0.0.Beta1
   distributionZip: http://download.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-distribution-7.0.0.Beta1.zip
   releaseDate: 2016-07-05
-  releaseNotesVersion: 6.4
+  releaseNotesVersion: 7.0
 
   kieWorkbenchWildFlyWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-wildfly10.war
   #kieWorkbenchEAPWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-eap6_4.war
