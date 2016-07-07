@@ -57,6 +57,10 @@ Solving hasn't changed:
 
 Contributed by Lukáš Petrovický.
 
+=== No longer needed to define the score type in the solver configuration
+
+Planner now picks it up automatically from the domain model.
+
 === New JAXB and Jackson support and improved XStream support
 
 To marshall a `Score` from or to XML or JSON, use the appropriate binder
@@ -82,7 +86,7 @@ And beautiful JSON:
 }
 ----
 
-See documentation on how to configure them.
+See the documentation on how to configure them.
 
 === New example: Task assigning
 
@@ -95,7 +99,7 @@ This example also demonstrates real-time producing and consuming of tasks.
 
 === Other improvements
 
-* Booleans now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
-* Dates and time now supported by `ValueRangeFactory` too: `createTemporalValueRange()`. Contributed by Kevin Wallis.
+* Booleans are now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
+* Dates and time are now supported by `ValueRangeFactory` too: `createTemporalValueRange()`. Contributed by Kevin Wallis.
 * `@ValueRangeProvider` now supports methods that return an array too.
 * The log now outputs the score calculation speed for each solver phase too.
