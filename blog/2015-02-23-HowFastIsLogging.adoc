@@ -41,7 +41,7 @@ Which results in output like this:
 2015-02-23 08:07:35,310 [main] INFO  Solving started: time spent (18), best score (uninitialized/0hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
 2015-02-23 08:07:35,363 [main] INFO  Construction Heuristic phase (0) ended: step total (6), time spent (71), best score (0hard/-5460soft).
 2015-02-23 08:07:35,641 [main] INFO  Local Search phase (1) ended: step total (1), time spent (349), best score (0hard/-5460soft).
-2015-02-23 08:07:35,652 [main] INFO  Solving ended: time spent (360), best score (0hard/-5460soft), average calculate count per second (905), environment mode (REPRODUCIBLE).
+2015-02-23 08:07:35,652 [main] INFO  Solving ended: time spent (360), best score (0hard/-5460soft), average calculate count per second (905), phase total (2), environment mode (REPRODUCIBLE).
 ----
 
 * VM arguments: `-Xmx1536M -server` +
