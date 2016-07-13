@@ -36,7 +36,10 @@ Use `addHardConstraintMatch(...)` and `addSoftConstraintMatch(...)` in your scor
 See link:./upgradeRecipe6.0.html[this upgrade recipe].
 
 * The experimental, deprecated, hybrid metaheuristic called `LATE_SIMULATED_ANNEALING`
-(which was inspired by both Late Acceptance and Simulated Annealing) has be removed.
+(which was inspired by both Late Acceptance and Simulated Annealing) has been removed.
+
+* The dead, deprecated code of `DeciderScoreComparatorFactory` has been removed.
+See link:./upgradeRecipe6.2.html[this upgrade recipe].
 
 
 [.upgrade-recipe-major]
