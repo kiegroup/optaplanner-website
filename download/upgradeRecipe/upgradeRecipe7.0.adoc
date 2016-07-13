@@ -41,6 +41,9 @@ See link:./upgradeRecipe6.0.html[this upgrade recipe].
 * The dead, deprecated code of `DeciderScoreComparatorFactory` has been removed.
 See link:./upgradeRecipe6.2.html[this upgrade recipe].
 
+* The deprecated `SolverBenchmarkBluePrintType.ALL_CONSTRUCTION_HEURISTIC_TYPES` has been removed.
+See link:./upgradeRecipe6.3.html[this upgrade recipe].
+
 
 [.upgrade-recipe-major]
 === `Solution` interface removed (deprecated)
