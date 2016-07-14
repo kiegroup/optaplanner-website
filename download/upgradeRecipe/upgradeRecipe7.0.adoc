@@ -991,3 +991,43 @@ After in `*.java`:
 ----
     @PlanningScore(scoreDefinitionClass = MyCustomScoreDefinition.class)
 ----
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+===  `@PlanningVariable` on primitive types: no longer supported
+
+An `@PlanningVariable` annotation on a primitive type such as `int` or `long` (instead of `Integer` or `Long`)
+now fails fast instead of causing an inferior result.
+The use of a primitive type caused the Construction Heuristics to presume the variable is already initialized
+(because it's not null and it might be form of Repeated Planning),
+which lead to inferior results.
+It was hard to diagnose the cause of that issue for many users, so now this inferior approach fails fast with a clear message.
+
+Before in `*.java`:
+[source, java]
+----
+    private int delay;
+
+    @PlanningVariable(valueRangeProviderRefs = {"delayRange"})
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
+    }
+----
+
+After in `*.java`:
+[source, java]
+----
+    private Integer delay;
+
+    @PlanningVariable(valueRangeProviderRefs = {"delayRange"})
+    public Integer getDelay() {
+        return delay;
+    }
+
+    public void setDelay(Integer delay) {
+        this.delay = delay;
+    }
+----
