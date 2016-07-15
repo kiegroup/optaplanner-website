@@ -1031,3 +1031,37 @@ After in `*.java`:
         this.delay = delay;
     }
 ----
+
+
+[.upgrade-recipe-minor]
+===  `VariableListener` events are no longer unique
+
+OptaPlanner might call the `before...` and `after...` methods on your `VariableListener` implementation
+twice with the exact same parameters.
+Most `VariableListener` implementations can deal with this,
+getting a small performance boost because OptaPlanner doesn't have to guarantee uniqueness.
+If your implementation can't deal with it, then overwrite the `requiresUniqueEntityEvents()` method.
+
+Before in `*.java`:
+[source, java]
+----
+public class StartTimeUpdatingVariableListener implements VariableListener<Task> {
+
+    ...
+}
+----
+
+After in `*.java` (optional):
+[source, java]
+----
+public class StartTimeUpdatingVariableListener implements VariableListener<Task> {
+
+    @Override
+    public boolean requiresUniqueEntityEvents() {
+        // If you don't need to overwrite this method, you get a small performance gain
+        return true;
+    }
+
+    ...
+}
+----
