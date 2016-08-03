@@ -7,7 +7,7 @@
 
 We use Jenkins for continuous integration.
 
-*Show https://jenkins-kieci.rhcloud.com/job/optaplanner/[the public Jenkins job].* This is a mirror of a Red Hat internal Jenkins job.
+*Show http://ci.optaplanner.org/job/optaplanner/[the public Jenkins job].* This is a mirror of a Red Hat internal Jenkins job.
 
 Keep the build green!
 
