@@ -8,7 +8,8 @@
 Nothing serious. _Just a hobby, it wouldn't be big and professional._
 Another contraption in my long list of side projects in an attempt to build something cool.
 Today, that same project is now the leading Open Source constraint satisfaction solver in Java: http://www.optaplanner.org/[OptaPlanner].
-It is used across the world to create better logistic schedules with more profit, a lower ecological footprint and a better customer service.
+It is used across the world to create better logistic schedules, such as http://www.optaplanner.org/learn/useCases/employeeRostering.html[employee rosters],
+http://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[vehicle routes] and http://www.optaplanner.org/learn/useCases/cloudOptimization.html[cloud distributions].
 
 How did my project become successful? What did I do right? What did I do wrong?
 
@@ -131,14 +132,14 @@ In 2013, we started this process, called productization.
 I was no longer alone on the project. Quality Assurance, Product Management and our productization build/document team got involved to strengthen it.
 Our QA engineers double checked the code, increased test coverage, added performance regression tests,
 certified it on a lot of environments (including Windows, IBM JDK, OSGi and other notorious technologies) and guess what - they found bugs (and still do on occasion).
-Meanwhile our Product Manager helped organizationally, for example to get support and consultants trained.
+Meanwhile our Product Manager helped organizationally.
 We talked to customers and helped complex use cases succeed: all very satisfying.
 And I got to travel to interesting places around the globe, such as San Fransisco, Boston, Buenos Aires, London, Paris and Tokyo.
 
 Meanwhile, _our_ project also graduated from the Drools project to become a top-level project.
 So we had to http://www.optaplanner.org/community/droolsPlannerRenamed.html[rename] the project again, one last time (I promise), to OptaPlanner.
 Changing a project's name is a delicate operation: it always reduces the mind share. Try to avoid it.
-We also created the optaplanner.org website as a one stop location for all information. _Centralization of information is essential._ Pull the community together.
+We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
 
 In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of http://www.optaplanner.org/community/product.html[the BRMS subscription].
 And by March 2015, we upgraded it _full enterprise support_.
