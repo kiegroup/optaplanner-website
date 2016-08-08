@@ -38,7 +38,7 @@ to schedule a simplistic lesson scheduling problem.
 I called it Taseree. That's an abbreviation for Tabu Search Rule Engine Evaluation.
 Later that year, I added 2 more examples (N Queens and TTP) and open sourced it on https://sourceforge.net/projects/taseree/[SourceForge].
 
-Nobody ever used Taseree, let alone used it in a production environment.
+Nobody ever used Taseree, let alone deployed it in a production environment.
 Turns out *if you don't release it, nobody uses it.*
 
 
@@ -53,7 +53,7 @@ So I must have been doing something right. But I did a lot of things wrong, too.
 The winner had also open sourced his implementation and when we started discussing and comparing our implementation,
 we learned a lot from each other.
 It turns out there are many ways to skin a cat and there are far more ways to implement Tabu Search.
-So I started implementing alternative algorithms. That made me (and Lukáš) write the https://www.youtube.com/watch?v=JpcPEieU3Cg[benchmarker] toolkit, to compare those algorithms statistically.
+So I started implementing alternative algorithms. That made me (and later Lukáš) write the https://www.youtube.com/watch?v=JpcPEieU3Cg[benchmarker] toolkit, to compare those algorithms statistically.
 All just to rank better in the next competition. It takes an hour to understand these algorithms, but 10 000 hours to master them.
 
 *Motivation is key.* Find a way to motivate yourself to build the next feature, especially in the absence of a paycheck.
@@ -89,7 +89,7 @@ A consultant had seen my presentation at JavaPolis and he used it for an employe
 He liked it. _So I expected him to tell the world about it._ He didn't. He had already moved on to his next project.
 *To get people to use my project, they need to know it first*.
 I needed to toot my own horn.
-So I wrote a few articles about Drools Solver, published them to a few Java news site, recorded a video even and even got a https://twitter.com/GeoffreyDeSmet[twitter account].
+So I wrote a few articles about Drools Solver, published them to a few Java news sites, recorded a video even and even got a https://twitter.com/GeoffreyDeSmet[twitter account].
 
 
 == Perseverance
