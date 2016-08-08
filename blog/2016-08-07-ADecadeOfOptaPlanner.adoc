@@ -103,7 +103,7 @@ And they had sales people. It was a race and my project was falling behind.
 I needed to find a way to get paid to work on it. A way to _make my hobby my job_.
 No matter how good the code is technically, *without a proper business model behind it, an Open Source project is unsustainable.*
 
-During this though period, I regularly considered giving up my Open Source project a few times.
+During this tough period, I regularly considered giving up my Open Source project a few times.
 Somehow, I couldn't. _I just soldiered on._ And in the end, it all worked out well.
 
 Ironically, this was also the period when the project became successful:
