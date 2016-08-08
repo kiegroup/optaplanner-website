@@ -43,7 +43,8 @@ From a business point of view, there's *little or no change*:
 
 ** OptaPlanner is still released at the same time as Drools and jBPM.
 
-* Red Hat is considering support subscription offerings for OptaPlanner as part of its http://www.redhat.com/products/jbossenterprisemiddleware/business-rules/[BRMS] and BPM platforms.
+* Red Hat is considering support subscription offerings for OptaPlanner as part of its https://www.redhat.com/en/technologies/jboss-middleware/business-rules[BRMS] and
+https://www.redhat.com/en/technologies/jboss-middleware/bpm[BPM] platforms.
 
 ** A _Tech Preview_ of OptaPlanner is targeted for BRMS 6.0.
 
