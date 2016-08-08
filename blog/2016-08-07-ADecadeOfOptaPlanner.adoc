@@ -142,7 +142,7 @@ Changing a project's name is a delicate operation: it always reduces the mind sh
 We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
 
 In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of http://www.optaplanner.org/community/product.html[the BRMS subscription].
-And by March 2015, we upgraded it _full enterprise support_.
+And by March 2015, we upgraded it to _full enterprise support_.
 Sales took off. So earlier this year, we could hire http://www.optaplanner.org/community/team.html[a core engineer] to develop OptaPlanner Workbench.
 Meanwhile, all our code is still Open Source, under http://www.optaplanner.org/code/license.html[the Apache License]
 and thousands of projects use it. A win-win situation.
