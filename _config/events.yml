@@ -5,12 +5,11 @@
 #  eventOrganization: Name of the conference or organizer
 #  location: Should be in format "city, country" or "city, state, country"
 #  date: Must be in format "yyyy-mm-dd". If multiple days cover our project, only note the first day
-#  title: (optional) Session title (without the conference or organizer name). If CFP not yet accepted, temporarily do not include.
-#  url: Link to the event page itself. If CFP not yet accepted, temporarily link the event organization itself.
-#  presenters: (optional) Comma separated list of presenters. If CFP not yet accepted, temporarily do not include.
+#  title: (optional) Session title (without the conference or organizer name). If the CFP is not yet accepted, do not include it yet.
+#  url: Link to the event page itself. If the CFP is not yet accepted, link the event organization itself.
+#  presenters: (optional) Comma separated list of presenters. If the CFP is not yet accepted, do not include it yet.
 #
 # Order events by date.
-# Remove past events.
 
 - eventId: 20140924-webinar
   eventOrganization: Red Hat Webinar
