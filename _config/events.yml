@@ -206,6 +206,14 @@
   url: http://www.redhat.com/summit/
   presenters: Geoffrey De Smet, Prakasha Aradhya
 
+- eventId: 20161026-eclipseconeurope
+  eventOrganization: EclipseCon Europe
+  location: Ludwigsburg, Germany
+  date: 2016-10-26
+  title: Modeling Avengers - Open Source Technology Mix for Saving the World
+  url: https://www.eclipsecon.org/europe2016/session/modeling-avengers-open-source-technology-mix-saving-world
+  presenters: Cedric Brun, Benoit Combemale
+
 - eventId: 20161112-devoxxbe
   eventOrganization: Devoxx Be
   location: Antwerp, Belgium
