@@ -1065,3 +1065,51 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
     ...
 }
 ----
+
+
+[.upgrade-recipe-recommended]
+===  Faster and nicer `accumulate()` in `drl`
+
+Drools now uses typed `sum()`, `min()`, `max()` and `avg()` functions in `accumulate()` patterns.
+This means that a sum of ints is now an int (instead of a double) and a sum of BigDecimals is now a BigDecimal (without rounding errors).
+This is faster and it also gets rid of the `intValue()` conversations.
+
+Meanwhile, also take advantage of migrating to the clearer `accumulate` form, if you haven't already.
+
+Before in `*.drl`:
+[source, drl]
+----
+rule "requiredCpuPowerTotal"
+    when
+        $c : CloudComputer($capacity : cpuPower)
+        $total : Number(intValue > $capacity) from accumulate(
+            CloudProcess(
+                computer == $c,
+                $required : requiredCpuPower),
+            sum($required)
+        )
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $capacity - $total.intValue());
+end
+----
+
+After in `*.drl`:
+[source, drl]
+----
+rule "requiredCpuPowerTotal"
+    when
+        $c : CloudComputer($capacity : cpuPower)
+        accumulate(
+            CloudProcess(
+                computer == $c,
+                $required : requiredCpuPower);
+            $total : sum($required);
+            $total > $capacity
+        )
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $capacity - $total);
+end
+----
+
+Notice that the pattern, the function list and the DRL constraint list in the `accumulate()`
+are recommended to be separated by a `;` character instead of a `,` character.

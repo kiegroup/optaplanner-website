@@ -527,14 +527,15 @@ end</code></pre>
     // there is a computer
     $s : Computer($cpu : cpuPower)
     // with too little cpu for its processes
-    $total : Number(intValue > $cpu) from accumulate(
-      Process(computer == $s, $requiredCpu : requiredCpuPower),
-      sum($requiredCpu)
+    accumulate(
+      Process(computer == $s, $requiredCpu : requiredCpuPower);
+      $total : sum($requiredCpu);
+      $total > $cpu
     )
   then
     // lower hard score by the excessive CPU usage
     scoreHolder.addHardConstraintMatch(kcontext,
-        $cpu - $total.intValue());
+        $cpu - $total);
 end</code></pre>
     </section>
 
