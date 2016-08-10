@@ -51,6 +51,23 @@
   employedBy: Red Hat
   ircNickname: jlocker
 
+- userId: prakasharadhya
+  fullName: Prakash Aradhya
+  role: Product Manager
+  gravatarHashId: 0e962aaeed5d03db94e8374677cddc72
+  twitterUsername: prakasharadhya
+  employedBy: Red Hat
+
+- userId: DuncanDoyle
+  fullName: Duncan Doyle
+  role: Technical Marketing Manager
+  gravatarHashId: 6d3eaffeaf61a8f3ea86c2d0b701bc2d
+  twitterUsername: DuncanDoyle
+  githubUsername: DuncanDoyle
+  email: ddoyle AT redhat.com
+  employedBy: Red Hat
+  ircNickname: ddoyle
+
 - userId: elsam
   fullName: Sam Van Malderen
   role: Contributor
