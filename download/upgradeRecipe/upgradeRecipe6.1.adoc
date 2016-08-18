@@ -238,7 +238,7 @@ After in `*BenchmarkConfig.xml`:
 === `<entitySelector>`: `<cacheType>PHASE</cacheType>` obsolete
 
 If you explicitly configured all your `<entitySelector>` elements with `<cacheType>PHASE</cacheType>` for performance,
-you know no longer have to do that, as OptaPlanner does the fast thing out of the box,
+you now no longer have to do that, as OptaPlanner does the fast thing out of the box,
 if and only if no other properties (such as filtering) were specified on that `<entitySelector>`.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -364,7 +364,7 @@ Before in `*BenchmarkConfig.xml`:
   <warmUpMinutesSpend>...</warmUpMinutesSpend>
   <warmUpHoursSpend>...</warmUpHoursSpend>
   ...
-<//plannerBenchmark>
+</plannerBenchmark>
 ----
 
 After in `*BenchmarkConfig.xml`:
@@ -376,7 +376,7 @@ After in `*BenchmarkConfig.xml`:
   <warmUpMinutesSpentLimit>...</warmUpMinutesSpentLimit>
   <warmUpHoursSpentLimit>...</warmUpHoursSpentLimit>
   ...
-<//plannerBenchmark>
+</plannerBenchmark>
 ----
 
 [.upgrade-recipe-minor]
@@ -562,7 +562,7 @@ Also remove the `equals()` and `hashCode()` method on your `Solution` implementa
 === `DEBUG` logging: changed
 
 In `DEBUG` logging, each step now mentions it's phase type first:
-CH is Construction Heuristic, LS is Local Search, EH is Exhaustive Search.
+CH is Construction Heuristic, LS is Local Search, ES is Exhaustive Search.
 
 [.upgrade-recipe-minor]
 === `GreatDelugeAcceptor`: removed
@@ -640,7 +640,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-major]
 === `<bruteForce>`: renamed
 
-The solver phase `<bruteForce>` has been replaced by `<exhaustiveSearch>` 's `BRUTE_FORCE` type.
+The solver phase `<bruteForce>` has been replaced by ``<exhaustiveSearch>``'s `BRUTE_FORCE` type.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -652,7 +652,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
 ----
   <exhaustiveSearch>
-<exhaustiveSearchType>BRUTE_FORCE</exhaustiveSearchType>
+    <exhaustiveSearchType>BRUTE_FORCE</exhaustiveSearchType>
   </exhaustiveSearch>
 ----
 There is now a better alternative to Brute Force: Branch And Bound, see docs for more information.
@@ -1030,14 +1030,14 @@ and no longer alters the filename.
 [.upgrade-recipe-minor]
 === `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: default parameters changed
 
-`<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>` 's `<subChainSelector>`s now default
+`<subChainChangeMoveSelector>` and ``<subChainSwapMoveSelector>``'s ``<subChainSelector>``s now default
 to a `<minimumSubChainSize>` of 1 instead of 2.
 This is to enable `<subChainSwapMoveSelector>` to swap a subchain of size 1 and a subchain of at least size 2 too.
 
 [.upgrade-recipe-minor]
 === `<pillarSwapMoveSelector>`: default parameters changed
 
-`<pillarSwapMoveSelector>`:'s `<pillarSelector>` now selects subpillars too by default.
+``<pillarSwapMoveSelector>``'s `<pillarSelector>` now selects subpillars too by default.
 Normally, that's an improvement.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
