@@ -14,6 +14,7 @@ OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain co
 
 The API and implementation now make use of Java 7 and Java 8 features (such as lamdba's).
 
+
 === No longer needed to implement the `Solution` interface
 
 Your solution class no longer needs both have the `@PlanningSolution` annotation and implement the `Solution` interface.
@@ -57,9 +58,11 @@ Solving hasn't changed:
 
 Contributed by Lukáš Petrovický.
 
+
 === No longer needed to define the score type in the solver configuration
 
 Planner now picks it up automatically from the domain model.
+
 
 === New JAXB and Jackson support and improved XStream support
 
@@ -88,6 +91,13 @@ And beautiful JSON:
 
 See the documentation on how to configure them.
 
+
+=== New module `optaplanner-test` with JUnit testing support
+
+To test each score rule individually, to assure it does what the business expects it to do,
+use the new `ScoreVerifier` support classes in `optaplanner-test`.
+
+
 === New example: Task assigning
 
 Assign tasks to employee and take into account required skills, affinity with the customer and task priority.
@@ -96,6 +106,7 @@ This example also demonstrates real-time producing and consuming of tasks.
 +++
 <iframe width="853" height="480" src="https://www.youtube.com/embed/ksXjQ851RAU?rel=0" frameborder="0" allowfullscreen></iframe>
 +++
+
 
 === Other improvements
 
