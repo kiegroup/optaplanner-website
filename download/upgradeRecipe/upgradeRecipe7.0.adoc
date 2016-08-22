@@ -186,7 +186,7 @@ CloudBalance solution = solver.solve(problem);
 
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
-===  `BestSolutionChangedEvent.getNewBestSolution()`: return value no longer implement `Solution`
+===  `BestSolutionChangedEvent.getNewBestSolution()`: return value no longer implements `Solution`
 
 Because the `Solution` interface was deprecated (see the section below to upgrade from 6.4.0.Final to 7.0.0.Beta1),
 the `BestSolutionChangedEvent.getNewBestSolution()` method now returns an `Object`
@@ -368,7 +368,7 @@ After in `*.java` (with lamdba):
 [.upgrade-recipe-minor]
 === `Bendable*Score`: `toString()` changed
 
-A bendable score (`BendableScore`, `BendableLongScore` or `BendableBigDecimalScore`) 's `String`
+A bendable score (`BendableScore`, `BendableLongScore` or `BendableBigDecimalScore`)'s `String`
 has changed so it can be parsed without the ScoreDefinition
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -458,7 +458,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-minor]
 === `ProblemStatisticType`: `CALCULATE_COUNT_PER_SECOND` renamed
 
-The benchmark ProblemStatisticType `SCORE_CALCULATION_SPEED` has been renamed to `SCORE_CALCULATION_SPEED`.
+The benchmark ProblemStatisticType `CALCULATE_COUNT_PER_SECOND` has been renamed to `SCORE_CALCULATION_SPEED`.
 
 Before in `*BenchmarkConfig.xml`:
 [source, xml]
@@ -481,7 +481,7 @@ This is useful in exotic cases with multiple phases to fully initialize a soluti
 It also prevents bugs in multi-threaded use cases.
 
 With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably determine if a solution is fully initialized.
-The method `FeasibleScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
+The method `FeasibilityScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
 
 
 [.upgrade-recipe-major]
@@ -862,7 +862,7 @@ public class Schedule {
 ===  `@CustomShadowVariable`: `sources` type changed
 
 A shadow variable annotated with `@CustomShadowVariable`
-now expects that the `sources` parameter to is of type `@PlanningVariableReference`
+now expects that the `sources` parameter is of type `@PlanningVariableReference`
 instead of `@CustomShadowVariable.Source`.
 
 This way it's consistent with the `variableListenerRef` parameter.
@@ -923,7 +923,7 @@ After in `*.java`:
 === Solver configuration: `<scoreDefinitionType>` removed
 
 Don't specify the `scoreDefinitionType` in the solver configuration any more
-because OptaPlanner will now figure out it automatically from the domain.
+because OptaPlanner will now figure it out automatically from the domain.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -995,7 +995,7 @@ After in `*.java`:
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 ===  `@PlanningVariable` on primitive types: no longer supported
 
-An `@PlanningVariable` annotation on a primitive type such as `int` or `long` (instead of `Integer` or `Long`)
+A `@PlanningVariable` annotation on a primitive type such as `int` or `long` (instead of `Integer` or `Long`)
 now fails fast instead of causing an inferior result.
 The use of a primitive type caused the Construction Heuristics to presume the variable is already initialized
 (because it's not null and it might be form of Repeated Planning),
@@ -1072,7 +1072,7 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
 
 Drools now uses typed `sum()`, `min()`, `max()` and `avg()` functions in `accumulate()` patterns.
 This means that a sum of ints is now an int (instead of a double) and a sum of BigDecimals is now a BigDecimal (without rounding errors).
-This is faster and it also gets rid of the `intValue()` conversations.
+This is faster and it also gets rid of the `intValue()` conversions.
 
 Meanwhile, also take advantage of migrating to the clearer `accumulate` form, if you haven't already.
 
