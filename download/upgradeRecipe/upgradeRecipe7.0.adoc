@@ -1113,3 +1113,35 @@ end
 
 Notice that the pattern, the function list and the DRL constraint list in the `accumulate()`
 are recommended to be separated by a `;` character instead of a `,` character.
+
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+===  Custom `Score`: implement `isCompatibleArithmeticArgument()`
+
+An `AbstractScore` no longer implements the `Score` interface method `isCompatibleArithmeticArgument()` (which is still there).
+Now, your custom `Score` implementation needs to implement it itself.
+
+This way, `Score` instances can be reused by GWT and other JavaScript generating code.
+
+Before in `*.java`:
+[source, java]
+----
+public final class HardSoftScore extends AbstractScore<HardSoftScore> {
+    ...
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public final class HardSoftScore extends AbstractScore<HardSoftScore> {
+    ...
+
+    @Override
+    public boolean isCompatibleArithmeticArgument(Score otherScore) {
+        return otherScore instanceof HardSoftScore;
+    }
+
+}
+----
