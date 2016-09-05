@@ -15,7 +15,7 @@ Our current intention is to keep these backwards incompatible changes to a stric
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
 
 
-== From 6.4.0.Final to 7.0.0.Beta1
+== From 6.5.0.Final to 7.0.0.Beta1
 
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
