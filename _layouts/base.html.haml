@@ -3,7 +3,7 @@ priority: 0.2
 change_frequency: monthly
 ---
 !!! 5
-%html(itemscope="" itemtype="http://schema.org/Product"){:lang => page.lang ? page.lang : site.lang}
+%html{:lang => page.lang ? page.lang : site.lang}
   %head
     %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -14,9 +14,10 @@ change_frequency: monthly
     - if page.url.eql? '/'
       %meta(name="google-site-verification"){:content => "#{site.googleWebmasterToolsVerificationId}"}
     -# Social media: make it look good when shared
-    %meta(property="og:title"){:content => escape_once(site.title + " - " + page.title)}
+    %meta(property="og:title"){:content => escape_once(page.title)}
     %meta(property="og:description"){:content => page.description ? page.description : site.description}
     %meta(property="og:url"){:content => "#{site.canonicalBaseUrl}#{page.url}"}
+    %meta(property="og:site_name"){:content => "OptaPlanner"}
     %meta(property="og:type"){:content => page.ogType ? page.ogType : "website"}
     %meta(property="og:image"){:content => "#{site.canonicalBaseUrl}/headerFooter/optaPlannerIcon.png"}
     %meta(name="twitter:card"){:content => "summary"}
