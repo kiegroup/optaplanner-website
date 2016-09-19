@@ -192,3 +192,11 @@
   role: Contributor
   gravatarHashId: f8a8d5e6294ccd238be50c59c1ba6205
   githubUsername: blackjack92
+
+- userId: mrietveld
+  fullName: Marco Rietveld
+  role: Contributor
+  gravatarHashId: d4dacb2e9fe88961621b8a89d119c6aa
+  twitterUsername: marcorietveld
+  githubUsername: mrietveld
+  ircNickname: mriet
