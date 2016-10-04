@@ -13,7 +13,6 @@
 
 ** image:documentation.png[Documentation] *OptaPlanner reference manual #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.documentationHtmlSingle}[HTML Single] -
-#{site.pom.latestFinal.documentationHtml}[HTML] -
 #{site.pom.latestFinal.documentationPdf}[PDF]*
 
 ** OptaPlanner javadocs #{site.pom.latestFinal.version}:
@@ -21,7 +20,6 @@
 
 ** Drools Expert reference manual:
 #{site.pom.latestFinal.droolsExpert_documentationHtmlSingle}[HTML Single] -
-#{site.pom.latestFinal.droolsExpert_documentationHtml}[HTML] -
 #{site.pom.latestFinal.droolsExpert_documentationPdf}[PDF]
 
 * Older community documentation: Check http://docs.jboss.org/optaplanner/release/[the documentation archive].
@@ -47,6 +45,7 @@
 
 ** Drools Expert reference manual:
 #{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single] -
+// #{site.pom.latest.droolsExpert_documentationPdf}[PDF]
 
 [[NightlySnapshots]]
 === Nightly snapshots
