@@ -11,10 +11,10 @@ latestFinal:
   kieWorkbenchWASWar: http://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-was8.war
   kieExecutionServerZip: http://download.jboss.org/drools/release/6.4.0.Final/kie-server-distribution-6.4.0.Final.zip
 
-  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/index.html
-  documentationHtml: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html/index.html
-  documentationPdf: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/index.html
+  documentationHtml: http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html/index.html
+  documentationPdf: http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.optaplanner.org/6.4.0.Final/optaplanner-javadoc/index.html
 
   droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/6.4.0.Final/drools-docs/html_single/index.html
   droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/6.4.0.Final/drools-docs/html/index.html
@@ -38,7 +38,7 @@ latest:
 
   droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/html_single/index.html
   droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/html/index.html
-  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/pdf/drools-docs.pdfge
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/pdf/drools-docs.pdf
 
 nightly:
   version: 7.0.0-SNAPSHOT
