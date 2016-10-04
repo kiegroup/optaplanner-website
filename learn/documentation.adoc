@@ -40,7 +40,6 @@
 
 ** image:documentation.png[Documentation] OptaPlanner reference manual #{site.pom.latest.version}:
 #{site.pom.latest.documentationHtmlSingle}[HTML Single] -
-#{site.pom.latest.documentationHtml}[HTML] -
 #{site.pom.latest.documentationPdf}[PDF]
 
 ** OptaPlanner javadocs #{site.pom.latest.version}:
@@ -48,8 +47,6 @@
 
 ** Drools Expert reference manual:
 #{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single] -
-#{site.pom.latest.droolsExpert_documentationHtml}[HTML] -
-#{site.pom.latest.droolsExpert_documentationPdf}[PDF]
 
 [[NightlySnapshots]]
 === Nightly snapshots
