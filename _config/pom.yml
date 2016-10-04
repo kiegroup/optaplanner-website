@@ -22,26 +22,23 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.0.0.Beta1
-  distributionZip: http://download.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-distribution-7.0.0.Beta1.zip
-  releaseDate: 2016-07-05
+  version: 7.0.0.Beta2
+  distributionZip: http://download.jboss.org/optaplanner/release/7.0.0.Beta2/optaplanner-distribution-7.0.0.Beta2.zip
+  releaseDate: 2016-10-03
   releaseNotesVersion: 7.0
 
-  kieWorkbenchWildFlyWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-wildfly10.war
-  #kieWorkbenchEAPWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-eap6_4.war
-  kieWorkbenchTomcatWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-tomcat7.war
-  kieWorkbenchWLSWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-weblogic12.war
-  kieWorkbenchWASWar: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-drools-wb-7.0.0.Beta1-was8.war
-  kieExecutionServerZip: http://download.jboss.org/drools/release/7.0.0.Beta1/kie-server-distribution-7.0.0.Beta1.zip
+  kieWorkbenchWildFlyWar: http://download.jboss.org/drools/release/7.0.0.Beta2/kie-drools-wb-7.0.0.Beta2-wildfly10.war
+  kieWorkbenchEAPWar: http://download.jboss.org/drools/release/7.0.0.Beta2/kie-drools-wb-7.0.0.Beta2-eap7.war
+  kieWorkbenchTomcatWar: http://download.jboss.org/drools/release/7.0.0.Beta2/kie-drools-wb-7.0.0.Beta2-tomcat7.war
+  kieExecutionServerZip: http://download.jboss.org/drools/release/7.0.0.Beta2/kie-server-distribution-7.0.0.Beta2.zip
 
-  documentationHtmlSingle: http://docs.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-docs/html_single/index.html
-  documentationHtml: http://docs.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-docs/html/index.html
-  documentationPdf: http://docs.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: http://docs.jboss.org/optaplanner/release/7.0.0.Beta1/optaplanner-javadoc/index.html
+  documentationHtmlSingle: http://docs.optaplanner.org/7.0.0.Beta2/optaplanner-docs/html_single/index.html
+  documentationPdf: http://docs.optaplanner.org/7.0.0.Beta2/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: http://docs.optaplanner.org/7.0.0.Beta2/optaplanner-javadoc/index.html
 
-  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/7.0.0.Beta1/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/7.0.0.Beta1/drools-docs/html/index.html
-  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/7.0.0.Beta1/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/html/index.html
+  droolsExpert_documentationPdf: http://docs.jboss.org/drools/release/7.0.0.Beta2/drools-docs/pdf/drools-docs.pdfge
 
 nightly:
   version: 7.0.0-SNAPSHOT
