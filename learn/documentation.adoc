@@ -22,7 +22,7 @@
 #{site.pom.latestFinal.droolsExpert_documentationHtmlSingle}[HTML Single] -
 #{site.pom.latestFinal.droolsExpert_documentationPdf}[PDF]
 
-* Older community documentation: Check http://docs.jboss.org/optaplanner/release/[the documentation archive].
+* Older community documentation: Check http://docs.optaplanner.org/[the documentation archive].
 
 * Red Hat subscription documentation: Check https://access.redhat.com/knowledge/docs/[the customer portal].
 

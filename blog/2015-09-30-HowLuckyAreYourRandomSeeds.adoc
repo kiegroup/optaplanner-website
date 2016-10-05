@@ -37,9 +37,9 @@ configuration reliability in production are correct.
 One of them, `PRODUCTION`,
 is obviously meant for runs in a production environment.
 In this environment mode, OptaPlanner will choose a *random seed* for it's
-http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/index.html#randomNumberGenerator[pseudo-random number generator]
+http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#randomNumberGenerator[pseudo-random number generator]
 (PRNG) at random (JDK default).
-Read more about this http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/index.html#environmentModeProduction[in the documentation].
+Read more about this http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#environmentModeProduction[in the documentation].
 ** We use the basic PRNG implementation in all our benchmarks (`java.util.Random`).
 
 * Specific configuration changes:

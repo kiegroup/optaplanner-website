@@ -28,7 +28,7 @@ xref:relationshipWithKie[1.5.4. Drools や jBPM との関係]:::
 [[whatIsOptaPlanner]]
 == 1.1 OptaPlanner とは何ですか？
 
-image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
+image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
 
 *link:http://www.optaplanner.org/[OptaPlanner] は、計画問題の最適解を得る、組み込み可能で軽量な制約充足エンジンです。* 次のようなユースケースを解きます。
 ////
@@ -53,7 +53,7 @@ Interpreted as: planning the league games of football, baseball, ...
 * *財務最適化:* 投資ポートフォリオの最適化, リスク分散など
 ////
 
-image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
+image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
 
 あらゆる組織が計画問題に直面しています。製品やサービスは、_制約を受け_ 、限定されたリソース (従業員, 資産, 時間, 金) を使って提供されています。OptaPlanner は、そのような計画を最適化することによって、より少ないリソースでより多くの業務を実行できるようにします。これは、_オペレーションズリサーチ_ 分野の一つである _制約充足プログラミング_ として知られています。
 ////
@@ -62,7 +62,7 @@ Source: Constraint Satisfaction Programming
 Interpreted as: Constraint Programming (without "satisfaction") = 制約プログラミング, not the meaning of programming problem = 計画問題
 ////
 
-image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
+image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
 
 OptaPlanner の助けがあれば、普通の Java(TM) プログラマーでも制約充足問題を効率よく解くことができます。OptaPlanner の内部では、最適化のためのヒューリスティック法およびメタヒューリスティック法が非常に効率的なスコア計算と組み合わされています。
 
@@ -75,7 +75,7 @@ OptaPlannerは、link:http://www.apache.org/licenses/LICENSE-2.0.html[Apache ソ
 
 OptaPlanner は、100% 純粋に Java(TM) で作られており、バージョン 1.6 以上のすべての JVM 上で動作します。他の Java(TM) 技術とのxref:integration[統合は非常に簡単]です。OptaPlanner は、xref:useWithMavenGradleEtc[Maven Central Repository]で利用できます。
 
-// image::http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[] //
+// image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[] //
 image:images/Chapter-Planner_introduction/compatibility.png[]
 
 
@@ -180,12 +180,12 @@ $ cd examples
 $ runExamples.bat
 ----
 
-// image::http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[] //
-image:images/Chapter-Planner_introduction/distributionZip.png[]
+// image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[] //
+image:http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[]
 
 サンプル GUI アプリケーションが開きます。サンプルを一つ選択してください。
 
-image::http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/plannerExamplesAppScreenshot.png[]
+image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/plannerExamplesAppScreenshot.png[]
 
 
 .注意
@@ -385,9 +385,9 @@ Source: It releases regularly
 Interpreted as: The KIE group is released regularly
 ////
 
-image::http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/kieFunctionalityOverview.png[]
+image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/kieFunctionalityOverview.png[]
 
-Drools を用いたオプションの統合についてより多く知るには、link:http://docs.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-docs/html_single/index.html#architectureOverview[構造の概要]を参照してください。
+Drools を用いたオプションの統合についてより多く知るには、link:http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/index.html#architectureOverview[構造の概要]を参照してください。
 
 
 

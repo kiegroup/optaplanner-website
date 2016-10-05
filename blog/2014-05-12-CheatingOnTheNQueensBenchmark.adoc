@@ -116,4 +116,4 @@ A realistic competition is *an official, independent competition*:
 . that has had serious participation from the academic and/or enterprise Operations Research community
 
 http://www.optaplanner.org[OptaPlanner]'s examples implement
-http://docs.jboss.org/optaplanner/release/latest/optaplanner-docs/html_single/index.html#examplesOverview[several cases of realistic competitions].
+http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#examplesOverview[several cases of realistic competitions].
