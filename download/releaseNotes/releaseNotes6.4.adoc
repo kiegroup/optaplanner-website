@@ -103,7 +103,7 @@ Assign meetings of different durations to starting times and rooms.
 +++
 
 Also see the blog about
-http://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[time scheduling design patterns].
+https://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[time scheduling design patterns].
 
 === Other improvements
 
@@ -117,7 +117,7 @@ http://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[tim
 
 === Workbench and Execution server
 
-As http://www.optaplanner.org/blog/2015/10/01/SneakPeekAtOptaPlannerWorkbench.html[mentioned in our blog],
+As https://www.optaplanner.org/blog/2015/10/01/SneakPeekAtOptaPlannerWorkbench.html[mentioned in our blog],
 we 've build first version of OptaPlanner Workbench and OptaPlanner Execution Server. Take a look at what it can do:
 
 +++

@@ -11,7 +11,7 @@ it's tempting to use the N Queens example as a benchmark to compare those solver
 That's a tragic mistake, because the N Queens problem is solvable in polynomial time,
 which means there's a way to cheat.
 
-That being said, *http://www.optaplanner.org[OptaPlanner] solves the `1 000 000` queens problem in less than 3 seconds* :)
+That being said, *https://www.optaplanner.org[OptaPlanner] solves the `1 000 000` queens problem in less than 3 seconds* :)
 Here's a log to prove it (with time spent in milliseconds):
 
 ----
@@ -115,5 +115,5 @@ A realistic competition is *an official, independent competition*:
 . that expects reproducible results within a specific time limit on specific hardware
 . that has had serious participation from the academic and/or enterprise Operations Research community
 
-http://www.optaplanner.org[OptaPlanner]'s examples implement
-http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#examplesOverview[several cases of realistic competitions].
+https://www.optaplanner.org[OptaPlanner]'s examples implement
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#examplesOverview[several cases of realistic competitions].

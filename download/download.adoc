@@ -98,4 +98,4 @@ Nightly snapshots are unstable binaries, build by link:../code/continuousIntegra
 [[OlderReleases]]
 == Older releases
 
-For older community releases, check http://download.jboss.org/optaplanner/release/[the release archive].
+For older community releases, check https://download.jboss.org/optaplanner/release/[the release archive].

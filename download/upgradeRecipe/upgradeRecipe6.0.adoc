@@ -20,7 +20,7 @@ In 6.0.0.Beta1, Drools Planner has been renamed to OptaPlanner and the java pack
 Instead, upgrade the jars to 6.0.0.Alpha9 first.
 Once that compiles, immediately upgrade the jars to your desired version and continue following the upgrade recipe.
 The 6.0.0.Alpha9 jars are available in the maven repository and in this zip:
-http://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
+https://download.jboss.org/drools/release/6.0.0.Alpha9/drools-planner-distribution-6.0.0.Alpha9.zip
 
 [.upgrade-recipe-readme]
 === `ValueRangeType.FROM_PLANNING_ENTITY_PROPERTY` fixed
@@ -912,7 +912,7 @@ scoreDirectorFactoryConfig.setSimpleScoreCalculator(...);
 
 Drools Planner has been renamed to OptaPlanner.
 See the official announcement here:
-http://www.optaplanner.org/community/droolsPlannerRenamed.html
+https://www.optaplanner.org/community/droolsPlannerRenamed.html
 
 [.upgrade-recipe-major]
 === Maven dependencies renamed

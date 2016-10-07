@@ -28,9 +28,9 @@ xref:relationshipWithKie[1.5.4. Drools や jBPM との関係]:::
 [[whatIsOptaPlanner]]
 == 1.1 OptaPlanner とは何ですか？
 
-image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/optaPlannerLogo.png[]
 
-*link:http://www.optaplanner.org/[OptaPlanner] は、計画問題の最適解を得る、組み込み可能で軽量な制約充足エンジンです。* 次のようなユースケースを解きます。
+*link:https://www.optaplanner.org/[OptaPlanner] は、計画問題の最適解を得る、組み込み可能で軽量な制約充足エンジンです。* 次のようなユースケースを解きます。
 ////
 150907 by Takugo
 Source: which optimizes planning problems
@@ -53,7 +53,7 @@ Interpreted as: planning the league games of football, baseball, ...
 * *財務最適化:* 投資ポートフォリオの最適化, リスク分散など
 ////
 
-image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/useCaseOverview.png[]
 
 あらゆる組織が計画問題に直面しています。製品やサービスは、_制約を受け_ 、限定されたリソース (従業員, 資産, 時間, 金) を使って提供されています。OptaPlanner は、そのような計画を最適化することによって、より少ないリソースでより多くの業務を実行できるようにします。これは、_オペレーションズリサーチ_ 分野の一つである _制約充足プログラミング_ として知られています。
 ////
@@ -62,7 +62,7 @@ Source: Constraint Satisfaction Programming
 Interpreted as: Constraint Programming (without "satisfaction") = 制約プログラミング, not the meaning of programming problem = 計画問題
 ////
 
-image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/whatIsAPlanningProblem.png[]
 
 OptaPlanner の助けがあれば、普通の Java(TM) プログラマーでも制約充足問題を効率よく解くことができます。OptaPlanner の内部では、最適化のためのヒューリスティック法およびメタヒューリスティック法が非常に効率的なスコア計算と組み合わされています。
 
@@ -75,7 +75,7 @@ OptaPlannerは、link:http://www.apache.org/licenses/LICENSE-2.0.html[Apache ソ
 
 OptaPlanner は、100% 純粋に Java(TM) で作られており、バージョン 1.6 以上のすべての JVM 上で動作します。他の Java(TM) 技術とのxref:integration[統合は非常に簡単]です。OptaPlanner は、xref:useWithMavenGradleEtc[Maven Central Repository]で利用できます。
 
-// image::http://docs.optaplanner.org/latest/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[] //
+// image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[] //
 image:images/Chapter-Planner_introduction/compatibility.png[]
 
 
@@ -158,7 +158,7 @@ OptaPlanner は、複数の最適化アルゴリズムを備えており、そ�
 
 今すぐやってみましょう。
 
-{empty}1. link:http://www.optaplanner.org/[OptaPlanner ウェブサイト]から OptaPlanner の公開 .zip をダウンロードします。
+{empty}1. link:https://www.optaplanner.org/[OptaPlanner ウェブサイト]から OptaPlanner の公開 .zip をダウンロードします。
 
 {empty}2. 解凍します。
 
@@ -180,12 +180,12 @@ $ cd examples
 $ runExamples.bat
 ----
 
-// image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[] //
-image:http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[]
+// image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[] //
+image:https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/distributionZip.png[]
 
 サンプル GUI アプリケーションが開きます。サンプルを一つ選択してください。
 
-image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/plannerExamplesAppScreenshot.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/plannerExamplesAppScreenshot.png[]
 
 
 .注意
@@ -367,27 +367,27 @@ Interpreted as: the impl classes are still subject to changes.
 [[communityAndSupport]]
 === 1.5.3. コミュニティとサポート
 
-ニュースや記事は、link:http://www.optaplanner.org/blog/[私たちのブログ] や Google+ (link:https://plus.google.com/\+OptaPlannerOrg[OptaPlanner], link:https://plus.google.com/\+GeoffreyDeSmet[Geoffrey De Smet])、Twitter (link:https://twitter.com/OptaPlanner[OptaPlanner], link:https://twitter.com/GeoffreyDeSmet[Geoffrey De Smet]) で確認してください。*OptaPlanner が役に立った場合には、そのことについてブログに書いたり Twitter でつぶやいたりして、私たちをご支援ください！*
+ニュースや記事は、link:https://www.optaplanner.org/blog/[私たちのブログ] や Google+ (link:https://plus.google.com/\+OptaPlannerOrg[OptaPlanner], link:https://plus.google.com/\+GeoffreyDeSmet[Geoffrey De Smet])、Twitter (link:https://twitter.com/OptaPlanner[OptaPlanner], link:https://twitter.com/GeoffreyDeSmet[Geoffrey De Smet]) で確認してください。*OptaPlanner が役に立った場合には、そのことについてブログに書いたり Twitter でつぶやいたりして、私たちをご支援ください！*
 
-link:http://www.optaplanner.org/community/forum.html[私たちのコミュニティーの公開フォーラム]での質問やlink:https://issues.jboss.org/browse/PLANNER[課題トラッカー]でのバグ報告、機能要望を歓迎します。GitHub への pull 要求を大いに歓迎し、優先的に扱います！ご自身の改善をオープンソース化すれば、それに対して私たちが加える専門的なチェックやさらなる改良をご自身のために役立てることができます。
+link:https://www.optaplanner.org/community/forum.html[私たちのコミュニティーの公開フォーラム]での質問やlink:https://issues.jboss.org/browse/PLANNER[課題トラッカー]でのバグ報告、機能要望を歓迎します。GitHub への pull 要求を大いに歓迎し、優先的に扱います！ご自身の改善をオープンソース化すれば、それに対して私たちが加える専門的なチェックやさらなる改良をご自身のために役立てることができます。
 
-Red Hat は、中核となるチームを雇用する形で、OptaPlanner の展開を後援しています。企業向けのサポートやコンサルティングについては、link:http://www.optaplanner.org/community/product.html[BRMS および BPMS 製品] (含 OptaPlanner) を参照するか、link:http://www.redhat.com/en/about/contact/sales[Red Hat へお問い合わせ]ください。
+Red Hat は、中核となるチームを雇用する形で、OptaPlanner の展開を後援しています。企業向けのサポートやコンサルティングについては、link:https://www.optaplanner.org/community/product.html[BRMS および BPMS 製品] (含 OptaPlanner) を参照するか、link:http://www.redhat.com/en/about/contact/sales[Red Hat へお問い合わせ]ください。
 
 
 
 [[relationshipWithKie]]
 === 1.5.4. Drools や jBPM との関係
 
-OptaPlanner は、link:http://www.kiegroup.org/[KIE プロジェクト・グループ]の一部です。KIE グループは、link:http://www.drools.org/[Drools] ルールエンジンと link:http://www.jbpm.org/[jBPM] ワークフローエンジンとともに、定期的に (通常 1〜2 回/月) リリースされます。
+OptaPlanner は、link:https://www.kiegroup.org/[KIE プロジェクト・グループ]の一部です。KIE グループは、link:https://www.drools.org/[Drools] ルールエンジンと link:https://www.jbpm.org/[jBPM] ワークフローエンジンとともに、定期的に (通常 1〜2 回/月) リリースされます。
 ////
 150916 Takugo
 Source: It releases regularly
 Interpreted as: The KIE group is released regularly
 ////
 
-image::http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/kieFunctionalityOverview.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/kieFunctionalityOverview.png[]
 
-Drools を用いたオプションの統合についてより多く知るには、link:http://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/index.html#architectureOverview[構造の概要]を参照してください。
+Drools を用いたオプションの統合についてより多く知るには、link:https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/index.html#architectureOverview[構造の概要]を参照してください。
 
 
 

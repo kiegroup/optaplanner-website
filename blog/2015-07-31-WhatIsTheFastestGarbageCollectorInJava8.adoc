@@ -19,7 +19,7 @@ OpenJDK version: `1.8.0_51` (currently the latest version) +
 Software: `Linux version 4.0.4-301.fc22.x86_64` +
 Hardware: `Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz`
 
-* Each run solves 13 planning problems with http://www.optaplanner.org[OptaPlanner].
+* Each run solves 13 planning problems with https://www.optaplanner.org[OptaPlanner].
 Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up which is discarded.
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
@@ -30,7 +30,7 @@ It constantly creates many short lived objects, and the GC collects them afterwa
 Calculating a score for a proposed planning solution is non-trivial:
 it involves many calculations, including checking for conflicts between every entity and every other entity.
 
-To reproduce these benchmarks locally, http://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
+To reproduce these benchmarks locally, https://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
 and run the main class
 https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
 
@@ -103,4 +103,4 @@ But *show me the benchmarks* on real projects first!
 
 == Conclusion
 
-In Java 8, the default Garbage Collector (Parallel GC) is generally the best choice for http://www.optaplanner.org/[OptaPlanner] use cases.
+In Java 8, the default Garbage Collector (Parallel GC) is generally the best choice for https://www.optaplanner.org/[OptaPlanner] use cases.

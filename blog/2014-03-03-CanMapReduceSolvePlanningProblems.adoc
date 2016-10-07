@@ -65,7 +65,7 @@ In a more realistic planning problem, sane partitioning can be hard or even impo
 * In vehicle routing with time windows, each partition should have enough vehicle time to service each customer
 and drive to each location. _Catch 22: How do we determine the drive time if we don't know the vehicle routes yet?_
 
-It's tempting to make http://www.optaplanner.org/blog/2013/08/06/FalseAssumptionsForVRP.html[false assumptions].
+It's tempting to make https://www.optaplanner.org/blog/2013/08/06/FalseAssumptionsForVRP.html[false assumptions].
 
 === 2) *Map*: Solve each piece separately
 
@@ -118,5 +118,5 @@ not on the optimization algorithm implementation in a Solver, for which it can m
 For example, in a depth-first search algorithm, MapReduce can make sense to explore the search tree
 (although the search tree scales exponentially bad which dwarfs any gain of MapReduce).
 
-To solve a big planning problem, use a Solver (such as http://www.optaplanner.org/[OptaPlanner])
+To solve a big planning problem, use a Solver (such as https://www.optaplanner.org/[OptaPlanner])
 that scales well in memory, so you don't need to resort to partitioning at the expense of solution quality.

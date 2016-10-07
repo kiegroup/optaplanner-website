@@ -41,9 +41,9 @@ the planning engine must respect that:
 image::keepTheUserInControlSubset.png[]
 
 It's not an all-or-nothing situation: *the user and OptaPlanner work together*
-(and the user is in charge). For a detailed use case, see http://www.optaplanner.org/blog/2013/10/11/WillSkynetControlOurSchedule.html[this blog with video].
+(and the user is in charge). For a detailed use case, see https://www.optaplanner.org/blog/2013/10/11/WillSkynetControlOurSchedule.html[this blog with video].
 
-Technically, this is implemented through _immovable planning entities_ (as explained in http://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]):
+Technically, this is implemented through _immovable planning entities_ (as explained in https://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]):
 a simple boolean method that checks if the process is locked.
 
 
@@ -136,7 +136,7 @@ image::fairnessScoreConstraintPitfallSubset.png[]
 
 In the last solution, more employees are happy, but the worst employee is worse off, so it's less fair than the middle solution.
 
-Technically, implement it as explained in http://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]:
+Technically, implement it as explained in https://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]:
 penalize the square of the number of shifts per employee.
 
 
@@ -160,5 +160,5 @@ and decreased the need for new hires. That's far more acceptable to all stakehol
 
 Project success doesn't depend on solution quality alone. There are a lot of factors that can make or break a project.
 In this article I highlighted some of the more social ones.
-Luckily, you can handle these additional requirements with http://www.optaplanner.org/[OptaPlanner] too.
+Luckily, you can handle these additional requirements with https://www.optaplanner.org/[OptaPlanner] too.
 Don't let them catch you off guard!

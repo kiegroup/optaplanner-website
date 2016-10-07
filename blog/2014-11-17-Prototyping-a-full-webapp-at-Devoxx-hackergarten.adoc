@@ -33,7 +33,7 @@ which I then directly map to our domain classes, without having to model their d
 ** Thanks to Arun and the https://github.com/javaee-samples/javaee7-samples[JavaEE 7 samples] to point me in the direction of the right tech for the job.
 * *OptaPlanner* to optimize the schedule
 ** This was also very easy to use for me ;)
-** For more info, see the http://www.optaplanner.org[OptaPlanner documentation].
+** For more info, see the https://www.optaplanner.org[OptaPlanner documentation].
 * *CDI* to glue it all together
 ** This was a bit harder: although the initial `@Inject` worked nicely,
 using a producer to provide dummy test data (before the Devoxx CFP import was written) had me stuck on a few pitfalls:
@@ -98,7 +98,7 @@ And there are no Methodology talks (green) on Wednesday! That means Methodology 
 
 image::optaconfPocDevoxxScheduleAfter.png[]
 
-Above is the schedule after it's optimized with http://www.optaplanner.org[OptaPlanner] for Wednesday.
+Above is the schedule after it's optimized with https://www.optaplanner.org[OptaPlanner] for Wednesday.
 Notice how I can now watch all the talks of an entire track without missing a single one.
 This optimization already takes speaker conflicts into account.
 

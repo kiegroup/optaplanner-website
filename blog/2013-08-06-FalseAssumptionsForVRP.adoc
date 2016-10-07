@@ -108,8 +108,8 @@ In a real-world vehicle routing problem, many assumptions fail.
 Finding a good solution is hard: there are no short-cuts.
 We need to be able to optimize without making assumptions.
 Yet, we cannot iterate through all possible states in a brute force manner either - even on relatively small problems - because of hardware limitations.
-So we need good, flexible algorithms - such as the heuristics and metaheuristics implemented in http://www.optaplanner.org[OptaPlanner] (Open Source, Java) - to solve bigger cases:
+So we need good, flexible algorithms - such as the heuristics and metaheuristics implemented in https://www.optaplanner.org[OptaPlanner] (Open Source, Java) - to solve bigger cases:
 
 image::vrpPresumptions12.png[]
 
-All screenshots are taken from the http://www.optaplanner.org[OptaPlanner] vehicle routing example.
+All screenshots are taken from the https://www.optaplanner.org[OptaPlanner] vehicle routing example.

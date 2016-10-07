@@ -7,14 +7,14 @@ As of version `6.0.0.Beta1`, *Drools Planner has been renamed to OptaPlanner*.
 
 == What is OptaPlanner (AKA Drools Planner)?
 
-http://www.optaplanner.org[Visit www.optaplanner.org for an explanation.]
+https://www.optaplanner.org[Visit www.optaplanner.org for an explanation.]
 
 == Why change the name?
 
 OptaPlanner is the new name for Drools Planner.
 OptaPlanner is now standalone, but can still be optionally combined with the Drools rule engine for a powerful declarative approach to planning optimization.
 
-* OptaPlanner has graduated from the http://www.drools.org[Drools] project to become a top-level http://www.jboss.org/[JBoss Community] project.
+* OptaPlanner has graduated from the https://www.drools.org[Drools] project to become a top-level https://www.jboss.org/[JBoss Community] project.
 
 ** OptaPlanner is not a fork of Drools Planner.
    We simply renamed it.
@@ -50,7 +50,7 @@ https://www.redhat.com/en/technologies/jboss-middleware/bpm[BPM] platforms.
 
 == What has changed?
 
-* The website has changed to http://www.optaplanner.org[http://www.optaplanner.org].
+* The website has changed to https://www.optaplanner.org[https://www.optaplanner.org].
 
 * The distributions artifacts have changed name:
 
@@ -84,4 +84,4 @@ https://www.redhat.com/en/technologies/jboss-middleware/bpm[BPM] platforms.
 
 == Learn more
 
-http://www.optaplanner.org[Visit www.optaplanner.org to learn more about OptaPlanner.]
+https://www.optaplanner.org[Visit www.optaplanner.org to learn more about OptaPlanner.]

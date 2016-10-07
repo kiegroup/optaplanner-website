@@ -4,7 +4,7 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [vehicle routing, algorithm, feature]
 
-http://www.optaplanner.org[OptaPlanner] 6.2 has made a big step forward for the Vehicle Routing Problem (VRP),
+https://www.optaplanner.org[OptaPlanner] 6.2 has made a big step forward for the Vehicle Routing Problem (VRP),
 Traveling Salesman Problem (TSP) and similar use cases.
 The new feature *_nearby selection_ enables it to scale to bigger problems much more efficiently*
 without sacrificing potential optimal solutions (which is common for inferior techniques).
@@ -54,7 +54,7 @@ doesn't scale well.
 
 One traditional way to deal with this scaling issue is partitioning (also called geo-fencing):
 Before solving, the locations are divided in clusters and the vehicles are distributed across them.
-As http://www.optaplanner.org/blog/2014/03/03/CanMapReduceSolvePlanningProblems.html[demonstrated in a previous blog],
+As https://www.optaplanner.org/blog/2014/03/03/CanMapReduceSolvePlanningProblems.html[demonstrated in a previous blog],
 _partitioning heavily sacrifices solution quality for speed_.
 
 The big problem with this approach is the inherent _Catch 22_:
@@ -91,4 +91,4 @@ image::belgium-road-time-n2750-k55_nearbyWithLA.png[]
 == Conclusion
 
 If you're working on a VRP use case and it needs to scale better,
-upgrade to http://www.optaplanner.org[OptaPlanner] 6.2 and use nearby selection!
+upgrade to https://www.optaplanner.org[OptaPlanner] 6.2 and use nearby selection!

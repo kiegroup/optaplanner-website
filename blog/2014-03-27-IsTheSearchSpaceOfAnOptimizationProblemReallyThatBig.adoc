@@ -135,5 +135,5 @@ Despite that the pruned search space is a lot smaller than the base search space
 == Conclusion
 
 Yes, the search space of planning or optimization problems is unbelievably big.
-Exhaustive algorithms don't scale. Instead, use the other algorithms in http://www.optaplanner.org[OptaPlanner],
+Exhaustive algorithms don't scale. Instead, use the other algorithms in https://www.optaplanner.org[OptaPlanner],
 which do scale: heuristics and metaheuristics.

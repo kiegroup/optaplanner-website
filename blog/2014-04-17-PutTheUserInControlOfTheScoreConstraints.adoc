@@ -10,8 +10,8 @@ Normally the developers do, based on the specs of the users.
 Can we empower users to define the score function themselves?
 Let's take a look how.
 
-If we're using the Drools rule engine for the score calculation in http://www.optaplanner.org[OptaPlanner],
-then we can use any of the supported features in the http://www.drools.org[Drools] ecosystem to manipulate those score rules.
+If we're using the Drools rule engine for the score calculation in https://www.optaplanner.org[OptaPlanner],
+then we can use any of the supported features in the https://www.drools.org[Drools] ecosystem to manipulate those score rules.
 That includes _Decision Tables_, _Scorecards_ and the _Drools Workbench_ web application.
 
 I'll empower the users on the Cloud Balancing example, for which we need to assign processes to computers,
@@ -129,11 +129,11 @@ Workbench (formerly known as Guvnor) is a full blown web application to manage r
 Using a web interface, business users can create and edit rules, including the score rules used by OptaPlanner.
 
 This is a very interesting setup, which I 'll demonstrate in a future blog post.
-Meanwhile, for more information, see http://www.drools.org/learn/documentation.html[the Drools documentation].
+Meanwhile, for more information, see https://www.drools.org/learn/documentation.html[the Drools documentation].
 
 == Conclusion
 
-In http://www.optaplanner.org[OptaPlanner], there are several ways
+In https://www.optaplanner.org[OptaPlanner], there are several ways
 to enable your users to define the score function of their planning problem themselves.
 
 This means that your users can fine tune the score function at runtime,

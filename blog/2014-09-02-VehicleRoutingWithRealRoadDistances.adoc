@@ -35,7 +35,7 @@ It's also fast, as long as the entire road network (only 200MB for Belgium) can 
 Loading the entire road network of North-America (6GB) is a bit more challenging.
 I 'll submit these datasets to the VRP Web, so others researchers can use them too.
 
-All this happens _before_ http://www.optaplanner.org/[OptaPlanner]'s VRP example starts solving it.
+All this happens _before_ https://www.optaplanner.org/[OptaPlanner]'s VRP example starts solving it.
 During solving, the distances are already available in a lookup table.
 Once we start generating datasets with `1000` locations or more,
 pre-calculating all distances between every location pair can introduce memory and performance issues.

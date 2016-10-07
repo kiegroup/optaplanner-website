@@ -7,9 +7,9 @@
 10 years ago, I started a little project during my vacation.
 Nothing serious. _Just a hobby, it wouldn't be big and professional._
 Another contraption in my long list of side projects in an attempt to build something cool.
-Today, that same project is now the leading Open Source constraint satisfaction solver in Java: http://www.optaplanner.org/[OptaPlanner].
-It is used across the world to create better logistic schedules, such as http://www.optaplanner.org/learn/useCases/employeeRostering.html[employee rosters],
-http://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[vehicle routes] and http://www.optaplanner.org/learn/useCases/cloudOptimization.html[cloud distributions].
+Today, that same project is now the leading Open Source constraint satisfaction solver in Java: https://www.optaplanner.org/[OptaPlanner].
+It is used across the world to create better logistic schedules, such as https://www.optaplanner.org/learn/useCases/employeeRostering.html[employee rosters],
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[vehicle routes] and https://www.optaplanner.org/learn/useCases/cloudOptimization.html[cloud distributions].
 
 How did my project become successful? What did I do right? What did I do wrong?
 
@@ -25,7 +25,7 @@ However, he had spent a lot of time and energy to manually implement the increme
 Writing that code is difficult, time consuming and error prone, but absolutely required to get good results when scaling out.
 
 The year before, I had seen Mark Proctor's presentation at JavaPolis (now called DevoxxBE),
-explaining the http://drools.org/[Drools] rule engine and the RETE algorithm.
+explaining the https://www.drools.org/[Drools] rule engine and the RETE algorithm.
 A stateful rule engine tracks changes so it only has to check the rules that might be affected by those changes.
 
 Light bulb.
@@ -69,7 +69,7 @@ Writing examples against a predefined set of requirements, is a great way to fee
 == No man is an island
 
 Around the same time I reached out to the Drools team,
-simply by *http://www.optaplanner.org/community/chat.html[joining their IRC channel]*.
+simply by *https://www.optaplanner.org/community/chat.html[joining their IRC channel]*.
 I started talking. Networking really. I learned what I needed to learn.
 By September 2007, Mark invited me to make Taseree a subproject of Drools and we called it Drools Solver.
 So I cleaned up the code, removed the spring-core dependency (which I had dragged in for no good reason except to have an XML configuration)
@@ -80,7 +80,7 @@ at a late evening Bird of a Feather session at JavaPolis, for about 20 developer
 I had prepared my text word by word in advance and read it out aloud.
 Not my best moment. But they did seemed to like my demo though.
 I am not a natural born presenter,
-but I soon realized that http://www.optaplanner.org/learn/slides.html[great slides] and http://www.optaplanner.org/learn/video.html[polished demo's] can make up for that.
+but I soon realized that https://www.optaplanner.org/learn/slides.html[great slides] and https://www.optaplanner.org/learn/video.html[polished demo's] can make up for that.
 These days I can step into a room - unprepared - and talk for 5 days without showing the same slide or demo twice.
 Presenting skills can be http://presentationpatterns.com/[acquired].
 
@@ -137,14 +137,14 @@ We talked to customers and helped complex use cases succeed: all very satisfying
 And I got to travel to interesting places around the globe, such as San Francisco, Boston, Buenos Aires, London, Paris and Tokyo.
 
 Meanwhile, _our_ project also graduated from the Drools project to become a top-level project.
-So we had to http://www.optaplanner.org/community/droolsPlannerRenamed.html[rename] the project again, one last time (I promise), to OptaPlanner.
+So we had to https://www.optaplanner.org/community/droolsPlannerRenamed.html[rename] the project again, one last time (I promise), to OptaPlanner.
 Changing a project's name is a delicate operation: it always reduces the mind share. Try to avoid it.
 We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
 
-In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of http://www.optaplanner.org/community/product.html[the BRMS subscription].
+In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of https://www.optaplanner.org/community/product.html[the BRMS subscription].
 And by March 2015, we upgraded it to _full enterprise support_.
-Sales took off. So earlier this year, we could hire http://www.optaplanner.org/community/team.html[a core engineer] to develop OptaPlanner Workbench.
-Meanwhile, all our code is still Open Source, under http://www.optaplanner.org/code/license.html[the Apache License]
+Sales took off. So earlier this year, we could hire https://www.optaplanner.org/community/team.html[a core engineer] to develop OptaPlanner Workbench.
+Meanwhile, all our code is still Open Source, under https://www.optaplanner.org/code/license.html[the Apache License]
 and thousands of projects use it. A win-win situation.
 
 The future is bright.

@@ -53,7 +53,7 @@ make a strong argument:
 
 _Are all competitive benchmark reports lying?_ *Yes*, they are probably misrepresenting the truth.
 
-_Should we therefor restrict users from publicizing benchmarks on our Solver?_ *No*, of course not (even if our http://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
+_Should we therefor restrict users from publicizing benchmarks on our Solver?_ *No*, of course not (even if our https://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
 
 Computer science - like any other science - is build on empirical evidence:
 *the promise that any experiment I publish can be repeated by others independently*.
@@ -62,7 +62,7 @@ In fact, the more people which report their benchmarks, the clearer our strength
 Historically, this approach has already enabled us to diagnose and fix weaknesses,
 regardless whether those were caused by our Solver or the user's domain specific implementation.
 
-Therefore, http://www.optaplanner.org[OptaPlanner] welcomes external benchmark reports.
+Therefore, https://www.optaplanner.org[OptaPlanner] welcomes external benchmark reports.
 I believe in Open Science, as strongly as I believe in Open Source.
 I do ask the courtesy of allowing public comments/feedback on a public report website,
 as well as to publicize the details (such as the Solver configuration).
@@ -115,4 +115,4 @@ We - in OptaPlanner - are well on our way to build exactly that:
 * For each use case, we're already benchmarking on many different optimization algorithms.
 * Our benchmarker HTML report already includes many useful statistics to analyse the raw benchmark data.
 
-http://www.optaplanner.org/code/sourceCode.html[Join us] :)
+https://www.optaplanner.org/code/sourceCode.html[Join us] :)

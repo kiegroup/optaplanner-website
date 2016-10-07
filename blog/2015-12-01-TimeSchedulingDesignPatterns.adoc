@@ -58,4 +58,4 @@ When facing a time scheduling problem, take a look which of the design patterns 
 It will improve your development speed as well as solver efficiency and scalability.
 
 For more information about the flexibility, advantages and disadvantages of each design pattern,
-read http://www.optaplanner.org/learn/documentation.html[the documentation] (`6.4.0.Beta1` or later).
+read https://www.optaplanner.org/learn/documentation.html[the documentation] (`6.4.0.Beta1` or later).

@@ -349,7 +349,7 @@ Tabzilla.content =
 +'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
-+'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
++'      <img src="https://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
 +'    </span>'
 +'    <span class="span4">'
 +'      <ul class="level1">'
@@ -375,11 +375,11 @@ var _srch = window.search = {};
 _srch.context = [
     { // community
         description: "Search the Community",
-        url: "http://community.jboss.org/search.jspa?"
+        url: "https://community.jboss.org/search.jspa?"
     },
     { // project
         description: "Search Project Pages",
-        url: "http://www.google.com/search?as_sitesearch=jboss.org"
+        url: "https://www.google.com/search?as_sitesearch=jboss.org"
     }
 ];
 
@@ -588,7 +588,7 @@ function renderTabzilla( projectName , projectId, fullWidth ) {
     */
 
     // Getting HTML tab content from remote source.
-    var wrapper = $.ajax({url:"http://static.jboss.org/partials/tabcontent.html",
+    var wrapper = $.ajax({url:"https://static.jboss.org/partials/tabcontent.html",
       dataType:'html'
     });
 

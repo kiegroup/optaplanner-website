@@ -4,7 +4,7 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [vehicle routing]
 
-After http://www.optaplanner.org[OptaPlanner] finds the best solution for a Vehicle Routing Problem,
+After https://www.optaplanner.org[OptaPlanner] finds the best solution for a Vehicle Routing Problem,
 users usually want to see it on a real map, such as Google Maps or OpenStreetMap.
 The `optaplanner-webexamples.war` for OptaPlanner 6.3 now demonstrates that.
 
@@ -18,7 +18,7 @@ and each location needs a number of items picked up.
 image::vehicleRoutingLeafletAndGoogleMaps.png[]
 
 Despite that the lines are shown as straight between locations,
-http://www.optaplanner.org/blog/2014/09/02/VehicleRoutingWithRealRoadDistances.html[actual road distances]
+https://www.optaplanner.org/blog/2014/09/02/VehicleRoutingWithRealRoadDistances.html[actual road distances]
 were used in the optimization calculations.
 In total, the vehicles drive a little under `32` hours, so on average `4` hours per vehicle (includes location service time).
 This solution doesn't take into account rush hour yet, but if such traffic prediction data were available,
@@ -41,7 +41,7 @@ https://developers.google.com/maps/[Google Maps] is a proprietary JavaScript tha
 
 If you're using the latest OptaPlanner final release (`6.2.0.Final` at the time of writing),
 you easily do such visualization too: those webexamples don't require any API's new in optaplanner-core 6.3,
-so http://www.optaplanner.org/download/download.html[download the nightly snapshot] and look for `webexamples/sources`
+so https://www.optaplanner.org/download/download.html[download the nightly snapshot] and look for `webexamples/sources`
 to see how it's done.
 
 == Update

@@ -3,7 +3,7 @@ lang: en
 title: OptaPlanner
 description: OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java.
 keywords: metaheuristic, heuristic, constraint satisfaction, constraint programming, operations research, NP-complete, NP-hard, optimization, planning, scheduling, java, open source, software, library, solver, tabu search, simulated annealing, pareto
-canonicalBaseUrl: http://www.optaplanner.org
+canonicalBaseUrl: https://www.optaplanner.org
 
 googleAnalyticsId: UA-39485370-1
 googleTagManagerId: GTM-NJWS5L
@@ -22,4 +22,4 @@ profiles:
     developmentMode: true
   production:
     developmentMode: false
-    base_url: http://www.optaplanner.org
+    base_url: https://www.optaplanner.org

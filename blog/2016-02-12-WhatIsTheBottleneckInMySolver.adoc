@@ -14,7 +14,7 @@ How can I track down my bottleneck?
 
 "_We need faster hardware._" It is the typical knee-jerk reaction to any performance problem.
 However, for most optimization problems, throwing hardware at the problem doesn't help much
-(in part because of http://www.optaplanner.org/blog/2014/03/27/IsTheSearchSpaceOfAnOptimizationProblemReallyThatBig.html[the size of the search space]).
+(in part because of https://www.optaplanner.org/blog/2014/03/27/IsTheSearchSpaceOfAnOptimizationProblemReallyThatBig.html[the size of the search space]).
 
 For example, presume that the score of the best solution evolves like this over time:
 
@@ -51,5 +51,5 @@ A JVM profiler (such as JProfiler or VisualVM) can be very helpful in the first 
 
 When facing a performance or scalability challenge, don't randomly improve parts of your code.
 Remember that _premature optimization is the root of all evil_.
-Instead, let the http://www.optaplanner.org[OptaPlanner] Benchmarker guide you
+Instead, let the https://www.optaplanner.org[OptaPlanner] Benchmarker guide you
 and fix the biggest bottlenecks first.

@@ -11,7 +11,7 @@
 === Drools Planner renamed to OptaPlanner
 
 OptaPlanner is the new name for Drools Planner.
-For more information, see http://www.optaplanner.org/community/droolsPlannerRenamed.html[the full announcement].
+For more information, see https://www.optaplanner.org/community/droolsPlannerRenamed.html[the full announcement].
 
 === Faster and easier scoreDRL
 

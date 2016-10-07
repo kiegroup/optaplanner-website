@@ -37,9 +37,9 @@ configuration reliability in production are correct.
 One of them, `PRODUCTION`,
 is obviously meant for runs in a production environment.
 In this environment mode, OptaPlanner will choose a *random seed* for it's
-http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#randomNumberGenerator[pseudo-random number generator]
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#randomNumberGenerator[pseudo-random number generator]
 (PRNG) at random (JDK default).
-Read more about this http://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#environmentModeProduction[in the documentation].
+Read more about this https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#environmentModeProduction[in the documentation].
 ** We use the basic PRNG implementation in all our benchmarks (`java.util.Random`).
 
 * Specific configuration changes:
@@ -67,7 +67,7 @@ Oracle JDK version: `1.7.0_79` +
 Software: `Linux version 4.1.6-201.fc22.x86_64` +
 Hardware: `Intel(R) Core(TM) i7-4810MQ CPU @ 2.80GHz`
 
-* To reproduce these benchmarks locally, http://www.optaplanner.org/code/sourceCode.html[build OptaPlanner from source]
+* To reproduce these benchmarks locally, https://www.optaplanner.org/code/sourceCode.html[build OptaPlanner from source]
 and run the classes
 https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp],
 https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/curriculumcourse/app/CurriculumCourseBenchmarkApp.java[CurriculumCourseBenchmarkApp]

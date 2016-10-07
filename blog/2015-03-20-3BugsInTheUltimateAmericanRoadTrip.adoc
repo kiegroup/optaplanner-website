@@ -30,7 +30,7 @@ The Washington Post even claims that the trip above is the fastest trip (Olson's
 == Bug 1: Better optimization algorithms give better results
 
 A few days ago, William J. Cook http://www.math.uwaterloo.ca/tsp/usa50/index.html[already proved with Concorde]
-that there's a shortest and faster path near Iowa. With http://www.optaplanner.org[OptaPlanner] I come to the same conclusion:
+that there's a shortest and faster path near Iowa. With https://www.optaplanner.org[OptaPlanner] I come to the same conclusion:
 
 image::americanRoadTrip-iowa-comparison.png[]
 
@@ -63,7 +63,7 @@ which can be drastically different:
 image::fastest-vs-shortest.png[]
 
 Contrary to popular belief, *the shortest trip on the fastest routes is not the shortest trip.*
-http://docs.optaplanner.org/6.2.0.Final/optaplanner-docs/html_single/images/Chapter-Use_cases_and_examples/roadDistanceTriangleInequality.png[Here's my elaborate proof of that.]
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/images/Chapter-Use_cases_and_examples/roadDistanceTriangleInequality.png[Here's my elaborate proof of that.]
 
 Most people tend to prefer highways over dirt roads, so they prefer prefer the fastest trip over the shortest trip.
 In more advanced use cases, we would also want to take additional constraints into account:
@@ -72,7 +72,7 @@ In more advanced use cases, we would also want to take additional constraints in
 * Consider optional places to visit, as long as they don't impact the length of our trip too much.
 * Consider time constraints: to see that sunset at the ocean, we'll need to arrive there before the evening.
 
-That's when a customizable solver such as http://www.optaplanner.org[OptaPlanner] becomes really useful.
+That's when a customizable solver such as https://www.optaplanner.org[OptaPlanner] becomes really useful.
 
 == Conclusion
 

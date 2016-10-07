@@ -6,7 +6,7 @@
 
 What's the cost of trace/debug logging in production? What's the performance cost of logging to a file?
 In these benchmarks, I compare the performance impact of logging levels (`error`, `warn`, `info`, `debug`, `trace`)
-and logging appenders (console appender, file appender) on several realistic http://www.optaplanner.org[OptaPlanner]
+and logging appenders (console appender, file appender) on several realistic https://www.optaplanner.org[OptaPlanner]
 use cases.
 
 == Benchmark methodology
@@ -48,7 +48,7 @@ Which results in output like this:
 Software: `Linux 3.2.0-59-generic-pae` +
 Hardware: `Intel® Xeon(R) CPU W3550 @ 3.07GHz`
 
-* Each run solves 13 planning problems with http://www.optaplanner.org[OptaPlanner].
+* Each run solves 13 planning problems with https://www.optaplanner.org[OptaPlanner].
 Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up which is discarded.
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
@@ -59,20 +59,20 @@ It constantly creates many short lived objects, and the GC collects them afterwa
 Calculating a score for a proposed planning solution is non-trivial:
 it involves many calculations, including checking for conflicts between every entity and every other entity.
 
-To reproduce these benchmarks locally, http://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
+To reproduce these benchmarks locally, https://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
 and run the main class
 https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
 
 == Logging levels: `error`, `warn`, `info`, `debug` and `trace`
 
-I ran the same benchmark set several times with a different http://www.optaplanner.org[OptaPlanner] logging level:
+I ran the same benchmark set several times with a different https://www.optaplanner.org[OptaPlanner] logging level:
 
 [source, xml]
 ----
   <logger name="org.optaplanner" level="error|warn|info|debug|trace"/>
 ----
 
-All other libraries (including http://drools.org[Drools]) were set to `warn` logging.
+All other libraries (including https://www.drools.org[Drools]) were set to `warn` logging.
 The logging verbosity of OptaPlanner differs greatly per level:
 
 * *`error`* and *`warn`*: *0 lines*
@@ -177,6 +177,6 @@ Like all diagnostic information, logging comes at a performance cost.
 Good libraries carefully select the logging level of each statement
 to balance out diagnostic needs, verbosity and performance impact.
 
-Here's my recommendation for http://www.optaplanner.org[OptaPlanner] users:
+Here's my recommendation for https://www.optaplanner.org[OptaPlanner] users:
 In development, use `debug` (or `trace`) logging with a console appender by default, so you can see what's going on.
 In production, use `warn` (or `info`) logging with a file appender by default, so you retain important information.
