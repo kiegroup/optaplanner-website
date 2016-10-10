@@ -75,8 +75,7 @@ OptaPlannerは、link:http://www.apache.org/licenses/LICENSE-2.0.html[Apache ソ
 
 OptaPlanner は、100% 純粋に Java(TM) で作られており、バージョン 1.6 以上のすべての JVM 上で動作します。他の Java(TM) 技術とのxref:integration[統合は非常に簡単]です。OptaPlanner は、xref:useWithMavenGradleEtc[Maven Central Repository]で利用できます。
 
-// image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[] //
-image:images/Chapter-Planner_introduction/compatibility.png[]
+image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/images/Chapter-Planner_introduction/compatibility.png[]
 
 
 
