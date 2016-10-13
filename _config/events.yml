@@ -214,9 +214,17 @@
   url: https://www.eclipsecon.org/europe2016/session/modeling-avengers-open-source-technology-mix-saving-world
   presenters: Cedric Brun, Benoit Combemale
 
-- eventId: 20161112-devoxxbe
+- eventId: 20161108-devoxxbe
   eventOrganization: Devoxx Be
   location: Antwerp, Belgium
   date: 2016-11-08
   title: Hackergarten
   url: http://www.devoxx.be
+
+- eventId: 20161122-jbuglondon
+  eventOrganization: JBoss User Group
+  location: London, UK
+  date: 2016-11-22
+  title: Red Hat BRMS and BPMS Roadmap Presentation
+  url: http://www.meetup.com/JBoss-User-Group/events/234803765/
+  presenters: Geoffrey De Smet, Mark Proctor, Kris Verlaenen, Mauricio Salatino, Max Barkley
