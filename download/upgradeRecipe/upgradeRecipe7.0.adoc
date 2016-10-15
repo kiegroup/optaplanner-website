@@ -1145,3 +1145,27 @@ public final class HardSoftScore extends AbstractScore<HardSoftScore> {
 
 }
 ----
+
+
+[.upgrade-recipe-minor]
+===  `Solver.getScoreDirectorFactory`: call `ScoreDirector.dispose()`
+
+Every `ScoreDirector` needs to be disposed to avoid a potential memory leak.
+The old docs didn't clearly mention that, so your code might not do that.
+
+Before in `*.java`:
+[source, java]
+----
+ScoreDirectorFactory<CloudBalance> scoreDirectorFactory = solver.getScoreDirectorFactory();
+ScoreDirector<CloudBalance> guiScoreDirector = scoreDirectorFactory.buildScoreDirector();
+...
+----
+
+After in `*.java`:
+[source, java]
+----
+ScoreDirectorFactory<CloudBalance> scoreDirectorFactory = solver.getScoreDirectorFactory();
+ScoreDirector<CloudBalance> guiScoreDirector = scoreDirectorFactory.buildScoreDirector();
+...
+guiScoreDirector.dispose();
+----
