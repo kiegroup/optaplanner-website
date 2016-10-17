@@ -36,13 +36,13 @@ Both community and product use the same code base.
 |Roadmap impact |image:checkYes.png[Yes] Use link:forum.html[mailing list], link:../code/issueTracker.html[issue tracker] or send a link:../code/sourceCode.html[Pull Request] |image:checkYes.png[Yes] Prioritized above community requests
 |Public forum |image:checkYes.png[Yes] Use link:forum.html[community forum] |image:checkYes.png[Yes] Or call 24/7 support instead
 |Private 24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] https://access.redhat.com/[By web or phone], guaranteed response time (SLA)
-|One-off patch for an urgent customer critical issue |image:checkNo.png[No] |image:checkYes.png[Yes] Also rolled up in the next maintenance release
 |Red Hat consultancy, training and POC assistance |image:checkNo.png[No] |image:checkYes.png[Yes]
 
 |*Release schedule* | |
 |Beta/CR releases |image:checkYes.png[Yes] Usually every few weeks |image:checkYes.png[Yes] After Final community release
 |Stable releases |image:checkYes.png[Yes] Final usually every 3 months |image:checkYes.png[Yes] GA usually 2 months after community Final release (if it is productized)
 |Maintenance releases |image:checkNo.png[No] Use latest Beta/CR instead |image:checkYes.png[Yes] Usually every 6 weeks
+|One-off release for an urgent customer critical issue |image:checkNo.png[No] |image:checkYes.png[Yes] Also rolled up in the next maintenance release
 
 |*Information* | |
 |Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution available from customer portal only
