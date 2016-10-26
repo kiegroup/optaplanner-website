@@ -1,24 +1,25 @@
 latestFinal:
-  version: 6.4.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/6.4.0.Final/optaplanner-distribution-6.4.0.Final.zip
-  releaseDate: 2016-04-14
-  releaseNotesVersion: 6.4
+  version: 6.5.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/6.5.0.Final/optaplanner-distribution-6.5.0.Final.zip
+  releaseDate: 2016-10-20
+  releaseNotesVersion: 6.5
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-wildfly8.war
-  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-eap6_4.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-tomcat7.war
-  kieWorkbenchWLSWar: https://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-weblogic12.war
-  kieWorkbenchWASWar: https://download.jboss.org/drools/release/6.4.0.Final/kie-drools-wb-distribution-wars-6.4.0.Final-was8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/6.4.0.Final/kie-server-distribution-6.4.0.Final.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-wildfly10.war
+  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-eap6_4.war
+  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-tomcat7.war
+  kieWorkbenchWLSWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-weblogic12.war
+  kieWorkbenchWASWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-was8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/6.5.0.Final/kie-server-distribution-6.5.0.Final.zip
 
-  documentationHtmlSingle: https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/index.html
-  documentationHtml: https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html/index.html
-  documentationPdf: https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: https://docs.optaplanner.org/6.4.0.Final/optaplanner-javadoc/index.html
+  documentationHtmlSingle: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/html_single/index.html
+  documentationHtml: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/html/index.html
+  documentationPdf: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: https://docs.optaplanner.org/6.5.0.Final/optaplanner-javadoc/index.html
 
-  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/6.4.0.Final/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/6.4.0.Final/drools-docs/html/index.html
-  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/6.4.0.Final/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/html/index.html
+  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/pdf/drools-docs.pdf
 
 # latest.version can be equal to latestFinal.version
 latest:
