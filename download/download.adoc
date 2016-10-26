@@ -22,7 +22,7 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 * KIE Workbench #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly] -
-#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP 6_4] -
+#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP 6.4] -
 #{site.pom.latestFinal.kieWorkbenchEAP7War}[EAP 7] -
 #{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat] -
 #{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic] -
