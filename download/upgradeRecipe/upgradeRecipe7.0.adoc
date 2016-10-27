@@ -1169,3 +1169,45 @@ ScoreDirector<CloudBalance> guiScoreDirector = scoreDirectorFactory.buildScoreDi
 ...
 guiScoreDirector.dispose();
 ----
+
+
+
+[.upgrade-recipe-minor]
+=== Custom cloning: `PlanningCloneable` replaced
+
+The interface `PlanningCloneable` has been removed,
+use a `SolutionCloner` instead.
+
+Before in `*.java`:
+[source, java]
+----
+public class NQueens implements  PlanningCloneable<NQueens> {
+    ...
+
+    public NQueens planningClone() {
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class NQueensSolutionCloner implements SolutionCloner<NQueens> {
+
+    @Override
+    public NQueens cloneSolution(CloneLedger ledger, NQueens original) {
+        ...
+    }
+
+}
+----
+
+[source, java]
+----
+@PlanningSolution(solutionCloner = NQueensSolutionCloner.class)
+public class NQueens {
+    ...
+}
+----
