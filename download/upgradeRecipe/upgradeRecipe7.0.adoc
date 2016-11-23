@@ -17,7 +17,6 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 
 == From 6.5.0.Final to 7.0.0.Beta1
 
-
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Java 8 or higher required
 
