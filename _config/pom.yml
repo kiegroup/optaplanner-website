@@ -47,4 +47,5 @@ nightly:
   distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=7.0.0-SNAPSHOT&e=zip
 
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus, which is not a html but a zip
-  documentationHtmlSingle: http://jenkins-kieci.rhcloud.com/job/optaplanner/lastBuild/artifact/optaplanner-docs/target/docbook/publish/en-US/html/index.html
+  # This link is a temporary fix. It simply links yu to a under construction page.
+  documentationHtmlSingle: https://docs.optaplanner.org/snapshot/noPublicCI.html
