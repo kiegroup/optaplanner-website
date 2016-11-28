@@ -2750,6 +2750,24 @@ $ mvn exec:java
                 <li>JSprit (open source)</li>
             </ul>
         </section>
+        <section>
+            <h3>Not your father's constraint solver</h3>
+            <br/>
+            <p>CPLEX</p>
+        <pre xml:space="preserve"><code class="java">IloNumVar[] expense = cplex.numVarArray(2, lb, ub);
+cplex.addLe(cplex.sum(
+        cplex.prod(1.06, expense[0]), // Euro
+        cplex.prod(1.24, expense[1])), // British Pound
+        50.0);</code></pre>
+            <br/>
+            <p>OptaPlanner</p>
+        <pre xml:space="preserve"><code class="drl">rule "50 Dollar limit"
+  when
+    Expense(1.06 * euroCost + 1.24 * britishPoundCost > 50 )
+  then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end</code></pre>
+        </section>
         <!-- TODO -->
     </section>
 
