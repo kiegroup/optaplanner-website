@@ -1170,7 +1170,6 @@ guiScoreDirector.dispose();
 ----
 
 
-
 [.upgrade-recipe-minor]
 === Custom cloning: `PlanningCloneable` replaced
 
@@ -1208,5 +1207,108 @@ public class NQueensSolutionCloner implements SolutionCloner<NQueens> {
 @PlanningSolution(solutionCloner = NQueensSolutionCloner.class)
 public class NQueens {
     ...
+}
+----
+
+
+[.upgrade-recipe-recommended]
+=== Add `@PlanningId` annotation
+
+It is recommended to add a `@PlanningId` annotation
+on the unique ID of every planning entity and on most problem fact classes
+(especially on each class that is a planning value class).
+The ID must never be null and must be unique per class (no need to be globally unique).
+
+This enables the use of multi-threaded solvers (such as Partitioned Search)
+and makes it easier to implement a real-time planning `ProblemFactChange` by using `ScoreDirector.locateWorkingObject()`.
+
+Before in `*.java`:
+[source, java]
+----
+public abstract class AbstractPersistable ... {
+
+    protected Long id; // Can also be a String, Integer, ...
+
+    public Long getId() {
+        return id;
+    }
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public abstract class AbstractPersistable ... {
+
+    protected Long id; // Can also be a String, Integer, ...
+
+    @PlanningId
+    public Long getId() {
+        return id;
+    }
+
+    ...
+}
+----
+
+You can also put the `@PlanningId` annotation on the field instead.
+
+
+
+[.upgrade-recipe-minor]
+=== `ProblemFactChange`: Use `locateWorkingObject()`
+
+Use the new method `ScoreDirector.locateWorkingObject(Object)` to translate a planning entity or problem fact
+to its working instance planning clone more efficiently.
+
+This requires that the class has a `@PlanningId` annotation on one of its getters or fields.
+
+Before in `*.java`:
+[source, java]
+----
+public class EditComputerProblemFactChange implements ProblemFactChange<CloudBalance> {
+
+    private final CloudComputer changedComputer;
+    ...
+
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+        CloudComputer workingComputer = null;
+        for (CloudComputer computer : cloudBalance.getComputerList()) {
+            if (changedComputer.getId().equals(computer.getId())) {
+                workingComputer = computer;
+                break;
+            }
+        }
+
+        scoreDirector.beforeProblemPropertyChanged(workingComputer);
+        workingComputer.setCpuPower(changedComputer.getCpuPower());
+        scoreDirector.afterProblemPropertyChanged(workingComputer);
+        ...
+        scoreDirector.triggerVariableListeners();
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class EditComputerProblemFactChange implements ProblemFactChange<CloudBalance> {
+
+    private final CloudComputer changedComputer;
+    ...
+
+    public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
+        CloudComputer workingComputer = scoreDirector.locateWorkingObject(changedComputer);
+
+        scoreDirector.beforeProblemPropertyChanged(workingComputer);
+        workingComputer.setCpuPower(changedComputer.getCpuPower());
+        scoreDirector.afterProblemPropertyChanged(workingComputer);
+        ...
+        scoreDirector.triggerVariableListeners();
+    }
+
 }
 ----
