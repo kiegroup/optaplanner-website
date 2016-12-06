@@ -1,0 +1,80 @@
+= How to become US president with less than a quarter of the votes
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [story]
+
+The US presidential election has an interesting voting system.
+The winner is not the most popular candidate (he or she that has the most votes)
+but but the one that collects the most EC electors.
+So I wonder, how could I become the least popular US president?
+That's a constraint satisfaction problem!
+
+It occurred https://en.wikipedia.org/wiki/United_States_presidential_elections_in_which_the_winner_lost_the_popular_vote[a few times already]
+that the president elect didn't have the popular vote, most recently last month with Clinton vs Trump.
+But the difference in total votes wasn't that big. What would be the biggest possible gap?
+If everyone voted against me by default, what's the minimum number of people I 'd have to convince to vote for me to become US president?
+
+== How is this possible?
+
+This is due to the winner-takes-all system per state.
+Any candidate that has the majority in one state (so at least 50% of the votes),
+gets all Electoral College votes of that state.
+So it doesn't matter if I get 51% or 99% of the votes in one state: I get the same number of EC votes.
+
+Furthermore, the EC votes for one state do not represent its population accurately.
+The EC votes are rounded to an integer and each state gets at least 3 out of 538 votes.
+For example, https://en.wikipedia.org/wiki/Electoral_College_(United_States)[an electoral vote represents nearly four
+times as many people in California as in Wyoming].
+
+Let's not elaborate on the advantages and disadvantages of this system - despite my own opinion, it is what it is -
+but instead, let's see how I can *game the system to win the US elections with the least possible votes*.
+
+== Constraints
+
+I'll presume everyone votes, so my victory is assured regardless if they do or not.
+If no one voted, I could in theory win the elections with 11 votes: 1 vote per state in each of the 11 highest-populated states.
+
+I'll also presume no one votes for 3th party candidates, so my victory is also assured regardless if anyone does or doesn't.
+
+That leaves me with 2 constraints:
+
+. Hard constraint: Collect at least 270 EC votes.
+. Soft constraint: Minimize the number of votes for me.
+
+To win a state, I 'll just convince exactly half of its citizens plus one to vote for me.
+
+Now, let's solve this constraint satisfaction problem with https://www.optaplanner.org[OptaPlanner]!
+
+== How to guarantee election victory with a quarter of the votes
+
+*If I win these states with `23.73%` of the US population voting for me,
+I am the next US president, regardless of how the other `76.27%` of the population votes!*
+
+image::electionMapMetaheuristics.png[]
+
+So even if everyone votes and no one votes on 3th party candidates, I can still become US president with less than a quarter of the votes.
+I just need to win http://www.270towin.com/maps/7A3OW[the correct states] by one vote each.
+
+== How did I find that solution?
+
+I created a model in which all of 50 federal states are assigned to 1 out of 2 candidates.
+I didn't try all `2^50` possible combinations, as that would take too long.
+
+A simple Construction Heuristic that just takes the states with the highest votes to population ratio first,
+gives me http://www.270towin.com/maps/wJpBe[this result]:
+
+image::electionMapSimpleHeuristic.png[]
+
+That's not optimal: it requires `0.02%` of the population too much.
+Arizona and Missouri should be swapped for Pennsylvania.
+By doing a Local Search algorithm on top of that, I get the better solution as shown earlier.
+
+This is really just a variant of https://en.wikipedia.org/wiki/Knapsack_problem[the knapsack problem].
+
+== Conclusion
+
+Even in political elections, constraint solvers are (ab)useful.
+Not just for this use case, but also for https://en.wikipedia.org/wiki/Gerrymandering[gerrymandering].
+
+Note: The premise of this story is hypothetical: I have no actual ambitions to become US president.
