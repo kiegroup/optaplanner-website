@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [story]
+:awestruct-tags: [useCase]
 
 The US presidential election has an interesting voting system.
 The winner is not the most popular candidate (he or she that has the most votes)
@@ -67,9 +67,10 @@ gives me http://www.270towin.com/maps/wJpBe[this result]:
 image::electionMapSimpleHeuristic.png[]
 
 That's not optimal: it requires `0.02%` of the population too much.
-Arizona and Missouri should be swapped for Pennsylvania.
 By doing a Local Search algorithm on top of that, I get the better solution as shown earlier.
+This algorithm basically swaps Arizona and Missouri for Pennsylvania.
 
+The implementation is part of https://www.optaplanner.org/learn/training.html[the training zip].
 This is really just a variant of https://en.wikipedia.org/wiki/Knapsack_problem[the knapsack problem].
 
 == Conclusion
