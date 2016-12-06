@@ -53,8 +53,9 @@ I am the next US president, regardless of how the other `76.27%` of the populati
 
 image::electionMapMetaheuristics.png[]
 
-So even if everyone votes and no one votes on 3th party candidates, I can still become US president with less than a quarter of the votes.
-I just need to win http://www.270towin.com/maps/7A3OW[the correct states] by one vote each.
+So even if everyone votes and no one votes on 3th party candidates,
+I am still guaranteed to win the US presidential election with less than a quarter of the total votes to my name.
+I just need to win http://www.270towin.com/maps/7A3OW[the correct states] by one vote above half each.
 
 == How did I find that solution?
 
