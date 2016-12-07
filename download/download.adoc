@@ -89,6 +89,10 @@ Or with Maven:
     </dependency>
 ----
 
+=== Known Issues in #{site.pom.latest.version}:
+
+* #{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat]: The current KIE Workbench #{site.pom.latest.version} build is not deployable on Tomcat, please use WildFly for now.
+
 [[NightlySnapshots]]
 === Nightly snapshots
 

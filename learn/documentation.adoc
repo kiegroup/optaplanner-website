@@ -44,7 +44,7 @@
 #{site.pom.latest.javadocs}[HTML]
 
 ** Drools Expert reference manual:
-#{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single] -
+#{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single]
 // #{site.pom.latest.droolsExpert_documentationPdf}[PDF]
 
 [[NightlySnapshots]]
