@@ -21,7 +21,7 @@ OptaPlanner now has out of the box support for solving a single dataset by parti
 So it makes use of multiple CPU cores for a single problem.
 
 Partitioned Search can implement geo-fencing for Vehicle Routing use cases.
-For example, we can split up Great Britain into 4 parts and solving those parts separately:
+For example, we can split up Great Britain into 4 parts and solve those parts separately:
 
 image:7.0/partitionedSearchThreading.png[Partitioned Search Threading]
 
@@ -52,11 +52,11 @@ Partitioned Search is configured like any other solver phase:
 </solver>
 ----
 
-There is support to limit the number CPU cores OptaPlanner consumes (potentially starving other processes and thread)
-through `runnablePartThreadLimit`. Furthermore, it is also possible to configure the `threadFactoryClass`.
+There is support to limit the number CPU cores OptaPlanner consumes (to avoid CPU starving other processes and thread)
+through `runnablePartThreadLimit`. Furthermore, it is also possible to configure a `threadFactoryClass`.
 
 For now, you still need to implement the `SolutionPartitioner` interface,
-but we'll add out of the box strategies (such as geo-fencing) for that soon:
+but we'll add out of the box strategies (such as geo-fencing) soon:
 
 [source,java,options="nowrap"]
 ----
