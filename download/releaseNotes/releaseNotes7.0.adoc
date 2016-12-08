@@ -15,6 +15,60 @@ OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain co
 The API and implementation now make use of Java 7 and Java 8 features (such as lamdba's).
 
 
+=== Multi-threaded partitioned search
+
+OptaPlanner now has out of the box support for solving a single dataset by partitioning across multiple threads.
+So it makes use of multiple CPU cores for a single problem.
+
+Partitioned Search can implement geo-fencing for Vehicle Routing use cases.
+For example, we can split up Great Britain into 4 parts and solving those parts separately:
+
+image:7.0/partitionedSearchThreading.png[Partitioned Search Threading]
+
+This can potentially http://www.optaplanner.org/blog/2014/03/03/CanMapReduceSolvePlanningProblems.html[reduce solution quality],
+but for big datasets (usually above 5000 entities) the performance gains normally outweighs the long-term quality loss,
+because when a result is needed within hours or less, the solution quality is still higher.
+
+Especially for Construction Heuristics, it can deliver an initial, feasible solution in a fraction of the time.
+For example, *we've benchmarked a 30 time speed increase by partitioning Construction Heuristics in 4 parts
+running on 4 CPU cores*, on an 8 core machine for a dataset with 4800 entities and 1200 planning values.
+This speeds is attributed not just to the utilization of more CPU cores (at most a times 4 increase),
+but mainly to the problem search space size reduction per part thread.
+
+Partitioned Search is configured like any other solver phase:
+
+[source,xml,options="nowrap"]
+----
+<solver>
+  ...
+  <partitionedSearch>
+    <!-- The SolutionParititioner splits a dataset into parts -->
+    <solutionPartitionerClass>org.optaplanner.examples.cloudbalancing.optional.partitioner.CloudBalancePartitioner</solutionPartitionerClass>
+
+    <!-- Optionally configure which phaes to run on each part -->
+    <constructionHeuristic>...</constructionHeuristic>
+    <localSearch>...</localSearch>
+  </partitionedSearch>
+</solver>
+----
+
+There is support to limit the number CPU cores OptaPlanner consumes (potentially starving other processes and thread)
+through `runnablePartThreadLimit`. Furthermore, it is also possible to configure the `threadFactoryClass`.
+
+For now, you still need to implement the `SolutionPartitioner` interface,
+but we'll add out of the box strategies (such as geo-fencing) for that soon:
+
+[source,java,options="nowrap"]
+----
+public interface SolutionPartitioner<Solution_> {
+
+    List<Solution_> splitWorkingSolution(ScoreDirector<Solution_> scoreDirector);
+
+}
+----
+
+
+
 === No longer needed to implement the `Solution` interface
 
 Your solution class no longer needs both have the `@PlanningSolution` annotation and implement the `Solution` interface.
