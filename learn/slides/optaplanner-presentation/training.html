@@ -675,7 +675,7 @@ end</code></pre>
     &lt;scoreDrl&gt;...ScoreRules.drl&lt;/scoreDrl&gt;
   &lt;/scoreDirectorFactory&gt;
 
-  &lt;!-- optimization algorithms --&gt;
+  &lt;!-- optimization algorithms are optional --&gt;
 &lt;/solver&gt;</code></pre>
         </section>
         <section>
@@ -687,6 +687,18 @@ Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
 CloudBalance problem = ... // Load problem
 CloudBalance solution = solver.solve(problem);</code></pre>
         </section>
+        <section>
+            <h3>Lab901: Win US election with least votes</h3>
+            <ul>
+                <li>Game the system: gamer candidate should win election</li>
+                <li>Gamer candidate should have as little votes as possible</li>
+                <li>Decide winning candidate per federal state</li>
+                <li>Everyone votes</li>
+                <li>There are no 3th party candidates</li>
+                <li>Get half of votes plus one for a state to win all its electoral votes</li>
+            </ul>
+        </section>
+
         <section>
             <h3>Lab: Switch score calculation type</h3>
             <ul>
