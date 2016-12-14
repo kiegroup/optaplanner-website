@@ -47,7 +47,7 @@ Both community and product use the same code base.
 |*Information* | |
 |Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution available from customer portal only
 |Target audience |Free use |Enterprise production use
-|*Pricing* |*Free* |*http://www.redhat.com/en/about/contact/sales[Call Red Hat] and ask about BRMS*
+|*Pricing* |*Free* |*http://www.redhat.com/en/about/contact[Call Red Hat] and ask about BRMS*
 |===
 
 Upgrading from community to product is easy.
@@ -73,6 +73,6 @@ OptaPlanner is a fully supported component (called _Business Resource Planner_) 
 ** Red Hat JBoss BPM Suite 6.1 includes full support for OptaPlanner 6.2
 ** Red Hat JBoss BPM Suite 6.2 will includes full support for OptaPlanner 6.3
 
-If you are interested in enterprise support or consultancy, please *http://www.redhat.com/en/about/contact/sales[contact Red Hat]*.
+If you are interested in enterprise support or consultancy, please *http://www.redhat.com/en/about/contact[contact Red Hat]*.
 
 If you already have a subscription, https://access.redhat.com[visit the Red Hat support portal].
