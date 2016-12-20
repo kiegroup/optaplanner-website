@@ -4,7 +4,7 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [howto, design]
 
-New OptaPlanner users sometime struggle to create an good domain model,
+New OptaPlanner users sometimes struggle to create a good domain model,
 especially if their use case is complex.
 But a good domain model can go a long way.
 It can simplify the constraints, improve performance and increase flexibility for future needs.
@@ -24,7 +24,7 @@ So we'll mainly only add a few OptaPlanner annotations.
 
 == The guide
 
-A more up to date version of this guide is part of the documentation (in `7.0.0.Beta3` or later),
+A more up-to-date version of this guide is part of the documentation (in `7.0.0.Beta3` or later),
 in the chapter _Design Patterns_.
 
 . *Draw a class diagram* of your domain model. _Normalize_ it get rid of duplicate data.
@@ -40,7 +40,7 @@ Other relationships, such as from `Employee` to `Skill`, are immutable during pl
 because OptaPlanner can't decide to give an employee an extra skill.
 
 . If there are multiple relationships (or fields): *check for shadow variables*.
-A shadow variables does change during planning,
+A shadow variable does change during planning,
 but its value can be calculated based on one or more genuine planning variables, without dispute.
 Color those shadow relationships (or fields) purple.
 ** Only one side of a bi-directional relationship can be a genuine planning variable,
@@ -48,7 +48,7 @@ the other side will become an inverse relation shadow variable later on.
 Keep those relationships in orange.
 
 . *Check for chained planning variables*.
-In a chained variable design, the focus lies on deciding the order of a set planning entity instances,
+In a chained variable design, the focus lies on deciding the order of a set of planning entity instances,
 instead of assigning them to a date/time (although there can be an assigned date/time as a shadow variable).
 A typical use case is vehicle routing.
 
@@ -56,7 +56,7 @@ A typical use case is vehicle routing.
 with a _one to many_ and a _many to one_ relationship to a new intermediate class.
 ** OptaPlanner currently doesn't support a `@PlanningVariable` on a collection.
 Although a future version will support it for flexibility reasons,
-it probably has an inherit performance and complexity cost, so it might be better to avoid it anyway.
+it probably has an inherent performance and complexity cost, so it might be better to avoid it anyway.
 ** For example in employee rostering the `ShiftAssignment` class is
 the _many to many_ relationship between the `Shift` and `Employee`.
 It's effectively every spot that needs to be filled with an employee.
@@ -65,10 +65,10 @@ image::employeeShiftRosteringModelingGuideA.png[]
 
 . In a _many to one_ relationship, *usually the _many_ side is the planning entity class*.
 Annotate it with a `@PlanningEntity` annotation.
-** For example in employee rostering, the `ShiftAssignment` class has an `@PlanningEntity` annotation.
+** For example in employee rostering, the `ShiftAssignment` class has a `@PlanningEntity` annotation.
 
 . The planning entity class should have *at least one problem property*.
-So a planning entity class cannot consist out of only planning variables
+So a planning entity class cannot consist of only planning variables
 (or even an id and only planning variables).
 Remove a surplus `@PlanningVariable` so it becomes a problem property.
 This heavily decreases the search space size and heavily increases solving efficiency.

@@ -6,14 +6,14 @@
 
 The US presidential election has an interesting voting system.
 The winner is not the most popular candidate (he or she that has the most votes)
-but but the one that collects the most EC electors.
+but the one that collects the most EC electors.
 So I wonder, how could I become the least popular US president?
 That's a constraint satisfaction problem!
 
 It occurred https://en.wikipedia.org/wiki/United_States_presidential_elections_in_which_the_winner_lost_the_popular_vote[a few times already]
-that the president elect didn't have the popular vote, most recently last month with Clinton vs Trump.
+that the president-elect didn't have the popular vote, most recently last month with Clinton vs. Trump.
 But the difference in total votes wasn't that big. What would be the biggest possible gap?
-If everyone voted against me by default, what's the minimum number of people I 'd have to convince to vote for me to become US president?
+If everyone voted against me by default, what's the minimum number of people I'd have to convince to vote for me to become US president?
 
 == How is this possible?
 
@@ -33,16 +33,16 @@ Instead, let me put on my megalomaniac hat and see how I can *game the system to
 == Constraints
 
 I'll presume everyone votes, so my victory is assured regardless if they do or not.
-If no one voted, I could in theory win the elections with 11 votes: 1 vote per state in each of the 11 highest-populated states.
+If no one voted, I could in theory win the elections with 11 votes: 1 vote per state in each of the 11 most populous states.
 
-I'll also presume no one votes for 3th party candidates, so my victory is also assured regardless if anyone does or doesn't.
+I'll also presume no one votes for 3rd party candidates, so my victory is also assured regardless if anyone does or doesn't.
 
 That leaves me with 2 constraints:
 
 . Hard constraint: Collect at least 270 EC votes.
 . Soft constraint: Minimize the number of votes for me.
 
-To win a state, I 'll just convince exactly half of its population plus one to vote for me.
+To win a state, I'll just convince exactly half of its population plus one to vote for me.
 The population data is from 2015 and https://github.com/droolsjbpm/optaplanner-training/blob/master/optaplanner-training-lab901-solution/data/election/import/president2016.txt[available in this file].
 
 Now, let's solve this constraint satisfaction problem with https://www.optaplanner.org[OptaPlanner]!
@@ -100,7 +100,7 @@ Pennsylvania          20 EC:   6,401,252 of  12,802,503 voters (50.00%).
 TOTAL                270 EC:  69,841,800 of 321,348,359 voters (21.73%).
 ----
 
-So even if everyone votes and no one votes on 3th party candidates,
+So even if everyone votes and no one votes for 3rd party candidates,
 I am still guaranteed to win the US presidential election with less than a quarter of the total votes to my name.
 I just need to win http://www.270towin.com/maps/7A3OW[the correct states] by one vote above half each.
 
