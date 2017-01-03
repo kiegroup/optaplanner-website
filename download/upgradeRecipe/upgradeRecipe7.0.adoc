@@ -1256,7 +1256,6 @@ public abstract class AbstractPersistable ... {
 You can also put the `@PlanningId` annotation on the field instead.
 
 
-
 [.upgrade-recipe-minor]
 === `ProblemFactChange`: Use `locateWorkingObject()`
 
@@ -1311,4 +1310,39 @@ public class EditComputerProblemFactChange implements ProblemFactChange<CloudBal
     }
 
 }
+----
+
+
+[.upgrade-recipe-minor]
+=== Benchmarker warms up by default
+
+It is no longer needed to explicitly configure a warm up time for the benchmarks.
+It now warms up for 30 seconds by default.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<plannerBenchmark>
+  ...
+  <warmUpSecondsSpentLimit>30</warmUpSecondsSpentLimit>
+  ...
+</plannerBenchmark>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<plannerBenchmark>
+  ...
+</plannerBenchmark>
+----
+
+To disable the warm up, explicitly set it to 0:
+[source, xml]
+----
+<plannerBenchmark>
+  ...
+  <warmUpSecondsSpentLimit>0</warmUpSecondsSpentLimit>
+  ...
+</plannerBenchmark>
 ----
