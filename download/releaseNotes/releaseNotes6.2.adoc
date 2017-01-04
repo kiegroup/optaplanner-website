@@ -33,7 +33,7 @@ especially for time windowed cases.
 In our benchmarks, a union of ChangeMove, SwapMove and TailChainSwapMove (using nearby selection on all 3)
 performed best.
 
-=== Improved build-in variable listener efficiency
+=== Improved built-in variable listener efficiency
 
 VRP with a `@InverseRelationShadowVariable` is now more efficient. In some cases, it's up to *`32%` faster*.
 

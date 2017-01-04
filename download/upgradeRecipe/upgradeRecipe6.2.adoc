@@ -192,7 +192,7 @@ It and `InverseRelationShadowVariableDescriptor` moved to the package `...impl.d
 
 There is now out-of-the-box support for a shadow variable representing the anchor of a chained variable.
 For example, in a VRP each `Customer` (= entity) needs to know to which `Vehicle` (= anchor) it belongs.
-This declarative support allows build-in selectors to reuse that knowledge without duplicating the calculation.
+This declarative support allows built-in selectors to reuse that knowledge without duplicating the calculation.
 
 Before in `*.java`:
 [source, java]

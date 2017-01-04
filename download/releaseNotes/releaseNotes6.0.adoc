@@ -73,9 +73,9 @@ This means there's less boilerplate code to write and it's harder to cause score
 For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]
 and link:../../learn/documentation.html[the reference manual].
 
-=== New build-in scores
+=== New built-in scores
 
-There are new build-in score definitions, such as: `HardMediumSoftScore` (3 score levels),
+There are new built-in score definitions, such as: `HardMediumSoftScore` (3 score levels),
 `BendableScore` (configurable number of score levels), `HardSoftLongScore`, `HardSoftDoubleScore`,
 `HardSoftBigDecimalScore`, ...
 

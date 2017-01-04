@@ -1621,7 +1621,7 @@ public ScoreHolder buildScoreHolder(boolean constraintMatchEnabled) {
     return new HardSoftScoreHolder(constraintMatchEnabled);
 }
 ----
-6.0 supports a bunch more score types: it's easier (as well as recommended) to switch to a build-in one if you can.
+6.0 supports a bunch more score types: it's easier (as well as recommended) to switch to a built-in one if you can.
 
 == From 6.0.0.Beta1 to 6.0.0.Beta2
 

@@ -78,7 +78,7 @@ which is http://en.wikipedia.org/wiki/NP-complete[NP-complete].
 That implies that even the smartest computer scientists fail to calculate it in reasonable time
 for medium or big datasets.
 
-* *Traveling Salesman Problem (TSP)*: There are no hard constraints which aren't build-in into the model already.
+* *Traveling Salesman Problem (TSP)*: There are no hard constraints which aren't built-in into the model already.
 So, the feasible search space is the same as the base search space, `n!`.
 
 * *Course Scheduling*: We can successfully take into account 1 hard constraint:
