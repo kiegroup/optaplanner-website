@@ -62,7 +62,7 @@ but we'll add out of the box strategies (such as geo-fencing) soon:
 ----
 public interface SolutionPartitioner<Solution_> {
 
-    List<Solution_> splitWorkingSolution(ScoreDirector<Solution_> scoreDirector);
+    List<Solution_> splitWorkingSolution(ScoreDirector<Solution_> scoreDirector, Integer runnablePartThreadLimit);
 
 }
 ----
