@@ -1346,3 +1346,41 @@ To disable the warm up, explicitly set it to 0:
   ...
 </plannerBenchmark>
 ----
+
+
+[.upgrade-recipe-minor]
+=== `CustomPhaseCommand`: method `applyCustomProperties()` moved
+
+The `CustomPhaseCommand` no longer has the method `applyCustomProperties()`.
+If you have custom properties in your solver configuration,
+implement the tagging interface `PropertiesConfigurable` which now has it.
+
+That `PropertiesConfigurable` interface is also supported for other custom classes (such as `SolutionPartitioner`).
+
+Before in `*.java`:
+[source, java]
+----
+public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand {
+
+    @Override
+    public void applyCustomProperties(Map<String, String> customPropertyMap) {
+        ...
+    }
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand, PropertiesConfigurable {
+
+    @Override
+    public void applyCustomProperties(Map<String, String> customPropertyMap) {
+        ...
+    }
+
+    ...
+}
+----
