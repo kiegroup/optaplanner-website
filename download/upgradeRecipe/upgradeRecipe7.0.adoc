@@ -1384,3 +1384,10 @@ public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand, Properties
     ...
 }
 ----
+
+
+[.upgrade-recipe-minor]
+=== Bendable Score: method `isFeasible()` fixed
+
+A bendable score with at least 2 hard score levels is now infeasible
+if any of those hard levels is negative, even if one of them is positive (1 or higher).
