@@ -32,3 +32,5 @@ Es ist in 100% pur Java™ geschrieben, läuft auf jeder JVM und ist auch in lin
 (veröffentlicht in http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html[JavaSPEKTRUM])
 and http://jaxenter.de/artikel/jboss-optaplanner-optimierung-2-0-176855[Optimierung 2.0]
 (veröffentlicht in https://jaxenter.de/Java-Magazin-215-178070[Java Magazin 2.15])
+
+* https://www.heise.de/ix/inhalt/2017/1/104/[Schneller, kürzer, billiger] - iX
