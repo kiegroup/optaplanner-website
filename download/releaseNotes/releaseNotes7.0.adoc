@@ -169,3 +169,4 @@ This example also demonstrates real-time producing and consuming of tasks.
 * `@ValueRangeProvider` now supports methods that return an array too.
 * The log now outputs the score calculation speed for each solver phase too.
 * The documentation is now in AsciiDoc, which improves output quality and makes it easier to contribute.
+* HardMediumSoftBigDecimalScore: 3 score levels of BigDecimal scores. Contributed by Brad Hards.
