@@ -711,8 +711,8 @@ Score score = scoreDefinition.fromLevelNumbers(0, new int[]{0, -200});
 === Custom `Score`: methods added
 
 If you have a custom `Score`:
-The `Score` interface has several new methods: `getInitScore()`, `isSolutionInitialized()` and `toInitializedScore()`.
-The first two methods are implemented by `AbstractScore`, but the last method needs to be specifically implemented.
+The `Score` interface has several new methods: `getInitScore()`, `isSolutionInitialized()`, `toInitializedScore()` and `withInitScore()`.
+The first two methods are implemented by `AbstractScore`, but the last two methods need to be specifically implemented.
 
 Before in `*.java`:
 [source, java]
@@ -730,6 +730,11 @@ public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
 
     public HardSoftScore toInitializedScore() {
         return initScore == 0 ? this : new HardSoftScore(0, hardScore, softScore);
+    }
+
+    public HardSoftScore withInitScore(int newInitScore) {
+        assertNoInitScore();
+        return new HardSoftScore(newInitScore, hardScore, softScore);
     }
 
 }
