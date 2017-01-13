@@ -91,6 +91,10 @@ li.navbar-form {
 * Upgrade recipe
 ******************************************************************************/
 
+.line-through {
+    text-decoration: line-through;
+}
+
 ul.upgrade-recipe-label-list {
     padding-left: 10px;
 }

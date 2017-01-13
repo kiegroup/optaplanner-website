@@ -484,7 +484,9 @@ The method `FeasibilityScore.isFeasible()` now also checks if the solution was f
 
 
 [.upgrade-recipe-major]
-=== `EasyScoreCalculator`: `calculateScore()` changed
+=== [line-through]#`EasyScoreCalculator`: `calculateScore()` changed#
+
+*This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 
 The `EasyScoreCalculator` interface method `calculateScore(solution)` has been changed to `calculateScore(solution, initScore)`.
 Change the method signature to add the `initScore` and then pass it to the `Score.valueOf()` method.
@@ -519,7 +521,9 @@ OptaPlanner keeps track of the `initScore` internally, but it needs to be passed
 
 
 [.upgrade-recipe-minor]
-=== `IncrementalScoreCalculator`: `calculateScore()` changed
+=== [line-through]#`IncrementalScoreCalculator`: `calculateScore()` changed#
+
+*This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 
 The `IncrementalScoreCalculator` interface method `calculateScore()` has been changed to `calculateScore(initScore)`.
 Change the method signature to add the `initScore` and then pass it to the `Score.valueOf()` method.
@@ -550,7 +554,10 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
 
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
-=== `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
+=== [line-through]#`Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added#
+
+*This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.
+Instead, the method `valueOfUninitialized(...)` has been added, but that doesn't affect your code.*
 
 Each `Score` implementation now requires an `initScore` parameter.
 Inside a `ScoreCalculator`, the `initScore` must be passed from the `calculateScore()` method (see the 2 previous notes above).
@@ -632,7 +639,9 @@ After in `*.java` for a `FeasibleScore`:
 
 
 [.upgrade-recipe-minor]
-=== Custom initializer: `Score.compareTo()` behaviour changed
+=== [line-through]#Custom initializer: `Score.compareTo()` behaviour changed#
+
+*This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 
 The `Score.compareTo()` now also takes the uninitialized variable count into account.
 If you have a `CustomPhaseCommand` that implements a custom solution initializer (instead of using a Construction Heuristic),
@@ -1401,3 +1410,155 @@ public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand, Properties
 
 A bendable score with at least 2 hard score levels is now infeasible
 if any of those hard levels is negative, even if one of them is positive (1 or higher).
+
+
+[.upgrade-recipe-minor]
+=== `EasyScoreCalculator`: `calculateScore()` reverted to 6.x style
+
+*This change reverts a change of 7.0.0.Beta1. Ignore this item if you're upgrading directly from version 6.*
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(CloudBalance cloudBalance, int initScore) {
+        ...
+        return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(CloudBalance cloudBalance) {
+        ...
+        return HardSoftScore.valueOf(hardScore, softScore);
+    }
+
+}
+----
+
+OptaPlanner still keeps track of the `initScore` internally.
+
+
+[.upgrade-recipe-minor]
+=== `IncrementalScoreCalculator`: `calculateScore()` reverted to 6.x style
+
+*This change reverts a change of 7.0.0.Beta1. Ignore this item if you're upgrading directly from version 6.*
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore(int initScore) {
+        return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
+
+    public HardSoftScore calculateScore() {
+        return HardSoftScore.valueOf(hardScore, softScore);
+    }
+
+}
+----
+
+
+[.upgrade-recipe-minor]
+=== `Score`: `valueOf(...)` and `valueOfInitialized(...)` reverted to 6.x style
+
+*This change reverts a change of 7.0.0.Beta1. Ignore this item if you're upgrading directly from version 6.*
+
+Before in `*.java`:
+[source, java]
+----
+        SimpleScore score = SimpleScore.valueOfInitialized(1234);
+----
+
+After in `*.java`:
+[source, java]
+----
+        SimpleScore score = SimpleScore.valueOf(1234);
+----
+
+Or with a `HardSoftScore`:
+
+Before in `*.java`:
+[source, java]
+----
+        HardSoftScore score = HardSoftScore.valueOfInitialized(1200, 34);
+----
+
+After in `*.java`:
+[source, java]
+----
+        HardSoftScore score = HardSoftScore.valueOf(1200, 34);
+----
+
+
+[.upgrade-recipe-minor]
+=== Custom initializer: `Score.compareTo()` behaviour reverted to 6.x style
+
+*This change reverts a change of 7.0.0.Beta1. Ignore this item if you're upgrading directly from version 6.*
+
+Before in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+    ...
+
+    private void initializeSeatDesignationList(ScoreDirector<DinnerParty> scoreDirector, DinnerParty dinnerParty) {
+        ...
+        for (SeatDesignation seatDesignation : dinnerParty.getSeatDesignationList()) {
+            Score bestScore = SimpleScore.valueOfInitialized(Integer.MIN_VALUE);
+            ...
+            for (Seat seat : undesignatedSeatList) {
+                ...
+                if (score.toInitializedScore().compareTo(bestScore.toInitializedScore()) > 0) {
+                    bestScore = score;
+                    ...
+                }
+            }
+            ...
+        }
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+    ...
+
+    private void initializeSeatDesignationList(ScoreDirector<DinnerParty> scoreDirector, DinnerParty dinnerParty) {
+        ...
+        for (SeatDesignation seatDesignation : dinnerParty.getSeatDesignationList()) {
+            Score bestScore = SimpleScore.valueOf(Integer.MIN_VALUE);
+            ...
+            for (Seat seat : undesignatedSeatList) {
+                ...
+                if (score.compareTo(bestScore) > 0) {
+                    bestScore = score;
+                    ...
+                }
+            }
+            ...
+        }
+    }
+
+}
+----
