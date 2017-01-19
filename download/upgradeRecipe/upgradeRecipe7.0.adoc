@@ -1562,3 +1562,63 @@ public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<D
 
 }
 ----
+
+
+[.upgrade-recipe-minor]
+=== Custom `Move`: added optional generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation,
+`Move` and `AbstractMove` now optionally support a generic type parameter (which is the solution class).
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudComputerChangeMove extends AbstractMove {
+
+    @Override
+    public boolean isMoveDoable(ScoreDirector scoreDirector) {
+        return !Objects.equals(cloudProcess.getComputer(), toCloudComputer);
+    }
+
+    @Override
+    public Move createUndoMove(ScoreDirector scoreDirector) {
+        return new CloudComputerChangeMove(cloudProcess, cloudProcess.getComputer());
+    }
+
+    @Override
+    protected void doMoveOnGenuineVariables(ScoreDirector scoreDirector) {
+        scoreDirector.beforeVariableChanged(cloudProcess, "computer");
+        cloudProcess.setComputer(toCloudComputer);
+        scoreDirector.afterVariableChanged(cloudProcess, "computer");
+    }
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+
+public class CloudComputerChangeMove extends AbstractMove<CloudBalance> {
+
+    @Override
+    public boolean isMoveDoable(ScoreDirector<CloudBalance> scoreDirector) {
+        return !Objects.equals(cloudProcess.getComputer(), toCloudComputer);
+    }
+
+    @Override
+    public CloudComputerChangeMove createUndoMove(ScoreDirector<CloudBalance> scoreDirector) {
+        return new CloudComputerChangeMove(cloudProcess, cloudProcess.getComputer());
+    }
+
+    @Override
+    protected void doMoveOnGenuineVariables(ScoreDirector<CloudBalance> scoreDirector) {
+        scoreDirector.beforeVariableChanged(cloudProcess, "computer");
+        cloudProcess.setComputer(toCloudComputer);
+        scoreDirector.afterVariableChanged(cloudProcess, "computer");
+    }
+
+    ...
+}
+----
