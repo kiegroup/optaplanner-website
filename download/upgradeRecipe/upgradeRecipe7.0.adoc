@@ -1368,21 +1368,30 @@ To disable the warm up, explicitly set it to 0:
 
 
 [.upgrade-recipe-minor]
-=== `CustomPhaseCommand`: method `applyCustomProperties()` moved
+=== `CustomPhaseCommand`: method `applyCustomProperties()` replaced
 
 The `CustomPhaseCommand` no longer has the method `applyCustomProperties()`.
 If you have custom properties in your solver configuration,
-implement the tagging interface `PropertiesConfigurable` which now has it.
+simply implement a public setter for each custom property.
+The supported types for a setter currently include booleans, numbers and string.
 
-That `PropertiesConfigurable` interface is also supported for other custom classes (such as `SolutionPartitioner`).
+Similar custom properties support is available on some other custom classes (such as `SolutionPartitioner`).
 
 Before in `*.java`:
 [source, java]
 ----
 public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand {
 
+    private int mySelectionSize;
+
     @Override
     public void applyCustomProperties(Map<String, String> customPropertyMap) {
+        String mySelectionSizeString = customPropertyMap.get("mySelectionSize");
+        try {
+            mySelectionSize = mySelectionSizeString == null ? 10 : Integer.parseInt(mySelectionSizeString);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("The mySelectionSize (" + mySelectionSizeString + ") cannot be parsed.", e);
+        }
         ...
     }
 
@@ -1393,11 +1402,13 @@ public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand {
 After in `*.java`:
 [source, java]
 ----
-public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand, PropertiesConfigurable {
+public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand {
 
-    @Override
-    public void applyCustomProperties(Map<String, String> customPropertyMap) {
-        ...
+    private int mySelectionSize = 10;
+
+    @SuppressWarnings("unused")
+    public void setMySelectionSize(int mySelectionSize) {
+        this.mySelectionSize = mySelectionSize;
     }
 
     ...
