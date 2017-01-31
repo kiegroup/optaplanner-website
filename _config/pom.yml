@@ -23,23 +23,23 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.0.0.Beta5
-  distributionZip: https://download.jboss.org/optaplanner/release/7.0.0.Beta5/optaplanner-distribution-7.0.0.Beta5.zip
-  releaseDate: 2016-12-22
+  version: 7.0.0.Beta6
+  distributionZip: https://download.jboss.org/optaplanner/release/7.0.0.Beta6/optaplanner-distribution-7.0.0.Beta6.zip
+  releaseDate: 2016-12-27
   releaseNotesVersion: 7.0
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.0.0.Beta5/kie-drools-wb-7.0.0.Beta5-wildfly10.war
-  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.0.0.Beta5/kie-drools-wb-7.0.0.Beta5-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.0.0.Beta5/kie-drools-wb-7.0.0.Beta5-tomcat7.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.0.0.Beta5/kie-server-distribution-7.0.0.Beta5.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.0.0.Beta6/kie-drools-wb-7.0.0.Beta6-wildfly10.war
+  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.0.0.Beta6/kie-drools-wb-7.0.0.Beta6-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.0.0.Beta6/kie-drools-wb-7.0.0.Beta6-tomcat7.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.0.0.Beta6/kie-server-distribution-7.0.0.Beta6.zip
 
-  documentationHtmlSingle: https://docs.optaplanner.org/7.0.0.Beta5/optaplanner-docs/html_single/index.html
-  documentationPdf: https://docs.optaplanner.org/7.0.0.Beta5/optaplanner-docs/pdf/index.pdf
-  javadocs: https://docs.optaplanner.org/7.0.0.Beta5/optaplanner-javadoc/index.html
+  documentationHtmlSingle: https://docs.optaplanner.org/7.0.0.Beta6/optaplanner-docs/html_single/index.html
+  documentationPdf: https://docs.optaplanner.org/7.0.0.Beta6/optaplanner-docs/pdf/index.pdf
+  javadocs: https://docs.optaplanner.org/7.0.0.Beta6/optaplanner-javadoc/index.html
 
-  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.0.0.Beta5/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/7.0.0.Beta5/drools-docs/html/index.html
-  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/7.0.0.Beta5/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.0.0.Beta6/drools-docs/html_single/index.html
+  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/7.0.0.Beta6/drools-docs/html/index.html
+  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/7.0.0.Beta6/drools-docs/pdf/drools-docs.pdf
 
 nightly:
   version: 7.0.0-SNAPSHOT
