@@ -38,7 +38,7 @@ $ sudo dnf install gcc-c++
 $ rake setup
 ```
 
-Then build the website (before and after your changes):
+Then build the optaplanner-website (before and after your changes):
 
 ```
 $ rake clean build
