@@ -1,0 +1,16 @@
+== Automatic publishing of optaplanner-website
+
+*The Dockerfile constructs an image with all needed software to do*
+
+* rake setup
+* rake clean build
+* rake publish
+
+For building this image and run a container there is a job on https://kie-jenkins.rhev-ci-vms.eng.rdu2.redhat.com/view/Websites/job/optaplanner-website-automatic-publishing/[Jenkins CI]
+
+Each time a commit is pushed to optaplanner-website (or directly or via a pullrequest) this job will be executed: +
+a Docker image *[_droolsjbpm/optaplanner-website:latest_]* will be constructed and a container of this image will run.
+
+Whithin this running container the rake tasks: *setup, clean build and publish* will be done.
+
+
