@@ -295,16 +295,14 @@ h|Root squared deviation
 |Schedule X |1500 |100 |101.00 |1101.00
 |===
 
-And of course, we support this in https://www.optaplanner.org[OptaPlanner].
-
 == Additional notes
 
 === Part-time employees
 
-Dealing with unequal employees,
+To deal with unequal employees,
 for example if some employees work half as many hours as other employees,
-is surprisingly simple: simply multiply their number of tasks before feeding into this formula's,
-to simulate a full time equivalent.
+multiply their number of tasks by the inverse of their FTE (full time equivalent)
+before feeding into this formula's.
 
 Other reasons to treat employees unequally (such as disabilities or talent retention)
 can be handled in a similar fashion or with separate constraints, depending on the requirement.
