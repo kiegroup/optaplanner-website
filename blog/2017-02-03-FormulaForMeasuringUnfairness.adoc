@@ -191,8 +191,8 @@ this isn't compatible with other soft constraints...
 == No constraint is an island
 
 Fairness is typically a soft constraint.
-But there are other soft constraints that we 'll need to optimize for too,
-so we 'll need to weight them against each other.
+But there are other soft constraints that we'll need to optimize for too,
+so we'll need to weight them against each other.
 
 === An example
 
@@ -302,7 +302,7 @@ h|Root squared deviation
 To deal with unequal employees,
 for example if some employees work half as many hours as other employees,
 multiply their number of tasks by the inverse of their FTE (full time equivalent)
-before feeding into this formula's.
+before feeding into this formula.
 
 Other reasons to treat employees unequally (such as disabilities or talent retention)
 can be handled in a similar fashion or with separate constraints, depending on the requirement.
