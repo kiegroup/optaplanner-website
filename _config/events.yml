@@ -229,6 +229,14 @@
   url: http://www.meetup.com/JBoss-User-Group/events/234803765/
   presenters: Geoffrey De Smet, Mark Proctor, Kris Verlaenen, Mauricio Salatino, Max Barkley
 
+- eventId: 20170223-datascienceghent
+  eventOrganization: Data Science Ghent
+  location: Ghent, Belgium
+  date: 2017-02-23
+  title: Vehicle Routing with OptaPlanner
+  url: https://www.meetup.com/Data-Science-Community-Meetup/events/237670970/
+  presenters: Geoffrey De Smet
+
 - eventId: 20170502-redhatsummit
   eventOrganization: Red Hat Summit
   location: Boston, MA, USA
