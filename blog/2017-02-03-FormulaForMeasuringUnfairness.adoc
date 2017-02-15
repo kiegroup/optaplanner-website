@@ -313,3 +313,9 @@ can be handled in a similar fashion or with separate constraints, depending on t
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 ++++
+
+== Update
+
+There is a formula that seems to compare perfectly,
+see http://math.stackexchange.com/a/2144813/86787[this mathexchange answer],
+but it might suffer from numerical instability and overflow.
