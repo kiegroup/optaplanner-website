@@ -1610,7 +1610,6 @@ public class CloudComputerChangeMove extends AbstractMove {
 After in `*.java`:
 [source, java]
 ----
-
 public class CloudComputerChangeMove extends AbstractMove<CloudBalance> {
 
     @Override
@@ -1632,4 +1631,101 @@ public class CloudComputerChangeMove extends AbstractMove<CloudBalance> {
 
     ...
 }
+----
+
+
+== From 7.0.0.Beta6 to 7.0.0.CR1
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== `ConstraintMatch(Total)`: `getWeightTotal()` and `getWeight()` replaced
+
+When explaining a score through `ScoreDirector.getConstraintMatchTotals()`,
+the `ConstraintMatchTotal` and `ConstraintMatch` instances now have a `Score`
+instead of an `int scoreLevel` and a `Number weight`.
+
+This simplifies the API and allows the reuse of `ConstraintMatch` in the indictment API.
+
+Before in `*.java`:
+[source, java]
+----
+    for (ConstraintMatchTotal constraintMatchTotal : guiScoreDirector.getConstraintMatchTotals()) {
+        int scoreLevel = constraintMatchTotal.getScoreLevel();
+        Integer weightTotal = (Integer) constraintMatchTotal.getWeightTotalAsNumber();
+        String text = weightTotal.toString() + (scoreLevel == 0 ? "hard" : "soft");
+        ...
+    }
+----
+
+After in `*.java`:
+[source, java]
+----
+    for (ConstraintMatchTotal constraintMatchTotal : guiScoreDirector.getConstraintMatchTotals()) {
+        HardSoftScore scoreTotal = (HardSoftScore) constraintMatchTotal.getScoreTotal();
+        String text = scoreTotal.toShortString();
+        ...
+    }
+----
+
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `ConstraintMatchAwareIncrementalScoreCalculator`: `getConstraintMatchTotals()` impact
+
+When implementing the interface `ConstraintMatchAwareIncrementalScoreCalculator`'s method `getConstraintMatchTotals()`,
+the constructor of `ConstraintMatchTotal` and the method `addConstraintMatch(...)`
+now use `Score` instances instead of numbers.
+
+Before in `*.java`:
+[source, java]
+----
+    public Collection<ConstraintMatchTotal> getConstraintMatchTotals() {
+        LongConstraintMatchTotal maximumCapacityMatchTotal = new LongConstraintMatchTotal(
+                CONSTRAINT_PACKAGE, "maximumCapacity", 0);
+        ...
+        serviceLocationSpreadMatchTotal.addConstraintMatch(
+                ..., - weight);
+        ...
+    }
+----
+
+After in `*.java`:
+[source, java]
+----
+    public Collection<ConstraintMatchTotal> getConstraintMatchTotals() {
+        ConstraintMatchTotal maximumCapacityMatchTotal = new ConstraintMatchTotal(
+                CONSTRAINT_PACKAGE, "maximumCapacity", HardSoftLongScore.ZERO);
+        ...
+        serviceLocationSpreadMatchTotal.addConstraintMatch(
+                ..., HardSoftLongScore.valueOf(- weight, 0));
+        ...
+    }
+----
+
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== Score rules that change 2 score levels must call `addMultiConstraintMatch()`
+
+A score rule that changes 2 score levels in its RHS,
+must now call `addMultiConstraintMatch()` instead of 2 separate `add*ConstraintMatch()` calls.
+
+Before in `*.drl`:
+[source, drl]
+----
+rule "Costly and unfair"
+when
+    // Complex pattern
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -3); // Financial cost
+    scoreHolder.addSoftConstraintMatch(kcontext, -4); // Employee happiness cost
+end
+----
+
+After in `*.drl`:
+[source, drl]
+----
+rule "Costly and unfair"
+when
+    // Complex pattern
+then
+    scoreHolder.addMultiConstraintMatch(kcontext, 0, -3, -4);
+end
 ----
