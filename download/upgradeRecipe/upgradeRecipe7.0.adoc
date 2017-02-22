@@ -1733,3 +1733,21 @@ end
 When calling `guiScoreDirector.getConstraintMatchTotals()`,
 there is now also only one `ConstraintMatchTotal` instance for this score rule
 and only one `ConstraintMatch` instance per fired rule.
+
+
+[.upgrade-recipe-minor]
+=== Custom `Score`: `toShortString()` added
+
+If you have a custom `ScoreDefinition`: the `Score` interface has another new method `toShortString()`.
+
+After in `*.java`:
+[source, java]
+----
+public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
+    ...
+    @Override
+    public String toShortString() {
+        return buildShortString((n) -> ((Integer) n).intValue() != 0, HARD_LABEL, SOFT_LABEL);
+    }
+}
+----
