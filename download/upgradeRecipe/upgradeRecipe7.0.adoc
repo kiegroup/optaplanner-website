@@ -1274,9 +1274,9 @@ You can also put the `@PlanningId` annotation on the field instead.
 
 
 [.upgrade-recipe-minor]
-=== `ProblemFactChange`: Use `locateWorkingObject()`
+=== `ProblemFactChange`: Use `lookUpWorkingObject()`
 
-Use the new method `ScoreDirector.locateWorkingObject(Object)` to translate a planning entity or problem fact
+Use the new method `ScoreDirector.lookUpWorkingObject(Object)` to translate a planning entity or problem fact
 to its working instance planning clone more efficiently.
 
 This requires that the class has a `@PlanningId` annotation on one of its getters or fields.
@@ -1317,7 +1317,7 @@ public class EditComputerProblemFactChange implements ProblemFactChange<CloudBal
     ...
 
     public void doChange(ScoreDirector<CloudBalance> scoreDirector) {
-        CloudComputer workingComputer = scoreDirector.locateWorkingObject(changedComputer);
+        CloudComputer workingComputer = scoreDirector.lookUpWorkingObject(changedComputer);
 
         scoreDirector.beforeProblemPropertyChanged(workingComputer);
         workingComputer.setCpuPower(changedComputer.getCpuPower());
