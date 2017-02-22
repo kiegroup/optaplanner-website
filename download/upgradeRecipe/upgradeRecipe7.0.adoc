@@ -1729,3 +1729,7 @@ then
     scoreHolder.addMultiConstraintMatch(kcontext, 0, -3, -4);
 end
 ----
+
+When calling `guiScoreDirector.getConstraintMatchTotals()`,
+there is now also only one `ConstraintMatchTotal` instance for this score rule
+and only one `ConstraintMatch` instance per fired rule.
