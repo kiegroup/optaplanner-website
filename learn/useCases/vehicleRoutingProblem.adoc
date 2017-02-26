@@ -41,9 +41,9 @@ image:integrationWithRealMaps.png[Integration with real maps]
 == Video
 
 +++
-<iframe width="853" height="480" src="http://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
 +++
 
 +++
-<iframe width="853" height="480" src="http://www.youtube.com/embed/4hp_Qg1hFgE" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/4hp_Qg1hFgE" frameborder="0" allowfullscreen></iframe>
 +++

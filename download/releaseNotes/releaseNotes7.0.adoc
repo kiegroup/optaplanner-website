@@ -25,7 +25,7 @@ For example, we can split up Great Britain into 4 parts and solve those parts se
 
 image:7.0/partitionedSearchThreading.png[Partitioned Search Threading]
 
-This can potentially http://www.optaplanner.org/blog/2014/03/03/CanMapReduceSolvePlanningProblems.html[reduce solution quality],
+This can potentially https://www.optaplanner.org/blog/2014/03/03/CanMapReduceSolvePlanningProblems.html[reduce solution quality],
 but for big datasets (usually above 5000 entities) the performance gains normally outweighs the long-term quality loss,
 because when a result is needed within hours or less, the solution quality is still higher.
 

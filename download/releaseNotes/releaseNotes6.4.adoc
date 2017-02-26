@@ -128,5 +128,5 @@ To try out OptaPlanner Workbench, link:../../download/download.html[download] an
 Note that a user with the `admin` role currently doesn't see OptaPlanner screens yet.
 
 To try out OptaPlanner Execution Server, link:../../download/download.html[download] and deploy the KIE Execution Server war
-and use the KIE and OptaPlanner REST API (both are currently documented in http://drools.org/learn/documentation.html[the drools documentation]).
+and use the KIE and OptaPlanner REST API (both are currently documented in https://drools.org/learn/documentation.html[the drools documentation]).
 It's enabled by default (although it can be disabled with a configuration property).

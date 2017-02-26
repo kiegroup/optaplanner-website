@@ -178,7 +178,7 @@ It's now even easier to try out all Local Search algorithms:
 
 === New example: Investment asset class allocation
 
-To optimize an investment portfolio. See http://www.youtube.com/watch?v=NdyIf0JG94Y[this video].
+To optimize an investment portfolio. See https://www.youtube.com/watch?v=NdyIf0JG94Y[this video].
 Partially contributed by Satish Irrinki.
 
 === Other improvements
