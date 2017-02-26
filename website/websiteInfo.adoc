@@ -13,7 +13,7 @@ This website uses:
 
 * http://asciidoctor.org[Asciidoctor] (AsciiDoc)
 
-* http://twitter.github.com/bootstrap/[Twitter Bootstrap]
+* https://twitter.github.com/bootstrap/[Twitter Bootstrap]
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
