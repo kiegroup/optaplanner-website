@@ -1751,3 +1751,29 @@ public final class HardSoftScore extends AbstractScore<HardSoftScore> ... {
     }
 }
 ----
+
+
+[.upgrade-recipe-minor]
+=== `Move`: `createUndoMove()` and `doMove()` changed
+
+The `Move` interface has changed: `doMove()` now returns the undo move, so `createUndoMove()` has been removed.
+This was needed to fix a bug in `CompositeMove`.
+However, `AbstractMove` completely deals with this change, so *your custom move implementation stays the same*.
+
+In the very rare case that you're actually calling `createUndoMove()` yourself,
+use the return type of `doMove()` instead.
+
+Before in `*.java`:
+[source, java]
+----
+        Move<Solution_> move = ...;
+        Move<Solution_> undoMove = move.createUndoMove(scoreDirector);
+        move.doMove(scoreDirector);
+----
+
+After in `*.java`:
+[source, java]
+----
+        Move<Solution_> move = ...;
+        Move<Solution_> undoMove = move.doMove(scoreDirector);
+----
