@@ -483,8 +483,8 @@ With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably 
 The method `FeasibilityScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
 
 
-[.upgrade-recipe-major]
-=== [line-through]#`EasyScoreCalculator`: `calculateScore()` changed#
+[.upgrade-recipe-major.upgrade-recipe-reverted]
+=== `EasyScoreCalculator`: `calculateScore()` changed
 
 *This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 
@@ -520,8 +520,8 @@ public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<Cl
 OptaPlanner keeps track of the `initScore` internally, but it needs to be passed into the `Score` creation because a `Score` is immutable by design.
 
 
-[.upgrade-recipe-minor]
-=== [line-through]#`IncrementalScoreCalculator`: `calculateScore()` changed#
+[.upgrade-recipe-minor.upgrade-recipe-reverted]
+=== `IncrementalScoreCalculator`: `calculateScore()` changed
 
 *This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 
@@ -553,8 +553,8 @@ public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementa
 ----
 
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
-=== [line-through]#`Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added#
+[.upgrade-recipe-major.upgrade-recipe-public-api.upgrade-recipe-reverted]
+=== `Score`: `valueOf(...)` changed and `valueOfInitialized(...)` added
 
 *This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.
 Instead, the method `valueOfUninitialized(...)` has been added, but that doesn't affect your code.*
@@ -638,8 +638,8 @@ After in `*.java` for a `FeasibleScore`:
 ----
 
 
-[.upgrade-recipe-minor]
-=== [line-through]#Custom initializer: `Score.compareTo()` behaviour changed#
+[.upgrade-recipe-minor.upgrade-recipe-reverted]
+=== Custom initializer: `Score.compareTo()` behaviour changed
 
 *This change has been reverted in version 7.0.0.Beta6. Ignore this item if you're upgrading directly to that version or higher.*
 

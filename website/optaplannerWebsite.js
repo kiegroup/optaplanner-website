@@ -22,7 +22,7 @@ function formatUpgradeRecipeItem(node, badge, collapseByDefault) {
         event.preventDefault();
         toggleCollapseSection(collapseButton, noteBody);
     });
-    if (collapseByDefault) {
+    if (collapseByDefault || $(node).hasClass("upgrade-recipe-reverted")) {
         toggleCollapseSection(collapseButton, noteBody);
     }
 }

@@ -137,6 +137,9 @@ a.upgrade-recipe-note-header {
     margin-left: 5px;
 }
 
+.upgrade-recipe-reverted h3 {
+    text-decoration: line-through;
+}
 
 /******************************************************************************
 * Blog content
