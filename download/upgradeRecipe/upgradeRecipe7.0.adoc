@@ -1127,7 +1127,7 @@ Notice that the pattern, the function list and the DRL constraint list in the `a
 are recommended to be separated by a `;` character instead of a `,` character.
 
 
-[.upgrade-recipe-minor.upgrade-recipe-public-api]
+[.upgrade-recipe-minor]
 ===  Custom `Score`: implement `isCompatibleArithmeticArgument()`
 
 An `AbstractScore` no longer implements the `Score` interface method `isCompatibleArithmeticArgument()` (which is still there).
@@ -1237,7 +1237,7 @@ on the unique ID of every planning entity and on most problem fact classes
 The ID must never be null and must be unique per class (no need to be globally unique).
 
 This enables the use of multi-threaded solvers (such as Partitioned Search)
-and makes it easier to implement a real-time planning `ProblemFactChange` by using `ScoreDirector.locateWorkingObject()`.
+and makes it easier to implement a real-time planning `ProblemFactChange` by using `ScoreDirector.lookUpWorkingObject()`.
 
 Before in `*.java`:
 [source, java]
@@ -1417,7 +1417,7 @@ public class MyCustomPhaseCommand extends AbstractCustomPhaseCommand {
 
 
 [.upgrade-recipe-minor]
-=== Bendable Score: method `isFeasible()` fixed
+=== `Bendable*Score`: method `isFeasible()` fixed
 
 A bendable score with at least 2 hard score levels is now infeasible
 if any of those hard levels is negative, even if one of them is positive (1 or higher).
@@ -1701,8 +1701,8 @@ After in `*.java`:
 ----
 
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
-=== Score rules that change 2 score levels must call `addMultiConstraintMatch()`
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== Score rule that changes 2 score levels: call `addMultiConstraintMatch()`
 
 A score rule that changes 2 score levels in its RHS,
 must now call `addMultiConstraintMatch()` instead of 2 separate `add*ConstraintMatch()` calls.
