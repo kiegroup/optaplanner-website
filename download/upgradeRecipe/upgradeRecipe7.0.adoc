@@ -1777,3 +1777,22 @@ After in `*.java`:
         Move<Solution_> move = ...;
         Move<Solution_> undoMove = move.doMove(scoreDirector);
 ----
+
+
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `getZeroScore()` added
+
+If you have a custom `ScoreDefinition`: the `ScoreDefinition` interface has another new method `getZeroScore()`.
+
+After in `*.java`:
+[source, java]
+----
+public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<HardSoftScore> {
+    ...
+
+    @Override
+    public HardSoftScore getZeroScore() {
+        return HardSoftScore.ZERO;
+    }
+}
+----
