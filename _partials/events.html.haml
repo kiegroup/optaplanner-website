@@ -6,16 +6,20 @@
         - if event.date >= Date.today
           %li(style="margin-bottom: 10px;")
             .title
-              %a{:href => event.url}
-                - if !event.title.empty?
-                  #{event.eventOrganization}: #{event.title}
-                - else
-                  #{event.eventOrganization}
-            %div
+              - if !event.eventUrl.empty?
+                %a{:href => event.eventUrl} #{event.eventOrganization}
+              - else
+                #{event.eventOrganization}
+            %span
               #{event.location} - #{event.date.strftime('%a %-d %B %Y')}
-            - if !event.presenters.empty?
-              .small
-                by #{event.presenters}
+            - if !event.talks.empty?
+              %ul.list-unstyled
+                - for talk in event.talks
+                  %li(style="margin-left: 20px;")
+                    %a{:href => talk.url} #{talk.title}
+                    - if !talk.presenters.empty?
+                      %span.small
+                        by #{talk.presenters}
     .small.pull-right
       %a{:href => "https://github.com/droolsjbpm/optaplanner-website/blob/master/_config/events.yml"}
         Add event

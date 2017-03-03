@@ -5,13 +5,21 @@ layout: normalBase
 priority: 0.1
 ---
 %h1 #{page.title}
-%ul
+%ul.list-unstyled
   - for event in site.events
-    %li(style="margin-top: 10px;")
-      %a{:href => event.url}
-        - if !event.title.empty?
-          #{event.eventOrganization}: #{event.title}
+    %li(style="margin-bottom: 10px;")
+      .title
+        - if !event.eventUrl.empty?
+          %a{:href => event.eventUrl} #{event.eventOrganization}
         - else
           #{event.eventOrganization}
-      %span.small
+      %span
         #{event.location} - #{event.date.strftime('%a %-d %B %Y')}
+      - if !event.talks.empty?
+        %ul.list-unstyled
+          - for talk in event.talks
+            %li(style="margin-left: 20px;")
+              %a{:href => talk.url} #{talk.title}
+              - if !talk.presenters.empty?
+                %span.small
+                  by #{talk.presenters}
