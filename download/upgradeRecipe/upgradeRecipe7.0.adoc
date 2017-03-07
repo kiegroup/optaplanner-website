@@ -1634,7 +1634,7 @@ public class CloudComputerChangeMove extends AbstractMove<CloudBalance> {
 ----
 
 
-== From 7.0.0.Beta6 to 7.0.0.CR1
+== From 7.0.0.Beta6 to 7.0.0.Beta7
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `ConstraintMatch(Total)`: `getWeightTotal()` and `getWeight()` replaced
