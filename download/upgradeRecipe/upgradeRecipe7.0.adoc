@@ -1796,3 +1796,48 @@ public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<
     }
 }
 ----
+
+
+== From 7.0.0.Beta7 to 7.0.0.CR
+
+[.upgrade-recipe-minor]
+=== `ConstraintMatchAwareIncrementalScoreCalculator`: `getIndictmentMap()` added
+
+If you're using a Java incremental score calculator that is also `ConstraintMatch` aware,
+it now needs to also implement the method `getIndictmentMap()`.
+Simply `return null` to have it calculated automatically from the return value of `getConstraintMatchTotals()`.
+
+Before in `*.java`:
+[source, java]
+----
+public class MachineReassignmentIncrementalScoreCalculator
+        implements ConstraintMatchAwareIncrementalScoreCalculator<MachineReassignment> {
+
+    ...
+
+    @Override
+    public Collection<ConstraintMatchTotal> getConstraintMatchTotals() {
+        ...
+    }
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class MachineReassignmentIncrementalScoreCalculator
+        implements ConstraintMatchAwareIncrementalScoreCalculator<MachineReassignment> {
+
+    ...
+
+    @Override
+    public Collection<ConstraintMatchTotal> getConstraintMatchTotals() {
+        ...
+    }
+
+    @Override
+    public Map<Object, Indictment> getIndictmentMap() {
+        return null; // Calculate it non-incrementally from getConstraintMatchTotals()
+    }
+}
+----
