@@ -284,10 +284,10 @@ Maven リポジトリの +*pom.xml*+ ファイルを確認し、(特定のバー
 
 OptaPlanner をソースからビルドするのは簡単です。
 
-{empty}1. link:https://help.github.com/articles/set-up-git/[Git を設定]し、GitHub からの +clone optaplanner+ を実行します。(または、link:https://github.com/droolsjbpm/optaplanner/zipball/master[zipball] をダウンロードします。)
+{empty}1. link:https://help.github.com/articles/set-up-git/[Git を設定]し、GitHub からの +clone optaplanner+ を実行します。(または、link:https://github.com/kiegroup/optaplanner/zipball/master[zipball] をダウンロードします。)
 
 ----
-$ git clone git@github.com:droolsjbpm/optaplanner.git optaplanner
+$ git clone git@github.com:kiegroup/optaplanner.git optaplanner
 ...
 ----
 
@@ -295,7 +295,7 @@ $ git clone git@github.com:droolsjbpm/optaplanner.git optaplanner
 ****
 GitHub アカウントを持っていない場合や、ローカルの Git インストール設定がそのアカウントでなされていない場合は、代わりに次のコマンドを使用して認証問題を回避してください。
 ----
-$ git clone https://github.com/droolsjbpm/optaplanner.git optaplanner
+$ git clone https://github.com/kiegroup/optaplanner.git optaplanner
 ...
 ----
 ****
@@ -348,7 +348,7 @@ OptaPlanner が持つ特長:
 OptaPlanner では、API と実装が分離されます。
 
 * *パブリック API:* パッケージ名前空間 +*org.optaplanner.core.api*+ は、将来のリリースにおいて、100% の後方互換性を有します。
-* *Impl クラス:* パッケージ名前空間 +*org.optaplanner.core.impl*+ にあるすべてのクラスには、後方互換性がありません。将来のリリースにおいて変更される可能性があります。link:https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[UpgradeFromPreviousVersionRecipe.txt]と呼ばれるレシピには、新しいバージョンにアップグレードする場合の、各変更内容およびその変更にすばやく対処する方法が記述されています。
+* *Impl クラス:* パッケージ名前空間 +*org.optaplanner.core.impl*+ にあるすべてのクラスには、後方互換性がありません。将来のリリースにおいて変更される可能性があります。link:https://github.com/kiegroup/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[UpgradeFromPreviousVersionRecipe.txt]と呼ばれるレシピには、新しいバージョンにアップグレードする場合の、各変更内容およびその変更にすばやく対処する方法が記述されています。
 * *XML 設定:* XML ソルバ設定は、非パブリック API クラスを使用する必要のある要素を除くすべての要素について、後方互換性を有します。XML ソルバ設定は、パッケージ名前空間 +*org.optaplanner.core.config*+ にあるクラスによって定義されます。
 
 .注意

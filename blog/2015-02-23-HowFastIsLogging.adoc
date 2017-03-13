@@ -61,7 +61,7 @@ it involves many calculations, including checking for conflicts between every en
 
 To reproduce these benchmarks locally, https://www.optaplanner.org/code/sourceCode.html[build optaplanner from source]
 and run the main class
-https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
+https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp].
 
 == Logging levels: `error`, `warn`, `info`, `debug` and `trace`
 

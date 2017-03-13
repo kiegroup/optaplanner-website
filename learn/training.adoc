@@ -21,4 +21,4 @@ https://download.jboss.org/optaplanner/training/optaplanner-training-7.0.0.Beta4
 
 == Source
 
-The source code which _generates_ that training zip is in https://github.com/droolsjbpm/optaplanner-training[the optaplanner-training GitHub repository].
+The source code which _generates_ that training zip is in https://github.com/kiegroup/optaplanner-training[the optaplanner-training GitHub repository].

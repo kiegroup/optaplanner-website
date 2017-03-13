@@ -987,10 +987,10 @@ Similar for log4j files.
 
 The GitHub repository has been renamed.
 Before:
-  https://github.com/droolsjbpm/drools-planner
+  https://github.com/kiegroup/drools-planner
 ----
 After:
-  https://github.com/droolsjbpm/optaplanner
+  https://github.com/kiegroup/optaplanner
 ----
 
 [.upgrade-recipe-major]

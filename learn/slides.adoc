@@ -25,7 +25,7 @@ link:slides/optaplanner-presentation/training.html[HTML]*
 
 Feel free to reuse any of these materials as you see fit to present OptaPlanner (for example to your local JUG):
 
-. Download https://github.com/droolsjbpm/optaplanner-website/tree/master/learn/slides/[the source of these HTML slides].
+. Download https://github.com/kiegroup/optaplanner-website/tree/master/learn/slides/[the source of these HTML slides].
 
     ** Do you prefer `ODP` or `PPT` slides instead? +
     Most slides are a single, big `png` image: simply copy the image as a new slide in your deck.

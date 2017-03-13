@@ -43,7 +43,7 @@ That leaves me with 2 constraints:
 . Soft constraint: Minimize the number of votes for me.
 
 To win a state, I'll just convince exactly half of its population plus one to vote for me.
-The population data is from 2015 and https://github.com/droolsjbpm/optaplanner-training/blob/master/optaplanner-training-lab901-solution/data/election/import/president2016.txt[available in this file].
+The population data is from 2015 and https://github.com/kiegroup/optaplanner-training/blob/master/optaplanner-training-lab901-solution/data/election/import/president2016.txt[available in this file].
 
 Now, let's solve this constraint satisfaction problem with https://www.optaplanner.org[OptaPlanner]!
 
