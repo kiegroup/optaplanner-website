@@ -15,6 +15,6 @@ even without malicious intend. To minimize this impact, a benchmark should be op
 
 . Build `optaplanner-examples` link:../code/sourceCode.html[from source] or link:../download/download.html[from the distribution zip].
 . Find the relevant `BenchmarkApp` class, for example
-https://github.com/droolsjbpm/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/cloudbalancing/optional/benchmark/CloudBalancingBenchmarkApp.java[`CloudBalancingBenchmarkApp.java`]
+https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/cloudbalancing/optional/benchmark/CloudBalancingBenchmarkApp.java[`CloudBalancingBenchmarkApp.java`]
 for cloud optimization.
 . Run it with the VM Options `-Xmx2G -server`.

@@ -107,7 +107,7 @@ During this tough period, I regularly considered giving up my Open Source projec
 Somehow, I couldn't. _I just soldiered on._ And in the end, it all worked out well.
 
 Ironically, this was also the period when the project became successful:
-downloads took off, the forum became vibrant, I got to talk at more conferences and the first https://github.com/droolsjbpm/optaplanner/pulls?q=is%3Apr+is%3Aclosed[Pull Request] arrived.
+downloads took off, the forum became vibrant, I got to talk at more conferences and the first https://github.com/kiegroup/optaplanner/pulls?q=is%3Apr+is%3Aclosed[Pull Request] arrived.
 Due to its success, more bugs surfaced - so I heavily invested in unit tests and integration tests.
 By the end of 2009 I also renamed the project to Drools Planner.
 

@@ -9,13 +9,13 @@ We use http://git-scm.com/[Git] as source control management.
 
 The blessed OptaPlanner repositories, summarized below, are hosted on GitHub.
 
-https://github.com/droolsjbpm/optaplanner[optaplanner, role=lead]::
+https://github.com/kiegroup/optaplanner[optaplanner, role=lead]::
 _The source code for OptaPlanner itself, examples and documentation._
 
 . Get the source code locally with http://git-scm.com/[Git]:
 +
 ----
- $ git clone git@github.com:droolsjbpm/optaplanner.git
+ $ git clone git@github.com:kiegroup/optaplanner.git
  ...
 ----
 +
@@ -23,7 +23,7 @@ If you don't have a GitHub account or your local Git installation isn't configur
 use this command instead, to avoid an authentication issue:
 +
 ----
- $ git clone https://github.com/droolsjbpm/optaplanner.git optaplanner
+ $ git clone https://github.com/kiegroup/optaplanner.git optaplanner
  ...
 ----
 
@@ -63,17 +63,17 @@ The first time, Maven might take a lot time, because it needs to download jars.
 <a href="http://www.oxygenxml.com"><img src="oxygen-small.png" alt="Oxygen XML Editor"/></a>
 ++++
 
-https://github.com/droolsjbpm/optaplanner-wb[optaplanner-wb, role=lead]::
+https://github.com/kiegroup/optaplanner-wb[optaplanner-wb, role=lead]::
 _The source code for OptaPlanner Workbench._
 
 
-https://github.com/droolsjbpm/optaplanner-website[optaplanner-website, role=lead]::
+https://github.com/kiegroup/optaplanner-website[optaplanner-website, role=lead]::
 _The source code for this website and presentations._
 
 . Get the source code locally with http://git-scm.com/[Git]:
 +
 ----
- $ git clone git@github.com:droolsjbpm/optaplanner-website.git
+ $ git clone git@github.com:kiegroup/optaplanner-website.git
  ...
 ----
 

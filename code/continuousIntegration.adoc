@@ -13,4 +13,4 @@ Keep the build green!
 
 == Project website (optaplanner.org)
 
-We use Travis to build this project website, see https://travis-ci.org/droolsjbpm/optaplanner-website[the travis job].
+We use Travis to build this project website, see https://travis-ci.org/kiegroup/optaplanner-website[the travis job].

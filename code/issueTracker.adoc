@@ -11,7 +11,7 @@ Log in and click on the button _Create Issue_.
 We prioritize issues based on:
 
 * Is it a link:../community/product.html[customer request]?
-* Is there https://github.com/droolsjbpm/optaplanner/pulls[a Pull Request]?
+* Is there https://github.com/kiegroup/optaplanner/pulls[a Pull Request]?
 * Or is there a https://issues.jboss.org/browse/PLANNER[a JIRA issue]? Does it include a reproducer?
 * Severity
 * How many community users are affected?
@@ -30,7 +30,7 @@ We prefer issues with:
 
 == Pull requests on GitHub
 
-Want to fix the issue yourself? Fork https://github.com/droolsjbpm/optaplanner[the git repository] and send in a pull request.
+Want to fix the issue yourself? Fork https://github.com/kiegroup/optaplanner[the git repository] and send in a pull request.
 We usually process all pull requests within a few days.
 
-*Show https://github.com/droolsjbpm/optaplanner/pulls[the open pull requests] and https://github.com/droolsjbpm/optaplanner/pulls?q=is%3Apr+is%3Aclosed[the closed pull requests].*
+*Show https://github.com/kiegroup/optaplanner/pulls[the open pull requests] and https://github.com/kiegroup/optaplanner/pulls?q=is%3Apr+is%3Aclosed[the closed pull requests].*

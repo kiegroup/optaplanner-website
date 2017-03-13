@@ -22,7 +22,7 @@ shown with Google Maps:
 
 image::americanRoadTrip-road-time-asymmetric-olson.png[]
 
-Note that I had to https://github.com/droolsjbpm/optaplanner/tree/master/optaplanner-examples/data/tsp/import/usa[recreate the datasets].
+Note that I had to https://github.com/kiegroup/optaplanner/tree/master/optaplanner-examples/data/tsp/import/usa[recreate the datasets].
 I've used exact latitude longitude coordinates (instead of location names) to avoid ambiguity and get more accurate routes.
 
 The Washington Post even claims that the trip above is the fastest trip (Olson's blog doesn't make this claim), but it's not:

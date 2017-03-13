@@ -11,7 +11,7 @@ Please do not use Opta Planner, OptoPlanner, OptiPlanner or other variations.
 == Logo
 
 The OptaPlanner logo and icon is available in `PNG` and `SVG` format
-https://github.com/droolsjbpm/optaplanner/tree/master/optaplanner-docs/src/main/docbook/en-US/images/Chapter-Planner_introduction[in this GitHub directory].
+https://github.com/kiegroup/optaplanner/tree/master/optaplanner-docs/src/main/docbook/en-US/images/Chapter-Planner_introduction[in this GitHub directory].
 
 Feel free to use them for presentations and articles about OptaPlanner
 (under the restrictions of link:../code/license.html[the Apache License]).
