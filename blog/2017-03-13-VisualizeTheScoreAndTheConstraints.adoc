@@ -28,8 +28,11 @@ Maybe it's time to build more classrooms?
 
 == Heat map with score impact per planning entity
 
-In the bottom-up approach, we visualize the score impact per lecture.
-The more it impacts the score, the more orange in the heat map:
+In the bottom-up approach, we visualize the score impact per lecture:
+
+* Red lectures impact hard constraints.
+* Orange lectures impact only soft constraints. The higher the impact, the heavier the color.
+* White lectures don't impact the score.
 
 |===
 |Solution |Normal view |Indictment heat map | Score
