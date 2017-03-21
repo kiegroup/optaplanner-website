@@ -8,7 +8,7 @@ So we solved the planning problem and found a best solution which has a score of
 Why `-123soft`? Where does that penalty come from? Which constraints are broken?
 Let's see how we can break down the score and visualize the pain points in the schedule to the user.
 
-We can approach this problem from two sides, on a course schedule use case:
+Let's approach this problem from two sides on the course scheduling example:
 
 == Break down score per constraint type
 
@@ -34,13 +34,13 @@ The more it impacts the score, the more orange in the heat map:
 |===
 |Solution |Normal view |Indictment heat map | Score
 
-|Initialized a|image::courseScheduling0Initialized.png[] a|image::courseScheduling0IndictmentInitialized.png[] |`-4hard/-18soft`
-|Feasible a|image::courseScheduling1Feasible.png[] a|image::courseScheduling1IndictmentFeasible.png[] |`0hard/-68soft`
-|Near optimal a|image::courseScheduling2NearOptimal.png[] a|image::courseScheduling2IndictmentNearOptimal.png[] |`0hard/-1soft` (*)
-|Optimal a|image::courseScheduling3Optimal.png[] a|image::courseScheduling3IndictmentOptimal.png[] |`0hard/0soft`
+|Initialized a|image::courseScheduling0Initialized.png[link="courseScheduling0Initialized.png"] a|image::courseScheduling0IndictmentInitialized.png[link="courseScheduling0IndictmentInitialized.png"] |`-4hard/-18soft`
+|Feasible a|image::courseScheduling1Feasible.png[link="courseScheduling1Feasible.png"] a|image::courseScheduling1IndictmentFeasible.png[link="courseScheduling1IndictmentFeasible.png"] |`0hard/-68soft`
+|Near optimal a|image::courseScheduling2NearOptimal.png[link="courseScheduling2NearOptimal.png"] a|image::courseScheduling2IndictmentNearOptimal.png[link="courseScheduling2IndictmentNearOptimal.png"] |`0hard/-1soft` (*)
+|Optimal a|image::courseScheduling3Optimal.png[link="courseScheduling3Optimal.png"] a|image::courseScheduling3IndictmentOptimal.png[link="courseScheduling3IndictmentOptimal.png"] |`0hard/0soft`
 |===
 
-As OptaPlanner find better and better solutions, there is less orange on the heat map.
+As OptaPlanner find better and better solutions, there is less and less orange on the heat map.
 
 (*) Notice that `-1soft` can be shared by multiple lectures:
 3 lectures break the _room stability_ constraint together
