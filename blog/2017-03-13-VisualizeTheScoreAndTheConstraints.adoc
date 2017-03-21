@@ -24,7 +24,7 @@ h|Total >h|`-123soft`
 |===
 
 The _room capacity_ constraint is broken the most: it causes for `81%` (`100/123`) of the score loss.
-Maybe it's time to build more classrooms?
+Maybe the school should invest in more classrooms?
 
 == Heat map with score impact per planning entity
 
@@ -44,6 +44,8 @@ In the bottom-up approach, we visualize the score impact per lecture:
 |===
 
 As OptaPlanner find better and better solutions, there is less and less orange on the heat map.
+Looks like the _history_ courses are particularly hard to schedule.
+Maybe the school should look for an additional history teacher?
 
 (*) Notice that `-1soft` can be shared by multiple lectures:
 3 lectures break the _room stability_ constraint together
