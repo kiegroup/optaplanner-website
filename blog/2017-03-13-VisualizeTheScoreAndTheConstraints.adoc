@@ -1,0 +1,66 @@
+= Visualize the score and the constraints
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [feature, howto, course scheduling]
+
+So we solved the planning problem and found a best solution which has a score of `0hard/-123soft`.
+Why `-123soft`? Where does that penalty come from? Which constraints are broken?
+Let's see how we can break down the score and visualize the pain points in the schedule to the user.
+
+We can approach this problem from two sides, on a course schedule use case:
+
+== Break down score per constraint type
+
+In the top-down approach, we split up the score per constraint type (so per score rule):
+
+|===
+|Constraint type |Score impact
+
+|Room capacity >|`-100soft`
+|Room stability >|`-40soft`
+|Curriculum compactness >|`-3soft`
+h|Total >h|`-123soft`
+|===
+
+The _room capacity_ constraint is broken the most: it causes for `81%` (`100/123`) of the score loss.
+Maybe it's time to build more classrooms?
+
+== Heat map with score impact per planning entity
+
+In the bottom-up approach, we visualize the score impact per lecture.
+The more it impacts the score, the more orange in the heat map:
+
+|===
+|Solution |Normal view |Indictment heat map | Score
+
+|Initialized a|image::courseScheduling0Initialized.png[] a|image::courseScheduling0IndictmentInitialized.png[] |`-4hard/-18soft`
+|Feasible a|image::courseScheduling1Feasible.png[] a|image::courseScheduling1IndictmentFeasible.png[] |`0hard/-68soft`
+|Near optimal a|image::courseScheduling2NearOptimal.png[] a|image::courseScheduling2IndictmentNearOptimal.png[] |`0hard/-1soft` (*)
+|Optimal a|image::courseScheduling3Optimal.png[] a|image::courseScheduling3IndictmentOptimal.png[] |`0hard/0soft`
+|===
+
+As OptaPlanner find better and better solutions, there is less orange on the heat map.
+
+(*) Notice that `-1soft` can be shared by multiple lectures:
+3 lectures break the _room stability_ constraint together
+because two of them use a different room than the other one.
+
+== Show me the API
+
+OptaPlanner 7 provides all this information for you, through an API:
+
+image::scoreVisualization.png[]
+
+First build a `ScoreDirector` with `Solver.getScoreDirectorFactory()` and then
+
+* Break down the score per constraint type with `ScoreDirector.getConstraintMatchTotals()`.
+  Each `ConstraintMatchTotal` is one score rule. It holds it total score.
+* Determine the score impact per planning entity with `ScoreDirector.getIndictmentMap()`.
+  Each `Indictment` holds the total score impact of one planning entity.
+  Use this to create a heat map.
+
+== Conclusion
+
+Help the user make sense of the resulting score.
+Visualize which constraints and planning entities cause the most harm.
