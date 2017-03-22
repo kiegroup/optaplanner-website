@@ -53,19 +53,26 @@ because two of them use a different room than the other one.
 
 == Show me the API
 
-OptaPlanner 7 provides all this information for you, through an API:
+OptaPlanner 7 provides this information out of the box through the ConstraintMatch API:
 
 image::scoreVisualization.png[]
 
-First build a `ScoreDirector` with `Solver.getScoreDirectorFactory()` and then
+First build a `ScoreDirector` with `Solver.getScoreDirectorFactory()` and then:
 
 * Break down the score per constraint type with `ScoreDirector.getConstraintMatchTotals()`.
-  Each `ConstraintMatchTotal` is one score rule. It holds it total score.
+  Each `ConstraintMatchTotal` represents one score rule and has its total score.
 * Determine the score impact per planning entity with `ScoreDirector.getIndictmentMap()`.
   Each `Indictment` holds the total score impact of one planning entity.
-  Use this to create a heat map.
+  Use that score to create the heat map in your UI.
+
+== Try it out
+
+. https://www.optaplanner.org/download/download.html[Download OptaPlanner] `7.0.0.CR1` or higher.
+. Run an example and load a dataset.
+. Click on the image:indictmentHeatMapTrueIcon.png[flame] button at the bottom left.
+. Click the solve button.
 
 == Conclusion
 
 Help the user make sense of the resulting score.
-Visualize which constraints and planning entities cause the most harm.
+Visualize which constraints and planning entities cause most harm.
