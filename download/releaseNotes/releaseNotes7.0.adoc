@@ -68,6 +68,30 @@ public interface SolutionPartitioner<Solution_> {
 ----
 
 
+=== Heat map to visualize the score
+
+To explain a score in your UI, use the `Indictment` API to visualize the broken constraints:
+
+image:7.0/indictmentHeatMap.png[Indictment heat map]
+
+Call `ScoreDirector.getIndictmentMap()` to extract the score per planning entity:
+
+[source,java,options="nowrap"]
+----
+Map<Object, Indictment> indictmentMap = guiScoreDirector.getIndictmentMap();
+for (Lecture lecture = courseSchedule.getLectureList()) {
+    Indictment indictment = indictmentMap.get(lecture);
+    if (indictment != null) {
+        // The score impact of that lecture
+        Score scoreTotal = indictment.getScoreTotal();
+        ...
+    }
+}
+----
+
+It's even possible to break it down further,
+to see which specific constraints that lecture actually triggered.
+
 
 === No longer needed to implement the `Solution` interface
 
