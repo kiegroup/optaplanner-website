@@ -43,7 +43,7 @@ Partitioned Search is configured like any other solver phase:
   ...
   <partitionedSearch>
     <!-- The SolutionParititioner splits a dataset into parts -->
-    <solutionPartitionerClass>org.optaplanner.examples.cloudbalancing.optional.partitioner.CloudBalancePartitioner</solutionPartitionerClass>
+    <solutionPartitionerClass>...CloudBalancePartitioner</solutionPartitionerClass>
 
     <!-- Optionally configure which phaes to run on each part -->
     <constructionHeuristic>...</constructionHeuristic>
@@ -193,4 +193,5 @@ This example also demonstrates real-time producing and consuming of tasks.
 * `@ValueRangeProvider` now supports methods that return an array too.
 * The log now outputs the score calculation speed for each solver phase too.
 * The documentation is now in AsciiDoc, which improves output quality and makes it easier to contribute.
-* HardMediumSoftBigDecimalScore: 3 score levels of BigDecimal scores. Contributed by Brad Hards.
+* `HardMediumSoftBigDecimalScore`: 3 score levels of BigDecimal scores. Contributed by Brad Hards.
+* The public API is now a solid foundation for the 7.x years.
