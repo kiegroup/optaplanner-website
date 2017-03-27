@@ -1841,3 +1841,52 @@ public class MachineReassignmentIncrementalScoreCalculator
     }
 }
 ----
+
+
+[.upgrade-recipe-minor]
+=== Custom `MoveListFactory` and `MoveIteratorFactory`: `Solution_` parameter added to `Move` collections returned by factory methods.
+
+The `Solution_` type parameter was added to `Move` interface in 7.0.0.Beta6.
+The `MoveListFactory` and `MoveIteratorFactory` interfaces were subsequently updated so that you are not forced to
+use the raw-type `Move` in your custom `MoveListFactory` or `MoveIteratorFactory` implementation.
+
+Before in `*.java`:
+[source, java]
+----
+public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
+
+    @Override
+    public List<? extends Move> createMoveList(NQueens solution) {
+        ...
+    }
+
+}
+
+----
+
+After in `*.java`:
+[source, java]
+----
+public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
+
+    @Override
+    public List<? extends Move<NQueens>> createMoveList(NQueens nQueens) {
+        ...
+    }
+
+}
+----
+
+Alternatively, if your `Move` implements `Move<Solution>` then the return type can be simplified to:
+
+[source, java]
+----
+public class RowChangeMoveFactory implements MoveListFactory<NQueens> {
+
+    @Override
+    public List<RowChangeMove> createMoveList(NQueens nQueens) {
+        ...
+    }
+
+}
+----
