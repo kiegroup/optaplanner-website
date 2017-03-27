@@ -300,6 +300,10 @@
   eventUrl: http://2017.ruleml-rr.org/
   location: London, UK
   date: 2017-06-12
+  talks:
+    - title: Real-time Constraint Solving with OptaPlanner
+      url: http://2017.ruleml-rr.org/decisioncamp-2017-schedule/
+      presenters: Geoffrey De Smet
 
 - eventId: 20171106-devoxxbe
   eventOrganization: Devoxx Be
