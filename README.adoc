@@ -1,4 +1,4 @@
-image:https://travis-ci.org/droolsjbpm/optaplanner-website.svg["Build Status", link="https://travis-ci.org/droolsjbpm/optaplanner-website"]
+image:https://travis-ci.org/kiegroup/optaplanner-website.svg["Build Status", link="https://travis-ci.org/kiegroup/optaplanner-website"]
 
 == Developing Drools, OptaPlanner and jBPM
 
