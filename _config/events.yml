@@ -295,11 +295,11 @@
       url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103203
       presenters: Geoffrey De Smet, Duncan Doyle
 
-- eventId: 201706-12-ruleml
+- eventId: 20170714-ruleml
   eventOrganization: RuleML+RR
   eventUrl: http://2017.ruleml-rr.org/
   location: London, UK
-  date: 2017-06-12
+  date: 2017-07-14
   talks:
     - title: Real-time Constraint Solving with OptaPlanner
       url: http://2017.ruleml-rr.org/decisioncamp-2017-schedule/
