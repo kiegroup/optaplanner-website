@@ -3,7 +3,7 @@
 :awestruct-layout: normalBase
 :showtitle:
 
-As of version `6.0.0.Beta1`, *Drools Planner has been renamed to OptaPlanner*.
+In 2013, as of version `6.0.0.Beta1`, *Drools Planner was renamed to OptaPlanner*.
 
 == What is OptaPlanner (AKA Drools Planner)?
 
