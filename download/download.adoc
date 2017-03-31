@@ -73,8 +73,8 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgr
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
 * KIE Workbench #{site.pom.latest.version}:
 #{site.pom.latest.kieWorkbenchEAPWar}[EAP] -
-#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly] 
-// #{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat]
+#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly] -
+#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat]
 * KIE Execution Server #{site.pom.latest.version}:
 #{site.pom.latest.kieExecutionServerZip}[Any application server]
 
@@ -88,10 +88,6 @@ Or with Maven:
       <version>#{site.pom.latest.version}</version>
     </dependency>
 ----
-
-== Known Issues in #{site.pom.latest.version}:
-
-* #{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat]: The current KIE Workbench #{site.pom.latest.version} build is not deployable on Tomcat, please use WildFly for now.
 
 [[NightlySnapshots]]
 === Nightly snapshots
