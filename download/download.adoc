@@ -37,7 +37,7 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html
 The OptaPlanner jars are also available in http://search.maven.org/#search|ga|1|org.optaplanner[the central maven repository]
 (and also in https://repository.jboss.org/nexus/index.html#nexus-search;gav\~org.optaplanner\~\~\~\~[the JBoss maven repository]).
 
-If you use Maven, just add a dependency in your `pom.xml`:
+If you use Maven, just add the `optaplanner-core` dependency in your `pom.xml` to get started:
 
 [source,xml]
 ----
@@ -49,6 +49,37 @@ If you use Maven, just add a dependency in your `pom.xml`:
 ----
 
 This is similar for Gradle, Ivy and Buildr.
+
+Alternatively, import the `optaplanner-bom` for more advanced cases:
+
+[source,xml]
+----
+<project>
+  ...
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.optaplanner</groupId>
+        <artifactId>optaplanner-bom</artifactId>
+        <type>pom</type>
+        <version>#{site.pom.latestFinal.version}</version>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-persistence-jpa</artifactId>
+    </dependency>
+    ...
+  </dependencies>
+</project>
+----
 
 '''
 
