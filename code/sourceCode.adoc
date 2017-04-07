@@ -57,11 +57,7 @@ The first time, Maven might take a lot time, because it needs to download jars.
 <a href="http://www.ej-technologies.com/products/jprofiler/overview.html"><img src="http://www.ej-technologies.com/images/banners/jprofiler_small.png" alt="JProfiler"/></a>
 ++++
 
-. Optional: Write some documentation.
-+
-++++
-<a href="http://www.oxygenxml.com"><img src="oxygen-small.png" alt="Oxygen XML Editor"/></a>
-++++
+. Optional: Write some documentation in http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
 
 https://github.com/kiegroup/optaplanner-wb[optaplanner-wb, role=lead]::
 _The source code for OptaPlanner Workbench._
