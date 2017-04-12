@@ -295,6 +295,16 @@
       url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103203
       presenters: Geoffrey De Smet, Duncan Doyle
 
+- eventId: 20170531-springdays
+  eventOrganization: Spring Days Chicago
+  eventUrl: https://www.springdays.io/ehome/spring-days/chicago
+  location: Chicago, IL, US
+  date: 2017-05-31
+  talks:
+    - title: Solving Planning and Optimization Problems in Real Time
+      url: https://www.springdays.io/ehome/spring-days/chicago
+      presenters: Kevin Greene
+
 - eventId: 20170714-ruleml
   eventOrganization: RuleML+RR
   eventUrl: http://2017.ruleml-rr.org/
