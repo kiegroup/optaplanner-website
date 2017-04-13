@@ -282,6 +282,15 @@
       url: https://www.meetup.com/gr-jug/events/238240253/
       presenters: Kevin Greene
 
+- eventId: 20170419-grandrapidsjug
+  eventOrganization: Grand Rapids JUG
+  location: Grand Rapids, MI, US
+  date: 2017-04-19
+  talks:
+    - title: Managing micromanagement, an OptaPlanner lab
+      url: https://www.meetup.com/gr-jug/events/238645412/
+      presenters: Kevin Greene
+
 - eventId: 20170502-redhatsummit
   eventOrganization: Red Hat Summit
   eventUrl: https://www.redhat.com/summit/
