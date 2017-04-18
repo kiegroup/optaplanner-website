@@ -15,7 +15,6 @@ OptaPlannerは、link:../../code/license.html[Apache Software License]の下で�
 
 ==  ユーザガイド日本語訳
 * link:UserGuide-chapter1.html[Chapter 1 : OptaPlanner イントロダクション]
-* link:UserGuide-chapter2.html[Chapter 2 : クイックスタート]
 
 == 記事
 
