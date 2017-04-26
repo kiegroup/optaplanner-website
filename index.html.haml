@@ -73,9 +73,9 @@ change_frequency: weekly
     %a.right.carousel-control(href="#whatIsCarousel" data-slide="next")
       %span.glyphicon.glyphicon-chevron-right
 
-.row
+.row(style="display:flex; margin-bottom: 20px;" )
   .col-md-6
-    .panel.panel-default
+    .panel.panel-default(style="height: 100%;" )
       .panel-heading OptaPlanner Engine
       .panel-body
         :asciidoc
@@ -99,11 +99,14 @@ change_frequency: weekly
           }
           ----
   .col-md-6
-    .panel.panel-default
+    .panel.panel-default(style="height: 100%;" )
       .panel-heading OptaPlanner Workbench and Execution Server
       .panel-body
         :asciidoc
-          Coming soon...
+          Define constraints and configure the Solver in a user-friendly way
+          using the Workbench. Submit problem datasets and optimize them using KIE Execution Server.
+
+          image::landingPage/workbenchSolverConfig.png[]
 
 .row
   .col-md-5
