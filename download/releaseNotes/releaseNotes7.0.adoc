@@ -195,3 +195,63 @@ This example also demonstrates real-time producing and consuming of tasks.
 * The documentation is now in AsciiDoc, which improves output quality and makes it easier to contribute.
 * `HardMediumSoftBigDecimalScore`: 3 score levels of BigDecimal scores. Contributed by Brad Hards.
 * The public API is now a solid foundation for the 7.x years.
+
+== Workbench
+
+=== Enhanced solver editor
+
+OptaPlanner Solver editor screen now supports adding all termination types, including composite termination.
+Phase configuration section allows to tweak Construction Heuristic settings and select Local Search algorithm
+to optimize your planning problem.
+
+image:7.0/solverEditorScreen.png[Solver editor screen]
+
+=== Guided rule editor integration
+
+OptaPlanner now integrates with the Guided rule editor. Modify the score by build-in OptaPlanner actions.
+
+image:7.0/guidedRule.png[Guided rule editor]
+
+=== Difficulty comparator definition
+
+OptaPlanner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define
+sorting attributes.
+Several Construction Heuristic algorithms require this information in order to construct a good initial solution.
+
+image:7.0/difficultyComparator.png[Difficulty comparator]
+
+=== Improved example import dialog
+
+Examples are now part of the Workbench and they work offline too.
+Leverage tag-based filtering to quickly access projects from the field you are interested in.
+
+image:7.0/exampleImport.png[Example import dialog]
+
+=== Other
+* OptaPlanner Workbench now fully supports bendable score types
+* It is no longer required to define `plannermgmt` role for the Workbench user to access OptaPlanner UI items.
+Use a role-based permission management screen instead to control the access.
+
+image:7.0/permissionScreen.png[Permission screen]
+
+* Two new examples have been added. A course scheduling example models lecture scheduling at universities.
+Employee rostering example optimizes task assigning to employees based on their skill.
+
+== Execution server
+
+=== Simplified REST API
+
+`ServiceResponse` wrapper has been removed from OptaPlanner service responses returned by KIE Execution Server.
+This allows an easier processing of the responses on the client side.
+
+[source,xml,options="nowrap"]
+----
+<solver-instance>
+    ...
+    <status>SOLVING</status>
+    <score scoreClass="org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore">0hard/-10soft</score>
+    <best-solution class="curriculumcourse.curriculumcourse.CourseSchedule">
+        ...
+    </best-solution>
+</solver-instance>
+----
