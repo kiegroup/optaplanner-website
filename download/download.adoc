@@ -21,12 +21,12 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 * KIE Workbench #{site.pom.latestFinal.version}:
-#{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly] -
-#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP 6.4] -
-#{site.pom.latestFinal.kieWorkbenchEAP7War}[EAP 7] -
-#{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat] -
-#{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic] -
-#{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere]
+#{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly10] -
+#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP6.4] -
+#{site.pom.latestFinal.kieWorkbenchEAP7War}[EAP7] -
+#{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat7] -
+#{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic8] -
+#{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere12]
 * KIE Execution Server #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
 
@@ -103,9 +103,9 @@ A CR should be almost identical to the Final release.
 link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
 ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
 * KIE Workbench #{site.pom.latest.version}:
-#{site.pom.latest.kieWorkbenchEAPWar}[EAP] -
-#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly] -
-#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat]
+#{site.pom.latest.kieWorkbenchEAPWar}[EAP7] -
+#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly10] -
+#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat8]
 * KIE Execution Server #{site.pom.latest.version}:
 #{site.pom.latest.kieExecutionServerZip}[Any application server]
 
