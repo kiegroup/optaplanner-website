@@ -304,6 +304,16 @@
       url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103203
       presenters: Geoffrey De Smet, Duncan Doyle
 
+- eventId: 20170517-apachecon
+  eventOrganization: ApacheCon North America
+  eventUrl: http://events.linuxfoundation.org/events/apachecon-north-america
+  location: Miami, FL, US
+  date: 2017-05-17
+  talks:
+    - title: IoT for a Fleet, Building a Route Optimization Platform
+      url: https://apachecon2017.sched.com/event/AZL6/iot-for-a-fleet-building-a-route-optimization-platform-using-an-open-source-stack-pedro-vidigal-procensus
+      presenters: Pedro Vidigal
+
 - eventId: 20170531-springdays
   eventOrganization: Spring Days Chicago
   eventUrl: https://www.springdays.io/ehome/spring-days/chicago
