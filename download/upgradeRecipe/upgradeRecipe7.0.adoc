@@ -9,8 +9,8 @@
 Because this is a new major version number (7.0), which is the foundation for the 7.x series for the next few years,
 it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
 
-Our current intention is to keep these backwards incompatible changes to a strict minimum
-(by favoring deprecation over removal) and do not introduce any additional ones after 7.0.
+We kept these backwards incompatible changes to a strict minimum
+(by favoring deprecation over removal) and will not introduce any additional ones during the 7.x era.
 
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
 
@@ -1798,7 +1798,7 @@ public class HardSoftScoreDefinition extends AbstractFeasibilityScoreDefinition<
 ----
 
 
-== From 7.0.0.Beta7 to 7.0.0.CR
+== From 7.0.0.Beta7 to 7.0.0.CR1
 
 [.upgrade-recipe-minor]
 === `ConstraintMatchAwareIncrementalScoreCalculator`: `getIndictmentMap()` added
@@ -1908,5 +1908,42 @@ public class CheapTimePillarSlideMoveIteratorFactory implements MoveIteratorFact
     public Iterator<CheapTimePillarSlideMove> createOriginalMoveIterator(...) {...}
     public Iterator<CheapTimePillarSlideMove> createRandomMoveIterator(...) {...}
 
+}
+----
+
+
+== From 7.0.0.CR3 to 7.0.0.Final
+
+[.upgrade-recipe-impl-detail]
+=== Workbench's `AbstractSolution` deprecated
+
+The implementation class `AbstractSolution`, used only by workbench 6,
+has been deprecated and replaced by the `autoDiscoverMemberType` feature.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class Mysolution extends AbstractSolution<HardSoftScore> {
+
+    private List<FooFact> fooFactList;
+    private List<BarFact> barFactList;
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningSolution(autoDiscoverMemberType = AutoDiscoverMemberType.FIELD)
+public class Mysolution {
+
+    private List<FooFact> fooFactList;
+    private List<BarFact> barFactList;
+
+    private HardSoftScore score;
+
+    ...
 }
 ----

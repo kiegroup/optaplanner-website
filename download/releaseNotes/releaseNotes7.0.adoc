@@ -188,12 +188,16 @@ This example also demonstrates real-time producing and consuming of tasks.
 
 === Other Engine improvements
 
+* Chained entities (used in Vehicle Routing) can now be immovable entities too
 * Booleans are now supported by `ValueRangeFactory` too: `createBooleanValueRange()`
 * Dates and time are now supported by `ValueRangeFactory` too: `createTemporalValueRange()`. Contributed by Kevin Wallis.
 * `@ValueRangeProvider` now supports methods that return an array too.
 * The log now outputs the score calculation speed for each solver phase too.
 * The documentation is now in AsciiDoc, which improves output quality and makes it easier to contribute.
 * `HardMediumSoftBigDecimalScore`: 3 score levels of BigDecimal scores. Contributed by Brad Hards.
+* `Score.toShortString()`: simplifies `0hard/0medium/-7soft` to `-7soft`
+* Fairness / load balancing: Tennis example now shows how to give them a scalable weight against other constraints
+* A planning solution's fields/getter can now be automatically get their annotations through `@PlanningSolution(autoDiscoverMemberType = ...)`
 * The public API is now a solid foundation for the 7.x years.
 
 
