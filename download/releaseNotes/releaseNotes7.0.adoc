@@ -217,18 +217,9 @@ image:7.0/solverEditorScreen.png[Solver editor screen]
 === Guided rule editor integration
 
 OptaPlanner now integrates with the Guided rule editor.
-Modify the score by build-in OptaPlanner actions.
+Modify the score with a build-in OptaPlanner action.
 
 image:7.0/guidedRule.png[Guided rule editor]
-
-
-=== Difficulty comparator definition
-
-OptaPlanner domain editor can now specify a planning entity difficulty. Navigate through the object hierarchy and define
-sorting attributes.
-Several Construction Heuristic algorithms require this information in order to construct a good initial solution.
-
-image:7.0/difficultyComparator.png[Difficulty comparator]
 
 
 === Improved example import dialog
@@ -237,6 +228,15 @@ Examples are now part of the Workbench and they work offline too.
 Leverage tag-based filtering to quickly access projects from the field you are interested in.
 
 image:7.0/exampleImport.png[Example import dialog]
+
+
+=== Difficulty comparator definition
+
+OptaPlanner domain editor can now specify a planning entity difficulty.
+Navigate through the object hierarchy and define the sorting attributes.
+Several Construction Heuristic algorithms use this information to construct a better initial solution.
+
+image:7.0/difficultyComparator.png[Difficulty comparator]
 
 
 === Other Workbench improvements
