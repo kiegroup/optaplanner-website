@@ -39,7 +39,7 @@ change_frequency: weekly
     = partial('flags.html.haml', :outputPage => page)
 
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
-  %ul.nav.nav-justified#whatIsCarouselButtons
+  %ul.nav.nav-justified.frontPageCarouselButtons#whatIsCarouselButtons
     %li.active(data-target="#whatIsCarousel" data-slide-to="0")
       %a(href="#" data-toggle="tab") Video
     %li(data-target="#whatIsCarousel" data-slide-to="1")
@@ -52,7 +52,7 @@ change_frequency: weekly
       %a(href="#" data-toggle="tab") Compatibility
     %li(data-target="#whatIsCarousel" data-slide-to="5")
       %a(href="#" data-toggle="tab") Scalability
-  .carousel.slide#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
+  .carousel.slide.frontPageCarousel#whatIsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     -#.carousel-inner(style="align: center;")
     .carousel-inner
       .item.active
@@ -73,40 +73,55 @@ change_frequency: weekly
     %a.right.carousel-control(href="#whatIsCarousel" data-slide="next")
       %span.glyphicon.glyphicon-chevron-right
 
-.row(style="display:flex; margin-bottom: 20px;" )
-  .col-md-6
-    .panel.panel-default(style="height: 100%;" )
-      .panel-heading OptaPlanner Engine
-      .panel-body
-        :asciidoc
-          To optimize a problem from Java™ code,
-          add the `optaplanner-core` jar and call `Solver.solve()`:
+.jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
+  %ul.nav.nav-justified.frontPageCarouselButtons#projectsCarouselButtons
+    %li.active(data-target="#projectsCarousel" data-slide-to="0")
+      %a(href="#" data-toggle="tab") OptaPlanner Engine
+    %li(data-target="#projectsCarousel" data-slide-to="1")
+      %a(href="#" data-toggle="tab") Workbench
+    %li(data-target="#projectsCarousel" data-slide-to="2")
+      %a(href="#" data-toggle="tab") Execution Server
+  .carousel.slide.frontPageCarousel#projectsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
+    .carousel-inner
+      .item.active
+        %div(class="horizontal-center" style="height: 450px;")
+          %div(class="vertical-center")
+            :asciidoc
+              To optimize a problem from Java™ code,
+              add the `optaplanner-core` jar and call `Solver.solve()`:
 
-          [source,java]
-          ----
-          // My domain specific POJO as input
-          MyRoster problem = ...;
+              [source,java]
+              ----
+              // My domain specific POJO as input
+              MyRoster problem = ...;
 
-          SolverFactory<MyRoster> factory = SolverFactory
-              .createFromXmlResource(".../mySolverConfig.xml");
-          Solver<MyRoster> solver = factory.buildSolver();
+              SolverFactory<MyRoster> factory = SolverFactory
+                  .createFromXmlResource(".../mySolverConfig.xml");
+              Solver<MyRoster> solver = factory.buildSolver();
 
-          // My domain specific POJO as output
-          MyRoster solution = solver.solve(problem);
-          for (MyShift shift : solution.getShifts()) {
-            // Each shift is now assigned to an employee
-            assertNotNull(shift.getEmployee());
-          }
-          ----
-  .col-md-6
-    .panel.panel-default(style="height: 100%;" )
-      .panel-heading OptaPlanner Workbench and Execution Server
-      .panel-body
-        :asciidoc
-          Define constraints and configure the Solver in a user-friendly way
-          using the Workbench. Submit problem datasets and optimize them using KIE Execution Server.
+              // My domain specific POJO as output
+              MyRoster solution = solver.solve(problem);
+              for (MyShift shift : solution.getShifts()) {
+                // Each shift is now assigned to an employee
+                assertNotNull(shift.getEmployee());
+              }
+              ----
+      .item
+        %div(class="horizontal-center" style="height: 450px")
+          %div(class="vertical-center")
+            :asciidoc
+              Define constraints and configure the Solver in a user-friendly way
+              using the Workbench.
 
-          image::landingPage/workbenchSolverConfig.png[]
+            %img(src="landingPage/workbenchSolverConfig.png")
+      .item
+        %div(class="horizontal-center" style="height: 450px")
+          %div(class="vertical-center" )
+            %img(src="blog/2015/10/01/optaplannerWorkbenchAndExecutionServer.png")
+    %a.left.carousel-control(href="#projectsCarousel" data-slide="prev")
+      %span.glyphicon.glyphicon-chevron-left
+    %a.right.carousel-control(href="#projectsCarousel" data-slide="next")
+      %span.glyphicon.glyphicon-chevron-right
 
 .row
   .col-md-5

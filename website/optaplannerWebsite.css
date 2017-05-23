@@ -185,23 +185,34 @@ td > p:last-child {
 }
 
 /* Carousel: center images, remove gradient, tabs instead of indicators */
-#whatIsCarousel .item > img {
+.frontPageCarousel .item > img {
     margin: 0 auto;
     display: block;
 }
-#whatIsCarousel .carousel-control.left, .carousel-control.right {
+.frontPageCarousel .carousel-control.left, .carousel-control.right {
     background-image: none;
     color: inherit;
 }
-#whatIsCarouselButtons > li {
+.frontPageCarouselButtons > li {
     vertical-align: bottom;
 }
-#whatIsCarouselButtons > li.active a {
+.frontPageCarouselButtons > li.active a {
     background-color: white;
     color: inherit;
     -webkit-border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
+}
+
+.horizontal-center {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /******************************************************************************
