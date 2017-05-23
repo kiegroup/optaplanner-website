@@ -1,0 +1,209 @@
+---
+description: Download the community release of OptaPlanner, including examples, sources and documentation.
+layout: normalBase
+title: Download
+---
+
+:asciidoc
+  Interested in enterprise support or consulting? Check out link:../community/product.html[Red Hat's offering].
+
+  [[FinalReleases]]
+  == Final releases
+
+%ul(class="nav nav-pills" style="margin-bottom: 0;")
+  %li(class="active")
+    %a(href="#engine" data-toggle="pill") Engine
+  %li
+    %a(href="#workbench" data-toggle="pill") Workbench
+  %li
+    %a(href="#execution-server" data-toggle="pill") Execution Server
+
+%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+  %div(id="engine" class="tab-pane fade in active")
+    :asciidoc
+      === Distribution zip
+
+      The OptaPlanner distribution zip includes binaries, documentation, examples and sources.
+
+      * image:download.png[Download] *#{site.pom.latestFinal.distributionZip}[Download OptaPlanner Engine #{site.pom.latestFinal.version}]*
+      ** link:releaseNotes/releaseNotes#{site.pom.latestFinal.releaseNotesVersion}.html[Release notes #{site.pom.latestFinal.releaseNotesVersion}] -
+      link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latestFinal.releaseNotesVersion}]
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+      ** Download size: Large (over 90% is due to examples, data sets and documentation)
+
+      === Maven, Gradle, Ivy or Buildr
+
+      The OptaPlanner jars are also available in http://search.maven.org/#search|ga|1|org.optaplanner[the central maven repository]
+      (and also in https://repository.jboss.org/nexus/index.html#nexus-search;gav\~org.optaplanner\~\~\~\~[the JBoss maven repository]).
+
+      If you use Maven, just add the `optaplanner-core` dependency in your `pom.xml` to get started:
+
+      [source,xml]
+      ----
+        <dependency>
+          <groupId>org.optaplanner</groupId>
+          <artifactId>optaplanner-core</artifactId>
+          <version>#{site.pom.latestFinal.version}</version>
+        </dependency>
+      ----
+
+      This is similar for Gradle, Ivy and Buildr.
+
+      Alternatively, import the `optaplanner-bom` for more advanced cases:
+
+      [source,xml]
+      ----
+      <project>
+        ...
+        <dependencyManagement>
+          <dependencies>
+            <dependency>
+              <groupId>org.optaplanner</groupId>
+              <artifactId>optaplanner-bom</artifactId>
+              <type>pom</type>
+              <version>#{site.pom.latestFinal.version}</version>
+              <scope>import</scope>
+            </dependency>
+          </dependencies>
+        </dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>org.optaplanner</groupId>
+            <artifactId>optaplanner-core</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>org.optaplanner</groupId>
+            <artifactId>optaplanner-persistence-jpa</artifactId>
+          </dependency>
+          ...
+        </dependencies>
+      </project>
+      ----
+  %div(id="workbench" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Workbench #{site.pom.latestFinal.version}*
+      ** #{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly10] -
+      #{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP6.4] -
+      #{site.pom.latestFinal.kieWorkbenchEAP7War}[EAP7] -
+      #{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat7] -
+      #{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic8] -
+      #{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere12]
+      ** #{site.pom.latestFinal.kieWorkbenchReleaseNotes}[Release notes #{site.pom.latestFinal.releaseNotesVersion} (general)]
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+  %div(id="execution-server" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Execution Server #{site.pom.latestFinal.version}*
+      ** #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+
+:asciidoc
+  [[NonFinalReleases]]
+  == Non-Final releases
+
+  *Non-Final releases are the best way to test drive new features and APIs
+  to provide feedback before we lock down the API with a Final release.*
+  We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
+  or link:../code/issueTracker.html[issue tracker].
+
+  [[AlphasBetasCRs]]
+  === Alphas, Betas and CRs
+
+  An Alpha can be unstable.
+  A Beta should work (it passes automated testing), but its new APIs might still change in the next release.
+  A CR should be almost identical to the Final release.
+
+%ul(class="nav nav-pills" style="margin-bottom: 0;")
+  %li(class="active")
+    %a(href="#engine-nonfinal" data-toggle="pill") Engine
+  %li
+    %a(href="#workbench-nonfinal" data-toggle="pill") Workbench
+  %li
+    %a(href="#execution-server-nonfinal" data-toggle="pill") Execution Server
+
+%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+  %div(id="engine-nonfinal" class="tab-pane fade in active")
+    :asciidoc
+      * image:download.png[Download] *#{site.pom.latest.distributionZip}[Download OptaPlanner Engine #{site.pom.latest.version}]*
+      ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}] -
+      link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
+
+      Or with Maven:
+
+      [source,xml]
+      ----
+        <dependency>
+          <groupId>org.optaplanner</groupId>
+          <artifactId>optaplanner-core</artifactId>
+          <version>#{site.pom.latest.version}</version>
+        </dependency>
+      ----
+  %div(id="workbench-nonfinal" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Workbench #{site.pom.latest.version}*
+        ** #{site.pom.latest.kieWorkbenchEAPWar}[EAP7] -
+        #{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly10] -
+        #{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat8]
+        ** #{site.pom.latest.kieWorkbenchReleaseNotes}[Release notes #{site.pom.latest.releaseNotesVersion} (general)] -
+        link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html#_workbench[Release notes #{site.pom.latest.releaseNotesVersion} (OptaPlanner)]
+        ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+  %div(id="execution-server-nonfinal" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Execution Server #{site.pom.latest.version}*
+      ** #{site.pom.latest.kieExecutionServerZip}[Any application server]
+      ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html#_execution_server[Release notes #{site.pom.latest.releaseNotesVersion} (OptaPlanner)]
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+
+:asciidoc
+  [[NightlySnapshots]]
+  === Nightly snapshots
+
+  Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].
+
+%ul(class="nav nav-pills" style="margin-bottom: 0;")
+  %li(class="active")
+    %a(href="#engine-nightly" data-toggle="pill") Engine
+  %li
+    %a(href="#workbench-nightly" data-toggle="pill") Workbench
+  %li
+    %a(href="#execution-server-nightly" data-toggle="pill") Execution Server
+
+%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+  %div(id="engine-nightly" class="tab-pane fade in active")
+    :asciidoc
+      * image:download.png[Download] *#{site.pom.nightly.distributionZip}[Download OptaPlanner Engine #{site.pom.nightly.version}]*
+  %div(id="workbench-nightly" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Workbench #{site.pom.nightly.version}*
+      ** #{site.pom.nightly.kieWorkbenchEAPWar}[EAP7] -
+      #{site.pom.nightly.kieWorkbenchWildFlyWar}[WildFly10] -
+      #{site.pom.nightly.kieWorkbenchTomcatWar}[Tomcat8]
+  %div(id="execution-server-nightly" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *Download Execution Server #{site.pom.nightly.version}*
+      ** #{site.pom.nightly.kieExecutionServerJavaEE6}[JavaEE 6] -
+      #{site.pom.nightly.kieExecutionServerJavaEE7}[JavaEE 7] -
+      #{site.pom.nightly.kieExecutionServerWebc}[Web (Servlet) container]
+
+:asciidoc
+  [[OlderReleases]]
+  == Older releases
+
+%ul(class="nav nav-pills" style="margin-bottom: 0;")
+  %li(class="active")
+    %a(href="#engine-older" data-toggle="pill") Engine
+  %li
+    %a(href="#workbench-older" data-toggle="pill") Workbench
+  %li
+    %a(href="#execution-server-older" data-toggle="pill") Execution Server
+
+%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+  %div(id="engine-older" class="tab-pane fade in active")
+    :asciidoc
+      For older community releases, check https://download.jboss.org/optaplanner/release/[the release archive].
+  %div(id="workbench-older" class="tab-pane fade")
+    :asciidoc
+      For older community releases, check https://download.jboss.org/drools/release/[the release archive].
+  %div(id="execution-server-older" class="tab-pane fade")
+    :asciidoc
+      For older community releases, check https://download.jboss.org/drools/release/[the release archive].
