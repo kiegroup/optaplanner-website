@@ -19,15 +19,13 @@
 #{site.pom.latestFinal.javadocs}[HTML]
 
 ** Drools Expert reference manual:
-#{site.pom.latestFinal.droolsExpert_documentationHtmlSingle}[HTML Single] -
-#{site.pom.latestFinal.droolsExpert_documentationPdf}[PDF]
+#{site.pom.latestFinal.droolsExpert_documentationHtmlSingle}[HTML Single]
 
 * Older community documentation: Check https://docs.optaplanner.org/[the documentation archive].
 
 * Red Hat subscription documentation: Check https://access.redhat.com/knowledge/docs/[the customer portal].
 
 '''
-
 [[NonFinalReleases]]
 == Non-Final releases
 
@@ -45,8 +43,8 @@
 
 ** Drools Expert reference manual:
 #{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single]
-// #{site.pom.latest.droolsExpert_documentationPdf}[PDF]
 
+'''
 [[NightlySnapshots]]
 === Nightly snapshots
 
