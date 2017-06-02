@@ -22,15 +22,53 @@ link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html
 ** Download size: Large (over 90% is due to examples, data sets and documentation)
 * KIE Workbench #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.kieWorkbenchWildFlyWar}[WildFly10] -
-#{site.pom.latestFinal.kieWorkbenchEAPWar}[EAP6.4] -
 #{site.pom.latestFinal.kieWorkbenchEAP7War}[EAP7] -
-#{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat7] -
-#{site.pom.latestFinal.kieWorkbenchWASWar}[WebLogic8] -
-#{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere12]
+#{site.pom.latestFinal.kieWorkbenchTomcatWar}[Tomcat8] -
 * KIE Execution Server #{site.pom.latestFinal.version}:
 #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
 
 * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
+
+'''
+
+[[NonFinalReleases]]
+== Non-Final releases
+
+*Non-Final releases are the best way to test drive new features and APIs
+to provide feedback before we lock down the API with a Final release.*
+We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
+or link:../code/issueTracker.html[issue tracker].
+
+[[AlphasBetasCRs]]
+=== Alphas, Betas and CRs
+
+An Alpha can be unstable.
+A Beta should work (it passes automated testing), but its new APIs might still change in the next release.
+A CR should be almost identical to the Final release.
+
+* image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
+** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}] -
+link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
+** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
+* KIE Workbench #{site.pom.latest.version}:
+#{site.pom.latest.kieWorkbenchEAPWar}[EAP7] -
+#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly10] -
+#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat8]
+* KIE Execution Server #{site.pom.latest.version}:
+#{site.pom.latest.kieExecutionServerZip}[Any application server]
+
+Or with Maven:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+      <version>#{site.pom.latest.version}</version>
+    </dependency>
+----
+
+'''
 
 === Maven, Gradle, Ivy or Buildr
 
@@ -82,43 +120,6 @@ Alternatively, import the `optaplanner-bom` for more advanced cases:
 ----
 
 '''
-
-[[NonFinalReleases]]
-== Non-Final releases
-
-*Non-Final releases are the best way to test drive new features and APIs
-to provide feedback before we lock down the API with a Final release.*
-We welcome that feedback on the link:../community/forum.html[forum], link:../community/chat.html[chat]
-or link:../code/issueTracker.html[issue tracker].
-
-[[AlphasBetasCRs]]
-=== Alphas, Betas and CRs
-
-An Alpha can be unstable.
-A Beta should work (it passes automated testing), but its new APIs might still change in the next release.
-A CR should be almost identical to the Final release.
-
-* image:download.png[Download] #{site.pom.latest.distributionZip}[Download OptaPlanner #{site.pom.latest.version}]
-** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html[Release notes #{site.pom.latest.releaseNotesVersion}] -
-link:upgradeRecipe/upgradeRecipe#{site.pom.latest.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latest.releaseNotesVersion}]
-** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latest.releaseDate.strftime('%a %-d %B %Y')}
-* KIE Workbench #{site.pom.latest.version}:
-#{site.pom.latest.kieWorkbenchEAPWar}[EAP7] -
-#{site.pom.latest.kieWorkbenchWildFlyWar}[WildFly10] -
-#{site.pom.latest.kieWorkbenchTomcatWar}[Tomcat8]
-* KIE Execution Server #{site.pom.latest.version}:
-#{site.pom.latest.kieExecutionServerZip}[Any application server]
-
-Or with Maven:
-
-[source,xml]
-----
-    <dependency>
-      <groupId>org.optaplanner</groupId>
-      <artifactId>optaplanner-core</artifactId>
-      <version>#{site.pom.latest.version}</version>
-    </dependency>
-----
 
 [[NightlySnapshots]]
 === Nightly snapshots
