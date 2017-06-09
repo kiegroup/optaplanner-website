@@ -1,10 +1,14 @@
 ---
 description: Download the community release of OptaPlanner, including examples, sources and documentation.
 layout: normalBase
+priority: 1.0
+change_frequency: weekly
 title: Download
 ---
 
 :asciidoc
+  = #{page.title}
+
   Interested in enterprise support or consulting? Check out link:../community/product.html[Red Hat's offering].
 
   [[FinalReleases]]
@@ -30,6 +34,7 @@ title: Download
       link:upgradeRecipe/upgradeRecipe#{site.pom.latestFinal.releaseNotesVersion}.html[Upgrade recipe to #{site.pom.latestFinal.releaseNotesVersion}]
       ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
       ** Download size: Large (over 90% is due to examples, data sets and documentation)
+      * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
 
       === Maven, Gradle, Ivy or Buildr
 
@@ -90,11 +95,13 @@ title: Download
       #{site.pom.latestFinal.kieWorkbenchWLSWar}[WebSphere12]
       ** #{site.pom.latestFinal.kieWorkbenchReleaseNotes}[Release notes #{site.pom.latestFinal.releaseNotesVersion} (general)]
       ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+      * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
   %div(id="execution-server" class="tab-pane fade")
     :asciidoc
       * image:download.png[Download] *Download Execution Server #{site.pom.latestFinal.version}*
       ** #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
       ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+      * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
 
 :asciidoc
   [[NonFinalReleases]]
