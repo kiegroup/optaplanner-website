@@ -1,58 +1,54 @@
 latestFinal:
-  version: 6.5.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/6.5.0.Final/optaplanner-distribution-6.5.0.Final.zip
-  releaseDate: 2016-10-20
-  releaseNotesVersion: 6.5
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-wildfly10.war
-  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-eap6_4.war
-  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-tomcat7.war
-  kieWorkbenchWLSWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-weblogic12.war
-  kieWorkbenchWASWar: https://download.jboss.org/drools/release/6.5.0.Final/kie-drools-wb-6.5.0.Final-was8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/6.5.0.Final/kie-server-distribution-6.5.0.Final.zip
+  version: 7.0.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/7.0.0.Final/optaplanner-distribution-7.0.0.Final.zip
+  releaseDate: 2017-05-29
+  releaseNotesVersion: 7.0
 
-  documentationHtmlSingle: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/html_single/index.html
-  documentationHtml: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/html/index.html
-  documentationPdf: https://docs.optaplanner.org/6.5.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: https://docs.optaplanner.org/6.5.0.Final/optaplanner-javadoc/index.html
-  kieWorkbenchReleaseNotes: https://docs.drools.org/6.5.0.Final/drools-docs/html_single/#wb.ReleaseNotesWorkbench.6.5.0.Final
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.0.0.Final/kie-drools-wb-7.0.0.Final-wildfly10.war
+  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/7.0.0.Final/kie-drools-wb-7.0.0.Final-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.0.0.Final/kie-drools-wb-7.0.0.Final-tomcat8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.0.0.Final/kie-server-distribution-7.0.0.Final.zip
 
-  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/html/index.html
-  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/pdf/drools-docs.pdf
+  documentationHtmlSingle: https://docs.optaplanner.org/7.0.0.Final/optaplanner-docs/html_single/index.html
+  documentationPdf: https://docs.optaplanner.org/7.0.0.Final/optaplanner-docs/pdf/index.pdf
+  javadocs: https://docs.optaplanner.org/7.0.0.Final/optaplanner-javadoc/index.html
+  kieWorkbenchReleaseNotes: https://docs.drools.org/7.0.0.Final/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
+
+
+  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.0.0.Final/drools-docs/html_single/index.html
+
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.0.0.CR3
-  distributionZip: https://download.jboss.org/optaplanner/release/7.0.0.CR3/optaplanner-distribution-7.0.0.CR3.zip
-  releaseDate: 2017-05-03
+  version: 7.1.0.Beta2
+  distributionZip: https://download.jboss.org/optaplanner/release/7.1.0.Beta2/optaplanner-distribution-7.1.0.Beta2.zip
+  releaseDate: 2017-06-01
   releaseNotesVersion: 7.0
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.0.0.CR3/kie-drools-wb-7.0.0.CR3-wildfly10.war
-  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.0.0.CR3/kie-drools-wb-7.0.0.CR3-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.0.0.CR3/kie-drools-wb-7.0.0.CR3-tomcat8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.0.0.CR3/kie-server-distribution-7.0.0.CR3.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-wildfly10.war
+  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-tomcat8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-server-distribution-7.1.0.Beta2.zip
 
-  documentationHtmlSingle: https://docs.optaplanner.org/7.0.0.CR3/optaplanner-docs/html_single/index.html
-  documentationPdf: https://docs.optaplanner.org/7.0.0.CR3/optaplanner-docs/pdf/index.pdf
-  javadocs: https://docs.optaplanner.org/7.0.0.CR3/optaplanner-javadoc/index.html
-  kieWorkbenchReleaseNotes: https://docs.drools.org/7.0.0.CR3/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
+  documentationHtmlSingle: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-docs/html_single/index.html
+  documentationPdf: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-docs/pdf/index.pdf
+  javadocs: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-javadoc/index.html
+  kieWorkbenchReleaseNotes: https://docs.drools.org/7.1.0.Beta2/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
 
-  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.0.0.CR3/drools-docs/html_single/index.html
-  droolsExpert_documentationHtml: https://docs.jboss.org/drools/release/7.0.0.CR3/drools-docs/html/index.html
-  droolsExpert_documentationPdf: https://docs.jboss.org/drools/release/7.0.0.CR3/drools-docs/pdf/drools-docs.pdf
+  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.1.0.Beta2/drools-docs/html_single/index.html
 
 nightly:
-  version: 7.0.0-SNAPSHOT
+  version: 7.1.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
-  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=7.0.0-SNAPSHOT&e=zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=7.1.0-SNAPSHOT&e=zip
   kieWorkbenchEAPWar: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie&a=kie-drools-wb-distribution-wars&v=LATEST&e=war&c=eap7
   kieWorkbenchWildFlyWar: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie&a=kie-drools-wb-distribution-wars&v=LATEST&e=war&c=wildfly10
-  kieWorkbenchTomcatWar: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie&a=kie-drools-wb-distribution-wars&v=LATEST&e=war&c=tomcat7
+  kieWorkbenchTomcatWar: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie&a=kie-drools-wb-distribution-wars&v=LATEST&e=war&c=tomcat8
   kieExecutionServerJavaEE6: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie.server&a=kie-server&v=LATEST&e=war&c=ee6
   kieExecutionServerJavaEE7: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie.server&a=kie-server&v=LATEST&e=war&c=ee7
   kieExecutionServerWebc: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie.server&a=kie-server&v=LATEST&e=war&c=webc
+
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus, which is not a html but a zip
   # This link is a temporary fix. It simply links yu to a under construction page.
   documentationHtmlSingle: https://docs.optaplanner.org/snapshot/noPublicCI.html
