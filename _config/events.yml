@@ -324,6 +324,16 @@
       url: https://www.springdays.io/ehome/spring-days/chicago
       presenters: Kevin Greene
 
+- eventId: 20170710-londonjavacommunity
+  eventOrganization: London Java Community
+  eventUrl: https://www.meetup.com/Londonjavacommunity/
+  location: London, UK
+  date: 2017-07-10
+  talks:
+    - title: Constraint solving in Java with OptaPlanner
+      url: https://www.meetup.com/Londonjavacommunity/events/240754560/
+      presenters: Geoffrey De Smet
+
 - eventId: 20170714-ruleml
   eventOrganization: RuleML+RR
   eventUrl: http://2017.ruleml-rr.org/
