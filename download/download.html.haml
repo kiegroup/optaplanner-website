@@ -14,7 +14,7 @@ title: Download
   [[FinalReleases]]
   == Final releases
 
-%ul(class="nav nav-pills" style="margin-bottom: 0;")
+%ul(class="nav nav-tabs download-nav-tabs")
   %li(class="active")
     %a(href="#engine" data-toggle="pill") Engine
   %li
@@ -22,7 +22,7 @@ title: Download
   %li
     %a(href="#execution-server" data-toggle="pill") Execution Server
 
-%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+%div(class="tab-content download-tab-content")
   %div(id="engine" class="tab-pane fade in active")
     :asciidoc
       === Distribution zip
@@ -116,7 +116,7 @@ title: Download
   A Beta should work (it passes automated testing), but its new APIs might still change in the next release.
   A CR should be almost identical to the Final release.
 
-%ul(class="nav nav-pills" style="margin-bottom: 0;")
+%ul(class="nav nav-tabs download-nav-tabs")
   %li(class="active")
     %a(href="#engine-nonfinal" data-toggle="pill") Engine
   %li
@@ -124,7 +124,7 @@ title: Download
   %li
     %a(href="#execution-server-nonfinal" data-toggle="pill") Execution Server
 
-%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+%div(class="tab-content download-tab-content")
   %div(id="engine-nonfinal" class="tab-pane fade in active")
     :asciidoc
       * image:download.png[Download] *#{site.pom.latest.distributionZip}[Download OptaPlanner Engine #{site.pom.latest.version}]*
@@ -164,7 +164,7 @@ title: Download
 
   Nightly snapshots are unstable binaries, build by link:../code/continuousIntegration.html[our build server].
 
-%ul(class="nav nav-pills" style="margin-bottom: 0;")
+%ul(class="nav nav-tabs download-nav-tabs")
   %li(class="active")
     %a(href="#engine-nightly" data-toggle="pill") Engine
   %li
@@ -172,7 +172,7 @@ title: Download
   %li
     %a(href="#execution-server-nightly" data-toggle="pill") Execution Server
 
-%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+%div(class="tab-content download-tab-content")
   %div(id="engine-nightly" class="tab-pane fade in active")
     :asciidoc
       * image:download.png[Download] *#{site.pom.nightly.distributionZip}[Download OptaPlanner Engine #{site.pom.nightly.version}]*
@@ -193,7 +193,7 @@ title: Download
   [[OlderReleases]]
   == Older releases
 
-%ul(class="nav nav-pills" style="margin-bottom: 0;")
+%ul(class="nav nav-tabs download-nav-tabs")
   %li(class="active")
     %a(href="#engine-older" data-toggle="pill") Engine
   %li
@@ -201,7 +201,7 @@ title: Download
   %li
     %a(href="#execution-server-older" data-toggle="pill") Execution Server
 
-%div(class="tab-content" style="border: 1px solid #ccc; border-radius: 4px; padding: 10px 10px 0px 10px")
+%div(class="tab-content download-tab-content")
   %div(id="engine-older" class="tab-pane fade in active")
     :asciidoc
       For older community releases, check https://download.jboss.org/optaplanner/release/[the release archive].
