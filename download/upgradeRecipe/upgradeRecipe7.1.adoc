@@ -4,6 +4,27 @@
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 7.1
 
-== From 7.1.0.Final to 7.1.0.Beta1
+== From 7.1.0.Beta2 to 7.1.0.Beta3
 
-Nothing yet
+[.upgrade-recipe-minor]
+=== `<valueSelector>`: `variableName` is now an attribute
+
+When power tweaking move selectors, such as `<changeMoveSelector>`,
+in a use case with multiple planning variables,
+the `<variableName>` XML element has been replaced by a `variableName="..."` XML attribute.
+This reduces the solver configuration verbosity.
+For backwards compatibility, the old way is still supported in the 7.x series.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <valueSelector>
+    <variableName>room</variableName>
+  </valueSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <valueSelector variableName="room"/>
+----

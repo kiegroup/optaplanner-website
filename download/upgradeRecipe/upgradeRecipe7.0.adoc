@@ -368,7 +368,7 @@ After in `*.java` (with lamdba):
 === `Bendable*Score`: `toString()` changed
 
 A bendable score (`BendableScore`, `BendableLongScore` or `BendableBigDecimalScore`)'s `String`
-has changed so it can be parsed without the ScoreDefinition
+has changed so it can be parsed without the ScoreDefinition.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
