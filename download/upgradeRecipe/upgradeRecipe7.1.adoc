@@ -28,3 +28,41 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 ----
   <valueSelector variableName="room"/>
 ----
+
+[.upgrade-recipe-minor]
+=== Construction Heuristic: multiple variable power tweaking simplified
+
+It's now easier to configure construction heuristics that scale better for multiple variables,
+but assigning one variable at a time.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <queuedEntityPlacer>
+      <entitySelector id="placerEntitySelector"/>
+      <changeMoveSelector>
+        <entitySelector mimicSelectorRef="placerEntitySelector"/>
+        <valueSelector variableName="period"/>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <entitySelector mimicSelectorRef="placerEntitySelector"/>
+        <valueSelector variableName="room"/>
+      </changeMoveSelector>
+    </queuedEntityPlacer>
+  </constructionHeuristic>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    <changeMoveSelector>
+      <valueSelector variableName="period"/>
+    </changeMoveSelector>
+    <changeMoveSelector>
+      <valueSelector variableName="room"/>
+    </changeMoveSelector>
+  </constructionHeuristic>
+----
