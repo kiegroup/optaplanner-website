@@ -21,22 +21,22 @@ latestFinal:
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.1.0.Beta2
-  distributionZip: https://download.jboss.org/optaplanner/release/7.1.0.Beta2/optaplanner-distribution-7.1.0.Beta2.zip
-  releaseDate: 2017-06-01
+  version: 7.1.0.Beta3
+  distributionZip: https://download.jboss.org/optaplanner/release/7.1.0.Beta3/optaplanner-distribution-7.1.0.Beta3.zip
+  releaseDate: 2017-06-19
   releaseNotesVersion: 7.0
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-wildfly10.war
-  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-drools-wb-7.1.0.Beta2-tomcat8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.1.0.Beta2/kie-server-distribution-7.1.0.Beta2.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.1.0.Beta3/kie-drools-wb-7.1.0.Beta3-wildfly10.war
+  kieWorkbenchEAPWar: https://download.jboss.org/drools/release/7.1.0.Beta3/kie-drools-wb-7.1.0.Beta3-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.1.0.Beta3/kie-drools-wb-7.1.0.Beta3-tomcat8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.1.0.Beta3/kie-server-distribution-7.1.0.Beta3.zip
 
-  documentationHtmlSingle: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-docs/html_single/index.html
-  documentationPdf: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-docs/pdf/index.pdf
-  javadocs: https://docs.optaplanner.org/7.1.0.Beta2/optaplanner-javadoc/index.html
-  kieWorkbenchReleaseNotes: https://docs.drools.org/7.1.0.Beta2/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
+  documentationHtmlSingle: https://docs.optaplanner.org/7.1.0.Beta3/optaplanner-docs/html_single/index.html
+  documentationPdf: https://docs.optaplanner.org/7.1.0.Beta3/optaplanner-docs/pdf/index.pdf
+  javadocs: https://docs.optaplanner.org/7.1.0.Beta3/optaplanner-javadoc/index.html
+  kieWorkbenchReleaseNotes: https://docs.drools.org/7.1.0.Beta3/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
 
-  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.1.0.Beta2/drools-docs/html_single/index.html
+  droolsExpert_documentationHtmlSingle: https://docs.jboss.org/drools/release/7.1.0.Beta3/drools-docs/html_single/index.html
 
 nightly:
   version: 7.1.0-SNAPSHOT
