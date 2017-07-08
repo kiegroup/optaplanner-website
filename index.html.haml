@@ -92,15 +92,16 @@ change_frequency: weekly
 
               [source,java]
               ----
-              // My domain specific POJO as input
+              // My domain specific class as input
               MyRoster problem = ...;
 
               SolverFactory<MyRoster> factory = SolverFactory
                   .createFromXmlResource(".../mySolverConfig.xml");
               Solver<MyRoster> solver = factory.buildSolver();
 
-              // My domain specific POJO as output
+              // My domain specific class as output
               MyRoster solution = solver.solve(problem);
+
               for (MyShift shift : solution.getShifts()) {
                 // Each shift is now assigned to an employee
                 assertNotNull(shift.getEmployee());
