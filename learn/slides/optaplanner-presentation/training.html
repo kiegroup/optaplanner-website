@@ -552,9 +552,9 @@ public class CloudBalance {
             <pre xml:space="preserve"><code class="java">public class CloudBalancingEasyScoreCalculator
     implements EasyScoreCalculator&lt;CloudBalance&gt; {
 
-  public Score calculateScore(CloudBalance cb, int initScore) {
+  public HardSoftScore calculateScore(CloudBalance cb) {
     ...
-    return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    return HardSoftScore.valueOf(hardScore, softScore);
   }
 
 }</code></pre>
@@ -1234,7 +1234,7 @@ class Lecture {
   Period period;
   ...
 }</code></pre>
-            <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule, int initScore);
+            <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule);
   int hardScore = 0;
   for (UnavailablePeriodPenalty penalty : schedule.getPenaltyList()) {
     for (Lecture lecture : schedule.getLectureList()) {
@@ -1245,7 +1245,7 @@ class Lecture {
     }
   }
   ...
-  return HardSoftScore.valueOf(initScore, hardScore, softScore);
+  return HardSoftScore.valueOf(hardScore, softScore);
 }</code></pre>
         </section>
         <section>
@@ -1303,10 +1303,10 @@ end</code></pre>
             <img src="ScoreCalculation/scoreComparisonEmployeeRostering_8.png" class="fullImage fragment">
         </section>
         <section>
-            <img src="UseCasesAndExamples/employeeShiftRosteringClassDiagram_0.png" class="fullImage">
-            <img src="UseCasesAndExamples/employeeShiftRosteringClassDiagram_1.png" class="fullImage fragment">
-            <img src="UseCasesAndExamples/employeeShiftRosteringClassDiagram_2.png" class="fullImage fragment">
-            <img src="UseCasesAndExamples/employeeShiftRosteringClassDiagram_3.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_1.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_2.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_3.png" class="fullImage fragment">
         </section>
         <section>
             <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_0.png" class="fullImage">
