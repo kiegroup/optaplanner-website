@@ -3031,7 +3031,10 @@ Object solution = solver.solve(problem);</code></pre>
         });
     </script>
     <script src="website/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.LANGUAGES.drl=function(a){return{k:"rule when then end",c:[a.CLCM,a.CBLCLM,a.ASM,a.QSM]}}(hljs);
+    </script>
 
 </body>
 </html>

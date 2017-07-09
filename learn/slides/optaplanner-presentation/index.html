@@ -86,6 +86,253 @@
         </div>
     </section>
 
+
+    <section>
+        <section>
+            <h2>
+                Employee shift rostering
+            </h2>
+            <p class="instruction">
+                <i>Press down to show</i><br/>
+                <i>Press right to skip</i>
+            </p>
+        </section>
+        <section>
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_1.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_2.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>What is constraint solving?</h3>
+            <figure>
+                <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
+                <p>OptaShift Employee Rostering demo</p>
+            </figure>
+        </section>
+        <section>
+            <h3>Implementation</h3>
+            <ol>
+                <li>Define domain</li>
+                <li>Define constraints</li>
+                <li>Solve</li>
+            </ol>
+        </section>
+        <section>
+            <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_0.png" class="fullImage">
+            <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Calling the solve method</h3>
+            <pre xml:space="preserve"><code class="java">// My domain specific class as input
+Roster problem = ...;
+
+SolverFactory&lt;Roster&gt; factory = SolverFactory
+    .createFromXmlResource(".../mySolverConfig.xml");
+Solver&lt;Roster&gt; solver = factory.buildSolver();
+
+// My domain specific class as output
+Roster solution = <b>solver.solve(problem)</b>;
+
+for (Shift shift : solution.getShiftList()) {
+  // Each shift is now assigned to an employee
+  System.out.println(shift + " assigned to " + shift.getEmployee());
+}</code></pre>
+        </section>
+        <section>
+            <h3>Define domain</h3>
+        </section>
+        <section>
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/employeeRosteringClassDiagram_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Spot.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Spot {
+
+  private String name;
+  private Skill requiredSkill;
+
+  ...
+
+}</code></pre>
+            <p>Plain old java class</p>
+        </section>
+        <section>
+            <h3>Employee.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Employee {
+
+  private String name;
+
+  private List&lt;Skill&gt; skillList;
+
+  ...
+
+  public boolean hasSkill(Skill skill) {
+    return skillList.contains(skill);
+  }
+
+}</code></pre>
+            <p>Plain old java class</p>
+        </section>
+        <section>
+            <h3>Shift.java</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
+public class Shift {
+
+  private Spot spot;
+  private TimeSlot timeSlot;
+
+  @PlanningVariable(...)
+  private Employee employee; // Changes during solve()
+
+  ...
+
+}</code></pre>
+            <p>Plain old java class with OptaPlanner annotations</p>
+        </section>
+
+        <section>
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_4.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_5.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_6.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_7.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_8.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Score calculation</h3>
+            <ul>
+                <li>Easy Java</li>
+                <li>Incremental Java</li>
+                <li>Drools DRL (also incremental)</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Required skill constraint (easy Java)</h3>
+            <pre xml:space="preserve"><code class="java">public class MyScoreCalculator
+    implements EasyScoreCalculator&lt;Roster&gt; {
+
+  public Score <b>calculateScore</b>(Roster roster) {
+    int hardScore = 0;
+    for (Shift shift : roster.getShiftList()) {
+      Skill requiredSkill = shift.getSpot().getRequiredSkill();
+      if (shift.getEmployee() != null
+          // Employee lacks required skill
+          && !shift.getEmployee().hasSkill(requiredSkill)) {
+        // Lower hard score
+        hardScore--;
+      }
+    }
+    ...
+    return HardSoftScore.valueOf(hardScore, softScore);
+  }
+
+}</code></pre>
+        </section>
+        <section>
+            <h3>Required skill constraint (Drools DRL)</h3>
+            <pre xml:space="preserve"><code class="drl">rule "Required skill"
+  when
+    Shift(
+        getEmployee() != null,
+        // Employee lacks required skill
+        !getEmployee().hasSkill(getSpot().getRequiredSkill()))
+  then
+    // Lower hard score
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end</code></pre>
+        </section>
+        <section>
+            <h3>Availability.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Availability {
+
+  private Employee employee;
+  private TimeSlot timeSlot;
+
+  ...
+
+}</code></pre>
+            <p>Plain old java class<br/>
+                One constraint handles all instances</p>
+        </section>
+        <section>
+            <h3>Time off request constraint (easy Java)</h3>
+            <pre xml:space="preserve"><code class="java">public class MyScoreCalculator
+    implements EasyScoreCalculator&lt;Roster&gt; {
+
+  public Score calculateScore(Roster roster) {
+    ...
+    int softScore = 0;
+    for (Availability availability : roster.getAvailabilityList()) {
+      for (Shift shift : roster.getShiftList()) {
+          if (shift.getEmployee() == availability.getEmployee()
+              && shift.getTimeSlot() == availability.getTimeSlot()) {
+            // Lower soft score
+            softScore--;
+          }
+      }
+    }
+    return HardSoftScore.valueOf(hardScore, softScore);
+  }
+
+}</code></pre>
+        </section>
+        <section>
+            <h3>Time off request constraint (Drools DRL)</h3>
+            <pre xml:space="preserve"><code class="drl">rule "Time off request"
+  when
+    Availability(
+        state == AvailabilityState.UNDESIRED,
+        $e : employee,
+        $t : timeSlot)
+    Shift(
+        employee == $e,
+        timeSlot == $t)
+  then
+    // Lower soft score
+    scoreHolder.addSoftConstraintMatch(kcontext, -1);
+end</code></pre>
+        </section>
+        <section>
+            <img src="PlannerConfiguration/inputOutputOverviewEmployeeRostering_3.png" class="fullImage">
+        </section>
+
+        <section>
+            <h3>When do we solve?</h3>
+            <ul>
+                <li>
+                    Publish schedule weeks in advance
+                    <ul>
+                        <li>Affects family/social lives</li>
+                    </ul>
+                </li>
+                <li>Ad hoc changes
+                    <ul>
+                        <li>Sick employees</li>
+                        <li>Shift changes</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Who's in control?</h3>
+        </section>
+    </section>
+
+
+
     <section>
         <h3>What is business resource optimization?</h3>
         <figure>
@@ -462,9 +709,9 @@ public class CloudBalance {
         <pre xml:space="preserve"><code class="java">public class CloudBalancingEasyScoreCalculator
     implements EasyScoreCalculator&lt;CloudBalance&gt; {
 
-  public Score calculateScore(CloudBalance cb, int initScore) {
+  public HardSoftScore calculateScore(CloudBalance cb) {
     ...
-    return HardSoftScore.valueOf(initScore, hardScore, softScore);
+    return HardSoftScore.valueOf(hardScore, softScore);
   }
 
 }</code></pre>
@@ -915,31 +1162,7 @@ public class Process  {
     </section>
 
     <section>
-        <h2>Repeated planning:<br/>continuous/real-time</h2>
-    </section>
-
-    <section>
-        <img src="UseCasesAndExamples/employeeRosteringValueProposition_0.png" class="fullImage">
-        <img src="UseCasesAndExamples/employeeRosteringValueProposition_1.png" class="fullImage fragment">
-        <img src="UseCasesAndExamples/employeeRosteringValueProposition_2.png" class="fullImage fragment">
-        <img src="UseCasesAndExamples/employeeRosteringValueProposition_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_0.png" class="fullImage">
-        <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_1.png" class="fullImage fragment">
-        <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_2.png" class="fullImage fragment">
-        <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>
-            Continuous planning demo
-        </h3>
-        <figure>
-            <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
-            <p>Nurse rostering demo</p>
-        </figure>
+        <h2>Repeated planning</h2>
     </section>
 
     <section>
@@ -1724,7 +1947,7 @@ class Lecture {
   Period period;
   ...
 }</code></pre>
-        <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule, int initScore);
+        <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule);
   int hardScore = 0;
   for (UnavailablePeriodPenalty penalty : schedule.getPenaltyList()) {
     for (Lecture lecture : schedule.getLectureList()) {
@@ -1735,7 +1958,7 @@ class Lecture {
     }
   }
   ...
-  return HardSoftScore.valueOf(initScore, hardScore, softScore);
+  return HardSoftScore.valueOf(hardScore, softScore);
 }</code></pre>
     </section>
     <section>
@@ -1803,7 +2026,10 @@ end</code></pre>
         });
     </script>
     <script src="website/highlight/highlight.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.LANGUAGES.drl=function(a){return{k:"rule when then end",c:[a.CLCM,a.CBLCLM,a.ASM,a.QSM]}}(hljs);
+    </script>
 
 </body>
 </html>
