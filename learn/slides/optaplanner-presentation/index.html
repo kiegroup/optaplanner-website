@@ -52,19 +52,20 @@
 </div>
 <div class="slides">
 
-    <section class="excludeFromPrintPdf">
+    <section class="instruction">
         <h2>
             Presentation instructions
         </h2>
         <ul>
-            <li>Press the right arrow key to go to the first real slide</li>
+            <li>Press the page down key to go to the first real slide</li>
             <li>Press the escape key for an overview of all slides</li>
         </ul>
         <div style="margin-top: 50px;">
             <p>Tips:</p>
             <ul>
-                <li>Feel free to reuse slides to promote OptaPlanner</li>
-                <li><a href="?print-pdf">Print to PDF (Google Chrome recommended)</a></li>
+                <li>Do an OptaPlanner presentation and reuse some of these slides</li>
+                <li><a href="?noInstructions">Click here to hide the instructions and controls</a></li>
+                <li><a href="?print-pdf">Print to PDF</a> (Google Chrome recommended)</li>
                 <li>ODP/PPT/PPTX: Open the PDF in LibreOffice and copy the slides into a new ODP/PPT/PPTX file</li>
             </ul>
         </div>
@@ -2030,16 +2031,18 @@ end</code></pre>
 
 </div></div>
 
+    <script src="website/jquery/jquery.min.js"></script>
     <script src="website/reveal/js/reveal.min.js"></script>
 
     <script>
-        if (window.location.search.match(/print-pdf/gi)) {
-            var slides = document.querySelector('.reveal .slides');
-            var excludeFromPrintPdfSlide = slides.querySelector('section.excludeFromPrintPdf');
-            slides.removeChild(excludeFromPrintPdfSlide);
+        var showControls = true;
+        if (window.location.search.match(/print-pdf/gi) || window.location.search.match(/noInstructions/gi)) {
+            showControls = false;
+            $('.instruction').remove();
         }
+
         Reveal.initialize({
-            controls: true,
+            controls: showControls,
             progress: true,
             history: true,
             center: false,
