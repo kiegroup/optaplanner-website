@@ -552,13 +552,6 @@ end</code></pre>
         </section>
 
         <section>
-            <h2>
-                Are planning problems<br/>
-                difficult to solve?
-            </h2>
-        </section>
-
-        <section>
             <img src="QuickStart/cloudOptimizationValueProposition_0.png" class="fullImage">
             <img src="QuickStart/cloudOptimizationValueProposition_1.png" class="fullImage fragment">
             <img src="QuickStart/cloudOptimizationValueProposition_2.png" class="fullImage fragment">
@@ -571,6 +564,13 @@ end</code></pre>
                 <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
                 <p>Cloud Balancing demo</p>
             </figure>
+        </section>
+
+        <section>
+            <h2>
+                Are planning problems<br/>
+                difficult to solve?
+            </h2>
         </section>
 
         <section>
@@ -649,20 +649,18 @@ end</code></pre>
             <img src="extra/Presentation/colorBlind.png">
             <p>But they don't realize it<br/>(nor does their manager)</p>
         </section>
-    </section>
 
+        <section>
+            <h3>Cloud Balancing example</h3>
+            <h2>Domain model</h2>
+        </section>
 
-    <section>
-        <h3>Cloud Balancing example</h3>
-        <h2>Domain model</h2>
-    </section>
-
-    <section>
-        <img src="QuickStart/cloudBalanceClassDiagram_0.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Computer</h3>
-        <pre xml:space="preserve"><code class="java">public class Computer {
+        <section>
+            <img src="QuickStart/cloudBalanceClassDiagram_0.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Computer</h3>
+            <pre xml:space="preserve"><code class="java">public class Computer {
 
   private int cpuPower;
   private int memory;
@@ -672,15 +670,15 @@ end</code></pre>
 
   // getters
 }</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <img src="QuickStart/cloudBalanceClassDiagram_1.png" class="fullImage">
-        <img src="QuickStart/cloudBalanceClassDiagram_2.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Process is a planning entity</h3>
-        <pre xml:space="preserve"><code class="java">@PlanningEntity
+        <section>
+            <img src="QuickStart/cloudBalanceClassDiagram_1.png" class="fullImage">
+            <img src="QuickStart/cloudBalanceClassDiagram_2.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Process is a planning entity</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
 public class Process {
 
   private int requiredCpuPower;
@@ -691,10 +689,10 @@ public class Process {
 
   ...
 }</code></pre>
-    </section>
-    <section>
-        <h3>Process has a planning variable</h3>
-        <pre xml:space="preserve"><code class="java">@PlanningEntity
+        </section>
+        <section>
+            <h3>Process has a planning variable</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
 public class Process {
   ...
 
@@ -709,15 +707,15 @@ public class Process {
   }
 
 }</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <img src="QuickStart/cloudBalanceClassDiagram_3.png" class="fullImage">
-        <img src="QuickStart/cloudBalanceClassDiagram_4.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Solution CloudBalance</h3>
-        <pre xml:space="preserve"><code class="java">@PlanningSolution
+        <section>
+            <img src="QuickStart/cloudBalanceClassDiagram_3.png" class="fullImage">
+            <img src="QuickStart/cloudBalanceClassDiagram_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Solution CloudBalance</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningSolution
 public class CloudBalance {
 
   private List&lt;Computer&gt; computerList;
@@ -736,10 +734,10 @@ public class CloudBalance {
 
   ...
 }</code></pre>
-    </section>
-    <section>
-        <h3>Solution CloudBalance: score</h3>
-        <pre xml:space="preserve"><code class="java">@PlanningSolution
+        </section>
+        <section>
+            <h3>Solution CloudBalance: score</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningSolution
 public class CloudBalance {
   ...
 
@@ -754,64 +752,64 @@ public class CloudBalance {
   }
 
 }</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <img src="UseCasesAndExamples/machineReassignmentClassDiagram.png" class="fullImage">
-    </section>
-    <section>
-        <img src="Integration/integrationOverview_0.png" class="fullImage">
-        <img src="Integration/integrationOverview_1.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_2.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_3.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_4.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_5.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_6.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_7.png" class="fullImage fragment">
-        <img src="Integration/integrationOverview_8.png" class="fullImage fragment">
-    </section>
+        <section>
+            <img src="UseCasesAndExamples/machineReassignmentClassDiagram.png" class="fullImage">
+        </section>
+        <section>
+            <img src="Integration/integrationOverview_0.png" class="fullImage">
+            <img src="Integration/integrationOverview_1.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_2.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_3.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_4.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_5.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_6.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_7.png" class="fullImage fragment">
+            <img src="Integration/integrationOverview_8.png" class="fullImage fragment">
+        </section>
 
-    <section>
-        <h3>Cloud Balancing example</h3>
-        <h2>Score constraints</h2>
-    </section>
+        <section>
+            <h3>Cloud Balancing example</h3>
+            <h2>Score constraints</h2>
+        </section>
 
-    <section>
-        <h2>
+        <section>
+            <h2>
             Given 2 solutions<br/>
             which one is better?
-        </h2>
-    </section>
+            </h2>
+        </section>
 
-    <section>
-        <img src="QuickStart/scoreComparisonCloudBalancing_0.png" class="fullImage">
-        <img src="QuickStart/scoreComparisonCloudBalancing_1.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_2.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_3.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_4.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_5.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_6.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_7.png" class="fullImage fragment">
-        <img src="QuickStart/scoreComparisonCloudBalancing_8.png" class="fullImage fragment">
-    </section>
+        <section>
+            <img src="QuickStart/scoreComparisonCloudBalancing_0.png" class="fullImage">
+            <img src="QuickStart/scoreComparisonCloudBalancing_1.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_2.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_3.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_4.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_5.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_6.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_7.png" class="fullImage fragment">
+            <img src="QuickStart/scoreComparisonCloudBalancing_8.png" class="fullImage fragment">
+        </section>
 
-    <section>
-        <h3>Score calculation</h3>
-        <ul>
-            <li>Easy Java</li>
-            <li>Incremental Java</li>
-            <li>Drools</li>
-        </ul>
-    </section>
+        <section>
+            <h3>Score calculation</h3>
+            <ul>
+                <li>Easy Java</li>
+                <li>Incremental Java</li>
+                <li>Drools</li>
+            </ul>
+        </section>
 
-    <section>
-        <h3>Easy Java score calculation</h3>
-        <ul>
-            <li>Easy to implement</li>
-            <li>Bridge an existing system</li>
-            <li>Slow</li>
-        </ul>
-        <pre xml:space="preserve"><code class="java">public class CloudBalancingEasyScoreCalculator
+        <section>
+            <h3>Easy Java score calculation</h3>
+            <ul>
+                <li>Easy to implement</li>
+                <li>Bridge an existing system</li>
+                <li>Slow</li>
+            </ul>
+            <pre xml:space="preserve"><code class="java">public class CloudBalancingEasyScoreCalculator
     implements EasyScoreCalculator&lt;CloudBalance&gt; {
 
   public HardSoftScore calculateScore(CloudBalance cb) {
@@ -820,48 +818,48 @@ public class CloudBalance {
   }
 
 }</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <h3>Incremental Java score calculation</h3>
-        <ul>
-            <li>Fast
-                <ul>
-                    <li>Solution changes ⇒ recalculate score delta only</li>
-                </ul>
-            </li>
-            <li>Hard to implement
-                <ul>
-                    <li>Much boilerplate code</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+        <section>
+            <h3>Incremental Java score calculation</h3>
+            <ul>
+                <li>Fast
+                    <ul>
+                        <li>Solution changes ⇒ recalculate score delta only</li>
+                    </ul>
+                </li>
+                <li>Hard to implement
+                    <ul>
+                        <li>Much boilerplate code</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-    <section>
-        <h3>Drools score calculation</h3>
-        <ul>
-            <li>Incremental
-                <ul>
-                    <li>No boilerplate code</li>
-                </ul>
-            </li>
-            <li>Constraints in Drools Rule Language (DRL)
-                <ul>
-                    <li>Declarative (like SQL, regular expression)</li>
-                </ul>
-            </li>
-            <li>Integration opportunities
-                <ul>
-                    <li>Drools Workbench</li>
-                    <li>Decision tables</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <h3>DRL soft constraint: computer cost</h3>
-        <pre xml:space="preserve"><code class="drl">rule "computerCost"
+        <section>
+            <h3>Drools score calculation</h3>
+            <ul>
+                <li>Incremental
+                    <ul>
+                        <li>No boilerplate code</li>
+                    </ul>
+                </li>
+                <li>Constraints in Drools Rule Language (DRL)
+                    <ul>
+                        <li>Declarative (like SQL, regular expression)</li>
+                    </ul>
+                </li>
+                <li>Integration opportunities
+                    <ul>
+                        <li>Drools Workbench</li>
+                        <li>Decision tables</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>DRL soft constraint: computer cost</h3>
+            <pre xml:space="preserve"><code class="drl">rule "computerCost"
   when
     // there is a computer
     $s : Computer($c : cost)
@@ -871,10 +869,10 @@ public class CloudBalance {
     // lower soft score by the maintenance cost
     scoreHolder.addSoftConstraintMatch(kcontext, - $c);
 end</code></pre>
-    </section>
-    <section>
-        <h3>DRL hard constraint: CPU power</h3>
-        <pre xml:space="preserve"><code class="drl">rule "requiredCpuPowerTotal"
+        </section>
+        <section>
+            <h3>DRL hard constraint: CPU power</h3>
+            <pre xml:space="preserve"><code class="drl">rule "requiredCpuPowerTotal"
   when
     // there is a computer
     $s : Computer($cpu : cpuPower)
@@ -889,59 +887,59 @@ end</code></pre>
     scoreHolder.addHardConstraintMatch(kcontext,
         $cpu - $total);
 end</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <h3>Score calculation must be flexible</h3>
-        <ul>
-            <li><b>Optimal solution for <i>almost</i> your business problem is useless</b></li>
-            <li>
+        <section>
+            <h3>Score calculation must be flexible</h3>
+            <ul>
+                <li><b>Optimal solution for <i>almost</i> your business problem is useless</b></li>
+                <li>
                 Model supports:
-                <ul>
-                    <li>Reusing existing classes</li>
-                    <li>Rich, OO class hierarchies (including polymorphism)</li>
-                </ul>
-            </li>
-            <li>
+                    <ul>
+                        <li>Reusing existing classes</li>
+                        <li>Rich, OO class hierarchies (including polymorphism)</li>
+                    </ul>
+                </li>
+                <li>
                 Constraints supports:
-                <ul>
-                    <li>Any constraint (no linear or quadratic restrictions!)</li>
-                    <li>Reusing existing code</li>
-                </ul>
-            </li>
-            <li>
+                    <ul>
+                        <li>Any constraint (no linear or quadratic restrictions!)</li>
+                        <li>Reusing existing code</li>
+                    </ul>
+                </li>
+                <li>
                 Scoring supports:
-                <ul>
-                    <li>Positive/negative mix</li>
-                    <li>Score weights</li>
-                    <li>Unlimited score levels</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+                    <ul>
+                        <li>Positive/negative mix</li>
+                        <li>Score weights</li>
+                        <li>Unlimited score levels</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-    <section>
-        <img src="ScoreCalculation/optimalWithIncompleteConstraints_0.png" class="fullImage">
-        <img src="ScoreCalculation/optimalWithIncompleteConstraints_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/optimalWithIncompleteConstraints_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/optimalWithIncompleteConstraints_3.png" class="fullImage fragment">
-    </section>
+        <section>
+            <img src="ScoreCalculation/optimalWithIncompleteConstraints_0.png" class="fullImage">
+            <img src="ScoreCalculation/optimalWithIncompleteConstraints_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/optimalWithIncompleteConstraints_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/optimalWithIncompleteConstraints_3.png" class="fullImage fragment">
+        </section>
 
-    <section>
-        <h3>Cloud Balancing example</h3>
-        <h2>Solving it</h2>
-    </section>
+        <section>
+            <h3>Cloud Balancing example</h3>
+            <h2>Solving it</h2>
+        </section>
 
-    <section>
-        <img src="PlannerConfiguration/inputOutputOverview_0.png" class="fullImage">
-        <img src="PlannerConfiguration/inputOutputOverview_1.png" class="fullImage fragment">
-        <img src="PlannerConfiguration/inputOutputOverview_2.png" class="fullImage fragment">
-        <img src="PlannerConfiguration/inputOutputOverview_3.png" class="fullImage fragment">
-    </section>
+        <section>
+            <img src="PlannerConfiguration/inputOutputOverview_0.png" class="fullImage">
+            <img src="PlannerConfiguration/inputOutputOverview_1.png" class="fullImage fragment">
+            <img src="PlannerConfiguration/inputOutputOverview_2.png" class="fullImage fragment">
+            <img src="PlannerConfiguration/inputOutputOverview_3.png" class="fullImage fragment">
+        </section>
 
-    <section>
-        <h3>Solver configuration by XML</h3>
-        <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
+        <section>
+            <h3>Solver configuration by XML</h3>
+            <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
   &lt;scanAnnotatedClasses/&gt;
 
   &lt;scoreDirectorFactory&gt;
@@ -949,16 +947,17 @@ end</code></pre>
   &lt;/scoreDirectorFactory&gt;
 
 &lt;/solver&gt;</code></pre>
-    </section>
+        </section>
 
-    <section>
-        <h3>Solving</h3>
-        <pre xml:space="preserve"><code class="java">SolverFactory&lt;CloudBalance&gt; factory
+        <section>
+            <h3>Solving</h3>
+            <pre xml:space="preserve"><code class="java">SolverFactory&lt;CloudBalance&gt; factory
         = SolverFactory.createFromXmlResource("...SolverConfig.xml");
 
 Solver&lt;CloudBalance&gt; solver = factory.buildSolver();
 CloudBalance problem = ... // Load problem
 CloudBalance solution = solver.solve(problem);</code></pre>
+        </section>
     </section>
 
     <section>
