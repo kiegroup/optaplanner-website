@@ -226,6 +226,49 @@
             <img src="UseCasesAndExamples/integrationWithRealMaps_2.png" class="fullImage fragment">
             <img src="UseCasesAndExamples/integrationWithRealMaps_3.png" class="fullImage fragment">
         </section>
+
+        <section>
+            <h2>False presumptions VRP</h2>
+        </section>
+        <section>
+            <img src="extra/Blog/vrpPresumptions01.png" class="vrpPresumptionImage">
+            <img src="extra/Blog/vrpPresumptions02.png" class="vrpPresumptionImage fragment">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route uses only 1 vehicle.</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route uses only 1 vehicle. (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions03.png" class="vrpPresumptionImage">
+            <img src="extra/Blog/vrpPresumptions04.png" class="vrpPresumptionImage fragment">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route has no crossing lines.</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route has no crossing lines. (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions05.png" class="vrpPresumptionImage">
+            <img src="extra/Blog/vrpPresumptions06.png" class="vrpPresumptionImage fragment">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal, feasible VRP route with n vehicles is still optimal for n+1 vehicles.</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>An optimal, feasible VRP route with n vehicles is still optimal for n+1 vehicles. (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions07.png" class="vrpPresumptionImage">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route has no crossing lines of the same color.</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route has no crossing lines of the same color. (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions08.png" class="vrpPresumptionImage">
+            <img src="extra/Blog/vrpPresumptions09.png" class="vrpPresumptionImage fragment">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>We can focus on time windows before focusing on capacity (or vice versa).</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>We can focus on time windows before focusing on capacity (or vice versa). (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions10.png" class="vrpPresumptionImage">
+            <img src="extra/Blog/vrpPresumptions11.png" class="vrpPresumptionImage fragment">
+            <p class="vrpPresumptionBottomPara fragment">Assumption: <b>Humans optimize VRP optimally.</b></p>
+        </section>
+        <section>
+            <p class="vrpPresumptionTopPara">Assumption: <b>Humans optimize VRP optimally. (false)</b></p>
+            <img src="extra/Blog/vrpPresumptions12.png" class="vrpPresumptionImage">
+            <p class="vrpPresumptionBottomPara">Can a manager reasonable judge if this is optimal?</p>
+        </section>
     </section>
 
 
@@ -1223,6 +1266,12 @@ public class Process  {
             </ul>
         </section>
         <section>
+            <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_0.png" class="fullImage">
+            <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_1.png" class="fullImage fragment">
+            <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_2.png" class="fullImage fragment">
+            <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_3.png" class="fullImage fragment">
+        </section>
+        <section>
             <img src="BenchmarkingAndTweaking/benchmarkOverview.png" class="fullImage">
         </section>
         <section>
@@ -1291,6 +1340,514 @@ public class Process  {
         </section>
     </section>
 
+
+    <section>
+        <section>
+            <h2>
+                Optimization algorithms 101<br/>
+                Take the red pill
+            </h2>
+            <p class="instruction">
+                <i>Press down to show</i><br/>
+                <i>Press right to skip</i>
+            </p>
+        </section>
+
+        <section>
+            <h3>N Queens demo</h3>
+            <figure>
+                <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
+                <p>demo</p>
+            </figure>
+        </section>
+
+        <section>
+            <h3>Simplified problem</h3>
+            <h4>N Queens</h4>
+            <ul>
+                <li>Place n queens on a n sizes chessboard</li>
+                <li>No 2 queens can attach each other</li>
+            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <figure>
+                        <img src="UseCasesAndExamples/partiallySolvedNQueens04Explained.png"/>
+                        <p>Bad</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure>
+                        <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+                        <p>Good</p>
+                    </figure>
+                </div>
+            </div>
+            <ul class="fragment">
+                <li>Imperfect example
+                    <ul>
+                        <li>Not NP-complete (shortcuts exist)</li>
+                        <li>Score function is too simple (too black and white)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>What solution is better?</h3>
+            <figure>
+                <img src="extra/Presentation/someSolutionsNQueens04_0.png">
+            </figure>
+            <ul class="fragment">
+                <li>Need for <b>objective scoring</b></li>
+                <li>Better score ⇔ better solution</li>
+                <li>Highest score ⇔ optimal solution</li>
+            </ul>
+        </section>
+
+        <section>
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_0.png" class="fullImage">
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_4.png" class="fullImage fragment">
+            <img src="ScoreCalculation/positiveAndNegativeConstraints_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreWeighting_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreWeighting_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreTradeoffInPerspective_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreTradeoffInPerspective_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreTradeoffInPerspective_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreTradeoffInPerspective_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreTradeoffInPerspective_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreWeightType_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreWeightType_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreWeightType_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreWeightType_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreWeightType_4.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreWeightType_5.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreWeightType_6.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreLevels_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreLevels_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreFoldingIsBroken_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_4.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_5.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreFoldingIsBroken_6.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreClassDiagram_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreClassDiagram_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreClassDiagram_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreClassDiagram_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="ScoreCalculation/paretoOptimizationScoring_0.png" class="fullImage">
+            <img src="ScoreCalculation/paretoOptimizationScoring_1.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <h3>N Queens</h3>
+            <ul>
+                <li>Hard constraints:
+                    <ul>
+                        <li>-1 for every pair of conflicting queens</li>
+                    </ul>
+                </li>
+                <li>Soft constraints:
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <figure>
+                        <img src="UseCasesAndExamples/partiallySolvedNQueens04Explained.png"/>
+                        <p>Score = -2</p>
+                        <p>Conflicts: A-B, B-D</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure>
+                        <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+                        <p>Score = 0</p>
+                        <p>No conflicts</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>How do we find the best solution?</h3>
+            <figure>
+                <img src="extra/Presentation/someSolutionsNQueens04_1.png">
+            </figure>
+            <ul class="fragment">
+                <li>Need for <b>optimization algorithms</b></li>
+                <li>Best solution in available time</li>
+            </ul>
+        </section>
+
+        <section>
+            <img src="extra/Presentation/bruteForceLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="ExhaustiveSearch/bruteForceNQueens04_0.png" class="fullImage">
+            <img src="ExhaustiveSearch/bruteForceNQueens04_1.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/bruteForceNQueens04_2.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/bruteForceNQueens04_3.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/bruteForceNQueens04_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Brute Force scalability</h3>
+            <figure>
+                <img src="ExhaustiveSearch/exhaustiveSearchScalabilityNQueens.png">
+                <p style="font-size: small;">
+                    8 queens = 15.7 seconds<br/>
+                    9 queens = 2.5 minutes (times 10)<br/>
+                    10 queens = 0.83 hours (times 20)
+                </p>
+            </figure>
+        </section>
+        <section>
+            <h3>How many combinations for 100 queens?</h3>
+            <div style="float: right;">
+                <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+            </div>
+            <div>
+                <ul>
+                    <li>1 queen per column</li>
+                    <li>100 queens ⇒ 100 variables</li>
+                    <li>100 rows ⇒ 100 values per variable</li>
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-md-6">
+                    <figure>
+                        <img src="extra/Presentation/humans.png"/>
+                        <p class="attribution">Source: NASA (wikipedia)</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <p style="text-align: center;">
+                        &gt; humans?<br/>
+                        7&nbsp;000&nbsp;000&nbsp;000
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>How many combinations for 100 queens?</h3>
+            <div style="float: right;">
+                <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+            </div>
+            <div>
+                <ul>
+                    <li>1 queen per column</li>
+                    <li>100 queens ⇒ 100 variables</li>
+                    <li>100 rows ⇒ 100 values per variable</li>
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-md-6">
+                    <figure>
+                        <img src="extra/Presentation/universe.png" style="width: 200px; height: 200px;"/>
+                        <p class="attribution">Source: NASA and ESA (wikipedia)</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <p style="text-align: center;">
+                        &gt; minimum atoms<br>
+                        in the observable universe?<br/>
+                        10<sup>80</sup>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>How many combinations for 100 queens?</h3>
+            <div style="float: right;">
+                <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+            </div>
+            <div>
+                <ul>
+                    <li>1 queen per column</li>
+                    <li>100 queens ⇒ 100 variables</li>
+                    <li>100 rows ⇒ 100 values per variable</li>
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div style="padding-top: 30px;">
+                <p style="text-align: center;">
+                    100<sup>100</sup> = 10<sup>200</sup><br/>
+                </p>
+                <p class="math" style="text-align: center;">
+                    1&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
+                    &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
+                    &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
+                    &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>How many combinations for n queens?</h3>
+            <div style="float: right;">
+                <img src="UseCasesAndExamples/solvedNQueens04.png"/>
+            </div>
+            <div>
+                <ul>
+                    <li>1 queen per column</li>
+                    <li>n queens ⇒ n variables</li>
+                    <li>n rows ⇒ n values per variable</li>
+                </ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div style="padding-top: 30px;">
+                <p style="text-align: center;">
+                    n<sup>n</sup>
+                </p>
+                <p style="text-align: center;">
+                    |valueSet|<sup>|variableSet|</sup>
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>How long?</h3>
+            <p>Presume 10<sup>9</sup> scores/ms ⇒ 10<sup>20</sup> scores/year</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Queens</th>
+                        <th>Combinations</th>
+                        <th>Calculation time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>100<sup>100</sup> = 10<sup>200</sup></td>
+                        <td>10<sup>180</sup> years</td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>1000<sup>1000</sup> = 10<sup>3000</sup></td>
+                        <td>10<sup>2980</sup> years</td>
+                    </tr>
+                    <tr>
+                        <td>10000</td>
+                        <td>10000<sup>10000</sup> = 10<sup>40000</sup></td>
+                        <td>10<sup>39980</sup> years</td>
+                    </tr>
+                </tbody>
+            </table>
+            <figure>
+                <img src="ExhaustiveSearch/exhaustiveSearchScalabilityNQueens.png" style="width: 200px;">
+                <p>Moore's law == a drop in the ocean</p>
+            </figure>
+        </section>
+        <section>
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_0.png" class="fullImage">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_1.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_2.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_3.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_4.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_5.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_6.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_7.png" class="fullImage fragment">
+            <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_8.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Exhaustive Search doesn't scale</h3>
+            <ul>
+                <li>Branches explode exponentially</li>
+                <li>Not enough CPU</li>
+                <li>Not enough memory</li>
+            </ul>
+        </section>
+
+        <section>
+            <img src="extra/Presentation/firstFitLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="ConstructionHeuristics/firstFitNQueens04_0.png" class="fullImage">
+            <img src="ConstructionHeuristics/firstFitNQueens04_1.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitNQueens04_2.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitNQueens04_3.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitNQueens04_4.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitNQueens04_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="extra/Presentation/firstFitDecreasingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_0.png" class="fullImage">
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_1.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_2.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_3.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_4.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="extra/Presentation/cheapestInsertionLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="ConstructionHeuristics/cheapestInsertionNQueens04_0.png" class="fullImage">
+            <img src="ConstructionHeuristics/cheapestInsertionNQueens04_1.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/cheapestInsertionNQueens04_2.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/cheapestInsertionNQueens04_3.png" class="fullImage fragment">
+            <img src="ConstructionHeuristics/cheapestInsertionNQueens04_4.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <img src="OptimizationAlgorithms/generalPhaseSequence_0.png" class="fullImage">
+        </section>
+        <section>
+            <img src="OptimizationAlgorithms/scopeOverview_0.png" class="fullImage">
+            <img src="OptimizationAlgorithms/scopeOverview_1.png" class="fullImage fragment">
+            <img src="OptimizationAlgorithms/scopeOverview_2.png" class="fullImage fragment">
+            <img src="OptimizationAlgorithms/scopeOverview_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Move types</h3>
+            <ul>
+                <li>Change move</li>
+                <li>Swap move</li>
+                <li>...</li>
+            </ul>
+        </section>
+        <section>
+            <img src="MoveAndNeighborhoodSelection/changeMove_0.png" class="fullImage">
+        </section>
+        <section>
+            <img src="MoveAndNeighborhoodSelection/swapMove_0.png" class="fullImage">
+        </section>
+        <section>
+            <h3>All change moves</h3>
+            <div>
+                <div class="leftColumn">
+                    <figure>
+                        <img src="MoveAndNeighborhoodSelection/possibleMovesNQueens04.png">
+                    </figure>
+                </div>
+                <div class="rightColumn">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>n</th>
+                                <th># moves</th>
+                                <th># solutions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4</td>
+                                <td>16</td>
+                                <td>256</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>64</td>
+                                <td>16777216</td>
+                            </tr>
+                            <tr>
+                                <td>64</td>
+                                <td>4096</td>
+                                <td>10<sup>116</sup></td>
+                            </tr>
+                            <tr>
+                                <td>n</td>
+                                <td>n<sup>2</sup></td>
+                                <td>n<sup>n</sup></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Multiple moves</h3>
+            <figure>
+                <img src="MoveAndNeighborhoodSelection/sequentialMovesNQueens04.png">
+                <p>Multiple moves can reach any solution</p>
+            </figure>
+        </section>
+
+        <section>
+            <img src="extra/Presentation/hillClimbingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="LocalSearch/hillClimbingNQueens04_0.png" class="fullImage">
+            <img src="LocalSearch/hillClimbingNQueens04_1.png" class="fullImage fragment">
+            <img src="LocalSearch/hillClimbingNQueens04_2.png" class="fullImage fragment">
+            <img src="LocalSearch/hillClimbingNQueens04_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_0.png" class="fullImage">
+            <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_1.png" class="fullImage fragment">
+            <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_2.png" class="fullImage fragment">
+            <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="extra/Presentation/tabuSearchLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="LocalSearch/entityTabuSearch_0.png" class="fullImage">
+            <img src="LocalSearch/entityTabuSearch_1.png" class="fullImage fragment">
+            <img src="LocalSearch/entityTabuSearch_2.png" class="fullImage fragment">
+            <img src="LocalSearch/entityTabuSearch_3.png" class="fullImage fragment">
+            <img src="LocalSearch/entityTabuSearch_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="extra/Presentation/simulatedAnnealingLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="LocalSearch/simulatedAnnealing_0.png" class="fullImage">
+            <img src="LocalSearch/simulatedAnnealing_1.png" class="fullImage fragment">
+            <img src="LocalSearch/simulatedAnnealing_2.png" class="fullImage fragment">
+            <img src="LocalSearch/simulatedAnnealing_3.png" class="fullImage fragment">
+            <img src="LocalSearch/simulatedAnnealing_4.png" class="fullImage fragment">
+            <img src="LocalSearch/simulatedAnnealing_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="extra/Presentation/lateAcceptanceLogo.png" class="fullImage">
+        </section>
+        <section>
+            <img src="LocalSearch/lateAcceptance_0.png" class="fullImage">
+            <img src="LocalSearch/lateAcceptance_1.png" class="fullImage fragment">
+            <img src="LocalSearch/lateAcceptance_2.png" class="fullImage fragment">
+            <img src="LocalSearch/lateAcceptance_3.png" class="fullImage fragment">
+            <img src="LocalSearch/lateAcceptance_4.png" class="fullImage fragment">
+            <img src="LocalSearch/lateAcceptance_5.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <img src="LocalSearch/localSearchScoreOverTime.png" class="fullImage">
+        </section>
+
+        <section>
+            <h3>Performance tricks</h3>
+        </section>
+        <section>
+            <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_0.png" class="fullImage">
+            <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_2.png" class="fullImage fragment">
+        </section>
+    </section>
+
+
     <section>
         <h3>Summary</h3>
         <ul>
@@ -1317,721 +1874,6 @@ $ cd optaplanner-examples
 $ mvn exec:java
 ...</code></pre>
     </section>
-    <section>
-        <h3>Q &amp; A</h3>
-        <table class="links">
-            <tr>
-                <th>Homepage</th>
-                <td><a href="https://www.optaplanner.org">www.optaplanner.org</a></td>
-            </tr>
-            <tr>
-                <th>Slides</th>
-                <td><a href="https://www.optaplanner.org/learn/slides.html">www.optaplanner.org/learn/slides.html</a></td>
-            </tr>
-            <tr>
-                <th>User guide</th>
-                <td><a href="https://www.optaplanner.org/learn/documentation.html">www.optaplanner.org/learn/documentation.html</a></td>
-            </tr>
-            <tr>
-                <th>Feedback</th>
-                <td><img src="extra/Presentation/twitterLogo64x64.png"/><a href="https://twitter.com/GeoffreyDeSmet">@GeoffreyDeSmet</a></td>
-            </tr>
-        </table>
-    </section>
-
-
-    <section>
-        <h2>
-            <span class="smaller-p-text">Introduction to</span><br/>
-            heuristics and metaheuristics<br/>
-            <span class="smaller-p-text">for</span><br/>
-            business resource optimization
-        </h2>
-        <div style="margin-top: 80px;">
-            <p>
-                <span style="font-size: smaller">by</span> Geoffrey De Smet<br/>
-                <span style="font-size: smaller">OptaPlanner lead</span>
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h3>N Queens demo</h3>
-        <figure>
-            <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
-            <p>demo</p>
-        </figure>
-    </section>
-
-    <section>
-        <h3>Simplified problem</h3>
-        <h4>N Queens</h4>
-        <ul>
-            <li>Place n queens on a n sizes chessboard</li>
-            <li>No 2 queens can attach each other</li>
-        </ul>
-        <div class="row">
-            <div class="col-md-6">
-                <figure>
-                    <img src="UseCasesAndExamples/partiallySolvedNQueens04Explained.png"/>
-                    <p>Bad</p>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure>
-                    <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-                    <p>Good</p>
-                </figure>
-            </div>
-        </div>
-        <ul class="fragment">
-            <li>Imperfect example
-                <ul>
-                    <li>Not NP-complete (shortcuts exist)</li>
-                    <li>Score function is too simple (too black and white)</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>What solution is better?</h3>
-        <figure>
-            <img src="extra/Presentation/someSolutionsNQueens04_0.png">
-        </figure>
-        <ul class="fragment">
-            <li>Need for <b>objective scoring</b></li>
-            <li>Better score ⇔ better solution</li>
-            <li>Highest score ⇔ optimal solution</li>
-        </ul>
-    </section>
-
-    <section>
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_0.png" class="fullImage">
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_4.png" class="fullImage fragment">
-        <img src="ScoreCalculation/positiveAndNegativeConstraints_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreWeighting_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreWeighting_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreTradeoffInPerspective_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreTradeoffInPerspective_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTradeoffInPerspective_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTradeoffInPerspective_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTradeoffInPerspective_4.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreWeightType_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreWeightType_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreWeightType_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreWeightType_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreWeightType_4.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreWeightType_5.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreWeightType_6.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreLevels_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreLevels_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreFoldingIsBroken_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_4.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_5.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreFoldingIsBroken_6.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreClassDiagram_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreClassDiagram_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreClassDiagram_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreClassDiagram_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreTrap_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreTrap_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTrap_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTrap_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTrap_4.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreTrap_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/paretoOptimizationScoring_0.png" class="fullImage">
-        <img src="ScoreCalculation/paretoOptimizationScoring_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="ScoreCalculation/scoreComposition_0.png" class="fullImage">
-        <img src="ScoreCalculation/scoreComposition_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreComposition_2.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreComposition_3.png" class="fullImage fragment">
-        <img src="ScoreCalculation/scoreComposition_4.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>N Queens</h3>
-        <ul>
-            <li>Hard constraints:
-                <ul>
-                    <li>-1 for every pair of conflicting queens</li>
-                </ul>
-            </li>
-            <li>Soft constraints:
-                <ul>
-                    <li>None</li>
-                </ul>
-            </li>
-        </ul>
-        <div class="row">
-            <div class="col-md-6">
-                <figure>
-                    <img src="UseCasesAndExamples/partiallySolvedNQueens04Explained.png"/>
-                    <p>Score = -2</p>
-                    <p>Conflicts: A-B, B-D</p>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure>
-                    <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-                    <p>Score = 0</p>
-                    <p>No conflicts</p>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <section>
-        <img src="PlannerConfiguration/entityVariableAndValueExamples_0.png" class="fullImage">
-        <img src="PlannerConfiguration/entityVariableAndValueExamples_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_0.png" class="fullImage">
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_1.png" class="fullImage fragment">
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_2.png" class="fullImage fragment">
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>How do we find the best solution?</h3>
-        <figure>
-            <img src="extra/Presentation/someSolutionsNQueens04_1.png">
-        </figure>
-        <ul class="fragment">
-            <li>Need for <b>optimization algorithms</b></li>
-            <li>Best solution in available time</li>
-        </ul>
-    </section>
-
-    <section>
-        <img src="extra/Presentation/bruteForceLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="ExhaustiveSearch/bruteForceNQueens04_0.png" class="fullImage">
-        <img src="ExhaustiveSearch/bruteForceNQueens04_1.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/bruteForceNQueens04_2.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/bruteForceNQueens04_3.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/bruteForceNQueens04_4.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Brute Force scalability</h3>
-        <figure>
-            <img src="ExhaustiveSearch/exhaustiveSearchScalabilityNQueens.png">
-            <p style="font-size: small;">
-                8 queens = 15.7 seconds<br/>
-                9 queens = 2.5 minutes (times 10)<br/>
-                10 queens = 0.83 hours (times 20)
-            </p>
-        </figure>
-    </section>
-    <section>
-        <h3>How many combinations for 100 queens?</h3>
-        <div style="float: right;">
-            <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-        </div>
-        <div>
-            <ul>
-                <li>1 queen per column</li>
-                <li>100 queens ⇒ 100 variables</li>
-                <li>100 rows ⇒ 100 values per variable</li>
-            </ul>
-        </div>
-        <div style="clear: both;"></div>
-        <div class="row" style="padding-top: 30px;">
-            <div class="col-md-6">
-                <figure>
-                    <img src="extra/Presentation/humans.png"/>
-                    <p class="attribution">Source: NASA (wikipedia)</p>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <p style="text-align: center;">
-                    &gt; humans?<br/>
-                    7&nbsp;000&nbsp;000&nbsp;000
-                </p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h3>How many combinations for 100 queens?</h3>
-        <div style="float: right;">
-            <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-        </div>
-        <div>
-            <ul>
-                <li>1 queen per column</li>
-                <li>100 queens ⇒ 100 variables</li>
-                <li>100 rows ⇒ 100 values per variable</li>
-            </ul>
-        </div>
-        <div style="clear: both;"></div>
-        <div class="row" style="padding-top: 30px;">
-            <div class="col-md-6">
-                <figure>
-                    <img src="extra/Presentation/universe.png" style="width: 200px; height: 200px;"/>
-                    <p class="attribution">Source: NASA and ESA (wikipedia)</p>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <p style="text-align: center;">
-                    &gt; minimum atoms<br>
-                    in the observable universe?<br/>
-                    10<sup>80</sup>
-                </p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h3>How many combinations for 100 queens?</h3>
-        <div style="float: right;">
-            <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-        </div>
-        <div>
-            <ul>
-                <li>1 queen per column</li>
-                <li>100 queens ⇒ 100 variables</li>
-                <li>100 rows ⇒ 100 values per variable</li>
-            </ul>
-        </div>
-        <div style="clear: both;"></div>
-        <div style="padding-top: 30px;">
-            <p style="text-align: center;">
-                100<sup>100</sup> = 10<sup>200</sup><br/>
-            </p>
-            <p class="math" style="text-align: center;">
-                1&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
-                &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
-                &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000<br/>
-                &nbsp;&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000&nbsp;0000000000
-            </p>
-        </div>
-    </section>
-    <section>
-        <h3>How many combinations for n queens?</h3>
-        <div style="float: right;">
-            <img src="UseCasesAndExamples/solvedNQueens04.png"/>
-        </div>
-        <div>
-            <ul>
-                <li>1 queen per column</li>
-                <li>n queens ⇒ n variables</li>
-                <li>n rows ⇒ n values per variable</li>
-            </ul>
-        </div>
-        <div style="clear: both;"></div>
-        <div style="padding-top: 30px;">
-            <p style="text-align: center;">
-                n<sup>n</sup>
-            </p>
-            <p style="text-align: center;">
-                |valueSet|<sup>|variableSet|</sup>
-            </p>
-        </div>
-    </section>
-    <section>
-        <h3>How long?</h3>
-        <p>Presume 10<sup>9</sup> scores/ms ⇒ 10<sup>20</sup> scores/year</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Queens</th>
-                    <th>Combinations</th>
-                    <th>Calculation time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>100</td>
-                    <td>100<sup>100</sup> = 10<sup>200</sup></td>
-                    <td>10<sup>180</sup> years</td>
-                </tr>
-                <tr>
-                    <td>1000</td>
-                    <td>1000<sup>1000</sup> = 10<sup>3000</sup></td>
-                    <td>10<sup>2980</sup> years</td>
-                </tr>
-                <tr>
-                    <td>10000</td>
-                    <td>10000<sup>10000</sup> = 10<sup>40000</sup></td>
-                    <td>10<sup>39980</sup> years</td>
-                </tr>
-            </tbody>
-        </table>
-        <figure>
-            <img src="ExhaustiveSearch/exhaustiveSearchScalabilityNQueens.png" style="width: 200px;">
-            <p>Moore's law == a drop in the ocean</p>
-        </figure>
-    </section>
-    <section>
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_0.png" class="fullImage">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_1.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_2.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_3.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_4.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_5.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_6.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_7.png" class="fullImage fragment">
-        <img src="ExhaustiveSearch/depthFirstBranchAndBoundNQueens04_8.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Exhaustive Search doesn't scale</h3>
-        <ul>
-            <li>Branches explode exponentially</li>
-            <li>Not enough CPU</li>
-            <li>Not enough memory</li>
-        </ul>
-    </section>
-
-    <section>
-        <img src="extra/Presentation/firstFitLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="ConstructionHeuristics/firstFitNQueens04_0.png" class="fullImage">
-        <img src="ConstructionHeuristics/firstFitNQueens04_1.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitNQueens04_2.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitNQueens04_3.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitNQueens04_4.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitNQueens04_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="extra/Presentation/firstFitDecreasingLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_0.png" class="fullImage">
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_1.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_2.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_3.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_4.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/firstFitDecreasingNQueens04_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="extra/Presentation/cheapestInsertionLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="ConstructionHeuristics/cheapestInsertionNQueens04_0.png" class="fullImage">
-        <img src="ConstructionHeuristics/cheapestInsertionNQueens04_1.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/cheapestInsertionNQueens04_2.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/cheapestInsertionNQueens04_3.png" class="fullImage fragment">
-        <img src="ConstructionHeuristics/cheapestInsertionNQueens04_4.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <img src="OptimizationAlgorithms/generalPhaseSequence_0.png" class="fullImage">
-    </section>
-    <section>
-        <img src="OptimizationAlgorithms/scopeOverview_0.png" class="fullImage">
-        <img src="OptimizationAlgorithms/scopeOverview_1.png" class="fullImage fragment">
-        <img src="OptimizationAlgorithms/scopeOverview_2.png" class="fullImage fragment">
-        <img src="OptimizationAlgorithms/scopeOverview_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Move types</h3>
-        <ul>
-            <li>Change move</li>
-            <li>Swap move</li>
-            <li>...</li>
-        </ul>
-    </section>
-    <section>
-        <img src="MoveAndNeighborhoodSelection/changeMove_0.png" class="fullImage">
-    </section>
-    <section>
-        <img src="MoveAndNeighborhoodSelection/swapMove_0.png" class="fullImage">
-    </section>
-    <section>
-        <h3>All change moves</h3>
-        <div>
-            <div class="leftColumn">
-                <figure>
-                    <img src="MoveAndNeighborhoodSelection/possibleMovesNQueens04.png">
-                </figure>
-            </div>
-            <div class="rightColumn">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>n</th>
-                            <th># moves</th>
-                            <th># solutions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4</td>
-                            <td>16</td>
-                            <td>256</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>64</td>
-                            <td>16777216</td>
-                        </tr>
-                        <tr>
-                            <td>64</td>
-                            <td>4096</td>
-                            <td>10<sup>116</sup></td>
-                        </tr>
-                        <tr>
-                            <td>n</td>
-                            <td>n<sup>2</sup></td>
-                            <td>n<sup>n</sup></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <section>
-        <h3>Multiple moves</h3>
-        <figure>
-            <img src="MoveAndNeighborhoodSelection/sequentialMovesNQueens04.png">
-            <p>Multiple moves can reach any solution</p>
-        </figure>
-    </section>
-
-    <section>
-        <img src="extra/Presentation/hillClimbingLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="LocalSearch/hillClimbingNQueens04_0.png" class="fullImage">
-        <img src="LocalSearch/hillClimbingNQueens04_1.png" class="fullImage fragment">
-        <img src="LocalSearch/hillClimbingNQueens04_2.png" class="fullImage fragment">
-        <img src="LocalSearch/hillClimbingNQueens04_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_0.png" class="fullImage">
-        <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_1.png" class="fullImage fragment">
-        <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_2.png" class="fullImage fragment">
-        <img src="LocalSearch/hillClimbingGetsStuckInLocalOptimaNQueens04_3.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="extra/Presentation/tabuSearchLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="LocalSearch/entityTabuSearch_0.png" class="fullImage">
-        <img src="LocalSearch/entityTabuSearch_1.png" class="fullImage fragment">
-        <img src="LocalSearch/entityTabuSearch_2.png" class="fullImage fragment">
-        <img src="LocalSearch/entityTabuSearch_3.png" class="fullImage fragment">
-        <img src="LocalSearch/entityTabuSearch_4.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="extra/Presentation/simulatedAnnealingLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="LocalSearch/simulatedAnnealing_0.png" class="fullImage">
-        <img src="LocalSearch/simulatedAnnealing_1.png" class="fullImage fragment">
-        <img src="LocalSearch/simulatedAnnealing_2.png" class="fullImage fragment">
-        <img src="LocalSearch/simulatedAnnealing_3.png" class="fullImage fragment">
-        <img src="LocalSearch/simulatedAnnealing_4.png" class="fullImage fragment">
-        <img src="LocalSearch/simulatedAnnealing_5.png" class="fullImage fragment">
-    </section>
-    <section>
-        <img src="extra/Presentation/lateAcceptanceLogo.png" class="fullImage">
-    </section>
-    <section>
-        <img src="LocalSearch/lateAcceptance_0.png" class="fullImage">
-        <img src="LocalSearch/lateAcceptance_1.png" class="fullImage fragment">
-        <img src="LocalSearch/lateAcceptance_2.png" class="fullImage fragment">
-        <img src="LocalSearch/lateAcceptance_3.png" class="fullImage fragment">
-        <img src="LocalSearch/lateAcceptance_4.png" class="fullImage fragment">
-        <img src="LocalSearch/lateAcceptance_5.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h3>Performance tricks</h3>
-    </section>
-    <section>
-        <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_0.png" class="fullImage">
-        <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_1.png" class="fullImage fragment">
-        <img src="ScoreCalculation/incrementalScoreCalculationNQueens04_2.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <img src="LocalSearch/localSearchScoreOverTime.png" class="fullImage">
-    </section>
-
-    <section>
-        <h3>Reuse existing business code</h3>
-        <pre xml:space="preserve"><code class="java">public class Nurse {
-
-  private Country country;
-
-  public boolean isHoliday(Date date) {
-    if (country == Country.BE) {
-      // true if date is 1-JAN, easter monday, 21-JUL, ...
-    } else if (country == Country.FR) {
-      // true if date is 1-JAN, easter monday, 14-JUL, ...
-    } else if (...) {
-      ...
-    }
-    ...
-  }
-
-}</code></pre>
-    </section>
-
-    <section>
-        <img src="extra/Blog/vrpPresumptions01.png" class="vrpPresumptionImage">
-        <img src="extra/Blog/vrpPresumptions02.png" class="vrpPresumptionImage fragment">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route uses only 1 vehicle.</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route uses only 1 vehicle. (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions03.png" class="vrpPresumptionImage">
-        <img src="extra/Blog/vrpPresumptions04.png" class="vrpPresumptionImage fragment">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route has no crossing lines.</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route has no crossing lines. (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions05.png" class="vrpPresumptionImage">
-        <img src="extra/Blog/vrpPresumptions06.png" class="vrpPresumptionImage fragment">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal, feasible VRP route with n vehicles is still optimal for n+1 vehicles.</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>An optimal, feasible VRP route with n vehicles is still optimal for n+1 vehicles. (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions07.png" class="vrpPresumptionImage">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>An optimal VRP route has no crossing lines of the same color.</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>An optimal VRP route has no crossing lines of the same color. (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions08.png" class="vrpPresumptionImage">
-        <img src="extra/Blog/vrpPresumptions09.png" class="vrpPresumptionImage fragment">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>We can focus on time windows before focusing on capacity (or vice versa).</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>We can focus on time windows before focusing on capacity (or vice versa). (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions10.png" class="vrpPresumptionImage">
-        <img src="extra/Blog/vrpPresumptions11.png" class="vrpPresumptionImage fragment">
-        <p class="vrpPresumptionBottomPara fragment">Assumption: <b>Humans optimize VRP optimally.</b></p>
-    </section>
-    <section>
-        <p class="vrpPresumptionTopPara">Assumption: <b>Humans optimize VRP optimally. (false)</b></p>
-        <img src="extra/Blog/vrpPresumptions12.png" class="vrpPresumptionImage">
-        <p class="vrpPresumptionBottomPara">Can a manager reasonable judge if this is optimal?</p>
-    </section>
-
-    <section>
-        <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_0.png" class="fullImage">
-        <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_1.png" class="fullImage fragment">
-        <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_2.png" class="fullImage fragment">
-        <img src="OptimizationAlgorithms/scalabilityOfOptimizationAlgorithms_3.png" class="fullImage fragment">
-    </section>
-
-    <section>
-        <h2>Who's in control?</h2>
-    </section>
-    <section>
-        <h3>The user is in control</h3>
-        <figure>
-            <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
-            <p>Course scheduling demo</p>
-        </figure>
-    </section>
-
-    <section>
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_0.png" class="fullImage">
-    </section>
-    <section>
-        <h3>Teacher, Course, Room</h3>
-        <pre xml:space="preserve"><code class="java">class Teacher {
-  ...
-}</code></pre>
-        <pre xml:space="preserve"><code class="java">class Course {
-  Teacher teacher;
-  ...
-}</code></pre>
-        <pre xml:space="preserve"><code class="java">class Period {
-  ...
-}</code></pre>
-        <pre xml:space="preserve"><code class="java">class Room {
-  ...
-}</code></pre>
-    </section>
-    <section>
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_0.png" class="fullImage">
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_1.png" class="fullImage fragment">
-    </section>
-    <section>
-        <h3>Lecture</h3>
-        <pre xml:space="preserve"><code class="java">@PlanningEntity
-class Lecture {
-  Course course;
-  int lectureIndexInCourse;
-
-  @PlanningVariable(...) Period period;
-  @PlanningVariable(...) Room room;
-  ...
-}</code></pre>
-    </section>
-    <section>
-        <h2>Add a constraint</h2>
-    </section>
-    <section>
-        <img src="UseCasesAndExamples/curriculumCourseClassDiagram_1.png" class="fullImage">
-    </section>
-    <section>
-        <h3>With Java</h3>
-        <pre xml:space="preserve"><code class="java">class UnavailablePeriodPenalty {
-  Course course;
-  Period period;
-  ...
-}</code></pre>
-        <pre xml:space="preserve"><code class="java">public HardSoftScore calculateScore(Schedule schedule);
-  int hardScore = 0;
-  for (UnavailablePeriodPenalty penalty : schedule.getPenaltyList()) {
-    for (Lecture lecture : schedule.getLectureList()) {
-      if (penalty.getCourse() == lecture.getCourse()
-          &amp;&amp; penalty.getPeriod() == lecture.getPeriod()) {
-        hardScore--;
-      }
-    }
-  }
-  ...
-  return HardSoftScore.valueOf(hardScore, softScore);
-}</code></pre>
-    </section>
-    <section>
-        <h3>With Drools rule engine</h3>
-        <pre xml:space="preserve"><code class="java">class UnavailablePeriodPenalty {
-  Course course;
-  Period period;
-  ...
-}</code></pre>
-        <pre xml:space="preserve"><code class="java">rule "unavailablePeriodPenalty"
-  when
-    // When a course is unavailable for a certain period ...
-    UnavailablePeriodPenalty($c : course, $p : period)
-    // ... and a lecture of that course is scheduled in that period ...
-    Lecture(course == $c, period == $p)
-  then
-    // ... then we lose 1 hard score point
-    scoreHolder.addHardConstraintMatch(kcontext, -1);
-end</code></pre>
-    </section>
-
     <section>
         <h3>Q &amp; A</h3>
         <table class="links">
