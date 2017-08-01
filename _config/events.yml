@@ -344,8 +344,28 @@
       url: http://2017.ruleml-rr.org/decisioncamp-2017-schedule/
       presenters: Geoffrey De Smet
 
+- eventId: 20170926-droolsday
+  eventOrganization: "Drools, jBPM and OptaPlanner day New York"
+  eventUrl: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI
+  location: New York, NY, US
+  date: 2017-09-26
+  talks:
+    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
+      url: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI#agenda
+      presenters: Geoffrey De Smet
+
+- eventId: 20170928-droolsday
+  eventOrganization: "Drools, jBPM and OptaPlanner day Washington DC"
+  eventUrl: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI
+  location: Washington, DC, US
+  date: 2017-09-28
+  talks:
+    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
+      url: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI#agenda
+      presenters: Geoffrey De Smet
+
 - eventId: 20171106-devoxxbe
-  eventOrganization: Devoxx Be
+  eventOrganization: "Devoxx Be"
   eventUrl: https://www.devoxx.be
   location: Antwerp, Belgium
   date: 2017-11-06
