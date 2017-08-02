@@ -26,25 +26,6 @@
 * Red Hat subscription documentation: Check https://access.redhat.com/knowledge/docs/[the customer portal].
 
 '''
-[[NonFinalReleases]]
-== Non-Final releases
-
-[[AlphasBetasCRs]]
-=== Alpha's, Beta's and CR's
-
-* Documentation for OptaPlanner #{site.pom.latest.version}
-
-** image:documentation.png[Documentation] OptaPlanner reference manual #{site.pom.latest.version}:
-#{site.pom.latest.documentationHtmlSingle}[HTML Single] -
-#{site.pom.latest.documentationPdf}[PDF]
-
-** OptaPlanner javadocs #{site.pom.latest.version}:
-#{site.pom.latest.javadocs}[HTML]
-
-** Drools Expert reference manual:
-#{site.pom.latest.droolsExpert_documentationHtmlSingle}[HTML Single]
-
-'''
 [[NightlySnapshots]]
 === Nightly snapshots
 
