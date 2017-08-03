@@ -3,7 +3,7 @@
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 7.1
-:awestruct-release_notes_version_qualifier: Beta
+:awestruct-release_notes_version_qualifier: Final
 
 [[NewAndNoteWorthyEngine]]
 == New and noteworthy: Engine
@@ -35,8 +35,8 @@ at the cost of solution quality (which Local Search can usually make up for in t
 [[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench
 
-Nothing yet.
-
+=== Guided decision table integration example
+Stock examples now include the `dinnerparty` project, which uses a Guided decision table to define score constraints.
 
 [[NewAndNoteWorthyExecutionServer]]
 == New and noteworthy: Execution Server
