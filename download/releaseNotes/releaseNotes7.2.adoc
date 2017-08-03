@@ -1,0 +1,47 @@
+= Release Notes 7.2
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.2.
+:awestruct-layout: releaseNotesBase
+:awestruct-priority: 1.0
+:awestruct-release_notes_version: 7.2
+:awestruct-release_notes_version_qualifier: Beta
+
+[[NewAndNoteWorthyEngine]]
+== New and noteworthy: Engine
+
+[[NewAndNoteWorthyWorkbench]]
+== New and noteworthy: Workbench
+
+=== Guided decision tables integration
+OptaPlanner now integrates with the Guided decision table editor.
+Modify the score with a build-in OptaPlanner actions that can be accessed in the `Action BRL fragment` column type.
+
+image:7.2/guidedDecisionTable.png[Guided decision table]
+
+
+[[NewAndNoteWorthyExecutionServer]]
+== New and noteworthy: Execution Server
+
+=== Real-time planning
+The KIE Server now exposes an interace to update a problem dataset while the solver is running.
+Use Java client or REST interface to submit your ProblemFactChange implementations.
+
+==== Java Client
+[source,java,options="nowrap"]
+----
+  void addProblemFactChange(String containerId,
+                            String solverId,
+                            ProblemFactChange problemFactChange);
+
+  void addProblemFactChanges(String containerId,
+                             String solverId,
+                             List<ProblemFactChange> problemFactChange);
+
+  Boolean isEveryProblemFactChangeProcessed(String containerId,
+                                            String solverId);
+----
+
+==== REST API
+The following methods are now supported:
+
+- POST `/containers/containerId/solvers/solverId/problemfactchanges`
+- GET `/containers/containerId/solvers/solverId/problemfactchanges/processed`
