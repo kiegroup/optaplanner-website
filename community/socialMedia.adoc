@@ -10,7 +10,6 @@ This stream contains easily understood information about OptaPlanner. Includes a
 [unstyled]
 * image:../headerFooter/twitterLogo.png[T] https://twitter.com/OptaPlanner[OptaPlanner on Twitter] (Facebook mirror)
 * image:../headerFooter/facebookLogo.png[Fb] https://www.facebook.com/OptaPlanner[OptaPlanner on Facebook]
-* image:../headerFooter/googlePlusLogo.png[G+] https://plus.google.com/\+OptaPlannerOrg[OptaPlanner on Google+]
 
 == Developer streams
 

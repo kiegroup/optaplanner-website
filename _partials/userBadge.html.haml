@@ -12,15 +12,15 @@
           %h4.media-heading #{user.fullName}
           %hr(style="margin:2px auto; border-color: #ddd;")
           %span.pull-right
-            - if !user.googlePlusId.empty?
-              %a{:href => "https://plus.google.com/" + user.googlePlusId}<
-                %img{:src => relative("/headerFooter/googlePlusLogo.png", page.outputPage), :alt => "Google+"}
             - if !user.twitterUsername.empty?
               %a{:href => "https://twitter.com/" + user.twitterUsername}<
                 %img{:src => relative("/headerFooter/twitterLogo.png", page.outputPage), :alt => "Twitter"}
             - if !user.facebookUsername.empty?
               %a{:href => "https://www.facebook.com/" + user.facebookUsername}<
                 %img{:src => relative("/headerFooter/facebookLogo.png", page.outputPage), :alt => "Facebook"}
+            - if !user.googlePlusId.empty?
+              %a{:href => "https://plus.google.com/" + user.googlePlusId}<
+                %img{:src => relative("/headerFooter/googlePlusLogo.png", page.outputPage), :alt => "Google+"}
             - if !user.githubUsername.empty?
               %a{:href => "https://github.com/" + user.githubUsername}<
                 %img{:src => relative("/headerFooter/gitHubLogo.png", page.outputPage), :alt => "GitHub"}

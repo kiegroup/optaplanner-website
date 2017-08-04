@@ -138,23 +138,11 @@ change_frequency: monthly
                 %li<
                   %a(href="https://www.kiegroup.org/" target="_blank" title="Knowledge is everything group") KIE group
           %ul.nav.navbar-nav.navbar-right
-            %li.dropdown
-              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                = precede 'Follow us ' do
-                  %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a(href="https://twitter.com/OptaPlanner" target="_blank" title="News stream via Twitter")<
-                    %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"} &nbsp;Twitter
-                %li<
-                  %a(href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook")<
-                    %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"} &nbsp;Facebook
-                %li<
-                  %a(href="https://plus.google.com/+OptaPlannerOrg" rel="publisher" target="_blank" title="News stream via Google+")<
-                    %img{:src => relative("/headerFooter/googlePlusLogo.png"), :alt => "G+"} &nbsp;Google+
             %li.navbar-form(style="padding-top: 5px;")
-              -# The plusone button fails with data-href="https://plus.google.com/+OptaPlannerOrg"
-              %div(class="g-plusone" data-href="https://plus.google.com/112724449845406009021") &nbsp;
+              %span
+                %a.twitter-follow-button(href="https://twitter.com/OptaPlanner" data-show-count="false" data-show-screen-name="false")< @OptaPlanner
+                %a(href="https://www.facebook.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Facebook")<
+                  %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
 
     .body-without-header-footer
       .forkMeOnGithub
@@ -207,15 +195,5 @@ change_frequency: monthly
     %script{:src => relative("/website/optaplannerWebsite.js")}
     %script(type="text/javascript")<
       hljs.initHighlightingOnLoad();
-    -# g-plusone script
-    :plain
-      <script type="text/javascript">
-        (function() {
-          var po = document.createElement('script');
-          po.type = 'text/javascript';
-          po.async = true;
-          po.src = 'https://apis.google.com/js/plusone.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(po, s);
-        })();
-      </script>
+    -# Twitter follow script
+    %script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
