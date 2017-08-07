@@ -22,7 +22,7 @@ layout: normalBaseWithComments
             %span Download
             %br
             %span.small #{releaseNotesAreFinal ? site.pom.latestFinal.version : site.pom.latest.version}
-        %a.btn.btn-lg.btn-primary.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.documentationHtmlSingle : site.pom.latest.documentationHtmlSingle}
+        %a.btn.btn-lg.btn-primary.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.engineDocumentationHtmlSingle : site.pom.latest.engineDocumentationHtmlSingle}
           %img{:src => relative("/learn/documentation.png", page), :alt => "Documentation"}
           %div
             %span Documentation
