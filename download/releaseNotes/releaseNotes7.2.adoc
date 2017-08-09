@@ -3,10 +3,12 @@
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 7.2
-:awestruct-release_notes_version_qualifier: Beta
+:awestruct-release_notes_version_qualifier: Final
+
 
 [[NewAndNoteWorthyEngine]]
 == New and noteworthy: Engine
+
 
 [[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench

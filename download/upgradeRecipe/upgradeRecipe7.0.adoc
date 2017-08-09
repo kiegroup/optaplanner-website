@@ -1194,7 +1194,7 @@ use a `SolutionCloner` instead.
 Before in `*.java`:
 [source, java]
 ----
-public class NQueens implements  PlanningCloneable<NQueens> {
+public class NQueens implements PlanningCloneable<NQueens> {
     ...
 
     public NQueens planningClone() {

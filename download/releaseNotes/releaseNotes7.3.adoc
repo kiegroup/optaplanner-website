@@ -1,0 +1,18 @@
+= Release Notes 7.3
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.3.
+:awestruct-layout: releaseNotesBase
+:awestruct-priority: 1.0
+:awestruct-release_notes_version: 7.3
+:awestruct-release_notes_version_qualifier: Final
+
+
+[[NewAndNoteWorthyEngine]]
+== New and noteworthy: Engine
+
+
+[[NewAndNoteWorthyWorkbench]]
+== New and noteworthy: Workbench
+
+
+[[NewAndNoteWorthyExecutionServer]]
+== New and noteworthy: Execution Server

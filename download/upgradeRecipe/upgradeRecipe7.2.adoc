@@ -6,4 +6,4 @@
 
 == From 7.1.0.Final to 7.2.0.Final
 
-There is no impact on your code: this release contains only bugfixes.
+There is no impact on your code.

@@ -6,7 +6,8 @@
 
 This is a list of all past and upcoming release notes:
 
-* link:releaseNotes7.2.html[Release Notes OptaPlanner 7.2] (work in progress)
+* link:releaseNotes7.2.html[Release Notes OptaPlanner 7.3] (work in progress)
+* link:releaseNotes7.2.html[Release Notes OptaPlanner 7.2]
 * link:releaseNotes7.1.html[Release Notes OptaPlanner 7.1]
 * link:releaseNotes7.0.html[Release Notes OptaPlanner 7.0]
 * link:releaseNotes6.5.html[Release Notes OptaPlanner 6.5]
