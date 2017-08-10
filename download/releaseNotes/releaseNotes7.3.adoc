@@ -13,6 +13,12 @@
 [[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench
 
+=== Guided decision tables integration
+OptaPlanner now integrates with the Guided decision table editor.
+Modify the score with a build-in OptaPlanner actions that can be accessed in the `Action BRL fragment` column type.
+
+image:7.3/guidedDecisionTable.png[Guided decision table]
+
 
 [[NewAndNoteWorthyExecutionServer]]
 == New and noteworthy: Execution Server
