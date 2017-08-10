@@ -41,4 +41,3 @@ Stock examples now include the `dinnerparty` project, which uses a Guided decisi
 [[NewAndNoteWorthyExecutionServer]]
 == New and noteworthy: Execution Server
 
-Nothing yet.
