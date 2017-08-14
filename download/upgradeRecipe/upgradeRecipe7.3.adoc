@@ -13,7 +13,7 @@ It's no longer needed to implement `getOutputFileExtension()` of the `SolutionFi
 if it returns the same as `getInputFileExtension()`.
 
 Before in `*.java`:
-[source, xml]
+[source, java]
 ----
 public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSolution> {
 
@@ -32,7 +32,7 @@ public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSoluti
 ----
 
 After in `*.java`:
-[source, xml]
+[source, java]
 ----
 public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSolution> {
 
@@ -43,4 +43,53 @@ public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSoluti
 
     ...
 }
+----
+
+[.upgrade-recipe-minor]
+=== Benchmarker: direct POJO input
+
+The benchmarker now also accepts problem instances directly, without reading them from disk.
+If you're generating your problems or fetching them from a database,
+it might be interesting to switch to this approach (otherwise stick with the old approach because it works offline).
+
+Before in `*.java`:
+[source, java]
+----
+    CloudBalance problem1 = readFromDatabase(...);
+    CloudBalance problem2 = readFromDatabase(...);
+    ...
+    CloudBalanceFileIO solutionFileIO = new CloudBalanceFileIO();
+    solutionFileIO.write(problem1, new File("tmp/problem1.xml"));
+    solutionFileIO.write(problem2, new File("tmp/problem1.xml"));
+    ...
+    PlannerBenchmark plannerBenchmark = benchmarkFactory.buildPlannerBenchmark();
+    plannerBenchmark.benchmark();
+----
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      <solutionFileIOClass>...CloudBalanceFileIO</solutionFileIOClass>
+      <inputSolutionFile>tmp/problem1.xml</inputSolutionFile>
+      <inputSolutionFile>tmp/problem2.xml</inputSolutionFile>
+      ...
+    </problemBenchmarks>
+----
+
+After in `*.java`:
+[source, java]
+----
+    CloudBalance problem1 = readFromDatabase(...);
+    CloudBalance problem2 = readFromDatabase(...);
+    ...
+    PlannerBenchmark plannerBenchmark = benchmarkFactory.buildPlannerBenchmark(problem1, problem2, ...);
+    plannerBenchmark.benchmark();
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+    </problemBenchmarks>
 ----

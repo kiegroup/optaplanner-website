@@ -9,6 +9,31 @@
 [[NewAndNoteWorthyEngine]]
 == New and noteworthy: Engine
 
+=== Benchmark a solver configuration quickly
+
+*There isn't a valid excuse any more to not use the benchmarker.*
+You can now run it in just a few lines of java code (no XML code):
+
+[source,java,options="nowrap"]
+----
+    SolverFactory<TennisSolution> solverFactory = SolverFactory.createFromXmlResource(...);
+    // Set up the benchmarkFactory in 1 line (no XML)
+    PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverFactory(
+            solverFactory);
+
+    // Fetch or generate your input problem(s)
+    TennisSolution problem1 = generateProblem1();
+    TennisSolution problem2 = generateProblem2();
+    ...
+    // Run the benchmark
+    PlannerBenchmark plannerBenchmark = benchmarkFactory.buildPlannerBenchmark(problem1, problem2, ...);
+    plannerBenchmark.benchmark();
+----
+
+This builds and runs a vanilla benchmark
+that gives insight in the performance and scalability of your implementation.
+To get more insight, switch to the XML configuration.
+
 
 [[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench
