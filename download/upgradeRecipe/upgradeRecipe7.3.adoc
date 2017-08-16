@@ -93,3 +93,35 @@ After in `*BenchmarkConfig.xml`:
     <problemBenchmarks>
     </problemBenchmarks>
 ----
+
+[.upgrade-recipe-minor]
+=== Benchmarker: `BEST_SCORE` statistic by default
+
+The benchmarker now includes the `BEST_SCORE` statistic by default.
+It no longer needs to be explicitly configured.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </problemBenchmarks>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+    </problemBenchmarks>
+----
+
+To disable the `BEST_SCORE` statistic, use `<problemStatisticEnabled>` in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+      <problemStatisticEnabled>false</problemStatisticEnabled>
+    </problemBenchmarks>
+----
