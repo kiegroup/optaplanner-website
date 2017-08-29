@@ -3,12 +3,12 @@
 # Available properties per event
 #  eventId: Should be in format "yyyymmdd-suffix". The yyyymmdd is the date
 #  eventOrganization: Name of the conference or organizer
-#  eventUrl: Link the event organization itself.
+#  eventUrl: (optional) Link the event organization itself.
 #  location: Should be in format "city, country" or "city, state, country"
 #  date: Must be in format "yyyy-mm-dd". If multiple days cover our project, only note the first day
 #  talks: (optional) If the CFP is not yet accepted, do not include it yet.
 #    - title: Session title (without the conference or organizer name).
-#      url: Link to the event page itself.
+#      url: (optional) Link to the event page itself.
 #      presenters: (optional) Comma separated list of presenters.
 #
 # Order events by date.
@@ -364,8 +364,11 @@
       url: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI#agenda
       presenters: Geoffrey De Smet
 
-- eventId: 20171106-devoxxbe
-  eventOrganization: "Devoxx Be"
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2017-11-06
+- eventId: 20171114-devoxxma
+  eventOrganization: "Devoxx MA"
+  eventUrl: https://www.devoxx.ma
+  location: Casablanca, Morocco
+  date: 2017-11-14
+  talks:
+    - title: "Constraint solving A.I. algorithms in OptaPlanner"
+      presenters: Geoffrey De Smet

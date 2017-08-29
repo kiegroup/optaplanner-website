@@ -16,7 +16,10 @@
               %ul.list-unstyled
                 - for talk in event.talks
                   %li(style="margin-left: 20px;")
-                    %a{:href => talk.url} #{talk.title}
+                    - if !talk.url.empty?
+                      %a{:href => talk.url} #{talk.title}
+                    - else
+                      #{talk.title}
                     - if !talk.presenters.empty?
                       %span.small
                         by #{talk.presenters}
