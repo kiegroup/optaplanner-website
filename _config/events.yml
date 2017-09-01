@@ -371,4 +371,5 @@
   date: 2017-11-14
   talks:
     - title: "Constraint solving A.I. algorithms in OptaPlanner"
+      url: https://cfp.devoxx.ma/2017/talk/DMU-8120/Constraint_solving_A.I._algorithms_in_OptaPlanner
       presenters: Geoffrey De Smet
