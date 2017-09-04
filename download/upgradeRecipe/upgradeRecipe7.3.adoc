@@ -125,3 +125,33 @@ To disable the `BEST_SCORE` statistic, use `<problemStatisticEnabled>` in `*Benc
       <problemStatisticEnabled>false</problemStatisticEnabled>
     </problemBenchmarks>
 ----
+
+[.upgrade-recipe-major]
+=== `ScoreDirector`: `dispose()` replaced by `close()`
+
+`ScoreDirector` now implements `AutoCloseable`,
+so the `dispose()` method has been deprecated and replaced by `close()`.
+
+Before in `*.java`:
+[source, java]
+----
+    ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector();
+    ...
+    scoreDirector.dispose();
+----
+
+After in `*.java`:
+[source, java]
+----
+    ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector();
+    ...
+    scoreDirector.close();
+----
+
+After in `*.java` (with ARM usage):
+[source, java]
+----
+    try (ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector()) {
+        ...
+    }
+----
