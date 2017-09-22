@@ -364,6 +364,12 @@
       url: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI#agenda
       presenters: Geoffrey De Smet
 
+- eventId: 20171010-redhatforum
+  eventOrganization: "Red Hat Forum Benelux"
+  eventUrl: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
+  location: Breda, Netherlands
+  date: 2017-10-10
+
 - eventId: 20171114-devoxxma
   eventOrganization: "Devoxx MA"
   eventUrl: https://www.devoxx.ma
