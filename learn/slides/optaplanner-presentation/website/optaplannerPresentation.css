@@ -101,6 +101,15 @@ footer {
 * Images
 ******************************************************************************/
 
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-family: "Liberation Sans", sans-serif;
+}
+
 /* Remove reveal border around images */
 .reveal section img {
     border: none;
@@ -124,9 +133,11 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 5px;
+    margin-bottom: 0;
+    top: 0;
 }
 
 .reveal .vrpPresumptionImage {
@@ -135,16 +146,18 @@ footer {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 75px;
+    top: 85px;
 }
 
 .reveal .vrpPresumptionBottomPara {
     position: absolute;
     left: 0;
     right: 0;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    bottom: 5px;
+    margin-bottom: 0;
+    bottom: 0;
 }
 
 .reveal figure img {
@@ -170,10 +183,7 @@ footer {
     margin: 0;
 }
 
-table.links tr th {
-    border: 0;
-}
-
+table.links tr th,
 table.links tr td {
     border: 0;
 }
