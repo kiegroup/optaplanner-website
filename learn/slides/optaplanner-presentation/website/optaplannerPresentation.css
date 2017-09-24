@@ -15,7 +15,7 @@
  */
 
 
-.reveal .instruction {
+.reveal .instruction-bottom {
     position: absolute;
     font-size: smaller;
     bottom: 10%;
@@ -171,6 +171,10 @@ footer {
 }
 
 table.links tr th {
+    border: 0;
+}
+
+table.links tr td {
     border: 0;
 }
 
