@@ -369,6 +369,20 @@
   eventUrl: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
   location: Breda, Netherlands
   date: 2017-10-10
+  talks:
+    - title: "Constraint solver A.I. with OptaPlanner"
+      url: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
+      presenters: Geoffrey De Smet, Eva Dauw
+
+- eventId: 20171010-humantalksparis
+  eventOrganization: "Human Talks Paris"
+  eventUrl: https://www.meetup.com/HumanTalks-Paris/
+  location: Paris, France
+  date: 2017-10-10
+  talks:
+    - title: "Planification de rendez-vous avec Optaplanner"
+      url: https://www.meetup.com/HumanTalks-Paris/events/243915056/
+      presenters: Richard Hanna
 
 - eventId: 20171114-devoxxma
   eventOrganization: "Devoxx MA"
