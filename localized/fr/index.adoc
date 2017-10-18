@@ -24,5 +24,7 @@ Il est écrit 100% en Java ™, fonctionne sur toute JVM et est également dispo
 
 == Articles
 
+* https://blog.elao.com/fr/dev/planification-de-rdv-avec-optaplanner/[Planification de rendez-vous avec OptaPlanner]
+
 * http://blog.soat.fr/2015/04/devoxx-france-2015-optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore/[Devoxx France 2015 : OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore]
 Aussi https://www.youtube.com/watch?v=sJHPjHsSsXQ[voir la vidéo de cette présentation].
