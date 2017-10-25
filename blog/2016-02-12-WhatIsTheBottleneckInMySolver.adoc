@@ -3,7 +3,7 @@
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
 :awestruct-tags: [insight, benchmark, algorithm]
-:awestruct-share_image_url: letTheBestScoreStatisticGuideYou.png
+:awestruct-share_image_filename: letTheBestScoreStatisticGuideYou.png
 
 Once we have a vanilla setup of an OptaPlanner project,
 where should we invest our time to improve it?

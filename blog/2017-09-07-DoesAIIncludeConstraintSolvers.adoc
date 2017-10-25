@@ -3,7 +3,7 @@
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
 :awestruct-tags: [community, insight]
-:awestruct-share_image_url: theRightAIForTheJob.png
+:awestruct-share_image_filename: theRightAIForTheJob.png
 
 The A.I. winter is over.
 For a few years now, the interest in Artificial Intelligence technologies is growing again.
