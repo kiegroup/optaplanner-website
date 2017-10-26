@@ -12,7 +12,7 @@
 
 OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain compatible with Java 6 or higher.
 
-The API and implementation now make use of Java 7 and Java 8 features (such as lamdba's).
+The API and implementation now make use of Java 7 and Java 8 features (such as lambdas).
 
 
 === Multi-threaded partitioned search

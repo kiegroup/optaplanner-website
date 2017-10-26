@@ -223,7 +223,7 @@ solver.addEventListener(new SolverEventListener<CloudBalance>() {
 });
 ----
 
-And you'll probably want to use a lamdba here:
+And you'll probably want to use a lambda here:
 
 [source, java]
 ----
@@ -354,7 +354,7 @@ After in `*.java`:
         });
 ----
 
-After in `*.java` (with lamdba):
+After in `*.java` (with lambda):
 [source, java]
 ----
         solver.addProblemFactChange(scoreDirector -> {
