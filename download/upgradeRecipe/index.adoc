@@ -6,7 +6,8 @@
 
 These are all past, present and future upgrade recipes:
 
-* link:upgradeRecipe7.4.html[Upgrade recipe from OptaPlanner 7.3 to 7.4] (work in progress)
+* link:upgradeRecipe7.5.html[Upgrade recipe from OptaPlanner 7.4 to 7.5] (work in progress)
+* link:upgradeRecipe7.4.html[Upgrade recipe from OptaPlanner 7.3 to 7.4]
 * link:upgradeRecipe7.3.html[Upgrade recipe from OptaPlanner 7.2 to 7.3]
 * link:upgradeRecipe7.2.html[Upgrade recipe from OptaPlanner 7.1 to 7.2]
 * link:upgradeRecipe7.1.html[Upgrade recipe from OptaPlanner 7.0 to 7.1]
