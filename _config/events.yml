@@ -10,6 +10,7 @@
 #    - title: Session title (without the conference or organizer name).
 #      url: (optional) Link to the event page itself.
 #      presenters: (optional) Comma separated list of presenters.
+#      videoUrl: (optional) Link to the video of the presentation
 #
 # Order events by date.
 
@@ -323,6 +324,7 @@
     - title: Solving Planning and Optimization Problems in Real Time
       url: https://www.springdays.io/ehome/spring-days/chicago
       presenters: Kevin Greene
+      videoUrl: https://www.youtube.com/watch?v=_igsVQiH2GI
 
 - eventId: 20170710-londonjavacommunity
   eventOrganization: London Java Community
@@ -353,6 +355,7 @@
     - title: "Constraint solver A.I.: Optimizing business decisions and operations"
       url: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI#agenda
       presenters: Geoffrey De Smet
+      videoUrl: https://www.youtube.com/watch?v=v4DibGQCD54
 
 - eventId: 20170928-droolsday
   eventOrganization: "Drools, jBPM and OptaPlanner day Washington DC"
@@ -380,9 +383,10 @@
   location: Paris, France
   date: 2017-10-10
   talks:
-    - title: "Planification de rendez-vous avec Optaplanner"
+    - title: "Planification de rendez-vous avec OptaPlanner"
       url: https://www.meetup.com/HumanTalks-Paris/events/243915056/
       presenters: Richard Hanna
+      videoUrl: https://www.youtube.com/watch?v=_gXtxjHogtw
 
 - eventId: 20171114-devoxxma
   eventOrganization: "Devoxx MA"

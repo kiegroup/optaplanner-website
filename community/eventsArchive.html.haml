@@ -26,3 +26,8 @@ priority: 0.1
               - if !talk.presenters.empty?
                 %span.small
                   by #{talk.presenters}
+              - if !talk.videoUrl.empty?
+                %span
+                  (
+                  %a{:href => talk.videoUrl}< Video recording
+                  )
