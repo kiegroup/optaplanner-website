@@ -335,6 +335,7 @@
     - title: Constraint solving in Java with OptaPlanner
       url: https://www.meetup.com/Londonjavacommunity/events/240754560/
       presenters: Geoffrey De Smet
+      videoUrl: https://skillsmatter.com/skillscasts/10467-constraint-solving-in-java-with-optaplanner
 
 - eventId: 20170714-ruleml
   eventOrganization: RuleML+RR
