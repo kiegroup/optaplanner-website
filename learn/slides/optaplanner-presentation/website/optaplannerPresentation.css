@@ -189,6 +189,10 @@ footer {
     margin: 0;
 }
 
+.reveal pre code {
+    max-height: 550px;
+}
+
 table.links tr th,
 table.links tr td {
     border: 0;

@@ -391,7 +391,7 @@ Roster solution = <b>solver.solve(problem)</b>;
 
 for (Shift shift : solution.getShiftList()) {
   // Each shift is now assigned to an employee
-  System.out.println(shift + " assigned to " + shift.getEmployee());
+  System.out.println(shift + ": " + shift.getEmployee());
 }</code></pre>
         </section>
         <section>
@@ -467,7 +467,7 @@ public class Shift {
             </ul>
         </section>
         <section>
-            <h3>Required skill constraint (easy Java)</h3>
+            <h3>Required skill constraint (Java)</h3>
             <pre xml:space="preserve"><code class="java">public class MyScoreCalculator
     implements EasyScoreCalculator&lt;Roster&gt; {
 
@@ -499,7 +499,7 @@ public class Shift {
             <img src="ScoreCalculation/incrementalScoreCalculationEmployeeRostering_7.png" class="fullImage fragment">
         </section>
         <section>
-            <h3>Required skill constraint (Drools DRL)</h3>
+            <h3>Required skill constraint (DRL)</h3>
             <pre xml:space="preserve"><code class="drl">rule "Required skill"
   when
     Shift(
@@ -517,6 +517,8 @@ end</code></pre>
 
   private Employee employee;
   private TimeSlot timeSlot;
+  // UNAVAILABLE, UNDESIRED or DESIRED
+  private AvailabilityState state;
 
   ...
 
@@ -527,29 +529,29 @@ end</code></pre>
             </p>
         </section>
         <section>
-            <h3>Time off request constraint (easy Java)</h3>
-            <pre xml:space="preserve"><code class="java">public class MyScoreCalculator
-    implements EasyScoreCalculator&lt;Roster&gt; {
-
-  public Score calculateScore(Roster roster) {
-    ...
-    int softScore = 0;
-    for (Availability availability : roster.getAvailabilityList()) {
-      for (Shift shift : roster.getShiftList()) {
-          if (shift.getEmployee() == availability.getEmployee()
-              && shift.getTimeSlot() == availability.getTimeSlot()) {
-            // Lower soft score
-            softScore--;
-          }
+            <h3>Time off request constraint (Java)</h3>
+            <pre xml:space="preserve"><code class="java">
+public Score calculateScore(Roster roster) {
+  ...
+  int softScore = 0;
+  for (Availability av : roster.getAvailabilityList()) {
+    for (Shift shift : roster.getShiftList()) {
+      if (shift.getEmployee() == av.getEmployee()
+          && shift.getTimeSlot() == av.getTimeSlot()) {
+        if (av.getState() == AvailabilityState.UNDESIRED {
+          // Lower soft score
+          softScore--;
+        } else {
+          ...
+        }
       }
     }
-    return HardSoftScore.valueOf(hardScore, softScore);
   }
-
+  return HardSoftScore.valueOf(hardScore, softScore);
 }</code></pre>
         </section>
         <section>
-            <h3>Time off request constraint (Drools DRL)</h3>
+            <h3>Time off request constraint (DRL)</h3>
             <pre xml:space="preserve"><code class="drl">rule "Time off request"
   when
     Availability(
