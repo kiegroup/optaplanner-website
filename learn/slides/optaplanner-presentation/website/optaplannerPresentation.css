@@ -167,6 +167,10 @@ footer {
     max-height: 70%;
 }
 
+.reveal figure p {
+    margin-top: 0;
+}
+
 .reveal .fullImagePara {
     position: absolute;
     bottom: 20px;
