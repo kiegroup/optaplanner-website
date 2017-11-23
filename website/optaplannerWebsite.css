@@ -77,17 +77,6 @@ li.navbar-form {
     margin-right: 0;
 }
 
-/* Tabzilla positioning */
-.dropup {
-    right: 10px;
-    z-index: 0; /* The default catches too many click events because it twice as width as it needs to be */
-}
-@media (max-width: 767px) {
-    .navbar-toggle {
-        margin-right: 100px;
-    }
-}
-
 .summaryParagraph {
     font-size: larger;
 }

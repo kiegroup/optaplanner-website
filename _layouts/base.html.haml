@@ -25,7 +25,6 @@ change_frequency: monthly
 
     %link(rel="stylesheet"){:href => relative("/website/bootstrap/css/bootstrap.min.css")}
     %link(rel="stylesheet"){:href => relative("/website/highlight/highlight.css")}
-    %link(rel="stylesheet"){:href => relative("/website/tabzilla/tabzilla.css")}
     %link(rel="stylesheet"){:href => relative("/website/optaplannerWebsite.css")}
     -#%link(rel="stylesheet"){:href => relative("/website/font-awesome/css/font-awesome.min.css")}
     :plain
@@ -43,11 +42,6 @@ change_frequency: monthly
       <noscript><iframe src="//www.googletagmanager.com/ns.html?id=#{site.googleTagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     %header.navbar.navbar-default.navbar-fixed-top(role="navigation")
-      #tabzillaHolder
-      .dropup
-        %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
-        %script
-          window.addEventListener('load', function() { renderTabzilla("OptaPlanner","optaplanner", true) });
       .container
         .navbar-header
           -# When the screen width is too little, these 3 icon-bar spans are needed to show the collapsed navbar
@@ -191,7 +185,6 @@ change_frequency: monthly
     %script{:src => relative("/website/jquery/jquery.min.js")}
     %script{:src => relative("/website/bootstrap/js/bootstrap.min.js")}
     %script{:src => relative("/website/highlight/highlight.js")}
-    %script{:src => relative("/website/tabzilla/tabzilla.js")}
     %script{:src => relative("/website/optaplannerWebsite.js")}
     %script(type="text/javascript")<
       hljs.initHighlightingOnLoad();
