@@ -398,3 +398,15 @@
     - title: "Constraint solving A.I. algorithms in OptaPlanner"
       url: https://cfp.devoxx.ma/2017/talk/DMU-8120/Constraint_solving_A.I._algorithms_in_OptaPlanner
       presenters: Geoffrey De Smet
+
+- eventId: 20180508-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/en/summit/2018
+  location: San Francisco, CA, USA
+  date: 2018-05-08
+
+- eventId: 20181112-devoxxbe
+  eventOrganization: Devoxx BE
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 20185-11-12
