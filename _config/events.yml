@@ -406,7 +406,7 @@
   date: 2018-05-08
 
 - eventId: 20181112-devoxxbe
-  eventOrganization: Devoxx BE
+  eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
   location: Antwerp, Belgium
-  date: 20185-11-12
+  date: 2018-11-12
