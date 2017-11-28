@@ -6,6 +6,7 @@
 !.gitignore
 !.gitattributes
 !.awestruct_ignore
+!.htaccess
 !.travis.yml
 /nbproject
 /*.ipr
