@@ -94,11 +94,9 @@ change_frequency: monthly
                   %a{:href => relative("/community/team.html")} Team
                 %li<
                   %a{:href => relative("/blog/")} Blog
-                %li<
-                  %a{:href => relative("/community/socialMedia.html")} Social media
                 %li.divider
                 %li<
-                  %a{:href => relative("/community/research.html")} Research
+                  %a{:href => relative("/community/research.html")} Academic research
             %li.dropdown
               %a.dropdown-toggle(data-toggle="dropdown" href="#")<
                 = precede 'Code ' do
@@ -117,20 +115,6 @@ change_frequency: monthly
                   %a{:href => relative("/download/releaseNotes/")} Release notes
                 %li<
                   %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
-            %li.dropdown
-              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                = precede 'KIE ' do
-                  %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a(href="https://www.drools.org/" target="_blank" title="Rule engine") Drools
-                %li<
-                  %a(href="https://www.jbpm.org/" target="_blank" title="Workflow engine") jBPM
-                %li<
-                  %a(href="https://www.optaplanner.org/" target="_blank" title="Planning engine") OptaPlanner
-                %li.divider
-                %li<
-                  %a(href="https://www.kiegroup.org/" target="_blank" title="Knowledge is everything group") KIE group
           %ul.nav.navbar-nav.navbar-right
             %li.navbar-form(style="padding-top: 5px;")
               %span
@@ -149,28 +133,63 @@ change_frequency: monthly
     %footer
       .container
         .row
-          .col-md-6
-            %p
-              Development is sponsored by
+          .col-md-3
+            %h4 KIE projects
+            %ul
+              %li<
+                %a(href="https://www.drools.org/" target="_blank") Drools rule engine
+              %li<
+                %a(href="https://www.optaplanner.org/" target="_blank") OptaPlanner constraint solver
+              %li<
+                %a(href="https://www.jbpm.org/" target="_blank") jBPM workflow engine
+          .col-md-3
+            %h4 Community
+            %ul
+              %li<
+                %a{:href => relative("/blog/")} Blog
+              %li<
+                %a{:href => relative("/code/sourceCode.html")} Build from source
+              %li<
+                %a{:href => relative("/community/team.html")} Team
+              %li<
+                %a{:href => relative("/community/governance.html")} Governance
+              %li<
+                %a{:href => relative("/community/research.html")} Academic research
+          .col-md-3
+            %h4 Code
+            %ul
+              %li<
+                %a{:href => relative("/download/releaseNotes/")} Release notes
+              %li<
+                %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
+              %li<
+                %a{:href => relative("/code/license.html")} License (Apache)
+              %li<
+                %a{:href => relative("/website/websiteInfo.html")} Website info
+                \-
+                %a{:href => "https://github.com/kiegroup/optaplanner-website/blob/master" + page.relative_source_path} Page source
+              %li<
+                %a(href="https://www.redhat.com/en/about/privacy-policy" target="_blank") Privacy statement
+                \-
+                %a(href="https://www.redhat.com/en/about/terms-use" target="_blank") Terms of use
+          .col-md-3
+            .sponsorMessage
+              %span Sponsored by
+              %br
               %a(href="https://www.redhat.com/")<
                 %img{:src => relative("/headerFooter/redHatLogo.png"), :alt => "Red Hat"}
-            %p
-              OptaPlanner is part of the
-              %a(href="https://www.jboss.org/")<
-                %img{:src => relative("/headerFooter/jbossCommunityLogo.png"), :alt => "JBoss Community"}
-          .col-md-6
+            .sponsorMessage
+              %span More coder content at
+              %br
+              %a(href="https://developers.redhat.com/")<
+                %img{:src => relative("/headerFooter/redHatDevelopersLogo.png"), :alt => "Red Hat Developers"}
+
+
+        .row
+          .col-md-12
             :asciidoc
               (C) Copyright 2006-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
-            %p
-              %a(href="https://www.redhat.com/legal/legal_statement.html") Terms of use
-              \-
-              %a(href="https://www.redhat.com/legal/privacy_statement.html") Privacy policy
-              \-
-              %a(href="#{relative("/website/websiteInfo.html")}") Website info
-              \-
-              %span.btn-group.btn-group-xs
-                %a.btn.btn-default(role="button" href="https://github.com/kiegroup/optaplanner-website/blob/master#{page.relative_source_path}") Page source
-                %a.btn.btn-default(role="button" href="https://github.com/kiegroup/optaplanner-website/edit/master#{page.relative_source_path}") Edit this page
+
 
     -# Google Tag Manager (which includes Google Analytics) script part 2/2, if javascript is enabled
     :plain

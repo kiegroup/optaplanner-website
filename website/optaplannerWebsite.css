@@ -21,10 +21,32 @@ body {
 }
 
 footer {
-    margin-top: 10px;
-    padding-top: 5px;
-    background-color: #f8f8f8;
-    border-top: 1px solid #e7e7e7;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: rgba(255,255,255,.5);
+    background-color: #1b1c1d;
+}
+
+footer h4 {
+    color: #fff;
+}
+footer ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+footer a {
+    color: rgba(255,255,255,.5);
+}
+
+footer a:hover, a:focus {
+    color: #fff;
+}
+
+footer .sponsorMessage {
+    color: rgba(255,255,255,.5);
+    margin-bottom: 10px;
 }
 
 .forkMeOnGithub {

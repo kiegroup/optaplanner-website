@@ -67,5 +67,5 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 == Share your story
 
-If you would like share a case study, article or 1-line testimonial, link:../community/socialMedia.html[let us know]:
-we might add it here and share it on the social media.
+If you would like share a case study, article or 1-line testimonial, link:../community/team.html[let us know]:
+we might add it here and share it on the OptaPlanner Twitter and Facebook.

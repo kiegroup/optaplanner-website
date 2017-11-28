@@ -8,7 +8,7 @@ http://www.orcomplete.com/research/geoffrey-de-smet/open-source-metaheuristics-r
 Especially https://www.youtube.com/watch?v=JpcPEieU3Cg[OptaPlanner Benchmarker] and our big set of already implemented use cases,
 make it easy to test your new algorithm objectively against the existing algorithms.
 
-If you're doing academic or professional research on top of OptaPlanner, link:../community/socialMedia.html[let us know].
+If you're doing academic or professional research on top of OptaPlanner, link:../community/forum.html[let us know].
 
 To reference OptaPlanner or the user manual, please use this BibTeX reference:
 
