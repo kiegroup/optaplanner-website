@@ -9,73 +9,26 @@ title: Questions
 .row
   .col-md-7
     :asciidoc
-      == Usage questions
+      == Usage question
 
       Our friendly volunteer community answers OptaPlanner questions on StackOverflow.
 
-      To get a helpful answer, follow https://stackoverflow.com/help/how-to-ask[the StackOverflow guidelines] such as:
-
-      * Get to the point. Keep it short.
-      * Be crystal clear. Reread your question before posting it.
-      * Add relevant technical details: stacktrace, code snippet, ...
-
-    .text-center<
+    .text-center(style="margin-bottom: 10px")<
       %a.btn.btn-lg.btn-success.versionedButton(href="https://stackoverflow.com/questions/tagged/optaplanner")<
         %img(src="question.png" alt="Question")
         %div
-          %span Ask/view StackOverflow questions
+          %span Ask/view questions on StackOverflow
       .small
         Opinionated questions aren't welcome on StackOverflow,
         %br
         so those belong on our discussion forum below.
 
-    %div(style="margin-top: 20px")
-      :asciidoc
-        There's also a real-time chat: use an IRC client (such as https://hexchat.github.io/[HexChat])
-        to connect to http://freenode.net/[a freenode server] (such as `chat.freenode.net`)
-        and join the channels `#optaplanner` and `#drools`.
-
-  .col-md-5
-    .panel.panel-default
-      .panel-body(style="padding-top: 0")
-        :asciidoc
-          == Support (paid)
-
-          For a fast, enterprise quality answer, open a support case with Red Hat.
-
-          Red Hat sponsors this open source project by employing its core developers.
-          They have dedicated QA and support teams around this project.
-
-        .text-center<
-          %a.btn.btn-lg.btn-primary.versionedButton(href="https://access.redhat.com/support/cases/#/case/new")<
-            %img(src="question.png" alt="Question")
-            %div
-              %span Open a support case
-          .small
-            :asciidoc
-              This requires link:../product/services.html[a support subscription].
-
-.row
-  .col-md-7
     :asciidoc
-      == Contribution questions
+      To get a helpful answer, follow https://stackoverflow.com/help/how-to-ask[the StackOverflow guidelines] such as:
 
-      For change proposals or opinionated discussions, join our discussion forum
-      or mail directly through mailto:optaplanner-dev@googlegroups.com[optaplanner-dev@googlegroups.com].
-
-      It's recommended to link:../code/sourceCode.html[build OptaPlanner from source] before starting a discussion here.
-
-    .text-center<
-      %a.btn.btn-lg.btn-info.versionedButton(href="https://groups.google.com/forum/#!forum/optaplanner-dev")<
-        %div
-          %span Start/view discussions on our forum
-      .small
-        Please don't cross post to both our forum and StackOverflow.
-
-    %div(style="margin-top: 20px")
-      :asciidoc
-        If you're working on a contribution, come talk to us on Freenode in the channel `#optaplanner-dev`.
-        The core developers are there during working hours (depending on their timezone).
+      * Get to the point. Keep it short.
+      * Be crystal clear. Reread your question before posting it.
+      * Add relevant technical details: stacktrace, code snippet, ...
 
   .col-md-5
     :asciidoc
@@ -85,8 +38,57 @@ title: Questions
       please open a ticket in our issue tracker _with a reproducer_:
 
     .text-center<
-      %a.btn.btn-lg.btn-info.versionedButton(href="https://issues.jboss.org/projects/PLANNER")<
+      %a.btn.btn-default.versionedButton(href="https://issues.jboss.org/projects/PLANNER")<
         %div
           %span Create an issue in JIRA
       .small
         Do not use our issue tracker for questions.
+
+.row
+  .col-md-7
+    :asciidoc
+      == Contributor contact
+
+      If you're working on a contribution or want to start an opinionated discussion, join our discussion forum
+      or mail directly through mailto:optaplanner-dev@googlegroups.com[optaplanner-dev@googlegroups.com].
+
+      It's recommended to link:../code/sourceCode.html[build OptaPlanner from source] before starting a discussion there.
+
+    .text-center<
+      %a.btn.btn-default.versionedButton(href="https://groups.google.com/forum/#!forum/optaplanner-dev")<
+        %div
+          %span Start/view discussions on our forum
+      .small
+        Please don't cross post to both our forum and StackOverflow.
+
+  .col-md-5
+    .panel.panel-default
+      .panel-body(style="padding-top: 0")
+        :asciidoc
+          == Customer support
+
+          For a fast, thorough answer, open a support case with Red Hat.
+
+          Red Hat sponsors this open source project by employing its core developers.
+          They have a dedicated QA and support team around this project.
+
+        .text-center<
+          %a.btn.btn-default.versionedButton(href="https://access.redhat.com/support/cases/#/case/new")<
+            %div
+              %span Open a support case
+          .small
+            :asciidoc
+              This requires link:../product/services.html[a paid support subscription].
+
+
+.row
+  .col-md-7
+    :asciidoc
+      == Chat
+
+      Use https://hexchat.github.io/[an IRC client]
+      to connect to http://freenode.net/[Freenode] (such as `chat.freenode.net`).
+      For questions, try the channels `#optaplanner` and `#drools`.
+
+      If you're working on a contribution, come talk to us on `#optaplanner-dev`.
+      The core developers are there during working hours (depending on their timezone).

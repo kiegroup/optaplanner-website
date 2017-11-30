@@ -6,11 +6,6 @@ change_frequency: weekly
 ---
 
 .row
-  .col-md-5
-    %div(style="margin-top: 10px;")
-      = partial('downloadJumbotron.html.haml', :outputPage => page)
-      = partial('documentationJumbotron.html.haml', :outputPage => page)
-
   .col-md-7
     %div(style="margin-bottom: 10px")
       :asciidoc
@@ -37,6 +32,11 @@ change_frequency: weekly
         OptaPlanner is *open source software*, released under link:code/license.html[the Apache Software License].
         It is written in 100% pure Java™, runs on any JVM and is available in link:download/download.html[the Maven Central repository] too.
     = partial('flags.html.haml', :outputPage => page)
+
+  .col-md-5
+    %div(style="margin-top: 10px;")
+      = partial('downloadJumbotron.html.haml', :outputPage => page)
+      = partial('documentationJumbotron.html.haml', :outputPage => page)
 
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
   %ul.nav.nav-justified.frontPageCarouselButtons#whatIsCarouselButtons

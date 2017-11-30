@@ -5,18 +5,7 @@
 :linkattrs:
 :showtitle:
 
-All our code is hosted on https://github.com/kiegroup[GitHub].
-
-== Contribute
-
-Want to help improve our project? *GitHub Pull Requests are welcome!* +
-If you don't know where to start, take a look at
-https://issues.jboss.org/issues/?filter=12327406[the list of starter issues for new contributors].
-
-If you've found a bug and just want to report it, please open a ticket in https://issues.jboss.org/projects/PLANNER[our issue tracker]
-with a reproducer.
-
-== Git repositories
+== GitHub repositories
 
 === optaplanner (engine)
 
@@ -96,3 +85,12 @@ To build from source:
 ----
 
 . Edit the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] sources.
+
+== Contribute
+
+Want to help improve our project? *GitHub Pull Requests are welcome!* +
+If you don't know where to start, take a look at
+https://issues.jboss.org/issues/?filter=12327406[the list of starter issues for new contributors].
+
+If you've found a bug and just want to report it, please open a ticket in https://issues.jboss.org/projects/PLANNER[our issue tracker]
+with a reproducer.
