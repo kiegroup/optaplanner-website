@@ -1,0 +1,76 @@
+---
+description: Professional services for OptaPlanner by Red Hat
+layout: normalBase
+title: Services
+---
+
+%h1 #{page.title}
+
+:asciidoc
+
+  [.summaryParagraph]
+  https://www.redhat.com[Red Hat] sponsors this Open Source project
+  and employs its core developers.
+  Additionally, Red Hat offers enterprise support and consultancy for this community project,
+  as part of a Red Hat product subscription.
+
+.text-center<
+  %a.btn.btn-lg.btn-success(href="https://www.redhat.com/en/about/contact")<
+    %span
+      Talk with a
+      %img(src="../headerFooter/redHatLogo.png" alt="Red Hat")
+      representative
+
+:asciidoc
+
+  == Community and product comparison
+
+  The community download delivers everything you would expect from an Open Source project,
+  including all features. The product subscription fills the missing gaps for enterprise use.
+  Both community and product use the same code base.
+
+  |===
+  | |Community |Product subscription
+
+  |*Functionality* | |
+  |All features |image:checkYes.png[Yes] Includes all enterprise features too |image:checkYes.png[Yes]
+  |All bugfixes |image:checkYes.png[Yes] Master branch only |image:checkYes.png[Yes] Supported maintenance branches too
+  |Documentation |image:checkYes.png[Yes] |image:checkYes.png[Yes]
+  |Backport bugfixes to maintenance branches |image:checkNo.png[No] Not released |image:checkYes.png[Yes] Released in maintenance releases
+  |Security (CVE) watch for maintenance branches |image:checkNo.png[No] Eventually released from master branch only |image:checkYes.png[Yes] Released as backported bugfix
+
+  |*Testing* | |
+  |Unit testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
+  |Integration testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
+  |Stress testing |image:checkYes.png[Yes] |image:checkYes.png[Yes]
+  |Performance testing and sizing |image:checkNo.png[No] |image:checkYes.png[Yes]
+  |QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application containers, databases, ... See https://access.redhat.com/articles/705183[supported configurations].
+
+  |*Help* | |
+  |Roadmap impact |image:checkYes.png[Yes] Use link:../community/questions.html[our forum], https://issues.jboss.org/projects/PLANNER[issue tracker] or send a link:../code/sourceCode.html[Pull Request] |image:checkYes.png[Yes] Prioritized above community requests
+  |Public questions |image:checkYes.png[Yes] Use link:../community/questions.html[StackOverflow] |image:checkYes.png[Yes] Or call 24/7 support instead
+  |Private 24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] https://access.redhat.com/support/contact/[By web or phone], guaranteed response time (SLA)
+  |Red Hat consultancy, training and POC assistance |image:checkNo.png[No] |image:checkYes.png[Yes] Talk to your account manager
+
+  |*Release schedule* | |
+  |Beta/CR releases |image:checkYes.png[Yes] Usually every few weeks |image:checkYes.png[Yes] After Final community release
+  |Stable releases |image:checkYes.png[Yes] Final usually every 3 months |image:checkYes.png[Yes] GA usually 2 months after community Final release (if it is productized)
+  |Maintenance releases |image:checkNo.png[No] Use latest Beta/CR instead |image:checkYes.png[Yes] Usually every 6 weeks
+  |One-off release for an urgent customer critical issue |image:checkNo.png[No] |image:checkYes.png[Yes] Also rolled up in the next maintenance release
+
+  |*Information* | |
+  |Open source (link:../code/license.html[Apache License]) |image:checkYes.png[Yes] |image:checkYes.png[Yes] but distribution available from customer portal only
+  |===
+
+  To migrate from the community to product binaries, simply add the customer maven repository
+  and adjust the version numbers to include the `-redhat` suffix.
+
+  == Product overview
+
+  image:kieFunctionalityOverview.png[KIE functionality overview]
+
+  OptaPlanner is a fully supported component (called _Business Resource Planner_) of the following products:
+
+  * http://www.redhat.com/en/technologies/jboss-middleware/business-rules[Red Hat JBoss BRMS]
+  * http://www.redhat.com/en/technologies/jboss-middleware/bpm[Red Hat JBoss BPM Suite]
+

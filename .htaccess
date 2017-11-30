@@ -1,1 +1,6 @@
+Redirect 301 /community/forum.html https://www.optaplanner.org/community/questions.html
+Redirect 301 /community/chat.html https://www.optaplanner.org/community/questions.html
+Redirect 301 /community/product.html https://www.optaplanner.org/product/services.html
 Redirect 301 /community/socialMedia.html https://www.optaplanner.org/community/team.html
+Redirect 301 /code/issueTracker.html https://www.optaplanner.org/community/questions.html
+Redirect 301 /code/continuousIntegration.html https://www.optaplanner.org/code/sourceCode.html

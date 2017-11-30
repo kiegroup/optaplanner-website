@@ -76,45 +76,12 @@ change_frequency: monthly
                   %a{:href => relative("/learn/useCases/index.html")} Use cases
                 %li<
                   %a{:href => relative("/learn/testimonialsAndCaseStudies.html")} Testimonials and Case Studies
-            %li.dropdown
-              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                = precede 'Community ' do
-                  %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => relative("/community/forum.html")} Forum
-                %li<
-                  %a{:href => relative("/community/chat.html")} Chat
-                %li<
-                  %a{:href => relative("/community/product.html")} Product (support &amp; consulting)
-                %li.divider
-                %li<
-                  %a{:href => relative("/community/governance.html")} Governance
-                %li<
-                  %a{:href => relative("/community/team.html")} Team
-                %li<
-                  %a{:href => relative("/blog/")} Blog
-                %li.divider
-                %li<
-                  %a{:href => relative("/community/research.html")} Academic research
-            %li.dropdown
-              %a.dropdown-toggle(data-toggle="dropdown" href="#")<
-                = precede 'Code ' do
-                  %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => relative("/code/issueTracker.html")} Report an issue
-                %li<
-                  %a{:href => relative("/code/sourceCode.html")} Source code
-                %li<
-                  %a{:href => relative("/code/continuousIntegration.html")} Continuous integration
-                %li.divider
-                %li<
-                  %a{:href => relative("/code/license.html")} License
-                %li<
-                  %a{:href => relative("/download/releaseNotes/")} Release notes
-                %li<
-                  %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
+            %li<
+              %a{:href => relative("/community/questions.html")} Questions
+            %li<
+              %a{:href => relative("/code/sourceCode.html")} Code
+            %li<
+              %a{:href => relative("/product/services.html")} Services
           %ul.nav.navbar-nav.navbar-right
             %li.navbar-form(style="padding-top: 5px;")
               %span
@@ -146,11 +113,9 @@ change_frequency: monthly
             %h4 Community
             %ul
               %li<
-                %a{:href => relative("/blog/")} Blog
-              %li<
-                %a{:href => relative("/code/sourceCode.html")} Build from source
-              %li<
                 %a{:href => relative("/community/team.html")} Team
+              %li<
+                %a{:href => relative("/blog/")} Blog
               %li<
                 %a{:href => relative("/community/governance.html")} Governance
               %li<
@@ -159,19 +124,13 @@ change_frequency: monthly
             %h4 Code
             %ul
               %li<
-                %a{:href => relative("/download/releaseNotes/")} Release notes
-              %li<
-                %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipe
+                %a{:href => relative("/code/sourceCode.html")} Build from source
               %li<
                 %a{:href => relative("/code/license.html")} License (Apache)
               %li<
-                %a{:href => relative("/website/websiteInfo.html")} Website info
-                \-
-                %a{:href => "https://github.com/kiegroup/optaplanner-website/blob/master" + page.relative_source_path} Page source
+                %a{:href => relative("/download/releaseNotes/")} Release notes
               %li<
-                %a(href="https://www.redhat.com/en/about/privacy-policy" target="_blank") Privacy statement
-                \-
-                %a(href="https://www.redhat.com/en/about/terms-use" target="_blank") Terms of use
+                %a{:href => relative("/download/upgradeRecipe/")} Upgrade recipes
           .col-md-3
             .sponsorMessage
               %span Sponsored by
@@ -184,11 +143,15 @@ change_frequency: monthly
               %a(href="https://developers.redhat.com/")<
                 %img{:src => relative("/headerFooter/redHatDevelopersLogo.png"), :alt => "Red Hat Developers"}
 
-
         .row
           .col-md-12
-            :asciidoc
-              (C) Copyright 2006-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
+            © Copyright 2006-#{Time.now.strftime( '%Y' )}, Red Hat, Inc. or third-party contributors
+            \-
+            %a(href="https://www.redhat.com/en/about/privacy-policy" target="_blank") Privacy statement
+            \-
+            %a(href="https://www.redhat.com/en/about/terms-use" target="_blank") Terms of use
+            \-
+            %a{:href => relative("/website/websiteInfo.html")} Website info
 
 
     -# Google Tag Manager (which includes Google Analytics) script part 2/2, if javascript is enabled

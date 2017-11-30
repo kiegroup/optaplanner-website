@@ -21,6 +21,6 @@ This website was generated on #{Time.now.strftime('%a %-d %B %Y at %H:%M:%S %Z')
 
 == Website feedback
 
-We welcome any feedback about this website on the link:../community/forum.html[forum], link:../community/chat.html[chat] or link:../code/issueTracker.html[issue tracker].
+We welcome any feedback about this website on the link:../community/questions.html[our forum or issue tracker].
 
 To submit a change to any page in this website, click on the button _Edit this page_ on the bottom of that page.

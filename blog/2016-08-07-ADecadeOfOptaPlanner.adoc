@@ -69,7 +69,7 @@ Writing examples against a predefined set of requirements, is a great way to fee
 == No man is an island
 
 Around the same time I reached out to the Drools team,
-simply by *https://www.optaplanner.org/community/chat.html[joining their IRC channel]*.
+simply by *https://www.optaplanner.org/community/questions.html[joining their IRC channel]*.
 I started talking. Networking really. I learned what I needed to learn.
 By September 2007, Mark invited me to make Taseree a subproject of Drools and we called it Drools Solver.
 So I cleaned up the code, removed the spring-core dependency (which I had dragged in for no good reason except to have an XML configuration)
@@ -141,7 +141,7 @@ So we had to https://www.optaplanner.org/community/droolsPlannerRenamed.html[ren
 Changing a project's name is a delicate operation: it always reduces the mind share. Try to avoid it.
 We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
 
-In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of https://www.optaplanner.org/community/product.html[the BRMS subscription].
+In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of https://www.optaplanner.org/product/services.html[the BRMS subscription].
 And by March 2015, we upgraded it to _full enterprise support_.
 Sales took off. So earlier this year, we could hire https://www.optaplanner.org/community/team.html[a core engineer] to develop OptaPlanner Workbench.
 Meanwhile, all our code is still Open Source, under https://www.optaplanner.org/code/license.html[the Apache License]

@@ -18,17 +18,17 @@ The requirements and roadmap for this project are driven by Red Hat and by the c
 Typically, when a major release is being planned, the project lead will take input from both Red Hat and the community,
 and evaluate what can be done in the necessary time.
 This will define what features will be addressed in a given release.
-The project lead will then publish the roadmap on link:forum.html[the developer mailing list],
+The project lead will then publish the roadmap on link:questions.html[the developer mailing list],
 and update the version information in link:../code/issueTracker.html[JIRA].
 
-OptaPlanner is the basis for the commercial (yet open source) link:product.html[BRMS and BPM Suite products],
+OptaPlanner is the basis for the commercial (yet open source) link:../product/services.html[BRMS and BPM Suite products],
 so many requirements for this project come from its users.
 However, all requirements are fed into the same community process that our community users follow.
 We create JIRAs for all feature requests on our schedule.
 
 The best way for you to suggest requirements for a future release of this project is to enter a feature request in JIRA.
 Lobbying for features using the voting feature in link:../code/issueTracker.html[JIRA],
-and posting to link:product.html[the community forum], is a great way to express interest as well.
+and posting to link:../product/services.html[the community forum], is a great way to express interest as well.
 Although, contributing is the single most expedient way to get a capability into a particular release.
 
 

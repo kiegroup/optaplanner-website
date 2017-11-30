@@ -40,7 +40,7 @@ footer a {
     color: rgba(255,255,255,.5);
 }
 
-footer a:hover, a:focus {
+footer a:hover, footer a:focus {
     color: #fff;
 }
 

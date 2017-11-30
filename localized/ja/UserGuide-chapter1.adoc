@@ -368,9 +368,9 @@ Interpreted as: the impl classes are still subject to changes.
 
 ニュースや記事は、link:https://www.optaplanner.org/blog/[私たちのブログ] や Google+ (link:https://plus.google.com/\+OptaPlannerOrg[OptaPlanner], link:https://plus.google.com/\+GeoffreyDeSmet[Geoffrey De Smet])、Twitter (link:https://twitter.com/OptaPlanner[OptaPlanner], link:https://twitter.com/GeoffreyDeSmet[Geoffrey De Smet]) で確認してください。*OptaPlanner が役に立った場合には、そのことについてブログに書いたり Twitter でつぶやいたりして、私たちをご支援ください！*
 
-link:https://www.optaplanner.org/community/forum.html[私たちのコミュニティーの公開フォーラム]での質問やlink:https://issues.jboss.org/browse/PLANNER[課題トラッカー]でのバグ報告、機能要望を歓迎します。GitHub への pull 要求を大いに歓迎し、優先的に扱います！ご自身の改善をオープンソース化すれば、それに対して私たちが加える専門的なチェックやさらなる改良をご自身のために役立てることができます。
+link:https://www.optaplanner.org/community/questions.html[私たちのコミュニティーの公開フォーラム]での質問やlink:https://issues.jboss.org/browse/PLANNER[課題トラッカー]でのバグ報告、機能要望を歓迎します。GitHub への pull 要求を大いに歓迎し、優先的に扱います！ご自身の改善をオープンソース化すれば、それに対して私たちが加える専門的なチェックやさらなる改良をご自身のために役立てることができます。
 
-Red Hat は、中核となるチームを雇用する形で、OptaPlanner の展開を後援しています。企業向けのサポートやコンサルティングについては、link:https://www.optaplanner.org/community/product.html[BRMS および BPMS 製品] (含 OptaPlanner) を参照するか、link:http://www.redhat.com/en/about/contact/sales[Red Hat へお問い合わせ]ください。
+Red Hat は、中核となるチームを雇用する形で、OptaPlanner の展開を後援しています。企業向けのサポートやコンサルティングについては、link:https://www.optaplanner.org/product/services.html[BRMS および BPMS 製品] (含 OptaPlanner) を参照するか、link:http://www.redhat.com/en/about/contact/sales[Red Hat へお問い合わせ]ください。
 
 
 
