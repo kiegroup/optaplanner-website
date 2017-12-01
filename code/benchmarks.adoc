@@ -9,7 +9,7 @@ _Never trust a benchmark report that you can't run locally._
 
 Decision makers hold benchmark reports in high regard, because they represent an objective comparison.
 However, it's common for benchmark creators to unknowingly distort a benchmark in favor of their own project,
-even without malicious intend. To minimize this impact, a benchmark should be open and easily reproducible.
+even without malicious intent. To minimize this impact, a benchmark should be open and easily reproducible.
 
 == How to reproduce our benchmarks
 
