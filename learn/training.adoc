@@ -6,7 +6,7 @@
 
 == What is it?
 
-The optaplanner-training teaches OptaPlanner through an number labs.
+The optaplanner-training teaches OptaPlanner through a number of labs.
 Each lab has an assignment with clear goals, initial code and a solution.
 
 Currently, the `optaplanner-training-*.zip` is publicly available to the community.
