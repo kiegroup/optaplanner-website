@@ -9,6 +9,18 @@
 [[NewAndNoteWorthyEngine]]
 == New and noteworthy: Engine
 
+=== New algorithm: Variable Neighborhood Descent
+
+Variable Neighborhood Descent is useful for certain use cases with a limited scale.
+To use it, configure it like this:
+
+[source,xml,options="nowrap"]
+----
+  <localSearch>
+    <localSearchType>VARIABLE_NEIGHBORHOOD_DESCENT</localSearchType>
+  </localSearch>
+----
+
 [[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench
 
