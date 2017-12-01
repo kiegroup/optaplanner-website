@@ -37,10 +37,10 @@ In the bottom-up approach, we visualize the score impact per lecture:
 |===
 |Solution |Normal view |Indictment heat map | Score
 
-|Initialized a|image::courseScheduling0Initialized.png[link="courseScheduling0Initialized.png"] a|image::courseScheduling0IndictmentInitialized.png[link="courseScheduling0IndictmentInitialized.png"] |`-4hard/-18soft`
-|Feasible a|image::courseScheduling1Feasible.png[link="courseScheduling1Feasible.png"] a|image::courseScheduling1IndictmentFeasible.png[link="courseScheduling1IndictmentFeasible.png"] |`0hard/-68soft`
-|Near optimal a|image::courseScheduling2NearOptimal.png[link="courseScheduling2NearOptimal.png"] a|image::courseScheduling2IndictmentNearOptimal.png[link="courseScheduling2IndictmentNearOptimal.png"] |`0hard/-1soft` (*)
-|Optimal a|image::courseScheduling3Optimal.png[link="courseScheduling3Optimal.png"] a|image::courseScheduling3IndictmentOptimal.png[link="courseScheduling3IndictmentOptimal.png"] |`0hard/0soft`
+|Initialized a|image::courseScheduling0Initialized.png[link="courseScheduling0Initialized.png" role="thumbnail"] a|image::courseScheduling0IndictmentInitialized.png[link="courseScheduling0IndictmentInitialized.png" role="thumbnail"] |`-4hard/-18soft`
+|Feasible a|image::courseScheduling1Feasible.png[link="courseScheduling1Feasible.png" role="thumbnail"] a|image::courseScheduling1IndictmentFeasible.png[link="courseScheduling1IndictmentFeasible.png" role="thumbnail"] |`0hard/-68soft`
+|Near optimal a|image::courseScheduling2NearOptimal.png[link="courseScheduling2NearOptimal.png" role="thumbnail"] a|image::courseScheduling2IndictmentNearOptimal.png[link="courseScheduling2IndictmentNearOptimal.png" role="thumbnail"] |`0hard/-1soft` (*)
+|Optimal a|image::courseScheduling3Optimal.png[link="courseScheduling3Optimal.png" role="thumbnail"] a|image::courseScheduling3IndictmentOptimal.png[link="courseScheduling3IndictmentOptimal.png" role="thumbnail"] |`0hard/0soft`
 |===
 
 As OptaPlanner finds better and better solutions, there is less and less orange on the heat map.
