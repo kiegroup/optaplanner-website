@@ -1,4 +1,5 @@
-Redirect 301 /community/forum.html https://www.optaplanner.org/community/questions.html
-Redirect 301 /community/chat.html https://www.optaplanner.org/community/questions.html
+Redirect 301 /community/forum.html https://www.optaplanner.org/community/getHelp.html
+Redirect 301 /community/chat.html https://www.optaplanner.org/community/getHelp.html
+Redirect 301 /community/questions.html https://www.optaplanner.org/community/getHelp.html
 Redirect 301 /community/product.html https://www.optaplanner.org/product/services.html
 Redirect 301 /community/socialMedia.html https://www.optaplanner.org/community/team.html
