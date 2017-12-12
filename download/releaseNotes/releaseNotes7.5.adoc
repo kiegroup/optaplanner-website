@@ -1,8 +1,8 @@
-= Release Notes 7.4
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.4.
+= Release Notes 7.5
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.5.
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
-:awestruct-release_notes_version: 7.4
+:awestruct-release_notes_version: 7.5
 :awestruct-release_notes_version_qualifier: Final
 
 
