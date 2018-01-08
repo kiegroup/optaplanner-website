@@ -1,0 +1,279 @@
+= Java Reflection, but much faster
+:page-interpolate: true
+:awestruct-author: ge0ffrey
+:awestruct-layout: blogPostBase
+:awestruct-tags: [coding, benchmark]
+:awestruct-share_image_filename: reflectionButFasterUseCase.png
+
+What is the fastest way to read a getter from a Java class without knowing the class at compilation time?
+Java frameworks often do this. A lot. And it can directly influence their performance.
+So let's benchmark different approaches, such as reflection, method handles and code generation.
+
+== The use case
+
+Presume we have a simple `Person` class with a name and an address:
+
+[source,java]
+----
+public class Person {
+   ...
+
+   public String getName() {...}
+   public Address getAddress() {...}
+
+}
+----
+
+and we want to use frameworks such as:
+
+- http://x-stream.github.io/[XStream], JAXB or https://github.com/FasterXML/jackson[Jackson] to serialize instances to XML or JSON.
+- http://hibernate.org/[JPA/Hibernate] to store persons in a database.
+- https://www.optaplanner.org/[OptaPlanner] to assign addresses (in case they're tourists or homeless).
+
+image::reflectionButFasterUseCase.png[]
+
+_None of these frameworks know the `Person` class._ So they can't simply call `person.getName()`:
+
+[source,java]
+----
+   // Framework code
+   public Object executeGetter(Object object) {
+      // Compilation error: class Person is unknown to the framework
+      return ((Person) object).getName();
+   }
+----
+
+Instead, the code uses reflection, method handles or code generation.
+
+But _such code is called an awful lot_:
+
+* If you insert 1000 different persons in a database, JPA/Hibernate probably calls such code 2000 times:
+** 1000 calls to `Person.getName()`
+** another 1000 calls to `Person.getAddress()`
+* Similarly, if you write 1000 different persons to XML or JSON, there are likely 2000 calls by XStream, JAXB or Jackson.
+
+Obviously, when such code is called x times per second, *it's performance matters*.
+
+== The benchmarks
+
+Using JMH, I ran a set of micro benchmarks using OpenJDK 1.8.0_111 on Linux
+on a 64-bit 8-core Intel i7-4790 desktop with 32GB RAM.
+The JMH benchmark ran with 3 forks, 5 warmup iterations of 1 second and 20 measurement iterations of 1 second.
+
+The source code of https://github.com/ge0ffrey/ge0ffrey-presentations/blob/master/code/fasterreflection/fasterreflection-client/src/main/java/be/ge0ffrey/presentations/fasterreflection/client/FasterReflectionClientBenchmark.java[that benchmark]
+is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/fasterreflection[this GitHub repository].
+
+== The TL;DR results
+
+* *Java Reflection is slow.*
+* *Java MethodHandles are slow too.*
+* *Generated code with `javax.tools` is fast.*
+
+// TODO barchart image
+
+Of course, the devil is in the details.
+So let's go through the implementations,
+to confirm I applied typical magical tricks (such as `setAccessible(true)`).
+
+== Implementations
+
+=== Direct access (baseline)
+
+I've used a normal `person.getName()` call as the baseline:
+
+[source,java]
+----
+public final class MyAccessor {
+
+    public Object executeGetter(Object object) {
+        return ((Person) object).getName();
+    }
+
+}
+----
+
+This takes about 2.7 nanoseconds per operation:
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+----
+
+*Direct access is naturally the fastest approach at runtime, with no bootstrap cost.
+But it imports `Person` at compilation time, so it's unusable by every framework.*
+
+=== Reflection
+
+The obvious way for a framework read that getter at runtime, without knowing it in advance,
+is through Java Reflection:
+
+[source,java]
+----
+public final class MyAccessor {
+
+    private final Method getterMethod;
+
+    public MyAccessor {
+        getterMethod = Person.class.getMethod("getName");
+        // Skip Java language access checking during executeGetter()
+        getterMethod.setAccessible(true);
+    }
+
+    public Object executeGetter(Object object) {
+        return getterMethod.invoke(bean);
+    }
+
+}
+----
+
+Adding `setAccessible(true)` call makes these reflection calls faster,
+but even then it takes 5.5 nanoseconds per call.
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+Reflection          avgt   60  5.511 ± 0.081  ns/op
+----
+
+*Reflection is 106% slower than direct access (so about twice as slow).*
+It also takes longer to warm up.
+
+This wasn't a big surprise to me,
+because when I profile (using sampling) an artificially simple
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Traveling Salesman Problem]
+with 980 cities in https://www.optaplanner.org/[OptaPlanner],
+the reflection cost sticks out like a sore thumb:
+
+image::reflectionTspIncrementalCalculationSamplingProfiler.png[link="reflectionTspIncrementalCalculationSamplingProfiler.png" role="thumbnail"]
+
+=== MethodHandles
+
+MethodHandle was introduced in java 7 to support _invokedynamic_ instructions.
+According to the javadoc, it's _a typed, directly executable reference to an underlying method._
+Sounds fast, right?
+
+[source,java]
+----
+public final class MyAccessor {
+
+    private final MethodHandle getterMethodHandle;
+
+    public MyAccessor {s
+        MethodHandle temp = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class));
+        temp = temp.asType(temp.type().changeParameterType(0 , Object.class));
+        getterMethodHandle = temp.asType(temp.type().changeReturnType(Object.class));
+    }
+
+    public Object executeGetter(Object object) {
+        return getterMethodHandle.invokeExact(bean);
+    }
+
+}
+----
+
+Well unfortunately, *MethodHandle is even slower than reflection* in OpenJDK 8.
+It takes 6.1 nanoseconds per operation, so 132% slower than direct access.
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+Reflection          avgt   60  5.511 ± 0.081  ns/op
+MethodHandle        avgt   60  6.188 ± 0.059  ns/op
+StaticMethodHandle  avgt   60  5.481 ± 0.069  ns/op
+----
+
+That being said, if the MethodHandle is in a static field, it takes only 5.5 nanoseconds per operation,
+which is _still as slow as reflection_. Besides, that's unusable for most frameworks.
+For example,  a JPA implementation might need to reflect
+over `n` classes (`Person`, `Company`, `Order`, ...)'s `m` getters (`getName()`, `getAddress()`, `getBirthDate()`, ...),
+so how can a JPA implementation have `n * m` static fields without knowing `n` nor `m` at compile time?
+
+I do hope that MethodHandle will become as fast as direction access in future Java versions, replacing the need for...
+
+=== Generated code with javax.tools.JavaCompiler
+
+In Java, it's possible to compile and run generated Java code at runtime.
+So with the `javax.tools.JavaCompiler` API, we can generate the direct access code at runtime:
+
+[source,java]
+----
+public abstract class MyAccessor {
+
+    public static MyAccessor generate() {
+        final String String fullClassName = "x.y.generated.MyAccessorPerson$getName";
+        final String source = "package x.y.generated;\n"
+                + "public final class MyAccessorPerson$getName extends MyAccessor {\n"
+                + "    public Object executeGetter(Object bean) {\n"
+                + "        return ((Person) object).getName();\n"
+                + "    }\n"
+                + "}";
+        JavaFileObject fileObject = new ...(fullClassName, source);
+
+        JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        ClassLoader classLoader = ...;
+        JavaFileManager javaFileManager = new ...(..., classLoader)
+        CompilationTask task = compiler.getTask(..., javaFileManager, ..., singletonList(fileObject));
+        boolean success = task.call();
+        ...
+        Class compiledClass = classLoader.loadClass(fullClassName);
+        return compiledClass.newInstance();
+    }
+
+    // Implemented by the generated subclass
+    public abstract Object executeGetter(Object object);
+
+}
+----
+
+For more information on how to use `javax.tools.JavaCompiler',
+take a look at http://www.informit.com/articles/article.aspx?p=2027052&seqNum=2[page 2 of this article]
+or https://www.ibm.com/developerworks/library/j-jcomp/index.html[this article].
+Besides `javax.tools`, similar approaches can use ASM or CGLIB,
+but those infer extra dependencies and might have different performance results.
+
+In any case, *the generated code is as fast as direct access*:
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+GeneratedCode       avgt   60  2.745 ± 0.025  ns/op
+----
+
+So when I ran that exact same
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Traveling Salesman Problem]
+again in https://www.optaplanner.org/[OptaPlanner],
+this time using code generation to access planning variables, _the score calculation speed was 18% faster overall_.
+And the profiling (using sampling) looks much better too:
+
+image::codeGenerationTspIncrementalCalculationSamplingProfiler.png[link="codeGenerationTspIncrementalCalculationSamplingProfiler.png" role="thumbnail"]
+
+Note that in normal use cases, that performance gain will hardly be detectable,
+due to massive CPU needs of a realistically complex score calculation...
+
+The only downside of code generation at runtime is that it infers a noticeable bootstrap cost,
+especially if the generated code isn't compiled in bulk.
+So I am still hoping that some day MethodHandles will get as fast as direct access, just to avoid that bootstrap cost.
+
+== Conclusion
+
+Reflection and MethodHandles are twice as slow as direct access in OpenJDK 8.
+Generated code is as fast as direct access.
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+Reflection          avgt   60  5.511 ± 0.081  ns/op
+MethodHandle        avgt   60  6.188 ± 0.059  ns/op
+StaticMethodHandle  avgt   60  5.481 ± 0.069  ns/op
+GeneratedCode       avgt   60  2.745 ± 0.025  ns/op
+----

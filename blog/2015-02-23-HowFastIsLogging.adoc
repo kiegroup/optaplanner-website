@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [production]
+:awestruct-tags: [production, benchmark]
 
 What's the cost of trace/debug logging in production? What's the performance cost of logging to a file?
 In these benchmarks, I compare the performance impact of logging levels (`error`, `warn`, `info`, `debug`, `trace`)
