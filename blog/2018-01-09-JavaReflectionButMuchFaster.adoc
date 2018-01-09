@@ -65,14 +65,14 @@ is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/faster
 
 == The TL;DR results
 
-* *Java Reflection is slow.*
-* *Java MethodHandles are slow too.*
-* *Generated code with `javax.tools` is fast.*
+* *Java Reflection is slow.* (*)
+* *Java MethodHandles are slow too.* (*)
+* *Generated code with `javax.tools` is fast.* (*)
 
-// TODO barchart image
+(*) On the use cases I benchmarked with the workload I used. Your mileage may vary.
 
-Of course, the devil is in the details.
-So let's go through the implementations,
+So the devil is in the details.
+Let's go through the implementations,
 to confirm I applied typical magical tricks (such as `setAccessible(true)`).
 
 == Implementations
@@ -264,8 +264,8 @@ So I am still hoping that some day MethodHandles will get as fast as direct acce
 
 == Conclusion
 
-Reflection and MethodHandles are twice as slow as direct access in OpenJDK 8.
-Generated code is as fast as direct access.
+In this benchmark, reflection and MethodHandles are twice as slow as direct access in OpenJDK 8,
+but generated code is as fast as direct access.
 
 [source, txt]
 ----
