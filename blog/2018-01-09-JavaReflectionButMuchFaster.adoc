@@ -52,7 +52,7 @@ But _such code is called an awful lot_:
 ** another 1000 calls to `Person.getAddress()`
 * Similarly, if you write 1000 different persons to XML or JSON, there are likely 2000 calls by XStream, JAXB or Jackson.
 
-Obviously, when such code is called x times per second, *it's performance matters*.
+Obviously, when such code is called x times per second, *its performance matters*.
 
 == The benchmarks
 
@@ -115,13 +115,13 @@ public final class MyAccessor {
 
     private final Method getterMethod;
 
-    public MyAccessor {
+    public MyAccessor() {
         getterMethod = Person.class.getMethod("getName");
         // Skip Java language access checking during executeGetter()
         getterMethod.setAccessible(true);
     }
 
-    public Object executeGetter(Object object) {
+    public Object executeGetter(Object bean) {
         return getterMethod.invoke(bean);
     }
 
@@ -162,13 +162,13 @@ public final class MyAccessor {
 
     private final MethodHandle getterMethodHandle;
 
-    public MyAccessor {
+    public MyAccessor() {
         MethodHandle temp = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class));
         temp = temp.asType(temp.type().changeParameterType(0 , Object.class));
         getterMethodHandle = temp.asType(temp.type().changeReturnType(Object.class));
     }
 
-    public Object executeGetter(Object object) {
+    public Object executeGetter(Object bean) {
         return getterMethodHandle.invokeExact(bean);
     }
 
@@ -194,7 +194,7 @@ For example,  a JPA implementation might need to reflect
 over `n` classes (`Person`, `Company`, `Order`, ...)'s `m` getters (`getName()`, `getAddress()`, `getBirthDate()`, ...),
 so how can a JPA implementation have `n * m` static fields without knowing `n` nor `m` at compile time?
 
-I do hope that MethodHandle will become as fast as direction access in future Java versions, replacing the need for...
+I do hope that MethodHandle will become as fast as direct access in future Java versions, replacing the need for...
 
 === Generated code with javax.tools.JavaCompiler
 
@@ -231,7 +231,7 @@ public abstract class MyAccessor {
 }
 ----
 
-For more information on how to use `javax.tools.JavaCompiler',
+For more information on how to use `javax.tools.JavaCompiler`,
 take a look at http://www.informit.com/articles/article.aspx?p=2027052&seqNum=2[page 2 of this article]
 or https://www.ibm.com/developerworks/library/j-jcomp/index.html[this article].
 Besides `javax.tools`, similar approaches can use ASM or CGLIB,
