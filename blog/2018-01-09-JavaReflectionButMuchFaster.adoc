@@ -162,7 +162,7 @@ public final class MyAccessor {
 
     private final MethodHandle getterMethodHandle;
 
-    public MyAccessor {s
+    public MyAccessor {
         MethodHandle temp = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class));
         temp = temp.asType(temp.type().changeParameterType(0 , Object.class));
         getterMethodHandle = temp.asType(temp.type().changeReturnType(Object.class));
