@@ -291,7 +291,7 @@ DirectAccess        avgt   60  2.590 ± 0.014  ns/op
 JavaCompiler        avgt   60  2.726 ± 0.026  ns/op
 ----
 
-So when I ran that exact same
+So when I ran that
 https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Traveling Salesman Problem]
 again in https://www.optaplanner.org/[OptaPlanner],
 this time using code generation to access planning variables, _the score calculation speed was 18% faster overall_.
@@ -341,6 +341,7 @@ public final class MyAccessor {
 ----
 
 And it looks good: *LamdbaMetafactory is almost as fast as direct access.*
+It's only 33% slower than direct access, so much better than reflection.
 
 [source, txt]
 ----
@@ -351,7 +352,12 @@ Reflection          avgt   60  5.275 ± 0.053  ns/op
 LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
 ----
 
-That's only 33% slower than direct access. It's much better than reflection.
+When I ran that
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Traveling Salesman Problem]
+again in https://www.optaplanner.org/[OptaPlanner],
+this time using LamdbaMetafactory to access planning variables, _the score calculation speed was 9% faster overall_.
+However, the profiling (using sampling) still shows a lot of `executeGetter()` time, but less than with reflection.
+
 Further benchmarking is needed to measure the bootstrap, metaspace and megamorphic impacts.
 
 == Conclusion
