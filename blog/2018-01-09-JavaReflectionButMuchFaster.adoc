@@ -195,7 +195,7 @@ I do hope that MethodHandle will become as fast as direct access in future Java 
 
 I also ran a benchmark with MethodHandle in a static field.
 The JVM can do more magic with static fields, https://shipilev.net/jvm-anatomy-park/17-trust-nonstatic-final-fields/[as explained by Aleksey Shipilёv].
-Some critics also correctly pointed out that the original benchmark didn't use static fields correctly,
+Aleksey and John O'Hara correctly pointed out that the original benchmark didn't use static fields correctly,
 so I fixed that. Here are the amended results:
 
 [source, txt]
