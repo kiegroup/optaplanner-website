@@ -68,6 +68,7 @@ is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/faster
 * *Java Reflection is slow.* (*)
 * *Java MethodHandles are slow too.* (*)
 * *Generated code with `javax.tools` is fast.* (*)
+* *LamdbaMetafactory is pretty fast.* (*)
 
 (*) On the use cases I benchmarked with the workload I used. Your mileage may vary.
 
@@ -92,13 +93,13 @@ public final class MyAccessor {
 }
 ----
 
-This takes about 2.7 nanoseconds per operation:
+This takes about 2.6 nanoseconds per operation:
 
 [source, txt]
 ----
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
-DirectAccess        avgt   60  2.667 ± 0.028  ns/op
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
 ----
 
 *Direct access is naturally the fastest approach at runtime, with no bootstrap cost.
@@ -135,11 +136,11 @@ but even then it takes 5.5 nanoseconds per call.
 ----
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
-DirectAccess        avgt   60  2.667 ± 0.028  ns/op
-Reflection          avgt   60  5.511 ± 0.081  ns/op
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+Reflection          avgt   60  5.275 ± 0.053  ns/op
 ----
 
-*Reflection is 106% slower than direct access (so about twice as slow).*
+*Reflection is 104% slower than direct access (so about twice as slow).*
 It also takes longer to warm up.
 
 This wasn't a big surprise to me,
@@ -163,6 +164,7 @@ public final class MyAccessor {
     private final MethodHandle getterMethodHandle;
 
     public MyAccessor() {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle temp = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class));
         temp = temp.asType(temp.type().changeParameterType(0 , Object.class));
         getterMethodHandle = temp.asType(temp.type().changeReturnType(Object.class));
@@ -176,25 +178,62 @@ public final class MyAccessor {
 ----
 
 Well unfortunately, *MethodHandle is even slower than reflection* in OpenJDK 8.
-It takes 6.1 nanoseconds per operation, so 132% slower than direct access.
+It takes 6.1 nanoseconds per operation, so 136% slower than direct access.
 
 [source, txt]
 ----
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
-DirectAccess        avgt   60  2.667 ± 0.028  ns/op
-Reflection          avgt   60  5.511 ± 0.081  ns/op
-MethodHandle        avgt   60  6.188 ± 0.059  ns/op
-StaticMethodHandle  avgt   60  5.481 ± 0.069  ns/op
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+Reflection          avgt   60  5.275 ± 0.053  ns/op
+MethodHandle        avgt   60  6.100 ± 0.079  ns/op
 ----
 
-That being said, if the MethodHandle is in a static field, it takes only 5.5 nanoseconds per operation,
-which is _still as slow as reflection_. Besides, that's unusable for most frameworks.
-For example,  a JPA implementation might need to reflect
-over `n` classes (`Person`, `Company`, `Order`, ...)'s `m` getters (`getName()`, `getAddress()`, `getBirthDate()`, ...),
-so how can a JPA implementation have `n * m` static fields without knowing `n` nor `m` at compile time?
+I do hope that MethodHandle will become as fast as direct access in future Java versions.
 
-I do hope that MethodHandle will become as fast as direct access in future Java versions, replacing the need for...
+=== Static MethodHandles (update on 2017-01-11)
+
+I also ran a benchmark with MethodHandle in a static field.
+The JVM can do more magic with static fields, https://shipilev.net/jvm-anatomy-park/17-trust-nonstatic-final-fields/[as explained by Aleksey Shipilёv].
+Some critics also correctly pointed out that the original benchmark didn't use static fields correctly,
+so I fixed that. Here are the amended results:
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+MethodHandle        avgt   60  6.100 ± 0.079  ns/op
+StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op
+----
+
+Yes, *a static MethodHandle is as fast as direct access, but it's still useless*, unless we want to write code like this:
+
+[source,java]
+----
+public final class MyAccessors {
+
+    private static final MethodHandle handle1; // Person.getName()
+    private static final MethodHandle handle2; // Person.getAge()
+    private static final MethodHandle handle3; // Company.getName()
+    private static final MethodHandle handle4; // Company.getAddress()
+    private static final MethodHandle handle5; // ...
+    private static final MethodHandle handle6;
+    private static final MethodHandle handle7;
+    private static final MethodHandle handle8;
+    private static final MethodHandle handle9;
+    ...
+    private static final MethodHandle handle1000;
+
+}
+----
+
+If our framework deals with a domain class hierarchy with 4 getters, it would fill up the first 4 fields.
+However, if it deals with 100 domain classes with 20 getters each, totaling 2000 getters,
+it will crash due to a lack of static fields.
+
+Besides, if I wrote code like this, even first year students would come tell me that _I am doing it wrong_.
+Static fields shouldn't be used for instance variables.
 
 === Generated code with javax.tools.JavaCompiler
 
@@ -247,8 +286,8 @@ In any case, *the generated code is as fast as direct access*:
 ----
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
-DirectAccess        avgt   60  2.667 ± 0.028  ns/op
-GeneratedCode       avgt   60  2.745 ± 0.025  ns/op
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+JavaCompiler        avgt   60  2.726 ± 0.026  ns/op
 ----
 
 So when I ran that exact same
@@ -264,20 +303,77 @@ due to massive CPU needs of a realistically complex score calculation...
 
 One downside of code generation at runtime is that it infers a noticeable bootstrap cost,
 especially if the generated code isn't compiled in bulk.
-So I am still hoping that some day MethodHandles will get as fast as direct access, just to avoid that bootstrap cost.
+So I am still hoping that some day MethodHandles will get as fast as direct access,
+just to avoid that bootstrap cost and the dependency pain.
 
-== Conclusion
+== LamdbaMetafactory (update on 2017-01-11)
 
-In this benchmark, reflection and MethodHandles are twice as slow as direct access in OpenJDK 8,
-but generated code is as fast as direct access.
+On Reddit, I received an eloquent suggestion to use `LamdbaMetafactory`:
+
+image::lambdaMetafactoryRedditResponse.png[]
+
+Getting `LamdbaMetafactory` to work on a non-static method turned out to be challenging
+(due to lack of documentation and StackOverflow questions), but it does work:
+
+[source,java]
+----
+public final class MyAccessor {
+
+    @FunctionalInterface
+    private interface GetterFunction {
+
+        Object invoke(Object bean);
+
+    }
+
+    private final GetterFunction getterFunction;
+
+    public MyAccessor() {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        CallSite site = LambdaMetafactory.metafactory(lookup,
+                "invoke",
+                MethodType.methodType(GetterFunction.class),
+                MethodType.methodType(Object.class, Object.class),
+                lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class)),
+                MethodType.methodType(String.class, Person.class));
+        getterFunction = (GetterFunction) site.getTarget().invokeExact();
+    }
+
+    public Object executeGetter(Object bean) {
+        return getterFunction.invoke(bean);
+    }
+
+}
+----
+
+And it looks good: *LamdbaMetafactory is almost as fast as direct access.*
 
 [source, txt]
 ----
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
-DirectAccess        avgt   60  2.667 ± 0.028  ns/op
-Reflection          avgt   60  5.511 ± 0.081  ns/op
-MethodHandle        avgt   60  6.188 ± 0.059  ns/op
-StaticMethodHandle  avgt   60  5.481 ± 0.069  ns/op
-GeneratedCode       avgt   60  2.745 ± 0.025  ns/op
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+Reflection          avgt   60  5.275 ± 0.053  ns/op
+LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
+----
+
+That's only 33% slower than direct access. I welcome this option.
+Further benchmarking is needed to measure the bootstrap, metaspace and megamorphic impacts.
+
+== Conclusion
+
+In this benchmark, reflection and MethodHandles are twice as slow as direct access in OpenJDK 8.
+Generated code is as fast as direct access, it's a pain.
+LamdbaMetafactory is almost as fast as direct access.
+
+[source, txt]
+----
+Benchmark           Mode  Cnt  Score   Error  Units
+===================================================
+DirectAccess        avgt   60  2.590 ± 0.014  ns/op
+Reflection          avgt   60  5.275 ± 0.053  ns/op
+MethodHandle        avgt   60  6.100 ± 0.079  ns/op
+StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op
+JavaCompiler        avgt   60  2.726 ± 0.026  ns/op
+LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
 ----
