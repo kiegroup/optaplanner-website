@@ -67,7 +67,7 @@ is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/faster
 
 * *Java Reflection is slow.* (*)
 * *Java MethodHandles are slow too.* (*)
-* *Generated code with `javax.tools` is fast.* (*)
+* *Generated code with `javax.tools.JavaCompiler` is fast.* (*)
 * *LamdbaMetafactory is pretty fast.* (*)
 
 (*) On the use cases I benchmarked with the workload I used. Your mileage may vary.
@@ -275,7 +275,8 @@ take a look at http://www.informit.com/articles/article.aspx?p=2027052&seqNum=2[
 or https://www.ibm.com/developerworks/library/j-jcomp/index.html[this article].
 In Java 8, it requires the `tools.jar` on the classpath, which is there automatically for a JDK.
 In Java 9, it requires the module `java.compiler` in the modulepath.
-Also, care needs to be taken that it doesn't generate a `classlist.mf` file in the working directory.
+Also, proper care needs to be taken that it doesn't generate a `classlist.mf` file in the working directory
+and that it uses the correct `ClassLoader`.
 
 Besides `javax.tools.JavaCompiler`, similar approaches can use ASM or CGLIB,
 but those infer maven dependencies and might have different performance results.
@@ -306,7 +307,7 @@ especially if the generated code isn't compiled in bulk.
 So I am still hoping that some day MethodHandles will get as fast as direct access,
 just to avoid that bootstrap cost and the dependency pain.
 
-== LamdbaMetafactory (update on 2017-01-11)
+=== LamdbaMetafactory (update on 2017-01-11)
 
 On Reddit, I received an eloquent suggestion to use `LamdbaMetafactory`:
 
@@ -357,7 +358,7 @@ Reflection          avgt   60  5.275 ± 0.053  ns/op
 LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
 ----
 
-That's only 33% slower than direct access. I welcome this option.
+That's only 33% slower than direct access. It's much better than reflection.
 Further benchmarking is needed to measure the bootstrap, metaspace and megamorphic impacts.
 
 == Conclusion
