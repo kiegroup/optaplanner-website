@@ -320,28 +320,21 @@ Getting `LamdbaMetafactory` to work on a non-static method turned out to be chal
 ----
 public final class MyAccessor {
 
-    @FunctionalInterface
-    private interface GetterFunction {
-
-        Object invoke(Object bean);
-
-    }
-
-    private final GetterFunction getterFunction;
+    private final Function getterFunction;
 
     public MyAccessor() {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         CallSite site = LambdaMetafactory.metafactory(lookup,
-                "invoke",
-                MethodType.methodType(GetterFunction.class),
+                "apply",
+                MethodType.methodType(Function.class),
                 MethodType.methodType(Object.class, Object.class),
                 lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class)),
                 MethodType.methodType(String.class, Person.class));
-        getterFunction = (GetterFunction) site.getTarget().invokeExact();
+        getterFunction = (Function) site.getTarget().invokeExact();
     }
 
     public Object executeGetter(Object bean) {
-        return getterFunction.invoke(bean);
+        return getterFunction.apply(bean);
     }
 
 }
