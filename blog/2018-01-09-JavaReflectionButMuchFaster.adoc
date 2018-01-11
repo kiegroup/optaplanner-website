@@ -234,8 +234,12 @@ public abstract class MyAccessor {
 For more information on how to use `javax.tools.JavaCompiler`,
 take a look at http://www.informit.com/articles/article.aspx?p=2027052&seqNum=2[page 2 of this article]
 or https://www.ibm.com/developerworks/library/j-jcomp/index.html[this article].
-Besides `javax.tools`, similar approaches can use ASM or CGLIB,
-but those infer extra dependencies and might have different performance results.
+In Java 8, it requires the `tools.jar` on the classpath, which is there automatically for a JDK.
+In Java 9, it requires the module `java.compiler` in the modulepath.
+Also, care needs to be taken that it doesn't generate a `classlist.mf` file in the working directory.
+
+Besides `javax.tools.JavaCompiler`, similar approaches can use ASM or CGLIB,
+but those infer maven dependencies and might have different performance results.
 
 In any case, *the generated code is as fast as direct access*:
 
@@ -258,7 +262,7 @@ image::codeGenerationTspIncrementalCalculationSamplingProfiler.png[link="codeGen
 Note that in normal use cases, that performance gain will hardly be detectable,
 due to massive CPU needs of a realistically complex score calculation...
 
-The only downside of code generation at runtime is that it infers a noticeable bootstrap cost,
+One downside of code generation at runtime is that it infers a noticeable bootstrap cost,
 especially if the generated code isn't compiled in bulk.
 So I am still hoping that some day MethodHandles will get as fast as direct access, just to avoid that bootstrap cost.
 
