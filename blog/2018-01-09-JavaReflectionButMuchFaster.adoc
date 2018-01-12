@@ -244,6 +244,7 @@ So with the `javax.tools.JavaCompiler` API, we can generate the direct access co
 ----
 public abstract class MyAccessor {
 
+    // Just a gist of the code, the full source code is linked in a previous section
     public static MyAccessor generate() {
         final String String fullClassName = "x.y.generated.MyAccessorPerson$getName";
         final String source = "package x.y.generated;\n"
