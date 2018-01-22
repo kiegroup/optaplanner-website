@@ -38,6 +38,11 @@ Soft constraints:
 * Speaker preferred room tag: If a speaker has a preferred room tag, then all his/her talks should be assigned to a room with that tag.
 * Talk preferred room tag: If a talk has a preferred room tag, then it should be assigned to a room with that tag.
 
+=== Open the benchmark report automatically
+
+`PlannerBenchmark` has a new method `benchmarkAndShowReportInBrowser()`
+to automatically open the benchmark report in the default browser after the benchmark has finished.
+
 === Other engine improvements
 
 * Support for cloning arrays: a solution or planning entity field can now be an array
