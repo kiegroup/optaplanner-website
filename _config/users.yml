@@ -38,14 +38,14 @@
 
 - userId: snurkabill
   fullName: Jiří Vahala
-  role: Ex-QA for BRMS
+  role: BRMS QA developer
   gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
   ircNickname: jvahala/snurkabill
 
 - userId: yurloc
   fullName: Jiří Locker
-  role: BRMS QA
+  role: OptaPlanner Workbench developer
   gravatarHashId: c4e5f1a35064cb21de3b3e4bf5bd7ae8
   githubUsername: yurloc
   employedBy: Red Hat
@@ -96,7 +96,7 @@
 
 - userId: oskopek
   fullName: Ondrej Škopek
-  role: Contributor and ex-intern
+  role: Contributor and intern
   gravatarHashId: fa169c92202fdd8203f45daa96e69933
   googlePlusId: +OndrejSkopekOS
   twitterUsername: oskopek
@@ -204,7 +204,7 @@
   
 - userId: Christopher-Chianelli
   fullName: Christopher Chianelli
-  role: OptaShift Employee Rostering Developer
+  role: OptaShift Employee Rostering developer
   gravatarHashId: 16f228a9f340e2a2ca5b42485a17bc3d
   githubUsername: Christopher-Chianelli
   employedBy: Red Hat

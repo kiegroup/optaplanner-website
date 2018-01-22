@@ -7,6 +7,8 @@
 
 == GitHub repositories
 
+link:../community/team.html[The OptaPlanner team] takes care of these repositories:
+
 === optaplanner (engine)
 
 _The source code of the OptaPlanner engine, examples and documentation._ +

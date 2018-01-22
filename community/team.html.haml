@@ -14,30 +14,29 @@ title: Team
   with the appropriate changes.
 
 %h2 Research & Development
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'ge0ffrey', :mode => 'long')
-  -# TODO Matej's backfill
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'yurloc', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'Christopher-Chianelli', :mode => 'long')
 
 %h2 Quality Assurance
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'triceo', :mode => 'long')
-  %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'yurloc', :mode => 'long')
-  %li The Red Hat BRMS QA team
+  %li and the Red Hat BRMS QA team
 
 %h2 Product Management
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'prakasharadhya', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'DuncanDoyle', :mode => 'long')
 
 %h2 Community contributors
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'mcimbora', :mode => 'long')
   %li
@@ -61,17 +60,18 @@ title: Team
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'mrietveld', :mode => 'long')
   %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'psiroky', :mode => 'long')
+  %li
     See <a href="https://www.openhub.net/p/optaplanner/contributors/summary">historic contributors on Open HUB</a>.
 
 %h2 Build and releases
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'mbiarnes', :mode => 'long')
-  %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'psiroky', :mode => 'long')
+  %li and the Red Hat BRMS productization team
 
 %h2 Drools Expert R&D team
-%ul
+%ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'mdproctor', :mode => 'long')
   %li
@@ -80,6 +80,6 @@ title: Team
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'mariofusco', :mode => 'long')
 
 %h2 Workbench R&D team
-%ul
+%ul(style="list-style: none")
   %li The Drools Workbench team
   %li The Appformer team
