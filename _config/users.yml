@@ -51,6 +51,14 @@
   employedBy: Red Hat
   ircNickname: jlocker
 
+- userId: rsynek
+  fullName: Radovan Synek
+  role: QE
+  gravatarHashId: f1b0cd1c06b5697dbc91f02ea00f3090
+  githubUsername: rsynek
+  employedBy: Red Hat
+  ircNickname: rsynek
+
 - userId: prakasharadhya
   fullName: Prakash Aradhya
   role: Product Manager
