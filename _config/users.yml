@@ -30,7 +30,7 @@
 
 - userId: triceo
   fullName: Lukáš Petrovický
-  role: BRMS QA lead
+  role: Quality engineering specialist
   gravatarHashId: c950743f532471ac34022e92193563c3
   githubUsername: triceo
   employedBy: Red Hat
@@ -38,7 +38,7 @@
 
 - userId: snurkabill
   fullName: Jiří Vahala
-  role: BRMS QA developer
+  role: Quality engineer
   gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
   ircNickname: jvahala/snurkabill
@@ -53,7 +53,7 @@
 
 - userId: rsynek
   fullName: Radovan Synek
-  role: QE
+  role: Quality engineer
   gravatarHashId: f1b0cd1c06b5697dbc91f02ea00f3090
   githubUsername: rsynek
   employedBy: Red Hat
