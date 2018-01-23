@@ -165,9 +165,10 @@ public final class MyAccessor {
 
     public MyAccessor() {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
-        MethodHandle temp = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class));
-        temp = temp.asType(temp.type().changeParameterType(0 , Object.class));
-        getterMethodHandle = temp.asType(temp.type().changeReturnType(Object.class));
+        // findVirtual() matches signature of Person.getName()
+        getterMethodHandle = lookup.findVirtual(Person.class, "getName", MethodType.methodType(String.class))
+            // asType() matches signature of MyAccessor.executeGetter()
+            .asType(MethodType.methodType(Object.class, Object.class));
     }
 
     public Object executeGetter(Object bean) {
