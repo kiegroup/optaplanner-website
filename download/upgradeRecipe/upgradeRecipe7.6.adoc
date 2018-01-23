@@ -23,3 +23,14 @@ After in `*.java`:
 ----
 plannerBenchmark.benchmarkAndShowReportInBrowser();
 ----
+
+[.upgrade-recipe-minor]
+=== `ConstraintMatchAwareIncrementalScoreCalculator`: `Indictment.addConstraintMatch()` changed
+
+This only applies if you're extending `ConstraintMatchAwareIncrementalScoreCalculator`
+and you do not simply return `null` in `getIndictmentMap()`.
+
+The method `Indictment.addConstraintMatch(ConstraintMatch)` now returns void instead of a boolean.
+If the same `ConstraintMatch` is added twice, it now fails fast instead of returning false.
+If the same `ConstraintMatch` has the same justification twice,
+it must now be added to that justification's `Indictment` only once.
