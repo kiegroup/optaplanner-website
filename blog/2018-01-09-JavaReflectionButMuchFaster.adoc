@@ -59,6 +59,7 @@ Obviously, when such code is called x times per second, *its performance matters
 Using JMH, I ran a set of micro benchmarks using OpenJDK 1.8.0_111 on Linux
 on a 64-bit 8-core Intel i7-4790 desktop with 32GB RAM.
 The JMH benchmark ran with 3 forks, 5 warmup iterations of 1 second and 20 measurement iterations of 1 second.
+All warmup costs are gone: increasing the length of an iteration to 5 seconds has little or no impact on the numbers reported here.
 
 The source code of https://github.com/ge0ffrey/ge0ffrey-presentations/blob/master/code/fasterreflection/fasterreflection-client/src/main/java/be/ge0ffrey/presentations/fasterreflection/client/FasterReflectionClientBenchmark.java[that benchmark]
 is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/fasterreflection[this GitHub repository].
@@ -190,6 +191,7 @@ Reflection          avgt   60  5.275 ± 0.053  ns/op
 MethodHandle        avgt   60  6.100 ± 0.079  ns/op
 ----
 
+Using `lookup.unreflectGetter(Field)` instead of `lookup.findVirtual(...)` has no notable difference.
 I do hope that MethodHandle will become as fast as direct access in future Java versions.
 
 === Static MethodHandles (update on 2017-01-11)
@@ -364,8 +366,8 @@ Further benchmarking is needed to measure the bootstrap, metaspace and megamorph
 
 == Conclusion
 
-In this benchmark, reflection and MethodHandles are twice as slow as direct access in OpenJDK 8.
-Generated code is as fast as direct access, it's a pain.
+In this benchmark, reflection and (usable) MethodHandles are twice as slow as direct access in OpenJDK 8.
+Generated code is as fast as direct access, but it's a pain.
 LamdbaMetafactory is almost as fast as direct access.
 
 [source, txt]
@@ -373,9 +375,9 @@ LamdbaMetafactory is almost as fast as direct access.
 Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
 DirectAccess        avgt   60  2.590 ± 0.014  ns/op
-Reflection          avgt   60  5.275 ± 0.053  ns/op
-MethodHandle        avgt   60  6.100 ± 0.079  ns/op
-StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op
-JavaCompiler        avgt   60  2.726 ± 0.026  ns/op
-LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
+Reflection          avgt   60  5.275 ± 0.053  ns/op // 104% slower
+MethodHandle        avgt   60  6.100 ± 0.079  ns/op // 136% slower
+StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op //   2% slower
+JavaCompiler        avgt   60  2.726 ± 0.026  ns/op //   5% slower
+LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op //  33% slower
 ----
