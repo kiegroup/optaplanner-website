@@ -69,7 +69,7 @@ is in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/faster
 * *Java Reflection is slow.* (*)
 * *Java MethodHandles are slow too.* (*)
 * *Generated code with `javax.tools.JavaCompiler` is fast.* (*)
-* *LamdbaMetafactory is pretty fast.* (*)
+* *LambdaMetafactory is pretty fast.* (*)
 
 (*) On the use cases I benchmarked with the workload I used. Your mileage may vary.
 
@@ -312,13 +312,13 @@ especially if the generated code isn't compiled in bulk.
 So I am still hoping that some day MethodHandles will get as fast as direct access,
 just to avoid that bootstrap cost and the dependency pain.
 
-=== LamdbaMetafactory (update on 2017-01-11)
+=== LambdaMetafactory (update on 2017-01-11)
 
-On Reddit, I received an eloquent suggestion to use `LamdbaMetafactory`:
+On Reddit, I received an eloquent suggestion to use `LambdaMetafactory`:
 
 image::lambdaMetafactoryRedditResponse.png[]
 
-Getting `LamdbaMetafactory` to work on a non-static method turned out to be challenging
+Getting `LambdaMetafactory` to work on a non-static method turned out to be challenging
 (due to lack of documentation and StackOverflow questions), but it does work:
 
 [source,java]
@@ -345,7 +345,7 @@ public final class MyAccessor {
 }
 ----
 
-And it looks good: *LamdbaMetafactory is almost as fast as direct access.*
+And it looks good: *LambdaMetafactory is almost as fast as direct access.*
 It's only 33% slower than direct access, so much better than reflection.
 
 [source, txt]
@@ -354,16 +354,16 @@ Benchmark           Mode  Cnt  Score   Error  Units
 ===================================================
 DirectAccess        avgt   60  2.590 ± 0.014  ns/op
 Reflection          avgt   60  5.275 ± 0.053  ns/op
-LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op
+LambdaMetafactory   avgt   60  3.453 ± 0.034  ns/op
 ----
 
 When I ran that
 https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Traveling Salesman Problem]
 again in https://www.optaplanner.org/[OptaPlanner],
-this time using LamdbaMetafactory to access planning variables, _the score calculation speed was 9% faster overall_.
+this time using LambdaMetafactory to access planning variables, _the score calculation speed was 9% faster overall_.
 However, the profiling (using sampling) still shows a lot of `executeGetter()` time, but less than with reflection.
 
-The metaspace cost seems to be about 2kb per lamdba in a non-scientific measurement
+The metaspace cost seems to be about 2kb per lambda in a non-scientific measurement
 and it gets garbage collected normally.
 
 == Bootstrap cost (update on 2017-01-25)
@@ -374,7 +374,7 @@ because we need to create a `MyAccessor` for every getter in the domain hierarch
 such as `Person.getName()`, `Person.getAddress()`, `Address.getStreet()`, `Address.getCity()`, ...
 
 Reflection and MethodHandle have a neglectable bootstrap cost.
-For LamdbaMetafactory it is still acceptable: my machine creates about 25k accessors per second.
+For LambdaMetafactory it is still acceptable: my machine creates about 25k accessors per second.
 But for JavaCompiler it is not: my machine creates only about 200 accessors per second.
 
 [source, txt]
@@ -384,7 +384,7 @@ Benchmark                    Mode  Cnt        Score        Error  Units
 Reflection Bootstrap         avgt   60      268.510 ±     25.271  ns/op //    0.3µs/op
 MethodHandle Bootstrap       avgt   60     1519.177 ±     46.644  ns/op //    1.5µs/op
 JavaCompiler Bootstrap       avgt   60  4814526.314 ± 503770.574  ns/op // 4814.5µs/op
-LamdbaMetafactory Bootstrap  avgt   60    38904.287 ±   1330.080  ns/op //   39.9µs/op
+LambdaMetafactory Bootstrap  avgt   60    38904.287 ±   1330.080  ns/op //   39.9µs/op
 ----
 
 This benchmark does not do caching or bulk complication.
@@ -393,7 +393,7 @@ This benchmark does not do caching or bulk complication.
 
 In this investigation, reflection and (usable) MethodHandles are twice as slow as direct access in OpenJDK 8.
 Generated code is as fast as direct access, but it's a pain.
-LamdbaMetafactory is almost as fast as direct access.
+LambdaMetafactory is almost as fast as direct access.
 
 [source, txt]
 ----
@@ -404,7 +404,7 @@ Reflection          avgt   60  5.275 ± 0.053  ns/op // 104% slower
 MethodHandle        avgt   60  6.100 ± 0.079  ns/op // 136% slower
 StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op //   2% slower
 JavaCompiler        avgt   60  2.726 ± 0.026  ns/op //   5% slower
-LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op //  33% slower
+LambdaMetafactory   avgt   60  3.453 ± 0.034  ns/op //  33% slower
 ----
 
 Your mileage may vary.
