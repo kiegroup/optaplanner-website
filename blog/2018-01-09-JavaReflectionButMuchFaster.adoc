@@ -274,10 +274,11 @@ public abstract class MyAccessor {
 }
 ----
 
+The full source code is much longer and available in https://github.com/ge0ffrey/ge0ffrey-presentations/tree/master/code/fasterreflection[this GitHub repository].
 For more information on how to use `javax.tools.JavaCompiler`,
 take a look at http://www.informit.com/articles/article.aspx?p=2027052&seqNum=2[page 2 of this article]
 or https://www.ibm.com/developerworks/library/j-jcomp/index.html[this article].
-In Java 8, it requires the `tools.jar` on the classpath, which is there automatically for a JDK.
+In Java 8, it requires the `tools.jar` on the classpath, which is there automatically in a JDK installation.
 In Java 9, it requires the module `java.compiler` in the modulepath.
 Also, proper care needs to be taken that it doesn't generate a `classlist.mf` file in the working directory
 and that it uses the correct `ClassLoader`.
@@ -306,7 +307,7 @@ image::codeGenerationTspIncrementalCalculationSamplingProfiler.png[link="codeGen
 Note that in normal use cases, that performance gain will hardly be detectable,
 due to massive CPU needs of a realistically complex score calculation...
 
-One downside of code generation at runtime is that it infers a noticeable bootstrap cost,
+One downside of code generation at runtime is that it infers a noticeable bootstrap cost (as discussed later),
 especially if the generated code isn't compiled in bulk.
 So I am still hoping that some day MethodHandles will get as fast as direct access,
 just to avoid that bootstrap cost and the dependency pain.
@@ -362,11 +363,35 @@ again in https://www.optaplanner.org/[OptaPlanner],
 this time using LamdbaMetafactory to access planning variables, _the score calculation speed was 9% faster overall_.
 However, the profiling (using sampling) still shows a lot of `executeGetter()` time, but less than with reflection.
 
-Further benchmarking is needed to measure the bootstrap, metaspace and megamorphic impacts.
+The metaspace cost seems to be about 2kb per lamdba in a non-scientific measurement
+and it gets garbage collected normally.
+
+== Bootstrap cost (update on 2017-01-25)
+
+The runtime cost matters most, as it's not uncommon to retrieve a getter on thousands of instances per second.
+However, the bootstrap cost matters too,
+because we need to create a `MyAccessor` for every getter in the domain hierarchy that we want to reflect over,
+such as `Person.getName()`, `Person.getAddress()`, `Address.getStreet()`, `Address.getCity()`, ...
+
+Reflection and MethodHandle have a neglectable bootstrap cost.
+For LamdbaMetafactory it is still acceptable: my machine creates about 25k accessors per second.
+But for JavaCompiler it is not: my machine creates only about 200 accessors per second.
+
+[source, txt]
+----
+Benchmark                    Mode  Cnt        Score        Error  Units
+=======================================================================
+Reflection Bootstrap         avgt   60      268.510 ±     25.271  ns/op //    0.3µs/op
+MethodHandle Bootstrap       avgt   60     1519.177 ±     46.644  ns/op //    1.5µs/op
+JavaCompiler Bootstrap       avgt   60  4814526.314 ± 503770.574  ns/op // 4814.5µs/op
+LamdbaMetafactory Bootstrap  avgt   60    38904.287 ±   1330.080  ns/op //   39.9µs/op
+----
+
+This benchmark does not do caching or bulk complication.
 
 == Conclusion
 
-In this benchmark, reflection and (usable) MethodHandles are twice as slow as direct access in OpenJDK 8.
+In this investigation, reflection and (usable) MethodHandles are twice as slow as direct access in OpenJDK 8.
 Generated code is as fast as direct access, but it's a pain.
 LamdbaMetafactory is almost as fast as direct access.
 
@@ -381,3 +406,5 @@ StaticMethodHandle  avgt   60  2.635 ± 0.027  ns/op //   2% slower
 JavaCompiler        avgt   60  2.726 ± 0.026  ns/op //   5% slower
 LamdbaMetafactory   avgt   60  3.453 ± 0.034  ns/op //  33% slower
 ----
+
+Your mileage may vary.
