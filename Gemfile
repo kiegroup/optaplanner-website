@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gem 'rake', '>= 10.4.2'
 gem 'awestruct', '0.5.7'
 gem 'asciidoctor', '1.5.5' # AsciiDoc
+gem "json", "2.0.2"
