@@ -37,14 +37,6 @@ layout: normalBaseWithComments
       To upgrade from an older version, first apply link:./[the previous upgrade recipes].
 
   .col-md-5
-    .panel.panel-default
-      .panel-heading Note for Red Hat customers
-      .panel-body
-        %p
-          The BRMS and BPM Suite version does
-          %strong NOT
-          match the OptaPlanner version:
-        = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
-        %p Apply the recipe of the appropriate OptaPlanner version.
+    = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
 
 ~ content

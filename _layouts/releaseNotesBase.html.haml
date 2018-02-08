@@ -53,14 +53,7 @@ layout: normalBaseWithComments
           %li
             %strong Open Source:
             %a{:href => relative("/code/license.html")} Apache Software License
-    .panel.panel-default
-      .panel-heading Note for Red Hat customers
-      .panel-body
-        %p
-          The BRMS and BPM Suite version does
-          %strong NOT
-          match the OptaPlanner version:
-        = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
+    = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
 
 ~ content
 
