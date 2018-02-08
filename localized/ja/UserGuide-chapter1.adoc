@@ -85,7 +85,7 @@ image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/ima
 [[aPlanningProblemIsNPCompleteOrNPHard]]
 === 1.3.1. 計画問題は NP 完全または NP 困難
 
-上に挙げたユースケースはすべて、_おそらく_ 、link:http://en.wikipedia.org/wiki/NP-complete[NP 完全]もしくはそれよりも困難な問題です。NP 完全とは、普通の言葉で表現すると次のような意味です。
+上に挙げたユースケースはすべて、_おそらく_ 、link:https://en.wikipedia.org/wiki/NP-complete[NP 完全]もしくはそれよりも困難な問題です。NP 完全とは、普通の言葉で表現すると次のような意味です。
 
 * 問題の解を、簡単に、適度な時間内に検証できる。
 * 問題の最適解を適度な時間内に見つける確実な方法がない(*)。
@@ -93,7 +93,7 @@ image::https://docs.optaplanner.org/6.4.0.Final/optaplanner-docs/html_single/ima
 .注意
 ****
 (*) 少なくとも、世界中の頭の切れるコンピュータ科学者でさえ、まだ誰もそのような確実な方法を見出せていません。しかし、誰かが 1 つの NP 完全問題について解を一つ見つけたとしたら、その解はすべての NP 完全問題に当てはまることになります。
-実際、link:http://en.wikipedia.org/wiki/P_%3D_NP_problem[そのような確実な方法が実在するかどうか]を証明した人には 100 万ドルの懸賞金が与えられることになっています。
+実際、link:https://en.wikipedia.org/wiki/P_%3D_NP_problem[そのような確実な方法が実在するかどうか]を証明した人には 100 万ドルの懸賞金が与えられることになっています。
 ****
 
 これは実に恐ろしいことを示唆しています。つまり、次の 2 つの一般的な方法が力不足であるために、自分の抱える問題を解くのが、おそらくは想像以上に困難だということです。

@@ -29,7 +29,7 @@ INFO  Solving ended: time spent (2981), best score (0), ...
 
 The N Queens problem is not NP-complete, nor NP-hard.
 That is _math speak_ for stating that _there's a perfect algorithm to solve this problem_:
-the http://en.wikipedia.org/wiki/Eight_queens_puzzle#Explicit_solutions[Explicits Solutions algorithm].
+the https://en.wikipedia.org/wiki/Eight_queens_puzzle#Explicit_solutions[Explicits Solutions algorithm].
 Implemented with a `CustomPhaseCommand` in OptaPlanner it looks like this:
 
 [source,java]

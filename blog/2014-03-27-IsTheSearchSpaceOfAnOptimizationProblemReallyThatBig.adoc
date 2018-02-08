@@ -73,8 +73,8 @@ An infeasible solution is a solution that breaks at least 1 hard constraint.
 image::feasibleSearchSpaceSizeCalculation.png[]
 
 * *Cloud Balancing*: The feasible search space is impossible to calculate.
-The capacity hard constraints are a form of http://en.wikipedia.org/wiki/Bin_packing_problem[bin packing],
-which is http://en.wikipedia.org/wiki/NP-complete[NP-complete].
+The capacity hard constraints are a form of https://en.wikipedia.org/wiki/Bin_packing_problem[bin packing],
+which is https://en.wikipedia.org/wiki/NP-complete[NP-complete].
 That implies that even the smartest computer scientists fail to calculate it in reasonable time
 for medium or big datasets.
 

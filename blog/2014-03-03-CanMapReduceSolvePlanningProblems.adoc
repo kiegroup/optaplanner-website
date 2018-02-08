@@ -12,7 +12,7 @@ Let's see what happens if we MapReduce a planning problem, such as the _Travelin
 
 == About MapReduce
 
-http://en.wikipedia.org/wiki/MapReduce[MapReduce] is programming model
+https://en.wikipedia.org/wiki/MapReduce[MapReduce] is programming model
 which has proven to be very effective to run a _query_ on big data.
 Generally speaking, it works like this:
 
@@ -28,7 +28,7 @@ For example, suppose we need to find the most expensive invoice record in a data
 
 == About the Traveling Salesman Problem
 
-The http://en.wikipedia.org/wiki/Travelling_salesman_problem[Traveling Salesman Problem] (TSP) is a very basic planning problem.
+The https://en.wikipedia.org/wiki/Travelling_salesman_problem[Traveling Salesman Problem] (TSP) is a very basic planning problem.
 Given a list of cities, find the shortest path to visit all cities.
 
 For example, here's a dataset with `68` cities and its optimal tour with a distance of `674`:
