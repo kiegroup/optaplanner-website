@@ -2260,3 +2260,52 @@ The method `Indictment.addConstraintMatch(ConstraintMatch)` now returns void ins
 If the same `ConstraintMatch` is added twice, it now fails fast instead of returning false.
 If the same `ConstraintMatch` has the same justification twice,
 it must now be added to that justification's `Indictment` only once.
+
+
+== From 7.6.0.Final to 7.7.0.Final
+
+[.upgrade-recipe-major]
+=== Replace `movableEntitySelectionFilter` with `@PlanningPin` when possible
+
+In many cases, the complex use of a `movableEntitySelectionFilter` to pin down planning entities
+can by simplified by a `@PlanningPin` annotation on a field or method
+that returns true if the entity is immovable.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningEntity(movableEntitySelectionFilter = MovableLectureSelectionFilter.class)
+public class Lecture {
+    private boolean pinned;
+
+    public boolean isPinned() {
+        return pinned;
+    }
+}
+----
+
+[source, java]
+----
+public class MovableLectureSelectionFilter implements SelectionFilter<CourseSchedule, Lecture> {
+
+    @Override
+    public boolean accept(ScoreDirector<CourseSchedule> scoreDirector, Lecture lecture) {
+        return !lecture.isPinned();
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningEntity
+public class Lecture {
+    private boolean pinned;
+
+    @PlanningPin
+    public boolean isPinned() {
+        return pinned;
+    }
+}
+----

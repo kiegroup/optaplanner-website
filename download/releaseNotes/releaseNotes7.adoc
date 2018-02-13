@@ -6,6 +6,34 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
+== New and noteworthy: Engine 7.7.0.Final
+
+=== @PlanningPin to pin down planning entities
+
+To pin down an assignment and force OptaPlanner to leave it untouched,
+simply add the `@PlanningPin` annotation on a planning entity's boolean property
+and make it `true` for those that are immovable:
+
+[source,java,options="nowrap"]
+----
+@PlanningEntity
+public class Lecture {
+
+    private boolean pinned;
+    ...
+
+    @PlanningPin
+    public boolean isPinned() {
+        return pinned;
+    }
+
+    ...
+}
+----
+
+This is syntactic sugar for the more flexible and more verbose `movableEntitySelectionFilter`.
+
+
 == New and noteworthy: Engine 7.6.0.Final
 
 === New example: Conference Scheduling
