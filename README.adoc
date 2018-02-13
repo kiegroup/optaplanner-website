@@ -11,11 +11,12 @@ image:https://travis-ci.org/kiegroup/optaplanner-website.svg["Build Status", lin
 Follow these instructions:
 
 ```
-$ sudo dnf install ruby
+# Optional: clean your system first.
+$ sudo dnf remove ruby rubygems rubygem-rake rubygem-bundler ruby-devel
+
+$ sudo dnf install ruby rubygem-rake rubygem-bundler
 $ ruby --version
 ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
-
-$ sudo dnf install rubygem-rake
 
 # This won't immediately work
 $ rake setup
@@ -40,7 +41,7 @@ $ rake clean build
 $ firefox _site/index.html
 ```
 
-And publish your changes (if you got authorization):
+And publish your changes (if you got authorization, otherwise Jenkins will do it):
 
 ```
 $ rake clean build publish

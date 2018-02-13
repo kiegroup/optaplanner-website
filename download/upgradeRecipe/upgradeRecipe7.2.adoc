@@ -1,9 +1,0 @@
-= Upgrade recipe 7.2
-:awestruct-description: Upgrade to OptaPlanner 7.2 from a previous version.
-:awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 0.5
-:awestruct-upgrade_recipe_version: 7.2
-
-== From 7.1.0.Final to 7.2.0.Final
-
-There is no impact on your code.

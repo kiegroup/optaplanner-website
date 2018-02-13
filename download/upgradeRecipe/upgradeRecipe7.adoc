@@ -1,10 +1,13 @@
-= Upgrade recipe 7.0
-:awestruct-description: Upgrade to OptaPlanner 7.0 from a previous version.
+= Upgrade recipe 7
+:awestruct-description: Upgrade to OptaPlanner 7 from a previous version.
 :awestruct-layout: upgradeRecipeBase
 :awestruct-priority: 0.5
-:awestruct-upgrade_recipe_version: 7.0
+:awestruct-upgrade_recipe_version: 7
 
-== Backwards incompatible changes to the public API
+
+== From 6.5.0.Final to 7.0.0.Beta1
+
+=== Backwards incompatible changes to the public API in 7.0
 
 Because this is a new major version number (7.0), which is the foundation for the 7.x series for the next few years,
 it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
@@ -14,8 +17,6 @@ We kept these backwards incompatible changes to a strict minimum
 
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
 
-
-== From 6.5.0.Final to 7.0.0.Beta1
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Java 8 or higher required
@@ -1947,3 +1948,315 @@ public class Mysolution {
     ...
 }
 ----
+
+
+== From 7.1.0.Beta2 to 7.1.0.Beta3
+
+[.upgrade-recipe-minor]
+=== `<valueSelector>`: `variableName` is now an attribute
+
+When power tweaking move selectors, such as `<changeMoveSelector>`,
+in a use case with multiple planning variables,
+the `<variableName>` XML element has been replaced by a `variableName="..."` XML attribute.
+This reduces the solver configuration verbosity.
+For backwards compatibility, the old way is still supported in the 7.x series.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <valueSelector>
+    <variableName>room</variableName>
+  </valueSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <valueSelector variableName="room"/>
+----
+
+[.upgrade-recipe-minor]
+=== Construction Heuristic: multiple variable power tweaking simplified
+
+It's now easier to configure construction heuristics that scale better for multiple variables,
+but assigning one variable at a time.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <queuedEntityPlacer>
+      <entitySelector id="placerEntitySelector"/>
+      <changeMoveSelector>
+        <entitySelector mimicSelectorRef="placerEntitySelector"/>
+        <valueSelector variableName="period"/>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <entitySelector mimicSelectorRef="placerEntitySelector"/>
+        <valueSelector variableName="room"/>
+      </changeMoveSelector>
+    </queuedEntityPlacer>
+  </constructionHeuristic>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    <changeMoveSelector>
+      <valueSelector variableName="period"/>
+    </changeMoveSelector>
+    <changeMoveSelector>
+      <valueSelector variableName="room"/>
+    </changeMoveSelector>
+  </constructionHeuristic>
+----
+
+
+== From 7.1.0.Final to 7.2.0.Final
+
+There is no impact on your code.
+
+
+== From 7.2.0.Final to 7.3.0.Final
+
+[.upgrade-recipe-minor]
+=== `SolutionFileIO`: `getOutputFileExtension()` is now defaulted
+
+It's no longer needed to implement `getOutputFileExtension()` of the `SolutionFileIO` interface
+if it returns the same as `getInputFileExtension()`.
+
+Before in `*.java`:
+[source, java]
+----
+public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSolution> {
+
+    @Override
+    public String getInputFileExtension() {
+        return "vrp";
+    }
+
+    @Override
+    public String getOutputFileExtension() {
+        return "vrp";
+    }
+
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class VehicleRoutingFileIO implements SolutionFileIO<VehicleRoutingSolution> {
+
+    @Override
+    public String getInputFileExtension() {
+        return "vrp";
+    }
+
+    ...
+}
+----
+
+[.upgrade-recipe-minor]
+=== Benchmarker: direct POJO input
+
+The benchmarker now also accepts problem instances directly, without reading them from disk.
+If you're generating your problems or fetching them from a database,
+it might be interesting to switch to this approach (otherwise stick with the old approach because it works offline).
+
+Before in `*.java`:
+[source, java]
+----
+    CloudBalance problem1 = readFromDatabase(...);
+    CloudBalance problem2 = readFromDatabase(...);
+    ...
+    CloudBalanceFileIO solutionFileIO = new CloudBalanceFileIO();
+    solutionFileIO.write(problem1, new File("tmp/problem1.xml"));
+    solutionFileIO.write(problem2, new File("tmp/problem1.xml"));
+    ...
+    PlannerBenchmark plannerBenchmark = benchmarkFactory.buildPlannerBenchmark();
+    plannerBenchmark.benchmark();
+----
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      <solutionFileIOClass>...CloudBalanceFileIO</solutionFileIOClass>
+      <inputSolutionFile>tmp/problem1.xml</inputSolutionFile>
+      <inputSolutionFile>tmp/problem2.xml</inputSolutionFile>
+      ...
+    </problemBenchmarks>
+----
+
+After in `*.java`:
+[source, java]
+----
+    CloudBalance problem1 = readFromDatabase(...);
+    CloudBalance problem2 = readFromDatabase(...);
+    ...
+    PlannerBenchmark plannerBenchmark = benchmarkFactory.buildPlannerBenchmark(problem1, problem2, ...);
+    plannerBenchmark.benchmark();
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+    </problemBenchmarks>
+----
+
+[.upgrade-recipe-minor]
+=== Benchmarker: `BEST_SCORE` statistic by default
+
+The benchmarker now includes the `BEST_SCORE` statistic by default.
+It no longer needs to be explicitly configured.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+      <problemStatisticType>BEST_SCORE</problemStatisticType>
+    </problemBenchmarks>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+    </problemBenchmarks>
+----
+
+To disable the `BEST_SCORE` statistic, use `<problemStatisticEnabled>` in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+    <problemBenchmarks>
+      ...
+      <problemStatisticEnabled>false</problemStatisticEnabled>
+    </problemBenchmarks>
+----
+
+[.upgrade-recipe-major]
+=== `ScoreDirector`: `dispose()` replaced by `close()`
+
+`ScoreDirector` now implements `AutoCloseable`,
+so the `dispose()` method has been deprecated and replaced by `close()`.
+
+Before in `*.java`:
+[source, java]
+----
+    ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector();
+    ...
+    scoreDirector.dispose();
+----
+
+After in `*.java`:
+[source, java]
+----
+    ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector();
+    ...
+    scoreDirector.close();
+----
+
+After in `*.java` (with ARM usage):
+[source, java]
+----
+    try (ScoreDirector<VehicleRoutingSolution> scoreDirector = scoreDirectorFactory.buildScoreDirector()) {
+        ...
+    }
+----
+
+
+== From 7.3.0.Final to 7.4.0.Final
+
+[.upgrade-recipe-minor]
+=== `movableEntitySelectionFilter` is now inherited
+
+An entity's `movableEntitySelectionFilter` is now inherited by child entities.
+The workaround of configuring the filter twice, is now obsolete.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningEntity(movableEntitySelectionFilter = ParentFilter.class)
+public class Animal {
+   ...
+}
+
+@PlanningEntity(movableEntitySelectionFilter = ParentFilter.class)
+public class Dog extends Animal {
+   ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningEntity(movableEntitySelectionFilter = ParentFilter.class)
+public class Animal {
+   ...
+}
+
+@PlanningEntity()
+public class Dog extends Animal {
+   ...
+}
+----
+
+
+== From 7.4.0.Final to 7.5.0.Final
+
+[.upgrade-recipe-minor]
+=== `Indictment`: natural comparison changed
+
+An `Indictment` is now naturally sorted by its justification.
+To sort it based on its score, use `IndictmentScoreTotalComparator`.
+
+Before in `*.java`:
+[source, java]
+----
+Collections.sort(indictmentList);
+----
+
+After in `*.java`:
+[source, java]
+----
+Collections.sort(indictmentList, new IndictmentScoreTotalComparator());
+----
+
+
+== From 7.5.0.Final to 7.6.0.Final
+
+[.upgrade-recipe-minor]
+=== `PlannerBenchmark`: new method `benchmarkAndShowReportInBrowser()`
+
+If you're running local benchmarks, this new method will save time by open the report automatically.
+
+Before in `*.java`:
+[source, java]
+----
+plannerBenchmark.benchmark();
+// Afterwards manually find the benchmark dir to open the report
+----
+
+After in `*.java`:
+[source, java]
+----
+plannerBenchmark.benchmarkAndShowReportInBrowser();
+----
+
+[.upgrade-recipe-minor]
+=== `ConstraintMatchAwareIncrementalScoreCalculator`: `Indictment.addConstraintMatch()` changed
+
+This only applies if you're extending `ConstraintMatchAwareIncrementalScoreCalculator`
+and you do not simply return `null` in `getIndictmentMap()`.
+
+The method `Indictment.addConstraintMatch(ConstraintMatch)` now returns void instead of a boolean.
+If the same `ConstraintMatch` is added twice, it now fails fast instead of returning false.
+If the same `ConstraintMatch` has the same justification twice,
+it must now be added to that justification's `Indictment` only once.
