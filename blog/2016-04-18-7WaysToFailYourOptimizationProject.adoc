@@ -44,7 +44,7 @@ It's not an all-or-nothing situation: *the user and OptaPlanner work together*
 (and the user is in charge). For a detailed use case, see https://www.optaplanner.org/blog/2013/10/11/WillSkynetControlOurSchedule.html[this blog with video].
 
 Technically, this is implemented through _immovable planning entities_ (as explained in https://www.optaplanner.org/learn/documentation.html[the OptaPlanner reference manual]):
-a simple boolean method that checks if the process is locked.
+a simple boolean method that checks if the process is pinned.
 
 
 == 2. Implement all hard constraints
