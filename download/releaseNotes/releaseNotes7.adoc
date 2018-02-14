@@ -6,7 +6,7 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
-== New and noteworthy: Engine 7.7.0.Final
+== New and noteworthy: Engine 7.7.0.Final (under development)
 
 === @PlanningPin to pin down planning entities
 
