@@ -191,7 +191,6 @@ For example, in course scheduling this will first assign a period to lecture and
 This means that it will evaluate a lot less moves, resulting in a Construction Heuristic that end much quicker
 at the cost of solution quality (which Local Search can usually make up for in the time gained).
 
-[[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench 7.1.0.Final
 
 === Guided decision table integration example
@@ -393,7 +392,6 @@ This example also demonstrates real-time producing and consuming of tasks.
 * The public API is now a solid foundation for the 7.x years.
 
 
-[[NewAndNoteWorthyWorkbench]]
 == New and noteworthy: Workbench 7.0.0.Final
 
 
@@ -444,7 +442,6 @@ image:7.0/permissionScreen.png[Permission screen]
 ** Employee rostering example optimizes task assigning to employees based on their skill.
 
 
-[[NewAndNoteWorthyExecutionServer]]
 == New and noteworthy: Execution Server 7.0.0.Final
 
 
