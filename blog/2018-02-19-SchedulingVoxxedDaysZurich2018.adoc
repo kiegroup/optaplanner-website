@@ -87,3 +87,11 @@ would have been very difficult with the traditional approach I had been using.
 Now the https://cfp-vdz.exteso.com/2018/byday/thursday[definitive conference schedule] is in place
 and all my work as Program Committee Lead is complete.
 I’ll be able to enjoy the event and learn as much as possible from the amazing speakers we selected.
+
+_This article was originally published on https://developers.redhat.com/blog/2018/02/19/voxxed-days-zurich-2018/[developers.redhat.com]._
+
+== Related video
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
++++
