@@ -1,15 +1,16 @@
-= Employee rostering
-:awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize employee timetabling and shift rostering.
+= Task assignment optimization
+:awestruct-description: Use OptaPlanner (java™, open source) to optimize assigning tasks to employees with different skills and affinities.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0
 :showtitle:
 
-image:employeeRosteringValueProposition.png[Employee rostering value proposition]
+image:taskAssigningValueProposition.png[Task assigning value proposition]
 
 == What is OptaPlanner?
 
 OptaPlanner is the leading Open Source Java™ constraint solver
-to optimize employee shift rostering and similar use cases.
+to optimize assigning tasks to employees,
+adhering to skill, affinity and other constraints.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
 It works with your domain classes and your custom constraints (which can reuse existing code).
@@ -23,9 +24,5 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 == Video
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/sOWC4qrXxFk" frameborder="0" allowfullscreen></iframe>
-+++
-
-+++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/7nPagqJK3bs" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/ksXjQ851RAU" frameborder="0" allowfullscreen></iframe>
 +++
