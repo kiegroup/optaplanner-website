@@ -404,6 +404,10 @@
   eventUrl: https://www.redhat.com/en/summit/2018
   location: San Francisco, CA, USA
   date: 2018-05-08
+  talks:
+    - title: "Employee shift rostering optimization A.I. with OptaPlanner"
+      url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=154183
+      presenters: Geoffrey De Smet, Christopher Chianelli
 
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
