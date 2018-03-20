@@ -129,7 +129,7 @@ which is not included in the table to keep the output short.
 |===
 
 == Where do I start?
-http://www.optaplanner.org/download/download.html[Download KIE (Execution) Server].
+https://www.optaplanner.org/download/download.html[Download KIE (Execution) Server].
 
 Check https://docs.optaplanner.org/latest/optaplanner-wb-es-docs/html_single/#_kie_server_integration[KIE Server Integration] chapter
 of OptaPlanner Workbench quickstart or https://docs.optaplanner.org/7.1.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[OptaPlanner REST API]
