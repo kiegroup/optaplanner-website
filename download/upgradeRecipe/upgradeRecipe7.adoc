@@ -295,6 +295,38 @@ SolutionFileIO<CloudBalance> solutionFileIO = new XStreamSolutionFileIO<>(CloudB
 
 
 [.upgrade-recipe-minor]
+=== `SelectionFilter`: added generic type parameter
+
+To avoid the awkward cast to your `Solution` implementation,
+a `SelectionFilter` now also has a generic type parameter for the solution, not just the selection type.
+
+Before in `*.java`:
+[source, java]
+----
+public class LectureFilter implements SelectionFilter<Lecture> {
+
+    public boolean accept(ScoreDirector scoreDirector, Lecture lecture) {
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class LectureFilter implements SelectionFilter<CourseSchedule, Lecture> {
+
+    @Override
+    public boolean accept(ScoreDirector<CourseSchedule> scoreDirector, Lecture lecture) {
+        ...
+    }
+
+}
+----
+
+
+[.upgrade-recipe-minor]
 === `CustomPhaseCommand`: added optional generic type parameter
 
 To avoid the awkward cast to your `Solution` implementation and to get rid of that deprecated interface,
