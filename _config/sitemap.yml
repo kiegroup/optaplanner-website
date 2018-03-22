@@ -1,5 +1,11 @@
 excluded_extensions: ['.svg', '.map', '.eot', '.ttf', '.woff']
 excluded_files: [
+  # TODO Workaround for https://github.com/awestruct/awestruct/issues/541
+  '/code/.htaccess',
+  '/community/.htaccess',
+  '/download/releaseNotes/.htaccess',
+  '/download/upgradeRecipe/.htaccess',
+  '/localized/jp/.htaccess',
   # Keep in sync with robots.txt
   '/website/jbossorg.properties',
   '/website/javascriptLibraries.txt',
