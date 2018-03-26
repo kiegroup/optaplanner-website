@@ -2341,3 +2341,77 @@ public class Lecture {
     }
 }
 ----
+
+
+[.upgrade-recipe-minor]
+=== Jackson integration: use `OptaPlannerJacksonModule`
+
+Instead of using `@JsonSerialize` and `@JsonDeserialize` Jackson annotations on every `Score` field,
+just register `OptaPlannerJacksonModule` once instead.
+
+Before in `*.java`:
+
+[source, java]
+----
+    ObjectMapper objectMapper = new ObjectMapper();
+----
+
+[source, java]
+----
+@PlanningSolution
+public class MySolution {
+
+    @JsonSerialize(using = ScoreJacksonJsonSerializer.class)
+    @JsonDeserialize(using = HardSoftScoreJacksonJsonDeserializer.class)
+    private HardSoftScore score;
+
+    ...
+}
+----
+
+After in `*.java`:
+
+[source, java]
+----
+    ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.registerModule(OptaPlannerJacksonModule.createModule());
+----
+
+[source, java]
+----
+@PlanningSolution
+public class MySolution {
+
+    private HardSoftScore score;
+
+    ...
+}
+----
+
+
+[.upgrade-recipe-minor]
+=== Jackson integration: replace `ScoreJacksonJsonSerializer`
+
+If you do prefer to use `@JsonSerialize` and `@JsonDeserialize` Jackson annotations,
+instead of registering `OptaPlannerJacksonModule`,
+replace `ScoreJacksonJsonSerializer` with a specific serializer,
+such as HardSoftScoreJacksonJsonSerializer`.
+This won't affect the json output.
+
+`ScoreJacksonJsonSerializer` is deprecated.
+
+Before in `*.java`:
+[source, java]
+----
+@JsonSerialize(using = ScoreJacksonJsonSerializer.class)
+@JsonDeserialize(using = HardSoftScoreJacksonJsonDeserializer.class)
+private HardSoftScore score;
+----
+
+After in `*.java`:
+[source, java]
+----
+@JsonSerialize(using = HardSoftScoreJacksonJsonSerializer.class)
+@JsonDeserialize(using = HardSoftScoreJacksonJsonDeserializer.class)
+private HardSoftScore score;
+----
