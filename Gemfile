@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-# ruby '2.3.1p112'
+ruby '>= 2.4.0'
 
 gem 'rake', '>= 10.4.2'
 gem 'awestruct', '0.6.0.alpha1'
