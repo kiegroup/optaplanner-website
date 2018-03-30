@@ -7,6 +7,6 @@
 
 The requested page does not exist.
 
-Please submit an issue in link:../code/issueTracker.html[our issue tracker]
+Please submit an issue in link:../community/getHelp.html[our issue tracker]
 and include the URL which lead you here,
 so we can fix it.

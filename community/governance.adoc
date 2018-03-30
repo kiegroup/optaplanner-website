@@ -19,7 +19,7 @@ Typically, when a major release is being planned, the project lead will take inp
 and evaluate what can be done in the necessary time.
 This will define what features will be addressed in a given release.
 The project lead will then publish the roadmap on link:getHelp.html[the developer mailing list],
-and update the version information in link:../code/issueTracker.html[JIRA].
+and update the version information in link:../community/getHelp.html[JIRA].
 
 OptaPlanner is the basis for the commercial (yet open source) link:../product/services.html[BRMS and BPM Suite products],
 so many requirements for this project come from its users.
@@ -27,8 +27,8 @@ However, all requirements are fed into the same community process that our commu
 We create JIRAs for all feature requests on our schedule.
 
 The best way for you to suggest requirements for a future release of this project is to enter a feature request in JIRA.
-Lobbying for features using the voting feature in link:../code/issueTracker.html[JIRA],
-and posting to link:../product/services.html[the community forum], is a great way to express interest as well.
+Lobbying for features using the voting feature in link:../community/getHelp.html[JIRA],
+and posting to link:../community/getHelp.html[the community forum], is a great way to express interest as well.
 Although, contributing is the single most expedient way to get a capability into a particular release.
 
 
