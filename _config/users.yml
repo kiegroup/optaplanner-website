@@ -148,6 +148,14 @@
   employedBy: Red Hat
   ircNickname: mbiarnes
 
+- userId: gsheldon
+  fullName: Gemma Sheldon
+  role: Documentation writer
+  gravatarHashId: 8a55491fdc7512af28178979162e1230
+  employedBy: Red Hat
+  githubUsername: gsheldon
+  employedBy: Red Hat
+
 - userId: rbourner
   fullName: Richard Bourner
   role: Contributor
