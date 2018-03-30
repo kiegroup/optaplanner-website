@@ -1,0 +1,36 @@
+---
+priority: 0.0
+change_frequency: monthly
+---
+!!! 5
+%html{:lang => page.lang ? page.lang : site.lang}
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    %title #{escape_once(site.title + " - 404 Page not found")}
+
+  %body
+    -# Google Tag Manager (which includes Google Analytics) script part 1/2, if javascript is disabled
+    :plain
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=#{site.googleTagManagerId}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    %h1 The requested page does not exist
+
+    %p
+      If this is an issue in our website,
+      %a{:href => "#{site.canonicalBaseUrl}/community/getHelp.html"} please let us know
+      (including the URL which led you here) and we'll fix it.
+
+    %p
+      %a{:href => site.canonicalBaseUrl} Return to the website.
+
+    -# Google Tag Manager (which includes Google Analytics) script part 2/2, if javascript is enabled
+    :plain
+      <script type="text/javascript">
+        dataLayer = [{'channel' : '#{site.googleTagManagerChannel}', 'additional_tracking_code' : '#{site.googleAnalyticsId}'}];
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','#{site.googleTagManagerId}');
+      </script>
