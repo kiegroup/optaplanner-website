@@ -20,6 +20,8 @@ RUN dnf install -y ruby-devel
 RUN dnf install -y rpm-build
 RUN dnf install -y gcc-c++
 RUN dnf install -y make
+RUN dnf install -y rsync
+RUN dnf install -y openssh-clients
 RUN dnf install -y net-tools
 RUN dnf install -y iputils
 RUN dnf clean all
