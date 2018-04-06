@@ -2415,3 +2415,6 @@ After in `*.java`:
 @JsonDeserialize(using = HardSoftScoreJacksonJsonDeserializer.class)
 private HardSoftScore score;
 ----
+
+
+== From 7.7.0.Final to 7.8.0.Final
