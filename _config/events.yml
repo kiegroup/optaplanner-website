@@ -408,6 +408,8 @@
     - title: "Employee shift rostering optimization A.I. with OptaPlanner"
       url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=154183
       presenters: Geoffrey De Smet, Christopher Chianelli
+    - title: "Consulting Discovery Zone -  Constraint Optimizer: “I bet you I’m better than a human""
+      presenters: Justin Goldsmith, Christian Witchger
 
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
