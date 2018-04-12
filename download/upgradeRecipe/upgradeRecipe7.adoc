@@ -2418,3 +2418,35 @@ private HardSoftScore score;
 
 
 == From 7.7.0.Final to 7.8.0.Final
+
+
+[.upgrade-recipe-minor]
+=== Partitioned Search: `threadFactoryClass` moved
+
+Now that `<solver>` directly supports a `<threadFactoryClass>` element,
+the `<threadFactoryClass>` element under `<partitionedSearch>` has been deprecated.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <solver>
+    ...
+    <partitionedSearch>
+      <threadFactoryClass>...MyAppServerThreadFactory</threadFactoryClass>
+      ...
+    </partitionedSearch>
+  </solver>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <solver>
+    <threadFactoryClass>...MyAppServerThreadFactory</threadFactoryClass>
+    ...
+    <partitionedSearch>
+      ...
+    </partitionedSearch>
+  </solver>
+----
+
