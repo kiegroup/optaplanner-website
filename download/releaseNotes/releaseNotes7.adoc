@@ -209,7 +209,7 @@ OptaPlanner 7.x now requires Java 8 or higher to run. The 6.x releases remain co
 The API and implementation now make use of Java 7 and Java 8 features (such as lambdas).
 
 
-=== Multi-threaded partitioned search
+=== Multithreaded partitioned search
 
 OptaPlanner now has out of the box support for solving a single dataset by partitioning across multiple threads.
 So it makes use of multiple CPU cores for a single problem.

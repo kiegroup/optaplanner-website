@@ -510,7 +510,7 @@ After in `*BenchmarkConfig.xml`:
 
 A solution's `Score` now also contains the number of uninitialized variables (usually `0`) as a negative `getInitScore()`.
 This is useful in exotic cases with multiple phases to fully initialize a solution.
-It also prevents bugs in multi-threaded use cases.
+It also prevents bugs in multithreaded use cases.
 
 With `Score.isSolutionInitialized()`, it's now possible to quickly and reliably determine if a solution is fully initialized.
 The method `FeasibilityScore.isFeasible()` now also checks if the solution was fully initialized during score calculation.
@@ -1269,7 +1269,7 @@ on the unique ID of every planning entity and on most problem fact classes
 (especially on each class that is a planning value class).
 The ID must never be null and must be unique per class (no need to be globally unique).
 
-This enables the use of multi-threaded solvers (such as Partitioned Search)
+This enables the use of multithreaded solvers (such as Partitioned Search)
 and makes it easier to implement a real-time planning `ProblemFactChange` by using `ScoreDirector.lookUpWorkingObject()`.
 
 Before in `*.java`:

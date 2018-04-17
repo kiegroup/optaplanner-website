@@ -92,7 +92,7 @@ On the other hand, there are a few nuances to note:
 For these use cases (with heavy calculations) GC pause length mostly doesn't matter.
 
 * This was an (almost) single threaded benchmark.
-Further benchmarking with multiple solvers in parallel or multi-threaded solving might influence results.
+Further benchmarking with multiple solvers in parallel or multithreaded solving might influence results.
 
 * G1 is recommended for a heap size of at least `6 GB`.
 This benchmark used a heap size of only `2 GB` and even that size is only needed for the biggest dataset (Machine Reassignment B10).
