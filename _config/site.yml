@@ -18,6 +18,10 @@ asciidoctor:
   :attributes:
     imagesdir: ''
 
+# Avoid broken images in blog posts
+generation:
+  :in_threads: 0
+
 profiles:
   development:
     developmentMode: true
