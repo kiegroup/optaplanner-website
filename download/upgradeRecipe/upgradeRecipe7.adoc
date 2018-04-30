@@ -2450,3 +2450,55 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </solver>
 ----
 
+
+[.upgrade-recipe-minor]
+=== `ConstraintMatchTotal` and `Indictment`: `getScoreTotal()` renamed to `getScore()`
+
+The `getScoreTotal()` methods on `ConstraintMatchTotal` and `Indictment`
+have been deprecated and replaced by `getScore()`.
+Those deprecated methods will be removed in 8.0.
+
+Before in `*.java`:
+[source, java]
+----
+Score score = constraintMatchTotal.getScoreTotal();
+----
+
+After in `*.java`:
+[source, java]
+----
+Score score = constraintMatchTotal.getScore();
+----
+
+Before in `*.java`:
+[source, java]
+----
+Score score = indictment.getScoreTotal();
+----
+
+After in `*.java`:
+[source, java]
+----
+Score score = indictment.getScore();
+----
+
+
+[.upgrade-recipe-minor]
+=== `IndictmentScoreTotalComparator` renamed to `IndictmentScoreComparator`
+
+The comparator `IndictmentScoreTotalComparator` has been deprecated
+and replaced by `IndictmentScoreComparator`.
+The deprecated class will be removed in 8.0.
+
+
+Before in `*.java`:
+[source, java]
+----
+indictmentList.sort(new IndictmentScoreTotalComparator());
+----
+
+After in `*.java`:
+[source, java]
+----
+indictmentList.sort(new IndictmentScoreComparator());
+----

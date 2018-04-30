@@ -8,6 +8,21 @@
 
 == New and noteworthy: Engine 7.8.0.Final (under development)
 
+=== Solver.explainBestScore()
+
+To make it easier to understand why a solution is infeasible during development
+(before the UI makes use of the ConstraintMatch API),
+use `explainBestScore()` after solving:
+
+[source,java,options="nowrap"]
+----
+EmployeeRoster solution = solver.solve();
+System.out.println(solver.explainBestScore());
+----
+
+For example, it might print:
+
+image:7.8/solverExplainBestScore.png[explainBestScore]
 
 == New and noteworthy: Engine 7.7.0.Final
 
