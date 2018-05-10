@@ -343,7 +343,7 @@
     <section>
         <section>
             <h2>
-                Employee shift rostering
+                Employee Rostering (technical)
             </h2>
             <p class="instruction instruction-bottom">
                 <i>Press down to show</i><br/>
@@ -608,6 +608,331 @@ end</code></pre>
         <section>
             <h3>Who's in control?</h3>
             <p>The user</p>
+        </section>
+    </section>
+
+
+    <section>
+        <section>
+            <h2>
+                OptaShift Employee Rostering (non-technical)
+            </h2>
+            <p class="instruction instruction-bottom">
+                <i>Press down to show</i><br/>
+                <i>Press right to skip</i>
+            </p>
+        </section>
+
+        <section>
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_1.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_2.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_3.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/employeeRosteringValueProposition_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/extra/usersOfEmployeeRostering.png" class="fullImage">
+        </section>
+        <section>
+            <p>Introducing<br/>the</p>
+            <h2>OptaShift<br/>Employee Rostering</h2>
+            <p>template</p>
+        </section>
+        <section>
+            <p>OptaShift Employee Rostering</p>
+            <h2>Domain</h2>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringClassDiagram_0.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Skill</h3>
+            <ul>
+                <li>Examples:
+                    <ul>
+                        <li>English, Spanish, ...</li>
+                        <li>Critical care, psychiatric care, ...</li>
+                        <li>First line support, second line support, ...</li>
+                        <li>Mortgages, insurances, ...</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Show menu, add 1 skill "public relations" -->
+            <p class="fragment">DEMO</p>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringClassDiagram_1.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Employee</h3>
+            <ul>
+                <li>Proficient in 0, 1 or multiple skills</li>
+                <li>Can be assigned to shifts</li>
+            </ul>
+            <!-- Show paging, use filtering to find "Flo Jones", edit him to give him the skill "public relations" -->
+            <p class="fragment">DEMO</p>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringClassDiagram_2.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Spot</h3>
+            <ul>
+                <li>Requires 0, 1 or multiple skills</li>
+                <li>Examples:
+                    <ul>
+                        <li>Ambulance unit 1 (requires emergency care)</li>
+                        <li>SFO north gate security (requires arms licence)</li>
+                        <li>Calls from Montreal (requires English and French)</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Add spot "Media center" with the required skill "public relations" -->
+            <p class="fragment">DEMO</p>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringClassDiagram_3.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Shift</h3>
+            <ul>
+                <li>Has a spot</li>
+                <li>Has a starting date and time</li>
+                <li>Has a ending date and time</li>
+                <li>Will be assigned to an employee</li>
+                <li>Examples:
+                    <ul>
+                        <li>1 Feb 2018: 6 AM → 2 PM @ Ambulance unit 1</li>
+                        <li>1 Feb 2018: 2 PM → 10 PM @ Ambulance unit 1</li>
+                        <li>1 Feb 2018: 9 AM → 5 PM @ Critical care unit</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Show spot roster, explain the next day's morning, afternoon, night and day shift. Show popup. -->
+            <p class="fragment">DEMO</p>
+        </section>
+
+        <section>
+            <p>OptaShift Employee Rostering</p>
+            <h2>Automatic shift assignment</h2>
+            <figure>
+                <img src="OptaShiftEmployeeRostering/extra/solveButtonScreenshot.png"/>
+            </figure>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringSolverInputOutput_0.png" class="fullImage">
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringSolverInputOutput_1.png" class="fullImage fragment">
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringSolverInputOutput_2.png" class="fullImage fragment">
+        </section>
+        <section>
+            <!-- Add shift on Thursday for Media Center, press solve button -->
+            <h2>DEMO</h2>
+            <figure>
+                <img src="OptaShiftEmployeeRostering/extra/solveButtonScreenshot.png"/>
+            </figure>
+        </section>
+
+        <section>
+            <h3>Red Hat Business Optimizer</h3>
+            <figure>
+                <img src="PlannerIntroduction/optaPlannerLogo.png"/>
+            </figure>
+            <ul>
+                <li>In production around the globe</li>
+                <li>Full support by Red Hat</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Project relation</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p style="font-weight: bold">OptaShift<br/>Employee Rostering</p>
+                </div>
+                <div class="col-md-6">
+                    <p style="font-weight: bold">OptaPlanner</p>
+                </div>
+            </div>
+            <div class="row fragment">
+                <div class="col-md-6">
+                    <ul>
+                        <li>Web application</li>
+                        <li>Docker image</li>
+                        <li>Employee rostering</li>
+                        <li>Uses OptaPlanner</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Engine</li>
+                        <li>Embeddable (jar file)</li>
+                        <li>Any constraint problem</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <img src="PlannerIntroduction/whatIsAPlanningProblem_0.png" class="fullImage">
+            <img src="PlannerIntroduction/whatIsAPlanningProblem_1.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/whatIsAPlanningProblem_2.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/whatIsAPlanningProblem_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="PlannerIntroduction/useCaseOverview.png" class="fullImage">
+        </section>
+        <section>
+            <h2>Constraint Solving<br/>Artificial Intelligence</h2>
+        </section>
+        <section>
+            <img src="PlannerIntroduction/theRightAIForTheJob_0.png" class="fullImage">
+            <img src="PlannerIntroduction/theRightAIForTheJob_1.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_2.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_3.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_4.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_5.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_6.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_7.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_8.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/theRightAIForTheJob_9.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h2>Constraints</h2>
+        </section>
+        <section>
+            <h3>Constraints</h3>
+            <ul>
+                <li>Skill requirements</li>
+                <li>2 shifts at the same time</li>
+                <li>10 hours between 2 shifts</li>
+                <li>Employees on PTO</li>
+                <li>Employees working time wishes</li>
+                <li>...</li>
+            </ul>
+            <!-- Show only -->
+            <p>DEMO</p>
+        </section>
+        <section>
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_0.png" class="fullImage">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_3.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_4.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_5.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_6.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_7.png" class="fullImage fragment">
+            <img src="ScoreCalculation/scoreComparisonEmployeeRostering_8.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Who's in control?</h3>
+            <div class="fragment">
+                <figure>
+                    <img src="OptaShiftEmployeeRostering/extra/pinnedShiftScreenshot.png"/>
+                </figure>
+                <p>The user is in control</p>
+                <!-- Look for an Amy that is working near the end of the schedule and pin her in the next shift -->
+                <p>DEMO</p>
+            </div>
+        </section>
+
+        <section>
+            <p>OptaShift Employee Rostering</p>
+            <h2>Continuous planning</h2>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <p>OptaShift Employee Rostering</p>
+            <h2>Publishing</h2>
+            <figure>
+                <img src="OptaShiftEmployeeRostering/extra/publishButtonScreenshot.png"/>
+            </figure>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Rotation</h3>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_3.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_4.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <!-- Show draft days, press publish button, show new published days and new draft days -->
+            <h2>DEMO</h2>
+            <figure>
+                <img src="OptaShiftEmployeeRostering/extra/publishButtonScreenshot.png"/>
+            </figure>
+        </section>
+
+        <!--<section>-->
+          <!--<img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringClassDiagram_4.png" class="fullImage">-->
+        <!--</section>-->
+        <section>
+            <h2>Roadmap</h2>
+        </section>
+        <section>
+            <h3>Changes after publication</h3>
+            <p>Ann is sick, Beth needs to go funeral, ...</p>
+            <ul>
+                <li class="fragment">"Reserve" spots</li>
+                <li class="fragment">
+                    Non-disruptive replanning:<br/>
+                    <ul>
+                        <li>Propose new schedule with minimal impact on published shifts</li>
+                        <li>Start contacting them immediately</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Simulation</h3>
+            <p>What if ...</p>
+            <ul>
+                <li>that maternity nurse quits?</li>
+                <li>we hire 2 unskilled employees?</li>
+            </ul>
+            <p>We can now <i>measure</i> the impact.</p>
+        </section>
+        <section>
+            <h2>Under the hood</h2>
+        </section>
+        <section>
+            <img src="OptaShiftEmployeeRostering/Architecture/optaShiftEmployeeRosteringArchitecture.png" class="fullImage">
+        </section>
+        <section>
+            <h3>REST service</h3>
+            <p>DEMO</p>
+        </section>
+
+        <section>
+            <h2>Getting started</h2>
+        </section>
+        <section>
+            <h3>Build from source<br/> to OpenShift Dedicated</h3>
+            <pre xml:space="preserve"><code class="bash">$ git clone https://github.com/kiegroup/optashift-employee-rostering.git
+...
+$ cd optashift-employee-rostering
+$ oc login https://api.YOUR_SERVER.openshift.com
+...
+$ <b>./provision.sh setup</b>
+...</code></pre>
+        </section>
+        <section>
+            <h3>Build from source<br/> to WildFly</h3>
+            <pre xml:space="preserve"><code class="bash">$ git clone https://github.com/kiegroup/optashift-employee-rostering.git
+...
+$ cd optashift-employee-rostering
+$ <b>mvn clean install -DskipTests</b>
+...
+// Deploy optashift-employee-rostering-webapp-*.war</code></pre>
         </section>
     </section>
 
