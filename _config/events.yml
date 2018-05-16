@@ -412,6 +412,16 @@
       url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=176035
       presenters: Justin Goldsmith, Christian Witchger
 
+- eventId: 20180529-infofarm
+  eventOrganization: "InfoFarm and Red Hat"
+  eventUrl: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
+  location: Kontich, Belgium
+  date: 2018-05-29
+  talks:
+    - title: "Automatische planningsoptimalisatie met Business Optimiser"
+      url: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
+      presenters: Geoffrey De Smet, Robin Pauwels, Ludovic Aelbrecht
+
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
