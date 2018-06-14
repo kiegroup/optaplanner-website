@@ -422,8 +422,23 @@
       url: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
       presenters: Geoffrey De Smet, Robin Pauwels, Ludovic Aelbrecht
 
+- eventId: 20180912-or2018
+  eventOrganization: "Operations Research 2018"
+  eventUrl: https://www.or2018.be/
+  location: Brussels, Belgium
+  date: 2018-09-12
+  talks:
+    - title: "Employee shift rostering optimization with OptaPlanner’s metaheuristics"
+      presenters: Geoffrey De Smet
+
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
   location: Antwerp, Belgium
   date: 2018-11-12
+
+- eventId: 20190507-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/en/summit/2019
+  location: Boston, MA, USA
+  date: 2019-05-07
