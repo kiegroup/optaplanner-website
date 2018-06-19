@@ -2808,7 +2808,7 @@ $ mvn exec:java
         </section>
 
         <section>
-            <h3>Multi-threaded</h3>
+            <h3>Multiple threads</h3>
         </section>
         <section>
             <img src="OptimizationAlgorithms/multiThreadingStrategies_0.png" class="fullImage">
@@ -2816,6 +2816,14 @@ $ mvn exec:java
             <img src="OptimizationAlgorithms/multiThreadingStrategies_2.png" class="fullImage fragment">
             <img src="OptimizationAlgorithms/multiThreadingStrategies_3.png" class="fullImage fragment">
             <img src="OptimizationAlgorithms/multiThreadingStrategies_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Multithreaded solving</h3>
+            <pre xml:space="preserve"><code class="xml">&lt;solver&gt;
+  &lt;moveThreadCount&gt;4&lt;/moveThreadCount&gt;
+   ...
+&lt;/solver&gt;</code></pre>
+            <p>Also supported: AUTO, NONE</p>
         </section>
         <section>
             <h3>Clusters</h3>
