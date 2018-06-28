@@ -26,6 +26,8 @@ RUN dnf install -y net-tools
 RUN dnf install -y iputils
 RUN dnf clean all
 
+RUN bash -l -c "gem install bundler awestruct"
+
 RUN useradd -m jenkins -u 1001 --shell /bin/bash
 
 USER jenkins
