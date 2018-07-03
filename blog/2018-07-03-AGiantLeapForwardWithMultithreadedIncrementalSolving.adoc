@@ -95,7 +95,9 @@ This implies that the working solution must be in the exact same state to begin 
 But because the outer step iterations change the solution state constantly,
 the move threads must sync up with the main solver thread after every step.
 
-It's kinda like a multiplayer game of StarCraft.
+It's similar to a multiplayer game of StarCraft,
+in which multiple hosts need to sync up to show the same game state,
+but can't afford to transmit the entire game state for every change.
 
 As soon as one thread goes out of sync, all calculations of that thread are corrupted,
 and the entire system is affected.
@@ -216,7 +218,7 @@ There are several ways to deal with that and we'll be investigating such interna
 
 == Conclusion
 
-_All your CPU are belong to OptaPlanner._
+_All your CPU are belong to OptaPlanner._ https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us[[1\]]
 
 With a single extra configuration line, https://www.optaplanner.org/[OptaPlanner] can reach the same high-quality solution in a fraction of the time.
 If you have CPU cores to spare, of course.
