@@ -20,12 +20,12 @@ But why did it take so long to implement?
 
 Let's take a look at the requirements for multithreaded incremental solving:
 
-* Horizontally scale an algorithm across CPU's
-* Don't ruin the speedup of incremental score calculation
-* Runs must be reproducible
+* Horizontally scale an algorithm across CPUs.
+* Don't ruin the speedup of incremental score calculation.
+* Runs must be reproducible.
 
 
-=== Horizontally scale an algorithm across CPU's
+=== Horizontally scale an algorithm across CPUs
 
 There are several ways to use multiple threads without doing real multithreaded solving:
 
@@ -34,7 +34,7 @@ There are several ways to use multiple threads without doing real multithreaded 
 ** Doesn't do horizontal scaling on 1 dataset.
 
 * *Multi bet solving*: Solve one dataset in multiple ways, completely independent of each other. Take the best result.
-** Works since the first OptaPlanner version
+** Works since the first OptaPlanner version.
 ** It's usually a waste of resources: use the Benchmarker during development instead to find the best algorithm in advance.
 ** Doesn't scale horizontally: the best result is marginally better than a single-threaded result and takes equally long.
 
@@ -68,7 +68,7 @@ Those changes broke incremental score calculation.
 
 Ah, this brings us to incremental score calculation. The key to performance.
 It is the rocket science at the heart of OptaPlanner that brings massive scalability.
-And - for the few that have seen them - the cause of the notorious score corruption exception.
+And -- for the few that have seen them -- the cause of the notorious score corruption exception.
 
 What is incremental score calculation?
 For each move, we calculate the score of the solution state after applying that move.
@@ -82,7 +82,7 @@ To put this in perspective: an incremental score calculator on a vehicle routing
 is theoretically around 500 times faster than a non-incremental score calculator.
 *To offset the loss of an incremental solver on a dataset of a 1000 planning entities,
 a multithreaded non-incremental solver would need around 500 CPU cores (in theory).*
-In practice, the numbers vary, but the gain of incremental solving always outweights the gain of multithreaded solving.
+In practice, the numbers vary, but the gain of incremental solving always outweighs the gain of multithreaded solving.
 
 Of course, now, we can have our cake and eat it too.
 
@@ -91,8 +91,8 @@ so each move thread has its own score calculator and its own solution state.
 Cloning either is too expensive.
 To evaluate a move on a move thread, with incremental score calculation,
 we must reuse the score calculator of the previous evaluation.
-This implies that the solution state must be in the exact same state to begin with.
-But because the outer step iterations change the solution state permanently,
+This implies that the working solution must be in the exact same state to begin with.
+But because the outer step iterations change the solution state constantly,
 the move threads must sync up with the main solver thread after every step.
 
 It's kinda like a multiplayer game of StarCraft.
@@ -104,12 +104,12 @@ But through a well designed orchestration of concurrent components
 
 Furthermore, the threads must be able to send moves to each other,
 even if it's only to share the winning move.
-This too, posed a challenge. _OptaPlanner is an Object Orientated constraint solver_,
-so it's decision variables can be any valid Java type (not just booleans, numbers and floats), such as `Employee` or `Foo`.
+This too, posed a challenge. _OptaPlanner is an Object Oriented constraint solver_,
+so its decision variables can be any valid Java type (not just booleans, numbers and floats), such as `Employee` or `Foo`.
 Those variables can sit in any domain class (called planning entities), such as `Shift` or `Bar`.
 The move instances reference those class instances. When a solution gets cloned to initiate a move thread,
 those planning entities, such as `Shift` get cloned too.
-So when a move from thread A gets send to thread B, OptaPlanner rebases the move on the solution state of thread B.
+So when a move from thread A gets sent to thread B, OptaPlanner rebases the move on the solution state of thread B.
 This replaces the references from the move instance to thread A's solution state
 with the equivalent references of thread B's solution state. Pretty nifty.
 
@@ -155,18 +155,18 @@ if you have enough CPU cores to pull it off.
 
 Using optaplanner-benchmark, I ran a set of macro benchmarks:
 
-* On a 64-bit *8-core* Intel i7-4790 desktop with 32GB physical RAM
-* Using OpenJDK 1.8.0_171 on Linux
+* On a 64-bit *8-core* Intel i7-4790 desktop with 32GB physical RAM.
+* Using OpenJDK 1.8.0_171 on Linux.
 * With the JVM max heap (`-Xmx`) set to 4GB.
-** I also tried 2GB and those results were worse, especially for a higher of move threads.
+** I also tried 2GB and those results were worse, especially for a higher number of move threads.
 ** So when increasing the number of move threads, it's important to increase the max memory too.
 * With logging set to `info` logging.
 ** I also tried `debug` logging and those results were clearly worse (because the faster it runs, the more debug logging it does).
 ** It's recommended to https://www.optaplanner.org/blog/2015/02/23/HowFastIsLogging.html[avoid debug logging in production] anyway.
 * With score DRL.
-** I also tried with the incremental java calculator and those results had more moves/second,
+** I also tried with the incremental Java calculator and those results had more moves per second,
 but a lower relative gain per move thread (due to higher congestion).
-* 5 minutes per dataset
+* 5 minutes per dataset.
 
 === Results on the vehicle routing problem (VRP)
 
