@@ -95,7 +95,7 @@ This implies that the working solution must be in the exact same state to begin 
 But because the outer step iterations change the solution state constantly,
 the move threads must sync up with the main solver thread after every step.
 
-It's similar to a multiplayer game of StarCraft,
+It's similar to any real-time multiplayer game (such as StarCraft),
 in which multiple hosts need to sync up to show the same game state,
 but can't afford to transmit the entire game state for every change.
 
