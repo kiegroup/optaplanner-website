@@ -6,7 +6,47 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
-== New and noteworthy: Engine 7.8.0.Final (under development)
+== New and noteworthy: Engine 7.9.0.Final (under development)
+
+
+=== Multithreaded incremental solving
+
+OptaPlanner can now solve one dataset (without partitioning)
+with multiple threads to take advantage of multiple CPU cores.
+
+Even with just a few CPU cores, it triples the score calculation speed:
+
+image:7.9/multithreadedSolvingVrpTabuSearch.png[searchTableOfContents]
+
+Multithreaded incremental solving is easy to activate.
+Just add a `<moveThreadCount>` line in your solver config:
+
+[source,java,options="nowrap"]
+----
+<solver>
+  <moveThreadCount>4</moveThreadCount>
+  ...
+</solver>
+----
+
+This basically donates 4 extra CPU cores to the solver.
+Use `AUTO` to have OptaPlanner deduce it automatically.
+Optionally, specify a `<threadFactoryClass>` for environments that don't like arbitrary thread creation.
+
+For more information about the complex challenges behind this feature,
+https://www.optaplanner.org/blog/2018/07/03/AGiantLeapForwardWithMultithreadedIncrementalSolving.html[read this blog post].
+
+
+=== Documentation: table of contents (TOC) improvements
+
+The TOC is now collapsed by default for a better overview.
+
+Use the new search field to find a phrase in the TOC:
+
+image:7.9/searchTableOfContents.png[searchTableOfContents]
+
+
+== New and noteworthy: Engine 7.8.0.Final
 
 === Solver.explainBestScore()
 
