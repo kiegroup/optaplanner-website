@@ -225,3 +225,13 @@
   githubUsername: Christopher-Chianelli
   employedBy: Red Hat
   ircNickname: cchianel
+
+- userId: MusaTalluzi
+  fullName: Musa Talluzi
+  role: OptaPlanner developer
+  gravatarHashId: c223f1f4a939fe1d021c98dbdab74876
+  twitterUsername: musatalluzi
+  githubUsername: MusaTalluzi
+  email: mtalluzi AT redhat.com
+  employedBy: Red Hat
+  ircNickname: mtalluzi
