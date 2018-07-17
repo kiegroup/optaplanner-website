@@ -1,0 +1,105 @@
+= Unit tests in .xlsx files
+:page-interpolate: true
+:awestruct-author: mtalluzi
+:awestruct-layout: blogPostBase
+:awestruct-tags: [useCase]
+
+After you implement a planning problem, you must write unit tests for every score rule.
+
+
+== Traditional unit tests
+
+In Conference Scheduling example, if you want to test room conflict constraint (hard penalty per pair of talks in the same room in overlapping timeslots)
+you might write something like this:
+[source,java]
+----
+@Test
+public void roomConflict() {
+    TalkType talkType = new TalkType(0L, "type1");
+    Talk talk1 = new Talk(1L)
+            .withTalkType(talkType)
+            .withSpeakerList(Collections.emptyList())
+            .withRequiredRoomTagSet(Collections.emptySet())
+            .withPreferredRoomTagSet(Collections.emptySet())
+            .withProhibitedRoomTagSet(Collections.emptySet())
+            .withUndesiredRoomTagSet(Collections.emptySet())
+            .withRequiredTimeslotTagSet(Collections.emptySet())
+            .withPreferredTimeslotTagSet(Collections.emptySet())
+            .withProhibitedTimeslotTagSet(Collections.emptySet())
+            .withUndesiredTimeslotTagSet(Collections.emptySet());
+    Talk talk2 = new Talk(2L)
+            .withTalkType(talkType)
+            .withSpeakerList(Collections.emptyList())
+            .withRequiredRoomTagSet(Collections.emptySet())
+            .withPreferredRoomTagSet(Collections.emptySet())
+            .withProhibitedRoomTagSet(Collections.emptySet())
+            .withUndesiredRoomTagSet(Collections.emptySet())
+            .withRequiredTimeslotTagSet(Collections.emptySet())
+            .withPreferredTimeslotTagSet(Collections.emptySet())
+            .withProhibitedTimeslotTagSet(Collections.emptySet())
+            .withUndesiredTimeslotTagSet(Collections.emptySet());
+    LocalDateTime start1 = LocalDateTime.of(2018, 1, 1, 9, 0);
+    LocalDateTime end1 = LocalDateTime.of(2018, 1, 1, 10, 0);
+    LocalDateTime start2 = LocalDateTime.of(2018, 1, 1, 9, 30);
+    LocalDateTime end2 = LocalDateTime.of(2018, 1, 1, 10, 30);
+    LocalDateTime start3 = LocalDateTime.of(2018, 1, 1, 10, 0);
+    LocalDateTime end3 = LocalDateTime.of(2018, 1, 1, 11, 0);
+    Timeslot slot1 = new Timeslot(1L)
+            .withTalkTypeSet(Collections.singleton(talkType))
+            .withStartDateTime(start1)
+            .withEndDateTime(end1);
+    Timeslot slot2 = new Timeslot(2L)
+            .withTalkTypeSet(Collections.singleton(talkType))
+            .withStartDateTime(start2)
+            .withEndDateTime(end2);
+    Timeslot slot3 = new Timeslot(3L)
+            .withTalkTypeSet(Collections.singleton(talkType))
+            .withStartDateTime(start3)
+            .withEndDateTime(end3);
+    Room room1 = new Room(1L)
+            .withTalkTypeSet(Collections.singleton(talkType))
+            .withUnavailableTimeslotSet(Collections.emptySet());
+    ConferenceSolution solution = new ConferenceSolution(1L)
+            .withTalkTypeList(Collections.singletonList(talkType))
+            .withTalkList(Arrays.asList(talk1, talk2))
+            .withTimeslotList(Arrays.asList(slot1, slot2, slot3))
+            .withRoomList(Collections.singletonList(room1))
+            .withSpeakerList(Collections.emptyList());
+    scoreVerifier.assertHardWeight(ROOM_CONFLICT, 0, solution);
+    // talks in same room without overlapping time slots
+    talk1.withRoom(room1).withTimeslot(slot1);
+    talk2.withRoom(room1).withTimeslot(slot3);
+    scoreVerifier.assertHardWeight(ROOM_CONFLICT, 0, solution);
+    // talks in same room with overlapping time slots
+    talk2.withTimeslot(slot2);
+    scoreVerifier.assertHardWeight(ROOM_CONFLICT, -10, solution);
+    }
+----
+
+In order to test room conflict, you need to initialize two talks, three timeslots and one room.
+However, the previous snippet of code is too much for such a simple unit test, most of the boilerplate code is for
+initializing required fields for the conference solution that you do not need for the unit test, and you must do that for every single unit test.
+For more complex constraints, it gets too cumbersome to write traditional unit tests and reason about them.
+
+
+== Unit tests in .xlsx files
+In order to avoid initializing unwanted fields, you can take advantage of https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/conferencescheduling/persistence/ConferenceSchedulingXlsxFileIO.java[ConferenceSchedulingXlsxFileIO]
+to initialize them for you, and only write what you want to use. Also you can use them for all other unit tests.
+
+To test room conflict using xlsx file, what you want is three timeslots, two talks and one room:
+
+image::timeslots.png[link="timeslots.png" role="thumbnail"]
+image::talks.png[link="talks.png" role="thumbnail"]
+image::rooms.png[link="rooms.png" role="thumbnail"]
+
+After you initialize the required fields, you need to create a separate sheet for every score verification.
+
+image::roomConflict1.png[link="roomConflict1.png" role="thumbnail" alt="roomConflict1"]
+image::roomConflict2.png[link="roomConflict2.png" role="thumbnail"]
+
+In every sheet, specify the constraint package, constraint name and expected score. Then assign the talks to
+rooms and timeslots and visualize them easily. Note that you do not need to list all the timeslots and rooms
+declare in Timeslots and Rooms sheets.
+
+
+== Conclusion
