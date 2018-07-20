@@ -1,6 +1,6 @@
 = Unit tests in .xlsx files
 :page-interpolate: true
-:awestruct-author: mtalluzi
+:awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
 :awestruct-tags: [useCase]
 
@@ -97,9 +97,26 @@ After you initialize the required fields, you need to create a separate sheet fo
 image::roomConflict1.png[link="roomConflict1.png" role="thumbnail" alt="roomConflict1"]
 image::roomConflict2.png[link="roomConflict2.png" role="thumbnail"]
 
-In every sheet, specify the constraint package, constraint name and expected score. Then assign the talks to
+In every test sheet (blue color), specify the constraint package, constraint name and expected score. Then assign the talks to
 rooms and timeslots and visualize them easily. Note that you do not need to list all the timeslots and rooms
-declare in Timeslots and Rooms sheets.
+declared in Timeslots and Rooms sheets.
 
 
 == Conclusion
+To test your score rules in an xlsx file, follow these steps:
+
+1. List all the required fields for your tests in the setup sheets.
+2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expcted score.
+3. List only the fields that you want to use for the corresponding rule.
+4. Set _testFileName_ in https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/test/java/org/optaplanner/examples/conferencescheduling/solver/ConferenceSchedulingScoreRulesXlsxTest.java[ConferenceSchedulingScoreRulesXlsxTest] and run the test file.
+
+The test file clones a separate solution instance for every test sheet, so the assigned planning variables in one sheet will not affect
+the score in subsequent sheets.
+
+
+== Related material
+https://www.optaplanner.org/blog/2018/02/19/SchedulingVoxxedDaysZurich2018.html[Scheduling Voxxed Days Zurich 2018 with OptaPlanner]
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
++++
