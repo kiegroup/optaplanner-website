@@ -52,10 +52,10 @@ The first time, Maven might take a lot time, because it needs to download jars.
 _The source code for OptaPlanner Workbench._ +
 https://github.com/kiegroup/optaplanner-wb
 
-=== optashift-employee-rostering
+=== optaweb-employee-rostering
 
 _The source code for the employee rostering reference architecture._ +
-https://github.com/kiegroup/optashift-employee-rostering
+https://github.com/kiegroup/optaweb-employee-rostering
 
 === optaplanner-website (www.optaplanner.org)
 
