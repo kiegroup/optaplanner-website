@@ -7,7 +7,7 @@
 
 Over the years, politicians have redrawn electoral voting lines to gain an unfair advantage.
 This has led to district boundaries with shapes that have no obvious pattern or reason other than political gain.
-When districts are redrawn you can sway an elections results without changing a single voter’s mind.
+When districts are redrawn you can sway an election's results without changing a single voter’s mind.
 Can OptaPlanner draw fair electoral boundaries and save democracy?
 
 Gerrymandering hits the headlines:
@@ -50,10 +50,10 @@ image::NorthCarolinaDistrictsOptaPlanner.png[]
 
 The shapes in this image are much more regular.
 The small blocks you see are based of the US 2010 decennial census.
-There about 8000 of them in North Carolina and they are the Planning Entity in this example, with the Planning Variable being just a integer 1-13 representing the districts.
+There are about 8000 of them in North Carolina and they are the Planning Entity in this example, with the Planning Variable being just a integer 1-13 representing the districts.
 The average population in each district is about 714,000 people.
 Each district in this example is about plus or minus 2,000 from each other.
-Depending on how we want to weight the constraints, we can make the population in each block closer to the average.
+Depending on how we want to weight the constraints, we can make the population in each district closer to the average.
 To get this good of an answer, the problem was run for about 6 minutes.
 https://github.com/jgoldsmith613/NC_Gerrymandering/[Take a look at the source code.]
 
