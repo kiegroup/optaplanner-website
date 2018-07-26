@@ -85,42 +85,33 @@ change_frequency: weekly
       %a(href="#" data-toggle="tab") Execution Server
   .carousel.slide.frontPageCarousel#projectsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
     .carousel-inner
-      .item.active
-        %div(class="horizontal-center" style="height: 450px;")
-          %div(class="vertical-center")
-            :asciidoc
-              To optimize a problem from Java™ code,
-              add the `optaplanner-core` jar and call `Solver.solve()`:
+      .item.active(style="min-height: 450px;")
+        %div(style="vertical-align: middle; margin:0 auto; max-width: 600px; padding: 20px;")
+          :asciidoc
+            To optimize a problem from Java™ code,
+            add the `optaplanner-core` jar and call `Solver.solve()`:
 
-              [source,java]
-              ----
-              // My domain specific class as input
-              MyRoster problem = ...;
+            [source,java]
+            ----
+            // My domain specific class as input
+            MyRoster problem = ...;
 
-              SolverFactory<MyRoster> factory = SolverFactory
-                  .createFromXmlResource(".../mySolverConfig.xml");
-              Solver<MyRoster> solver = factory.buildSolver();
+            SolverFactory<MyRoster> factory = SolverFactory
+                .createFromXmlResource(".../mySolverConfig.xml");
+            Solver<MyRoster> solver = factory.buildSolver();
 
-              // My domain specific class as output
-              MyRoster solution = solver.solve(problem);
+            // My domain specific class as output
+            MyRoster solution = solver.solve(problem);
 
-              for (MyShift shift : solution.getShifts()) {
-                // Each shift is now assigned to an employee
-                assertNotNull(shift.getEmployee());
-              }
-              ----
-      .item
-        %div(class="horizontal-center" style="height: 450px")
-          %div(class="vertical-center")
-            :asciidoc
-              Define constraints and configure the Solver in a user-friendly way
-              using the Workbench.
-
-            %img(src="landingPage/workbenchSolverConfig.png")
-      .item
-        %div(class="horizontal-center" style="height: 450px")
-          %div(class="vertical-center" )
-            %img(src="blog/2015/10/01/optaplannerWorkbenchAndExecutionServer.png")
+            for (MyShift shift : solution.getShifts()) {
+              // Each shift is now assigned to an employee
+              assertNotNull(shift.getEmployee());
+            }
+            ----
+      .item(style="min-height: 450px;")
+        %img(src="landingPage/workbench.png" alt="Workbench" width="600" height="450")
+      .item(style="min-height: 450px;")
+        %img(src="landingPage/executionServer.png" alt="Execution Server" width="600" height="450")
     %a.left.carousel-control(href="#projectsCarousel" data-slide="prev")
       %span.glyphicon.glyphicon-chevron-left
     %a.right.carousel-control(href="#projectsCarousel" data-slide="next")

@@ -221,17 +221,6 @@ td > p:last-child {
     border-radius: 4px 4px 0 0;
 }
 
-.horizontal-center {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.vertical-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 /******************************************************************************
 * Tabs left, right and below (not supported in Twitter Bootstrap 3.1)
 ******************************************************************************/
