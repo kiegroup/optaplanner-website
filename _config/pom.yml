@@ -1,39 +1,39 @@
 latestFinal:
-  version: 7.8.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/7.8.0.Final/optaplanner-distribution-7.8.0.Final.zip
-  releaseDate: 2018-07-05
+  version: 7.9.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/7.9.0.Final/optaplanner-distribution-7.9.0.Final.zip
+  releaseDate: 2018-07-27
   releaseNotesVersion: 7
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-wildfly11.war
-  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-tomcat8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.8.0.Final/kie-server-distribution-7.8.0.Final.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-wildfly11.war
+  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-tomcat8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.9.0.Final/kie-server-distribution-7.9.0.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.8.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/7.8.0.Final/optaplanner-docs/pdf/index.pdf
-  kieWorkbenchDocumentationHtmlSingle: https://docs.optaplanner.org/7.8.0.Final/optaplanner-wb-es-docs/html_single/#_wb.workbench
-  kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.8.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
-  droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.8.0.Final/drools-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.9.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/7.9.0.Final/optaplanner-docs/pdf/index.pdf
+  kieWorkbenchDocumentationHtmlSingle: https://docs.optaplanner.org/7.9.0.Final/optaplanner-wb-es-docs/html_single/#_wb.workbench
+  kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.9.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
+  droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.9.0.Final/drools-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/7.8.0.Final/optaplanner-javadoc/index.html
-  kieWorkbenchReleaseNotes: https://docs.drools.org/7.8.0.Final/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.8.0.Final
+  javadocs: https://docs.optaplanner.org/7.9.0.Final/optaplanner-javadoc/index.html
+  kieWorkbenchReleaseNotes: https://docs.drools.org/7.9.0.Final/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.9.0.Final
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.8.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/7.8.0.Final/optaplanner-distribution-7.8.0.Final.zip
-  releaseDate: 2018-07-05
+  version: 7.9.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/7.9.0.Final/optaplanner-distribution-7.9.0.Final.zip
+  releaseDate: 2018-07-27
   releaseNotesVersion: 7
 
-  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-wildfly11.war
-  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-eap7.war
-  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.8.0.Final/kie-drools-wb-7.8.0.Final-tomcat8.war
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.8.0.Final/kie-server-distribution-7.8.0.Final.zip
+  kieWorkbenchWildFlyWar: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-wildfly11.war
+  kieWorkbenchEAP7War: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-eap7.war
+  kieWorkbenchTomcatWar: https://download.jboss.org/drools/release/7.9.0.Final/kie-drools-wb-7.9.0.Final-tomcat8.war
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.9.0.Final/kie-server-distribution-7.9.0.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.8.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.9.0.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/7.8.0.Final/optaplanner-javadoc/index.html
-  kieWorkbenchReleaseNotes: https://docs.drools.org/7.8.0.Final/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
+  javadocs: https://docs.optaplanner.org/7.9.0.Final/optaplanner-javadoc/index.html
+  kieWorkbenchReleaseNotes: https://docs.drools.org/7.9.0.Final/drools-docs/html_single/index.html#_wb.releasenotesworkbench.7.0.0.final
 
 nightly:
   version: 7.9.0-SNAPSHOT
