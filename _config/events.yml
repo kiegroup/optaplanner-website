@@ -429,6 +429,7 @@
   date: 2018-09-12
   talks:
     - title: "Employee shift rostering optimization with OptaPlanner’s metaheuristics"
+      url: https://www.euro-online.org/conf/or2018/edit_session_cluster?sessid=46
       presenters: Geoffrey De Smet
 
 - eventId: 20181112-devoxxbe
