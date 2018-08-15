@@ -1,4 +1,4 @@
-= Unit tests in .xlsx files
+= Unit testing constraints with business input from Excel/LibreOffice
 :page-interpolate: true
 :awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
@@ -20,24 +20,9 @@ public void roomConflict() {
             .withTalkType(talkType)
             .withSpeakerList(Collections.emptyList())
             .withRequiredRoomTagSet(Collections.emptySet())
-            .withPreferredRoomTagSet(Collections.emptySet())
-            .withProhibitedRoomTagSet(Collections.emptySet())
-            .withUndesiredRoomTagSet(Collections.emptySet())
-            .withRequiredTimeslotTagSet(Collections.emptySet())
-            .withPreferredTimeslotTagSet(Collections.emptySet())
-            .withProhibitedTimeslotTagSet(Collections.emptySet())
-            .withUndesiredTimeslotTagSet(Collections.emptySet());
+            ...
     Talk talk2 = new Talk(2L)
-            .withTalkType(talkType)
-            .withSpeakerList(Collections.emptyList())
-            .withRequiredRoomTagSet(Collections.emptySet())
-            .withPreferredRoomTagSet(Collections.emptySet())
-            .withProhibitedRoomTagSet(Collections.emptySet())
-            .withUndesiredRoomTagSet(Collections.emptySet())
-            .withRequiredTimeslotTagSet(Collections.emptySet())
-            .withPreferredTimeslotTagSet(Collections.emptySet())
-            .withProhibitedTimeslotTagSet(Collections.emptySet())
-            .withUndesiredTimeslotTagSet(Collections.emptySet());
+            ...
     LocalDateTime start1 = LocalDateTime.of(2018, 1, 1, 9, 0);
     LocalDateTime end1 = LocalDateTime.of(2018, 1, 1, 10, 0);
     LocalDateTime start2 = LocalDateTime.of(2018, 1, 1, 9, 30);
@@ -49,22 +34,15 @@ public void roomConflict() {
             .withStartDateTime(start1)
             .withEndDateTime(end1);
     Timeslot slot2 = new Timeslot(2L)
-            .withTalkTypeSet(Collections.singleton(talkType))
-            .withStartDateTime(start2)
-            .withEndDateTime(end2);
+            ...
     Timeslot slot3 = new Timeslot(3L)
-            .withTalkTypeSet(Collections.singleton(talkType))
-            .withStartDateTime(start3)
-            .withEndDateTime(end3);
+            ...
     Room room1 = new Room(1L)
             .withTalkTypeSet(Collections.singleton(talkType))
             .withUnavailableTimeslotSet(Collections.emptySet());
     ConferenceSolution solution = new ConferenceSolution(1L)
             .withTalkTypeList(Collections.singletonList(talkType))
-            .withTalkList(Arrays.asList(talk1, talk2))
-            .withTimeslotList(Arrays.asList(slot1, slot2, slot3))
-            .withRoomList(Collections.singletonList(room1))
-            .withSpeakerList(Collections.emptyList());
+            ...
     scoreVerifier.assertHardWeight(ROOM_CONFLICT, 0, solution);
     // talks in same room without overlapping time slots
     talk1.withRoom(room1).withTimeslot(slot1);
@@ -104,6 +82,7 @@ declared in Timeslots and Rooms sheets.
 
 == Conclusion
 To test your score rules in an xlsx file, follow these steps:
+
 
 1. List all the required fields for your tests in the setup sheets.
 2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expcted score.
