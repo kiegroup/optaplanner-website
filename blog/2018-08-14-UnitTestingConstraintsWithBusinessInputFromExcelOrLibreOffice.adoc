@@ -1,16 +1,21 @@
-= Unit testing constraints with business input from Excel/LibreOffice
+= Constraints Unit testing with business input from Excel/LibreOffice
 :page-interpolate: true
 :awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
 :awestruct-tags: [useCase]
 
-After you implement a planning problem, you must write unit tests for every score rule.
+The business experts explain the business constraints to us, the developers. But how can we be sure that we understood
+them correctly? Or worse, how can we test that they agree among themselves once the constraints are formalized?
+
+Well, there's one great way to do that: JUnit tests populated by XLS data. We allow them to recreate a small subset of
+the solution in Excel/LibreOffice and let them decide how many constraints match.
+Then our JUnit tests test if our constraint implementations adhere to those requirements.
 
 
 == Traditional unit tests
 
-In Conference Scheduling example, if you want to test room conflict constraint (hard penalty per pair of talks in the same room in overlapping timeslots)
-you might write something like this:
+In https://www.optaplanner.org/learn/useCases/conferenceScheduling.html[Conference Scheduling example],
+to test room conflict constraint (hard penalty per pair of talks in the same room in overlapping timeslots) write:
 [source,java]
 ----
 @Test
@@ -55,16 +60,17 @@ public void roomConflict() {
 ----
 
 In order to test room conflict, you need to initialize two talks, three timeslots and one room.
-However, the previous snippet of code is too much for such a simple unit test, most of the boilerplate code is for
+However, the previous snippet of code is too long for such a simple unit test, most of the boilerplate code is for
 initializing required fields for the conference solution that you do not need for the unit test, and you must do that for every single unit test.
 For more complex constraints, it gets too cumbersome to write traditional unit tests and reason about them.
 
 
-== Unit tests in .xlsx files
+== Unit tests in `xlsx` files
+
 In order to avoid initializing unwanted fields, you can take advantage of https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/conferencescheduling/persistence/ConferenceSchedulingXlsxFileIO.java[ConferenceSchedulingXlsxFileIO]
 to initialize them for you, and only write what you want to use. Also you can use them for all other unit tests.
 
-To test room conflict using xlsx file, what you want is three timeslots, two talks and one room:
+To test room conflict using `xlsx` file, what you want is three timeslots, two talks and one room:
 
 image::timeslots.png[link="timeslots.png" role="thumbnail"]
 image::talks.png[link="talks.png" role="thumbnail"]
@@ -75,25 +81,27 @@ After you initialize the required fields, you need to create a separate sheet fo
 image::roomConflict1.png[link="roomConflict1.png" role="thumbnail" alt="roomConflict1"]
 image::roomConflict2.png[link="roomConflict2.png" role="thumbnail"]
 
-In every test sheet (blue color), specify the constraint package, constraint name and expected score. Then assign the talks to
-rooms and timeslots and visualize them easily. Note that you do not need to list all the timeslots and rooms
-declared in Timeslots and Rooms sheets.
+In every test sheet (blue color), specify the constraint package, constraint name, description of current test scenario
+and expected score. Then assign the talks to rooms and timeslots and visualize them easily.
+Note that you do not need to list all the timeslots and rooms declared in Timeslots and Rooms sheets.
 
 
 == Conclusion
-To test your score rules in an xlsx file, follow these steps:
 
+Instead of writing unit tests in code, business experts can specify how they want the constraints to be matched in
+an Excel/LibreOffice file. Developers then implement the constraints to pass these tests. This provides a more efficient way of
+communication between developers and domain experts.
+
+To test score rules in an `xlsx` file:
 
 1. List all the required fields for your tests in the setup sheets.
 2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expcted score.
 3. List only the fields that you want to use for the corresponding rule.
 4. Set _testFileName_ in https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/test/java/org/optaplanner/examples/conferencescheduling/solver/ConferenceSchedulingScoreRulesXlsxTest.java[ConferenceSchedulingScoreRulesXlsxTest] and run the test file.
 
-The test file clones a separate solution instance for every test sheet, so the assigned planning variables in one sheet will not affect
-the score in subsequent sheets.
-
 
 == Related material
+
 https://www.optaplanner.org/blog/2018/02/19/SchedulingVoxxedDaysZurich2018.html[Scheduling Voxxed Days Zurich 2018 with OptaPlanner]
 
 +++
