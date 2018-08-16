@@ -437,6 +437,10 @@
   eventUrl: https://www.devoxx.be
   location: Antwerp, Belgium
   date: 2018-11-12
+  talks:
+    - title: "The battle of 2 automated conference talk scheduling algorithms for Devoxx"
+      url: https://dvbe18.confinabox.com/talk/FWX-0478/The_battle_of_2_automated_conference_talk_scheduling_algorithms_for_Devoxx
+      presenters: Geoffrey De Smet, Piotr Krzemiński, Viktor Tymoshenko
 
 - eventId: 20190507-redhatsummit
   eventOrganization: "Red Hat Summit"
