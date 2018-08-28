@@ -2267,7 +2267,7 @@ Collections.sort(indictmentList, new IndictmentScoreTotalComparator());
 [.upgrade-recipe-minor]
 === `PlannerBenchmark`: new method `benchmarkAndShowReportInBrowser()`
 
-If you're running local benchmarks, this new method will save time by open the report automatically.
+If you're running local benchmarks, this new method will save time by opening the report automatically.
 
 Before in `*.java`:
 [source, java]
@@ -2395,7 +2395,7 @@ public class MySolution {
 If you do prefer to use `@JsonSerialize` and `@JsonDeserialize` Jackson annotations,
 instead of registering `OptaPlannerJacksonModule`,
 replace `ScoreJacksonJsonSerializer` with a specific serializer,
-such as HardSoftScoreJacksonJsonSerializer`.
+such as `HardSoftScoreJacksonJsonSerializer`.
 This won't affect the json output.
 
 `ScoreJacksonJsonSerializer` is deprecated.
