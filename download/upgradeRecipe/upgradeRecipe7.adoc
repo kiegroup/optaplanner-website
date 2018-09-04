@@ -2502,3 +2502,31 @@ After in `*.java`:
 ----
 indictmentList.sort(new IndictmentScoreComparator());
 ----
+
+
+== From 7.10.0.Final to 7.11.0.Final
+
+
+[.upgrade-recipe-major]
+=== Chained ChangeMove: cache type `PHASE` no longer supported
+
+To work correctly with multithreaded solving,
+`ChainedChangeMove` and `ChainedSwapMove` aren't `PHASE` cacheable any longer.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <changeMoveSelector><!-- On at least 1 chained variable -->
+        <cacheType>PHASE</cacheType>
+        ...
+      </changeMoveSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <changeMoveSelector>
+        <cacheType>STEP</cacheType>
+        ...
+      </changeMoveSelector>
+----
