@@ -2504,7 +2504,7 @@ indictmentList.sort(new IndictmentScoreComparator());
 ----
 
 
-== From 7.10.0.Final to 7.11.0.Final
+== From 7.11.0.Final to 7.12.0.Final
 
 
 [.upgrade-recipe-major]
