@@ -432,6 +432,16 @@
       url: https://www.euro-online.org/conf/or2018/edit_session_cluster?sessid=46
       presenters: Geoffrey De Smet
 
+- eventId: 20180912-webinar
+  eventOrganization: "Red Hat Webinar"
+  eventUrl: https://www.redhat.com/en/events
+  location: Worldwide
+  date: 2018-09-12
+  talks:
+    - title: "Business Optimizer: \"I bet you I'm better than a human\""
+      url: https://www.redhat.com/en/events/webinar/business-optimizer-i-bet-you-im-better-than-a-human
+      presenters: Justin Goldsmith
+
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
@@ -447,12 +457,3 @@
   eventUrl: https://www.redhat.com/en/summit/2019
   location: Boston, MA, USA
   date: 2019-05-07
-
-- eventId: 20180912-webinar
-  eventOrganization: Red Hat Webinar
-  location: Worldwide
-  date: 2018-09-12
-  talks:
-    - title: "Business Optimizer: \"I bet you I'm better than a human\""
-      url: https://www.redhat.com/en/events/webinar/business-optimizer-i-bet-you-im-better-than-a-human
-      presenters: Justin Goldsmith
