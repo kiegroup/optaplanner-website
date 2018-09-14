@@ -199,21 +199,21 @@ image:7.3/guidedDecisionTable.png[Guided decision table]
 
 === Real-time planning
 The KIE Server now exposes an interace to update a problem dataset while the solver is running.
-Use Java client or REST interface to submit your ProblemFactChange implementations.
+Use Java client or REST interface to submit your `ProblemFactChange` implementations.
 
 ==== Java Client
 [source,java,options="nowrap"]
 ----
-  void addProblemFactChange(String containerId,
-                            String solverId,
-                            ProblemFactChange problemFactChange);
+    void addProblemFactChange(String containerId,
+            String solverId,
+            ProblemFactChange problemFactChange);
 
-  void addProblemFactChanges(String containerId,
-                             String solverId,
-                             List<ProblemFactChange> problemFactChange);
+    void addProblemFactChanges(String containerId,
+            String solverId,
+            List<ProblemFactChange> problemFactChange);
 
-  Boolean isEveryProblemFactChangeProcessed(String containerId,
-                                            String solverId);
+    Boolean isEveryProblemFactChangeProcessed(String containerId,
+            String solverId);
 ----
 
 ==== REST API
