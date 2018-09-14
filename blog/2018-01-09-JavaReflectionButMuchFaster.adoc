@@ -194,7 +194,7 @@ MethodHandle        avgt   60  6.100 ± 0.079  ns/op
 Using `lookup.unreflectGetter(Field)` instead of `lookup.findVirtual(...)` has no notable difference.
 I do hope that MethodHandle will become as fast as direct access in future Java versions.
 
-=== Static MethodHandles (update on 2017-01-11)
+=== Static MethodHandles (update on 2018-01-11)
 
 I also ran a benchmark with MethodHandle in a static field.
 The JVM can do more magic with static fields, https://shipilev.net/jvm-anatomy-park/17-trust-nonstatic-final-fields/[as explained by Aleksey Shipilёv].
@@ -312,7 +312,7 @@ especially if the generated code isn't compiled in bulk.
 So I am still hoping that some day MethodHandles will get as fast as direct access,
 just to avoid that bootstrap cost and the dependency pain.
 
-=== LambdaMetafactory (update on 2017-01-11)
+=== LambdaMetafactory (update on 2018-01-11)
 
 On Reddit, I received an eloquent suggestion to use `LambdaMetafactory`:
 
@@ -366,7 +366,7 @@ However, the profiling (using sampling) still shows a lot of `executeGetter()` t
 The metaspace cost seems to be about 2kb per lambda in a non-scientific measurement
 and it gets garbage collected normally.
 
-== Bootstrap cost (update on 2017-01-25)
+== Bootstrap cost (update on 2018-01-25)
 
 The runtime cost matters most, as it's not uncommon to retrieve a getter on thousands of instances per second.
 However, the bootstrap cost matters too,
