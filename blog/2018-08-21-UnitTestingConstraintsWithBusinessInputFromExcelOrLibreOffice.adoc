@@ -100,7 +100,7 @@ communication between developers and domain experts.
 To test score rules in an `xlsx` file:
 
 1. List all the required fields for your tests in the setup sheets.
-2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expcted score.
+2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expected score.
 3. List only the fields that you want to use for the corresponding rule.
 4. Set _testFileName_ in https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/test/java/org/optaplanner/examples/conferencescheduling/solver/ConferenceSchedulingScoreRulesXlsxTest.java[ConferenceSchedulingScoreRulesXlsxTest] and run the test file.
 
