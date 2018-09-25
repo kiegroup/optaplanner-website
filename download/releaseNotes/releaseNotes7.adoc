@@ -6,6 +6,28 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
+== New and noteworthy: Engine 7.12.0.Final
+
+=== Unimproved termination now supports a score difference threshold
+
+Optionally, configure a score difference threshold by which the best score must improve in the specified time.
+For example, if the score doesn't improve by at least `100` soft points every 30 seconds or less, it terminates:
+
+[source,xml,options="nowrap"]
+----
+  <localSearch>
+    <termination>
+      <unimprovedSecondsSpentLimit>30</unimprovedSecondsSpentLimit>
+      <unimprovedScoreDifferenceThreshold>0hard/100soft</unimprovedScoreDifferenceThreshold>
+    </termination>
+  </localSearch>
+----
+
+=== Other
+
+* Important bugfixes for multithreaded incremental solving, especially with chained variables.
+
+
 == New and noteworthy: Engine 7.9.0.Final
 
 === Multithreaded incremental solving
