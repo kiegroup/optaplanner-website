@@ -442,6 +442,16 @@
       url: https://www.redhat.com/en/events/webinar/business-optimizer-i-bet-you-im-better-than-a-human
       presenters: Justin Goldsmith
 
+- eventId: 20181025-fsoss
+  eventOrganization: "Free Software and Open Source Symposium"
+  eventUrl: https://fsoss.senecacollege.ca/2018
+  location: Toronto, Ontario, Canada
+  date: 2018-10-25
+  talks:
+    - title: Can Artificial Intelligence solve NP-hard problems?
+      url: https://fsoss.senecacollege.ca/2018/#present12
+      presenters: Musa Talluzi
+
 - eventId: 20181112-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
