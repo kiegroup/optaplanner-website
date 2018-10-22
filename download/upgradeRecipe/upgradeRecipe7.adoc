@@ -2530,3 +2530,221 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
         ...
       </changeMoveSelector>
 ----
+
+
+
+== From 7.13.0.Final to 7.14.0.Final
+
+
+[.upgrade-recipe-major]
+=== Score: `valueOf()` and `valueOfUninitialized()` renamed to `of()` and `ofUninitialized()`
+
+The methods `*Score.valueOf(...)` and `*Score.valueOfUninitialized(...)` have been deprecated
+in favor of `*Score.of(...)` and `*Score.ofUninitialized(...)` to align with typical java standards
+such as `LocalDate.of(...)` and `LocalTime.of(...)`.
+
+Before in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    @Override
+    public HardSoftScore calculateScore(CloudBalance cloudBalance) {
+        ...
+        return HardSoftScore.valueOf(hardScore, softScore);
+    }
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+
+    @Override
+    public HardSoftScore calculateScore(CloudBalance cloudBalance) {
+        ...
+        return HardSoftScore.of(hardScore, softScore);
+    }
+
+}
+----
+
+
+
+[.upgrade-recipe-readme]
+=== Don't hard-code the score weights
+
+As explained https://www.optaplanner.org/blog/2016/04/18/7WaysToFailYourOptimizationProject.html[in this blog],
+projects can fail late if not all stakeholders are taken into account.
+For example, unions can prevent production deployment if employee happiness constraints aren't taken into account.
+
+To reduce the risk of failure,
+it's recommended to use the new `@ConstraintConfiguration` and `@ConstraintWeight` annotations
+to avoid hard coding any score weights.
+Expose configuring those constraint weights in your user interface.
+This way, the stakeholders can (re)negotiate the importance of each constraint without being dependent on ICT.
+
+
+[.upgrade-recipe-major]
+=== Weight parametrization standardized as `@ConstraintConfiguration` and `@ConstraintWeight`
+
+The `*Parametrization` classes, as used in several examples to avoid hard coding the weights in the constraints,
+have been renamed to `*ConstraintConfiguration`.
+They now have a `@ConstraintConfiguration` class annotation,
+and a `@ConstraintWeight` on each weight (which is also refactored to a `Score` subtype).
+Furthermore the solution property (or field) which contains such an instance,
+replaces the `@ProblemFactProperty` annotation with a `@ConstraintConfigurationProvider` instead.
+
+This simplifies the DRL, which no longer needs to match a `*Parametrization` like class,
+and simply specifies if a matching constraint is positive (by calling `ScoreHolder.reward(...)`) or negative (by calling `ScoreHolder.penalize(...)`).
+
+It also make it easier to switch the score weight or score level on a tenant by tenant basis.
+In future versions, it will also making unit testing easier and potentially provide build-in support for simulations.
+
+Before in `*.java`:
+[source, java]
+----
+public class ConferenceParametrization extends AbstractPersistable {
+
+    public static final String SPEAKER_CONFLICT = "Speaker conflict";
+    public static final String THEME_TRACK_CONFLICT = "Theme track conflict";
+    ...
+
+    private int speakerConflict = 1;
+    private int themeTrackConflict = 10;
+    ...
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@ConstraintConfiguration(constraintPackage = "org.optaplanner.examples.conferencescheduling.solver")
+public class ConferenceConstraintConfiguration extends AbstractPersistable {
+
+    public static final String SPEAKER_CONFLICT = "Speaker conflict";
+    public static final String TALK_TYPE_OF_ROOM = "Talk type of room";
+    ...
+
+
+    @ConstraintWeight(SPEAKER_CONFLICT)
+    private HardMediumSoftScore speakerConflict = HardMediumSoftScore.ofHard(1);
+    @ConstraintWeight(THEME_TRACK_CONFLICT)
+    private HardMediumSoftScore themeTrackConflict = HardMediumSoftScore.ofSoft(10);
+    ...
+
+}
+----
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class ConferenceSolution extends AbstractPersistable {
+
+    @ProblemFactProperty
+    private ConferenceParametrization parametrization;
+    ...
+
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningSolution
+public class ConferenceSolution extends AbstractPersistable {
+
+    @ConstraintConfigurationProvider
+    private ConferenceConstraintConfiguration constraintConfiguration;
+    ...
+
+}
+----
+
+Before in `*.drl` (negative constraint):
+[source, drl]
+----
+rule "Speaker conflict"
+    when
+        ConferenceParametrization($weight : speakerConflict != 0)
+        $speaker : Speaker()
+        Talk(...)
+        Talk(...)
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, -$weight);
+end
+----
+
+After in `*.drl` (negative constraint):
+[source, drl]
+----
+rule "Speaker conflict"
+    when
+        $speaker : Speaker()
+        Talk(...)
+        Talk(...)
+    then
+        scoreHolder.penalize(kcontext);
+end
+----
+
+
+Before in `*.drl` (negative constraint with a `weightMultiplier`):
+[source, drl]
+----
+rule "Theme track conflict"
+    when
+        ConferenceParametrization($weight : themeTrackConflict != 0)
+        $leftTalk : Talk(..., $timeslot : timeslot, ...)
+        $rightTalk : Talk(...,
+                overlappingThemeTrackCount($leftTalk) > 0,
+                getTimeslot().overlaps($timeslot), ...)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext,
+                - $weight * $rightTalk.overlappingThemeTrackCount($leftTalk));
+end
+----
+
+After in `*.drl` (negative constraint with a `weightMultiplier`):
+[source, drl]
+----
+rule "Theme track conflict"
+    when
+        $leftTalk : Talk(..., $timeslot : timeslot, ...)
+        $rightTalk : Talk(...,
+                overlappingThemeTrackCount($leftTalk) > 0,
+                getTimeslot().overlaps($timeslot), ...)
+    then
+        scoreHolder.penalize(kcontext,
+                $rightTalk.overlappingThemeTrackCount($leftTalk));
+end
+----
+
+Before in `*.drl` (positive constraint):
+[source, drl]
+----
+rule "Language diversity"
+    when
+        ConferenceParametrization($weight : languageDiversity != 0)
+        Talk(..., $timeslot : timeslot, $language : language, ...)
+        Talk(timeslot == $timeslot, language != $language, ...)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, $weight);
+end
+----
+
+After in `*.drl` (positive constraint):
+[source, drl]
+----
+rule "Language diversity"
+    when
+        Talk(..., $timeslot : timeslot, $language : language, ...)
+        Talk(timeslot == $timeslot, language != $language, ...)
+    then
+        scoreHolder.reward(kcontext);
+end
+----
