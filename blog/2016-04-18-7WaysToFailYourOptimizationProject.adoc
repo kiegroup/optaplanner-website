@@ -78,7 +78,7 @@ Especially for that last kind (as shown above), *different stakeholders within t
 Empower the project owner to settle those negotiations by directly changing the weights in the UI.
 
 Technically, simply add a singleton with the score weights in the dataset and use those weights in the constraints.
-Look for a `*Parametrization` class in some of the OptaPlanner examples.
+Look for a `*ConstraintConfiguration` class in some of the OptaPlanner examples.
 
 
 == 4. Avoid disruption when replanning
