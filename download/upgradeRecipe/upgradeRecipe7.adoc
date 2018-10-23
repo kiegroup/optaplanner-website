@@ -2540,7 +2540,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 === Score: `valueOf()` and `valueOfUninitialized()` renamed to `of()` and `ofUninitialized()`
 
 The methods `*Score.valueOf(...)` and `*Score.valueOfUninitialized(...)` have been deprecated
-in favor of `*Score.of(...)` and `*Score.ofUninitialized(...)` to align with typical java standards
+in favor of `*Score.of(...)` and `*Score.ofUninitialized(...)` to align with typical Java standards
 such as `LocalDate.of(...)` and `LocalTime.of(...)`.
 
 Before in `*.java`:
