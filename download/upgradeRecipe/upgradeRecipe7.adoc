@@ -2601,7 +2601,7 @@ This simplifies the DRL, which no longer needs to match a `*Parametrization` lik
 and simply specifies if a matching constraint is positive (by calling `ScoreHolder.reward(...)`) or negative (by calling `ScoreHolder.penalize(...)`).
 
 It also make it easier to switch the score weight or score level on a tenant by tenant basis.
-In future versions, it will also making unit testing easier and potentially provide build-in support for simulations.
+In future versions, it will also make unit testing easier and potentially provide built-in support for simulations.
 
 Before in `*.java`:
 [source, java]
