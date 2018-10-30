@@ -1102,20 +1102,21 @@ $ <b>mvn clean install -DskipTests</b>
                 <li>Slow</li>
             </ul>
             <pre xml:space="preserve"><code class="java">public class ConferenceSchedulingEasyScoreCalculator
-    implements EasyScoreCalculator&lt;ConferenceSchedule&gt; {
+        implements EasyScoreCalculator&lt;ConferenceSchedule&gt; {
 
-  public HardMediumSoft calculateScore(ConferenceSchedule cs) {
-    int hardScore = 0;
-    for (Talk talk : cs.getTalkList()) {
-        if (talk.getTimeslot() != null
-            && talk.hasUnavailableRoom()) {
-            hardScore--;
+    public HardMediumSoft calculateScore(ConferenceSchedule cs) {
+        int hardScore = 0;
+        for (Talk talk : cs.getTalkList()) {
+            if (talk.getTimeslot() != null
+                && talk.hasUnavailableRoom()) {
+                hardScore--;
+            }
         }
+        ...
+        return HardMediumSoft.valueOf(
+                hardScore, mediumScore, softScore);
     }
-    ...
-    return HardMediumSoft.valueOf(
-                    hardScore, mediumScore, softScore);
-  }
+
 }</code></pre>
         </section>
 
@@ -1150,9 +1151,9 @@ $ <b>mvn clean install -DskipTests</b>
                 </li>
             </ul><br>
             <pre xml:space="preserve"><code class="drl">rule "Room unavailable timeslot"
-  when
+    when
         Talk(hasUnavailableRoom())
-  then
+    then
         scoreHolder.penalize(kcontext);
 end</code></pre>
         </section>
