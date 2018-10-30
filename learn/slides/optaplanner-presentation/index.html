@@ -1016,10 +1016,148 @@ $ <b>mvn clean install -DskipTests</b>
             <img src="UseCasesAndExamples/conferenceSchedulingArchitecture_3.png" class="fullImage fragment">
         </section>
         <section>
+            <h3>Implementation</h3>
+            <ol>
+                <li>Define domain</li>
+                <li>Define constraints</li>
+                <li>Solve</li>
+            </ol>
+        </section>
+        <section>
+            <h3>Define domain</h3>
+        </section>
+        <section>
             <img src="UseCasesAndExamples/conferenceSchedulingClassDiagram_0.png" class="fullImage">
             <img src="UseCasesAndExamples/conferenceSchedulingClassDiagram_1.png" class="fullImage fragment">
             <img src="UseCasesAndExamples/conferenceSchedulingClassDiagram_2.png" class="fullImage fragment">
             <img src="UseCasesAndExamples/conferenceSchedulingClassDiagram_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Timeslot.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Timeslot {
+    private LocalDateTime startDateTime;
+    private LocalDateTime endDateTime;
+
+    ...
+
+}</code> </pre>
+            <p>Plain old java class</p>
+        </section>
+        <section>
+            <h3>Room.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Room {
+    private String name;
+    private int capacity;
+
+    ...
+
+}</code> </pre>
+            <p>Plain old java class</p>
+        </section>
+        <section>
+            <h3>Speaker.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Speaker {
+    private String name;
+
+    ...
+
+}</code> </pre>
+            <p>Plain old java class</p>
+        </section>
+        <section>
+            <h3>Talk.java</h3>
+            <pre xml:space="preserve"><code class="java">public class Talk {
+    private String code;
+    private String title;
+    private TalkType talkType;
+    private List&lt;Speaker&gt; speakerList;
+
+    ...
+
+    @PlanningVariable(valueRangeProviderRefs = "timeslotRange")
+    private Timeslot timeslot;
+
+    @PlanningVariable(valueRangeProviderRefs = "roomRange")
+    private Room room;
+
+    ...
+
+}</code> </pre>
+            <p>Plain old java class with OptaPlanner annotations</p>
+        </section>
+        <section>
+            <h3>Define constraints</h3>
+            <h4>Score calculation</h4>
+            <ul>
+                <li>Easy Java</li>
+                <li>Incremental Java</li>
+                <li><b>Drools DRL (also incremental)</b></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Easy Java score calculation</h3>
+            <ul>
+                <li>Easy to implement</li>
+                <li>Bridge an existing system</li>
+                <li>Slow</li>
+            </ul>
+            <pre xml:space="preserve"><code class="java">public class ConferenceSchedulingEasyScoreCalculator
+    implements EasyScoreCalculator&lt;ConferenceSchedule&gt; {
+
+  public HardMediumSoft calculateScore(ConferenceSchedule cs) {
+    int hardScore = 0;
+    for (Talk talk : cs.getTalkList()) {
+        if (talk.getTimeslot() != null
+            && talk.hasUnavailableRoom()) {
+            hardScore--;
+        }
+    }
+    ...
+    return HardMediumSoft.valueOf(
+                    hardScore, mediumScore, softScore);
+  }
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Incremental Java score calculation</h3>
+            <ul>
+                <li>Fast
+                    <ul>
+                        <li>Solution changes ⇒ recalculate score delta only</li>
+                    </ul>
+                </li>
+                <li>Hard to implement
+                    <ul>
+                        <li>Much boilerplate code</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Drools score calculation</h3>
+            <ul>
+                <li>Incremental
+                    <ul>
+                        <li>No boilerplate code</li>
+                    </ul>
+                </li>
+                <li>Constraints in Drools Rule Language (DRL)
+                    <ul>
+                        <li>Declarative (like SQL, regular expression)</li>
+                    </ul>
+                </li>
+            </ul><br>
+            <pre xml:space="preserve"><code class="drl">rule "Room unavailable timeslot"
+  when
+        Talk(hasUnavailableRoom())
+  then
+        scoreHolder.penalize(kcontext);
+end</code></pre>
+        </section>
+        <section>
+            <h3>Demo</h3>
         </section>
     </section>
 
