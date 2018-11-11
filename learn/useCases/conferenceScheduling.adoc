@@ -6,6 +6,19 @@
 
 image:conferenceSchedulingValueProposition.png[Conference scheduling value proposition]
 
+== What is OptaPlanner's ConferenceSchedulingApp?
+
+The `ConferenceSchedulingApp` assigns conference talks to timeslots and rooms,
+while adhering to 30+ constraints, such as speaker availability, content conflicts, language diversity and many more.
+It can read the list of speakers, rooms, timeslots and talks from an Excel file
+or from the devoxx-cfp REST API. Internally, it uses plain old Java™ domain objects:
+
+image:conferenceSchedulingArchitecture.png[Conference scheduling architecture]
+
+`ConferenceSchedulingApp` is open source (Apache License) software,
+because it's part of `optaplanner-examples`.
+To try it, click the green button to download it and then run the examples.
+
 == What is OptaPlanner?
 
 OptaPlanner is the leading Open Source Java™ constraint solver
