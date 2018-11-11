@@ -22,17 +22,29 @@ To try it, click the green button to download it and then run the examples.
 == What is OptaPlanner?
 
 OptaPlanner is the leading Open Source Java™ constraint solver
-to optimize assigning conference talks to timeslots and rooms,
-adhering to availability, capacity and other constraints.
+to optimize business resource planning use cases,
+such as link:vehicleRoutingProblem.html[Vehicle Routing],
+link:employeeRostering.html[Employee Rostering],
+link:cloudOptimization.html[Cloud Optimization],
+link:taskAssignmentOptimization.html[Task Assignment],
+link:conferenceScheduling.html[Conference Scheduling],
+Job Scheduling, Bin Packing
+and link:[many more].
+Every organization faces such scheduling puzzles:
+assign a limited set of _constrained_ resources (employees, assets, time and money)
+to provide products or services.
+OptaPlanner delivers more efficient plans to improve service quality and reduce costs.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
-It works with your domain classes and your custom constraints (which can reuse existing code).
-There's no need to input difficult mathematical equations.
+It enables normal Java™ programmers to solve optimization problems efficiently.
+It is also compatible with other JVM languages (such as Kotlin and Scala).
+Constraints apply on plain domain objects and can reuse existing code.
+There's no need to input them as mathematical equations.
 Under the hood, OptaPlanner combines sophisticated optimization heuristics and metaheuristics
 (such as Tabu Search, Simulated Annealing and Late Acceptance) with very efficient score calculation.
 
-OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache Software License].
-It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
+OptaPlanner is *open source software*, released under link:code/license.html[the Apache Software License].
+It is written in 100% pure Java™, runs on any JVM and is available in link:download/download.html[the Maven Central repository] too.
 
 == Video
 
