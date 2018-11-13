@@ -1,9 +1,18 @@
 ---
 layout: base
 ---
+- relatedPosts = site.posts.select{|e| !e.tags.nil? and e.tags.any?{|t| t.to_s.eql? page.related_tag} }
 .row
   .col-md-9
     ~ content
+    - if !relatedPosts.empty?
+      %h2 Related blog posts
+      %ul
+        - for post in relatedPosts
+          %li(style="margin-top: 10px;")
+            %a{:href => relative(post.url)}
+              = post.title
+            = partial('userBadge.html.haml', :outputPage => page, :userId => post.author, :mode => 'inline')
   .col-md-3
     = partial('downloadJumbotron.html.haml', :outputPage => page)
     = partial('documentationJumbotron.html.haml', :outputPage => page)

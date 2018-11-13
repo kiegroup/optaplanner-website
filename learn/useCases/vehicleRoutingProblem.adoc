@@ -2,6 +2,7 @@
 :awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize Vehicle Routing Problem and Traveling Salesman Problem variants.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0
+:awestruct-related_tag: vehicle routing
 :showtitle:
 
 image:vehicleRoutingValueProposition.png[Vehicle routing value proposition]

@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase]
+:awestruct-tags: [useCase, conference scheduling]
 :awestruct-share_image_filename: summitConferenceScheduling_0.png
 
 Earlier this month, Red Hat organized it's annual Summit conference in San Francisco for more than 7000 attendees.
