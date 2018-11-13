@@ -2,7 +2,7 @@
 :awestruct-description: Use OptaPlanner (java™, open source) to optimize assigning tasks to employees with different skills and affinities.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0
-:awestruct-related_tag: taskaAssignment
+:awestruct-related_tag: task assignment
 :showtitle:
 
 image:taskAssigningValueProposition.png[Task assigning value proposition]
