@@ -10,7 +10,8 @@ priority: 0.1
     %li(style="margin-top: 10px;")
       %a{:href => relative(post.url)}
         = post.title
-      %span.small
+      .small
         = post.date.strftime('%a  %-d %B %Y')
+      = partial('userBadge.html.haml', :outputPage => page, :userId => post.author, :mode => 'inline')
 :asciidoc
   For older posts, see http://blog.athico.com/search/label/planner[the old blog].
