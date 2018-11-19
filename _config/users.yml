@@ -240,5 +240,12 @@
   fullName: Justin Goldsmith
   role: Contributor
   gravatarHashId: 25cf632d99aec21bfcc60cebbdaa37b5
-  githubUsername: Contributor
+  githubUsername: jgoldsmith613
+  employedBy: Red Hat
+
+- userId: sudheerchekka
+  fullName: Sudheer Chekka
+  role: Contributor
+  gravatarHashId: 897f2ff7d7a84cb3769d27a9889520c9
+  githubUsername: sudheerchekka
   employedBy: Red Hat

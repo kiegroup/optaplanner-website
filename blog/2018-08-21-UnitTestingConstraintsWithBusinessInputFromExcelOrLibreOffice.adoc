@@ -17,6 +17,7 @@ Then our JUnit tests check if our constraint implementations adhere to those req
 
 In https://www.optaplanner.org/learn/useCases/conferenceScheduling.html[Conference Scheduling example],
 to test room conflict constraint (hard penalty per pair of talks in the same room in overlapping timeslots) write:
+
 [source,java]
 ----
 @Test
