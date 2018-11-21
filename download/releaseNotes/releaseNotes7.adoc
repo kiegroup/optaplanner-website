@@ -6,6 +6,26 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
+== New and noteworthy: Engine 7.14.0.Final
+
+=== Weight parametrization standardized as `@ConstraintConfiguration` and `@ConstraintWeight`
+
+TODO
+
+
+=== Other
+
+* JDK 11 compatibility improved
+** The minimum required version to build and run remains Java 8 for the foreseeable future.
+
+
+== New and noteworthy: Engine 7.13.0.Final
+
+=== Other
+
+* Score corruption analysis fixed for multithreaded incremental solving.
+
+
 == New and noteworthy: Engine 7.12.0.Final
 
 === Unimproved termination now supports a score difference threshold
