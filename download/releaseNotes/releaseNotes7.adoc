@@ -10,8 +10,51 @@
 
 === Weight parametrization standardized as `@ConstraintConfiguration` and `@ConstraintWeight`
 
-TODO
+Deciding the correct weight and level for each constraint is difficult.
+It often involves negotiating with different stakeholders and their priorities.
+Furthermore, quantifying the impact of soft constraints is often a new experience for business managers,
+so they 'll need a number of iterations to get it right.
 
+So don't hard-code the constraint weights. Put them in a new constraint configuration class:
+
+[source,java,options="nowrap"]
+----
+@ConstraintConfiguration
+public class ConferenceConstraintConfiguration {
+
+    @ConstraintWeight("Theme track conflict")
+    private HardMediumSoftScore themeTrackConflict = HardMediumSoftScore.ofSoft(10);
+    @ConstraintWeight("Content conflict")
+    private HardMediumSoftScore contentConflict = HardMediumSoftScore.ofSoft(100);
+
+    ...
+}
+----
+
+Here, the _theme track conflict_ constraint has a default weight of `10soft`
+and the _content conflict_ constraint of `100soft`.
+When we expose these properties in a UI, the business manager can change those numbers,
+based on negotiations with the different stakeholders.
+
+In DRL, call the new `reward()` and `penalize()` methods to change the score
+by the constraint weight (optionally multiplied a match weight parameter):
+
+[source,options="nowrap"]
+----
+rule "Theme track conflict"
+    when
+        ...
+    then
+        scoreHolder.penalize(kcontext);
+end
+
+rule "Content conflict"
+    when
+        ...
+    then
+        scoreHolder.penalize(kcontext, ...);
+end
+----
 
 === Other
 
