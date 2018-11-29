@@ -47,15 +47,20 @@ The first time, Maven might take a lot time, because it needs to download jars.
 
 . Optional: Write some documentation in http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
 
+=== optaweb-employee-rostering
+
+_The source code for the employee rostering web application reference architecture._ +
+https://github.com/kiegroup/optaweb-employee-rostering
+
+=== optaweb-vehicle-routing
+
+_The source code for the vehicle routing web application reference architecture._ +
+https://github.com/kiegroup/optaweb-vehicle-routing
+
 === optaplanner-wb (workbench)
 
 _The source code for OptaPlanner Workbench._ +
 https://github.com/kiegroup/optaplanner-wb
-
-=== optaweb-employee-rostering
-
-_The source code for the employee rostering reference architecture._ +
-https://github.com/kiegroup/optaweb-employee-rostering
 
 === optaplanner-website (www.optaplanner.org)
 
