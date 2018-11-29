@@ -22,7 +22,7 @@ Under the hood, OptaPlanner combines sophisticated optimization heuristics and m
 OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache Software License].
 It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
 
-== Video
+== Videos
 
 +++
 <iframe width="853" height="480" src="https://www.youtube.com/embed/ksXjQ851RAU" frameborder="0" allowfullscreen></iframe>

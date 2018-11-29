@@ -42,7 +42,7 @@ As demonstrated in the web examples, integration with Google Maps or OpenStreetM
 
 image:integrationWithRealMaps.png[Integration with real maps]
 
-== Video
+== Videos
 
 +++
 <iframe width="853" height="480" src="https://www.youtube.com/embed/eG_ky8jIRBk" frameborder="0" allowfullscreen></iframe>
