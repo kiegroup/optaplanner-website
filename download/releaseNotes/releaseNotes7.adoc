@@ -6,6 +6,11 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
+== New and noteworthy: Workbench 7.15.0.Final
+
+The KIE Workbench (which includes OptaPlanner support) has been
+http://blog.athico.com/2018/11/workbench-is-now-business-central.html[renamed to Business Central].
+
 == New and noteworthy: Engine 7.14.0.Final
 
 === Weight parametrization standardized as `@ConstraintConfiguration` and `@ConstraintWeight`
