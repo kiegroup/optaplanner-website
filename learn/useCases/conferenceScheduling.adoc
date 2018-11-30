@@ -44,8 +44,8 @@ There's no need to input them as mathematical equations.
 Under the hood, OptaPlanner combines sophisticated optimization heuristics and metaheuristics
 (such as Tabu Search, Simulated Annealing and Late Acceptance) with very efficient score calculation.
 
-OptaPlanner is *open source software*, released under link:code/license.html[the Apache Software License].
-It is written in 100% pure Java™, runs on any JVM and is available in link:download/download.html[the Maven Central repository] too.
+OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache Software License].
+It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
 
 == Videos
 
