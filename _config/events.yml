@@ -462,6 +462,12 @@
       url: https://dvbe18.confinabox.com/talk/FWX-0478/The_battle_of_2_automated_conference_talk_scheduling_algorithms_for_Devoxx
       presenters: Geoffrey De Smet, Piotr Krzemiński, Viktor Tymoshenko
 
+- eventId: 20190319-voxxedzurich
+  eventOrganization: "Voxxed Zurich"
+  eventUrl: https://voxxeddays.com/zurich/
+  location: Zürich, Switzerland
+  date: 2019-03-19
+
 - eventId: 20190507-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/en/summit/2019
