@@ -6,9 +6,9 @@
 #  role: Role in relation to this project
 #  gravatarHashId: Used to show your avatar image. Change your avatar any time at https://www.gravatar.com/
 #                  To find the gravatar hash id, use: "echo -n youremail@gmail.com | md5sum"
-#  googlePlusId: (optional)
 #  twitterUsername: without the @ (optional)
 #  facebookUsername: (optional)
+#  linkedInId: the part after "www.linkedin.com/in/" (optional)
 #  githubUsername: (optional)
 #  email: It's best to anti-spam this (optional)
 #  employedBy: (optional)
@@ -20,8 +20,8 @@
   fullName: Geoffrey De Smet
   role: OptaPlanner lead
   gravatarHashId: 27147a6679a4bfb6461ff1c0ae10473e
-  googlePlusId: +GeoffreyDeSmet
   twitterUsername: GeoffreyDeSmet
+  linkedInId: ge0ffrey
   githubUsername: ge0ffrey
   email: gds.geoffrey.de.smet AT gmail.com
   employedBy: Red Hat
@@ -106,7 +106,6 @@
   fullName: Ondrej Škopek
   role: Contributor and intern
   gravatarHashId: fa169c92202fdd8203f45daa96e69933
-  googlePlusId: +OndrejSkopekOS
   twitterUsername: oskopek
   githubUsername: oskopek
   ircNickname: oskopek
@@ -145,22 +144,18 @@
   gravatarHashId: b259671a57bb987c00a2e1ba37ff05c5
   employedBy: Red Hat
   githubUsername: mbiarnes
-  employedBy: Red Hat
   ircNickname: mbiarnes
 
 - userId: gsheldon
   fullName: Gemma Sheldon
   role: Documentation writer
   gravatarHashId: 8a55491fdc7512af28178979162e1230
-  employedBy: Red Hat
   githubUsername: gsheldon
-  employedBy: Red Hat
 
 - userId: rbourner
   fullName: Richard Bourner
   role: Contributor
   gravatarHashId: df02e4b2e357e04e322e6b66bb24d795
-  googlePlusId: rialbo
   githubUsername: rbourner
   employedBy: Red Hat
 
@@ -168,7 +163,6 @@
   fullName: Tomáš David
   role: Contributor
   gravatarHashId: 2cfce770aad70db47b7613dd20010c98
-  googlePlusId: +tomasdavidorg
   githubUsername: tomasdavidorg
   ircNickname: tdavid
   contributionsDescription: Vehicle routing problem android application
@@ -177,7 +171,6 @@
   fullName: Bilgin Ibryam
   role: Contributor
   gravatarHashId: 279246bd111a7c211134179eddb94afa
-  googlePlusId: +BilginIbryam
   twitterUsername: bibryam
   githubUsername: bibryam
   ircNickname: bibryam
@@ -190,14 +183,12 @@
   gravatarHashId: e8eb2caefbe452befc919ea0977864c1
   employedBy: Red Hat
   githubUsername: psiroky
-  employedBy: Red Hat
   ircNickname: psiroky
   
 - userId: mdanter
   fullName: Matyas Danter
   role: Contributor
   gravatarHashId: bd0aa87d8591be9c05a5409bba500bad
-  googlePlusId: +matyasdanter
   twitterUsername: mdanter
   githubUsername: mdanter
   email: mdanter AT redhat.com

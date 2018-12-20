@@ -18,9 +18,9 @@
             - if !user.facebookUsername.empty?
               %a{:href => "https://www.facebook.com/" + user.facebookUsername}<
                 %img{:src => relative("/headerFooter/facebookLogo.png", page.outputPage), :alt => "Facebook"}
-            - if !user.googlePlusId.empty?
-              %a{:href => "https://plus.google.com/" + user.googlePlusId}<
-                %img{:src => relative("/headerFooter/googlePlusLogo.png", page.outputPage), :alt => "Google+"}
+            - if !user.linkedInId.empty?
+              %a{:href => "https://www.linkedin.com/in/" + user.linkedInId}<
+                %img{:src => relative("/headerFooter/linkedInLogo.png", page.outputPage), :alt => "LinkedIn"}
             - if !user.githubUsername.empty?
               %a{:href => "https://github.com/" + user.githubUsername}<
                 %img{:src => relative("/headerFooter/gitHubLogo.png", page.outputPage), :alt => "GitHub"}
