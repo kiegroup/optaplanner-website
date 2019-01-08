@@ -467,6 +467,10 @@
   eventUrl: https://voxxeddays.com/zurich/
   location: Zürich, Switzerland
   date: 2019-03-19
+  talks:
+  - title: "A.I. constraint optimization with OptaPlanner: TSP, Vehicle Routing and Employee Rostering"
+    url: https://cfpvdz19.confinabox.com/talk/UHO-4904
+    presenters: Geoffrey De Smet
 
 - eventId: 20190507-redhatsummit
   eventOrganization: "Red Hat Summit"
