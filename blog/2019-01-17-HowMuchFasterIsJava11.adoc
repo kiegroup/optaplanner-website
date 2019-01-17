@@ -4,22 +4,22 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [production, benchmark]
 
-Java 11 was released some time ago, while https://www.baeldung.com/java-in-2018[majority of developers stay on Java 8].
-Let’s see which one of them is faster for https://www.optaplanner.org/[OptaPlanner]. The best way to find out is
+Java 11 was released some time ago, although the https://www.baeldung.com/java-in-2018[majority of developers stay on Java 8].
+Let's see which one of them is faster for https://www.optaplanner.org/[OptaPlanner]. The best way to find out is
 of course running OptaPlanner benchmarks.
 This article is a follow up on https://www.optaplanner.org/blog/2014/03/20/HowMuchFasterIsJava8.html[our similar article for Java 8].
 
 == Benchmark methodology
 
-* A stable machine without any other computational demanding processes running was used. Specifically,
-2 x Intel® Xeon® CPU E5-2609 0 @ 2.4 GHz (8 cores total) with 31.3 GiB RAM memory, running RHEL 6.
+To run the benchmark we used:
 
-* For both Java versions the benchmark was run with both G1 and Parallel GC, so that we can compare also impact
-of garbage collection. Java was executed with following parameters:
+* A stable machine without any other computational demanding processes running and with
+`2 x Intel® Xeon® CPU E5-2609 0 @ 2.4 GHz (8 cores total)` and `31.3 GiB` RAM memory, running RHEL 6.
 
-  “-Xmx1536M -server -XX:+UseG1GC”  and “-Xmx1536M -server -XX:+UseParallelGC”, respectively.
+* Both G1 and Parallel GC for both Java versions to compare the impact of garbage collection.
+Java executed with the parameters `-Xmx1536M -server -XX:+UseG1GC` and `-Xmx1536M -server -XX:+UseParallelGC` respectively.
 
-* JVMs used were Oracle Java 8:
+* Both Oracle Java 8:
 
   java version "1.8.0_191"
   Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
@@ -31,7 +31,7 @@ and OpenJDK 11:
   OpenJDK Runtime Environment 18.9 (build 11.0.1+13)
   OpenJDK 64-Bit Server VM 18.9 (build 11.0.1+13, mixed mode)
 
-* The benchmark uses OptaPlanner version 7.14.0.Final.
+* OptaPlanner `7.14.0.Final`
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input). *A single
 CPU is completely saturated.* It constantly creates many short lived objects, and the GC collects them afterwards.
@@ -39,20 +39,20 @@ CPU is completely saturated.* It constantly creates many short lived objects, an
 * Each run solves 11 planning problems with OptaPlanner. Each planning problem runs for 5 minutes and starts with a
 30 second JVM warm up which is discarded.
 
-* The benchmarks measure the number of scores that can be calculated per millisecond. Higher is better. Calculating
+* The benchmarks measure the number of scores calculated per millisecond. Higher is better. Calculating
 a score for a proposed planning solution is non-trivial: it involves many calculations, including checking for
 conflicts between every entity and every other entity.
 
 == Executive summary
 
-With Java 11, average improvement is *16.1%* for G1, *4.5%* for Parallel GC. Although Parallel GC is oriented towards
+With Java 11, the average improvement is *16.1%* for G1 and *4.5%* for Parallel GC. Although Parallel GC is oriented towards
 throughput, whereas G1 focuses rather on low-latency garbage collection, the significant improvement of G1 in
-Java 11 lead to direct <<table3,comparison of these two garbage collection algorithms>>.
-For more information about difference between various GC algorithms, please see e.g.
-https://dzone.com/articles/choosing-the-right-gc[choosing-the-right-gc].
+Java 11 lead to a direct <<table3,comparison of these two garbage collection algorithms>>.
+For more information about difference between various GC algorithms, please see
+https://dzone.com/articles/choosing-the-right-gc[this article].
 
-It was shown though, that Parallel GC is still the preferred GC for OptaPlanner, as throughput is much more important
-for solving optimization problems with OptaPlanner than the latencies introduced by GC.
+This shows that Parallel GC is still the preferred GC for OptaPlanner, as throughput is much more important
+for solving optimization problems with OptaPlanner than the latencies introduced by the GC.
 
 == Results
 
@@ -71,8 +71,8 @@ image::Java8VsJava11usingG1GC.svg[]
 |Average 11+^.^|*16.1%*
 |===
 
-Almost every data set shows improvement on Java 11 over Java 8 using the G1 garbage collector. On average, the is a
-16% improvement just by switching to Java 11. Possible reason for such an improvement can be e.g.
+Almost every data set improves on Java 11 over Java 8 using the G1 garbage collector. On average, there's a
+16% improvement just by switching to Java 11. A possible explanation for this improvement could be the
 http://openjdk.java.net/jeps/307[JEP 307: Parallel Full GC for G1], introduced in Java 10.
 
 image::Java8VsJava11usingParallelGC.svg[]
@@ -87,7 +87,7 @@ image::Java8VsJava11usingParallelGC.svg[]
 |Average 11+^.^|*4.5%*
 |===
 
-With Parallel Garbage Collector, the results are less definite as with G1. There is an improvement for some data sets,
+With the Parallel Garbage Collector, the results are less definite than G1. There is an improvement for some data sets,
 while others remain intact or show even a performance drop. However, on average, the Java 11 performs over 4% better.
 
 === Parallel GC vs. G1 GC on Java 11
@@ -103,24 +103,13 @@ while others remain intact or show even a performance drop. However, on average,
 |Average 11+^.^|*-2.3%*
 |===
 
-Although G1 GC shows clear improvement from the Java 8, compared to Parallel GC it’s less beneficial GC strategy
-for OptaPlanner on majority of data sets. The only exception is Machine Reassignment, which shows that with
-G1 OptaPlanner is able to compute score calculation 83% faster.
-This is true for Java 8 too, if you take a close look at <<table1>>.
+Although G1 GC shows a clear improvement from Java 8, compared to Parallel GC it's less beneficial GC strategy
+for OptaPlanner on the majority of the data sets. The only exception is Machine Reassignment, which shows that
+the G1 OptaPlanner is able to compute score calculation 83% faster.
+This applies to Java 8 too, as shown in <<table1>>.
 
 == Conclusion
 
-Java 11 brings additional improvements, which of course varies across different https://www.optaplanner.org/[OptaPlanner] examples and data sets.
-On average, there is 4.5% more performance for free when using Parallel GC and 16.1% more with G1 GC.
-Despite the significant improvement  with G1 GC, Parallel GC is still a better option for most of the data sets under test.
-
-
-
-
-
-
-
-
-
-
-
+Java 11 brings additional improvements, which vary across different https://www.optaplanner.org/[OptaPlanner] examples and data sets.
+On average, it is 4.5% faster when using Parallel GC and 16.1% faster with G1 GC.
+Despite the significant improvement for G1 GC, Parallel GC is still faster for most data sets in this benchmark.
