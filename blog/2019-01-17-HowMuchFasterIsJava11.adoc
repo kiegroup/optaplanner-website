@@ -47,7 +47,7 @@ conflicts between every entity and every other entity.
 
 With Java 11, the average improvement is *16.1%* for G1 and *4.5%* for Parallel GC. Although Parallel GC is oriented towards
 throughput, whereas G1 focuses rather on low-latency garbage collection, the significant improvement of G1 in
-Java 11 lead to a direct <<table3,comparison of these two garbage collection algorithms>>.
+Java 11 leads to a direct <<table3,comparison of these two garbage collection algorithms>>.
 For more information about difference between various GC algorithms, please see
 https://dzone.com/articles/choosing-the-right-gc[this article].
 
