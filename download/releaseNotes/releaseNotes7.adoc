@@ -68,7 +68,9 @@ just by specifying the conference instance's api url
 (e.g. `http://dvbe18.confinabox.com/api/conferences/dvbe18` for Devoxx Belgium 2018).
 OptaPlanner will then take care of importing all the data and you can start solving and generating
 the schedule right away.
+
 image:7.14/CFPImportButton.png[ImportButton]
+
 image:7.14/CFPRestUrl.png[CFPRestUrl]
 
 === Other
