@@ -4,18 +4,18 @@
 :awestruct-layout: blogPostBase
 :awestruct-tags: [useCase, task assigning, kie-server]
 
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server[KIE Server]
+https://docs.optaplanner.org/latestFinal/optaplanner-wb-es-docs/html_single/#_ch.kie.server[KIE Server]
 is a standalone server component that can be used to instantiate and execute rules and processes.
 In this blog, you will learn how to build an OptaPlanner service that implements continuous and real-time planning to solve the
 Task Assignment problem and deploy it to the KIE Server.
 
 
-== https://github.com/kiegroup/kie-server-optaplanner-task-assignment/tree/master/task-assignment-kjar[Task Assignment KJAR]
+== https://github.com/kiegroup/kie-server-optaplanner-task-assignment[Task Assignment KJAR]
 
 https://developers.redhat.com/blog/2018/03/14/what-is-a-kjar/[KJAR] or "Knowledge JAR" is a standard JAR file that has
 some extra files included (at least a `META-INF/kmodule.xml` file). You will build Task Assignment Service as a KJAR.
 
-NOTE: In order to build the KJAR, the project's pom.xml needs to have a `<packagin>kjar</packaging>` entry and contains
+NOTE: In order to build the KJAR, the project's pom.xml needs to have a `<packaging>kjar</packaging>` entry and contains
 `kie-maven-plugin`.
 
 === Problem Description
@@ -34,17 +34,18 @@ Constraints:
 === Domain Model
 
 image::taskAssigningClassDiagram.png[link="taskAssigningClassDiagram.png"]
-You can read more on how to
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#modelAPlanningProblem[model a planning problem].
+Read more on how to
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#modelAPlanningProblem[model a planning problem].
 
-=== https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#realTimePlanning[Real-time Planning]
+=== https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#realTimePlanning[Real-time Planning]
 
 As new tasks come in and others start being implemented, the optimal solution might change. OptaPlanner handles such scenarios using
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#problemFactChange[ProblemFactChange].
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#problemFactChange[ProblemFactChange].
 
-For example, if an employee starts working on a task, you can tell OptaPlanner to *pin* this task by sending a `PinTaskProblemFactChange`.
+For example, if an employee starts working on a task, tell OptaPlanner to https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/#pinDownPlanningEntities[pin] this task by sending a `PinTaskProblemFactChange`.
 Each `ProblemFactChange` type is implemented as a class that implements the interface `ProblemFactChange<Solution_>`.
 In the Task Assignment example, this class can be something like:
+
 [source,java]
 ----
 public class PinTaskProblemFactChange implements ProblemFactChange<TaskAssigningSolution> {
@@ -53,41 +54,47 @@ public class PinTaskProblemFactChange implements ProblemFactChange<TaskAssigning
     @Override
     public void doChange(ScoreDirector<TaskAssigningSolution> scoreDirector) {
         ...
-                scoreDirector.beforeProblemPropertyChanged(toBePinnedTask);
-                toBePinnedTask.setPinned(true);
-                scoreDirector.afterProblemPropertyChanged(toBePinnedTask);
+        scoreDirector.beforeProblemPropertyChanged(toBePinnedTask);
+        toBePinnedTask.setPinned(true);
+        scoreDirector.afterProblemPropertyChanged(toBePinnedTask);
         ...
 
         scoreDirector.triggerVariableListeners();
     }
 }
 ----
-The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/master/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[here].
 
-===  https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#solverConfiguration[Solver Configuration]
+The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/master/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[on github].
+
+===  https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#solverConfiguration[Solver Configuration]
 
 The solver configuration file determines how the solving process works. For a KJAR deployed to a KIE Server and since we are using
-Drools for score calculation, you need to use a `ksessionName`. This tells the KieContainer where to find the DRL file.
-Add this to `META-INF/kmodule.xml` file:
+Drools for score calculation, use a `ksessionName`. This tells the KieContainer where to find the DRL file.
+Add an optataskKsession to `META-INF/kmodule.xml` file:
+
 [source,xml,options="nowrap"]
 ----
 <kbase name="optataskKBase" packages="PATH_TO_SOLVER_RESOURCES">
     <ksession name="optataskKsession"/>
 </kbase>
 ----
+
 And to solver config file:
+
 [source,xml,options="nowrap"]
 ----
 <scoreDirectorFactory>
     <ksessionName>optataskKsession</ksessionName>
 </scoreDirectorFactory>
 ----
+
 Notice that both solver configuration and DRL files need to be in the `resources` folder under the path
 `PATH_TO_SOLVER_RESOURCES`.
 
 For real-time planning, set the solver in
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#daemon[daemon mode] in order to resume
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#daemon[daemon mode] in order to resume
 solving once a problem fact change is added. This is accomplished by adding the following to the solver config file:
+
 [source,xml,options="nowrap"]
 ----
 <daemon>true</daemon>
@@ -97,7 +104,7 @@ solving once a problem fact change is added. This is accomplished by adding the 
 
 Since you will be sending and receiving data to/from KIE Server through REST API, you need to tell it how to marshall/unmarshall
 this data. Read how OptaPlanner
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-docs/html_single/index.html#integrationWithXStream[marshals a score] using Xstream.
+https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#integrationWithXStream[marshals a score] using Xstream.
 
 OptaPlanner stores all planning entities as objects and references to these objects, which might result in a lot of redundant data
 received from the server. In our example, we are using
@@ -108,7 +115,7 @@ to avoid such redundancies.
 
 The minimum required dependencies to build the OptaPlanner service are: optaplanner-core, optaplanner-persistence-xstream.
 
-TIP: Because you will be using several OptaPlanner modules, it’s recommended to import the optaplanner-bom
+NOTE: Because you will be using several OptaPlanner modules, it’s recommended to import the optaplanner-bom
 in Maven’s `dependencyManagement` so that OptaPlanner version is specified only once.
 
 
@@ -117,13 +124,14 @@ in Maven’s `dependencyManagement` so that OptaPlanner version is specified onl
 Now that you have the KJAR ready, you can deploy it to the KIE Server and perform all planning operations.
 You can send HTTP requests to the server using REST API.
 
-=== Deploymnet
+=== Deployment
 
 `POST /config`
 
 Through the above endpoint, you can execute various commands on the KIE Server.
 
 For example, to create a container running your OptaPlanner service, the request's body should be:
+
 [source,json,options="nowrap"]
 ----
 {
@@ -143,6 +151,7 @@ For example, to create a container running your OptaPlanner service, the request
   ],
 }
 ----
+
 Notice that the GAV in the `release-id` object are your KJAR's GAV.
 
 === Solver registration
@@ -150,12 +159,14 @@ Notice that the GAV in the `release-id` object are your KJAR's GAV.
 `PUT /containers/{CONTAINER_ID}/solvers/{SOLVER_ID}`
 
 With body:
+
 [source,json,options="nowrap"]
 ----
 {
   'solver-config-file': 'PATH_TO_SOLVER_CONFIG_FILE.xml'
 }
 ----
+
 This will build a new solver from the xml resource included in the KJAR.
 
 === Submit a problem
@@ -177,21 +188,23 @@ This response body will contain `best-solution` object in addition to extra info
 
 Submits a ProblemFactChange to update the problem the solver is solving. For example if you want to delete
 a task the body should be:
+
 //TODO: Update the example to JSON once figure out the required format
 [source,xml,options="nowrap"]
 ----
 <problem-fact-change class="TaDeleteTaskProblemFactChange">
-	<taskId>TO_BE_DELETED_TASK_ID</taskId>
+    <taskId>TO_BE_DELETED_TASK_ID</taskId>
 </problem-fact-change>
 ----
-Notic the use of `class` attribute, this is how you tell OptaPlanner service what type of ProblemFactChange you are submitting.
+
+Notice the use of `class` attribute, this is how you tell OptaPlanner service what type of ProblemFactChange you are submitting.
 Here `TaDeleteTaskProblemFactChange` is an `@XStreamAlias` for the `DeleteTaskProblemFactChange`.
 
 
 NOTE: All the requests above have a base URL `http://SERVER:PORT/CONTEXT/services/rest/server` and require basic HTTP
 Authentication for the role kie-server.
 
-You can check all the available endpoints https://docs.optaplanner.org/7.14.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[here]
+Check all the available endpoints https://docs.optaplanner.org/7.14.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[in the docs].
 
 
 == Conclusion
@@ -207,9 +220,9 @@ To integrate an OptaPlanner service with your application on KIE Server:
 
 https://github.com/kiegroup/kie-server-optaplanner-task-assignment[KIE Server OptaPlanner Task Assignment demo]
 
-https://docs.optaplanner.org/7.17.0.Final/optaplanner-wb-es-docs/html_single/#kie-server-commands-con_kie-apis[KIE Server and KIE container commands in OptaPlanner]
+https://docs.optaplanner.org/latestFinal/optaplanner-wb-es-docs/html_single/#kie-server-commands-con_kie-apis[KIE Server and KIE container commands in OptaPlanner]
 
-//TODO: update the link to 7.17.0.Final
+//TODO: update the link to latestFinal once https://issues.jboss.org/browse/PLANNER-1432 is resolved
 https://docs.optaplanner.org/7.14.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[OptaPlanner REST API]
 
 //TODO: add link to video demo once done
