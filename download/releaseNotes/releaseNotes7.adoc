@@ -6,6 +6,24 @@
 :awestruct-release_notes_version_qualifier: Final
 
 
+== New and noteworthy: Engine 7.20.0.Final
+
+=== Programmatic API made more convenient
+
+The programmatic API now supports a more fluent form too, because of the new `with*()` methods:
+
+[source,java,options="nowrap"]
+----
+solverFactory.getSolverConfig().withTerminationConfig(
+        new TerminationConfig().withMinutesSpentLimit(userInput));
+----
+
+=== Other
+
+* `@PlanningId` is now supported on primitive types such as `int` or `long` too, not just wrapper classes.
+* `Instant`, `Duration`, `Period` and other temporal classes can now be used as planning values in multithreaded solving.
+** Because they are now compatible with `ScoreDirector.lookUpWorkingObject()`.
+
 == New and noteworthy: Workbench 7.15.0.Final
 
 The KIE Workbench (which includes OptaPlanner support) has been
