@@ -2748,3 +2748,46 @@ rule "Language diversity"
         scoreHolder.reward(kcontext);
 end
 ----
+
+
+
+== From 7.19.0.Final to 7.20.0.Final
+
+
+[.upgrade-recipe-major]
+=== `Solver`: `addEventListener(SolverEventListener)` replaced
+
+The method `Solver.addEventListener(SolverEventListener)` and `Solver.removeEventListener(SolverEventListener)` have been deprecated
+in favor of `Solver.addBestSolutionListener(BestSolutionListener)` and `Solver.removeBestSolutionListener(BestSolutionListener)`
+to allow other listeners to be added.
+
+Before in `*.java`:
+[source, java]
+----
+    solver.addEventListener(new SolverEventListener<CloudBalance>() {
+        public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+            CloudBalance solution = event.getNewBestSolution();
+            ...
+        }
+    });
+----
+
+After in `*.java`:
+[source, java]
+----
+    solver.addBestSolutionListener(new BestSolutionListener<CloudBalance>() {
+        public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+            CloudBalance solution = event.getNewBestSolution();
+            ...
+        }
+    });
+----
+
+After in `*.java` (using a function):
+[source, java]
+----
+    solver.addBestSolutionListener(event -> {
+        CloudBalance solution = event.getNewBestSolution();
+        ...
+    });
+----
