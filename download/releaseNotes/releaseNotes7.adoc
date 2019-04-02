@@ -21,7 +21,7 @@ solverFactory.getSolverConfig().withTerminationConfig(
 === Other
 
 * `@PlanningId` is now supported on primitive types such as `int` or `long` too, not just wrapper classes.
-* `Instant`, `Duration`, `Period` and other temporal classes can now be used as planning values in multithreaded solving.
+* `Instant`, `Duration`, `Period` and other temporal classes in `java.time` can now be used as planning values in multithreaded solving.
 ** Because they are now compatible with `ScoreDirector.lookUpWorkingObject()`.
 
 == New and noteworthy: Workbench 7.15.0.Final
