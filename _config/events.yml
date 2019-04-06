@@ -472,8 +472,29 @@
     url: https://cfpvdz19.confinabox.com/talk/UHO-4904
     presenters: Geoffrey De Smet
 
+- eventId: 20190406-itkonekt
+  eventOrganization: "IT-KONEKT"
+  eventUrl: https://itkonekt.com/en/it-konferencija-novi-sad/
+  location: Novi Sad, Serbia
+  date: 2019-04-06
+  talks:
+  - title: "Constraint solving A.I. algorithms in OptaPlanner"
+    presenters: Donato Marrazzo
+
 - eventId: 20190507-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/en/summit/2019
   location: Boston, MA, USA
   date: 2019-05-07
+  talks:
+  - title: "Special surprise"
+
+
+- eventId: 20190601-beercitycode
+  eventOrganization: "Beer City Code"
+  eventUrl: https://beercitycode.com/
+  location: Grand Rapids, MI, USA
+  date: 2019-06-01
+  talks:
+  - title: "Deciding things with OptaPlanner"
+    presenters: Kevin Greene
