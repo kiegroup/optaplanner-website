@@ -11,23 +11,24 @@ priority: 1.0
 - page.priority = "0.1" if !page.selected_tag.nil?
 %h1 #{page.title}
 - for post in page.posts
-  -# Trick to make images work from blog posts work for the aggregator blog page
-  - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-  - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
-  %h2.title(style="border-bottom: 1px solid #eee;")
-    %a{:href => relative(post.url, page)}
-      = post.title
-  %div(style="margin-bottom: 10px;")
-    .pull-right
-      %p(style="text-align: right;") #{post.date.strftime('%a %-d %B %Y')}
-    = partial('userBadge.html.haml', :outputPage => page, :userId => post.author, :mode => 'inline')
-  %p
-    = summarize(html_to_text(post.content).strip, 50)
-  %p
-    %a{:href => relative(post.url, page)}
-      Read more ...
-  - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
-  %hr(style="border-color: #000;")
+  - if !post.hidden
+    -# Trick to make images work from blog posts work for the aggregator blog page
+    - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+    - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
+    %h2.title(style="border-bottom: 1px solid #eee;")
+      %a{:href => relative(post.url, page)}
+        = post.title
+    %div(style="margin-bottom: 10px;")
+      .pull-right
+        %p(style="text-align: right;") #{post.date.strftime('%a %-d %B %Y')}
+      = partial('userBadge.html.haml', :outputPage => page, :userId => post.author, :mode => 'inline')
+    %p
+      = summarize(html_to_text(post.content).strip, 50)
+    %p
+      %a{:href => relative(post.url, page)}
+        Read more ...
+    - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
+    %hr(style="border-color: #000;")
 %ul.pager
   %li.previous{:class => ('disabled' unless page.posts.previous_page)}
     %a{:href => (page.posts.previous_page ? relative(page.posts.previous_page.url, page) : '#')}
