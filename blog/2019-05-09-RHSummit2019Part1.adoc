@@ -123,8 +123,8 @@ After all, we couldn't risk that it crashes during the keynote, in front of the 
 (including all our bosses, all the way up to our CEO, Jim Whitehurst).
 
 * To learn more about *our architecture and the integration with all those other technologies*,
-link::2019-05-09-RHSummit2019Part2.html[read Musa's article].
+https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's article].
 * To learn more about the scaling challenges and *the benchmarks on simulations and load tests we ran*,
-link::2019-05-09-RHSummit2019Part3.html[read Radovan's article].
+https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article].
 
 Let me thank to Luke Darry, Matthew Carleton and Evan Shortiss for building a beautiful dashboard UI and mobile application.

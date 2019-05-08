@@ -12,7 +12,7 @@ These systems should monitor, automate and maintain these devices in a robust an
 
 In this demo, we simulate a factory plant containing multiple pieces of machinery. The system we built monitors these machines
 and automatically dispatches mechanics to fix them in a smart way. To learn more about the use case and challenges,
-read link::2019-05-09-RHSummit2019Part1.html[Part 1 by Geoffrey].
+read https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part1.html[Part 1 by Geoffrey].
 
 
 == Overall system architecture
@@ -97,6 +97,6 @@ In conclusion, the two main challenges in designing the architecture were
 adapting the inner workings to accommodate other services' behaviour and maintaining consistency with other services.
 
 * To learn more about scaling challenges and the benchmarks as well as the load tests we ran,
-read link::2019-05-09-RHSummit2019Part3.html[Part 3 by Radovan].
+read https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[Part 3 by Radovan].
 
 Let me thank to Ryan Emerson, Galder Zamarreno and Christopher Chase for their great work and help on Infinispan integration.
