@@ -32,11 +32,13 @@ image::assemblyLine.png[]
 
 Each machine has its location and there are different distances between individual machines, for example:
 
+----
 A->B is 665.08 px
 
 B->C is 235.82 px
 
 C->J is 2486.04 px
+----
 
 Fixing all the machines takes 62 seconds (10 * 2 seconds for fixing each machine plus a travelling time between
 them using the shortest path).
@@ -46,9 +48,10 @@ them using the shortest path).
 Uniform distribution means hitting every machine with the same amount of damage, which is proportional to the total
 damage and number of machines.
 
-....
-damagePerSecond = totalDamagePerSecond / numberOfMachines
-....
+[source,java]
+----
+damagePerSecond = totalDamagePerSecond / numberOfMachines;
+----
 
 See how a single mechanic behaves under the uniform damage distribution:
 
