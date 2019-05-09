@@ -1,4 +1,4 @@
-= Mechanic scheduling (part 2) architecture and integration
+= Mechanic scheduling (part 2) - Architecture and integration
 :page-interpolate: true
 :awestruct-hidden: true
 :awestruct-author: MusaTalluzi
