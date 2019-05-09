@@ -19,9 +19,9 @@ read https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part1.html[Part 1 
 
 image::rhdemo2019SystemDiagram.png[link="rhdemo2019SystemDiagram.png"]
 To simulate damage source, we created a mobile app whose users signalize damage to machines by shaking their phones.
-The shaking data is sent to a web server that filters the bad data using TenserFlow service, then exports resulting
-predictions to AMQ streams. These predictions are consumed by Red Hat Integration, which process the data and put the result
-in Infinispan. Machine healths and mechanics states are also stored in Infinispan.
+The shaking data is sent to a web server that filters the bad data using TensorFlow service, then exports resulting
+predictions to AMQ streams. These predictions are consumed by Red Hat Integration, which processes the data and puts the result
+in Infinispan. Machine healths and mechanics' states are also stored in Infinispan.
 
 Lastly, given the data in Infinispan, we need to decide how to schedule repairs optimally to reduce travel time and failure costs.
 We used OptaPlanner to do that. OptaPlanner reads machines health from Infinispan, updates the planning problem and sends
@@ -32,7 +32,7 @@ new dispatch events back to Infinispan, then the web server gets notified and se
 
 image::mechanicSchedulingServiceDiagram.png[link="mechanicSchedulingServiceDiagram.png"]
 OptaPlanner's goal is to schedule repairs in an optimal way. To accomplish this, it needs to keep track of current machines' health,
-dispatch mechanics and update healths once they are done fixing the machines. There are two pitfalls here:
+dispatch mechanics and update healths once mechanics are done fixing the machines. There are two pitfalls here:
 
 * Machines health can be updated thousands of times per second.
 
@@ -71,7 +71,7 @@ image::mechanicSchedulingClassDiagram.png[link="mechanicSchedulingClassDiagram.p
 == Integration with Infinispan and the Dashboard UI
 
 The last piece in the puzzle is to ensure that both the UI and OptaPlanner's states are consistent.
-As mentioned earlier, OptaPlanner send dispatch events (containing mechanic, machine to be fixed, travel time duration and fix time duration).
+As mentioned earlier, OptaPlanner sends dispatch events (containing mechanic, machine to be fixed, travel time duration and fix time duration).
 Once the keeper of time ticks at a time after a mechanic has finished fixing a machine, it resets the machine health
 and dispatches that mechanic to next machine, both updates are sent to Infinispan, where the UI listens to dispatch events
 and polls machines health at fixed intervals.
@@ -80,7 +80,7 @@ You might have already guessed what can go wrong here, if the UI gets notified w
 for the full health, the mechanic will start moving away from the machine while it's health is still not reset,
 this doesn't look good.
 
-Therefore, we introduced “thumbs up” duration, an interval longer than the frequency at which both OptaPlanner ticks
+Therefore, we introduced “thumbs up” duration, an interval longer than the rate at which both OptaPlanner ticks
 and the UI polls Infinispan, as illustrated in the figure below. This ensures that the following sequence of events occurs in order:
 
 1. OptaPlanner resets machine health
@@ -93,13 +93,11 @@ image::mechanicsOverTime.png[link="mechanicsOverTime.png"]
 
 == Conclusion
 
-In conclusion, the two main challenges in designing the architecture were
+In conclusion, the two main challenges in designing this microservices architecture were
 adapting the inner workings to accommodate other services' behaviour and maintaining consistency with other services.
 
 * To learn more about scaling challenges and the benchmarks as well as the load tests we ran,
 read https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[Part 3 by Radovan].
-
-Let me thank
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
