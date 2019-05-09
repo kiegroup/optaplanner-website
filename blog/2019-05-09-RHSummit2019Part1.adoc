@@ -127,4 +127,9 @@ https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's 
 * To learn more about the scaling challenges and *the benchmarks on simulations and load tests we ran*,
 https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article].
 
-Let me thank to Luke Darry, Matthew Carleton and Evan Shortiss for building a beautiful dashboard UI and mobile application.
+Let me thank the entire team for their great work
+and specifically in this part, a big thanks to
+Luke Darry, Matthew Carleton, Evan Shortiss and Christopher Chase
+for building a beautiful dashboard UI and a great mobile application.
+And of course, a big thanks to our one and only captain, Burr Sutter,
+who can set up a show like no other!

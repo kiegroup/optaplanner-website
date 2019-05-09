@@ -181,5 +181,9 @@ being surprised. To minimize the risk, we gather as much data as possible to con
 Both the simulations and load testing proved an invaluable source of information.
 They helped us understand what we could expect and built a good level of confidence about what we wanted to show.
 
-Let me thank Christopher Chase, Guilherme Baufaker Rego and Ben Browning and the rest of the team for their
-great work on (not only) load testing the platform.
+Let me thank the entire team for their great work
+and specifically in this part, a big thanks to
+Guilherme Baufaker Rego and Ben Browning
+for load testing the platform.
+And of course, a big thanks to our one and only captain, Burr Sutter,
+who can set up a show like no other!
