@@ -99,4 +99,11 @@ adapting the inner workings to accommodate other services' behaviour and maintai
 * To learn more about scaling challenges and the benchmarks as well as the load tests we ran,
 read https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[Part 3 by Radovan].
 
-Let me thank to Ryan Emerson, Galder Zamarreno and Christopher Chase for their great work and help on Infinispan integration.
+Let me thank
+
+Let me thank the entire team for their great work
+and specifically in this part, a big thanks to
+Ryan Emerson, Galder Zamarreno and Christopher Chase
+for their help on the Infinispan integration.
+And of course, a big thanks to our one and only captain, Burr Sutter,
+who can set up a show like no other!
