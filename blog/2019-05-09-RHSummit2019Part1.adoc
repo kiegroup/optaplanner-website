@@ -116,7 +116,7 @@ https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
-Luke Darry, Matthew Carleton, Evan Shortiss and Christopher Chase
+Luke Dary, Matthew Carleton, Evan Shortiss and Christopher Chase
 for building a beautiful dashboard UI and a great mobile application.
 And of course, a big thanks to our one and only captain, Burr Sutter,
 who can set up a show like no other!
