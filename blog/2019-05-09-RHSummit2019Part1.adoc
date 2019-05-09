@@ -7,7 +7,7 @@
 :awestruct-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.png
 
 This year, my team and I participated in the Red Hat Summit keynote.
-In front of 8000 people, we demonstrated real-time scheduling,
+In front of 7000 people, we demonstrated real-time scheduling,
 reacting on input coming from the audience's smartphones.
 In the past 2 months, we created this application together with the other middleware teams
 and under the excellent guidance of Burr Sutter.
@@ -19,24 +19,11 @@ We wrote a simulation of a typical manufacturing floor, involving machines at as
 This led to an interesting conversation when I first showed it to my wife:
 
 ""
-Look, darling. This is the keynote demo we've been working on the past few weeks.
-""
-
-""
-That looks like a video-game, hun. +
-Is that Mario and Luigi running around?
-""
-
-""
-Well, notice how OptaPlanner optimizes their traveling time so they can spend more time fixing machines.
-""
-
-""
-Are you really going to show this to 8000 business people?
-""
-
-""
-Yes, of course. It's going to be beautiful.
+"Look, darling. This is the keynote demo we've been working on the past few weeks." +
+"That looks like a video-game... Is that Mario and Luigi running around?" +
+"Well, notice how OptaPlanner optimizes their traveling time so they can spend more time fixing machines." +
+"Are you really going to show this to 7000 business people?" +
+"Yes, of course. It's going to be beautiful."
 ""
 
 This is how it turned out:
