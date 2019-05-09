@@ -1,4 +1,4 @@
-= Mechanic scheduling (part 3) simulation and load testing
+= Mechanic scheduling (part 3) - Simulation and load testing
 :page-interpolate: true
 :awestruct-hidden: true
 :awestruct-author: rsynek

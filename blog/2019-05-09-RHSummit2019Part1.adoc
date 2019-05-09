@@ -1,4 +1,4 @@
-= Mechanic scheduling (part 1) can OptaPlanner keep up with a keynote audience of thousands?
+= Mechanic scheduling (part 1) - Can OptaPlanner keep up with a keynote audience of thousands?
 :page-interpolate: true
 :awestruct-hidden: true
 :awestruct-author: ge0ffrey
