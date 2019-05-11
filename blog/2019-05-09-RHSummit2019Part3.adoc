@@ -180,9 +180,17 @@ being surprised. To minimize the risk, we gather as much data as possible to con
 Both the simulations and load testing proved an invaluable source of information.
 They helped us understand what we could expect and built a good level of confidence about what we wanted to show.
 
+---
+
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
 Guilherme Baufaker Rego and Ben Browning
 for load testing the platform.
 And of course, a big thanks to our one and only captain, Burr Sutter,
 who can set up a show like no other!
+
+View the recording of our show:
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/FUu4kMc0PL8?start=5785" frameborder="0" allowfullscreen></iframe>
++++

@@ -109,9 +109,11 @@ After all, we couldn't risk that it crashes during the keynote, in front of the 
 (including all our bosses, all the way up to our CEO, Jim Whitehurst).
 
 * To learn more about *our architecture and the integration with all those other technologies*,
-https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's article].
+https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's article (part 2)].
 * To learn more about the scaling challenges and *the benchmarks on simulations and load tests we ran*,
-https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article].
+https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article (part 3)].
+
+---
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
@@ -119,3 +121,9 @@ Luke Dary, Matthew Carleton, Evan Shortiss and Christopher Chase
 for building a beautiful dashboard UI and a great mobile application.
 And of course, a big thanks to our one and only captain, Burr Sutter,
 who can set up a show like no other!
+
+View the recording of our show:
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/FUu4kMc0PL8?start=5785" frameborder="0" allowfullscreen></iframe>
++++
