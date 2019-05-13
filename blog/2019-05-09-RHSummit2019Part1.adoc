@@ -44,9 +44,8 @@ Luckily, OptaPlanner schedules those mechanics for us.
 It reacts to health changes in real-time, as shown in this video:
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/IvO_bBgSsU4" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/Y4wyPU_B2gU" frameborder="0" allowfullscreen></iframe>
 +++
-
 
 == The planning challenge
 
