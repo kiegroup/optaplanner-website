@@ -10,5 +10,7 @@ change_frequency: yearly
 .comments
   %a(name = 'comments')
   %h2 Comments
-  = page.disqus_comments
+  -#= page.disqus_comments
+  %a.btn.btn-default(href="#{site.googleGroupURL}" style="margin-left: 20px")<
+    Visit our forum to comment
 = partial('blogPostBaseNavigation.html.haml', :outputPage => page, :post => page)
