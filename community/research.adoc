@@ -14,10 +14,11 @@ To reference OptaPlanner or the user manual, please use this BibTeX reference:
 
 ----
 @manual{optaplanner,
-  author        = {Geoffrey De Smet et al},
+  author        = {De Smet, Geoffrey and open source contributors},
   title         = {OptaPlanner User Guide},
-  organization  = {Red Hat and the community},
+  year          = {2006},
+  organization  = {Red Hat, Inc. or third-party contributors},
   url           = {https://www.optaplanner.org},
-  note          = {OptaPlanner is an open source constraint satisfaction solver in Java}
+  note          = {OptaPlanner is an open source constraint solver in Java}
 }
 ----
