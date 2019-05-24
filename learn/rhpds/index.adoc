@@ -1,4 +1,4 @@
-= RHPDS instructions for OptaPlanner demo's
+= RHPDS instructions for OptaPlanner demos
 :awestruct-description: How to demo OptaPlanner with RHPDS
 :awestruct-layout: normalBase
 :awestruct-priority: 0.1
