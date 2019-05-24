@@ -1,5 +1,5 @@
-= RHPDS instructions for OptaWeb Vehicle Routing
-:awestruct-description: How to demo OptaPlanner with RHPDS
+= RHPDS instructions for OptaWeb Employee Rostering
+:awestruct-description: How to demo OptaWeb Employee Rostering with RHPDS
 :awestruct-layout: normalBase
 :awestruct-priority: 0.1
 :showtitle:
