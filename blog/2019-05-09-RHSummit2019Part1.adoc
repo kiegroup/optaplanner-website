@@ -3,7 +3,7 @@
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
 :awestruct-tags: [useCase, vehicle routing, maintenance scheduling, insight]
-:awestruct-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.png
+:awestruct-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 This year, my team and I participated in the Red Hat Summit keynote.
 In front of 7000 people, we demonstrated real-time scheduling,

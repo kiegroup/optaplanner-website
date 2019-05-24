@@ -3,7 +3,7 @@
 :awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
 :awestruct-tags: [integration, production, coding]
-:awestruct-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.png
+:awestruct-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 
 The more smart devices are connected to the internet, the more in need of smarter systems we are.
