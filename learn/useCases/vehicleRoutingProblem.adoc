@@ -49,6 +49,10 @@ image:integrationWithRealMaps.png[Integration with real maps]
 +++
 
 +++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/ylPEIf7Mc2M" frameborder="0" allowfullscreen></iframe>
++++
+
++++
 <iframe width="853" height="480" src="https://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
 +++
 

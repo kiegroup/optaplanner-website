@@ -1,0 +1,14 @@
+= RHPDS instructions for OptaPlanner demo's
+:awestruct-description: How to demo OptaPlanner with RHPDS
+:awestruct-layout: normalBase
+:awestruct-priority: 0.1
+:showtitle:
+
+== Visit RHPDS
+
+https://rhpds.redhat.com/[Visit RHPDS]
+
+== Available demo's on RHPDS
+
+* link:optaweb-vehicle-routing.adoc[OptaWeb Vehicle Routing]
+* link:optaweb-employee-rostering.adoc[OptaWeb Employee Rostering]

@@ -1,0 +1,15 @@
+= RHPDS instructions for OptaWeb Vehicle Routing
+:awestruct-description: How to demo OptaPlanner with RHPDS
+:awestruct-layout: normalBase
+:awestruct-priority: 0.1
+:showtitle:
+
+== Video instructions
+
++++
+<iframe width="853" height="480" src="https://www.youtube.com/embed/3CvadujUN1k" frameborder="0" allowfullscreen></iframe>
++++
+
+== Written instructions
+
+Coming soon.
