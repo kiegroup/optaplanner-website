@@ -487,8 +487,9 @@
   location: Boston, MA, USA
   date: 2019-05-07
   talks:
-  - title: "Special surprise"
-
+  - title: "Keynote demo"
+    url: https://youtu.be/FUu4kMc0PL8?t=7185
+    presenters: Burr Sutter, Paolo Patierno, Stuart Douglas, Hiram Chirino, Sanjay Arora, Geoffrey De Smet
 
 - eventId: 20190601-beercitycode
   eventOrganization: "Beer City Code"
@@ -498,3 +499,15 @@
   talks:
   - title: "Deciding things with OptaPlanner"
     presenters: Kevin Greene
+
+- eventId: 20191104-devoxxbe
+  eventOrganization: "Devoxx BE"
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2019-11-04
+
+- eventId: 20200427-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/summit/
+  location: San Francisco, CA, USA
+  date: 2020-04-27
