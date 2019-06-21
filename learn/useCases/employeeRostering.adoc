@@ -7,6 +7,9 @@
 
 image:employeeRosteringValueProposition.png[Employee rostering value proposition]
 
+**https://github.com/kiegroup/optaweb-employee-rostering[Fork our Employee Rostering application]
+and customize that template to your needs.**
+
 == What is OptaPlanner?
 
 OptaPlanner is the leading Open Source Java™ AI constraint solver
