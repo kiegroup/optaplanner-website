@@ -10,5 +10,5 @@ https://rhpds.redhat.com/[Visit RHPDS]
 
 == Available demos on RHPDS
 
-* link:optaweb-vehicle-routing.adoc[OptaWeb Vehicle Routing]
-* link:optaweb-employee-rostering.adoc[OptaWeb Employee Rostering]
+* link:optaweb-vehicle-routing.html[OptaWeb Vehicle Routing]
+* link:optaweb-employee-rostering.html[OptaWeb Employee Rostering]
