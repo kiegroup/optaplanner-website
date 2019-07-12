@@ -17,7 +17,7 @@ OptaPlanner是一个基于Apache软件许可的开源软件。它使用100％纯
 
 * https://zhuanlan.zhihu.com/p/35369689[OptaPlanner - 把example运行起来]
 * https://zhuanlan.zhihu.com/kentzhang[OptaPlanner专栏文章]
-* https://www.blogger.com/blogger.g?tab=mj&blogID=4932110532139074039&pli=1#allposts[中文Blog(海外)]
+* https://optaplanner-cn.blogspot.com[中文Blog(海外)]
 
 == 相关论坛
 * https://groups.google.com/forum/#!forum/optaplanner-cn[OptaPlanner中文讨论组]
