@@ -500,6 +500,15 @@
   - title: "Deciding things with OptaPlanner"
     presenters: Kevin Greene
 
+- eventId: 20190820-soujava
+  eventOrganization: "SouJava"
+  location: São Paulo, Brasil
+  date: 2019-08-20
+  talks:
+  - title: "Resolvendo problemas de planejamento com o OptaPlanner"
+    url: https://www.meetup.com/pt-BR/SouJava/events/263502883/
+    presenters: Felipe Souto
+
 - eventId: 20191104-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
