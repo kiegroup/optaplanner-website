@@ -227,6 +227,14 @@
   employedBy: Red Hat
   ircNickname: mtalluzi
 
+- userId: wmedvede
+  fullName: Walter Medvedeo
+  role: Senior Software Engineer
+  gravatarHashId: 4a8c787544c0b40bc033f631dc2256c2
+  employedBy: Red Hat
+  githubUsername: wmedvede
+  ircNickname: wmedvede
+
 - userId: jgoldsmith613
   fullName: Justin Goldsmith
   role: Contributor
