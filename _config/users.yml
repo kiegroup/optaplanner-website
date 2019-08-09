@@ -235,6 +235,15 @@
   githubUsername: wmedvede
   ircNickname: wmedvede
 
+- userId: jucui
+  fullName: Julian Cui
+  role: OptaWeb Employee Rostering developer
+  gravatarHashId: 2b5082fae5f8470b4bcf303f450e1ead
+  githubUsername: cuijulian
+  email: jucui AT redhat.com
+  employedBy: Red Hat
+  ircNickname: jucui
+
 - userId: jgoldsmith613
   fullName: Justin Goldsmith
   role: Contributor
