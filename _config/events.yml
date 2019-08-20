@@ -509,6 +509,34 @@
     url: https://www.meetup.com/pt-BR/SouJava/events/263502883/
     presenters: Felipe Souto
 
+- eventId: 20190916-rhteapac
+  eventOrganization: "Red Hat APAC tech exchange"
+  eventUrl: https://www.redhat.com/en/events/rhte-apac2019
+  location: Seoul, South Korea
+  date: 2019-09-16
+  talks:
+  - title: "Hands-on lab: Building your first optimization app using OptaPlanner's AI constraint solver"
+    presenters: Duncan Doyle
+
+- eventId: 20191008-rhforumbe
+  eventOrganization: "Red Hat Forum Belgium"
+  eventUrl: https://www.redhat.com/en/events
+  location: Brussels, Belgium
+  date: 2019-10-08
+  talks:
+  - title: "How AI can boost your productivity, reduce costs & make your employees happy"
+    url: https://www.redhat.com/en/events/benelux-events
+    presenters: Geoffrey De Smet, Ronald Meuwsen
+
+- eventId: 20191009-rhforumnl
+  eventOrganization: "Red Hat Forum Netherlands"
+  eventUrl: https://www.redhat.com/en/events
+  location: Utrecht, Netherlands
+  date: 2019-10-09
+  talks:
+  - title: "How AI can boost your productivity, reduce costs & make your employees happy"
+    url: https://www.redhat.com/en/events/benelux-events
+
 - eventId: 20191104-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
