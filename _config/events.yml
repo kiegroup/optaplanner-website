@@ -537,6 +537,15 @@
   - title: "How AI can boost your productivity, reduce costs & make your employees happy"
     url: https://www.redhat.com/en/events/benelux-events
 
+- eventId: 20191204-infofarmtraining
+  eventOrganization: "Infofarm"
+  location: Kontich, Belgium
+  date: 2019-12-04
+  talks:
+  - title: "Business Optimizer (OptaPlanner) bootcamp training"
+    url: https://www.thecampus.be/business-optimizer-bootcamp-optaplanner
+    presenters: Glenn Cich
+
 - eventId: 20191104-devoxxbe
   eventOrganization: "Devoxx BE"
   eventUrl: https://www.devoxx.be
