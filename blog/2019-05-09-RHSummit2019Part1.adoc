@@ -112,6 +112,9 @@ https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's 
 * To learn more about the scaling challenges and *the benchmarks on simulations and load tests we ran*,
 https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article (part 3)].
 
+To run it yourself, download https://github.com/rhdemo/2019-demo4-optaplanner[the source code]
+and follow the readme instructions.
+
 ---
 
 Let me thank the entire team for their great work
