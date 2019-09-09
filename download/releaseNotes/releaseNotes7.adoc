@@ -5,6 +5,27 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.27.0.Final (NOT YET RELEASED)
+
+=== Pillar moves are faster
+
+`PillarSwapMove` and `PillarChangeMove` have seen improvements under the hood and are now faster. We have observed
+increases in throughput of around 5 %. Your mileage may vary.
+
+=== Sequential sub pillars
+
+`PillarSwapMove` and `PillarChangeMove` now support sequential sub pillars, bringing better scores on examples with
+clear entity succession, such as with shifts of a nurse. The simplest configuration of sequential sub pillars looks like
+this:
+
+[source,xml,options="nowrap"]
+----
+<pillar...MoveSelector>
+  <subPillarType>SEQUENCE</subPillarType>
+</pillar...MoveSelector>
+----
+
+For more information, please refer to link:/learn/documentation.html[Documentation].
 
 == New and noteworthy: Engine 7.20.0.Final
 
