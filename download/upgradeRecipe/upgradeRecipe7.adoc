@@ -2751,10 +2751,11 @@ end
 
 == From 7.26.0.Final to 7.27.0.Final
 
-=== `subPilarEnabled` property is deprecated
+=== Property `subPilarEnabled` in move selector configuration is deprecated
 
-The `subPillarEnabled` property has been deprecated and replaced by a new property, `subPillarType`. The default value
-for the deprecated property has always been `true`. The new way to manually override that to `false` is as follows.
+The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has been deprecated and
+replaced by a new property, `subPillarType`. The default value for the deprecated property has always been `true`. The
+new way to manually override that to `false` is as follows.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
