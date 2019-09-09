@@ -2748,3 +2748,35 @@ rule "Language diversity"
         scoreHolder.reward(kcontext);
 end
 ----
+
+== From 7.26.0.Final to 7.27.0.Final
+
+=== `subPilarEnabled` property is deprecated
+
+The `subPillarEnabled` property has been deprecated and replaced by a new property, `subPillarType`. The default value
+for the deprecated property has always been `true`. The new way to manually override that to `false` is as follows.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <pillar...MoveSelector>
+        ...
+        <pillarSelector>
+          <subPillarEnabled>false</subPillarEnabled>
+          ...
+        </pillarSelector>
+        ...
+      </pillar...MoveSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+      <pillar...MoveSelector>
+        <subPillarType>NONE</subPillarType>
+        <pillarSelector>
+          ...
+        </pillarSelector>
+        ...
+      </pillar...MoveSelector>
+----
