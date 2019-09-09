@@ -28,5 +28,5 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 == Videos
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/ksXjQ851RAU" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/ksXjQ851RAU" frameborder="0" allowfullscreen></iframe>
 +++

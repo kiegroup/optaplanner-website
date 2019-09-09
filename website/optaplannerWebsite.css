@@ -99,6 +99,18 @@ li.navbar-form {
     margin-right: 0;
 }
 
+img {
+    /* Mobile friendly: No content wider than screen */
+    max-width: 100%;
+}
+
+iframe.youtube {
+    width: 853px;
+    height: 480px;
+    /* Mobile friendly: No content wider than screen */
+    max-width: 100%;
+}
+
 .summaryParagraph {
     font-size: larger;
 }

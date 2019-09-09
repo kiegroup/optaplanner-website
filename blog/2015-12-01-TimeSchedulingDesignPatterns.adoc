@@ -26,7 +26,7 @@ In the _Timeslot_ pattern, all entities have *the same duration*. For example in
 Each lecture is assigned to 1 room and 1 timeslot.
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/4meWIhPRVn8?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/4meWIhPRVn8?rel=0" frameborder="0" allowfullscreen></iframe>
 +++
 
 == TimeGrain pattern
@@ -37,7 +37,7 @@ for example in meeting scheduling, expecting people to show up at exactly 3 seco
 Therefore scheduling on such a fine-grained accuracy would actually be counter-productive.
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
 +++
 
 == Chained Through Time pattern
@@ -47,7 +47,7 @@ For example in vehicle routing with time windows, each vehicle drives from custo
 The starting time of each planning entity is calculated based on the ending time of the previous planning entity.
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/BxO3UFmtAPg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/BxO3UFmtAPg?rel=0" frameborder="0" allowfullscreen></iframe>
 +++
 
 This pattern also works well for scheduling TV advertisements, because each advertisement starts when the previous ends.

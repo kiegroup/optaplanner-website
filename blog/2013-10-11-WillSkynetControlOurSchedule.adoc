@@ -53,7 +53,7 @@ image::skynet5.png[]
 If you want to see this in action, skip to the end of this video:
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/4meWIhPRVn8" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/4meWIhPRVn8" frameborder="0" allowfullscreen></iframe>
 +++
 
 == The human must remain in control
