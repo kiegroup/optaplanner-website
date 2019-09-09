@@ -8,5 +8,5 @@ See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geo
 for a list of all videos.
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/videoseries?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&showinfo=1" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/videoseries?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns&showinfo=1" frameborder="0" allowfullscreen></iframe>
 +++

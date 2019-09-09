@@ -111,7 +111,7 @@ Before sending this file to the users, we hide row 2 to 11, so the user isn't ex
 See this video for a detailed demonstration:
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/K084NKRZqkg" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/K084NKRZqkg" frameborder="0" allowfullscreen></iframe>
 +++
 
 Note that a _decision table_ is more powerful then a _data driven DRL rule_: the user decides which conditions to apply.

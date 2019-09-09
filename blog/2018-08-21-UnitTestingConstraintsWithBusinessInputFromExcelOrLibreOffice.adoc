@@ -111,5 +111,5 @@ To test score rules in an `xlsx` file:
 https://www.optaplanner.org/blog/2018/02/19/SchedulingVoxxedDaysZurich2018.html[Scheduling Voxxed Days Zurich 2018 with OptaPlanner]
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
 +++

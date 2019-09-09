@@ -77,7 +77,7 @@ I created an OptaPlanner Android application named _Vehicle Routing Problem_. It
 application from OptaPlanner Examples. See this video for a detailed demonstration:
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/WpfjS6I5HGg" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/WpfjS6I5HGg" frameborder="0" allowfullscreen></iframe>
 +++
 
 https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[Get this app from the Google Play app store now.]

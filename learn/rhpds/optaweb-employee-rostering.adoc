@@ -7,7 +7,7 @@
 == Video instructions
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/3CvadujUN1k" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/3CvadujUN1k" frameborder="0" allowfullscreen></iframe>
 +++
 
 == Written instructions

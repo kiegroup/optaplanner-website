@@ -51,17 +51,17 @@ image:integrationWithRealMaps.png[Integration with real maps]
 == Videos
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/eG_ky8jIRBk" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/eG_ky8jIRBk" frameborder="0" allowfullscreen></iframe>
 +++
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/ylPEIf7Mc2M" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/ylPEIf7Mc2M" frameborder="0" allowfullscreen></iframe>
 +++
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
 +++
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/4hp_Qg1hFgE" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/4hp_Qg1hFgE" frameborder="0" allowfullscreen></iframe>
 +++

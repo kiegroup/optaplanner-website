@@ -15,7 +15,7 @@ Let's take a sneak peek at that.
 == Video
 
 +++
-<iframe width="853" height="480" src="https://www.youtube.com/embed/XB1_juPoWiU?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe class="youtube" src="https://www.youtube.com/embed/XB1_juPoWiU?rel=0" frameborder="0" allowfullscreen></iframe>
 +++
 
 == The CloudBalancing example
