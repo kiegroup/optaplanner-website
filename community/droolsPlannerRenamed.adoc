@@ -33,7 +33,7 @@ From a business point of view, there's *little or no change*:
 
 * The mission remains unchanged:
 
-** We're still 100% committed to put _business resource optimization_ in the hands of normal Java developers.
+** We're still 100% committed to put _business resource optimization_ in the hands of everyday Java developers.
 
 * The license remains unchanged:
 
