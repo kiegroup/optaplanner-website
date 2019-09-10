@@ -5,7 +5,16 @@
 :awestruct-related_tag: vehicle routing
 :showtitle:
 
+The Vehicle Routing Problem (VRP) optimizes the routes of delivery trucks,
+cargo lorries, public transportation (buses, taxi's and airplanes)
+or technicians on the road, by improving the order of the visits.
+This routing optimization heavily reduces driving time and fuel consumption compared to manual planning:
+
 image:vehicleRoutingValueProposition.png[Vehicle routing value proposition]
+
+OptaPlanner is flexible enough to handle any VRP variant.
+It includes examples of CVRP (Capacitated Vehicle Routing Problem)
+and VRPTW (Vehicle Routing Problem with Time Windows).
 
 **https://github.com/kiegroup/optaweb-vehicle-routing[Fork our Vehicle Routing application]
 and customize that template to your needs.**
@@ -34,6 +43,7 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 Many enterprises face a vehicle routing problem daily:
 *determine the optimal order to deliver a number of items to number of locations with a fleet of vehicles*.
 They face this problem to restock their shops, to deliver products/services to customers, to fulfill maintenance on their devices, ...
+For example, truck routing with google maps:
 
 image:vehicleRoutingGoogleMapsDirections.png[Vehicle routing with Google Maps]
 
