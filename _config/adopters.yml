@@ -1,15 +1,17 @@
-# To add a reference in the GitHub user interface, click on the Edit button at the top right which will submit a pull request.
-# IMPORTANT: Only add references that publicly stated they use OptaPlanner.
+# To add an adopter in the GitHub user interface, click on the Edit button at the top right which will submit a pull request.
+# IMPORTANT: Only add adopters that publicly stated they use OptaPlanner.
 
-- referenceId: thyssenkrupp-elevator-maintenance-scheduling
+- adopterId: thyssenkrupp-elevator-maintenance-scheduling
   company: Thyssenkrupp US
   inProductionYear: 2007
   useCaseDescription: Plan when to do maintenance of 220K+ elevators and escalators over 2500+ mechanics.
   resources:
     - resourceName: Public presentation at Red Hat Summit 2017
       resourceUrl: https://www.redhat.com/files/summit/session-assets/2017/S103192-goldsmith.pdf
+    - resourceName: Public presentation at Red Hat Summit 2019
+      resourceUrl: https://www.youtube.com/watch?v=rgi1YzAvBKk
 
-- referenceId: axians-employee-rostering
+- adopterId: axians-employee-rostering
   company: Axians
   inProductionYear: 2008
   useCaseDescription: Schedule shifts of hospital doctors.
@@ -17,4 +19,4 @@
   - resourceName: Software myStaff OnCall
     resourceUrl: https://healthcare.axians.be/solutions/mystaff/oncall/
 
-# TODO Add the other public references over the years (and persuade more customers/users to go public)
+# TODO Add the other public adopters over the years (and persuade more customers/users to go public)
