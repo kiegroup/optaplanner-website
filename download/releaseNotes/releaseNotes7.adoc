@@ -5,6 +5,13 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.28.0.Final (NOT YET RELEASED)
+
+=== OptaPlanner Web Examples are no more
+
+The optaplanner-webexamples module was removed from distribution and the Git repository. It has been superseded by the
+link:../../learn/rhpds/[OptaWeb examples].
+
 == New and noteworthy: Engine 7.27.0.Final
 
 === Pillar moves are faster
@@ -26,11 +33,6 @@ like this:
 ----
 
 For more information, please refer to link:../../learn/documentation.html[Documentation].
-
-=== OptaPlanner Web Examples are no more
-
-The optaplanner-webexamples module was removed from distribution and the Git repository. It has been superseded by the
-link:../../learn/rhpds/[OptaWeb examples].
 
 == New and noteworthy: Engine 7.20.0.Final
 
