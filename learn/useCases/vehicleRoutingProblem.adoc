@@ -54,7 +54,7 @@ and - of course - advanced construction heuristics and metaheuristics.
 
 == Integration with real maps
 
-As demonstrated in the web examples, integration with Google Maps or OpenStreetMap is straightforward:
+As demonstrated in link:../../learn/rhpds/optaweb-vehicle-routing.html[OptaWeb Vehicle Routing], integration with Google Maps or OpenStreetMap is straightforward:
 
 image:integrationWithRealMaps.png[Integration with real maps]
 
