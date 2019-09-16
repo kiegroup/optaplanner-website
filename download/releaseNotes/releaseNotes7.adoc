@@ -9,8 +9,8 @@
 
 === OptaPlanner Web Examples are no more
 
-The `optaplanner-webexamples` module was removed from distribution and the Git repository. It has been superseded by the
-link:../../learn/rhpds/[OptaWeb examples].
+The `optaplanner-webexamples` module was removed from distribution and the Git repository. It has been superseded by
+https://github.com/kiegroup/optaweb-vehicle-routing[OptaWeb Vehicle Routing].
 
 == New and noteworthy: Engine 7.27.0.Final
 
