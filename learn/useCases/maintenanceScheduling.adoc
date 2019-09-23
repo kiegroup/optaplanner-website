@@ -1,5 +1,5 @@
 = Maintenance scheduling
-:awestruct-description: Use OptaPlanner (java™, open source) to optimize assigning tasks to employees with different skills and affinities.
+:awestruct-description: Use OptaPlanner (java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLA's and other constraints.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0
 :awestruct-related_tag: maintenance scheduling
