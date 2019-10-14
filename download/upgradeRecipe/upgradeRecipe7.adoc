@@ -2572,7 +2572,6 @@ public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<Cl
 ----
 
 
-
 [.upgrade-recipe-readme]
 === Don't hard-code the score weights
 
@@ -2749,13 +2748,16 @@ rule "Language diversity"
 end
 ----
 
+
 == From 7.26.0.Final to 7.27.0.Final
+
 
 === Property `subPilarEnabled` in move selector configuration is deprecated
 
-The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has been deprecated and
-replaced by a new property, `subPillarType`. The default value for the deprecated property has always been `true`. The
-new way to manually override that to `false` is as follows.
+The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has been deprecated
+and replaced by a new property, `subPillarType`.
+The default value for that subPillarEnabled was `true`.
+To manually override that to `false`, now use `subPillarType` `NONE`:
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -2780,4 +2782,100 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
         </pillarSelector>
         ...
       </pillar...MoveSelector>
+----
+
+
+== From 7.28.0.Final to 7.29.0.Final
+
+
+[.upgrade-recipe-major]
+=== `SolverFactory`: `getSolverConfig()` deprecated
+
+The method `SolverFactory.getSolverConfig()` has been deprecated
+in favor of `SolverFactory.create(SolverConfig)`.
+A `SolverConfig` is now instantiated before a `SolverFactory` is instantiated,
+which is more natural.
+
+In future versions, this change will allow the `SolverFactory` to internalize the `SolverConfig`
+to build `Solver` instances faster.
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory<MySolution> solverFactory = SolverFactory.createFromXmlResource(...);
+SolverConfig solverConfig = solverFactory.getSolverConfig()
+...
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverConfig solverConfig = SolverConfig.createFromXmlResource(...);
+...
+SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+
+[.upgrade-recipe-minor]
+=== `SolverFactory`: `cloneSolverFactory()` deprecated
+
+The method `SolverFactory.cloneSolverFactory()` has been deprecated
+in favor of the copy constructor `new SolverConfig(SolverConfig)`.
+
+Before in `*.java`:
+[source, java]
+----
+private SolverFactory<MySolution> base;
+
+public void userRequest(..., long userInput) {
+    SolverFactory<MySolution> solverFactory = base.cloneSolverFactory();
+    solverFactory.getSolverConfig()
+            .getTerminationConfig()
+            .setMinutesSpentLimit(userInput);
+    Solver<MySolution> solver = solverFactory.buildSolver();
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+private SolverConfig base;
+
+public void userRequest(..., long userInput) {
+    SolverConfig solverConfig = new SolverConfig(base); // Copy it
+    solverConfig.getTerminationConfig()
+            .setMinutesSpentLimit(userInput);
+    SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+    Solver<MySolution> solver = solverFactory.buildSolver();
+    ...
+}
+----
+
+
+
+[.upgrade-recipe-minor]
+=== `SolverFactory`: `createEmpty()` deprecated
+
+The method `SolverFactory.createEmpty()` has been deprecated
+in favor of `new SolverConfig()`.
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory<MySolution> solverFactory = SolverFactory.createEmpty();
+SolverConfig solverConfig = solverFactory.getSolverConfig()
+...
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverConfig solverConfig = new SolverConfig();
+...
+SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+Solver<MySolution> solver = solverFactory.buildSolver();
 ----
