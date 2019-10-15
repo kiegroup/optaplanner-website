@@ -257,3 +257,11 @@
   gravatarHashId: 897f2ff7d7a84cb3769d27a9889520c9
   githubUsername: sudheerchekka
   employedBy: Red Hat
+  
+- userId: FredPraca
+  fullName: Frédéric Praca
+  role: Contributor
+  gravatarHashId: f00d70c0d52205a685b8e7d919e41522
+  twitterUsername: FredPraca
+  linkedInId: fredpraca
+  contributionsDescription: Only dependencies version upgrade
