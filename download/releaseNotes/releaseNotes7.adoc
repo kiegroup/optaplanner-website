@@ -5,12 +5,12 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
-== New and noteworthy: Engine 7.28.0.Final (NOT YET RELEASED)
+== New and noteworthy: Engine 7.28.0.Final
 
 === OptaPlanner Web Examples are no more
 
-The `optaplanner-webexamples` module was removed from distribution and the Git repository. It has been superseded by
-https://github.com/kiegroup/optaweb-vehicle-routing[OptaWeb Vehicle Routing].
+The `optaplanner-webexamples` module was removed from distribution and the Git repository.
+It has been superseded by https://github.com/kiegroup/optaweb-vehicle-routing[OptaWeb Vehicle Routing].
 
 == New and noteworthy: Engine 7.27.0.Final
 

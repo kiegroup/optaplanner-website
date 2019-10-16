@@ -2802,8 +2802,8 @@ to build `Solver` instances faster.
 Before in `*.java`:
 [source, java]
 ----
-SolverFactory<MySolution> solverFactory = SolverFactory.createFromXmlResource(...);
-SolverConfig solverConfig = solverFactory.getSolverConfig()
+SolverFactory<MySolution> solverFactory = SolverFactory.createFromXmlResource(".../mySolverConfig.xml");
+SolverConfig solverConfig = solverFactory.getSolverConfig();
 ...
 Solver<MySolution> solver = solverFactory.buildSolver();
 ----
@@ -2811,11 +2811,14 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 After in `*.java`:
 [source, java]
 ----
-SolverConfig solverConfig = SolverConfig.createFromXmlResource(...);
+SolverConfig solverConfig = SolverConfig.createFromXmlResource(".../mySolverConfig.xml");
 ...
 SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
 Solver<MySolution> solver = solverFactory.buildSolver();
 ----
+
+If you were also passing a `ClassLoader`,
+pass it to both `SolverConfig.createFromXmlResource()` and `SolverFactory.create()`.
 
 
 [.upgrade-recipe-minor]
@@ -2855,7 +2858,6 @@ public void userRequest(..., long userInput) {
 ----
 
 
-
 [.upgrade-recipe-minor]
 === `SolverFactory`: `createEmpty()` deprecated
 
@@ -2879,3 +2881,56 @@ SolverConfig solverConfig = new SolverConfig();
 SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
 Solver<MySolution> solver = solverFactory.buildSolver();
 ----
+
+
+[.upgrade-recipe-minor]
+=== `PlannerBenchmarkFactory`: `getPlannerBenchmarkConfig()` deprecated
+
+The method `PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has been deprecated
+in favor of `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)`.
+A `PlannerBenchmarkConfig` is now instantiated before a `PlannerBenchmarkFactory` is instantiated,
+which is more natural.
+
+Before in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(".../myBenchmarkConfig.xml");
+PlannerBenchmarkConfig benchmarkConfig = benchmarkFactory.getPlannerBenchmarkConfig();
+...
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+After in `*.java`:
+[source, java]
+----
+PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(".../myBenchmarkConfig.xml");
+...
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchmarkConfig);
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory`: `createFromSolverFactory()` deprecated
+
+The method `PlannerBenchmarkFactory.createFromSolverFactory()` has been deprecated
+in favor of `PlannerBenchmarkFactory.createFromSolverConfigXmlResource(String)`.
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
+        "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverFactory(solverFactory);
+----
+
+After in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverConfigXmlResource(
+        "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+----
+
+If you programmatically adjust the solver configuration,
+you can use `PlannerBenchmarkConfig.createFromSolverConfig(SolverConfig)`
+and then `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)` instead.
