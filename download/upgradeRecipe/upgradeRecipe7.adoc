@@ -2894,7 +2894,8 @@ which is more natural.
 Before in `*.java`:
 [source, java]
 ----
-PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(".../myBenchmarkConfig.xml");
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
 PlannerBenchmarkConfig benchmarkConfig = benchmarkFactory.getPlannerBenchmarkConfig();
 ...
 PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
@@ -2903,7 +2904,8 @@ PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
 After in `*.java`:
 [source, java]
 ----
-PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(".../myBenchmarkConfig.xml");
+PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
 ...
 PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchmarkConfig);
 PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
@@ -2920,7 +2922,7 @@ Before in `*.java`:
 [source, java]
 ----
 SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
-        "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+        ".../cloudBalancingSolverConfig.xml");
 PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverFactory(solverFactory);
 ----
 
@@ -2928,9 +2930,34 @@ After in `*.java`:
 [source, java]
 ----
 PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverConfigXmlResource(
-        "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+        ".../cloudBalancingSolverConfig.xml");
 ----
 
 If you programmatically adjust the solver configuration,
 you can use `PlannerBenchmarkConfig.createFromSolverConfig(SolverConfig)`
 and then `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)` instead.
+
+
+[.upgrade-recipe-minor]
+=== `BenchmarkAggregatorFrame`: `createAndDisplay(PlannerBenchmarkFactory)` deprecated
+
+The method `BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkFactory)` has been deprecated
+in favor of `BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(String)`.
+
+Before in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+BenchmarkAggregatorFrame.createAndDisplay(benchmarkFactory);
+----
+
+After in `*.java`:
+[source, java]
+----
+BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+----
+
+If you programmatically adjust the benchmark configuration,
+you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
