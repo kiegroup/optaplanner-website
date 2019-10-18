@@ -2961,3 +2961,30 @@ BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
 
 If you programmatically adjust the benchmark configuration,
 you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
+
+
+
+[.upgrade-recipe-major]
+=== `Solver`: `getScoreDirectorFactory()` deprecated
+
+The method `Solver.getScoreDirectorFactory()` has been deprecated
+in favor of `SolverFactory.getScoreDirectorFactory()`.
+
+Now you don't need to create a `Solver` instance just to calculate or explain a score in the UI.
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
+Solver<VehicleRoutingSolution> solver = solverFactory.buildSolver();
+uiScoreDirectorFactory = solver.getScoreDirectorFactory();
+...
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
+uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
+...
+----
