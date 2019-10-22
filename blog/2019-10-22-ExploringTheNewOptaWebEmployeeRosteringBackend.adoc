@@ -1,14 +1,16 @@
-= What's New in OptaWeb Employee Rostering? - Making the Backend Cloud-Ready
+= Exploring the new OptaWeb Employee Rostering backend
 :page-interpolate: true
 :awestruct-author: jucui
 :awestruct-layout: blogPostBase
 :awestruct-tags: [employee rostering, coding, algorithm, production]
 
-Recently, the OptaPlanner team has been shifting towards cloud-native applications.
-As a part of this effort, we migrated the OptaWeb Employee Rostering Backend Application from WildFly to Spring Boot.
+To help you solve employee shift rostering challenges,
+we maintain an end-to-end web application called OptaWeb Employee Rostering.
+It is a web application that optimizes shift scheduling for maximum efficiency and fairness for employees.
+Scheduling guards is very different from scheduling nurses, therefore you can fork and customize the code to your requirements.
 
-OptaWeb Employee Rostering is a web application that optimizes shift scheduling for maximum efficiency and fairness for employees.
-In this post we'll give an overview of the new Spring backend application, and the key features that were added on top of the existing backend.
+Recently, we rewrote the frontend and backend in modern technologies.
+In this post I'll give an overview of the new backend and the key features that were added.
 
 == The Problem
 
@@ -20,7 +22,7 @@ image::employeeRosteringValueProposition.png[]
 Many company workplaces need solutions to this problem, from hospitals to call centers.
 There are many factors to consider when assigning shifts to employees, such as required skills, employee availabilities, and employee fairness.
 So how do we find the best solution?
-With OptaPlanner, of course!
+With https://www.optaplanner.org[OptaPlanner], of course!
 
 == Domain Model
 
@@ -29,10 +31,10 @@ A domain model represents the entities (Java objects) and how they relate with o
 It tells us the behaviour of the objects and how they change during solving.
 Here's a class diagram of the Employee Rostering model, where employees are nurses:
 
-image::employeeRosteringClassDiagram.png[]
+image::optaWebEmployeeRosteringClassDiagram.png[]
 
 Each of the blocks above represents a Java entity object in our application, which are saved in a database for solving.
-We use Spring JPA as our persistence layer.
+We use JPA (Hibernate) as our persistence layer.
 The arrows show how certain entities map to others, so changing one during the solving process may affect another.
 The `*` and `1` symbols on the arrows represent a many-to-one mapping of the entities in the database.
 
@@ -145,7 +147,7 @@ We can see them in JSON format above.
 
 Nice, we just sent our first HTTP request!
 But the Employee Rostering application does much more than just getting entities.
-There are methods for creating, deleting, and updating various entities (remember the <<Domain Model>> above?), which the application uses to modify the database, as well as methods that interact with the OptaPlanner API.
+There are methods for creating, deleting, and updating various entities (remember the Domain Model above), which the application uses to modify the database, as well as methods that interact with the OptaPlanner API.
 
 Let's try a more interesting method:
 
@@ -178,10 +180,12 @@ You've just found an optimal employee shift arrangement given the time and busin
 
 == Conclusion
 
-In the process of migrating the OptaWeb Employee Rostering backend application to another Java framework, we added and used various tools for better user and developer experience.
-The most notable tools included the H2 Database Console for JPA persistence testing, adding the `InitialData` system property to configure the startup demo data, and Swagger for REST API testing and documentation.
+In the process of migrating the OptaWeb Employee Rostering backend application to another Java framework,
+we added and used various tools for better user and developer experience.
+The most notable tools included the H2 Database Console for JPA persistence testing,
+adding the `InitialData` system property to configure the startup demo data, and Swagger for REST API testing and documentation.
 
 Of course, we don't expect users to interact with the application through H2 and Swagger, that's what a user interface is for!
-The UI for this application was implemented in the Employee Rostering Frontend Application, written in React Javascript.
+The UI for this application was implemented in the Employee Rostering Frontend Application, written in React.js.
 
-* To build and run the application for yourself, check out the https://github.com/kiegroup/optaweb-employee-rostering[source code].
+*To build and run the application for yourself, check out the https://github.com/kiegroup/optaweb-employee-rostering[source code].*
