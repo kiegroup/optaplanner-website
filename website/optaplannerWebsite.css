@@ -104,7 +104,7 @@ img {
     max-width: 100%;
 }
 
-iframe.youtube {
+iframe.youtube, .videoblock iframe {
     width: 853px;
     height: 480px;
     /* Mobile friendly: No content wider than screen */
