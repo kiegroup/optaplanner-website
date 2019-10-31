@@ -6,7 +6,7 @@
 
 == Video instructions
 
-video::ylPEIf7Mc2M[youtube,width=853,height=480]
+video::ylPEIf7Mc2M[youtube]
 
 == Written instructions
 
