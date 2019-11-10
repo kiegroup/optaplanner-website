@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [insight, algorithm]
+:awestruct-tags: [insight, algorithm, school timetabling]
 
 Given an planning or optimization problem, how big is the search space?
 Can we hope to enumerate every possible solution, looking for the optimal solution?

@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [feature, howto, course scheduling]
+:awestruct-tags: [feature, howto, school timetabling]
 
 So we solved the planning problem and found a best solution which has a score of `0hard/-123soft`.
 Why `-123soft`? Where does that penalty come from? Which constraints are broken?
