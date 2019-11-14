@@ -76,6 +76,15 @@
   employedBy: Red Hat
   ircNickname: ddoyle
 
+- userId: kmacedovarela
+  fullName: Karina Macedo Varela
+  role: Technical Marketing Manager
+  gravatarHashId: fb91bf1fe30f9b7d5fd6f96a8e959096
+  twitterUsername: kvarel4
+  linkedInId: kmacedovarela
+  ircNickname: kvarela
+  employedBy: Red Hat
+
 - userId: elsam
   fullName: Sam Van Malderen
   role: Contributor
@@ -265,3 +274,4 @@
   twitterUsername: FredPraca
   linkedInId: fredpraca
   contributionsDescription: Only dependencies version upgrade
+
