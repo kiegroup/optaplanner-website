@@ -3,7 +3,7 @@
 
 - adopterId: thyssenkrupp-elevator-maintenance-scheduling
   company: Thyssenkrupp US
-  inProductionYear: 2007
+  inProductionYear: 2017
   useCaseDescription: Plan when to do maintenance of 220K+ elevators and escalators over 2500+ mechanics.
   resources:
     - resourceName: Public presentation at Red Hat Summit 2017
@@ -13,7 +13,7 @@
 
 - adopterId: axians-employee-rostering
   company: Axians
-  inProductionYear: 2008
+  inProductionYear: 2018
   useCaseDescription: Schedule shifts of hospital doctors.
   resources:
   - resourceName: Software myStaff OnCall
@@ -28,3 +28,4 @@
 # Healthcare https://hashedin.com/blog/nurse-rostering-through-optaplanner/
 # IYPT Jury Planner https://github.com/yurloc/iypt-planner
 # Visual Planning Board with SAP integration https://twitter.com/schelldorfer/status/1183747470385405952
+# Nurse rostering in an Australian hospital (2019): https://www.youtube.com/watch?v=W5cSnaBk0WQ
