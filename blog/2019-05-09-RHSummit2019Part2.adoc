@@ -109,6 +109,4 @@ who can set up a show like no other!
 
 View the recording of our show:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/FUu4kMc0PL8?start=5785" frameborder="0" allowfullscreen></iframe>
-+++
+video::FUu4kMc0PL8[youtube, start=5785]

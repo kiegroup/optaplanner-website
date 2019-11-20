@@ -35,10 +35,6 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 
 == Videos
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/4meWIhPRVn8" frameborder="0" allowfullscreen></iframe>
-+++
+video::4meWIhPRVn8[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/u_bl6E7aiNY" frameborder="0" allowfullscreen></iframe>
-+++
+video::u_bl6E7aiNY[youtube]

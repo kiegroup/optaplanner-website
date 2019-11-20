@@ -39,14 +39,8 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 
 == Videos
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/ykF8DjxhQJI" frameborder="0" allowfullscreen></iframe>
-+++
+video::ykF8DjxhQJI[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/GnnMHkY6vKk" frameborder="0" allowfullscreen></iframe>
-+++
+video::GnnMHkY6vKk[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
-+++
+video::R0JizNdxEjU[youtube]

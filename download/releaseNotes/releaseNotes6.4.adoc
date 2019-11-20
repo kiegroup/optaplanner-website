@@ -98,9 +98,7 @@ A ksession defined in `META-INF/kmodule.xml` can now be referenced from a Solver
 
 Assign meetings of different durations to starting times and rooms.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::wLK2-4IGtWY[youtube]
 
 Also see the blog about
 https://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[time scheduling design patterns].
@@ -120,9 +118,7 @@ https://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[ti
 As https://www.optaplanner.org/blog/2015/10/01/SneakPeekAtOptaPlannerWorkbench.html[mentioned in our blog],
 we 've build first version of OptaPlanner Workbench and OptaPlanner Execution Server. Take a look at what it can do:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/t8Qu9J2D2aA?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::t8Qu9J2D2aA[youtube]
 
 To try out OptaPlanner Workbench, link:../../download/download.html[download] and deploy the KIE Workbench war and create a user with the role `plannermgmt`.
 Note that a user with the `admin` role currently doesn't see OptaPlanner screens yet.

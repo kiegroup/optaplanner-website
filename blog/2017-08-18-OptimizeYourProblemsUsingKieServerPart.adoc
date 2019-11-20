@@ -138,9 +138,7 @@ documentation for more details on the API.
 Optionally try out KIE Workbench, which integrates with the KIE Server.
 The following video demonstrates the process of setting up a Workbench example and optimizing it using the KIE Server.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/bpBGujiMCAs?ecver=1" frameborder="0" allowfullscreen></iframe>
-+++
+video::bpBGujiMCAs[youtube]
 
 == Conclusion
 

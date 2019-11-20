@@ -26,6 +26,4 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 
 == Videos
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/xhCtuM-Hiic" frameborder="0" allowfullscreen></iframe>
-+++
+video::xhCtuM-Hiic[youtube]

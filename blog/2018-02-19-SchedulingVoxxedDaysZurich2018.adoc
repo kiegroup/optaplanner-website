@@ -92,6 +92,4 @@ _This article was originally published on https://developers.redhat.com/blog/201
 
 == Related video
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
-+++
+video::R0JizNdxEjU[youtube]

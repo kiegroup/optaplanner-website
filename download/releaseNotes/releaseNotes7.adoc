@@ -277,9 +277,7 @@ Soft constraints:
 * Talk preferred room tag: If a talk has a preferred room tag, then it should be assigned to a room with that tag.
 * Talk undesired room tag: If a talk has a undesired room tag, then it should not be assigned to a room with that tag.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/R0JizNdxEjU?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::R0JizNdxEjU[youtube]
 
 === Open the benchmark report automatically
 
@@ -578,9 +576,7 @@ use the new `ScoreVerifier` support classes in `optaplanner-test`.
 Assign tasks to employee and take into account required skills, affinity with the customer and task priority.
 This example also demonstrates real-time producing and consuming of tasks.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/ksXjQ851RAU?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::ksXjQ851RAU[youtube]
 
 
 === Other Engine improvements
