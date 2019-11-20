@@ -7,7 +7,7 @@
 See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geoffrey's OptaPlanner playlist on YouTube]
 for a list of all videos.
 
-// Video ID not needed for embedded list but the video:: macro needs a value.
-// Using an invalid video ID has the same effect as not using any and results
-// in showing the newest video in the playlist.
-video::dummy[youtube, list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns]
+// Using the video_id/playlist syntax (with no video_id).
+// See https://github.com/asciidoctor/asciidoctor/pull/1187.
+// Results in showing the newest video in the playlist.
+video::/PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[youtube]
