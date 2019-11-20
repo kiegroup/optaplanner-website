@@ -25,9 +25,7 @@ image::assigningTimeToPlanningEntities.png[]
 In the _Timeslot_ pattern, all entities have *the same duration*. For example in course timetabling, all lecture take 1 hour.
 Each lecture is assigned to 1 room and 1 timeslot.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/4meWIhPRVn8?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::4meWIhPRVn8[youtube]
 
 == TimeGrain pattern
 
@@ -36,9 +34,7 @@ For most human activities, scheduling on second or subsecond accuracy is pointle
 for example in meeting scheduling, expecting people to show up at exactly 3 seconds after 9 o'clock for a meeting is overly optimistic.
 Therefore scheduling on such a fine-grained accuracy would actually be counter-productive.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/wLK2-4IGtWY?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::wLK2-4IGtWY[youtube]
 
 == Chained Through Time pattern
 
@@ -46,9 +42,7 @@ In the _Chained Through Time_ pattern, a person or machine continuously works on
 For example in vehicle routing with time windows, each vehicle drives from customer to customer, so it handles 1 customer at a time.
 The starting time of each planning entity is calculated based on the ending time of the previous planning entity.
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/BxO3UFmtAPg?rel=0" frameborder="0" allowfullscreen></iframe>
-+++
+video::BxO3UFmtAPg[youtube]
 
 This pattern also works well for scheduling TV advertisements, because each advertisement starts when the previous ends.
 

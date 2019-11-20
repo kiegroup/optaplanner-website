@@ -43,9 +43,7 @@ Deciding the order in which to fix them, as damage comes in concurrently, is dif
 Luckily, OptaPlanner schedules those mechanics for us.
 It reacts to health changes in real-time, as shown in this video:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/Y4wyPU_B2gU" frameborder="0" allowfullscreen></iframe>
-+++
+video::Y4wyPU_B2gU[youtube]
 
 == The planning challenge
 
@@ -95,9 +93,7 @@ decreases their carbon footprint, which is great for the environment too!
 https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Learn more about optimizing VRP's with OptaPlanner]
 or take a look at Jiri's latest demo of the https://github.com/kiegroup/optaweb-vehicle-routing[optaweb-vehicle-routing] reference architecture:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/ylPEIf7Mc2M" frameborder="0" allowfullscreen></iframe>
-+++
+video::ylPEIf7Mc2M[youtube]
 
 
 == The real challenges
@@ -126,6 +122,4 @@ who can set up a show like no other!
 
 View the recording of our show:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/FUu4kMc0PL8?start=5785" frameborder="0" allowfullscreen></iframe>
-+++
+video::FUu4kMc0PL8[youtube, start=5785]

@@ -76,9 +76,7 @@ dependencies {
 I created an OptaPlanner Android application named _Vehicle Routing Problem_. It is based on Vehicle routing
 application from OptaPlanner Examples. See this video for a detailed demonstration:
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/WpfjS6I5HGg" frameborder="0" allowfullscreen></iframe>
-+++
+video::WpfjS6I5HGg[youtube]
 
 https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingproblem[Get this app from the Google Play app store now.]
 The source code is https://github.com/tomasdavidorg/android-vehicle-routing-problem[on GitHub].

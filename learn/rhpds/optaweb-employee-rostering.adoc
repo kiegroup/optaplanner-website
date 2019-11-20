@@ -6,9 +6,7 @@
 
 == Video instructions
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/3CvadujUN1k" frameborder="0" allowfullscreen></iframe>
-+++
+video::3CvadujUN1k[youtube]
 
 == Written instructions
 

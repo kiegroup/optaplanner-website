@@ -125,6 +125,4 @@ If you're organizing a conference, take a look at the video below to try it out 
 
 == Related video
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/R0JizNdxEjU" frameborder="0" allowfullscreen></iframe>
-+++
+video::R0JizNdxEjU[youtube]

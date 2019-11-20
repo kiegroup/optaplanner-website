@@ -60,18 +60,10 @@ image:integrationWithRealMaps.png[Integration with real maps]
 
 == Videos
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/eG_ky8jIRBk" frameborder="0" allowfullscreen></iframe>
-+++
+video::eG_ky8jIRBk[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/ylPEIf7Mc2M" frameborder="0" allowfullscreen></iframe>
-+++
+video::ylPEIf7Mc2M[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/BxO3UFmtAPg" frameborder="0" allowfullscreen></iframe>
-+++
+video::BxO3UFmtAPg[youtube]
 
-+++
-<iframe class="youtube" src="https://www.youtube.com/embed/4hp_Qg1hFgE" frameborder="0" allowfullscreen></iframe>
-+++
+video::4hp_Qg1hFgE[youtube]
