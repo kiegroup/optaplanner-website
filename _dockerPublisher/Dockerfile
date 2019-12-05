@@ -3,7 +3,7 @@
 #############################################################################
 
 ####### BASE #################
-FROM fedora:31
+FROM fedora:27
 
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer <mbiarnes@redhat.com>"
