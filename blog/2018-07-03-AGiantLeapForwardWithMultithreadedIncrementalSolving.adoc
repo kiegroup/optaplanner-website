@@ -9,7 +9,7 @@ OptaPlanner finally supports _multithreaded incremental solving_.
 *The speedup is spectacular. Even with just a few CPU cores, it triples the score calculation speed.*
 See the results below. To activate it, a single extra line in the configuration suffices.
 
-https://issues.jboss.org/browse/PLANNER-76[The original feature request] stems from 2007.
+https://issues.redhat.com/browse/PLANNER-76[The original feature request] stems from 2007.
 Throughout the years, step by step, we diligently prepared the internal architecture for it.
 So now, after 10 years, we fully support it from `7.9.0.Final` onwards.
 
