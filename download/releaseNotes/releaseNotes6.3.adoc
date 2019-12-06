@@ -194,4 +194,4 @@ Partially contributed by Satish Irrinki.
 * An OSGi `features.xml` that includes `optaplanner-engine`
 * Drools score calculation now support multiple constraint matches in the consequences part of a rule.
 * More JavaDocs, including package JavaDocs.
-* Various bugs resolved. See https://issues.jboss.org/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].
+* Various bugs resolved. See https://issues.redhat.com/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].

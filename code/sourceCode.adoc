@@ -97,7 +97,7 @@ To build from source:
 
 Want to help improve our project? *GitHub Pull Requests are welcome!* +
 If you don't know where to start, take a look at
-https://issues.jboss.org/issues/?filter=12327406[the list of starter issues for new contributors].
+https://issues.redhat.com/issues/?filter=12327406[the list of starter issues for new contributors].
 
-If you've found a bug and just want to report it, please open a ticket in https://issues.jboss.org/projects/PLANNER[our issue tracker]
+If you've found a bug and just want to report it, please open a ticket in https://issues.redhat.com/projects/PLANNER[our issue tracker]
 with a reproducer.

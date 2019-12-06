@@ -43,10 +43,10 @@ using a producer to provide dummy test data (before the Devoxx CFP import was wr
 * *WildFly 8* to deploy the webapp.
 ** This is so fast, it's amazing. Startup and deploying our webapp take about 3 seconds.
 ** The maven-wildfly-plugin to deploy the webapp from command line:
-*** Just make sure a wildfly server is running first: if it's not, https://issues.jboss.org/browse/WFLY-4080[the error message isn't entirely clear].
+*** Just make sure a wildfly server is running first: if it's not, https://issues.redhat.com/browse/WFLY-4080[the error message isn't entirely clear].
 ** IntelliJ to deploy the exploded webapp directly from my IDE
 *** It uses the JBoss app server plugin, which is only available IntelliJ Enterprise, not in IntelliJ Community.
-*** First an annoying pitfall needed to be fixed: https://issues.jboss.org/browse/WFLY-4081[the exploded directory needs to end with `.war`].
+*** First an annoying pitfall needed to be fixed: https://issues.redhat.com/browse/WFLY-4081[the exploded directory needs to end with `.war`].
 ** For more info, see the http://wildfly.org[WildFly website].
 * *JPA Hibernate* to persist the data
 ** This hasn't been implemented yet. Once your session expires (after 30 minutes) your data is currently lost.

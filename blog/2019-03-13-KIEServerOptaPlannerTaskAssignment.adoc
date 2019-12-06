@@ -222,7 +222,7 @@ https://github.com/kiegroup/kie-server-optaplanner-task-assignment[KIE Server Op
 
 https://docs.optaplanner.org/latestFinal/optaplanner-wb-es-docs/html_single/#kie-server-commands-con_kie-apis[KIE Server and KIE container commands in OptaPlanner]
 
-//TODO: update the link to latestFinal once https://issues.jboss.org/browse/PLANNER-1432 is resolved
+//TODO: update the link to latestFinal once https://issues.redhat.com/browse/PLANNER-1432 is resolved
 https://docs.optaplanner.org/7.14.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[OptaPlanner REST API]
 
 //TODO: add link to video demo once done
