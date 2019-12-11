@@ -26,7 +26,7 @@ desc "Build the site and publish"
 task :publish => [:check, :clean, :build] do
   system("echo Publishing...")
   deploy_url = "optaplanner@filemgmt.jboss.org:/www_htdocs/optaplanner/"
-  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+  success = system("rsync -Pqr --protocol=28 --delete-after home/jenkins/optaplanner-website-master/_site/* #{deploy_url}")
   fail unless success
 end
 
