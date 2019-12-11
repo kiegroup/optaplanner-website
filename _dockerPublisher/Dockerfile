@@ -3,7 +3,7 @@
 #############################################################################
 
 ####### BASE #################
-FROM fedora:27
+FROM fedora:31
 
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer <mbiarnes@redhat.com>"
@@ -30,6 +30,10 @@ RUN dnf clean all
 RUN bash -l -c "gem install bundler awestruct"
 
 RUN useradd -m jenkins -u 1001 --shell /bin/bash
+RUN usermod -a -G wheel jenkins
+
+#change permissions in sudoers
+RUN sed -i 's/# %wheel	ALL=(ALL)	NOPASSWD: ALL/%wheel	ALL=(ALL)	NOPASSWD: ALL/g' /etc/sudoers
 
 USER jenkins
 
