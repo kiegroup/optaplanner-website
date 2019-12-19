@@ -19,7 +19,7 @@ end
 desc "Build the site"
 task :build => :check do
   system("echo Building...")
-  system "bundle exec awestruct -P production --force"
+  system("bundle exec awestruct -P production --force") or raise "An error occured during the build. Please see the log for details"
 end
 
 desc "Build the site and publish"
