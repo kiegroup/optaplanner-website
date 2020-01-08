@@ -21,6 +21,8 @@ title: Documentation
     %a(href="#execution-server" data-toggle="pill") Execution Server
   %li
     %a(href="#optaweb-employee-rostering" data-toggle="pill") OptaWeb Employee Rostering
+  %li
+    %a(href="#optaweb-vehicle-routing" data-toggle="pill") OptaWeb Vehicle Routing
 
 %div(class="tab-content download-tab-content")
   %div(id="engine" class="tab-pane fade in active")
@@ -53,6 +55,13 @@ title: Documentation
         #{site.pom.latestFinal.optawebEmployeeRosteringDocumentationPdf}[PDF]
 
       * Red Hat subscription documentation: Check https://access.redhat.com/documentation/[the customer portal].
+  %div(id="optaweb-vehicle-routing" class="tab-pane fade")
+    :asciidoc
+      * image:documentation.png[Documentation] OptaWeb Vehicle Routing reference manual #{site.pom.latestFinal.version}:
+        ** #{site.pom.latestFinal.optawebVehicleRoutingDocumentationHtmlSingle}[HTML Single] -
+        #{site.pom.latestFinal.optawebVehicleRoutingDocumentationPdf}[PDF]
+
+      * Red Hat subscription documentation: Check https://access.redhat.com/documentation/[the customer portal].
 
 :asciidoc
   [[NightlySnapshots]]
@@ -69,6 +78,8 @@ title: Documentation
     %a(href="#execution-server-nightly" data-toggle="pill") Execution Server
   %li
     %a(href="#optaweb-employee-rostering-nightly" data-toggle="pill") OptaWeb Employee Rostering
+  %li
+    %a(href="#optaweb-vehicle-routing-nightly" data-toggle="pill") OptaWeb Vehicle Routing
 
 %div(class="tab-content download-tab-content")
   %div(id="engine-nightly" class="tab-pane fade in active")
@@ -83,6 +94,9 @@ title: Documentation
   %div(id="optaweb-employee-rostering-nightly" class="tab-pane fade")
     :asciidoc
       * image:documentation.png[Documentation] *#{site.pom.nightly.optwebEmployeeRosteringDocumentationZip}[OptaWeb Employee Rostering reference manual #{site.pom.nightly.version}]*
+  %div(id="optaweb-vehicle-routing-nightly" class="tab-pane fade")
+    :asciidoc
+      * image:documentation.png[Documentation] *#{site.pom.nightly.optwebVehicleRoutingDocumentationZip}[OptaWeb Vehicle Routing reference manual #{site.pom.nightly.version}]*
 
 :asciidoc
   [[OlderReleases]]
@@ -97,6 +111,8 @@ title: Documentation
     %a(href="#execution-server-older" data-toggle="pill") Execution Server
   %li
     %a(href="#optaweb-employee-rostering-older" data-toggle="pill") OptaWeb Employee Rostering
+  %li
+    %a(href="#optaweb-vehicle-routing-older" data-toggle="pill") OptaWeb Vehicle Routing
 
 %div(class="tab-content download-tab-content")
   %div(id="engine-older" class="tab-pane fade in active")
@@ -109,5 +125,8 @@ title: Documentation
     :asciidoc
       For older community releases, check https://docs.optaplanner.org/[the documentation archive].
   %div(id="optaweb-employee-rostering-older" class="tab-pane fade")
+    :asciidoc
+      For older community releases, check https://docs.optaplanner.org/[the documentation archive].
+  %div(id="optaweb-vehicle-routing-older" class="tab-pane fade")
     :asciidoc
       For older community releases, check https://docs.optaplanner.org/[the documentation archive].
