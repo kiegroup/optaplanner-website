@@ -6,6 +6,7 @@ latestFinal:
 
   kieExecutionServerZip: https://download.jboss.org/drools/release/7.32.0.Final/kie-server-distribution-7.32.0.Final.zip
   optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/7.32.0.Final/employee-rostering-distribution-7.32.0.Final.zip
+  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/7.32.0.Final/optaweb-vehicle-routing-distribution-7.32.0.Final.zip
 
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.32.0.Final/optaplanner-docs/html_single/index.html
   engineDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaplanner-docs/pdf/index.pdf
@@ -38,6 +39,7 @@ nightly:
   kieExecutionServerJavaEE7: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie.server&a=kie-server&v=7.33.0-SNAPSHOT&e=war&c=ee7
   kieExecutionServerWebc: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.kie.server&a=kie-server&v=7.33.0-SNAPSHOT&e=war&c=webc
   optawebEmployeeRosteringDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=employee-rostering-distribution&v=7.33.0-SNAPSHOT&e=zip
+  optawebVehicleRoutingDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-distribution&v=7.33.0-SNAPSHOT&e=zip
 
   engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=7.33.0-SNAPSHOT&e=zip
   kieExecutionServerDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-wb-es-guide&v=7.33.0-SNAPSHOT&e=zip
