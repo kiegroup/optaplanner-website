@@ -13,6 +13,8 @@ latestFinal:
   kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.31.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
   optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/7.31.0.Final/optaweb-employee-rostering-docs/html_single/index.html
   optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/7.31.0.Final/optaweb-employee-rostering-docs/pdf/index.pdf
+  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/7.31.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
+  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/7.31.0.Final/optaweb-vehicle-routing-docs/pdf/index.pdf
   droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.31.0.Final/drools-docs/html_single/index.html
 
   javadocs: https://docs.optaplanner.org/7.31.0.Final/optaplanner-javadoc/index.html
@@ -45,3 +47,4 @@ nightly:
   kieWorkbenchDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-wb-es-guide&v=7.32.0-SNAPSHOT&e=zip
   kieExecutionServerDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-wb-es-guide&v=7.32.0-SNAPSHOT&e=zip
   optwebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=employee-rostering-docs&v=7.32.0-SNAPSHOT&e=zip
+  optwebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=7.32.0-SNAPSHOT&e=zip
