@@ -19,6 +19,8 @@ title: Download
     %a(href="#workbench" data-toggle="pill") Workbench
   %li
     %a(href="#execution-server" data-toggle="pill") Execution Server
+  %li
+    %a(href="#optaweb-employee-rostering" data-toggle="pill") OptaWeb Employee Rostering
 
 %div(class="tab-content download-tab-content")
   %div(id="engine" class="tab-pane fade in active")
@@ -106,6 +108,11 @@ title: Download
       ** #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
       ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
       * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
+  %div(id="optaweb-employee-rostering" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *#{site.pom.latestFinal.optawebEmployeeRosteringDistributionZip}[Download OptaWeb Employee Rostering #{site.pom.latestFinal.version}]*
+      ** License: link:../code/license.html[Apache Software License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
+      * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
 
 :asciidoc
   [[NonFinalReleases]]
@@ -180,6 +187,8 @@ title: Download
     %a(href="#workbench-nightly" data-toggle="pill") Workbench
   %li
     %a(href="#execution-server-nightly" data-toggle="pill") Execution Server
+  %li
+    %a(href="#optaweb-employee-rostering-nightly" data-toggle="pill") OptaWeb Employee Rostering
 
 %div(class="tab-content download-tab-content")
   %div(id="engine-nightly" class="tab-pane fade in active")
@@ -194,6 +203,9 @@ title: Download
       * image:download.png[Download] *Download OptaPlanner Execution Server #{site.pom.nightly.version}*
       ** #{site.pom.nightly.kieExecutionServerJavaEE7}[JavaEE 7] -
       #{site.pom.nightly.kieExecutionServerWebc}[Web (Servlet) container]
+  %div(id="optaweb-employee-rostering-nightly" class="tab-pane fade")
+    :asciidoc
+      * image:download.png[Download] *#{site.pom.nightly.optawebEmployeeRosteringDistributionZip}[Download OptaWeb Employee Rostering #{site.pom.nightly.version}]*
 
 :asciidoc
   [[OlderReleases]]
@@ -206,6 +218,8 @@ title: Download
     %a(href="#workbench-older" data-toggle="pill") Workbench
   %li
     %a(href="#execution-server-older" data-toggle="pill") Execution Server
+  %li
+    %a(href="#optaweb-employee-rostering-older" data-toggle="pill") OptaWeb Employee Rostering
 
 %div(class="tab-content download-tab-content")
   %div(id="engine-older" class="tab-pane fade in active")
@@ -215,5 +229,8 @@ title: Download
     :asciidoc
       For older community releases, check https://download.jboss.org/drools/release/[the release archive].
   %div(id="execution-server-older" class="tab-pane fade")
+    :asciidoc
+      For older community releases, check https://download.jboss.org/drools/release/[the release archive].
+  %div(id="optaweb-employee-rostering-older" class="tab-pane fade")
     :asciidoc
       For older community releases, check https://download.jboss.org/drools/release/[the release archive].
