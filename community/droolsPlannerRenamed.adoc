@@ -37,7 +37,7 @@ From a business point of view, there's *little or no change*:
 
 * The license remains unchanged:
 
-** OptaPlanner still has the same open source license, Apache Software License 2.0.
+** OptaPlanner still has the same open source license, Apache License 2.0.
 
 * The release lifecycle remains unchanged:
 
