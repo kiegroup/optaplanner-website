@@ -358,7 +358,7 @@ image:7.3/guidedDecisionTable.png[Guided decision table]
 == New and noteworthy: Execution Server 7.2.0.Final
 
 === Real-time planning
-The KIE Server now exposes an interace to update a problem dataset while the solver is running.
+The KIE Server now exposes an interface to update a problem dataset while the solver is running.
 Use Java client or REST interface to submit your `ProblemFactChange` implementations.
 
 ==== Java Client
