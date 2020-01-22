@@ -9,15 +9,15 @@
 
 === `groupBy()` support for constraint streams of all cardinalities
 
-We continue improving the constraint streams API.
-In this release, we have added capabilities to modify your streams using the https://docs.optaplanner.org/7.31.0.Final/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[`groupBy()` building block].
+The constraint streams API improved further.
+You can now modify your streams using the https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[`groupBy()` building block].
 
 == New and noteworthy: Engine 7.31.0.Final
 
 === QuadStreams
 
-The constraint streams API received a major update, introducing support for streams of 4 variables.
-Please refer to https://docs.optaplanner.org/7.31.0.Final/optaplanner-docs/html_single/index.html#constraintStreamsCardinality[constraint streams documentation] for details.
+The constraint streams API received a major update, introducing support for streams of 4 facts.
+Please refer to https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsCardinality[constraint streams documentation] for details.
 
 == New and noteworthy: Engine 7.28.0.Final
 
