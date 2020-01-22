@@ -12,6 +12,16 @@
 The constraint streams API improved further.
 You can now modify your streams using the https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[`groupBy()` building block].
 
+=== OptaWeb distribution and documentation
+
+Two new tabs for OptaWeb Employee Rostering and OptaWeb Vehicle Routing have been added to Download and Documentation pages.
+
+Go to link:../download.html[Download]
+and switch to Employee Rostering or Vehicle Routing tab to download a full distribution.
+
+Go to link:../../learn/documentation.html[Documentation]
+and switch to Employee Rostering or Vehicle Routing tab to access documentation.
+
 == New and noteworthy: Engine 7.31.0.Final
 
 === QuadStreams
