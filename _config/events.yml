@@ -552,6 +552,12 @@
   location: Antwerp, Belgium
   date: 2019-11-04
 
+- eventId: 20200131-redhatprocessautomationday
+  eventOrganization: "Red Hat Process Automation Day"
+  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x120404abcd
+  location: Tokyo, Japan
+  date: 2020-01-31
+
 - eventId: 20200427-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/summit/
