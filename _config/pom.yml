@@ -9,12 +9,12 @@ latestFinal:
   optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/7.32.0.Final/optaweb-vehicle-routing-distribution-7.32.0.Final.zip
 
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.32.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaplanner-docs/pdf/index.pdf
+  engineDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
   kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.32.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
   optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/7.32.0.Final/optaweb-employee-rostering-docs/html_single/index.html
-  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaweb-employee-rostering-docs/pdf/index.pdf
+  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
   optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/7.32.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
-  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaweb-vehicle-routing-docs/pdf/index.pdf
+  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/7.32.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
   droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.32.0.Final/drools-docs/html_single/index.html
 
   javadocs: https://docs.optaplanner.org/7.32.0.Final/optaplanner-javadoc/index.html
