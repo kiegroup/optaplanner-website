@@ -7,10 +7,111 @@
 
 == New and noteworthy: Engine 7.32.0.Final
 
-=== `groupBy()` support for constraint streams of all cardinalities
+=== SolverManager
+
+A `SolverManager` is a facade for one or more `Solver` instances
+to simplify solving planning problems in REST and other enterprise services.
+Its `solve(...)` methods differ from the normal `Solver.solve(...)` method:
+
+* *`SolverManager.solve(...)` returns immediately*: it schedules a problem for asynchronous solving without blocking the calling thread.
+This avoids timeout issues of HTTP and other technologies.
+* *`SolverManager.solve(...)` solves multiple planning problems* of the same domain, in parallel.
+
+SolverManager supports batch solving, but also live solving that shows progress to the end-user, for example:
+
+[source,java,options="nowrap"]
+----
+public class TimeTableService {
+
+    private SolverManager<TimeTable, Long> solverManager;
+
+    // Returns immediately, ok to expose as a REST service
+    public void solve(Long timeTableId) {
+        solverManager.solveAndListen(timeTableId,
+                // Called once, when solving starts
+                this::findById,
+                // Called multiple times, for every best solution change
+                this::save);
+    }
+
+    public TimeTable findById(Long timeTableId) {...}
+
+    public void save(TimeTable timeTable) {...}
+
+    public void stopSolving(Long timeTableId) {
+        solverManager.terminateEarly(timeTableId);
+    }
+
+}
+----
+
+=== Spring Boot starter
+
+OptaPlanner now includes a Spring Boot starter out of the box.
+This avoids common pitfalls in the Spring ecosystem (such as classloading)
+and enables `application.properties` to overwrite the solver configuration:
+
+[source,properties,options="nowrap"]
+----
+# The solver runs for 30 seconds. To run for 5 minutes use "5m" and for 2 hours use "2h".
+optaplanner.solver.termination.spent-limit=30s
+----
+
+In fact, *a `solverConfig.xml` file is no longer needed* on Spring Boot.
+The starter automatically detects `@PlanningSolution` and `@PlanningEntity` annotations,
+so the solver config XML file is optional, used only for rare use cases that do power tweaking.
+
+Furthermore, it automatically injects a `SolverManager`, `SolverFactory` and/or `SolverConfig` in your code:
+
+[source,java,options="nowrap"]
+----
+public class TimeTableController {
+
+    @Autowired
+    private SolverManager<TimeTable, Long> solverManager;
+
+    @PostMapping("/solve")
+    public void solve() {
+        solverManager.solveAndListen(...);
+    }
+
+    ...
+}
+----
+
+To use the starter with Maven, add this dependency to your `pom.xml` file:
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.optaplanner</groupId>
+    <artifactId>optaplanner-spring-boot-starter</artifactId>
+</dependency>
+----
+
+For Gradle, add this dependency to your `build.gradle` file:
+
+[source,groovy,options="nowrap"]
+----
+implementation "org.optaplanner:optaplanner-spring-boot-starter"
+----
+
+For more information on how to use this starter, https://github.com/spring-guides/getting-started-guides/pull/126[read the detailed guide on spring.io].
+
+
+=== `groupBy()` support for constraint streams of bi, tri and quad cardinality
 
 The constraint streams API improved further.
 You can now modify your streams using the https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[`groupBy()` building block].
+
+=== OpenShift support for both OptaWeb applications
+
+To run OptaWeb Vehicle Routing or OptaWeb Employee Rostering on OpenShift, use the new script in their distribution zips:
+
+[source,bash,options="nowrap"]
+----
+./runOnOpenShift.sh
+----
 
 === OptaWeb distribution and documentation
 
@@ -22,6 +123,7 @@ and switch to Employee Rostering or Vehicle Routing tab to download a full distr
 Go to link:../../learn/documentation.html[Documentation]
 and switch to Employee Rostering or Vehicle Routing tab to access documentation.
 
+
 == New and noteworthy: Engine 7.31.0.Final
 
 === QuadStreams
@@ -29,12 +131,14 @@ and switch to Employee Rostering or Vehicle Routing tab to access documentation.
 The constraint streams API received a major update, introducing support for streams of 4 facts.
 Please refer to https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsCardinality[constraint streams documentation] for details.
 
+
 == New and noteworthy: Engine 7.28.0.Final
 
 === OptaPlanner Web Examples are no more
 
 The `optaplanner-webexamples` module was removed from distribution and the Git repository.
 It has been superseded by https://github.com/kiegroup/optaweb-vehicle-routing[OptaWeb Vehicle Routing].
+
 
 == New and noteworthy: Engine 7.27.0.Final
 
@@ -57,6 +161,7 @@ like this:
 ----
 
 For more information, please refer to link:../../learn/documentation.html[Documentation].
+
 
 == New and noteworthy: Engine 7.20.0.Final
 
