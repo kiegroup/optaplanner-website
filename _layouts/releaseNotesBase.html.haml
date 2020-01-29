@@ -6,30 +6,36 @@ layout: normalBaseWithComments
   #{page.title}
 :asciidoc
   [.summaryParagraph]
-  We are happy to announce #{releaseNotesAreFinal ? 'the' : 'a'} #{page.release_notes_version} *#{page.release_notes_version_qualifier}* release of https://www.optaplanner.org[OptaPlanner].
-  OptaPlanner is a lightweight, embeddable planning engine written in Java™ to solve constraint satisfaction problems efficiently.
-  It is released alongside the https://www.drools.org[Drools] rule engine and the https://www.jbpm.org[jBPM] workflow engine.
+  We are happy to announce a #{page.release_notes_version} *#{page.release_notes_version_qualifier}* release of https://www.optaplanner.org[OptaPlanner].
+  OptaPlanner is a lightweight, embeddable planning engine written in Java™ to solve AI constraint optimization problems efficiently.
+  Use cases include link:learn/useCases/vehicleRoutingProblem.html[Vehicle Routing],
+  link:learn/useCases/employeeRostering.html[Employee Rostering],
+  link:learn/useCases/maintenanceScheduling.html[Maintenance Scheduling],
+  link:learn/useCases/taskAssignmentOptimization.html[Task Assignment],
+  link:learn/useCases/schoolTimetabling.html[School Timetabling],
+  link:learn/useCases/cloudOptimization.html[Cloud Optimization],
+  link:learn/useCases/conferenceScheduling.html[Conference Scheduling] and many more.
+
+.row(style="margin-bottom: 10px;")
+  .col-md-6
+    .text-center<
+      %a.btn.btn-lg.btn-success.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.distributionZip : site.pom.latest.distributionZip}
+        %img{:src => relative("/download/download.png", page), :alt => "Download"}
+        %div
+          %span Download
+          %br
+          %span.small #{releaseNotesAreFinal ? site.pom.latestFinal.version : site.pom.latest.version}
+  .col-md-6
+    .text-center<
+      %a.btn.btn-lg.btn-primary.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.engineDocumentationHtmlSingle : site.pom.latest.engineDocumentationHtmlSingle}
+        %img{:src => relative("/learn/documentation.png", page), :alt => "Documentation"}
+        %div
+          %span Documentation
+          %br
+          %span.small #{releaseNotesAreFinal ? site.pom.latestFinal.version : site.pom.latest.version}
 
 .row
-  .col-md-7
-    = partial('demoVideos.html.haml', :outputPage => page)
-
-    .text-center<
-      %span
-        %a.btn.btn-lg.btn-success.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.distributionZip : site.pom.latest.distributionZip}
-          %img{:src => relative("/download/download.png", page), :alt => "Download"}
-          %div
-            %span Download
-            %br
-            %span.small #{releaseNotesAreFinal ? site.pom.latestFinal.version : site.pom.latest.version}
-        %a.btn.btn-lg.btn-primary.versionedButton{:href => releaseNotesAreFinal ? site.pom.latestFinal.engineDocumentationHtmlSingle : site.pom.latest.engineDocumentationHtmlSingle}
-          %img{:src => relative("/learn/documentation.png", page), :alt => "Documentation"}
-          %div
-            %span Documentation
-            %br
-            %span.small #{releaseNotesAreFinal ? site.pom.latestFinal.version : site.pom.latest.version}
-
-  .col-md-5
+  .col-md-6
     .panel.panel-default
       .panel-heading Status of OptaPlanner
       .panel-body
@@ -53,6 +59,7 @@ layout: normalBaseWithComments
           %li
             %strong Open Source:
             %a{:href => relative("/code/license.html")} Apache License 2.0
+  .col-md-6
     = partial('productToProjectVersionMapping.html.haml', :outputPage => page)
 
 ~ content
