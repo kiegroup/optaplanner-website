@@ -9,11 +9,17 @@ A fraction of our users have shared their story publicly:
 
 == Case Studies
 
+* Plan when to do maintenance of 220K+ elevators and escalators over 2500+ mechanics.
+** https://www.redhat.com/files/summit/session-assets/2017/S103192-goldsmith.pdf[2017 slides]
+** https://www.youtube.com/watch?v=rgi1YzAvBKk[2019 video]
+
+* https://www.rtinsights.com/powering-todays-digital-service-providers-with-automation-optimization-and-intelligence-case-study/[Vehicle routing for digital service providers]
+
+* https://healthcare.axians.be/solutions/mystaff/oncall/[Schedule shifts of hospital doctors]
+
 * link:caseStudies/OptaPlannerCaseStudy_RJV_2013-06-14.pdf[Task assignment] for RJV (Belgium)
 
 == Articles (English)
-
-* http://developerblog.redhat.com/2016/08/26/use-these-six-simple-steps-to-get-started-with-red-hat-jboss-business-resource-planner/[Use these six simple steps to get started with Red Hat JBoss Business Resource Planner]
 
 * http://www.lshift.net/blog/2015/07/14/automatic-scheduling-of-people-and-rooms/[Automatic scheduling of people and rooms]
 
@@ -25,10 +31,6 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 * http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA in Austria
 
-* http://www.schabell.org/search/label/Planner[Eric Schabell's blog]
-
-* http://appwriter.com/new-easier-optaplanner-example-project[Hello world example of OptaPlanner] (do look at `CloudBalancingHelloWorld` in our examples too)
-
 == Articles (non-English)
 
 * French, German and Japanese: see the language specific pages linked from link:../[the homepage].
@@ -38,6 +40,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 * Finnish: http://www.alfame.com/blog/optaplanner-rajallisten-resurssien-optimointiin[Limited resources optimization]
 
 == 3rd party open source projects
+
+* https://github.com/yurloc/iypt-planner[IYPT Jury Planner]
 
 * Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
 
@@ -64,6 +68,10 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 * There are few things more satisfying in life than getting an OptaPlanner system up and running. It's like magic. - https://twitter.com/divideby0/status/522952030932189185[Cedric Hurst]
 
 * It is very easy to add custom modules on top of OptaPlanner's elegant framework. - Isaac Zhang
+
+== Papers
+
+* https://www.researchgate.net/publication/338983323_Uma_analise_do_framework_OptaPlanner_aplicado_ao_problema_de_empacotamento_unidimensional[Uma análise do framework OptaPlanner aplicado ao problema de empacotamento unidimensional]
 
 == Share your story
 
