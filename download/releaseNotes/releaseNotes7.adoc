@@ -9,7 +9,20 @@
 
 === Conditional propagation in constraint streams
 
-The constraint streams API continued to evolve, gaining support for https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsConditionalPropagation[conditional propagation].
+The constraint streams API continued to evolve, gaining support for conditional propagation. The following example penalizes computers which have at least one process running:
+
+[source,java,options="nowrap"]
+----
+    private Constraint runningComputer(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(CloudComputer.class)
+                .ifExists(CloudProcess.class, Joiners.equal(Function.identity(), CloudProcess::getComputer))
+                .penalize("runningComputer",
+                        HardSoftScore.ONE_SOFT,
+                        computer -> ...);
+    }
+----
+
+Note the use of the `ifExists()` building block. Conversely, the `ifNotExists()` building block is also available.
 
 == New and noteworthy: Engine 7.32.0.Final
 
