@@ -5,6 +5,12 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.33.0.Final
+
+=== Conditional propagation in constraint streams
+
+The constraint streams API continued to evolve, gaining support for https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsConditionalPropagation[conditional propagation].
+
 == New and noteworthy: Engine 7.32.0.Final
 
 === SolverManager
