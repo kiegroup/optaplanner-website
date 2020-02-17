@@ -55,6 +55,8 @@ and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-
 
 == Testimonials
 
+* I am really impressed by OptaPlanner. You really did a great job! Up to 4 days ago I didn't even know planning on such a scale is even possible without a years of programming investment... now, I have almost fully working prototype product for 1 use-case in less than 3 days! - Luka Bradesko (CEO Solvesall)
+
 * OptaPlanner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
 
 * Thanks to OptaPlanner we are able to provide fast and affordable automated resource planning cloud service to IT organisations in Germany. - Reinis Vicups
