@@ -56,11 +56,6 @@ footer .sponsorMessage {
     max-width: 20%;
 }
 
-/* Workaround Twitter button vertical misalignment */
-.twitter-follow-button {
-    vertical-align: middle;
-}
-
 .versionedButton > img {
     vertical-align: top;
 }
