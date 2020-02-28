@@ -5,11 +5,28 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.34.0.Final
+
+=== Various improvements to constraint streams
+
+We have added several new constraint collectors: `toList()`, `toSet()`, `toSortedSet()`, `toMap()` and `toSortedMap()`.
+Also, the `min()` and `max()` collectors have been extended to `BiConstraintStream`, TriConstraintStream` and
+`QuadConstraintStream` as well.
+To use these collectors, look for the `ConstraintCollectors` class.
+
+=== More examples now support constraint streams
+
+With recent improvements to the constraint streams API, we have been able to add `ConstraintProvider` implementations
+to more and more examples.
+This release brings constraint stream support to the following examples: `investment`, `machinereassignment` and
+`scrabble`.
+
 == New and noteworthy: Engine 7.33.0.Final
 
 === Conditional propagation in constraint streams
 
-The constraint streams API continued to evolve, gaining support for conditional propagation. The following example penalizes computers which have at least one process running:
+The constraint streams API continued to evolve, gaining support for conditional propagation.
+The following example penalizes computers which have at least one process running:
 
 [source,java,options="nowrap"]
 ----
