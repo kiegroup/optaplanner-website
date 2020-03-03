@@ -563,3 +563,6 @@
   eventUrl: https://www.redhat.com/summit/
   location: San Francisco, CA, USA
   date: 2020-04-27
+  talks:
+  - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
+    presenters: Satish Kale
