@@ -13,6 +13,6 @@ highlight.js version: 7.3
 Downloaded from: http://softwaremaniacs.org/soft/highlight/en/
 License: BSD - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
-reveal.js version: 3.5.0
+reveal.js version: 3.9.2
 Downloaded from: https://github.com/hakimel/reveal.js
 License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
