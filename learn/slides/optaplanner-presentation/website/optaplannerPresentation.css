@@ -120,7 +120,7 @@ footer {
 
 /* Make images bigger */
 .reveal .slides section {
-    height: 100%;
+  height: inherit;
 }
 
 .reveal .fullImage {
