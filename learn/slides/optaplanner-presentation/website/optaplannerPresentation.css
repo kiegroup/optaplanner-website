@@ -63,7 +63,7 @@ footer {
 
 .reveal .watermark {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     font-size: 14px;
     z-index: -100;
 }
