@@ -63,9 +63,13 @@ footer {
 
 .reveal .watermark {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     font-size: 14px;
     z-index: -100;
+}
+
+.reveal .progress {
+    margin-bottom: 2px;
 }
 
 .reveal .watermark-left {
