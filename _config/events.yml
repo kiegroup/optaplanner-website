@@ -558,11 +558,11 @@
   location: Tokyo, Japan
   date: 2020-01-31
 
-- eventId: 20200427-redhatsummit
+- eventId: 20200428-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/summit/
-  location: San Francisco, CA, USA
-  date: 2020-04-27
+  location: Worldwide
+  date: 2020-04-28
   talks:
   - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
     presenters: Satish Kale
