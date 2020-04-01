@@ -14,6 +14,7 @@ teacher and student satisfaction by reducing commute and gap hours
 while adhering to other constraints such as conflicting lessons, teacher availability, room availability and room capacity.
 
 // TODO School timetabling value proposition image
+image:schoolTimetablingInputOutput.png[School timetabling input output]
 
 == What is OptaPlanner?
 
