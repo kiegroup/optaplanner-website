@@ -558,6 +558,15 @@
   location: Tokyo, Japan
   date: 2020-01-31
 
+- eventId: 20200409-soujava
+  eventOrganization: "SouJava Online"
+  location: Worldwide
+  date: 2020-04-09
+  talks:
+  - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+    url: https://www.meetup.com/SouJava/events/269692762/
+    presenters: Geoffrey De Smet
+
 - eventId: 20200428-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/summit/
