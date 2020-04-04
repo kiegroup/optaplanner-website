@@ -4,10 +4,21 @@
 :awestruct-priority: 0.8
 :showtitle:
 
-See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Geoffrey's OptaPlanner playlist on YouTube]
+See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[the OptaPlanner playlist on YouTube]
 for a list of all videos.
+
+This is the latest video:
 
 // Using the video_id/playlist syntax (with no video_id).
 // See https://github.com/asciidoctor/asciidoctor/pull/1187.
 // Results in showing the newest video in the playlist.
 video::/PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[youtube]
+
+== Make your own video's
+
+* All images shown are available as `png` and `svg`. See link:slides.html[the slides].
+* The https://github.com/kiegroup/optaplanner-website[optaplanner-website]
+has a `videoUtils` directory which includes overlay and thumbnail templates.
+
+If it's a public video, link:../community/team.html[let us know]
+and we'll share it on OptaPlanner's Twitter and Facebook.
