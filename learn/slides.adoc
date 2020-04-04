@@ -30,7 +30,11 @@ Feel free to reuse any of these materials as you see fit to present OptaPlanner 
     ** Do you prefer `ODP` or `PPT` slides instead? +
     Most slides are a single, big `png` image: simply copy the image as a new slide in your deck.
 
+    ** To edit the images, look for the `svg` source files
+    in https://github.com/kiegroup/optaplanner/tree/master/optaplanner-docs[optaplanner-docs]
+    and open them with Inkscape.
+
 . Don't forget to change the presenter name in the first and the last slide.
 
-. If it's a public event, link:../community/team.html[let us know]
-and we might share it on the OptaPlanner Twitter and Facebook.
+If it's a public event, link:../community/team.html[let us know]
+and we'll share it on OptaPlanner's Twitter and Facebook.
