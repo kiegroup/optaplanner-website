@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: mariofusco
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase, conference scheduling]
+:awestruct-tags: [use case, conference scheduling]
 :awestruct-share_image_filename: voxxedZurichConferenceSchedulingApp.png
 :awestruct-canonical_url: "https://developers.redhat.com/blog/2018/02/19/voxxed-days-zurich-2018/"
 

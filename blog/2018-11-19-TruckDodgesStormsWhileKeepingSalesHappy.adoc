@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: sudheerchekka
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase, vehicle routing]
+:awestruct-tags: [use case, vehicle routing]
 :awestruct-share_image_filename: mpcTruckRedHat.png
 
 The Mobile Portfolio Truck is Red Hat’s 18-wheel semi truck bringing enterprise IT solutions to customers

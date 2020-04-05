@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase, task assigning, kie-server]
+:awestruct-tags: [use case, task assignment, execution server]
 
 https://docs.optaplanner.org/latestFinal/optaplanner-wb-es-docs/html_single/#_ch.kie.server[KIE Server]
 is a standalone server component that can be used to instantiate and execute rules and processes.

@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: MusaTalluzi
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase, conference scheduling]
+:awestruct-tags: [use case, conference scheduling]
 :awestruct-share_image_filename: xlsxUnitTestingRoomConflict1.png
 
 The business experts explain the business constraints to us, the developers. But how can we be sure that we understood
