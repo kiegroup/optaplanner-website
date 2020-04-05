@@ -3,7 +3,7 @@
 :stem:
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
-:awestruct-tags: [insight, design, task assignment, employee rostering]
+:awestruct-tags: [insight, design, task assignment, employee rostering, constraint]
 
 Load balancing is a common constraint for many OptaPlanner use cases.
 Especially when scheduling employees, the workload needs to be spread out fairly.
