@@ -28,7 +28,7 @@ rule "Don't assign Ann"
 end
 ----
 
-This is the same constraint in Java using ConstraintStreams:
+This is the same constraint in Java using Constraint Streams:
 
 [source,java]
 ----
@@ -40,7 +40,7 @@ Constraint constraint = constraintFactory
 
 If you're familiar with SQL or Java 8 streams, this should look familiar.
 Given a potential solution with four shifts (two of which are assigned to `Ann`),
-those shifts through it flow like this:
+those shifts flow through the Constraint Stream like this:
 
 image::constraintStreamFilter_part.png[]
 
@@ -49,7 +49,7 @@ This new approach to writing constraints has several benefits:
 == Incremental calculation
 
 First off, unlike an `EasyScoreCalculator`,
-ConstraintStreams still applies incremental score calculation to scale out, just like DRL.
+Constraint Streams still apply incremental score calculation to scale out, just like DRL.
 For example, when a move swaps the employee of two shifts, only the delta is calculated.
 That's a huge scalability gain:
 
@@ -58,7 +58,7 @@ image::constraintStreamIncrementalCalculation.png[]
 == Indexing
 
 When joining multiple types, just like an SQL `JOIN` operator,
-ConstraintStreams applies hash lookups on indexes to scale better:
+Constraint Streams apply hash lookups on indexes to scale better:
 
 image::constraintStreamJoinWithJoiners.png[]
 
@@ -75,13 +75,13 @@ DRL code in IntelliJ IDEA Ultimate:
 
 image::codeHighlightingDRL.png[]
 
-Java code using ConstraintStreams in IntelliJ IDEA Ultimate, for the same constraints:
+Java code using Constraint Streams in IntelliJ IDEA Ultimate, for the same constraints:
 
 image::codeHighlightingConstraintStreams.png[]
 
 === Code completion
 
-Code completion for ConstraintStreams:
+Code completion for Constraint Streams:
 
 image::codeCompletionConstraintStreams.png[]
 
@@ -99,8 +99,8 @@ image::codeDebuggingConstraintStreams2.png[]
 
 == Java syntax
 
-Constraints written in Java with ConstraintStreams follow the Java Language Specification (JLS), for good or bad.
-Similar logic applies when using ConstraintStreams from Kotlin or Scala.
+Constraints written in Java with Constraint Streams follow the Java Language Specification (JLS), for good or bad.
+Similar logic applies when using Constraint Streams from Kotlin or Scala.
 
 When migrating between DRL and Constraint Streams, be aware of some differences between DRL and Java:
 
