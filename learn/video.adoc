@@ -1,5 +1,5 @@
 = Videos
-:awestruct-description: Watch these video's for example demonstrations, feature explanations and more.
+:awestruct-description: Watch these videos for example demonstrations, feature explanations and more.
 :awestruct-layout: normalBase
 :awestruct-priority: 0.8
 :showtitle:
@@ -14,7 +14,7 @@ This is the latest video:
 // Results in showing the newest video in the playlist.
 video::/PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[youtube]
 
-== Make your own video's
+== Make your own videos
 
 * All images shown are available as `png` and `svg`. See link:slides.html[the slides].
 * The https://github.com/kiegroup/optaplanner-website[optaplanner-website]

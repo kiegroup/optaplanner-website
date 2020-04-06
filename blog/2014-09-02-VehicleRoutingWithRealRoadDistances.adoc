@@ -6,7 +6,7 @@
 
 In the real world, vehicles in a Vehicle Routing Problem (VRP) have to follow the roads:
 they can't travel in a straight line from customer to customer.
-Most VRP research papers and demo's happily ignore this implementation detail. As did I, in the past.
+Most VRP research papers and demos happily ignore this implementation detail. As did I, in the past.
 Although using road distances (instead of air distances) doesn't impact the NP-hard nature of a VRP much,
 it does result in a few extra challenges. Let's take a look at those challenges.
 
