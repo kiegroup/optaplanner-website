@@ -80,7 +80,7 @@ at a late evening Bird of a Feather session at JavaPolis, for about 20 developer
 I had prepared my text word by word in advance and read it out aloud.
 Not my best moment. But they did seemed to like my demo though.
 I am not a natural born presenter,
-but I soon realized that https://www.optaplanner.org/learn/slides.html[great slides] and https://www.optaplanner.org/learn/video.html[polished demo's] can make up for that.
+but I soon realized that https://www.optaplanner.org/learn/slides.html[great slides] and https://www.optaplanner.org/learn/video.html[polished demos] can make up for that.
 These days I can step into a room - unprepared - and talk for 5 days without showing the same slide or demo twice.
 Presenting skills can be http://presentationpatterns.com/[acquired].
 
