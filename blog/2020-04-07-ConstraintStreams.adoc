@@ -1,4 +1,4 @@
-= Constraint Streams: Modern Java constraints without the Drools Rule Language
+= Constraint Streams - Modern Java constraints without the Drools Rule Language
 :page-interpolate: true
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
