@@ -3,6 +3,9 @@
 :awestruct-layout: normalBase
 :awestruct-priority: 0.1
 :showtitle:
+:demo-catalog-item: DM7 OptaWeb Employee Rostering Demo
+:demo-name: OptaWeb Employee Rostering
+:demo-app-name: optaweb-employee-rostering
 
 == Video instructions
 
@@ -10,4 +13,4 @@ video::3CvadujUN1k[youtube]
 
 == Written instructions
 
-Coming soon.
+include::learn/rhpds/rhpds_order.adoc[]
