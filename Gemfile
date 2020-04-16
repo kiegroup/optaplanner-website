@@ -5,3 +5,5 @@ gem 'rake', '>= 10.4.2'
 gem 'awestruct', '0.6.0'
 gem 'asciidoctor', '1.5.8' # AsciiDoc
 gem 'json', '2.1.0'
+gem 'pandoc-ruby'
+gem 'sassc'
