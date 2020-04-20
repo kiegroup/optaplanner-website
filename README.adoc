@@ -14,7 +14,7 @@ Follow these instructions:
 # Optional: clean your system first.
 $ sudo dnf remove ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-build gcc-c++ make
 
-# Install ruby and other native rpm's
+# Install ruby and other native RPM packages
 # TODO Is rpm-build obsolete? It was once needed for ffi
 # TODO Is gcc-c++ obsolete? It was needed for eventmachine
 $ sudo dnf install ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-build gcc-c++ make
