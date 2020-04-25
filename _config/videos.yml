@@ -1,0 +1,33 @@
+# To add an video in the GitHub user interface, click on the Edit button at the top right which will submit a pull request.
+#
+# Available properties per video:
+#  youtubeId: The id part of the YouTube URL
+#  title: Title of the video
+#  author: (optional) Existing userId from users.yml
+#  date: Must be in format "yyyy-mm-dd".
+#  tags: Avoid inventing new tags. Existing tags include:
+#    Use cases: "conference scheduling", "employee rostering", "maintenance scheduling", "school timetabling", "task assignment", "vehicle routing"
+#    Compatibility: "android", "kotlin", "quarkus", "scala", "spring"
+#
+# Order videos by date descending
+
+- youtubeId: AqTuRiWGLZQ
+  title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+  author: ge0ffrey
+  date: 2020-04-09
+  tags:
+    - quarkus
+
+- youtubeId: 7IuOA9n6kh0
+  author: ge0ffrey
+  title: "Artificial Intelligence in Java: how to write a Quarkus app with OptaPlanner from scratch"
+  date: 2020-04-02
+  tags:
+    - quarkus
+
+- youtubeId: U2N02ReT9CI
+  author: DuncanDoyle
+  title: "OptaPlanner Spring Boot Starter"
+  date: 2020-03-31
+  tags:
+    - spring

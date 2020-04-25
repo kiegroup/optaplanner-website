@@ -1,0 +1,7 @@
+- relatedVideos = site.videos.select{|e| !e.tags.nil? and e.tags.any?{|t| t.to_s.eql? page.related_tag} }
+
+- if !relatedVideos.empty?
+  %h2 Related videos
+  - for video in relatedVideos
+    :asciidoc
+      video::#{video.youtubeId}[youtube]

@@ -1,0 +1,62 @@
+%h2 What is OptaPlanner?
+%p
+  OptaPlanner is
+  = succeed "." do
+    %b an AI constraint solver
+  It optimizes planning and scheduling problems, such as
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/vehicleRoutingProblem.html"), :outputPage => page.outputPage} the Vehicle Routing Problem
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/employeeRostering.html"), :outputPage => page.outputPage} Employee Rostering
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/maintenanceScheduling.html"), :outputPage => page.outputPage} Maintenance Scheduling
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/taskAssignmentOptimization.html"), :outputPage => page.outputPage} Task Assignment
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/schoolTimetabling.html"), :outputPage => page.outputPage} School Timetabling
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/cloudOptimization.html"), :outputPage => page.outputPage} Cloud Optimization
+  = succeed "," do
+    %a{:href => relative("/learn/useCases/conferenceScheduling.html"), :outputPage => page.outputPage} Conference Scheduling
+  Job Shop Scheduling, Bin Packing and
+  = succeed "." do
+    %a{:href => relative("/learn/useCases/"), :outputPage => page.outputPage} many more
+  Every organization faces such challenges:
+  assign a limited set of
+  %i constrained
+  resources (employees, assets, time and/or money)
+  to provide products or services.
+  OptaPlanner delivers more efficient plans, which reduce costs and improve service quality.
+
+%p
+  OptaPlanner is
+  = succeed "." do
+    %b a lightweight, embeddable planning solver
+  It enables everyday
+  %a{:href => relative("/compatibility/java.html")} Java
+  programmers to solve optimization problems efficiently.
+  It is also compatible with other JVM languages (such as
+  %a{:href => relative("/compatibility/kotlin.html"), :outputPage => page.outputPage} Kotlin
+  and
+  = succeed ")." do
+    %a{:href => relative("/compatibility/scala.html"), :outputPage => page.outputPage} Scala
+  Constraints apply on plain domain objects and can call existing code.
+  There's no need to input constraints as mathematical equations.
+  Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
+  (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
+  with very efficient score calculation and other state-of-the-art constraint solving techniques.
+
+%p
+  OptaPlanner is
+  %b open source software
+  , released under
+  = succeed "." do
+    %a{:href => relative("/code/license.html"), :outputPage => page.outputPage} the Apache License
+  It is written in 100% pure Java™, runs on any JVM and is available in
+  %a{:href => relative("/download/download.html"), :outputPage => page.outputPage} the Maven Central repository
+  too.
+  It works with
+  %a{:href => relative("/compatibility/quarkus.html"), :outputPage => page.outputPage} Quarkus
+  and
+  = succeed "." do
+    %a{:href => relative("/compatibility/springBoot.html"), :outputPage => page.outputPage} Spring Boot

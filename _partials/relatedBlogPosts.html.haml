@@ -1,0 +1,10 @@
+- relatedPosts = site.posts.select{|e| !e.tags.nil? and e.tags.any?{|t| t.to_s.eql? page.related_tag} }
+
+- if !relatedPosts.empty?
+  %h2 Related blog posts
+  %ul
+    - for post in relatedPosts
+      %li(style="margin-top: 10px;")
+        %a{:href => relative(post.url, page.outputPage)}
+          = post.title
+        = partial('userBadge.html.haml', :outputPage => page, :userId => post.author, :mode => 'inline')
