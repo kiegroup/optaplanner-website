@@ -28,16 +28,17 @@ change_frequency: weekly
         OptaPlanner delivers more efficient plans, which reduce costs and improve service quality.
 
         OptaPlanner is *a lightweight, embeddable planning engine*.
-        It enables everyday Java™ programmers to solve optimization problems efficiently.
-        It is also compatible with other JVM languages (such as Kotlin and Scala).
+        It enables everyday link:compatibility/java.html[Java] programmers to solve optimization problems efficiently.
+        It is also compatible with other JVM languages (such as link:compatibility/kotlin.html[Kotlin] and link:compatibility/scala.html[Scala]).
         Constraints apply on plain domain objects and can call existing code.
         There's no need to input constraints as mathematical equations.
-        Under the hood, OptaPlanner combines sophisticated AI optimization algorithms
+        Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
         (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
         with very efficient score calculation and other state-of-the-art constraint solving techniques.
 
         OptaPlanner is *open source software*, released under link:code/license.html[the Apache License].
         It is written in 100% pure Java™, runs on any JVM and is available in link:download/download.html[the Maven Central repository] too.
+        It works with link:compatibility/quarkus.html[Quarkus] and link:compatibility/springBoot.html[Spring Boot].
     = partial('flags.html.haml', :outputPage => page)
 
   .col-md-5
@@ -81,51 +82,33 @@ change_frequency: weekly
       %span.glyphicon.glyphicon-chevron-right
 
 .jumbotron.pagination-centered(style="padding: 10px; margin-bottom: 20px;")
-  %ul.nav.nav-justified.frontPageCarouselButtons#projectsCarouselButtons
-    %li.active(data-target="#projectsCarousel" data-slide-to="0")
-      %a(href="#" data-toggle="tab") OptaPlanner Engine
-    %li(data-target="#projectsCarousel" data-slide-to="1")
-      %a(href="#" data-toggle="tab") Workbench
-    %li(data-target="#projectsCarousel" data-slide-to="2")
-      %a(href="#" data-toggle="tab") Execution Server
-  .carousel.slide.frontPageCarousel#projectsCarousel(data-ride="carousel" data-interval="false" style="background-color: white;")
-    .carousel-inner
-      .item.active(style="min-height: 450px;")
-        %div(style="vertical-align: middle; margin:0 auto; max-width: 600px; padding: 20px;")
-          :asciidoc
-            To optimize a problem from Java™ code,
-            add the `optaplanner-core` jar and call `Solver.solve()`:
+  %div(style="vertical-align: middle; margin:0 auto; max-width: 600px; padding: 20px;")
+    :asciidoc
+      To optimize a problem from Java™ code,
+      add the `optaplanner-core` jar and call `Solver.solve()`:
 
-            [source,java]
-            ----
-            // My domain specific class as input
-            MyRoster problem = ...;
+      [source,java]
+      ----
+      // My domain specific class as input
+      MyRoster problem = ...;
 
-            SolverFactory<MyRoster> factory = SolverFactory
-                .createFromXmlResource(".../mySolverConfig.xml");
-            Solver<MyRoster> solver = factory.buildSolver();
+      SolverFactory<MyRoster> factory = SolverFactory
+          .createFromXmlResource(".../mySolverConfig.xml");
+      Solver<MyRoster> solver = factory.buildSolver();
 
-            // My domain specific class as output
-            MyRoster solution = solver.solve(problem);
+      // My domain specific class as output
+      MyRoster solution = solver.solve(problem);
 
-            for (MyShift shift : solution.getShifts()) {
-              // Each shift is now assigned to an employee
-              assertNotNull(shift.getEmployee());
-            }
-            ----
-      .item(style="min-height: 450px;")
-        %img(src="landingPage/workbench.png" alt="Workbench" width="600" height="450")
-      .item(style="min-height: 450px;")
-        %img(src="landingPage/executionServer.png" alt="Execution Server" width="600" height="450")
-    %a.left.carousel-control(href="#projectsCarousel" data-slide="prev")
-      %span.glyphicon.glyphicon-chevron-left
-    %a.right.carousel-control(href="#projectsCarousel" data-slide="next")
-      %span.glyphicon.glyphicon-chevron-right
+      for (MyShift shift : solution.getShifts()) {
+        // Each shift is now assigned to an employee
+        assertNotNull(shift.getEmployee());
+      }
+      ----
 
 .row
-  .col-md-5
-    = partial('latestBlogPosts.html.haml', :outputPage => page)
-  .col-md-2
+  .col-md-6
     = partial('latestReleases.html.haml', :outputPage => page)
-  .col-md-5
+    = partial('latestBlogPosts.html.haml', :outputPage => page)
+  .col-md-6
     = partial('events.html.haml', :outputPage => page)
+    = partial('latestVideos.html.haml', :outputPage => page)

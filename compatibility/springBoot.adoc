@@ -1,0 +1,24 @@
+= Artificial Intelligence for Spring Boot
+:awestruct-description: Learn how to use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Spring Boot.
+:awestruct-layout: compatibilityBase
+:awestruct-priority: 1.0
+:awestruct-related_tag: spring
+:showtitle:
+
+OptaPlanner has a Spring Boot Starter to get up and running quickly.
+
+Usage is similar to the link:quarkus.html[Quarkus] extension, but without the performance benefits.
+
+video::U2N02ReT9CI[youtube]
+
+== Guide
+
+**https://github.com/ge0ffrey/gs-constraint-solving-ai-optaplanner-backup/blob/master/README.adoc[Read the OptaPlanner on Spring Boot guide.]**
+
+== Quick start
+
+Run the quick start yourself:
+
+. Download https://github.com/ge0ffrey/gs-constraint-solving-ai-optaplanner-backup/tree/master/complete[the source code].
+. Run `./mvnw clean install`
+. Open http://localhost:8080 in your browser

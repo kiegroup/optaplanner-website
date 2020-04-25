@@ -1,0 +1,17 @@
+.panel.panel-default
+  .panel-heading Latest videos
+  .panel-body
+    %ul.list-unstyled
+      - for video in site.videos[0,7]
+        %li(style="margin-bottom: 10px;")
+          .title
+            %a{:href => "https://youtu.be/#{video.youtubeId}"}
+              %img{:src => relative("/headerFooter/youtubeLogo.png"), :alt => "YT", :style => "height:16px; width:auto"}
+              = video.title
+          .small
+            = video.date.strftime('%a %-d %B %Y')
+          - if !video.author.nil?
+            = partial('userBadge.html.haml', :outputPage => page, :userId => video.author, :mode => 'inline')
+    .small.pull-right
+      %a{:href => relative("/learn/video.html", page.outputPage)}
+        Video archive
