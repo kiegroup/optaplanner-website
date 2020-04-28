@@ -8,5 +8,5 @@
 OptaPlanner is very often used by Kotlin programmers.
 
 - It works, there are no issues.
-- There is a feature request is for nullability annotations on all API's,
+- There is a feature request for nullability annotations on all APIs,
 which we will add once Kotlin supports those from `jakarta.annotation:jakarta.annotation-api`.
