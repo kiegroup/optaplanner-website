@@ -25,8 +25,8 @@ A fraction of our users have shared their story publicly:
 
 * http://community.redhat.com/blog/2014/11/smart-vm-scheduling-in-ovirt-clusters/[oVirt OptaPlanner plugin: Cloud optimization of Virtual Machines]
 
-* http://www.viaboxxsystems.de/vehicle-routing-optaplanner[Vehicle routing with real routes],
-http://www.viaboxxsystems.de/scaling-vehicle-routing-problem[scaling it] (before nearby selection)
+* https://www.viaboxx.de/route-optimization/vehicle-routing-optaplanner/[Vehicle routing with real routes],
+https://www.viaboxx.de/route-optimization/scaling-the-vehicle-routing-problem/[scaling it] (before nearby selection)
 and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-graphhopper[using GraphHopper] in Germany
 
 * http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA in Austria
