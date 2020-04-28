@@ -567,11 +567,11 @@
     url: https://www.meetup.com/SouJava/events/269692762/
     presenters: Geoffrey De Smet
 
-- eventId: 20200428-redhatsummit
+- eventId: 20200429-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/summit/
   location: Worldwide
-  date: 2020-04-28
+  date: 2020-04-29
   talks:
   - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
     presenters: Satish Kale, Geoffrey De Smet
