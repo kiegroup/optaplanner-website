@@ -269,7 +269,7 @@ In particular:
 
 We'll be using the following domain model for our classes:
 
-image::ClassDiagram.png[]
+image::flightSeatAssignmentClassDiagram.png[]
 
 * A seat has a seat identifier (ex: "3A") and what type it is.
 
@@ -555,7 +555,7 @@ variables, including the optimized seat assignments in the "flight" field:
       }
     ],
     "rowCount":4,
-    "columnCount":4,
+    "columnCount":4
   }
 }
 ----
