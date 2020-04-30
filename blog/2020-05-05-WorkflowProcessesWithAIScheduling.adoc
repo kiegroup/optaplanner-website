@@ -1,56 +1,29 @@
-= Combining BPMN with Optaplanner
+= Workflow processes with AI scheduling
 :page-interpolate: true
 :awestruct-author: Christopher-Chianelli
 :awestruct-layout: blogPostBase
 :awestruct-tags: [useCase]
-:awestruct-date: 2020-03-01
 
-Many Business Processes modelled with BPMN diagrams. When the Business
+A BPMN diagram models a Business Process. When the Business
 Process involves optimization at some step,
-https://www.optaplanner.org/[OptaPlanner] can perform that task for us. Now with
-https://kogito.kie.org/[Kogito], it is easier then ever before to integrate
-OptaPlanner into your BPMN diagrams! We will show how simple it is by creating a
-Business Process for scheduling a flight in an airline from scratch using
-OptaPlanner, BPMN and Spring Boot in 15 minutes.
+https://www.optaplanner.org/[OptaPlanner] can help you quickly find an optimal solution.
+Now with https://kogito.kie.org/[Kogito], it is easier than ever before to integrate
+OptaPlanner into your BPMN diagrams! It so simple, that by the end of this blog,
+you will create a Business Process for scheduling a flight in an airline from scratch using
+OptaPlanner, BPMN and Quarkus in 15 minutes.
 
 == Project Setup
 
 Create a new folder to hold this project. Run the following command to
-create a new Kogito Spring Boot project:
+create a new Quarkus project:
 
-```
-mvn archetype:generate \
--DarchetypeGroupId=org.kie.kogito \
--DarchetypeArtifactId=kogito-springboot-archetype \
--DarchetypeVersion=8.0.0-SNAPSHOT \
--DgroupId=com.company \
--DartifactId=airline-bpmn-optaplanner
-```
-
-In the newly created `pom.xml` file, add the following dependencies to the
-dependency section:
-[source,xml]
+[source]
 ----
-<dependency>
-  <groupId>org.optaplanner</groupId>
-  <artifactId>optaplanner-spring-boot-starter</artifactId>
-</dependency>
-----
-
-And add the following dependency management section to `pom.xml`:
-[source,xml]
-----
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>org.optaplanner</groupId>
-      <artifactId>optaplanner-bom</artifactId>
-      <version>7.33.0.Final</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
+mvn io.quarkus:quarkus-maven-plugin:1.4.1.Final:create \
+    -DprojectGroupId=com.company \
+    -DprojectArtifactId=airline-bpmn-optaplanner \
+    -Dextensions="resteasy, resteasy-jackson, optaplanner, \
+                  optaplanner-jackson, kogito-quarkus, smallrye-openapi"
 ----
 
 == Creating your BPMN file
@@ -68,7 +41,7 @@ We will be creating a simple BPMN that models the following process:
 
 
 
-Go to the https://kiegroup.github.io/kogito-online/#/editor/bpmn[Kogito BPMN Editor],
+Go to the https://bpmn.new[Kogito BPMN Editor],
 a free online editor for editing and creating BPMN files, no account required.
 You should be greeted with the following screen:
 
@@ -140,7 +113,7 @@ need two additional variables:
 - The passenger who requested a ticket
 - The response from security
 
-Expand the "Process" data tab and create two new variables in the same manner
+Expand the "Process Data" tab and create two new variables in the same manner
 you created the "flightProcess" variable:
 
 - "passenger", of type "com.company.Passenger" (use Custom type)
@@ -229,9 +202,8 @@ the arrow, then click the "To" node):
 image::BPMNConnectPassengerRequestsTicketSubprocess.png[]
 
 Click on the arrow from "Exclusive Gateway" to "Add Passenger To Flight".
-In its "Implementation/Execution" section, select "Expression" for
-"Conditional Expression" and put in the following code in the text box below
-it:
+In its "Implementation/Execution" section, put in the following code in the "Expression"
+text box:
 [source,java]
 ----
 return isPassengerApprovedBySecurity;
@@ -240,9 +212,8 @@ return isPassengerApprovedBySecurity;
 image::BPMNPassengerApprovedPath.png[]
 
 Now click on the arrow from "Exclusive Gateway" to "First End". In its
-"Implementation/Execution" section, select "Expression" for
-"Conditional Expression" and put in the following code in the text box below
-it:
+"Implementation/Execution" section, put in the following code in the "Expression"
+text box:
 [source,java]
 ----
 return !isPassengerApprovedBySecurity;
@@ -251,10 +222,10 @@ return !isPassengerApprovedBySecurity;
 image::BPMNPassengerNotApprovedPath.png[]
 
 We are now done with the "Passenger Requests Ticket Subprocess". Since we
-can add passengers to our flight, it now time to integrate OptaPlanner into
+can add passengers to our flight, it is now time to integrate OptaPlanner into
 our BPMN. Create a new "Service Task" in the main process (*not* in
 "Passenger Requests Ticket Subprocess") and create a sequence flow
-from "Finalize Passenger List" to it. Rename it "Create Seat Assignments", and
+from "Finalize Passenger List" to it. Rename it to "Create Seat Assignments", and
 in the "Implementation/Execution" section, put "com.company.FlightService"
 for "Interface", "createSeatAssignments" for "Operation". Add the following
 input and output assignments:
@@ -380,10 +351,9 @@ final best solution.
 [source,java]
 ----
 @ApplicationScoped
-@Component
 public class FlightService {
-    @Autowired
-    private SolverManager<Flight, String> solverManager;
+    @Inject
+    SolverManager<Flight, String> solverManager;
 
     public void addPassengerToFlight(Flight flight, Passenger passenger) {
         flight.passengerList.add(passenger);
@@ -403,16 +373,11 @@ public class FlightService {
 Finally, we need to modify `application.properties` so the `Solver` know
 when to terminate. Modify your `application.properties` to look like the following:
 
-[source,sh]
+[source,properties]
 ----
-server.address=0.0.0.0
-
-spring.mvc.servlet.path=/docs
-
-resteasy.jaxrs.scan-packages=org.kie.**,com.company,http*
-
-# Solve for 5 seconds
-optaplanner.solver.termination.spent-limit=5s
+# The solver runs only for 5 seconds to avoid a HTTP timeout in this simple implementation.
+# It's recommended to run for at least 5 minutes ("5m") otherwise.
+quarkus.optaplanner.solver.termination.spent-limit=5s
 ----
 
 == Creating the Constraints
@@ -423,7 +388,7 @@ application in Java. We'll have two constraints:
 * No two passengers can be in the same seat.
 * Maximize the number of passengers who get seats they prefer.
 
-To do this, we create a `ConstraintProvider` that implement these constraints:
+To do this, we create a `ConstraintProvider` that implements these constraints:
 
 [source,java]
 ----
@@ -433,7 +398,7 @@ public class FlightSeatingConstraintProvider implements ConstraintProvider {
     public Constraint[] defineConstraints(ConstraintFactory constraintFactory) {
         return new Constraint[] {
             onlyOnePassengerPerSeat(constraintFactory),
-            seatTypePreferrence(constraintFactory)
+            seatTypePreference(constraintFactory)
         };
     }
 
@@ -442,15 +407,14 @@ public class FlightSeatingConstraintProvider implements ConstraintProvider {
                    .penalize("Only one passenger per seat", HardSoftScore.ONE_HARD);
     }
 
-    private Constraint seatTypePreferrence(ConstraintFactory constraintFactory) {
+    private Constraint seatTypePreference(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Passenger.class)
                    .join(Seat.class, Joiners.equal(p -> p.seat, s -> s))
-                   .filter((p,s) -> p.preferredSeatType != null && !p.preferredSeatType.equals(s.type))
-                   .penalize("Seat type preferrence", HardSoftScore.ONE_SOFT);
+                   .filter((p,s) -> p.preferredSeatType != null && p.preferredSeatType != s.type)
+                   .penalize("Seat type preference", HardSoftScore.ONE_SOFT);
     }
 
 }
-
 ----
 
 == Testing the Flight Application
@@ -458,24 +422,22 @@ public class FlightSeatingConstraintProvider implements ConstraintProvider {
 Now we are ready to test out the Flight Application we just created!
 Run the following command in the terminal to start the server:
 
-```
-mvn clean package spring-boot:run
-```
+[source]
+----
+./mvnw quarkus:dev
+----
 
 You can see the generated API methods by copying
-http://localhost:8080/docs/swagger.json to https://editor.swagger.io[The Swagger Editor].
-Let try creating a flight. Run the following command :
+http://localhost:8080/openapi to https://editor.swagger.io[The Swagger Editor].
+Let's try creating a flight. Run the following command :
 
-```
+[source]
+----
 curl -X POST "localhost:8080/flightProcess" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"flight\":{\"id\":\"string\",\"passengerList\":[],\"rowCount\":4,\"columnCount\":4}}"
-```
-
-```
-curl -X POST "localhost:8080/flightProcess" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"flight\":{\"id\":\"string\",\"passengerList\":[],\"seatList\":[{\"seatIdentifier\":\"1A\",\"type\":\"WINDOW\"},{\"seatIdentifier\":\"1B\",\"type\":\"AISLE\"},{\"seatIdentifier\":\"1C\",\"type\":\"AISLE\"},{\"seatIdentifier\":\"1D\",\"type\":\"WINDOW\"},{\"seatIdentifier\":\"2A\",\"type\":\"WINDOW\"},{\"seatIdentifier\":\"2B\",\"type\":\"AISLE\"},{\"seatIdentifier\":\"2C\",\"type\":\"AISLE\"},{\"seatIdentifier\":\"2D\",\"type\":\"WINDOW\"}]}}"
-```
+----
 
 You should get a response that looks like the following:
-[source]
+[source,json]
 ----
 {
   "id":"${id}",
@@ -492,21 +454,23 @@ You should get a response that looks like the following:
 Let add a few passengers to our flight (replace ${id} with the id you got from
 the previous command).
 
-```
+[source]
+----
 curl -X POST "localhost:8080/flightProcess/${id}/passengerRequestTicket" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"name\":\"Amy Cole\",\"preferredSeatType\":\"WINDOW\"}"
 curl -X POST "localhost:8080/flightProcess/${id}/passengerRequestTicket" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"name\":\"John Smith\",\"preferredSeatType\":\"AISLE\"}"
 curl -X POST "localhost:8080/flightProcess/${id}/passengerRequestTicket" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"name\":\"Bad Guy\"}"
-```
+----
 
 Now let look at our tasks:
 
-```
+[source]
+----
 curl -X GET "localhost:8080/flightProcess/${id}/tasks" -H  "accept: application/json"
-```
+----
 
 You should get a response that look like this:
 
-[source]
+[source,json]
 ----
 {
   "b484124e-e015-488a-8ee2-4643199a32c5":"approvePassengerForFlight",
@@ -518,11 +482,12 @@ You should get a response that look like this:
 
 Let looks at one of our passengers (replace ${taskId} with the id of the "approvePassengerForFlight" you want to inspect):
 
-```
- curl -X GET "localhost:8080/flightProcess/${id}/approvePassengerForFlight/${taskId}" -H  "accept: application/json"
-```
-
 [source]
+----
+ curl -X GET "localhost:8080/flightProcess/${id}/approvePassengerForFlight/${taskId}" -H  "accept: application/json"
+----
+
+[source,json]
 ----
 {
   "passenger":{
@@ -537,31 +502,34 @@ Let looks at one of our passengers (replace ${taskId} with the id of the "approv
 
 Let approve "Amy Cole" and "John Smith":
 
-```
+[source]
+----
 curl -X POST "localhost:8080/flightProcess/${id}/approvePassengerForFlight/${taskId}" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"isPassengerApprovedBySecurity\":true}"
-```
+----
 (run the command twice; one for the "approvePassengerForFlight" task for Amy Cole,
 and one for the "approvePassengerForFlight" task for John Smith).
 
 And let deny "Bad Guy":
 
-```
+[source]
+----
 curl -X POST "localhost:8080/flightProcess/${id}/approvePassengerForFlight/${taskId}" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"isPassengerApprovedBySecurity\":false}"
-```
+----
 (replace ${taskId} with Bad Guy's "approvePassengerForFlight" task id)
 
 Finally, let create the seat assignments:
 
-```
+[source]
+----
 curl -X POST "localhost:8080/flightProcess/${id}/finalizePassengerList/${taskId}" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{}"
-```
+----
 (Use "finalizePassengerList" task's id here)
 
 This request will take several seconds to return as it waits for OptaPlanner
 to optimize the flight seating. It will return a JSON containing the process
 variables, including the optimized seat assignments in the "flight" field:
 
-[source]
+[source,json]
 ----
 {
   "id":"61210009-8f75-4bf7-9221-d5c92d7d1be3",
@@ -601,7 +569,7 @@ Now we have a fully functional REST service, we can easily extend it by:
 
 * Creating a UI frontend to the service
 * Signaling the BPMN process when OptaPlanner is finished solving instead of
-waiting for solving to finished, and poll the latest solutions client-side
+waiting for solving to finish, and poll the latest solutions client-side
 * Send Kafka messages whenever OptaPlanner finds a new solution and consume
 them in the BPMN process
 
