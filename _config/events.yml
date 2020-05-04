@@ -575,3 +575,21 @@
   talks:
   - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
     presenters: Satish Kale, Geoffrey De Smet
+
+- eventId: 20200504-devnation
+  eventOrganization: "DevNation Tech Talks"
+  location: Worldwide
+  date: 2020-05-08
+  talks:
+    - title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
+      url: https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/
+      presenters: Geoffrey De Smet
+
+#- eventId: 20200515-springiobridge
+#  eventOrganization: "Spring I/O Bridge"
+#  location: Worldwide
+#  date: 2020-05-15
+#  talks:
+#    - title: "AI on Spring: I love it when an OptaPlan comes together"
+#      url: https://2020.springio.net/bridge/
+#      presenters: Geoffrey De Smet
