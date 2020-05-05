@@ -2,7 +2,8 @@
 :page-interpolate: true
 :awestruct-author: Christopher-Chianelli
 :awestruct-layout: blogPostBase
-:awestruct-tags: [useCase]
+:awestruct-tags: [use case]
+:awestruct-share_image_filename: FinalBPMN.png
 
 A BPMN diagram models a Business Process. When the Business
 Process involves optimization at some step,
