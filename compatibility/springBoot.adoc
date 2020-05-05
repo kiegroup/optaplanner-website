@@ -13,7 +13,7 @@ video::U2N02ReT9CI[youtube]
 
 == Guide
 
-**https://github.com/ge0ffrey/gs-constraint-solving-ai-optaplanner-backup/blob/master/README.adoc[Read the OptaPlanner on Spring Boot guide.]**
+**https://github.com/ge0ffrey/getting-started-guides/blob/gs-constraint-solving-ai-optaplanner/README.adoc[Read the OptaPlanner on Spring Boot guide.]**
 
 == Quick start
 
