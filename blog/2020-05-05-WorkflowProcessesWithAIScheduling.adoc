@@ -574,6 +574,6 @@ waiting for solving to finish, and poll the latest solutions client-side
 them in the BPMN process
 
 You can find an extended version of the flight example created in this blog
-at https://github.com/kiegroup/kogito-examples/tree/master/jbpm-optaplanner-springboot-example[the Kogito Examples repository],
+at https://github.com/kiegroup/kogito-examples/tree/master/process-optaplanner-quarkus[the Kogito Examples repository],
 which has a full UI and poll for the latest solution from the solver instead of
 waiting for solving to finish.
