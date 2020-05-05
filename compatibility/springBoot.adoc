@@ -19,6 +19,6 @@ video::U2N02ReT9CI[youtube]
 
 Run the quick start yourself:
 
-. Download https://github.com/ge0ffrey/gs-constraint-solving-ai-optaplanner-backup/tree/master/complete[the source code].
+. Download https://github.com/ge0ffrey/getting-started-guides/tree/gs-constraint-solving-ai-optaplanner/complete[the source code].
 . Run `./mvnw clean install`
 . Open http://localhost:8080 in your browser
