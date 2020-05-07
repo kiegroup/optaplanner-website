@@ -1,14 +1,15 @@
-= AI versus Covid-19: How Java helps nurses and doctors in this fight
+= AI versus Covid-19&#58; How Java helps nurses and doctors in this fight
 :page-interpolate: true
 :awestruct-author: Christopher-Chianelli
 :awestruct-layout: blogPostBase
 :awestruct-tags: [use case]
+:awestruct-share_image_filename: CovidWardNoExtremeRisk.png
 
 Scheduling a hospital is tough. To maintain employees' happiness and health,
 you need to take into account sick days, days off requests, and assure
 the employees have ample time between shifts. This is doubly so in a pandemic,
 where you need to minimize exposure to the new disease and have nurses with
-different risks. Let's take a look at how we can quickly and efficiently
+varying susceptibilities to the disease. Let's take a look at how we can quickly and efficiently
 schedule a hospital roster that minimizes cross-contamination between wards
 and maximizes employees' happiness using OptaWeb Employee Rostering.
 
@@ -56,11 +57,15 @@ this is a soft constraint.
 work in a Covid-19 ward. This is another soft constraint.
 
 These, and the rest of the constraints, can be found in the
-https://github.com/kiegroup/optaweb-employee-rostering/blob/covid-19/optaweb-employee-rostering-backend/src/main/resources/org/optaweb/employeerostering/service/solver/employeeRosteringScoreRules.drl[Drools constraints
-file]. They can also be implemented in Java using constraint streams.
+https://github.com/kiegroup/optaweb-employee-rostering/blob/15c515de6c9faa79df957146a029531d49ea650c/optaweb-employee-rostering-backend/src/main/resources/org/optaweb/employeerostering/service/solver/employeeRosteringScoreRules.drl[Drools constraints
+file]. They can also be implemented in Java using https://docs.optaplanner.org/7.36.0.Final/optaplanner-docs/html_single/index.html#constraintStreams[OptaPlanner's Constraint Streams
+API].
 
 == Using the application
 
+You can build and run OptaWeb Employee Rostering locally by cloning
+https://github.com/kiegroup/optaweb-employee-rostering/tree/covid-19[its GitHub repository],
+switching to the `covid-19` branch, and following the instructions in the README.
 OptaWeb Employee Rostering comes with both a backend and frontend. You could use the
 bundled frontend or use the backend's REST endpoints. The application by default
 starts with demo data, allowing you to try out the application. Let's use one of
@@ -128,7 +133,9 @@ in their day to day lives and allowing automatic provisioning of new shifts.
 
 As you just saw, OptaWeb Employee Rostering allows you to easily create
 and optimize rosters, that does not only minimize Covid-19's effect on
-health care workers, but also maximizes their happiness. This was only
+health care workers, but also maximizes their happiness. You can find the
+source code of this application at
+https://github.com/kiegroup/optaweb-employee-rostering/tree/covid-19[the OptaWeb Employee Rostering GitHub repository]. This was only
 possible as OptaPlanner has such a flexible and easy way to add new constraints,
 allowing us to quickly modify OptaWeb Employee Rostering to accommodate
 the new constraints that came with Covid-19. You might also be interested
