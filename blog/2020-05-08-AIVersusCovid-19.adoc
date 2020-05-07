@@ -66,15 +66,15 @@ bundled frontend or use the backend's REST endpoints. The application by default
 starts with demo data, allowing you to try out the application. Let's use one of
 example tenant and solve its roster. Navigate to the "Scheduling" tab and click
 the (?) button next to the score. You will see a detailed summary of all the constraints.
-In it, we see the constraint "Assign every shift" has 1116 matches, meaning we have
+On the bottom of the list, we see the constraint "Assign every shift" has 1116 matches, meaning we have
 1116 unassigned shifts. Let's fix that right now.
 
 image::ConstraintSummary1.png[Unassigned Shifts]
 
-Close the summary popup and click on the "Solve" button. OptaPlanner will begin solving
+Close the summary popup and click on the "Schedule" button. OptaPlanner will begin solving
 the roster. After about 30 seconds, you'll see there are no more unassigned shifts --
 that is, OptaPlanner assigned an employee to each of the 1116 shifts, all the while
-making sure no employee get two shifts at the same time, each employee has the required
+making sure no employee gets two shifts at the same time, each employee has the required
 skills for their shift, and each employee has enough rest between shifts. Imagine
 making a feasible schedule by assigning 1116 shifts by hand; it would take a good
 while longer than 30 seconds!
@@ -86,17 +86,17 @@ the score. You might have already seen the schedule change several times already
 Let's stop solving for now. Click the Ward selector (left side of the toolbar) and
 change to the ward "COVID-19 Ward 1". Every shift has a small circle at the top of
 it denoting the Covid-19 susceptibility of its employee. A shield represents
-inoculated employees; people who have acquired immunity to Covid-19. A near empty
-circle mean the employee has a low Covid-19 susceptibility, while a more filled in
-circle mean a higher Covid-19 susceptibility. Finally, a red circle mean the employee
-is extremely susceptible to Covid-19, and should not placed in a ward with Covid-19.
+inoculated employees; people who have acquired immunity to Covid-19. A near-empty
+circle means the employee has a low Covid-19 susceptibility, while a more filled in
+circle means a higher Covid-19 susceptibility. Finally, a red circle means the employee
+is extremely susceptible to Covid-19, and should not be placed in a ward with Covid-19.
 Notice how there are no Extreme risk employees in the Covid-19 ward? Moreover, most
-of the Covid-19's ward shifts either have inoculated or low risk employees.
+of the Covid-19's ward shifts either have inoculated or low-risk employees.
 
 image::CovidWardNoExtremeRisk.png[No Extreme Risk Employees in Covid-19 Ward]
 
 One second, I am getting a call. Okay, I'm back. Beth P. Watt caught the flu and
-as such is not able to make their shift this Saturday. Luckily for us, OptaPlanner
+as such is not able to make her shift this Saturday. Luckily for us, OptaPlanner
 can handle sudden changes well. Go to the "Availability" tab. Click the Employee
 selector (left side of the toolbar) and type in "Beth P. Watt". Click the Clock
 icon on the week selector to jump to the current week. Now click the area under
@@ -132,4 +132,4 @@ health care workers, but also maximizes their happiness. This was only
 possible as OptaPlanner has such a flexible and easy way to add new constraints,
 allowing us to quickly modify OptaWeb Employee Rostering to accommodate
 the new constraints that came with Covid-19. You might also be interested
-in https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/[Geoffery De Smet's talk on the application].
+in https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/[Geoffrey De Smet's talk on the application].
