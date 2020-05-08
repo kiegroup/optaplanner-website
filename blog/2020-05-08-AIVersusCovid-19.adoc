@@ -50,7 +50,7 @@ employee to be in two places at the same time? As such, this is a hard constrain
 meaning a schedule is infeasible if broken.
 
 * Whenever possible, an employee should not be working on a day they request off.
-Since the schedule remains feasible an employee is working on a day they want off,
+Since the schedule remains feasible when an employee is working on a day they want off,
 this is a soft constraint.
 
 * The higher an employee's Covid-19 susceptibility is, the less they should
