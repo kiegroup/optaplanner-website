@@ -2973,7 +2973,7 @@ in favor of `SolverFactory.getScoreDirectorFactory()`.
 Now you don't need to create a `Solver` instance just to calculate or explain a score in the UI.
 
 Before in `*.java`:
-[source, java]
+[source,java]
 ----
 SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
 Solver<VehicleRoutingSolution> solver = solverFactory.buildSolver();
@@ -2982,9 +2982,21 @@ uiScoreDirectorFactory = solver.getScoreDirectorFactory();
 ----
 
 After in `*.java`:
-[source, java]
+
+[source,java]
 ----
 SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
 uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 ...
 ----
+
+== From 7.37.0.Final to 7.38.0.Final
+
+[.upgrade-recipe-major]
+=== `SimpleDoubleScore` and `HardSoftDoubleScore` deprecated for removal
+
+The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
+as it leads to score corruption.
+They have finally been deprecated for removal and you will no longer be able to use them in the next major version.
+
+If you're still using `SimpleDoubleScore` or `HardSoftDoubleScore` in your codebase, refactor your planning solution and your scoring function to use another score type.
