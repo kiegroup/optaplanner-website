@@ -2992,11 +2992,37 @@ uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 
 == From 7.37.0.Final to 7.38.0.Final
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-minor]
 === `SimpleDoubleScore` and `HardSoftDoubleScore` deprecated for removal
 
 The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
 as it leads to score corruption.
 They have finally been deprecated for removal and you will no longer be able to use them in the next major version.
 
-If you're still using `SimpleDoubleScore` or `HardSoftDoubleScore` in your codebase, refactor your planning solution and your scoring function to use another score type.
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class MyPlanningSolution {
+
+    private SimpleDoubleScore score;
+
+    ...
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class MyPlanningSolution {
+
+    private SimpleLongScore score;
+
+    ...
+
+}
+----
