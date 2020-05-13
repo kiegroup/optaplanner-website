@@ -3026,3 +3026,60 @@ public class MyPlanningSolution {
 
 }
 ----
+
+[.upgrade-recipe-minor]
+=== `Score.toInitializedScore()` deprecated for removal
+
+The `Score.toInitializedScore()` method has been deprecated in favor of `Score.withInitScore(int)`.
+
+Before in `*.java`:
+
+[source,java]
+----
+score = score.toInitializedScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+score = score.withInitScore(0);
+----
+
+[.upgrade-recipe-minor]
+=== Various `Comparators` deprecated for removal
+
+The following `Comparator` implementations were deprecated:
+
+- `org.optaplanner.core.api.score.comparator.NaturalScoreComparator`
+- `org.optaplanner.core.api.score.constraint.ConstraintMatchScoreComparator`
+- `org.optaplanner.core.api.score.constraint.ConstraintMatchTotalScoreComparator`
+- `org.optaplanner.core.api.score.constraint.IndictmentScoreComparator`
+
+Before in `*.java`:
+
+[source,java]
+----
+NaturalScoreComparator comparator = new NaturalScoreComparator();
+ConstraintMatchScoreComparator comparator2 = new ConstraintMatchScoreComparator();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+Comparator<Score> comparator = Comparable::compareTo;
+Comparator<ConstraintMatch> comparator2 = Comparator.comparing(ConstraintMatch::getScore);
+----
+
+[.upgrade-recipe-minor]
+=== `FeasibilityScore` deprecated for removal
+
+The `FeasibilityScore` interface has been deprecated and its only method `isFeasible()` moved to the `Score` supertype.
+The method has a new default implementation and most users therefore should not notice any changes.
+However, for users who were extending `Score` (not `FeasibilityScore`), an exception may be thrown unless they override the method in their custom score implementations.
+
+We continue to ask users to refer to their `Score`s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
+or the now deprecated `FeasibilityScore`.
+
+
