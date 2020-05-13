@@ -3047,7 +3047,7 @@ score = score.withInitScore(0);
 ----
 
 [.upgrade-recipe-minor]
-=== Various `Comparators` deprecated for removal
+=== Various justification `Comparators` deprecated for removal
 
 The following `Comparator` implementations were deprecated:
 
@@ -3079,7 +3079,7 @@ The `FeasibilityScore` interface has been deprecated and its only method `isFeas
 The method has a new default implementation and most users therefore should not notice any changes.
 However, for users who were extending `Score` (not `FeasibilityScore`), an exception may be thrown unless they override the method in their custom score implementations.
 
-We continue to ask users to refer to their `Score`s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
+Users should refer to their `Score`s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
 or the now deprecated `FeasibilityScore`.
 
 
