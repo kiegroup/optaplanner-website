@@ -6,7 +6,7 @@
         %li(style="margin-bottom: 10px;")
           .title
             %a{:href => "https://youtu.be/#{video.youtubeId}"}
-              %img{:src => relative("/headerFooter/youtubeLogo.png"), :alt => "YT", :style => "height:16px; width:auto"}
+              %img{:src => relative("/headerFooter/youtubeLogo.png", page.outputPage), :alt => "YT", :style => "height:16px; width:auto"}
               = video.title
           .small
             = video.date.strftime('%a %-d %B %Y')

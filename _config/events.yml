@@ -585,11 +585,11 @@
       url: https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/
       presenters: Geoffrey De Smet
 
-#- eventId: 20200515-springiobridge
-#  eventOrganization: "Spring I/O Bridge"
-#  location: Worldwide
-#  date: 2020-05-15
-#  talks:
-#    - title: "AI on Spring: I love it when an OptaPlan comes together"
-#      url: https://2020.springio.net/bridge/
-#      presenters: Geoffrey De Smet
+- eventId: 20200515-springiobridge
+  eventOrganization: "Spring I/O Bridge"
+  location: Worldwide
+  date: 2020-05-15
+  talks:
+    - title: "AI on Spring: I love it when an OptaPlan comes together"
+      url: https://2020.springio.net/bridge/
+      presenters: Geoffrey De Smet
