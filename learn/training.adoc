@@ -4,21 +4,31 @@
 :awestruct-priority: 0.4
 :showtitle:
 
-== What is it?
+== Free online training (recommended)
+
+Follow https://learn.openshift.com/middleware/courses/middleware-kogito/optaplanner-knapsack[this KataKoda]
+to quickly learn:
+
+* How to solve a _knapsack problem_ with OptaPlanner.
+* How to expose it as a REST application on Quarkus.
+* How deploy that application in the cloud on OpenShift.
+
+https://learn.openshift.com/middleware/courses/middleware-kogito/optaplanner-knapsack[*Start the free online training now*]
+
+== Training zip (legacy)
+
+=== What is it?
 
 The optaplanner-training teaches OptaPlanner through a number of labs.
 Each lab has an assignment with clear goals, initial code and a solution.
 
-Currently, the `optaplanner-training-*.zip` is publicly available to the community.
-It's unclear if that will remain the case. Grab it while you can :)
-
 https://download.jboss.org/optaplanner/training/optaplanner-training-7.0.0.Beta4-training-4.zip[*Download optaplanner-training-7.0.0.Beta4-training-4.zip*]
 
-== Usage
+=== Usage
 
 . Download and unzip `optaplanner-training-*.zip`
 . Open `instructions/training.html` and follow those instructions.
 
-== Source
+=== Source
 
 The source code which _generates_ that training zip is in https://github.com/kiegroup/optaplanner-training[the optaplanner-training GitHub repository].
