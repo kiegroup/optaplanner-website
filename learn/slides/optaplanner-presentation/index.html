@@ -997,14 +997,14 @@ $ <b>mvn clean install -DskipTests</b>
             <img src="PlannerIntroduction/useCaseOverview_5.png" class="fullImage fragment">
         </section>
         <section>
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_5.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_5.png" class="fullImage">
         </section>
         <section>
             <h3>Project setup</h3>
         </section>
         <section>
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_0.png" class="fullImage">
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_1.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_1.png" class="fullImage fragment">
         </section>
         <section>
             <h3>Project setup</h3>
@@ -1022,8 +1022,8 @@ $ <b>mvn clean install -DskipTests</b>
             <h3>UI</h3>
         </section>
         <section>
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_1.png" class="fullImage">
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_2.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_1.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_2.png" class="fullImage fragment">
         </section>
         <section>
             <h3>UI in JavaScript</h3>
@@ -1046,15 +1046,15 @@ $ <b>mvn clean install -DskipTests</b>
             <h3>Database</h3>
         </section>
         <section>
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_2.png" class="fullImage">
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_3.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_2.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_3.png" class="fullImage fragment">
         </section>
         <section>
             <h3>AI planning optimization</h3>
         </section>
         <section>
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_3.png" class="fullImage">
-            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitecture_4.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_3.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureQuarkus_4.png" class="fullImage fragment">
         </section>
         <section>
             <img src="QuickStart/SchoolTimetabling/schoolTimetablingClassDiagram_1.png" class="fullImage">
@@ -1069,6 +1069,127 @@ $ <b>mvn clean install -DskipTests</b>
                 <li><b>Hard constraints</b>: must not be broken</li>
                 <li><b>Soft constraints</b>: avoid being broken</li>
             </ul>
+        </section>
+        <section>
+            <h3>COVID-19 constraint</h3>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingCovidConstraints_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingCovidConstraints_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>COVID-19 constraint</h3>
+            <pre xml:space="preserve"><code class="java">protected Constraint roomCounterStream(ConstraintFactory f) {
+  return f
+  .from(Lesson.class)
+  .join(Lesson.class,
+      Joiners.equal(Lesson::getStudentGroup),
+      Joiners.equal(
+          (lesson) -> lesson.getTimeslot().getDayOfWeek()),
+      Joiners.equal(
+          (lesson1) -> lesson1.getTimeslot().getEndTime(),
+          (lesson2) -> lesson2.getTimeslot().getStartTime()),
+      // Students transfer counter stream.
+      // For example from room C to room B.
+      Joiners.greaterThan(
+          (lesson) -> lesson.getRoom().getName()))
+  .penalize("Room counter stream",
+      HardSoftScore.ONE_HARD);
+}</code></pre>
+        </section>
+    </section>
+
+    <section>
+        <section>
+            <h2>
+                School timetabling on Spring Boot
+            </h2>
+            <p class="instruction instruction-bottom">
+                <i>Press down to show</i><br/>
+                <i>Press right to skip</i>
+            </p>
+        </section>
+        <section>
+            <figure>
+                <img src="QuickStart/SchoolTimetabling/schoolTimetablingScreenshot.png"/>
+            </figure>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingInputOutput_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingInputOutput_1.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingInputOutput_2.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="PlannerIntroduction/useCaseOverview_0.png" class="fullImage">
+            <img src="PlannerIntroduction/useCaseOverview_1.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/useCaseOverview_2.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/useCaseOverview_3.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/useCaseOverview_4.png" class="fullImage fragment">
+            <img src="PlannerIntroduction/useCaseOverview_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Fast forward</h3>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_1.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_2.png" class="fullImage fragment">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Domain</h3>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingClassDiagram_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingClassDiagram_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>AI planning optimization</h3>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_3.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingArchitectureSpringBoot_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingClassDiagram_1.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingClassDiagram_2.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Constraints</h3>
+        </section>
+        <section>
+            <h3>Hard and soft constraints</h3>
+            <ul>
+                <li><b>Hard constraints</b>: must not be broken</li>
+                <li><b>Soft constraints</b>: avoid being broken</li>
+            </ul>
+        </section>
+        <section>
+            <h3>COVID-19 constraint</h3>
+        </section>
+        <section>
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingCovidConstraints_0.png" class="fullImage">
+            <img src="QuickStart/SchoolTimetabling/schoolTimetablingCovidConstraints_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>COVID-19 constraint</h3>
+            <pre xml:space="preserve"><code class="java">protected Constraint roomCounterStream(ConstraintFactory f) {
+  return f
+  .from(Lesson.class)
+  .join(Lesson.class,
+      Joiners.equal(Lesson::getStudentGroup),
+      Joiners.equal(
+          (lesson) -> lesson.getTimeslot().getDayOfWeek()),
+      Joiners.equal(
+          (lesson1) -> lesson1.getTimeslot().getEndTime(),
+          (lesson2) -> lesson2.getTimeslot().getStartTime()),
+      // Students transfer counter stream.
+      // For example from room C to room B.
+      Joiners.greaterThan(
+          (lesson) -> lesson.getRoom().getName()))
+  .penalize("Room counter stream",
+      HardSoftScore.ONE_HARD);
+}</code></pre>
         </section>
     </section>
 
@@ -2097,7 +2218,7 @@ public class Process  {
                 <li>Imperfect example
                     <ul>
                         <li>Not NP-complete (shortcuts exist)</li>
-                        <li>Score function is too simple (too black and white)</li>
+                        <li>Score function is too simple (too black/white)</li>
                     </ul>
                 </li>
             </ul>

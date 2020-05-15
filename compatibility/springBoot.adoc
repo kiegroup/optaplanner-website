@@ -13,12 +13,16 @@ video::U2N02ReT9CI[youtube]
 
 == Guide
 
-**https://github.com/ge0ffrey/getting-started-guides/blob/gs-constraint-solving-ai-optaplanner/README.adoc[Read the OptaPlanner on Spring Boot guide.]**
+**https://github.com/ge0ffrey/getting-started-guides/blob/gs-constraint-solving-ai-optaplanner/README.adoc[Read the OptaPlanner on Spring Boot guide.]** (*)
+
+(*) Temporarily location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot guide will be part of the docs (big blue button).
 
 == Quick start
 
 Run the quick start yourself:
 
-. Download https://github.com/ge0ffrey/getting-started-guides/tree/gs-constraint-solving-ai-optaplanner/complete[the source code].
+. Download https://github.com/ge0ffrey/getting-started-guides/tree/gs-constraint-solving-ai-optaplanner/complete[the source code]. (*)
 . Run `./mvnw clean install`
 . Open http://localhost:8080 in your browser
+
+(*) Temporarily location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot example will be part of the download zip (big green button).

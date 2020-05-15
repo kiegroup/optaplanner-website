@@ -1,0 +1,24 @@
+= Compatibility
+:awestruct-description: OptaPlanner is compatibility with all these technologies
+:awestruct-layout: normalBase
+:awestruct-priority: 0.2
+:showtitle:
+
+OptaPlanner is compatible and integrates with:
+
+== Programming languages
+
+* link:java.html[Java]
+* link:kotlin.html[Kotlin]
+* link:scala.html[Scala]
+
+== Platforms
+
+* link:quarkus.html[Quarkus]
+* link:springBoot.html[Spring Boot]
+* Android (limited)
+
+== Other
+
+Furthermore, OptaPlanner also integrates with many other technologies,
+such as JPA-Hibernate, Jackson, JSON-B, JAXB, XStream, ...
