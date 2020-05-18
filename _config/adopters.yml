@@ -19,6 +19,14 @@
   - resourceName: Software myStaff OnCall
     resourceUrl: https://healthcare.axians.be/solutions/mystaff/oncall/
 
+- adopterId: equina-employee-rostering
+  company: 8coins
+  inProductionYear: 2020
+  useCaseDescription: Schedule shifts of hospital doctors and nurses.
+  resources:
+  - resourceName: Equina
+    resourceUrl: https://www.equinascheduling.com/news-equina-meets-optaplanner
+
 # TODO Add the other public adopters over the years
 
 # Other articles to incorporate
