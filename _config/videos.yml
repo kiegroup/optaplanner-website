@@ -11,12 +11,20 @@
 #
 # Order videos by date descending
 
+- youtubeId: kmvLxaAhC9Y
+  title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
+  author: ge0ffrey
+  date: 2020-05-08
+  tags:
+    - employee rostering
+
 - youtubeId: AqTuRiWGLZQ
   title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
   author: ge0ffrey
   date: 2020-04-09
   tags:
     - quarkus
+    - school timetabling
 
 - youtubeId: 7IuOA9n6kh0
   author: ge0ffrey
