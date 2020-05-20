@@ -11,7 +11,7 @@ to quickly learn:
 
 * How to solve a _knapsack problem_ with OptaPlanner.
 * How to expose it as a REST application on Quarkus.
-* How deploy that application in the cloud on OpenShift.
+* How to deploy that application in the cloud on OpenShift.
 
 https://learn.openshift.com/middleware/courses/middleware-kogito/optaplanner-knapsack[*Start the free online training now*]
 
