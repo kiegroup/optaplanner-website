@@ -6,7 +6,7 @@
 
 == Free online training (recommended)
 
-Follow https://learn.openshift.com/middleware/courses/middleware-kogito/optaplanner-knapsack[this KataKoda]
+Follow https://learn.openshift.com/middleware/courses/middleware-kogito/optaplanner-knapsack[this Katacoda]
 to quickly learn:
 
 * How to solve a _knapsack problem_ with OptaPlanner.
