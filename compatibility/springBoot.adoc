@@ -15,7 +15,7 @@ video::U2N02ReT9CI[youtube]
 
 **https://github.com/ge0ffrey/getting-started-guides/blob/gs-constraint-solving-ai-optaplanner/README.adoc[Read the OptaPlanner on Spring Boot guide.]** (*)
 
-(*) Temporarily location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot guide will be part of the docs (big blue button).
+(*) Temporary location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot guide will be part of the docs (big blue button).
 
 == Quick start
 
