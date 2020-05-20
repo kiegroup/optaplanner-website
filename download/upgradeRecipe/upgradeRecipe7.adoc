@@ -2992,6 +2992,111 @@ uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 
 == From 7.37.0.Final to 7.38.0.Final
 
+[.upgrade-recipe-major]
+=== Annotation scanning has been deprecated for removal
+
+The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated.
+Our new Quarkus and Spring Boot quickstarts provide much better support for annotation processing.
+Other users should change their solver configs to enumerate their `@PlanningSolution` and `@PlanningEntity`-annotated classes.
+
+Before in `*.xml`:
+
+[source,xml]
+----
+<solver>
+    ...
+    <scanAnnotatedClasses/>
+    ...
+</solver>
+----
+
+After in `*.xml`:
+
+[source,xml]
+----
+<solver>
+    ...
+    <solutionClass>org.optaplanner.examples.nqueens.domain.NQueens</solutionClass>
+    <entityClass>org.optaplanner.examples.nqueens.domain.Queen</entityClass>
+    ...
+</solver>
+----
+
+[.upgrade-recipe-major]
+=== New package for `@PlanningFactProperty` and `@PlanningFactCollectionProperty`
+
+The `@PlanningFactProperty` and `@PlanningFactCollectionProperty` now share the same package with other similar annotations, such as `@PlanningSolution`.
+The old annotations remain in place, but have been deprecated for removal.
+
+Before in `*.java`:
+
+[source,java]
+----
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+----
+
+After in `*.java`:
+
+[source,java]
+----
+import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
+----
+
+[.upgrade-recipe-major]
+=== `Solver`'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
+
+Several methods on the `Solver` interface have been deprecated.
+The same information can be obtained by registering an `EventListener` via `Solver.addEventListener(...)`.
+
+Before in `*.java`:
+
+[source,java]
+----
+solver = ...;
+solution = solver.getBestSolution();
+score = solver.getBestScore();
+timeMillisSpent = solver.getTimeMillisSpent();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+solver = ...;
+solver.addEventListener(event -> {
+    solution = event.getNewBestSolution();
+    score = event.getNewBestScore();
+    timeMillisSpent = event.getTimeMillisSpent();
+});
+----
+
+[.upgrade-recipe-major]
+=== `Solver.explainBestScore()` deprecated for removal
+
+The `explainBestScore()` method on the `Solver` interface has been deprecated.
+The same information can be obtained via the new `ScoreManager` API.
+
+We continue to advise users not to parse the results of this method call in any way.
+
+Before in `*.java`:
+
+[source,java]
+----
+solver = ...;
+scoreExplanation = solver.explainBestScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+solution = ...;
+ScoreManager scoreManager = ...;
+scoreExplanation = solverManager.explainScore(solution);
+----
+
 [.upgrade-recipe-minor]
 === `SimpleDoubleScore` and `HardSoftDoubleScore` deprecated for removal
 
