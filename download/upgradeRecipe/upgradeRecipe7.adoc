@@ -3016,8 +3016,8 @@ After in `*.xml`:
 ----
 <solver>
     ...
-    <solutionClass>org.optaplanner.examples.nqueens.domain.NQueens</solutionClass>
-    <entityClass>org.optaplanner.examples.nqueens.domain.Queen</entityClass>
+    <solutionClass>...</solutionClass>
+    <entityClass>...</entityClass>
     ...
 </solver>
 ----
@@ -3092,9 +3092,9 @@ After in `*.java`:
 
 [source,java]
 ----
-solution = ...;
-ScoreManager scoreManager = ...;
-scoreExplanation = solverManager.explainScore(solution);
+MySolution solution = ...;
+ScoreManager<MySolution> scoreManager = ...;
+scoreExplanation = scoreManager.explainScore(solution);
 ----
 
 [.upgrade-recipe-minor]
