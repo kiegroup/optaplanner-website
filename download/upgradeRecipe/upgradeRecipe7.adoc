@@ -3072,7 +3072,7 @@ solver.addEventListener(event -> {
 });
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-minor]
 === `Solver.explainBestScore()` deprecated for removal
 
 The `explainBestScore()` method on the `Solver` interface has been deprecated.
