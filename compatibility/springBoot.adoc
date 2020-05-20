@@ -25,4 +25,4 @@ Run the quick start yourself:
 . Run `./mvnw clean install`
 . Open http://localhost:8080 in your browser
 
-(*) Temporarily location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot example will be part of the download zip (big green button).
+(*) Temporary location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot example will be part of the download zip (big green button).
