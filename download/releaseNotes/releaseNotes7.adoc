@@ -5,6 +5,15 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.38.0.Final
+
+=== Deprecation effort
+
+With this release, we are deprecating some rarely used methods for which there are now better alternatives.
+We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] to adapt accordingly.
+
+That said, we remain committed to our existing API compatibility guarantees and we will not remove any of the deprecated APIs on the 7.x stream of OptaPlanner.
+
 == New and noteworthy: Engine 7.36.0.Final
 
 === Constraint Verifier allows for unit testing Constraint Streams
