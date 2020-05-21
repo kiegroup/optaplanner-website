@@ -2996,8 +2996,8 @@ uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 === Annotation scanning has been deprecated for removal
 
 The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated.
-Our new Quarkus and Spring Boot quickstarts provide much better support for annotation processing.
-Other users should change their solver configs to enumerate their `@PlanningSolution` and `@PlanningEntity`-annotated classes.
+Use the link:../../compatbility/quarkus.html[Quarkus extension] or
+link:../../compatbility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
 
 Before in `*.xml`:
 
@@ -3044,7 +3044,7 @@ import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-minor]
 === `Solver`'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
 
 Several methods on the `Solver` interface have been deprecated.

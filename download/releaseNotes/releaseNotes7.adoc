@@ -7,10 +7,10 @@
 
 == New and noteworthy: Engine 7.38.0.Final
 
-=== Several major API deprecations
+=== Deprecation effort
 
-With this release, we are announcing several major API deprecations.
-All users of OptaPlanner are discouraged from using these APIs in their projects, and we encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] and adapt.
+With this release, we are deprecating some rarely used methods for which there are now better alternatives.
+We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] to adapt accordingly.
 
 That said, we remain committed to our existing API compatibility guarantees and we will not remove any of the deprecated APIs on the 7.x stream of OptaPlanner.
 
