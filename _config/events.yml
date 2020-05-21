@@ -593,3 +593,12 @@
     - title: "AI on Spring: I love it when an OptaPlan comes together"
       url: https://2020.springio.net/bridge/
       presenters: Geoffrey De Smet
+
+- eventId: 20200521-bordeauxjug
+  eventOrganization: "Bordeaux JUG"
+  location: Worldwide
+  date: 2020-05-21
+  talks:
+    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
+      url: https://www.meetup.com/BordeauxJUG/events/270786885
+      presenters: Geoffrey De Smet
