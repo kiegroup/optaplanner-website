@@ -60,6 +60,8 @@ image:integrationWithRealMaps.png[Integration with real maps]
 
 == Videos
 
+video::rEeAML74oWo[youtube]
+
 video::eG_ky8jIRBk[youtube]
 
 video::ylPEIf7Mc2M[youtube]

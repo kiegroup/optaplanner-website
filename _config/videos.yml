@@ -11,6 +11,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: rEeAML74oWo
+  title: "OptaWeb Vehicle Routing run script"
+  author: yurloc
+  date: 2020-05-19
+  tags:
+    - vehicle routing
+
 - youtubeId: kmvLxaAhC9Y
   title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
   author: ge0ffrey
