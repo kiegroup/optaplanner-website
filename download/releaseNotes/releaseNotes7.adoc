@@ -14,6 +14,37 @@ We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html
 
 That said, we remain committed to our existing API compatibility guarantees and we will not remove any of the deprecated APIs on the 7.x stream of OptaPlanner.
 
+== New and noteworthy: Engine 7.37.0.Final
+
+=== Run script for OptaWeb Vehicle Routing
+
+The run script automates setup steps that would otherwise have to be carried out manually and simplifies the run command.
+
+Before:
+
+[source,shell]
+----
+java -jar optaweb-vehicle-routing-standalone-7.36.0.Final.jar \
+  --app.persistence.h2-dir=$HOME/.optaweb-vehicle-routing/db \
+  --app.routing.gh-dir=$HOME/.optaweb-vehicle-routing/graphhopper
+  --app.routing.osm-dir=$HOME/.optaweb-vehicle-routing/openstreetmap \
+  --app.routing.osm-file=belgium-latest.osm.pbf \
+  --app.region.country-codes=BE
+----
+
+After:
+
+[source]
+----
+./runLocally.sh belgium
+----
+
+To learn more about the run script, read the
+https://docs.optaplanner.org/latestFinal/optaweb-vehicle-routing-docs/html_single/#run-locally-sh[documentation]
+or watch this video:
+
+video::rEeAML74oWo[youtube]
+
 == New and noteworthy: Engine 7.36.0.Final
 
 === Constraint Verifier allows for unit testing Constraint Streams
