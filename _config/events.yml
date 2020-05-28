@@ -594,10 +594,10 @@
       url: https://2020.springio.net/bridge/
       presenters: Geoffrey De Smet
 
-- eventId: 20200521-bordeauxjug
+- eventId: 20200528-bordeauxjug
   eventOrganization: "Bordeaux JUG"
   location: Worldwide
-  date: 2020-05-21
+  date: 2020-05-28
   talks:
     - title: "AI on Quarkus: I love it when an OptaPlan comes together"
       url: https://www.meetup.com/BordeauxJUG/events/270786885
