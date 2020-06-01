@@ -3045,7 +3045,7 @@ import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
 ----
 
 [.upgrade-recipe-minor]
-=== `Solver`'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
+=== ``Solver``'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
 
 Several methods on the `Solver` interface have been deprecated.
 The same information can be obtained by registering an `EventListener` via `Solver.addEventListener(...)`.
@@ -3184,7 +3184,7 @@ The `FeasibilityScore` interface has been deprecated and its only method `isFeas
 The method has a new default implementation and most users therefore should not notice any changes.
 However, for users who were extending `Score` (not `FeasibilityScore`), an exception may be thrown unless they override the method in their custom score implementations.
 
-Users should refer to their `Score`s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
+Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
 or the now deprecated `FeasibilityScore`.
 
 
