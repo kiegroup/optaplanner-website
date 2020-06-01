@@ -5,6 +5,13 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
+== New and noteworthy: Engine 7.39.0.Final
+
+=== More deprecations
+
+In this release, we continue deprecating some rarely used methods for which there are now better alternatives.
+We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] to adapt accordingly.
+
 == New and noteworthy: Engine 7.38.0.Final
 
 === Deprecation effort

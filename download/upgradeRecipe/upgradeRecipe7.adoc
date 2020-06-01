@@ -3187,4 +3187,36 @@ However, for users who were extending `Score` (not `FeasibilityScore`), an excep
 Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
 or the now deprecated `FeasibilityScore`.
 
+== From 7.38.0.Final to 7.39.0.Final
 
+[.upgrade-recipe-minor]
+=== `@PlanningEntity.movableEntitySelectionFilter` deprecated for removal
+
+The `movableEntitySelectionFilter` field on `@PlanningEntity` annotation has been deprecated and a new field
+`pinningFilter` has been introduced, the name of which bears a clear relation to the `@PlanningPin` annotation.
+This filter implements a new `PinningFilter` interface, returning true if the entity is pinned, and false if movable.
+The logic of this new filter is therefore inverted as compared to the old filter.
+
+Users should update their `@PlanningEntity` annotations, supplying the new filter instead of the old.
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningEntity(movableEntitySelectionFilter = MyMovableEntitySelectionFilter.class)
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningEntity(pinningFilter = MyPinningFilter.class)
+----
+
+[.upgrade-recipe-minor]
+=== `@PlanningVariable.reinitializeVariableEntityFilter` deprecated for removal
+
+The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation has been deprecated for removal and without replacement.
+
+Users of this niche functionality should refer to the documentation on how to achieve the same result by
+link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
