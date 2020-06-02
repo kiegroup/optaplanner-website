@@ -11,6 +11,20 @@
 #
 # Order videos by date descending
 
+- youtubeId: JqtF2PLYTvI
+  title: "AI on Quarkus"
+  author: ge0ffrey
+  date: 2020-05-28
+  # No tags because it is too similar to video AqTuRiWGLZQ
+
+- youtubeId: moiSzzy5ba0
+  title: "AI on Spring"
+  author: ge0ffrey
+  date: 2020-05-15
+  tags:
+    - spring
+    - school timetabling
+
 - youtubeId: rEeAML74oWo
   title: "OptaWeb Vehicle Routing run script"
   author: yurloc
@@ -39,6 +53,7 @@
   date: 2020-04-02
   tags:
     - quarkus
+      - school timetabling
 
 - youtubeId: U2N02ReT9CI
   author: DuncanDoyle

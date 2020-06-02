@@ -5,24 +5,22 @@
 :awestruct-related_tag: spring
 :showtitle:
 
-OptaPlanner has a Spring Boot Starter to get up and running quickly.
-
-Usage is similar to the link:quarkus.html[Quarkus] extension, but without the performance benefits.
+If you're using Spring and want to add AI planning,
+use the *OptaPlanner Spring Boot Starter* to get up and running quickly.
+That starter has the same features as the link:quarkus.html[Quarkus] extension,
+except for the typical Quarkus benefits (such as subsecond bootstrap performance and native compilation).
 
 video::U2N02ReT9CI[youtube]
 
 == Guide
 
-**https://github.com/ge0ffrey/getting-started-guides/blob/gs-constraint-solving-ai-optaplanner/README.adoc[Read the OptaPlanner on Spring Boot guide.]** (*)
-
-(*) Temporary location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot guide will be part of the docs (big blue button).
+**https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#springBootJavaQuickStart[Read the OptaPlanner on Spring Boot guide.]**
 
 == Quick start
 
 Run the quick start yourself:
 
-. Download https://github.com/ge0ffrey/getting-started-guides/tree/gs-constraint-solving-ai-optaplanner/complete[the source code]. (*)
+. Download https://github.com/kiegroup/optaplanner/tree/master/optaplanner-quickstarts/spring-boot-school-timetabling[the source code].
+It's recommended to check out the latest stable tag.
 . Run `./mvnw clean install`
 . Open http://localhost:8080 in your browser
-
-(*) Temporary location: Starting from OptaPlanner 7.38.0.Final, the Spring Boot example will be part of the download zip (big green button).
