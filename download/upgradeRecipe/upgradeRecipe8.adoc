@@ -10,7 +10,7 @@
 There is no use in waiting for it.
 Please use and download the latest 7.x release instead.*
 
-== From 7.39.0.Final to 8.0.0.Beta1
+== From 7.39.0.Final or higher to 8.0.0.Beta1
 
 === Backwards incompatible changes to the public API in 7.0
 
@@ -23,25 +23,25 @@ and will not introduce any additional ones during the 8.x era.
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
 
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
-=== Java 11 or higher required
-
-If you're using JRE or JDK 8, upgrade to JDK 11 or higher.
-
-JDK 11 or higher is still available for _free_ (including security and bug fixes),
-alongside Oracle's paid subscription.
-
-* On linux, get OpenJDK from your linux software repository.
-For example on Fedora and RHEL:
-+
-[source, bash]
-----
-sudo dnf install java-11-openjdk-devel
-----
-
-* On Windows and Mac, https://adoptopenjdk.net[download OpenJDK from AdoptOpenJDK].
-
-We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
+//[.upgrade-recipe-major.upgrade-recipe-public-api]
+//=== Java 11 or higher required
+//
+//If you're using JRE or JDK 8, upgrade to JDK 11 or higher.
+//
+//JDK 11 or higher is still available for _free_ (including security and bug fixes),
+//alongside Oracle's paid subscription.
+//
+//* On linux, get OpenJDK from your linux software repository.
+//For example on Fedora and RHEL:
+//+
+//[source, bash]
+//----
+//sudo dnf install java-11-openjdk-devel
+//----
+//
+//* On Windows and Mac, https://adoptopenjdk.net[download OpenJDK from AdoptOpenJDK].
+//
+//We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
 
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
