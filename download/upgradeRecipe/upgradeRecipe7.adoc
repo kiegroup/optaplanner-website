@@ -3220,3 +3220,67 @@ The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation h
 
 Users of this niche functionality should refer to the documentation on how to achieve the same result by
 link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
+
+[.upgrade-recipe-minor]
+=== Quarkus extensions renamed to `org.optaplanner:optaplanner-quarkus*`
+
+The Quarkus extensions for OptaPlanner have moved from the Quarkus project
+to the OptaPlanner project.
+This allows us to synchronize the OptaPlanner and Quarkus release better,
+improving stability further, going forward.
+
+With Jackson, before in `pom.xml`:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.quarkus</groupId>
+      <artifactId>quarkus-optaplanner</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.quarkus</groupId>
+      <artifactId>quarkus-optaplanner-jackson</artifactId>
+    </dependency>
+----
+
+After in `pom.xml`:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-quarkus</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-quarkus-jackson</artifactId>
+    </dependency>
+----
+
+With JSON-B, before in `pom.xml`:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.quarkus</groupId>
+      <artifactId>quarkus-optaplanner</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.quarkus</groupId>
+      <artifactId>quarkus-optaplanner-jsonb</artifactId>
+    </dependency>
+----
+
+After in `pom.xml`:
+
+[source,xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-quarkus</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-quarkus-jsonb</artifactId>
+    </dependency>
+----
