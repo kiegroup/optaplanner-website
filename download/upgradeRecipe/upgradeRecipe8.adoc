@@ -47,7 +47,184 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
 
+==== Reason:
 Due to the limited usage of OSGi and the maintenance burden it brings,
 the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
 
+[.upgrade-recipe-minor]
+=== `filterClassList` replaced by a single filterClass
 
+The configuration of `EntitySelector`, `ValueSelector` and `MoveSelector` now has a single filter class in both
+the configuration API and the solver configuration XML.
+
+==== Reason:
+In practice, you don't need multiple selection filter classes often, and you can always replace them by a single selection
+filter class which implements the logic of all of them.
+Passing a single selection class now requires less boilerplate code.
+
+Before in `*.java`:
+[source, java]
+----
+ValueSelectorConfig valueSelectorConfig = new ValueSelectorConfig();
+valueSelectorConfig.setFilterClassList(Collections.singletonList(MySelectionFilterClass.class));
+----
+
+After in `*.java`:
+[source, java]
+----
+ValueSelectorConfig valueSelectorConfig = new ValueSelectorConfig();
+valueSelectorConfig.setFilterClass(MySelectionFilterClass.class);
+----
+
+==== Replacing multiple selection filter classes with a single one
+
+Before in `*.xml`:
+
+[source, xml]
+----
+<swapMoveSelector>
+  <entitySelector>
+    <filterClass>com.example.FilterA</filterClass>
+    <filterClass>com.example.FilterB</filterClass>
+  </entitySelector>
+</swapMoveSelector>
+----
+Before in `*.java`:
+
+[source, java]
+----
+package com.example;
+...
+public class FilterA implements SelectionFilter<MySolution, MyPlanningEntity> {
+
+    @Override
+    public boolean accept(ScoreDirector<MySolution> scoreDirector, MyPlanningEntity selection) {
+        return selection.getValue() < 500;
+    }
+}
+----
+[source, java]
+----
+package com.example;
+...
+public class FilterB implements SelectionFilter<MySolution, MyPlanningEntity> {
+
+    @Override
+    public boolean accept(ScoreDirector<MySolution> scoreDirector, MyPlanningEntity selection) {
+        return selection.getOrder() == Order.ASC;
+    }
+}
+----
+
+After in `*.xml`
+
+[source, xml]
+----
+<swapMoveSelector>
+  <entitySelector>
+    <filterClass>com.example.SingleEntityFilter</filterClass>
+  </entitySelector>
+</swapMoveSelector>
+----
+
+After in `*.java`:
+
+[source, java]
+----
+package com.example;
+...
+public class SingleEntityFilter implements SelectionFilter<MySolution, MyPlanningEntity> {
+
+    @Override
+    public boolean accept(ScoreDirector<MySolution> scoreDirector, MyPlanningEntity selection) {
+        return selection.getValue() < 500 && selection.getOrder() == Order.ASC;
+    }
+}
+----
+
+[.upgrade-recipe-minor]
+=== `AcceptorConfig` renamed to LocalSearchAcceptorConfig
+
+Impacts only configuration API, solver configuration XML remains intact.
+
+==== Reason:
+Naming consistency with other local-search-specific configuration classes.
+
+Before in `*.java`:
+[source, java]
+----
+LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
+        .withAcceptorConfig(new AcceptorConfig().withEntityTabuSize(5));
+----
+
+After in `*.java`:
+[source, java]
+----
+LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
+        .withAcceptorConfig(new LocalSearchAcceptorConfig().withEntityTabuSize(5));
+----
+
+[.upgrade-recipe-minor]
+=== `Custom properties` XML configuration format changes
+
+Impact only the solver configuration XML, specifically `<scoreDirectorFactory/>`, `<moveIteratorFactory/>`,
+`<moveListFactory/>`, `<partitionedSearch/>` and `<customPhase/>`.
+
+==== Reason:
+To enforce structure of the configuration XML in build time.
+
+Before in `*.xml`:
+
+[source, xml]
+----
+<partitionedSearch>
+  <solutionPartitionerClass>com.example.MySolutionPartitioner</solutionPartitionerClass>
+  <solutionPartitionerCustomProperties>
+    <partCount>4<partCount/> <!-- a custom property -->
+    <minimumProcessListSize>300<minimumProcessListSize/> <!-- a custom property -->
+  </solutionPartitionerCustomProperties>
+</partitionedSearch>
+----
+
+After in `*.xml`:
+
+[source, xml]
+----
+<partitionedSearch>
+  <solutionPartitionerClass>com.example.MySolutionPartitioner</solutionPartitionerClass>
+  <solutionPartitionerCustomProperties>
+    <property name="partCount" value="4"/> <!-- a custom property -->
+    <property name="minimumProcessListSize" value="300"/> <!-- a custom property -->
+  </solutionPartitionerCustomProperties>
+</partitionedSearch>
+----
+
+[.upgrade-recipe-minor]
+=== `<variableNameInclude/>` elements are now wrapped by the <variableNameIncludes/> element
+
+Impact only the solver configuration XML, specifically the `<swapMoveSelector/>` and `<pillarSwapMoveSelector/>`.
+
+==== Reason:
+To enforce structure of the configuration XML in build time.
+
+Before in `*.xml`:
+
+[source, xml]
+----
+<swapMoveSelector>
+  <variableNameInclude>variableA</variableNameInclude>
+  <variableNameInclude>variableB</variableNameInclude>
+</swapMoveSelector>
+----
+
+After in `*.xml`:
+
+[source, xml]
+----
+<swapMoveSelector>
+  <variableNameIncludes>
+    <variableNameInclude>variableA</variableNameInclude>
+    <variableNameInclude>variableB</variableNameInclude>
+  </variableNameIncludes>
+</swapMoveSelector>
+----
