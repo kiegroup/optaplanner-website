@@ -13,6 +13,7 @@ Please use and download the latest 7.x release instead.*
 
 == From 7.39.0.Final or higher to 8.0.0.Beta1
 
+
 === Backwards incompatible changes to the public API in 7.0
 
 Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years,
@@ -45,11 +46,48 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 //We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
 
 
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== Refrain from using Java serialization
+
+Java serialization is
+https://cr.openjdk.java.net/~briangoetz/amber/serialization.html[considered by its authors to be poorly designed] and it was suggested that the capability would, at some point in time, be removed from the platform altogether.
+In OptaPlanner 8, we have removed most uses of the `Serializable` marker interface from the public API and we encourage users to
+https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#integrationWithPersistentStorage[serialize
+via JAXB or JSON].
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== Refrain from using `ScoreDirectorFactory`
+
+In version 7 of OptaPlanner, using `ScoreDirectorFactory` was necessary in order to
+https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[explain the score].
+In version 8, we have added new functionality to the `ScoreManager` and as a result, there is no longer any reason to create new instances of `ScoreDirector`.
+
+Before in `*.java`:
+
+[source,java]
+----
+ScoreDirectorFactory<CloudBalance> scoreDirectorFactory = solverFactory.getScoreDirectorFactory();
+try (ScoreDirector<CloudBalance> guiScoreDirector = scoreDirectorFactory.buildScoreDirector()) {
+    ...
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+ScoreManager<CloudBalance> scoreManager = ScoreManager.create(solverFactory);
+...
+----
+
+Methods that allowed users to retrieve an instance of `ScoreDirecto` and `ScoreDirectorFactory` have been removed from the public API without replacement.
+A reduced version of the `ScoreDirector` interface was, however, promoted to public API as part of promoting the
+`ProblemFactChange` to public API.
+
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
 
-Due to the limited usage of OSGi and the maintenance burden it brings,
-the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
+Due to the limited usage of OSGi and the maintenance burden it brings, the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
 
 [.upgrade-recipe-minor]
 === `filterClassList` replaced by a single filterClass
@@ -62,7 +100,7 @@ filter class which implements the logic of all of them.
 Passing a single selection class now requires less boilerplate code.
 
 Before in `*.java`:
-[source, java]
+[source,java]
 ----
 ValueSelectorConfig valueSelectorConfig = new ValueSelectorConfig();
 valueSelectorConfig.setFilterClassList(Collections.singletonList(MySelectionFilterClass.class));
