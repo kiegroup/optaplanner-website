@@ -10,17 +10,13 @@
 There is no use in waiting for it.
 Please use and download the latest 7.x release instead.*
 
-
 == From 7.39.0.Final or higher to 8.0.0.Beta1
-
 
 === Backwards incompatible changes to the public API in 7.0
 
-Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years,
-it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
+Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years, it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
 
-We kept these backwards incompatible changes to a strict minimum
-and will not introduce any additional ones during the 8.x era.
+We kept these backwards incompatible changes to a strict minimum and will not introduce any additional ones during the 8.x era.
 
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
 
@@ -80,9 +76,9 @@ ScoreManager<CloudBalance> scoreManager = ScoreManager.create(solverFactory);
 ...
 ----
 
-Methods that allowed users to retrieve an instance of `ScoreDirecto` and `ScoreDirectorFactory` have been removed from the public API without replacement.
-A reduced version of the `ScoreDirector` interface was, however, promoted to public API as part of promoting the
-`ProblemFactChange` to public API.
+Methods that allowed users to retrieve an instance of `ScoreDirecto` and `ScoreDirectorFactory` have been removed from public API without replacement.
+A reduced version of the `ScoreDirector` interface was promoted to public API as part of promoting the
+`ProblemFactChange` interface to public API.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
@@ -92,14 +88,13 @@ Due to the limited usage of OSGi and the maintenance burden it brings, the OptaP
 [.upgrade-recipe-minor]
 === `filterClassList` replaced by a single filterClass
 
-The configuration of `EntitySelector`, `ValueSelector` and `MoveSelector` now has a single filter class in both
-the configuration API and the solver configuration XML.
+The configuration of `EntitySelector`, `ValueSelector` and `MoveSelector` now has a single filter class in both the configuration API and the solver configuration XML.
 
-In practice, you don't need multiple selection filter classes often, and you can always replace them by a single selection
-filter class which implements the logic of all of them.
+In practice, you don't need multiple selection filter classes often, and you can always replace them by a single selection filter class which implements the logic of all of them.
 Passing a single selection class now requires less boilerplate code.
 
 Before in `*.java`:
+
 [source,java]
 ----
 ValueSelectorConfig valueSelectorConfig = new ValueSelectorConfig();
@@ -107,7 +102,8 @@ valueSelectorConfig.setFilterClassList(Collections.singletonList(MySelectionFilt
 ----
 
 After in `*.java`:
-[source, java]
+
+[source,java]
 ----
 ValueSelectorConfig valueSelectorConfig = new ValueSelectorConfig();
 valueSelectorConfig.setFilterClass(MySelectionFilterClass.class);
@@ -117,7 +113,7 @@ valueSelectorConfig.setFilterClass(MySelectionFilterClass.class);
 
 Before in `*.xml`:
 
-[source, xml]
+[source,xml]
 ----
 <swapMoveSelector>
   <entitySelector>
@@ -126,9 +122,10 @@ Before in `*.xml`:
   </entitySelector>
 </swapMoveSelector>
 ----
+
 Before in `*.java`:
 
-[source, java]
+[source,java]
 ----
 package com.example;
 ...
@@ -140,7 +137,8 @@ public class FilterA implements SelectionFilter<MySolution, MyPlanningEntity> {
     }
 }
 ----
-[source, java]
+
+[source,java]
 ----
 package com.example;
 ...
@@ -155,7 +153,7 @@ public class FilterB implements SelectionFilter<MySolution, MyPlanningEntity> {
 
 After in `*.xml`
 
-[source, xml]
+[source,xml]
 ----
 <swapMoveSelector>
   <entitySelector>
@@ -166,7 +164,7 @@ After in `*.xml`
 
 After in `*.java`:
 
-[source, java]
+[source,java]
 ----
 package com.example;
 ...
@@ -187,14 +185,16 @@ Impacts only configuration API, solver configuration XML remains intact.
 Naming consistency with other local-search-specific configuration classes.
 
 Before in `*.java`:
-[source, java]
+
+[source,java]
 ----
 LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
         .withAcceptorConfig(new AcceptorConfig().withEntityTabuSize(5));
 ----
 
 After in `*.java`:
-[source, java]
+
+[source,java]
 ----
 LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
         .withAcceptorConfig(new LocalSearchAcceptorConfig().withEntityTabuSize(5));
@@ -210,7 +210,7 @@ To enforce structure of the configuration XML in build time.
 
 Before in `*.xml`:
 
-[source, xml]
+[source,xml]
 ----
 <partitionedSearch>
   <solutionPartitionerClass>com.example.MySolutionPartitioner</solutionPartitionerClass>
@@ -223,7 +223,7 @@ Before in `*.xml`:
 
 After in `*.xml`:
 
-[source, xml]
+[source,xml]
 ----
 <partitionedSearch>
   <solutionPartitionerClass>com.example.MySolutionPartitioner</solutionPartitionerClass>
@@ -371,7 +371,7 @@ public class CloudBalance {
 
 Don't add the `@ProblemFactCollectionProperty` annotation on getters (or fields) that have a `@PlanningEntityCollectionProperty` annotation.
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` removed
 
 The method `BestSolutionChangedEvent.isNewBestSolutionInitialized()` has long been deprecated in favor of `BestSolutionChangedEvent.getNewBestSolution().getScore().isSolutionInitialized()`.
@@ -470,6 +470,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </solver>
 ----
 
+[.upgrade-recipe-major]
 === Property `subPilarEnabled` in move selector configuration has beenr removed
 
 The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
@@ -502,7 +503,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
       </pillar...MoveSelector>
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === `SolverFactory`: `getSolverConfig()` removed
 
 The method `SolverFactory.getSolverConfig()` has long been deprecated in favor of `SolverFactory.create(SolverConfig)`.
@@ -531,7 +532,7 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 
 If you were also passing a `ClassLoader`, pass it to both `SolverConfig.createFromXmlResource()` and `SolverFactory.create()`.
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SolverFactory`: `cloneSolverFactory()` removed
 
 The method `SolverFactory.cloneSolverFactory()` has long been deprecated in favor of the copy constructor
@@ -570,7 +571,7 @@ public void userRequest(..., long userInput) {
 }
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SolverFactory`: `createEmpty()` removed
 
 The method `SolverFactory.createEmpty()` has long been deprecated in favor of `new SolverConfig()`.
@@ -596,7 +597,7 @@ SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
 Solver<MySolution> solver = solverFactory.buildSolver();
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `PlannerBenchmarkFactory`: `getPlannerBenchmarkConfig()` deprecated
 
 The method `PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has long been deprecated in favor of
@@ -626,7 +627,7 @@ PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchm
 PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === `PlannerBenchmarkFactory`: `createFromSolverFactory()` removed
 
 The method `PlannerBenchmarkFactory.createFromSolverFactory()` has long been deprecated in favor of
@@ -678,7 +679,7 @@ BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
 
 If you programmatically adjust the benchmark configuration, you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === `Solver`: `getScoreDirectorFactory()` removed
 
 The method `getScoreDirectorFactory()` has long been deprecated and has now been removed from both `Solver` and
@@ -738,7 +739,7 @@ After in `*.xml`:
 </solver>
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === New package for `@PlanningFactProperty` and `@PlanningFactCollectionProperty`
 
 The `@PlanningFactProperty` and `@PlanningFactCollectionProperty` now share the same package with other similar annotations, such as `@PlanningSolution`.
@@ -760,7 +761,7 @@ import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === ``Solver``'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` removed
 
 Several methods on the `Solver` interface have been deprecated in 7.x and now removed.
@@ -788,7 +789,7 @@ solver.addEventListener(event -> {
 });
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `Solver.explainBestScore()` removed
 
 The `explainBestScore()` method on the `Solver` interface has been deprecated in 7.x and now removed.
@@ -813,7 +814,7 @@ ScoreManager<MySolution> scoreManager = ...;
 scoreExplanation = scoreManager.explainScore(solution);
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SimpleDoubleScore` and `HardSoftDoubleScore` removed
 
 The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
@@ -848,7 +849,7 @@ public class MyPlanningSolution {
 }
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `Score.toInitializedScore()` removed
 
 The `Score.toInitializedScore()` method has been deprecated in favor of `Score.withInitScore(int)` in 7.x, and now removed.
@@ -867,7 +868,7 @@ After in `*.java`:
 score = score.withInitScore(0);
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === Various justification `Comparators` removed
 
 The following `Comparator` implementations were deprecated in 7.x and now removed:
@@ -893,7 +894,7 @@ Comparator<Score> comparator = Comparable::compareTo;
 Comparator<ConstraintMatch> comparator2 = Comparator.comparing(ConstraintMatch::getScore);
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `FeasibilityScore` removed
 
 The `FeasibilityScore` interface has been deprecated in 7.x and its only method `isFeasible()` moved to the `Score`
@@ -902,7 +903,7 @@ The interface has now been removed.
 
 Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`.
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `@PlanningEntity.movableEntitySelectionFilter` removed
 
 The `movableEntitySelectionFilter` field on `@PlanningEntity` annotation has been deprecated in 7.x and a new field
@@ -927,7 +928,7 @@ After in `*.java`:
 @PlanningEntity(pinningFilter = MyPinningFilter.class)
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `@PlanningVariable.reinitializeVariableEntityFilter` removed
 
 The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation has been deprecated for removal in 7.x and now removed.
@@ -935,3 +936,48 @@ The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation h
 Users of this niche functionality should refer to the documentation on how to achieve the same result by
 link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
 
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `*ScoreHolder` classes turned into interfaces
+
+In OptaPlanner 7, `ScoreHolder` classes, used exclusively for
+https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#droolsScoreCalculation[Drools score calculation], exposed a number of public methods which, if used, allowed the user to unintentionally corrupt or otherwise negatively affect their scores.
+
+In OptaPlanner 8, these methods have been removed and the classes have been turned into interfaces.
+For the vast majority of users who did not use any of these potentially harmful methods, there will be no impact on their code.
+Others will find suitable replacements in the public API in areas of
+https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[score explanation] and
+https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintConfiguration[constraint configuration].
+
+[.upgrade-recipe-minor]
+=== `ValueRangeFactory` class now final
+
+`ValueRangeFactory` class is a factory class that has only static methods.
+As such, there is no need for the users to extend this class, and it has therefore been made `final`.
+
+Before in `*.java`:
+
+[source,java]
+----
+class MyValueRangeFactory extends ValueRangeFactory {
+    ...
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+class MyValueRangeFactory {
+    ...
+}
+----
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `ConstraintMatchTotal` and `Indictment` now interfaces and immutable
+
+`ConstraintMatchTotal` and `Indictment` classes have been converted into interfaces and in the process, their implementations were moved out of the public API, together with methods that allowed to mutate their state.
+
+These methods were never intended for public API.
+Users who created their own instances of these classes, or who mutated state of the existing ones in any way, have likely experienced various unrecoverable issues.
+
+For that reason, there is no replacement for these methods.
