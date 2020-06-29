@@ -81,6 +81,17 @@ A reduced version of the `ScoreDirector` interface was promoted to public API as
 `ProblemFactChange` interface to public API.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
+=== `SolverFactory` and `PlannerBenchmarkFactory` no longer support KIE containers
+
+With OptaPlanner's move towards Kogito, the KIE container concept no longer applies.
+Therefore, `SolverFactory` no longer allows to create `Solver` instances from KIE containers.
+Likewise for `PlannerBenchmarkFactory` and benchmarks.
+
+Users are encouraged to check out our
+https://github.com/kiegroup/kogito-examples/tree/master/process-optaplanner-quarkus[OptaPlanner Kogito quickstart]
+to see how to integrate with processes in a modern, cloud-native way.
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
 
 Due to the limited usage of OSGi and the maintenance burden it brings, the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
