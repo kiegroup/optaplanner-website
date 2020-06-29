@@ -48,7 +48,6 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
 
-==== Reason:
 Due to the limited usage of OSGi and the maintenance burden it brings,
 the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
 
@@ -58,7 +57,6 @@ the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their 
 The configuration of `EntitySelector`, `ValueSelector` and `MoveSelector` now has a single filter class in both
 the configuration API and the solver configuration XML.
 
-==== Reason:
 In practice, you don't need multiple selection filter classes often, and you can always replace them by a single selection
 filter class which implements the logic of all of them.
 Passing a single selection class now requires less boilerplate code.
@@ -148,7 +146,6 @@ public class SingleEntityFilter implements SelectionFilter<MySolution, MyPlannin
 
 Impacts only configuration API, solver configuration XML remains intact.
 
-==== Reason:
 Naming consistency with other local-search-specific configuration classes.
 
 Before in `*.java`:
@@ -171,7 +168,6 @@ LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
 Impact only the solver configuration XML, specifically `<scoreDirectorFactory/>`, `<moveIteratorFactory/>`,
 `<moveListFactory/>`, `<partitionedSearch/>` and `<customPhase/>`.
 
-==== Reason:
 To enforce structure of the configuration XML in build time.
 
 Before in `*.xml`:
@@ -205,7 +201,6 @@ After in `*.xml`:
 
 Impact only the solver configuration XML, specifically the `<swapMoveSelector/>` and `<pillarSwapMoveSelector/>`.
 
-==== Reason:
 To enforce structure of the configuration XML in build time.
 
 Before in `*.xml`:
