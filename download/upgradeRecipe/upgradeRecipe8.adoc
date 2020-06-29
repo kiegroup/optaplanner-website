@@ -10,6 +10,7 @@
 There is no use in waiting for it.
 Please use and download the latest 7.x release instead.*
 
+
 == From 7.39.0.Final or higher to 8.0.0.Beta1
 
 === Backwards incompatible changes to the public API in 7.0
@@ -209,7 +210,7 @@ To enforce structure of the configuration XML in build time.
 
 Before in `*.xml`:
 
-[source, xml]
+[source,xml]
 ----
 <swapMoveSelector>
   <variableNameInclude>variableA</variableNameInclude>
@@ -219,7 +220,7 @@ Before in `*.xml`:
 
 After in `*.xml`:
 
-[source, xml]
+[source,xml]
 ----
 <swapMoveSelector>
   <variableNameIncludes>
@@ -228,3 +229,676 @@ After in `*.xml`:
   </variableNameIncludes>
 </swapMoveSelector>
 ----
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== `Solution` interface removed
+
+`Solution` interface has long been deprecated for removal and has now been removed.
+The same goes for `AbstractSolution`, only used by the Workbench.
+
+Remove the `Solution` interface, annotate the `getScore()` method with `@PlanningScore`
+and replace the `getProblemFacts()` method with a `@ProblemFactCollectionProperty` annotation directly on every problem fact getter (or field).
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class CloudBalance implements Solution<HardSoftScore> {
+
+    private List<CloudComputer> computerList;
+    ...
+
+    private HardSoftScore score;
+
+    @ValueRangeProvider(id = "computerRange")
+    public List<CloudComputer> getComputerList() {...}
+
+    public HardSoftScore getScore() {...}
+    public void setScore(HardSoftScore score) {...}
+
+    public Collection<? extends Object> getProblemFacts() {
+        List<Object> facts = new ArrayList<Object>();
+        facts.addAll(computerList);
+        ...
+        return facts;
+    }
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class CloudBalance {
+
+    private List<CloudComputer> computerList;
+    ...
+
+    private HardSoftScore score;
+
+    @ValueRangeProvider(id = "computerRange")
+    @ProblemFactCollectionProperty
+    public List<CloudComputer> getComputerList() {...}
+
+    @PlanningScore
+    public HardSoftScore getScore() {...}
+    public void setScore(HardSoftScore score) {...}
+
+}
+----
+
+For a single problem fact (which is not wrapped in a `Collection`), use the `@ProblemFactProperty` annotation, as shown below (with field annotations this time).
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class CloudBalance implements Solution<HardSoftScore> {
+
+    private CloudParametrization parametrization;
+    private List<CloudBuilding> buildingList;
+    @ValueRangeProvider(id = "computerRange")
+    private List<CloudComputer> computerList;
+    ...
+
+    public Collection<? extends Object> getProblemFacts() {
+        List<Object> facts = new ArrayList<Object>();
+        facts.add(parametrization); // not a Collection
+        facts.addAll(buildingList);
+        facts.addAll(computerList);
+        ...
+        return facts;
+    }
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class CloudBalance {
+
+    @ProblemFactProperty
+    private CloudParametrization parametrization;
+    @ProblemFactCollectionProperty
+    private List<CloudBuilding> buildingList;
+    @ValueRangeProvider(id = "computerRange")
+    @ProblemFactCollectionProperty
+    private List<CloudComputer> computerList;
+    ...
+
+}
+----
+
+Don't add the `@ProblemFactCollectionProperty` annotation on getters (or fields) that have a `@PlanningEntityCollectionProperty` annotation.
+
+[.upgrade-recipe-major]
+=== `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` removed
+
+The method `BestSolutionChangedEvent.isNewBestSolutionInitialized()` has long been deprecated in favor of `BestSolutionChangedEvent.getNewBestSolution().getScore().isSolutionInitialized()`.
+It has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.isNewBestSolutionInitialized()) {
+            ...
+        }
+    }
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.getNewBestSolution().getScore().isSolutionInitialized()) {
+            ...
+        }
+    }
+----
+
+However, if you also check `isFeasible()`, that's enough because it also checks if the solution is initialized.
+
+After in `*.java`:
+
+[source,java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        if (event.isEveryProblemFactChangeProcessed()
+                // isFeasible() checks isSolutionInitialized() too
+                && event.getNewBestSolution().getScore().isFeasible()) {
+            ...
+        }
+    }
+----
+
+[.upgrade-recipe-minor]
+=== `<valueSelector>`: `variableName` is now an attribute
+
+When power tweaking move selectors, such as `<changeMoveSelector>`, in a use case with multiple planning variables, the `<variableName>` XML element has been replaced by a `variableName="..."` XML attribute.
+This reduces the solver configuration verbosity.
+After being deprecated for the entire 7.x series, the old way has now been removed.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+  <valueSelector>
+    <variableName>room</variableName>
+  </valueSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+  <valueSelector variableName="room"/>
+----
+
+[.upgrade-recipe-minor]
+=== Partitioned Search: `threadFactoryClass` removed
+
+Now that `<solver>`'s supported a `<threadFactoryClass>` element for a while, the `<threadFactoryClass>` element under `<partitionedSearch>` has been removed.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+  <solver>
+    ...
+    <partitionedSearch>
+      <threadFactoryClass>...MyAppServerThreadFactory</threadFactoryClass>
+      ...
+    </partitionedSearch>
+  </solver>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+  <solver>
+    <threadFactoryClass>...MyAppServerThreadFactory</threadFactoryClass>
+    ...
+    <partitionedSearch>
+      ...
+    </partitionedSearch>
+  </solver>
+----
+
+=== Property `subPilarEnabled` in move selector configuration has beenr removed
+
+The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
+It has now been removed.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+      <pillar...MoveSelector>
+        ...
+        <pillarSelector>
+          <subPillarEnabled>false</subPillarEnabled>
+          ...
+        </pillarSelector>
+        ...
+      </pillar...MoveSelector>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+      <pillar...MoveSelector>
+        <subPillarType>NONE</subPillarType>
+        <pillarSelector>
+          ...
+        </pillarSelector>
+        ...
+      </pillar...MoveSelector>
+----
+
+[.upgrade-recipe-major]
+=== `SolverFactory`: `getSolverConfig()` removed
+
+The method `SolverFactory.getSolverConfig()` has long been deprecated in favor of `SolverFactory.create(SolverConfig)`.
+A `SolverConfig` is now instantiated before a `SolverFactory` is instantiated, which is more natural.
+The old way has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+SolverFactory<MySolution> solverFactory = SolverFactory.createFromXmlResource(".../mySolverConfig.xml");
+SolverConfig solverConfig = solverFactory.getSolverConfig();
+...
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+SolverConfig solverConfig = SolverConfig.createFromXmlResource(".../mySolverConfig.xml");
+...
+SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+If you were also passing a `ClassLoader`, pass it to both `SolverConfig.createFromXmlResource()` and `SolverFactory.create()`.
+
+[.upgrade-recipe-minor]
+=== `SolverFactory`: `cloneSolverFactory()` removed
+
+The method `SolverFactory.cloneSolverFactory()` has long been deprecated in favor of the copy constructor
+`new SolverConfig(SolverConfig)`.
+It has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+private SolverFactory<MySolution> base;
+
+public void userRequest(..., long userInput) {
+    SolverFactory<MySolution> solverFactory = base.cloneSolverFactory();
+    solverFactory.getSolverConfig()
+            .getTerminationConfig()
+            .setMinutesSpentLimit(userInput);
+    Solver<MySolution> solver = solverFactory.buildSolver();
+    ...
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+private SolverConfig base;
+
+public void userRequest(..., long userInput) {
+    SolverConfig solverConfig = new SolverConfig(base); // Copy it
+    solverConfig.getTerminationConfig()
+            .setMinutesSpentLimit(userInput);
+    SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+    Solver<MySolution> solver = solverFactory.buildSolver();
+    ...
+}
+----
+
+[.upgrade-recipe-minor]
+=== `SolverFactory`: `createEmpty()` removed
+
+The method `SolverFactory.createEmpty()` has long been deprecated in favor of `new SolverConfig()`.
+It has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+SolverFactory<MySolution> solverFactory = SolverFactory.createEmpty();
+SolverConfig solverConfig = solverFactory.getSolverConfig()
+...
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+SolverConfig solverConfig = new SolverConfig();
+...
+SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+[.upgrade-recipe-minor]
+=== `PlannerBenchmarkFactory`: `getPlannerBenchmarkConfig()` deprecated
+
+The method `PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has long been deprecated in favor of
+`PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)`.
+A `PlannerBenchmarkConfig` is now instantiated before a `PlannerBenchmarkFactory` is instantiated, which is more natural.
+The old was has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+PlannerBenchmarkConfig benchmarkConfig = benchmarkFactory.getPlannerBenchmarkConfig();
+...
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+...
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchmarkConfig);
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory`: `createFromSolverFactory()` removed
+
+The method `PlannerBenchmarkFactory.createFromSolverFactory()` has long been deprecated in favor of
+`PlannerBenchmarkFactory.createFromSolverConfigXmlResource(String)`.
+It has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+SolverFactory<CloudBalance> solverFactory = SolverFactory.createFromXmlResource(
+        ".../cloudBalancingSolverConfig.xml");
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverFactory(solverFactory);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromSolverConfigXmlResource(
+        ".../cloudBalancingSolverConfig.xml");
+----
+
+If you programmatically adjust the solver configuration, you can use `PlannerBenchmarkConfig.createFromSolverConfig(SolverConfig)`
+and then `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)` instead.
+
+[.upgrade-recipe-minor]
+=== `BenchmarkAggregatorFrame`: `createAndDisplay(PlannerBenchmarkFactory)` removed
+
+The method `BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkFactory)` has long been deprecated in favor of `BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(String)`.
+It has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+BenchmarkAggregatorFrame.createAndDisplay(benchmarkFactory);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+----
+
+If you programmatically adjust the benchmark configuration, you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
+
+[.upgrade-recipe-major]
+=== `Solver`: `getScoreDirectorFactory()` removed
+
+The method `getScoreDirectorFactory()` has long been deprecated and has now been removed from both `Solver` and
+`SolverFactory` classes.
+
+Now you don't need to create a `Solver` instance just to calculate or explain a score in the UI.
+Instead, use the `ScoreManager` API.
+
+Before in `*.java`:
+
+[source,java]
+----
+SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
+Solver<VehicleRoutingSolution> solver = solverFactory.buildSolver();
+uiScoreDirectorFactory = solver.getScoreDirectorFactory();
+...
+----
+
+After in `*.java`:
+
+[source,java]
+----
+SolverFactory<VehicleRoutingSolution> solverFactory = SolverFactory.createFromXmlResource(...);
+ScoreManager<VehicleRoutingSolution> scoreManager = ScoreManager.create(solverFactory);
+...
+----
+
+`ScoreDirectorFactory` should not be used anymore, as it's always been outside the public API and all of its functionality is exposed in various parts of the public API.
+
+[.upgrade-recipe-major]
+=== Annotation scanning has been removed
+
+The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated in 7.x and now removed.
+Use the link:../../compatbility/quarkus.html[Quarkus extension] or
+link:../../compatbility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
+
+Before in `*.xml`:
+
+[source,xml]
+----
+<solver>
+    ...
+    <scanAnnotatedClasses/>
+    ...
+</solver>
+----
+
+After in `*.xml`:
+
+[source,xml]
+----
+<solver>
+    ...
+    <solutionClass>...</solutionClass>
+    <entityClass>...</entityClass>
+    ...
+</solver>
+----
+
+[.upgrade-recipe-major]
+=== New package for `@PlanningFactProperty` and `@PlanningFactCollectionProperty`
+
+The `@PlanningFactProperty` and `@PlanningFactCollectionProperty` now share the same package with other similar annotations, such as `@PlanningSolution`.
+The old annotations have been deprecated in 7.x and now removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactProperty;
+----
+
+After in `*.java`:
+
+[source,java]
+----
+import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
+import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
+----
+
+[.upgrade-recipe-minor]
+=== ``Solver``'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` removed
+
+Several methods on the `Solver` interface have been deprecated in 7.x and now removed.
+The same information can be obtained by registering an `EventListener` via `Solver.addEventListener(...)`.
+
+Before in `*.java`:
+
+[source,java]
+----
+solver = ...;
+solution = solver.getBestSolution();
+score = solver.getBestScore();
+timeMillisSpent = solver.getTimeMillisSpent();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+solver = ...;
+solver.addEventListener(event -> {
+    solution = event.getNewBestSolution();
+    score = event.getNewBestScore();
+    timeMillisSpent = event.getTimeMillisSpent();
+});
+----
+
+[.upgrade-recipe-minor]
+=== `Solver.explainBestScore()` removed
+
+The `explainBestScore()` method on the `Solver` interface has been deprecated in 7.x and now removed.
+The same information can be obtained via the new `ScoreManager` API.
+
+We continue to advise users not to parse the results of this method call in any way.
+
+Before in `*.java`:
+
+[source,java]
+----
+solver = ...;
+scoreExplanation = solver.explainBestScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+MySolution solution = ...;
+ScoreManager<MySolution> scoreManager = ...;
+scoreExplanation = scoreManager.explainScore(solution);
+----
+
+[.upgrade-recipe-minor]
+=== `SimpleDoubleScore` and `HardSoftDoubleScore` removed
+
+The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
+as it leads to score corruption.
+They have finally been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class MyPlanningSolution {
+
+    private SimpleDoubleScore score;
+
+    ...
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningSolution
+public class MyPlanningSolution {
+
+    private SimpleLongScore score;
+
+    ...
+
+}
+----
+
+[.upgrade-recipe-minor]
+=== `Score.toInitializedScore()` removed
+
+The `Score.toInitializedScore()` method has been deprecated in favor of `Score.withInitScore(int)` in 7.x, and now removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+score = score.toInitializedScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+score = score.withInitScore(0);
+----
+
+[.upgrade-recipe-minor]
+=== Various justification `Comparators` removed
+
+The following `Comparator` implementations were deprecated in 7.x and now removed:
+
+- `org.optaplanner.core.api.score.comparator.NaturalScoreComparator`
+- `org.optaplanner.core.api.score.constraint.ConstraintMatchScoreComparator`
+- `org.optaplanner.core.api.score.constraint.ConstraintMatchTotalScoreComparator`
+- `org.optaplanner.core.api.score.constraint.IndictmentScoreComparator`
+
+Before in `*.java`:
+
+[source,java]
+----
+NaturalScoreComparator comparator = new NaturalScoreComparator();
+ConstraintMatchScoreComparator comparator2 = new ConstraintMatchScoreComparator();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+Comparator<Score> comparator = Comparable::compareTo;
+Comparator<ConstraintMatch> comparator2 = Comparator.comparing(ConstraintMatch::getScore);
+----
+
+[.upgrade-recipe-minor]
+=== `FeasibilityScore` removed
+
+The `FeasibilityScore` interface has been deprecated in 7.x and its only method `isFeasible()` moved to the `Score`
+supertype.
+The interface has now been removed.
+
+Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`.
+
+[.upgrade-recipe-minor]
+=== `@PlanningEntity.movableEntitySelectionFilter` removed
+
+The `movableEntitySelectionFilter` field on `@PlanningEntity` annotation has been deprecated in 7.x and a new field
+`pinningFilter` has been introduced, the name of which bears a clear relation to the `@PlanningPin` annotation.
+This filter implements a new `PinningFilter` interface, returning true if the entity is pinned, and false if movable.
+The logic of this new filter is therefore inverted as compared to the old filter.
+
+Users should update their `@PlanningEntity` annotations, supplying the new filter instead of the old.
+The old field has now been removed.
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningEntity(movableEntitySelectionFilter = MyMovableEntitySelectionFilter.class)
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningEntity(pinningFilter = MyPinningFilter.class)
+----
+
+[.upgrade-recipe-minor]
+=== `@PlanningVariable.reinitializeVariableEntityFilter` removed
+
+The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation has been deprecated for removal in 7.x and now removed.
+
+Users of this niche functionality should refer to the documentation on how to achieve the same result by
+link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
+
