@@ -11,6 +11,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: ZBzzdQJDapU
+  title: "Assigning jBPM human tasks with OptaPlanner"
+  author: wmedvede
+  date: 2020-07-03
+  tags:
+    - task assigning
+
 - youtubeId: JqtF2PLYTvI
   title: "AI on Quarkus"
   author: ge0ffrey
