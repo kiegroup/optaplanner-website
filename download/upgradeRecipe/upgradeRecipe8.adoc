@@ -49,10 +49,10 @@ Java serialization is
 https://cr.openjdk.java.net/~briangoetz/amber/serialization.html[considered by its authors to be poorly designed] and it was suggested that the capability would, at some point in time, be removed from the platform altogether.
 In OptaPlanner 8, we have removed most uses of the `Serializable` marker interface from the public API and we encourage users to
 https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#integrationWithPersistentStorage[serialize
-via JAXB or JSON].
+via JSON or other formats].
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
-=== Refrain from using `ScoreDirectorFactory`
+=== `SolverFactory.getScoreDirectorFactory()` replaced by `ScoreManager`
 
 In version 7 of OptaPlanner, using `ScoreDirectorFactory` was necessary in order to
 https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[explain the score].
@@ -63,8 +63,9 @@ Before in `*.java`:
 [source,java]
 ----
 ScoreDirectorFactory<CloudBalance> scoreDirectorFactory = solverFactory.getScoreDirectorFactory();
-try (ScoreDirector<CloudBalance> guiScoreDirector = scoreDirectorFactory.buildScoreDirector()) {
-    ...
+try (ScoreDirector<CloudBalance> scoreDirector = scoreDirectorFactory.buildScoreDirector()) {
+    scoreDirector.setWorkingSolution(solution);
+    Score score = scoreDirector.calculateScore();
 }
 ----
 
@@ -73,10 +74,10 @@ After in `*.java`:
 [source,java]
 ----
 ScoreManager<CloudBalance> scoreManager = ScoreManager.create(solverFactory);
-...
+Score score = guiScoreDirector.updateScore(solution);
 ----
 
-Methods that allowed users to retrieve an instance of `ScoreDirecto` and `ScoreDirectorFactory` have been removed from public API without replacement.
+Methods that allowed users to retrieve an instance of `ScoreDirector` and `ScoreDirectorFactory` have been removed from public API without replacement.
 A reduced version of the `ScoreDirector` interface was promoted to public API as part of promoting the
 `ProblemFactChange` interface to public API.
 
@@ -482,7 +483,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 ----
 
 [.upgrade-recipe-major]
-=== Property `subPilarEnabled` in move selector configuration has beenr removed
+=== Property `subPilarEnabled` in move selector configuration has been removed
 
 The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
 It has now been removed.
@@ -954,8 +955,9 @@ In OptaPlanner 7, `ScoreHolder` classes, used exclusively for
 https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#droolsScoreCalculation[Drools score calculation], exposed a number of public methods which, if used, allowed the user to unintentionally corrupt or otherwise negatively affect their scores.
 
 In OptaPlanner 8, these methods have been removed and the classes have been turned into interfaces.
-For the vast majority of users who did not use any of these potentially harmful methods, there will be no impact on their code.
-Others will find suitable replacements in the public API in areas of
+You probably don't use any of the removed, potentially harmful methods, so there will be no impact on your code.
+
+If that is not the case, you will find suitable replacements in the public API in areas of
 https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[score explanation] and
 https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintConfiguration[constraint configuration].
 
@@ -984,11 +986,23 @@ class MyValueRangeFactory {
 ----
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
-=== `ConstraintMatchTotal` and `Indictment` now interfaces and immutable
+=== `ConstraintMatchTotal` and `Indictment` are now interfaces
 
 `ConstraintMatchTotal` and `Indictment` classes have been converted into interfaces and in the process, their implementations were moved out of the public API, together with methods that allowed to mutate their state.
+These methods were never intended for public API, and therefore there is no replacement for them.
 
-These methods were never intended for public API.
-Users who created their own instances of these classes, or who mutated state of the existing ones in any way, have likely experienced various unrecoverable issues.
+You may still need the instances themselves if you choose to implement `ConstraintMatchAwareIncrementalScoreCalculator`:
 
-For that reason, there is no replacement for these methods.
+[source,java]
+----
+ConstraintMatchTotal maximumCapacityMatchTotal = new ConstraintMatchTotal(...);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+ConstraintMatchTotal maximumCapacityMatchTotal = new DefaultConstraintMatchTotal(...);
+----
+
+
