@@ -247,7 +247,7 @@ After in `*.xml`:
 ----
 
 [.upgrade-recipe-minor]
-=== `<variableNameInclude/>` elements are now wrapped by the <variableNameIncludes/> element
+=== `<variableNameInclude/>` elements are now wrapped by the `<variableNameIncludes/>` element
 
 Impact only the solver configuration XML, specifically the `<swapMoveSelector/>` and `<pillarSwapMoveSelector/>`.
 
@@ -454,7 +454,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-minor]
 === Partitioned Search: `threadFactoryClass` removed
 
-Now that `<solver>`'s supported a `<threadFactoryClass>` element for a while, the `<threadFactoryClass>` element under `<partitionedSearch>` has been removed.
+Now that `<solver>` has supported a `<threadFactoryClass>` element for a while, the `<threadFactoryClass>` element under `<partitionedSearch>` has been removed.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 
@@ -483,7 +483,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 ----
 
 [.upgrade-recipe-major]
-=== Property `subPilarEnabled` in move selector configuration has been removed
+=== Property `subPillarEnabled` in move selector configuration has been removed
 
 The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
 It has now been removed.
@@ -610,7 +610,7 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 ----
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
-=== `PlannerBenchmarkFactory`: `getPlannerBenchmarkConfig()` deprecated
+=== `PlannerBenchmarkFactory`: `getPlannerBenchmarkConfig()` removed
 
 The method `PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has long been deprecated in favor of
 `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)`.
@@ -913,7 +913,7 @@ The `FeasibilityScore` interface has been deprecated in 7.x and its only method 
 supertype.
 The interface has now been removed.
 
-Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`.
+Users should refer to their ``Score``s by their ultimate type, for example `HardSoftScore` as opposed to `Score`.
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `@PlanningEntity.movableEntitySelectionFilter` removed
