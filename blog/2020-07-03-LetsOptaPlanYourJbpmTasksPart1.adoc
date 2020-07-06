@@ -2,7 +2,7 @@
 :page-interpolate: true
 :awestruct-author: wmedvede
 :awestruct-layout: blogPostBase
-:awestruct-tags: [feature, task assigning, bpm integration]
+:awestruct-tags: [feature, task assignment, integration]
 
 :awestruct-share_image_filename: CreditDisputeProcessDiagram.png
 
