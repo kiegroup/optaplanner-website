@@ -275,7 +275,7 @@ After in `*.xml`:
 </swapMoveSelector>
 ----
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `Solution` interface removed
 
 `Solution` interface has long been deprecated for removal and has now been removed.
@@ -383,7 +383,7 @@ public class CloudBalance {
 
 Don't add the `@ProblemFactCollectionProperty` annotation on getters (or fields) that have a `@PlanningEntityCollectionProperty` annotation.
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` removed
 
 The method `BestSolutionChangedEvent.isNewBestSolutionInitialized()` has long been deprecated in favor of `BestSolutionChangedEvent.getNewBestSolution().getScore().isSolutionInitialized()`.
