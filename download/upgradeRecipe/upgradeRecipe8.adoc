@@ -97,7 +97,7 @@ to see how to integrate with processes in a modern, cloud-native way.
 
 Due to the limited usage of OSGi and the maintenance burden it brings, the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `filterClassList` replaced by a single filterClass
 
 The configuration of `EntitySelector`, `ValueSelector` and `MoveSelector` now has a single filter class in both the configuration API and the solver configuration XML.
@@ -212,7 +212,7 @@ LocalSearchPhaseConfig localSearchPhaseConfig = new LocalSearchPhaseConfig()
         .withAcceptorConfig(new LocalSearchAcceptorConfig().withEntityTabuSize(5));
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `Custom properties` XML configuration format changes
 
 Impact only the solver configuration XML, specifically `<scoreDirectorFactory/>`, `<moveIteratorFactory/>`,
@@ -246,7 +246,7 @@ After in `*.xml`:
 </partitionedSearch>
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `<variableNameInclude/>` elements are now wrapped by the `<variableNameIncludes/>` element
 
 Impact only the solver configuration XML, specifically the `<swapMoveSelector/>` and `<pillarSwapMoveSelector/>`.
@@ -428,7 +428,7 @@ After in `*.java`:
     }
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `<valueSelector>`: `variableName` is now an attribute
 
 When power tweaking move selectors, such as `<changeMoveSelector>`, in a use case with multiple planning variables, the `<variableName>` XML element has been replaced by a `variableName="..."` XML attribute.
@@ -451,7 +451,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   <valueSelector variableName="room"/>
 ----
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === Partitioned Search: `threadFactoryClass` removed
 
 Now that `<solver>` has supported a `<threadFactoryClass>` element for a while, the `<threadFactoryClass>` element under `<partitionedSearch>` has been removed.
@@ -482,7 +482,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
   </solver>
 ----
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === Property `subPillarEnabled` in move selector configuration has been removed
 
 The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
@@ -721,7 +721,7 @@ ScoreManager<VehicleRoutingSolution> scoreManager = ScoreManager.create(solverFa
 
 `ScoreDirectorFactory` should not be used anymore, as it's always been outside the public API and all of its functionality is exposed in various parts of the public API.
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-public-api]
 === Annotation scanning has been removed
 
 The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated in 7.x and now removed.
