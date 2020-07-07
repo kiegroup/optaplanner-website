@@ -227,8 +227,8 @@ Before in `*.xml`:
 <partitionedSearch>
   <solutionPartitionerClass>com.example.MySolutionPartitioner</solutionPartitionerClass>
   <solutionPartitionerCustomProperties>
-    <partCount>4<partCount/> <!-- a custom property -->
-    <minimumProcessListSize>300<minimumProcessListSize/> <!-- a custom property -->
+    <partCount>4</partCount> <!-- a custom property -->
+    <minimumProcessListSize>300</minimumProcessListSize> <!-- a custom property -->
   </solutionPartitionerCustomProperties>
 </partitionedSearch>
 ----
