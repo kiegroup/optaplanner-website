@@ -45,7 +45,7 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `SolverFactory` and `PlannerBenchmarkFactory` no longer support KIE containers
 
-With OptaPlanner's move towards Kogito, the KIE container concept no longer applies.
+Due to OptaPlanner aligning to Kogito, the KIE container concept no longer applies.
 Therefore, `SolverFactory` no longer allows to create `Solver` instances from KIE containers.
 Likewise for `PlannerBenchmarkFactory` and benchmarks.
 
@@ -1010,5 +1010,4 @@ BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
 ----
 
 If you programmatically adjust the benchmark configuration, you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
-
 
