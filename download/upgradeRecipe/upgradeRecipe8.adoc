@@ -986,6 +986,73 @@ PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchm
 PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
 ----
 
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== `ProblemBenchmarksConfig`: `xStreamAnnotatedClass` removed
+
+The `<xStreamAnnotatedClass/>` has been removed from the `<problemBenchmarks/>` configuration together with  the corresponding
+`getXStreamAnnotatedClassList()` and `setXStreamAnnotatedClassList()` methods in the `ProblemBenchmarksConfig` class.
+
+Before in `*.java`:
+
+[source,java]
+----
+ProblemBenchmarksConfig problemBenchmarksConfig = new ProblemBenchmarksConfig();
+problemBenchmarksConfig.setXStreamAnnotatedClassList(MySolution.class);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+package com.example;
+...
+public class MySolutionFileIO extends XStreamSolutionFileIO<MySolution> {
+    public MySolutionFileIO() {
+        super(MySolution.class);
+    }
+}
+
+...
+
+ProblemBenchmarksConfig problemBenchmarksConfig = new ProblemBenchmarksConfig();
+problemBenchmarksConfig.setSolutionFileIOClass(MySolutionFileIO.class);
+----
+
+Before in `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+<plannerBenchmark>
+...
+  <solverBenchmark>
+    <problemBenchmarks>
+      <xStreamAnnotatedClass>com.example.MySolution</xStreamAnnotatedClass>
+      ...
+    </problemBenchmarks>
+    ...
+  </solverBenchmark>
+...
+</plannerBenchmark>
+----
+
+After in `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+<plannerBenchmark>
+...
+  <solverBenchmark>
+    <problemBenchmarks>
+      <!-- See the "After in *.java" section to create the MySolutionFileIO. -->
+      <solutionFileIOClass>com.example.MySolutionFileIO</solutionFileIOClass>
+      ...
+    </problemBenchmarks>
+    ...
+  </solverBenchmark>
+...
+</plannerBenchmark>
+----
+
 [.upgrade-recipe-minor]
 === `BenchmarkAggregatorFrame`: `createAndDisplay(PlannerBenchmarkFactory)` removed
 
