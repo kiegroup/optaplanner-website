@@ -58,19 +58,12 @@
   githubUsername: rsynek
   employedBy: Red Hat
   ircNickname: rsynek
-  
+
 - userId: dupliaka
   fullName: Anna Dupliak
   role: Quality engineer
   gravatarHashId: 54cd5de3bdaf21a942e8d9d5fe95f647
   twitterUsername: dupliaka
-  employedBy: Red Hat
-
-- userId: prakasharadhya
-  fullName: Prakash Aradhya
-  role: Product Manager
-  gravatarHashId: 0e962aaeed5d03db94e8374677cddc72
-  twitterUsername: prakasharadhya
   employedBy: Red Hat
 
 - userId: DuncanDoyle
@@ -200,7 +193,7 @@
   employedBy: Red Hat
   githubUsername: psiroky
   ircNickname: psiroky
-  
+
 - userId: mdanter
   fullName: Matyas Danter
   role: Contributor
@@ -210,7 +203,7 @@
   email: mdanter AT redhat.com
   employedBy: Red Hat
   ircNickname: mdanter
-  
+
 - userId: blackjack92
   fullName: Kevin Wallis
   role: Contributor
@@ -224,7 +217,7 @@
   twitterUsername: marcorietveld
   githubUsername: mrietveld
   ircNickname: mriet
-  
+
 - userId: Christopher-Chianelli
   fullName: Christopher Chianelli
   role: OptaWeb Employee Rostering developer
@@ -273,7 +266,7 @@
   gravatarHashId: 897f2ff7d7a84cb3769d27a9889520c9
   githubUsername: sudheerchekka
   employedBy: Red Hat
-  
+
 - userId: FredPraca
   fullName: Frédéric Praca
   role: Contributor
