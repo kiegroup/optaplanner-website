@@ -66,6 +66,13 @@
   twitterUsername: dupliaka
   employedBy: Red Hat
 
+- userId: michaltomco
+  fullName: Michal Tomčo
+  role: Quality engineer
+  gravatarHashId: ac8d5ec97e225c049fae098f640250c7
+  githubUsername: michaltomco
+  employedBy: Red Hat
+
 - userId: DuncanDoyle
   fullName: Duncan Doyle
   role: Technical Marketing Manager
