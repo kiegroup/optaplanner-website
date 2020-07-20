@@ -138,7 +138,7 @@
 
 - userId: etirelli
   fullName: Edson Tirelli
-  role: Drools lead
+  role: Manager
   gravatarHashId: 1b7f091584d6362942215fa51d5913ba
   twitterUsername: edsontirelli
   githubUsername: etirelli
@@ -147,7 +147,7 @@
 
 - userId: mariofusco
   fullName: Mario Fusco
-  role: Drools developer
+  role: Drools lead
   gravatarHashId: 9eafc29df96e6aaf4a3eb4c0209086ae
   twitterUsername: mariofusco
   employedBy: Red Hat
@@ -161,6 +161,13 @@
   employedBy: Red Hat
   githubUsername: mbiarnes
   ircNickname: mbiarnes
+
+- userId: mareknovotny
+  fullName: Marek Novotný
+  role: Manager
+  gravatarHashId: 68b0bb549bdafc79b3b2b9e9768e8a40
+  employedBy: Red Hat
+  githubUsername: mareknovotny
 
 - userId: gsheldon
   fullName: Gemma Sheldon
@@ -282,3 +289,15 @@
   linkedInId: fredpraca
   contributionsDescription: Only dependencies version upgrade
 
+- userId: philsimpson365
+  fullName: Phil Simpson
+  role: Product Manager
+  gravatarHashId: 24a9f0af90dbc9d2e8d2eaf28505de24
+  twitterUsername: philsimpson365
+  employedBy: Red Hat
+
+- userId: emmurphy1
+  fullName: Emily Murphy
+  role: Writer
+  gravatarHashId: d2ad388269e6c48845da82f59da31e34
+  employedBy: Red Hat
