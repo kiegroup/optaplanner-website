@@ -20,6 +20,8 @@ title: Team
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'triceo', :mode => 'long')
   %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'rsynek', :mode => 'long')
+  %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'yurloc', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'Christopher-Chianelli', :mode => 'long')
@@ -27,8 +29,6 @@ title: Team
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'wmedvede', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'jucui', :mode => 'long')
-  %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'rsynek', :mode => 'long')
 
 %h2 Quality Assurance
 %ul(style="list-style: none")
@@ -38,12 +38,28 @@ title: Team
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'michaltomco', :mode => 'long')
   %li and the rest of the Red Hat Decision Manager QA team
 
-%h2 Product Management
+%h2 Marketing and Product Management
 %ul(style="list-style: none")
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'DuncanDoyle', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'kmacedovarela', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'philsimpson365', :mode => 'long')
+
+%h2 Documentation
+%ul(style="list-style: none")
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'emmurphy1', :mode => 'long')
+  %li The Red Hat Decision Manager documentation team
+
+%h2 Build, continuous integration and releases
+%ul(style="list-style: none")
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mbiarnes', :mode => 'long')
+  %li
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mareknovotny', :mode => 'long')
+  %li and the rest of the Red Hat Decision Manager productization team
 
 %h2 Community contributors
 %ul(style="list-style: none")
@@ -80,24 +96,12 @@ title: Team
   %li
     See <a href="https://www.openhub.net/p/optaplanner/contributors/summary">historic contributors on Open HUB</a>.
 
-%h2 Build, releases and product guides
+%h2 Umbrella KIE R&D team (Drools, Kogito, ...)
 %ul(style="list-style: none")
   %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mbiarnes', :mode => 'long')
-  %li
-    %p The Red Hat Decision Manager productization team
-  %li and the rest of the Red Hat Decision Manager documentation team
-
-%h2 Drools Expert R&D team
-%ul(style="list-style: none")
-  %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mdproctor', :mode => 'long')
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mariofusco', :mode => 'long')
   %li
     = partial('userBadge.html.haml', :outputPage => page, :userId => 'etirelli', :mode => 'long')
   %li
-    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mariofusco', :mode => 'long')
-
-%h2 Workbench R&D team
-%ul(style="list-style: none")
-  %li The Drools Workbench team
-  %li The Appformer team
+    = partial('userBadge.html.haml', :outputPage => page, :userId => 'mdproctor', :mode => 'long')
+  %li and the rest of the KIE team.
