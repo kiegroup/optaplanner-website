@@ -12,7 +12,6 @@
 #  githubUsername: (optional)
 #  email: It's best to anti-spam this (optional)
 #  employedBy: (optional)
-#  ircNickname: (optional)
 #  contributionsDescription: only work related to this project (optional)
 #  biography: (optional)
 
@@ -25,7 +24,6 @@
   githubUsername: ge0ffrey
   email: gds.geoffrey.de.smet AT gmail.com
   employedBy: Red Hat
-  ircNickname: ge0ffrey
   biography: Geoffrey founded OptaPlanner in 2006 and has been working for Red Hat since 2010.
 
 - userId: triceo
@@ -34,14 +32,12 @@
   gravatarHashId: c950743f532471ac34022e92193563c3
   githubUsername: triceo
   employedBy: Red Hat
-  ircNickname: triceo
 
 - userId: snurkabill
   fullName: Jiří Vahala
   role: Quality engineer
   gravatarHashId: 1ad0d21dbd341c743c374e057e2930f1
   githubUsername: snurkabill
-  ircNickname: jvahala/snurkabill
 
 - userId: yurloc
   fullName: Jiří Locker
@@ -49,7 +45,6 @@
   gravatarHashId: c4e5f1a35064cb21de3b3e4bf5bd7ae8
   githubUsername: yurloc
   employedBy: Red Hat
-  ircNickname: jlocker
 
 - userId: rsynek
   fullName: Radovan Synek
@@ -57,7 +52,6 @@
   gravatarHashId: f1b0cd1c06b5697dbc91f02ea00f3090
   githubUsername: rsynek
   employedBy: Red Hat
-  ircNickname: rsynek
 
 - userId: dupliaka
   fullName: Anna Dupliak
@@ -81,7 +75,6 @@
   githubUsername: DuncanDoyle
   email: ddoyle AT redhat.com
   employedBy: Red Hat
-  ircNickname: ddoyle
 
 - userId: kmacedovarela
   fullName: Karina Macedo Varela
@@ -89,7 +82,6 @@
   gravatarHashId: fb91bf1fe30f9b7d5fd6f96a8e959096
   twitterUsername: kvarel4
   linkedInId: kmacedovarela
-  ircNickname: kvarela
   employedBy: Red Hat
 
 - userId: elsam
@@ -97,7 +89,6 @@
   role: Contributor
   gravatarHashId: ff1d2abc4474045c8cad7c95975eda63
   githubUsername: elsam
-  ircNickname: elsam
   contributionsDescription: Genetic algorithms prototype
 
 - userId: fhornain
@@ -115,7 +106,6 @@
   gravatarHashId: b423d5e811dc7d6f003944b2d31df407
   githubUsername: mcimbora
   employedBy: Red Hat
-  ircNickname: mcimbora
   contributionsDescription: BenchmarkAggregator and more
 
 - userId: oskopek
@@ -124,7 +114,6 @@
   gravatarHashId: fa169c92202fdd8203f45daa96e69933
   twitterUsername: oskopek
   githubUsername: oskopek
-  ircNickname: oskopek
   contributionsDescription: OptaPlanner Benchmarker improvements
 
 - userId: mdproctor
@@ -134,7 +123,6 @@
   twitterUsername: markproctor
   githubUsername: mdproctor
   employedBy: Red Hat
-  ircNickname: conan
 
 - userId: etirelli
   fullName: Edson Tirelli
@@ -143,7 +131,6 @@
   twitterUsername: edsontirelli
   githubUsername: etirelli
   employedBy: Red Hat
-  ircNickname: etirelli
 
 - userId: mariofusco
   fullName: Mario Fusco
@@ -152,7 +139,6 @@
   twitterUsername: mariofusco
   employedBy: Red Hat
   githubUsername: mariofusco
-  ircNickname: mfusco
 
 - userId: mbiarnes
   fullName: Michael Biarnes Kiefer
@@ -160,7 +146,6 @@
   gravatarHashId: b259671a57bb987c00a2e1ba37ff05c5
   employedBy: Red Hat
   githubUsername: mbiarnes
-  ircNickname: mbiarnes
 
 - userId: mareknovotny
   fullName: Marek Novotný
@@ -187,7 +172,6 @@
   role: Contributor
   gravatarHashId: 2cfce770aad70db47b7613dd20010c98
   githubUsername: tomasdavidorg
-  ircNickname: tdavid
   contributionsDescription: Vehicle routing problem android application
 
 - userId: bibryam
@@ -196,7 +180,6 @@
   gravatarHashId: 279246bd111a7c211134179eddb94afa
   twitterUsername: bibryam
   githubUsername: bibryam
-  ircNickname: bibryam
   employedBy: Red Hat
   contributionsDescription: Camel-optaplanner improvements
 
@@ -204,9 +187,7 @@
   fullName: Petr Široký
   role: Release engineer
   gravatarHashId: e8eb2caefbe452befc919ea0977864c1
-  employedBy: Red Hat
   githubUsername: psiroky
-  ircNickname: psiroky
 
 - userId: mdanter
   fullName: Matyas Danter
@@ -216,7 +197,6 @@
   githubUsername: mdanter
   email: mdanter AT redhat.com
   employedBy: Red Hat
-  ircNickname: mdanter
 
 - userId: blackjack92
   fullName: Kevin Wallis
@@ -230,7 +210,6 @@
   gravatarHashId: d4dacb2e9fe88961621b8a89d119c6aa
   twitterUsername: marcorietveld
   githubUsername: mrietveld
-  ircNickname: mriet
 
 - userId: Christopher-Chianelli
   fullName: Christopher Chianelli
@@ -238,7 +217,6 @@
   gravatarHashId: 16f228a9f340e2a2ca5b42485a17bc3d
   githubUsername: Christopher-Chianelli
   employedBy: Red Hat
-  ircNickname: cchianel
 
 - userId: MusaTalluzi
   fullName: Musa Talluzi
@@ -246,9 +224,6 @@
   gravatarHashId: c223f1f4a939fe1d021c98dbdab74876
   twitterUsername: musatalluzi
   githubUsername: MusaTalluzi
-  email: mtalluzi AT redhat.com
-  employedBy: Red Hat
-  ircNickname: mtalluzi
 
 - userId: wmedvede
   fullName: Walter Medvedeo
@@ -256,7 +231,6 @@
   gravatarHashId: 4a8c787544c0b40bc033f631dc2256c2
   employedBy: Red Hat
   githubUsername: wmedvede
-  ircNickname: wmedvede
 
 - userId: jucui
   fullName: Julian Cui
@@ -265,7 +239,6 @@
   githubUsername: cuijulian
   email: jucui AT redhat.com
   employedBy: Red Hat
-  ircNickname: jucui
 
 - userId: jgoldsmith613
   fullName: Justin Goldsmith
@@ -289,7 +262,7 @@
   linkedInId: fredpraca
   contributionsDescription: Only dependencies version upgrade
 
-- userId: philsimpson365
+- userId: PhilSimpson35
   fullName: Phil Simpson
   role: Product Manager
   gravatarHashId: 24a9f0af90dbc9d2e8d2eaf28505de24

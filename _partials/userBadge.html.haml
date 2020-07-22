@@ -35,10 +35,6 @@
               %p
                 %strong Employed by:
                 #{user.employedBy}
-            - if !user.ircNickname.empty?
-              %p
-                %strong IRC nickname:
-                #{user.ircNickname}
             - if !user.contributionsDescription.empty?
               %p
                 %strong Contributions:
