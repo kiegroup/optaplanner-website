@@ -602,3 +602,14 @@
     - title: "AI on Quarkus: I love it when an OptaPlan comes together"
       url: https://www.meetup.com/BordeauxJUG/events/270786885
       presenters: Geoffrey De Smet
+
+- eventId: 20200801-geekle
+  eventOrganization: "Global Summit for Java devs"
+  eventUrl: https://java.geekle.us/
+  location: Worldwide
+  date: 2020-08-01
+
+- eventId: 20200901-optaplannerweek
+  eventOrganization: "OptaPlanner Week"
+  location: Worldwide
+  date: 2020-09-01

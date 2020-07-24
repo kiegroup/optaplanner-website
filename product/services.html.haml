@@ -14,19 +14,21 @@ title: Services
   Additionally, Red Hat offers enterprise support and consultancy for this community project,
   as part of a Red Hat product subscription.
 
-  Red Hat has:
+  To assist customers, Red Hat employs:
 
   - Solution Architects to implement POC's
   - Consultants to help deliver reliable production implementations
   - A 24/7 support team
+  - and of course the OptaPlanner team itself to implement missing features of fix bugs.
 
-  For more information, fill in this form or https://www.redhat.com/en/about/contact/sales[call Red Hat]:
+  == Product subscription
 
-.panel.panel-default
-  .panel-body
-    %iframe(src="https://www.redhat.com/forms/?config=21841" style="width: 100%; height: 700px; border: none;")
+  The Red Hat build of OptaPlanner, also known as https://www.redhat.com/en/topics/automation/business-optimization[Business Optimizer],
+  is included in the following product subscriptions:
 
-:asciidoc
+  * https://www.redhat.com/en/technologies/jboss-middleware/decision-manager[Red Hat Decision Manager]
+  * https://www.redhat.com/en/technologies/jboss-middleware/process-automation-manager[Red Hat Process Automation Manager]
+
 
   == Community and product comparison
 
@@ -39,7 +41,7 @@ title: Services
 
   |*Functionality* | |
   |All features |image:checkYes.png[Yes] Includes all enterprise features too |image:checkYes.png[Yes]
-  |All bugfixes |image:checkYes.png[Yes] Master branch only |image:checkYes.png[Yes] Supported maintenance branches too
+  |All bugfixes |image:checkYes.png[Yes] Master branch only |image:checkYes.png[Yes] Maintenance branches too
   |Documentation |image:checkYes.png[Yes] |image:checkYes.png[Yes]
   |Backport bugfixes to maintenance branches |image:checkNo.png[No] Not released |image:checkYes.png[Yes] Released in maintenance releases
   |Security (CVE) watch for maintenance branches |image:checkNo.png[No] Eventually released from master branch only |image:checkYes.png[Yes] Released as backported bugfix
@@ -52,15 +54,14 @@ title: Services
   |QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application containers, databases, ... See https://access.redhat.com/articles/3354301[supported configurations].
 
   |*Help* | |
-  |Roadmap impact |image:checkYes.png[Yes] Use link:../community/getHelp.html[our forum], #{site.issueTracker}[issue tracker] or send a link:../code/sourceCode.html[Pull Request] |image:checkYes.png[Yes] Prioritized above community requests
+  |Roadmap impact |image:checkNo.png[No] except through link:../code/sourceCode.html[Pull Requests] |image:checkYes.png[Yes] Customer issues are prioritized
   |Public questions |image:checkYes.png[Yes] Use link:../community/getHelp.html[StackOverflow] |image:checkYes.png[Yes] Or call 24/7 support instead
   |Private 24/7 support |image:checkNo.png[No] |image:checkYes.png[Yes] https://access.redhat.com/support/contact/[By web or phone], guaranteed response time (SLA)
   |Red Hat consultancy, training and POC assistance |image:checkNo.png[No] |image:checkYes.png[Yes] Talk to your account manager
 
   |*Release schedule* | |
-  |Beta/CR releases |image:checkYes.png[Yes] Usually every few weeks |image:checkYes.png[Yes] After Final community release
-  |Stable releases |image:checkYes.png[Yes] Final usually every 3 months |image:checkYes.png[Yes] GA usually 2 months after community Final release (if it is productized)
-  |Maintenance releases |image:checkNo.png[No] Use latest Beta/CR instead |image:checkYes.png[Yes] Usually every 6 weeks
+  |New feature releases |image:checkYes.png[Yes] Usually every month |image:checkYes.png[Yes] After community Final release (if it is productized)
+  |Maintenance releases |image:checkNo.png[No] |image:checkYes.png[Yes] Usually every 6 weeks
   |One-off release for an urgent customer critical issue |image:checkNo.png[No] |image:checkYes.png[Yes] Also rolled up in the next maintenance release
 
   |*Information* | |
@@ -70,12 +71,16 @@ title: Services
   To migrate from the community to product binaries, simply add the customer maven repository
   and adjust the version numbers to include the `-redhat` suffix.
 
-  == Product overview
+  == Contact us
 
-  image:kieFunctionalityOverview.png[KIE functionality overview]
+%p
+  For more information, mail
+  = succeed "," do
+    %a.servicesMailAddress optaplanner-info
+  %a(href = "https://www.redhat.com/en/about/contact/sales") call us
+  or fill in this form:
 
-  OptaPlanner is a fully supported component (called _Business Optimizer_) of the following products:
-
-  * https://www.redhat.com/en/technologies/jboss-middleware/decision-manager[Red Hat Decision Manager]
-  * https://www.redhat.com/en/technologies/jboss-middleware/process-automation-manager[Red Hat Process Automation Manager]
+.panel.panel-default
+  .panel-body
+    %iframe(src="https://www.redhat.com/forms/?config=21841" style="width: 100%; height: 700px; border: none;")
 
