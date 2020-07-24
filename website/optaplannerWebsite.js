@@ -56,9 +56,19 @@ function insertEmailSupportPopover() {
     });
 }
 
+function insertServicesMailAddress() {
+    $('.servicesMailAddress').each(function(idx, node) {
+        // Obfuscation to fool spam bots
+        var mailAddress = $(node).text() + "@redhat.com";
+        $(node).text(mailAddress);
+        $(node).attr("href", "mailto:" + mailAddress);
+    });
+}
+
 $(document).ready( function() {
     $(insertUpgradeRecipePriorities);
     $(insertEmailSupportPopover);
+    $(insertServicesMailAddress);
 
     $('.carousel').carousel();
     $('#whatIsCarousel').on('slide.bs.carousel', function(e) {

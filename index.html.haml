@@ -107,8 +107,13 @@ change_frequency: weekly
 
 .row
   .col-md-6
-    = partial('latestReleases.html.haml', :outputPage => page)
     = partial('latestBlogPosts.html.haml', :outputPage => page)
   .col-md-6
-    = partial('events.html.haml', :outputPage => page)
     = partial('latestVideos.html.haml', :outputPage => page)
+.row
+  .col-md-4
+    = partial('events.html.haml', :outputPage => page)
+  .col-md-4
+    = partial('latestReleases.html.haml', :outputPage => page)
+  .col-md-4
+    = partial('servicesOffer.html.haml', :outputPage => page)

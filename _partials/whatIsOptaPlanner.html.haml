@@ -48,8 +48,9 @@
 
 %p
   OptaPlanner is
-  %b open source software
-  , released under
+  = succeed "," do
+    %b open source software
+  released under
   = succeed "." do
     %a{:href => relative("/code/license.html"), :outputPage => page.outputPage} the Apache License
   It is written in 100% pure Java™, runs on any JVM and is available in
