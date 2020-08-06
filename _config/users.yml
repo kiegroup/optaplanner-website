@@ -274,3 +274,11 @@
   role: Writer
   gravatarHashId: d2ad388269e6c48845da82f59da31e34
   employedBy: Red Hat
+
+- userId: emingora
+  fullName: Enrique Mingorance Cano
+  role: Senior Software Engineer
+  linkedInId: ginxo
+  githubUsername: ginxo
+  email: emingora AT redhat.com
+  employedBy: Red Hat
