@@ -77,10 +77,11 @@
   employedBy: Red Hat
 
 - userId: kmacedovarela
-  fullName: Karina Macedo Varela
+  fullName: Karina Varela
   role: Technical Marketing Manager
-  gravatarHashId: fb91bf1fe30f9b7d5fd6f96a8e959096
+  gravatarHashId: 8a9897be8e52ae54f8f4b57e0b868829 
   twitterUsername: kvarel4
+  githubUsername: kmacedovarela
   linkedInId: kmacedovarela
   employedBy: Red Hat
 
