@@ -10,6 +10,8 @@
       resourceUrl: https://www.redhat.com/files/summit/session-assets/2017/S103192-goldsmith.pdf
     - resourceName: Public presentation at Red Hat Summit 2019
       resourceUrl: https://www.youtube.com/watch?v=rgi1YzAvBKk
+  tags:
+    - maintenance scheduling
 
 - adopterId: axians-employee-rostering
   company: Axians
@@ -18,6 +20,8 @@
   resources:
   - resourceName: Software myStaff OnCall
     resourceUrl: https://healthcare.axians.be/solutions/mystaff/oncall/
+  tags:
+    - employee rostering
 
 - adopterId: equina-employee-rostering
   company: 8coins
@@ -26,6 +30,18 @@
   resources:
   - resourceName: Equina
     resourceUrl: https://www.equinascheduling.com/news-equina-meets-optaplanner
+  tags:
+    - employee rostering
+
+- adopterId: jupiter-telecommunications-vehicle-rourting
+  company: Jupiter Telecommunications
+  inProductionYear: 2020
+  useCaseDescription: Route telco technicians to customers.
+  resources:
+  - resourceName: Article on he Quill
+    resourceUrl: http://thequill.in/2020/07/31/jupiter-telecommunications-optimizes-business-operations-with-red-hat-decision-manager/
+  tags:
+    - vehicle routing
 
 # TODO Add the other public adopters over the years
 
