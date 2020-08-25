@@ -6,7 +6,7 @@ image:https://travis-ci.org/kiegroup/optaplanner-website.svg["Build Status", lin
 
 == How to build with Awestruct
 
-=== On Fedora 27
+=== On Fedora 31
 
 Follow these instructions:
 
@@ -20,7 +20,7 @@ $ sudo dnf remove ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-buil
 $ sudo dnf install ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-build gcc-c++ make
 
 $ ruby --version
-ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-linux]
+ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]
 
 # Setup the gem dependencies
 $ rake setup
@@ -37,6 +37,18 @@ And publish your changes (if you got authorization, otherwise Jenkins will do it
 
 ```
 $ rake clean build publish
+```
+
+==== Troubleshooting:
+
+* Error message `Could not find ffi-1.13.1 in any of the sources`
++
+If you get that error message, run:
++
+```
+sudo gem pristine ffi --version 1.13.1
+...
+rake setup
 ```
 
 === On other systems
