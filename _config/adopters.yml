@@ -38,7 +38,7 @@
   inProductionYear: 2020
   useCaseDescription: Route telco technicians to customers.
   resources:
-  - resourceName: Article on he Quill
+  - resourceName: Article on The Quill
     resourceUrl: http://thequill.in/2020/07/31/jupiter-telecommunications-optimizes-business-operations-with-red-hat-decision-manager/
   tags:
     - vehicle routing
