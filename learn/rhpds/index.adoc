@@ -4,11 +4,10 @@
 :awestruct-priority: 0.1
 :showtitle:
 
-== Visit RHPDS
+Red Hat features OptaPlanner demos on https://rhpds.redhat.com/[RHPDS],
+to quickly and easily run them in cloud, without any software installation on your machine.
 
-https://rhpds.redhat.com/[Visit RHPDS]
+Just request a demo instance from your browser:
 
-== Available demos on RHPDS
-
-* link:optaweb-vehicle-routing.html[OptaWeb Vehicle Routing]
-* link:optaweb-employee-rostering.html[OptaWeb Employee Rostering]
+* link:optaweb-vehicle-routing.html[OptaWeb Vehicle Routing on RHPDS]
+* link:optaweb-employee-rostering.html[OptaWeb Employee Rostering on RHPDS]
