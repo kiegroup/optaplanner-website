@@ -11,3 +11,5 @@ Just request a demo instance from your browser:
 
 * link:optaweb-vehicle-routing.html[OptaWeb Vehicle Routing on RHPDS]
 * link:optaweb-employee-rostering.html[OptaWeb Employee Rostering on RHPDS]
+
+RHPDS is currently only accessible by Red Hat employees and partners.
