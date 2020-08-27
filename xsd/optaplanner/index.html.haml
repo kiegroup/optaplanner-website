@@ -6,7 +6,7 @@ priority: 0.1
 ---
 %h1 #{page.title}
 %ul
-  - for file in Dir.entries("xsd").sort
+  - for file in Dir.entries("xsd/optaplanner").sort
     - if file.end_with? ".xsd"
       %li(style="margin-top: 10px;")
         %a{:href => file}
