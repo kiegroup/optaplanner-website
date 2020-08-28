@@ -160,7 +160,6 @@
           <xs:choice maxOccurs="unbounded" minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -195,7 +194,6 @@
           <xs:choice maxOccurs="unbounded" minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -277,7 +275,6 @@
           <xs:choice maxOccurs="unbounded" minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -355,7 +352,6 @@
           <xs:choice maxOccurs="unbounded" minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -367,17 +363,6 @@
             <xs:element name="unionMoveSelector" type="tns:unionMoveSelectorConfig"/>
           </xs:choice>
           <xs:element minOccurs="0" name="selectorProbabilityWeightFactoryClass" type="xs:string"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="kOptMoveSelectorConfig">
-    <xs:complexContent>
-      <xs:extension base="tns:moveSelectorConfig">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="entitySelector" type="tns:entitySelectorConfig"/>
-          <xs:element minOccurs="0" name="valueSelector" type="tns:valueSelectorConfig"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -532,7 +517,6 @@
           <xs:choice minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -555,7 +539,6 @@
           <xs:choice minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -604,7 +587,6 @@
           <xs:choice minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
@@ -628,7 +610,6 @@
           <xs:choice minOccurs="0">
             <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
             <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-            <xs:element name="kOptMoveSelector" type="tns:kOptMoveSelectorConfig"/>
             <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
             <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
             <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
