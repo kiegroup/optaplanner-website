@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.optaplanner.org/xsd/optaplanner" elementFormDefault="qualified" targetNamespace="https://www.optaplanner.org/xsd/optaplanner" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.optaplanner.org/xsd/benchmark" elementFormDefault="qualified" targetNamespace="https://www.optaplanner.org/xsd/benchmark" version="1.0">
+
+  
 
   <xs:element name="plannerBenchmark" type="tns:plannerBenchmarkConfig"/>
-
-  <xs:element name="solver" type="tns:solverConfig"/>
 
   <xs:complexType name="plannerBenchmarkConfig">
     <xs:sequence>
@@ -36,21 +36,82 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType abstract="true" name="abstractConfig">
-    <xs:sequence/>
-  </xs:complexType>
-
   <xs:complexType name="solverBenchmarkConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
         <xs:sequence>
           <xs:element minOccurs="0" name="name" type="xs:string"/>
-          <xs:element minOccurs="0" ref="tns:solver"/>
+          <xs:element minOccurs="0" name="solver" type="tns:solverConfig"/>
           <xs:element minOccurs="0" name="problemBenchmarks" type="tns:problemBenchmarksConfig"/>
           <xs:element minOccurs="0" name="subSingleCount" type="xs:int"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="problemBenchmarksConfig">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractConfig">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solutionFileIOClass" type="xs:string"/>
+          <xs:element minOccurs="0" name="writeOutputSolutionEnabled" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="inputSolutionFile" type="xs:string"/>
+          <xs:element minOccurs="0" name="problemStatisticEnabled" type="xs:boolean"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="problemStatisticType" type="tns:problemStatisticType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="singleStatisticType" type="tns:singleStatisticType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="solverBenchmarkBluePrintConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="solverBenchmarkBluePrintType" type="tns:solverBenchmarkBluePrintType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="solverRankingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOTAL_SCORE"/>
+      <xs:enumeration value="WORST_SCORE"/>
+      <xs:enumeration value="TOTAL_RANKING"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="problemStatisticType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BEST_SCORE"/>
+      <xs:enumeration value="STEP_SCORE"/>
+      <xs:enumeration value="SCORE_CALCULATION_SPEED"/>
+      <xs:enumeration value="BEST_SOLUTION_MUTATION"/>
+      <xs:enumeration value="MOVE_COUNT_PER_STEP"/>
+      <xs:enumeration value="MEMORY_USE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="singleStatisticType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_BEST_SCORE"/>
+      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_STEP_SCORE"/>
+      <xs:enumeration value="PICKED_MOVE_TYPE_BEST_SCORE_DIFF"/>
+      <xs:enumeration value="PICKED_MOVE_TYPE_STEP_SCORE_DIFF"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="solverBenchmarkBluePrintType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CONSTRUCTION_HEURISTIC_WITH_AND_WITHOUT_LOCAL_SEARCH"/>
+      <xs:enumeration value="EVERY_CONSTRUCTION_HEURISTIC_TYPE"/>
+      <xs:enumeration value="EVERY_LOCAL_SEARCH_TYPE"/>
+      <xs:enumeration value="EVERY_CONSTRUCTION_HEURISTIC_TYPE_WITH_EVERY_LOCAL_SEARCH_TYPE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  
+
+  <xs:complexType abstract="true" name="abstractConfig">
+    <xs:sequence/>
   </xs:complexType>
 
   <xs:complexType name="solverConfig">
@@ -696,35 +757,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="problemBenchmarksConfig">
-    <xs:complexContent>
-      <xs:extension base="tns:abstractConfig">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="solutionFileIOClass" type="xs:string"/>
-          <xs:element minOccurs="0" name="writeOutputSolutionEnabled" type="xs:boolean"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="inputSolutionFile" type="xs:string"/>
-          <xs:element minOccurs="0" name="problemStatisticEnabled" type="xs:boolean"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="problemStatisticType" type="tns:problemStatisticType"/>
-          <xs:element maxOccurs="unbounded" minOccurs="0" name="singleStatisticType" type="tns:singleStatisticType"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="solverBenchmarkBluePrintConfig">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="solverBenchmarkBluePrintType" type="tns:solverBenchmarkBluePrintType"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:simpleType name="solverRankingType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="TOTAL_SCORE"/>
-      <xs:enumeration value="WORST_SCORE"/>
-      <xs:enumeration value="TOTAL_RANKING"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="environmentMode">
     <xs:restriction base="xs:string">
       <xs:enumeration value="FULL_ASSERT"/>
@@ -914,35 +946,6 @@
       <xs:enumeration value="STRATEGIC_OSCILLATION"/>
       <xs:enumeration value="STRATEGIC_OSCILLATION_BY_LEVEL"/>
       <xs:enumeration value="STRATEGIC_OSCILLATION_BY_LEVEL_ON_BEST_SCORE"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="problemStatisticType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="BEST_SCORE"/>
-      <xs:enumeration value="STEP_SCORE"/>
-      <xs:enumeration value="SCORE_CALCULATION_SPEED"/>
-      <xs:enumeration value="BEST_SOLUTION_MUTATION"/>
-      <xs:enumeration value="MOVE_COUNT_PER_STEP"/>
-      <xs:enumeration value="MEMORY_USE"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="singleStatisticType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_BEST_SCORE"/>
-      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_STEP_SCORE"/>
-      <xs:enumeration value="PICKED_MOVE_TYPE_BEST_SCORE_DIFF"/>
-      <xs:enumeration value="PICKED_MOVE_TYPE_STEP_SCORE_DIFF"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="solverBenchmarkBluePrintType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="CONSTRUCTION_HEURISTIC_WITH_AND_WITHOUT_LOCAL_SEARCH"/>
-      <xs:enumeration value="EVERY_CONSTRUCTION_HEURISTIC_TYPE"/>
-      <xs:enumeration value="EVERY_LOCAL_SEARCH_TYPE"/>
-      <xs:enumeration value="EVERY_CONSTRUCTION_HEURISTIC_TYPE_WITH_EVERY_LOCAL_SEARCH_TYPE"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

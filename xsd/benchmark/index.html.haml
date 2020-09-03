@@ -1,0 +1,13 @@
+---
+title: XSD files of the https://www.optaplanner.org/xsd/benchmark namespace.
+description: A list of benchmark XML schema files.
+layout: normalBase
+priority: 0.1
+---
+%h1 #{page.title}
+%ul
+  - for file in Dir.entries("xsd/benchmark").sort
+    - if file.end_with? ".xsd"
+      %li(style="margin-top: 10px;")
+        %a{:href => file}
+          #{file}
