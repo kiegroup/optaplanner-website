@@ -2484,7 +2484,6 @@ $ mvn exec:java
         </section>
     </section>
 
-
     <section id="trainingSession5">
         <section>
             <h3>Agenda: Training session 5</h3>
@@ -2600,7 +2599,544 @@ $ mvn exec:java
         </section>
     </section>
 
+    <section id="planningAgility">
+        <section>
+            <h3>Planning agility</h3>
+        </section>
 
+        <section>
+            <h3 style="font-style: italic">
+                "Plans are of little importance,<br/>
+                but planning is essential."
+            </h3>
+            <div style="margin-top: 80px;">
+                <p>
+                    Winston Churchill<br/>
+                    (Prime Minister UK 1940-1945)<br/>
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3 style="font-style: italic">
+                "Everybody has a plan<br/>
+                until they get punched<br/>
+                in the mouth…"
+            </h3>
+            <div style="margin-top: 80px;">
+                <p>
+                    Mike Tyson<br/>
+                    (Boxer, heavyweight champion 1987-1990)<br/>
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>
+                What kind of planning disruptions?
+            </h3>
+            <ul>
+                <li>Local disruption
+                    <ul>
+                        <li>Impact limited to one department/region</li>
+                    </ul>
+                </li>
+                <li>Global disruption
+                    <ul>
+                        <li>Impact across the board</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Local disruption</h3>
+            <figure>
+                <img src="extra/Presentation/agilePlanningSickNote.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>Global disruptions</h3>
+            <ul>
+                <li>2001 - September 11 attacks
+                    <ul>
+                        <li>Air-traffic shut-down in North America for 2 days</li>
+                    </ul>
+                </li>
+                <li class="fragment">2010 - Eyjafjallajökull volcano eruption
+                    <ul>
+                        <li>Air-traffic shut-down in Europe for 8 days</li>
+                    </ul>
+                </li>
+                <li class="fragment">2020 - COVID-19
+                    <ul>
+                        <li>Flight cancellations</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Planning agility paradox</h3>
+            <p style="margin-top: 80px;">
+                "We can <i>not</i> automate planning<br/>
+                because the plans will change."
+            </p>
+            <div class="fragment">
+                <p>⇒</p>
+                <p>
+                    "We <i>need</i> to automate (re)planning<br/>
+                    because the plans will change."
+                </p>
+            </div>
+            <div class="fragment" style="margin-top: 80px;">
+                <p>But how?</p>
+            </div>
+        </section>
+        <section>
+            <h2>
+                1) What is your<br/> publication deadline?
+            </h2>
+        </section>
+        <section>
+            <h3>Publication</h3>
+            <ul>
+                <li>Tell employees when/how/where to work</li>
+                <li>Publication deadline
+                    <ul>
+                        <li>Technician routing: 1 hour before departure</li>
+                        <li>School timetabling: before end of vacation</li>
+                        <li>Guards: 4 weeks before shift</li>
+                        <li>Nurses: 6 weeks before shift</li>
+                        <li>Facility location: 6 months before opening</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/multiStagePlanning_0.png" class="fullImage">
+            <img src="RepeatedPlanning/multiStagePlanning_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/multiStagePlanning_2.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Multi-stage planning</h3>
+            <ul>
+                <li>Strategic: expand the maternity ward?</li>
+                <li>Tactical: hire a respiratory specialist?</li>
+                <li>Operational: assign a Monday shift to Ann?</li>
+            </ul>
+            <p>Each planning stage feeds into the next.</p>
+            <div class="fragment" style="margin-top: 80px;">
+                <p>Especially for trains, airplanes, etc</p>
+                <ul>
+                    <li>Strategic: add a stop in Philadelphia?</li>
+                    <li>Tactical: depart at 7 AM?</li>
+                    <li>Operational: Which locomotive and wagons?</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/multiStagePlanning_2.png" class="fullImage">
+            <img src="RepeatedPlanning/multiStagePlanning_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Conway's law</h3>
+            <p style="font-style: italic">
+                "Any organization that designs a (software) system<br/>
+                will produce a design whose structure<br/>
+                is a copy of the organization's communication structure."
+            </p>
+            <div class="fragment">
+                <p>⇒</p>
+                <p>
+                    Planning problems solved by different groups<br/>
+                    should use different Solver instances<br/>
+                    (during the first year in production).
+                </p>
+            </div>
+        </section>
+        <section>
+            <h3>In practice</h3>
+            <pre xml:space="preserve"><code class="java">@Path("/trainWagon")
+public class TrainWagonDeciderResource {
+
+  @Inject
+  SolverManager&lt;TrainWagonSolution, ...&gt; wagonSolverManager;
+
+  ... wagonSolverManager.solve(...)
+}
+@Path("/trainPlatform")
+public class TrainPlatformDeciderResource {
+
+  @Inject
+  SolverManager&lt;TrainCrewSolution, ...&gt; platformSolverManager;
+
+  // Uses TrainWagonSolution's output as problem facts:
+  // Length of train impacts eligble platforms
+  ... platformSolverManager.solve(...)
+}</code></pre>
+        </section>
+        <section>
+            <h2>
+                2) Do you assign to time?
+            </h2>
+        </section>
+        <section>
+            <h3>No, domain lacks time data</h3>
+            <figure>
+                <img src="QuickStart/cloudOptimizationValueProposition_0.png"/>
+            </figure>
+        </section>
+        <section>
+            <p>No <code>java.time</code> import</p>
+            <figure>
+                <img src="QuickStart/cloudBalanceClassDiagram_2.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>Yes, Domain has time<br/> but planning does not assign time</h3>
+            <pre xml:space="preserve"><code class="java">import java.time.LocalDate;
+
+@PlanningEntity
+public class Patient {
+
+  private String name;
+  private LocalDate arrivalDate;
+  private LocalDate departureDate;
+  ...
+  @PlanningVariable(...)
+  private Bed bed;
+  ...
+}</code></pre>
+            <p>Hospital bed planning does not change<br/> a patient's arrival or departure date.</p>
+        </section>
+        <section>
+            <h3>By the way...</h3>
+            <p>Don't use <code>java.util.Date</code> for time manipulation.<br/>
+                It's like asking your bartender how to treat cancer.</p>
+            <p class="fragment" style="margin-top: 80px;">
+                Don't use <code>java.util.Calender</code> either,<br/>
+                It's like asking your dog how to treat cancer.
+            </p>
+            <p class="fragment" style="margin-top: 80px;">Use <code>java.time.LocalDate</code>
+                or <code>java.time.LocalDateTime</code> instead!</p>
+        </section>
+        <section>
+            <h3>Yes, Domain has time<br/> and planning assigns to time</h3>
+            <p>Pick a good domain model.</p>
+        </section>
+        <section>
+            <img src="DesignPatterns/assigningTimeToPlanningEntities_0.png" class="fullImage">
+            <img src="DesignPatterns/assigningTimeToPlanningEntities_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Planning assigns to time</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
+public class Lesson {
+
+  private String subject;
+  ...
+  @PlanningVariable(...)
+  private Timeslot timeslot;
+  ...
+}
+
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+
+public class Timeslot {
+
+  private DayOfWeek dayOfWeek;
+  private LocalTime startTime;
+  private LocalTime endTime;
+  ...
+}</code></pre>
+        </section>
+        <section>
+            <img src="DesignPatterns/assigningTimeToPlanningEntities_1.png" class="fullImage">
+            <img src="DesignPatterns/assigningTimeToPlanningEntities_2.png" class="fullImage fragment">
+            <img src="DesignPatterns/assigningTimeToPlanningEntities_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="DesignPatterns/assigningTimeToPlanningEntities2_0.png" class="fullImage">
+            <img src="DesignPatterns/assigningTimeToPlanningEntities2_1.png" class="fullImage fragment">
+            <img src="DesignPatterns/assigningTimeToPlanningEntities2_2.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <h2>
+                3) Do you replan<br/>
+                every week, day or hour?
+            </h2>
+            <h3>Continuous planning</h3>
+        </section>
+        <section>
+            <h3>What is continuous planning?</h3>
+            <figure>
+                <img src="UseCasesAndExamples/employeeRosteringValueProposition_0.png"/>
+            </figure>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPlanningEmployeeRostering_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Don't change history</h3>
+            <pre xml:space="preserve"><code class="java">@Entity
+public class Shift {
+
+  private LocalDateTime start;
+  private LocalDateTime end;
+
+  @PlanningPin
+  private boolean history;
+  ...
+  @PlanningVariable(...)
+  private Employee employee;
+  ...
+}</code></pre>
+        </section>
+        <section>
+            <h3>Don't change published shifts?</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
+public class Shift {
+
+  private LocalDateTime start;
+  private LocalDateTime end;
+
+  @PlanningPin
+  // every historic shift is published
+  private boolean published;
+  ...
+  @PlanningVariable(...)
+  private Employee employee;
+  ...
+}</code></pre>
+            <p>Maybe</p>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>How to paint yourself in a corner</h3>
+            <p>Assign all respiratory specialists<br/>
+                to the <i>last</i> shift of your planning window<br/>
+                (even in other wards as normal nurses).</p>
+            <div class="fragment">
+                <p>⇒</p>
+                <p>
+                    draft length &gt;= 2 * publish length
+                </p>
+            </div>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/continuousPublishingWithRotation_3.png" class="fullImage">
+        </section>
+        <section>
+            <h3>Continuous planning</h3>
+            <ul>
+                <li>Publish notice ranges from long to short
+                    <ul>
+                        <li>Weeks: employee shift rostering, pharmacy on duty scheduling, ...</li>
+                        <li>Seconds: runway scheduling, gate scheduling, platform scheduling, ...</li>
+                    </ul>
+                </li>
+                <li class="fragment"><b>Domain must contain dates or timestamps data</b>
+                    <ul>
+                        <li>So domain probably has <code>import java.time</code></li>
+                        <li>Regardless if planning assigns to time or not.</li>
+                    </ul>
+                </li>
+                <li class="fragment"><b>Planning windows must overlap</b>
+                    <ul>
+                        <li class="fragment">⇒ School timetabling is not continuous planning</li>
+                    </ul></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                4) Will published plan change?
+            </h2>
+            <h3>Non-disruptive Replanning</h3>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/multiStagePlanning_2.png" class="fullImage">
+            <img src="RepeatedPlanning/multiStagePlanning_4.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="UseCasesAndExamples/conferenceSchedulingProblem_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/conferenceSchedulingProblem_1.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingProblem_2.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingProblem_3.png" class="fullImage fragment">
+        </section>
+        <section>
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_0.png" class="fullImage">
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_1.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_2.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_3.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_4.png" class="fullImage fragment">
+            <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Implementation</h3>
+            <pre xml:space="preserve"><code class="java">@PlanningEntity
+public class Talk {
+
+    private Timeslot publishedTimeslot;
+    ...
+
+    @PlanningVariable(...)
+    private Timeslot timeslot;
+
+}</code></pre>
+            <pre xml:space="preserve"><code class="java">  Constraint publishedTimeslot(ConstraintFactory f) {
+    return f.from(Talk.class)
+        .filter(talk -> talk.getPublishedTimeslot() != null
+            && talk.getTimeslot()
+                != talk.getPublishedTimeslot())
+        .penalize(PUBLISHED_TIMESLOT,
+          HardMediumSoft.ONE_MEDIUM);
+  }</code></pre>
+        </section>
+        <section>
+            <h3>Non-disruptive Replanning</h3>
+            <ul>
+                <li>Medium penalty: disrupt only to become feasible
+                    <ul>
+                        <li>Timeslot in conference scheduling</li>
+                    </ul>
+                </li>
+                <li>Soft penalty: disrupt if gain is higher than a threshold
+                    <ul>
+                        <li>Room in conference scheduling</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_0.png" class="fullImage">
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_3.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_4.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/nonDisruptiveReplanning_5.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <h2>
+                5) Does your problem<br/>
+                change every few (milli)seconds?
+            </h2>
+            <h3>Real-time planning</h3>
+        </section>
+
+        <section>
+            <h3>Real-time planning</h3>
+            <p>DEMO</p>
+        </section>
+        <section>
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_0.png" class="fullImage">
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_3.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_4.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/realTimePlanningVehicleRouting_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Real-time planning</h3>
+            <ul>
+                <li><code>solver.addProblemFactChange(...)</code></li>
+                <li>Daemon mode
+                    <ul>
+                        <li>Don't waste CPU time at night and during breaks</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <img src="DesignPatterns/realTimePlanningCloudArchitecture_0.png" class="fullImage">
+            <img src="DesignPatterns/realTimePlanningCloudArchitecture_1.png" class="fullImage fragment">
+            <img src="DesignPatterns/realTimePlanningCloudArchitecture_2.png" class="fullImage fragment">
+        </section>
+
+        <section>
+            <h2>
+                7) Do you have<br/>
+                a resource shortage?
+            </h2>
+            <h3>Overconstrained planning</h3>
+        </section>
+
+        <section>
+            <img src="RepeatedPlanning/overconstrainedPlanning_0.png" class="fullImage">
+            <img src="RepeatedPlanning/overconstrainedPlanning_1.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/overconstrainedPlanning_2.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/overconstrainedPlanning_3.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/overconstrainedPlanning_4.png" class="fullImage fragment">
+            <img src="RepeatedPlanning/overconstrainedPlanning_5.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Overconstrained planning</h3>
+            <ul>
+                <li>Nullable
+                    <ul>
+                        <li><code>@PlanningVariable(nullable = true)</code></li>
+                        <li>medium constraint penalizes unassigned entities</li>
+                    </ul>
+                </li>
+                <li>Virtual resources
+                    <ul>
+                        <li>Add virtual resources to the input problem
+                            <pre xml:space="preserve"><code class="java">class Employee {
+  boolean virtual;
+}</code></pre>
+                        </li>
+                        <li>Soft constraint penalizes cost of virtual resources</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                8) Do you fear<br/>
+                a worst case scenario?
+            </h2>
+            <h3></h3>
+        </section>
+
+        <section>
+            <img src="RepeatedPlanning/continuousPlanningPatientAdmissionSchedule_0.png" class="fullImage">
+            <img src="RepeatedPlanning/continuousPlanningPatientAdmissionSchedule_1.png" class="fullImage fragment">
+        </section>
+        <section>
+            <h3>Backup planning</h3>
+            <ul>
+                <li>Don't make your plan a house of cards</li>
+                <li>Add constraints to penalize such plans</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+        </section>
+        <section>
+            <h3>Know your toolbox</h3>
+            <figure>
+                <img src="PlannerIntroduction/optaPlannerLogo.png" alt="OptaPlanner"/>
+            </figure>
+            <ul>
+                <li>Multi-stage planning</li>
+                <li>Continuous planning</li>
+                <li>Non-disruptive replanning</li>
+                <li>Real-time planning</li>
+                <li>Overconstrained planning</li>
+                <li>Backup planning</li>
+            </ul>
+            <p class="fragment">Combine them as needed.</p>
+        </section>
+    </section>
     <section id="trainingSession6">
         <section>
             <h3>Agenda: Training session 6</h3>
