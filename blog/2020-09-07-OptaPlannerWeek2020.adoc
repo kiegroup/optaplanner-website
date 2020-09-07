@@ -11,12 +11,13 @@ up to 250+ live attendees and 1300+ viewers afterwards.
 We've split up the talks into separate videos for your convenience, watch them below.
 
 Big thanks to all speakers for their superb content,
-all attendees for their great questions during the sessions
+all attendees for their great questions
 and especially Karina Varela for organizing, hosting and moderating this event perfectly.
 
 image::optaPlannerWeek2020Speakers.jpg[]
 
-The live questions really improved the interactively with the audience.
+There was a lot of interaction with the audience
+through live questions during the sessions and a very active YouTube chat.
 Some reactions on Twitter:
 
 * _Learnt so much @optaplanner at the #optaplannerweek looking forward to next year's already :) cracking virtual event! Kudos to everyone that made it happen._
@@ -54,7 +55,7 @@ video::07E_v-mZ2As[youtube]
 
 video::NHU-UZM6fKI[youtube]
 
-=== Constraint Streams 1-01: The future of score constraints in OptaPlanner
+=== Constraint Streams 101: The future of score constraints in OptaPlanner
 
 video::XCyIdmUDMtI[youtube]
 
@@ -73,6 +74,6 @@ video::E35pYMKaukw[youtube]
 video::Ew6pq9nJKog[youtube]
 
 
-== Next year
+== Onwards
 
 See you next year!
