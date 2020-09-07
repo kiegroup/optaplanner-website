@@ -46,7 +46,7 @@ video::4H3U6xyCgMI[youtube]
 
 == Day 2
 
-=== Tasks Optimization - understand the chained models
+=== Tasks Optimization: understand the chained models
 
 video::07E_v-mZ2As[youtube]
 
