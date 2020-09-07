@@ -11,6 +11,66 @@
 #
 # Order videos by date descending
 
+- youtubeId: Ew6pq9nJKog
+  title: "Planning agility: continuous planning, real-time planning and more"
+  author: ge0ffrey
+  date: 2020-09-03
+  tags:
+    - insight
+
+- youtubeId: E35pYMKaukw
+  title: "Quarkus and OptaPlanner: create a school timetable application"
+  author: rsynek
+  date: 2020-09-03
+
+- youtubeId: waU8zZtx--g
+  title: "Business use cases and the impact of OptaPlanner"
+  author: satishkale
+  date: 2020-09-03
+  tags:
+    - vehicle routing
+
+- youtubeId: XCyIdmUDMtI
+  title: "Constraint Streams getting started"
+  author: triceo
+  date: 2020-09-02
+  tags:
+    - constraint
+
+- youtubeId: NHU-UZM6fKI
+  title: "Business Optimizer: I bet you I'm better than a human"
+  author: jgoldsmith613
+  date: 2020-09-02
+
+- youtubeId: 07E_v-mZ2As
+  title: "Tasks Optimization - understand the chained models"
+  author: dmarrazzo
+  date: 2020-09-02
+  tags:
+    - task assigning
+
+- youtubeId: 4H3U6xyCgMI
+  title: "TrustyAI and Explanation by example with OptaPlanner"
+  author: danielezonca
+  date: 2020-09-01
+
+- youtubeId: MZgWrKwfVx0
+  title: "Visualizing indictments: Explaining the solution to the user and identifying deficient resources"
+  author: Christopher-Chianelli
+  date: 2020-09-01
+
+- youtubeId: sIZpmQTq1lo
+  title: "Vehicle routing with OptaPlanner"
+  author: yurloc
+  date: 2020-09-01
+  tags:
+    - vehicle routing
+
+- youtubeId: x4PkS962eFs
+  title: "Kickstarting your OptaPlanner project: patterns and common practices"
+  author: DuncanDoyle
+  date: 2020-09-01
+
 - youtubeId: ZBzzdQJDapU
   title: "Assigning jBPM human tasks with OptaPlanner"
   author: wmedvede
