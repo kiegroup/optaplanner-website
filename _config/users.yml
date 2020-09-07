@@ -283,3 +283,18 @@
   githubUsername: ginxo
   email: emingora AT redhat.com
   employedBy: Red Hat
+
+- userId: danielezonca
+  fullName: Daniele Zonca
+  role: Contributor
+  gravatarHashId: b09ae180b02ca76ee04e408e5dc7aa67
+
+- userId: dmarrazzo
+  fullName: Donato Marrazzo
+  role: Contributor
+  gravatarHashId: ef5ad79f92fc5b4c6f8a28e11cf1c33a
+
+- userId: satishkale
+  fullName: Satish Kale
+  role: Contributor
+  gravatarHashId: 3a39052326f655d67d8d166089accf30
