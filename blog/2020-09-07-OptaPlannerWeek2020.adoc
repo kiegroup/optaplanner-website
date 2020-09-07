@@ -54,7 +54,7 @@ video::07E_v-mZ2As[youtube]
 
 video::NHU-UZM6fKI[youtube]
 
-=== Constraint streams getting started
+=== Constraint Streams 1-01: The future of score constraints in OptaPlanner
 
 video::XCyIdmUDMtI[youtube]
 
