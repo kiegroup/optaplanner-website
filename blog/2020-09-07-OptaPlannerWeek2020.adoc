@@ -3,7 +3,7 @@
 :awestruct-author: ge0ffrey
 :awestruct-layout: blogPostBase
 :awestruct-tags: [feature, coding]
-:awestruct-share_image_filename: constraintStreamGroupBy.png
+:awestruct-share_image_filename: optaPlannerWeek2020Speakers.jpg
 
 It's a wrap! Last week, during the online *OptaPlanner Week* event,
 we had 10 talks by 13 speakers across 3 days with - per day -
