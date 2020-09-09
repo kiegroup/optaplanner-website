@@ -10,6 +10,60 @@
 There is no use in waiting for it.
 Please use and download the latest 7.x release instead.*
 
+== From 7.43.0.Final or higher to 8.0.0.Beta1
+
+[.upgrade-recipe-minor]
+=== Removed JavaScript expression support in configuration
+
+Various elements of both the solver configuration and benchmark configuration no longer support nested
+JavaScript expressions.
+Users need to replace these with either auto-configuration or with integer constants.
+
+Before in `solverConfig.xml`:
+
+[source,xml]
+----
+    <solver>
+        ...
+        <moveThreadCount>availableProcessorCount - 1</moveThreadCount>
+        ...
+    </solver>
+----
+
+After in `solverConfig.xml`:
+
+[source,xml]
+----
+    <solver>
+        ...
+        <moveThreadCount>1</moveThreadCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
+        ...
+    </solver>
+----
+
+Before in `benchmarkConfig.xml`:
+
+[source,xml]
+----
+    <plannerBenchmark>
+      ...
+      <parallelBenchmarkCount>availableProcessorCount - 1</parallelBenchmarkCount>
+      ...
+    </plannerBenchmark>
+----
+
+After in `benchmarkConfig.xml`:
+
+[source,xml]
+----
+    <plannerBenchmark>
+      ...
+      <parallelBenchmarkCount>1</parallelBenchmarkCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
+      ...
+    </plannerBenchmark>
+----
+
+
 == From 7.39.0.Final or higher to 8.0.0.Beta1
 
 === Backwards incompatible changes to the public API in 7.0

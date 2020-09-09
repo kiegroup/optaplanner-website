@@ -3284,3 +3284,54 @@ After in `pom.xml`:
       <artifactId>optaplanner-quarkus-jsonb</artifactId>
     </dependency>
 ----
+
+[.upgrade-recipe-minor]
+=== Deprecated JavaScript expression support in configuration
+
+Various elements of both the solver configuration and benchmark configuration will now log a deprecation warning if
+JavaScript expressions are used within.
+We recommend users replace these with either auto-configuration or with integer constants.
+
+Before in `solverConfig.xml`:
+
+[source,xml]
+----
+    <solver>
+        ...
+        <moveThreadCount>availableProcessorCount - 1</moveThreadCount>
+        ...
+    </solver>
+----
+
+After in `solverConfig.xml`:
+
+[source,xml]
+----
+    <solver>
+        ...
+        <moveThreadCount>1</moveThreadCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
+        ...
+    </solver>
+----
+
+Before in `benchmarkConfig.xml`:
+
+[source,xml]
+----
+    <plannerBenchmark>
+      ...
+      <parallelBenchmarkCount>availableProcessorCount - 1</parallelBenchmarkCount>
+      ...
+    </plannerBenchmark>
+----
+
+After in `benchmarkConfig.xml`:
+
+[source,xml]
+----
+    <plannerBenchmark>
+      ...
+      <parallelBenchmarkCount>1</parallelBenchmarkCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
+      ...
+    </plannerBenchmark>
+----
