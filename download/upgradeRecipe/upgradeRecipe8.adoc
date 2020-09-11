@@ -110,7 +110,8 @@ to see how to integrate with processes in a modern, cloud-native way.
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
 
-Due to the limited usage of OSGi and the maintenance burden it brings, the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
+Due to the limited usage of OSGi and the maintenance burden it brings,
+the OptaPlanner jars in the 8.x series no longer include OSGi metadata in their `META-INF/MANIFEST.MF` file.
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === Refrain from using Java serialization
@@ -1132,3 +1133,39 @@ BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
 
 If you programmatically adjust the benchmark configuration, you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
 
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `Score`: generic type removed
+
+The interface `Score<Score_ extends Score>` has lost that generic type and is now just `Score`.
+Most users use a specific score, such as `HardSoftScore`, and won't be impacted.
+
+Before in `*.java`:
+
+[source,java]
+----
+public Color determineScoreFieldForeground(Score<?> score) {..}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+public Color determineScoreFieldForeground(Score score) {..}
+----
+
+Before in `*.java`:
+
+[source,java]
+----
+HardSoftScore score = scoreList.stream()
+        .reduce(Score::add).orElse(HardSoftScore.ZERO);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+HardSoftScore score = scoreList.stream()
+        .reduce(HardSoftScore::add).orElse(HardSoftScore.ZERO);
+----
