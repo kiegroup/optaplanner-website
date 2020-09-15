@@ -1,36 +1,36 @@
 latestFinal:
-  version: 7.43.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/7.43.0.Final/optaplanner-distribution-7.43.0.Final.zip
-  releaseDate: 2020-09-09
+  version: 7.43.1.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/7.43.1.Final/optaplanner-distribution-7.43.1.Final.zip
+  releaseDate: 2020-09-14
   releaseNotesVersion: 7
 
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.43.0.Final/kie-server-distribution-7.43.0.Final.zip
-  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/7.43.0.Final/optaweb-employee-rostering-distribution-7.43.0.Final.zip
-  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/7.43.0.Final/optaweb-vehicle-routing-distribution-7.43.0.Final.zip
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.43.1.Final/kie-server-distribution-7.43.1.Final.zip
+  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/7.43.1.Final/optaweb-employee-rostering-distribution-7.43.1.Final.zip
+  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/7.43.1.Final/optaweb-vehicle-routing-distribution-7.43.1.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/7.43.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.0.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
-  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.0.Final/optaweb-employee-rostering-docs/html_single/index.html
-  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/7.43.0.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
-  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
-  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/7.43.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
-  droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.43.0.Final/drools-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.1.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/7.43.1.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  kieExecutionServerDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.1.Final/optaplanner-wb-es-docs/html_single/#_ch.kie.server
+  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.1.Final/optaweb-employee-rostering-docs/html_single/index.html
+  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/7.43.1.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
+  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.1.Final/optaweb-vehicle-routing-docs/html_single/index.html
+  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/7.43.1.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
+  droolsExpertDocumentationHtmlSingle: https://docs.jboss.org/drools/release/7.43.1.Final/drools-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/7.43.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/7.43.1.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 7.43.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/7.43.0.Final/optaplanner-distribution-7.43.0.Final.zip
-  releaseDate: 2020-09-09
+  version: 7.43.1.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/7.43.1.Final/optaplanner-distribution-7.43.1.Final.zip
+  releaseDate: 2020-09-14
   releaseNotesVersion: 7
 
-  kieExecutionServerZip: https://download.jboss.org/drools/release/7.43.0.Final/kie-server-distribution-7.43.0.Final.zip
+  kieExecutionServerZip: https://download.jboss.org/drools/release/7.43.1.Final/kie-server-distribution-7.43.1.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/7.43.1.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/7.43.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/7.43.1.Final/optaplanner-javadoc/index.html
 
 nightly:
   version: 7.44.0-SNAPSHOT
