@@ -981,6 +981,140 @@ After in `*.java`:
 ConstraintMatchTotal maximumCapacityMatchTotal = new DefaultConstraintMatchTotal(...);
 ----
 
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== `ScoreManager`: generic type `Score` added
+
+The `ScoreManager` and `ScoreExplanation` API's
+now have a generic type `Score` to avoid downcasts in your code, for example from `Score` to `HardSoftScore`.
+
+Before in `*.java`:
+
+[source,java]
+----
+    @Inject // or @Autowired
+    ScoreManager<TimeTable> scoreManager;
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    @Inject // or @Autowired
+    ScoreManager<TimeTable, HardSoftScore> scoreManager;
+----
+
+Before in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable> explanation = scoreManager.explainScore(timeTable);
+    HardSoftScore score = (HardSoftScore) explanation.getScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable, HardSoftScore> explanation = scoreManager.explainScore(timeTable);
+    HardSoftScore score = explanation.getScore();
+----
+
+[.upgrade-recipe-major]
+=== `ConstraintMatchTotal`, `ConstraintMatch` and `Indictment`: generic type `Score` added
+
+Just like `ScoreManager` and `ScoreExplanation`, the `ConstraintMatchTotal`, `ConstraintMatch` and `Indictment` API's
+now have a generic type `Score` to avoid downcasts in your code, for example from `Score` to `HardSoftScore`.
+
+Before in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable> explanation = scoreManager.explainScore(timeTable);
+    Map<String, ConstraintMatchTotal> constraintMatchTotalMap = scoreExplanation.getConstraintMatchTotalMap();
+    ConstraintMatchTotal constraintMatchTotal = constraintMatchTotalMap.get(contraintId);
+    HardSoftScore totalScore = (HardSoftScore) constraintMatchTotal.getScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable, HardSoftScore> explanation = scoreManager.explainScore(timeTable);
+    Map<String, ConstraintMatchTotal<HardSoftScore>> constraintMatchTotalMap = scoreExplanation.getConstraintMatchTotalMap();
+    ConstraintMatchTotal<HardSoftScore> constraintMatchTotal = constraintMatchTotalMap.get(contraintId);
+    HardSoftScore totalScore = constraintMatchTotal.getScore();
+----
+
+Before in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable> explanation = scoreManager.explainScore(timeTable);
+    Map<Object, Indictment> indictmentMap = scoreExplanation.getIndictmentMap();
+    Indictment indictment = indictmentMap.get(lesson);
+    HardSoftScore totalScore = (HardSoftScore) indictment.getScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    ScoreExplanation<TimeTable, HardSoftScore> explanation = scoreManager.explainScore(timeTable);
+    Map<Object, Indictment<HardSoftScore>> indictmentMap = scoreExplanation.getIndictmentMap();
+    Indictment<HardSoftScore> indictment = indictmentMap.get(lesson);
+    HardSoftScore totalScore = indictment.getScore();
+----
+
+
+[.upgrade-recipe-minor]
+=== `ConstraintMatchAwareIncrementalScoreCalculator`: generic type `Score` added
+
+The interface `ConstraintMatchAwareIncrementalScoreCalculator`
+now also has a generic type parameter for `Score` to avoid raw type usages of `ConstraintMatchTotal` and `Indictment`.
+
+Before in `*.java`:
+
+[source,java]
+----
+public class MachineReassignmentIncrementalScoreCalculator
+        implements ConstraintMatchAwareIncrementalScoreCalculator<MachineReassignment> {
+
+    @Override
+    public Collection<ConstraintMatchTotal> getConstraintMatchTotals() {
+        ...
+    }
+
+
+    @Override
+    public Map<Object, Indictment> getIndictmentMap() {
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+public class MachineReassignmentIncrementalScoreCalculator
+        implements ConstraintMatchAwareIncrementalScoreCalculator<MachineReassignment, HardSoftLongScore> {
+
+    @Override
+    public Collection<ConstraintMatchTotal<HardSoftLongScore>> getConstraintMatchTotals() {
+        ...
+    }
+
+
+    @Override
+    public Map<Object, Indictment<HardSoftLongScore>> getIndictmentMap() {
+        ...
+    }
+
+}
+----
+
+
 == OptaPlanner Benchmark
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
