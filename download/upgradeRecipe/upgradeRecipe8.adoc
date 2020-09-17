@@ -250,6 +250,8 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === XML <solver/> root element now belongs to the https://www.optaplanner.org/xsd/solver namespace
 OptaPlanner now provides an XML Schema Definition for the solver configuration.
+Although OptaPlanner keeps backward compatibility of the existing XML configuration,
+migrating to the XSD is strongly recommended as OptaPlanner may support only valid configuration XML in the future.
 
 Before in `*SolverConfig.xml`:
 
@@ -270,6 +272,9 @@ After in `*SolverConfig.xml`:
   ...
 </solver>
 ----
+
+Using the XSD may require reordering some of the XML elements of the configuration.
+Use code completion in the IDE to migrate to a valid XML.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Property `subPillarEnabled` in move selector configuration has been removed
@@ -1200,6 +1205,8 @@ PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === XML <plannerBenchmark/> root element now belongs to the https://www.optaplanner.org/xsd/benchmark namespace
 OptaPlanner now provides an XML Schema Definition for the benchmark configuration.
+Although OptaPlanner keeps backward compatibility of the existing XML configuration,
+migrating to the XSD is strongly recommended as OptaPlanner may support only valid configuration XML in the future.
 
 Before in `*BenchmarkConfig.xml`:
 
@@ -1220,6 +1227,9 @@ After in `*BenchmarkConfig.xml`:
   ...
 </plannerBenchmark>
 ----
+
+Using the XSD may require reordering some of the XML elements of the configuration.
+Use code completion in the IDE to migrate to a valid XML.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `ProblemBenchmarksConfig`: `xStreamAnnotatedClass` removed
