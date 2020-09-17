@@ -247,6 +247,30 @@ SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
 Solver<MySolution> solver = solverFactory.buildSolver();
 ----
 
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== XML <solver/> root element now belongs to the https://www.optaplanner.org/xsd/solver namespace
+OptaPlanner now provides an XML Schema Definition for the solver configuration.
+
+Before in `*SolverConfig.xml`:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  ...
+</solver>
+----
+
+After in `*SolverConfig.xml`:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+  ...
+</solver>
+----
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Property `subPillarEnabled` in move selector configuration has been removed
@@ -1172,6 +1196,31 @@ PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlRes
 ...
 PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchmarkConfig);
 PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== XML <plannerBenchmark/> root element now belongs to the https://www.optaplanner.org/xsd/benchmark namespace
+OptaPlanner now provides an XML Schema Definition for the benchmark configuration.
+
+Before in `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark>
+  ...
+</plannerBenchmark>
+----
+
+After in `*BenchmarkConfig.xml`:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark xmlns="https://www.optaplanner.org/xsd/benchmark" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.optaplanner.org/xsd/benchmark https://www.optaplanner.org/xsd/benchmark/benchmark.xsd">
+  ...
+</plannerBenchmark>
 ----
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
