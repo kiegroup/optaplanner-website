@@ -1142,6 +1142,39 @@ public class MachineReassignmentIncrementalScoreCalculator
 }
 ----
 
+[.upgrade-recipe-minor]
+=== `AbstractCustomPhaseCommand` was removed
+
+The abstract class `AbstractCustomPhaseCommand` was removed.
+Any class that extends it should directly implement the `CustomPhaseCommand` interface.
+
+Before in `*.java`:
+
+[source,java]
+----
+public class DinnerPartySolutionInitializer extends AbstractCustomPhaseCommand<DinnerParty> {
+
+    @Override
+    public void changeWorkingSolution(ScoreDirector<DinnerParty> scoreDirector) {
+        ...
+    }
+
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+public class DinnerPartySolutionInitializer implements CustomPhaseCommand<DinnerParty> {
+
+    @Override
+    public void changeWorkingSolution(ScoreDirector<DinnerParty> scoreDirector) {
+        ...
+    }
+
+}
+----
 
 == OptaPlanner Benchmark
 
