@@ -611,5 +611,15 @@
 
 - eventId: 20200901-optaplannerweek
   eventOrganization: "OptaPlanner Week"
+  eventUrl: https://www.optaplanner.org/blog/2020/09/07/OptaPlannerWeek2020.html
   location: Worldwide
   date: 2020-09-01
+
+- eventId: 20200925-downloadinnovation
+  eventOrganization: "Download innovation 2020"
+  eventUrl: https://download-event.io/
+  location: Italy
+  date: 2020-09-25
+  talks:
+    - title: "Massimizzare i risultati con Business Optimizer (A.I. Constraint Solver)"
+      presenters: Donato Marrazzo
