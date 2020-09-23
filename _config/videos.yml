@@ -11,6 +11,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: n6fl60gR8Gc
+  title: "AI in kotlin"
+  author: ge0ffrey
+  date: 2020-09-23
+  tags:
+    - kotlin
+
 - youtubeId: Ew6pq9nJKog
   title: "Planning agility: continuous planning, real-time planning and more"
   author: ge0ffrey

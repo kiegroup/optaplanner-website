@@ -10,7 +10,7 @@ use the *OptaPlanner Spring Boot Starter* to get up and running quickly.
 That starter has the same features as the link:quarkus.html[Quarkus] extension,
 except for the typical Quarkus benefits (such as subsecond bootstrap performance and native compilation).
 
-video::U2N02ReT9CI[youtube]
+video::moiSzzy5ba0[youtube]
 
 == Guide
 
@@ -20,7 +20,7 @@ video::U2N02ReT9CI[youtube]
 
 Run the quick start yourself:
 
-. Download https://github.com/kiegroup/optaplanner/tree/master/optaplanner-quickstarts/spring-boot-school-timetabling[the source code].
-It's recommended to check out the latest stable tag.
-. Run `./mvnw clean install`
-. Open http://localhost:8080 in your browser
+. Git clone https://github.com/kiegroup/optaplanner-quickstarts
+. Descend into the directory `spring-boot-school-timetabling`
+. Run `mvn spring-boot:run`
+. Open http://localhost:8080 in your browser and click on the _Solve_ button.

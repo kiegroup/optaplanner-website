@@ -4,10 +4,14 @@
 :awestruct-priority: 0.8
 :showtitle:
 
-See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[the OptaPlanner playlist on YouTube]
-for a list of all videos.
+== YouTube channel
 
-This is the latest video:
+*https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ[Watch the OptaPlanner YouTube channel]*
+
+== Playlist
+
+See https://www.youtube.com/playlist?list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[the OptaPlanner playlist on YouTube]
+for a list of all OptaPlanner related videos:
 
 // Using the video_id/playlist syntax (with no video_id).
 // See https://github.com/asciidoctor/asciidoctor/pull/1187.
