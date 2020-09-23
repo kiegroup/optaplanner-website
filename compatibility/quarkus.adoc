@@ -23,6 +23,9 @@ video::7IuOA9n6kh0[youtube]
 
 Run the quick start yourself:
 
-. Download https://github.com/quarkusio/quarkus-quickstarts/tree/master/optaplanner-quickstart[the source code].
-. Run `./mvnw quarkus:dev`
-. Open http://localhost:8080 in your browser
+. Git clone https://github.com/kiegroup/optaplanner-quickstarts
+. Descend into the directory `quarkus-school-timetabling`
+. Run `mvn quarkus:dev`
+. Open http://localhost:8080 in your browser and click on the _Solve_ button.
+
+Or try any of the other Quarkus quickstarts there for other use cases!
