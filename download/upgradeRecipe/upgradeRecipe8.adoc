@@ -17,25 +17,25 @@ Any backwards incompatible changes are annotated with a [.label.label-danger.lab
 
 == Backwards incompatible changes to the public API since 7.x
 
-//[.upgrade-recipe-major.upgrade-recipe-public-api]
-//=== Java 11 or higher required
-//
-//If you're using JRE or JDK 8, upgrade to JDK 11 or higher.
-//
-//JDK 11 or higher is still available for _free_ (including security and bug fixes),
-//alongside Oracle's paid subscription.
-//
-//* On linux, get OpenJDK from your linux software repository.
-//For example on Fedora and RHEL:
-//+
-//[source, bash]
-//----
-//sudo dnf install java-11-openjdk-devel
-//----
-//
-//* On Windows and Mac, https://adoptopenjdk.net[download OpenJDK from AdoptOpenJDK].
-//
-//We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
+[.upgrade-recipe-major.upgrade-recipe-public-api]
+=== Java 11 or higher required
+
+If you're using JRE or JDK 8, upgrade to JDK 11 or higher.
+
+JDK 11 or higher is still available for _free_ (including security and bug fixes),
+alongside Oracle's paid subscription.
+
+* On linux, get OpenJDK from your linux software repository.
+For example on Fedora and RHEL:
++
+[source, bash]
+----
+sudo dnf install java-11-openjdk-devel
+----
+
+* On Windows and Mac, https://adoptopenjdk.net[download OpenJDK from AdoptOpenJDK].
+
+We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `SolverFactory` and `PlannerBenchmarkFactory` no longer support KIE containers
