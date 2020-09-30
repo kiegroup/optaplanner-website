@@ -940,7 +940,7 @@ public class CloudBalancingEasyScoreCalculator implements SimpleScoreCalculator<
 After in `*.java`:
 [source, java]
 ----
-import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
+import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
 public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
     ...
 }
