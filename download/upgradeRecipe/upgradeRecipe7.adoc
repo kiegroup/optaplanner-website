@@ -3285,6 +3285,8 @@ After in `pom.xml`:
     </dependency>
 ----
 
+== From 7.43.0.Final to 7.44.0.Final
+
 [.upgrade-recipe-minor]
 === Deprecated JavaScript expression support in configuration
 
@@ -3334,4 +3336,102 @@ After in `benchmarkConfig.xml`:
       <parallelBenchmarkCount>1</parallelBenchmarkCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
       ...
     </plannerBenchmark>
+----
+
+== From 7.44.0.Final to 7.45.0.Final
+
+[.upgrade-recipe-major]
+=== Score calculators become public API
+
+The existing interfaces `EasyScoreCalculator`, `IncrementalScoreCalculator` and
+`ConstraintMatchAwareIncrementalScoreCalculator` have moved to a new package in the public API
+(`org.optaplanner.core.api.score.calculator`) and their following counterparts have been deprecated for removal:
+
+* `org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator`
+* `org.optaplanner.core.impl.score.director.incremental.IncrementalScoreCalculator`
+* `org.optaplanner.core.impl.score.director.incremental.ConstraintMatchAwareIncrementalScoreCalculator`
+* `org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator`
+
+We recommend users replace the use of the deprecated interfaces and classes with their counterparts in the public API.
+
+Before in `*EasyScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
+  ...
+
+  public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+    ...
+  }
+----
+
+After in `*EasyScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
+  ...
+
+  public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance, HardSoftScore> {
+    ...
+  }
+----
+
+Before in `*IncrementalScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
+  ...
+
+  public class CloudBalancingIncrementalScoreCalculator extends AbstractIncrementalScoreCalculator<CloudBalance> {
+    ...
+  }
+----
+
+After in `*IncrementalScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.api.score.calculator.IncrementalScoreCalculator;
+  ...
+
+  public class CloudBalancingIncrementalScoreCalculator implements IncrementalScoreCalculator<CloudBalance, HardSoftScore> {
+    ...
+  }
+----
+
+Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
+  import org.optaplanner.core.impl.score.director.incremental.ConstraintMatchAwareIncrementalScoreCalculator;
+  ...
+
+  public class CheapTimeConstraintMatchAwareIncrementalScoreCalculator
+        extends AbstractIncrementalScoreCalculator<CheapTimeSolution>
+        implements ConstraintMatchAwareIncrementalScoreCalculator<CheapTimeSolution> {
+    ...
+  }
+----
+
+After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+
+[source,xml]
+----
+  ...
+  import org.optaplanner.core.api.score.calculator.ConstraintMatchAwareIncrementalScoreCalculator;
+  ...
+
+  public class CheapTimeConstraintMatchAwareIncrementalScoreCalculator
+        implements ConstraintMatchAwareIncrementalScoreCalculator<CheapTimeSolution, HardMediumSoftLongScore> {
+    ...
+  }
 ----
