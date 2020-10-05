@@ -163,7 +163,7 @@ OptaPlanner は、複数の最適化アルゴリズムを備えており、そ�
 
 {empty}3. +*examples*+ ディレクトリを開き、スクリプトを実行します。
 
-Linux または Mac:
+Linux または macOS:
 
 // [source] //
 ----
