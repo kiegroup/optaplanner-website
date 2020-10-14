@@ -623,3 +623,12 @@
   talks:
     - title: "Massimizzare i risultati con Business Optimizer (A.I. Constraint Solver)"
       presenters: Donato Marrazzo
+
+- eventId: 20201019-quarkusinsights
+  eventOrganization: "Quarkus insights"
+  eventUrl: https://quarkus.io/insights/
+  location: Worldwide
+  date: 2020-10-19
+  talks:
+    - title: "OptaPlanner in Quarkus"
+      presenters: Geoffrey De Smet
