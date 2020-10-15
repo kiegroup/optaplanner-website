@@ -1442,7 +1442,7 @@ After in `benchmarkConfig.xml`:
 A deprecated interface `VariableListener` from package `org.optaplanner.core.impl.domain.variable.listener` has ben removed,
 along with a deprecated interface `StatefulVariableListener`
 and a deprecated class `VariableListenerAdapter` in that same package.
-Instead, use an interface `VariableListener` of the same name from package `org.optaplanner.core.api.domain.variable`.
+Instead, use an interface `VariableListener` from package `org.optaplanner.core.api.domain.variable`.
 
 Before in `*VariableListener.java*`:
 
