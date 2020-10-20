@@ -3435,3 +3435,102 @@ After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
     ...
   }
 ----
+
+[.upgrade-recipe-major]
+=== Variable listeners became public API
+
+A new interface `VariableListener` has been introduced in the public API package `org.optaplanner.core.api.domain.variable`.
+It serves as a replacement for the class of the same name from package `org.optaplanner.core.impl.domain.variable.listener`, which is now deprecated for removal.
+
+We have also deprecated for removal `VariableListenerAdapter` in that same package.
+Users are expected to use the `VariableListener` interface directly.
+
+Lastly, we have deprecated `StatefulVariableListener`.
+The new `VariableListener` can now be used in a stateful matter instead.
+
+Before in `*VariableListener.java*`:
+
+[source,java]
+----
+  ...
+  import org.optaplanner.core.impl.domain.variable.listener.VariableListenerAdapter;
+  ...
+
+  public class MyVariableListener extends VariableListenerAdapter<Object> {
+
+    ...
+
+    @Override
+    void afterEntityRemoved(ScoreDirector scoreDirector, Object entity);
+      ...
+    }
+
+    ...
+  }
+
+----
+
+After in `*VariableListener.java*`:
+
+[source,java]
+----
+  ...
+  import org.optaplanner.core.api.domain.variable.VariableListener;
+  ...
+
+  public class MyVariableListener extends VariableListener<Object> {
+
+    ...
+
+    @Override
+    void afterEntityRemoved(ScoreDirector scoreDirector, Object entity);
+      ...
+    }
+
+    ...
+  }
+----
+
+Before in `*StatefulVariableListener.java*`:
+
+[source,java]
+----
+  ...
+  import org.optaplanner.core.impl.domain.variable.listener.StatefulVariableListener;
+  ...
+
+  public class MyStatefulVariableListener implements StatefulVariableListener<Object> {
+
+    ...
+
+    @Override
+    public void clearWorkingSolution(ScoreDirector scoreDirector) {
+      ...
+    }
+
+    ...
+  }
+
+----
+
+After in `*StatefulVariableListener.java*`:
+
+[source,java]
+----
+  ...
+  import org.optaplanner.core.api.domain.variable.VariableListener;
+  ...
+
+  public class MyStatefulVariableListener implements VariableListener<Object> {
+
+    ...
+
+    @Override
+    public void close() {
+      ...
+    }
+
+    ...
+  }
+
+----
