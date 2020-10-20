@@ -3437,7 +3437,7 @@ After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 ----
 
 [.upgrade-recipe-major]
-=== Variable listeners become public API
+=== Variable listeners became public API
 
 A new interface `VariableListener` has been introduced in the public API package `org.optaplanner.core.api.domain.variable`.
 It serves as a replacement for the class of the same name from package `org.optaplanner.core.impl.domain.variable.listener`, which is now deprecated for removal.
