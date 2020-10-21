@@ -215,7 +215,7 @@ After in `*SolverConfig.xml`:
 Using the XSD may require reordering some of the XML elements of the configuration.
 Use code completion in the IDE to migrate to a valid XML.
 
-[.upgrade-recipe-major.upgrade-recipe-public-api]
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === Property `subPillarEnabled` in move selector configuration has been removed
 
 The `subPillarEnabled` property on `PillarSwapMoveSelector` and `PillarChangeMoveSelector` has long been deprecated and replaced by a new property, `subPillarType`.
