@@ -1,13 +1,8 @@
 = Upgrade recipe 8
-:awestruct-description: Upgrade to OptaPlanner 8 from a previous version.
+:awestruct-description: Upgrade to OptaPlanner 8 from the previous version.
 :awestruct-layout: upgradeRecipeBase
 :awestruct-priority: 0.5
 :awestruct-upgrade_recipe_version: 8
-
-// TODO Once 8.0.0.Beta1 is out, remove these lines and add a link to this page in ./index.adoc
-*OptaPlanner 8 is in early stages of development.
-There is no use in waiting for it.
-Please use and download the latest 7.x release instead.*
 
 Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years, it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
 

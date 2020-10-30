@@ -3292,7 +3292,7 @@ After in `pom.xml`:
 
 Various elements of both the solver configuration and benchmark configuration will now log a deprecation warning if
 JavaScript expressions are used within.
-We recommend users replace these with either auto-configuration or with integer constants.
+Users should be replaced with either auto-configuration or with integer constants.
 
 Before in `solverConfig.xml`:
 
@@ -3336,6 +3336,19 @@ After in `benchmarkConfig.xml`:
       <parallelBenchmarkCount>1</parallelBenchmarkCount> <!-- Alternatively, use "AUTO" or omit entirely. -->
       ...
     </plannerBenchmark>
+----
+
+Furthermore, to continue to use that deprecated JavaScript configuration together
+with JDK 15 or later will have to add the following dependency to their runtime,
+on account of the OpenJDK project
+link:https://openjdk.java.net/jeps/372[removing their long since deprecated JavaScript support]:
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.mozilla</groupId>
+    <artifactId>rhino</artifactId>
+</dependency>
 ----
 
 == From 7.44.0.Final to 7.45.0.Final

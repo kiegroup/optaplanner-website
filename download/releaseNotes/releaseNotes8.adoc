@@ -1,17 +1,95 @@
 = Release Notes 8
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.
+:awestruct-description: New and noteworthy, demos and status for OptaPlanner 8.
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 8
-:awestruct-release_notes_version_qualifier: Final
+:awestruct-release_notes_version_qualifier: Beta
 
-== New and noteworthy: Engine 8.0.0.Final
+== What is OptaPlanner 8?
 
-=== XML Schema Definition for both solverConfig.xml and benchmarkConfig.xml
+*OptaPlanner 8 is basically OptaPlanner 7 without the deprecated methods*
+and a few minor backwards incompatible changes.
+**Migrating your code from 7 to 8 is easy and quick.**
+Just follow the instructions in link:../upgradeRecipe/upgradeRecipe8.html[the upgrade recipe].
 
-In this release, we are introducing XML Schema Definition for an XML configuration of both the solver and the benchmark.
-IDEs can now offer code completion of the solver and the benchmark configuration.
+As usual, Red Hat offers link:../../product/services.html[enterprise support and consulting] on OptaPlanner 8,
+with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
+in the first half of 2021.
+
+== New and noteworthy: Engine 8.0.0.Beta1
+
+=== OptaPlanner quickstarts repository
+
+The new https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts repository]
+contains beautiful web demo's for multiple use cases.
+It also shows you how to integrate OptaPlanner with different technologies:
+
+* *School timetabling*: Assign lessons to timeslots and rooms to produce a better schedule for teachers and students.
++
+This application connects to a relational database and exposes a REST API, rendered by a pretty JavaScript UI.
++
+** `quarkus-school-timetabling`: Java, Maven or Gradle, Quarkus, H2
+** `spring-boot-school-timetabling`: Java, Maven or Gradle, Spring Boot, H2
+** `kotlin-quarkus-school-timetabling` Kotlin, Maven, Quarkus, H2
+* *Facility location problem (FLP)*: Pick the best geographical locations for new stores, distribution centers, covid test centers or telco masts.
+** `quarkus-facility-location`: Java, Maven, Quarkus
+* *Factorio layout*: Assign machines to assembly line locations to design the best factory layout.
+** `quarkus-factorio-layout`: Java, Maven, Quarkus
+* Maintenance scheduling: Coming soon
+
+https://github.com/kiegroup/optaplanner-quickstarts[Clone the quickstarts repo now!]
+
+=== Future Java compatibility
+
+The OptaPlanner 8 API has been groomed to maximize compatibility
+with the latest https://openjdk.java.net/[OpenJDK] and https://www.graalvm.org/[GraalVM] releases
+and game-changing platforms such as https://quarkus.io/[Quarkus].
+Meanwhile, we still fully support OpenJDK 11 and platforms such as Spring Boot or plain Java.
+
+For example, when running OptaPlanner in Java 11 or higher with a classpath,
+OptaPlanner no longer triggers `WARNING: An illegal reflective access operation has occurred`
+for XStream.
+
+=== Code completion for solverConfig.xml and benchmarkConfig.xml through XSD
+
+To validate XML configuration during development,
+add the new XML Schema Definition (XSD) on the solver or benchmark configuration:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+  ...
+</solver>
+----
+
+This enables code completion for XML in most IDEs:
 
 image:8.0/solverConfigCompletion.png[SolverConfigCodeCompletion]
 
-We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe8.html[updated upgrade recipe] to adapt accordingly.
+=== Improved Quarkus extension
+
+The OptaPlanner Quarkus extension is now stable
+and displays no warnings when compiling Java to a native executable.
+
+=== ScoreManager now supports score explanation
+
+The `ScoreManager` can now also explain why a solution has a certain score:
+
+[source,java]
+----
+ScoreManager<TimeTable, HardSoftScore> scoreManager = ScoreManager.create(solverFactory);
+...
+ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = scoreManager.explain(timeTable);
+System.out.println(scoreExplanation.getSummary());
+...
+----
+
+Additionally, use `scoreExplanation.getConstraintMatchTotalMap()` and `scoreExplanation.getIndictmentMap()`
+to extract the `ConstraintMatchTotal<HardSoftScore>` and `Indictment<HardSoftScore>` information without triggering a new score calculation.
+
+=== Various improvements
+
+* The ConstraintStreams API is now richer, more stable with better error messages and faster.
+* The `SolverManager` API now supports to listen to both best solution events and the solving ended event.
+* OptaPlanner no longer depends on Guava or Reflections.
