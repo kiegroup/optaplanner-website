@@ -5,11 +5,15 @@
 :awestruct-release_notes_version: 8
 :awestruct-release_notes_version_qualifier: Beta
 
-== What is OptaPlanner 8?
+== Why OptaPlanner 8?
 
-*OptaPlanner 8 is basically OptaPlanner 7 without the deprecated methods*
-and a few minor backwards incompatible changes.
-**Migrating your code from 7 to 8 is easy and quick.**
+To empower OptaPlanner on the latest technologies
+and facilitate new features (see below),
+OptaPlanner can't remain 100% backwards compatible.
+Therefore, following _Apache version guidelines_, the major version number increments.
+*OptaPlanner 8 removes the deprecated methods from OptaPlanner 7*
+and makes a few minor backwards incompatible changes.
+**Upgrading your code from 7 to 8 is easy and quick.**
 Just follow the instructions in link:../upgradeRecipe/upgradeRecipe8.html[the upgrade recipe].
 
 As usual, Red Hat offers link:../../product/services.html[enterprise support and consulting] on OptaPlanner 8,
@@ -21,7 +25,7 @@ in the first half of 2021.
 === OptaPlanner quickstarts repository
 
 The new https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts repository]
-contains beautiful web demo's for multiple use cases.
+contains pretty web demos for several use cases.
 It also shows you how to integrate OptaPlanner with different technologies:
 
 * *School timetabling*: Assign lessons to timeslots and rooms to produce a better schedule for teachers and students.

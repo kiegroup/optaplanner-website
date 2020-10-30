@@ -3290,9 +3290,9 @@ After in `pom.xml`:
 [.upgrade-recipe-minor]
 === Deprecated JavaScript expression support in configuration
 
-Various elements of both the solver configuration and benchmark configuration will now log a deprecation warning if
-JavaScript expressions are used within.
-Users should be replaced with either auto-configuration or with integer constants.
+Various elements of both the solver configuration and benchmark configuration now log a deprecation warning if
+they use a JavaScript expression.
+Replace those expressions with either auto-configuration or integer constants.
 
 Before in `solverConfig.xml`:
 
@@ -3338,8 +3338,8 @@ After in `benchmarkConfig.xml`:
     </plannerBenchmark>
 ----
 
-Furthermore, to continue to use that deprecated JavaScript configuration together
-with JDK 15 or later will have to add the following dependency to their runtime,
+On the other hand, to continue to use that deprecated JavaScript expression configuration anyway:
+code running on JDK 15 or later need to add the following dependency to its classpath,
 on account of the OpenJDK project
 link:https://openjdk.java.net/jeps/372[removing their long since deprecated JavaScript support]:
 
