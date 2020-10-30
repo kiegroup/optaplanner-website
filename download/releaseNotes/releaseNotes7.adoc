@@ -5,25 +5,6 @@
 :awestruct-release_notes_version: 7
 :awestruct-release_notes_version_qualifier: Final
 
-== New and noteworthy: Engine 7.44.0.Final
-
-=== Deprecated JavaScript support in configuration
-
-In this release, we have deprecated the rarely used ability to specify thread pool sizes using JavaScript expressions.
-We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] to adapt accordingly.
-
-Furthermore, users who wish to continue to use JavaScript configuration together with JDK 15 or later will have to add
-the following dependency to their runtime, on account of the OpenJDK project
-link:https://openjdk.java.net/jeps/372[removing their long since deprecated JavaScript support]:
-
-[source,xml,options="nowrap"]
-----
-<dependency>
-    <groupId>org.mozilla</groupId>
-    <artifactId>rhino</artifactId>
-</dependency>
-----
-
 == New and noteworthy: Engine 7.39.0.Final
 
 === More deprecations
@@ -38,7 +19,8 @@ We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html
 With this release, we are deprecating some rarely used methods for which there are now better alternatives.
 We encourage everyone to check out our link:../upgradeRecipe/upgradeRecipe7.html[updated upgrade recipe] to adapt accordingly.
 
-That said, we remain committed to our existing API compatibility guarantees and we will not remove any of the deprecated APIs on the 7.x stream of OptaPlanner.
+That said, we remain committed to our existing API compatibility guarantees
+and we will not remove any of the deprecated APIs on the 7.x stream of OptaPlanner.
 
 == New and noteworthy: Engine 7.37.0.Final
 
