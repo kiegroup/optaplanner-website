@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.optaplanner.org/xsd/solver" elementFormDefault="qualified" targetNamespace="https://www.optaplanner.org/xsd/solver" version="1.0">
-
   <xs:element name="solver" type="tns:solverConfig"/>
-
   <xs:complexType name="solverConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -31,11 +29,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="abstractConfig">
     <xs:sequence/>
   </xs:complexType>
-
   <xs:complexType name="scoreDirectorFactoryConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -56,19 +52,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="jaxbAdaptedMap">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="property" type="tns:jaxbAdaptedMapEntry"/>
     </xs:sequence>
   </xs:complexType>
-
   <xs:complexType name="jaxbAdaptedMapEntry">
     <xs:sequence/>
     <xs:attribute name="name" type="xs:string"/>
     <xs:attribute name="value" type="xs:string"/>
   </xs:complexType>
-
   <xs:complexType name="terminationConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -98,7 +91,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="constructionHeuristicPhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -129,7 +121,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="phaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -139,7 +130,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="queuedEntityPlacerConfig">
     <xs:complexContent>
       <xs:extension base="tns:entityPlacerConfig">
@@ -162,7 +152,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="entityPlacerConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -170,7 +159,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="entitySelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -193,7 +181,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="selectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -201,7 +188,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="nearbySelectionConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -221,7 +207,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="cartesianProductMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -244,7 +229,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="moveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -263,7 +247,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="changeMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -274,7 +257,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="valueSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -298,7 +280,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="unionMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -321,7 +302,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="moveIteratorFactoryConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -332,7 +312,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="moveListFactoryConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -343,7 +322,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="pillarChangeMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractPillarMoveSelectorConfig">
@@ -353,7 +331,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType abstract="true" name="abstractPillarMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -365,7 +342,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="pillarSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -377,7 +353,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="pillarSwapMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractPillarMoveSelectorConfig">
@@ -394,7 +369,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="subChainChangeMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -407,7 +381,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="subChainSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:selectorConfig">
@@ -419,7 +392,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="subChainSwapMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -432,7 +404,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="swapMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -450,7 +421,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="tailChainSwapMoveSelectorConfig">
     <xs:complexContent>
       <xs:extension base="tns:moveSelectorConfig">
@@ -461,7 +431,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="queuedValuePlacerConfig">
     <xs:complexContent>
       <xs:extension base="tns:entityPlacerConfig">
@@ -485,7 +454,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="pooledEntityPlacerConfig">
     <xs:complexContent>
       <xs:extension base="tns:entityPlacerConfig">
@@ -507,7 +475,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="constructionHeuristicForagerConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -517,7 +484,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="customPhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -528,7 +494,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="exhaustiveSearchPhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -555,7 +520,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="localSearchPhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -580,7 +544,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="localSearchAcceptorConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -608,7 +571,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="localSearchForagerConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -621,7 +583,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="noChangePhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -629,7 +590,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="partitionedSearchPhaseConfig">
     <xs:complexContent>
       <xs:extension base="tns:phaseConfig">
@@ -649,7 +609,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:complexType name="solverManagerConfig">
     <xs:complexContent>
       <xs:extension base="tns:abstractConfig">
@@ -660,7 +619,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
   <xs:simpleType name="environmentMode">
     <xs:restriction base="xs:string">
       <xs:enumeration value="FULL_ASSERT"/>
@@ -670,7 +628,6 @@
       <xs:enumeration value="NON_REPRODUCIBLE"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="randomType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="JDK"/>
@@ -683,21 +640,18 @@
       <xs:enumeration value="WELL44497B"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="constraintStreamImplType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="BAVET"/>
       <xs:enumeration value="DROOLS"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="terminationCompositionStyle">
     <xs:restriction base="xs:string">
       <xs:enumeration value="AND"/>
       <xs:enumeration value="OR"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="constructionHeuristicType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="FIRST_FIT"/>
@@ -712,7 +666,6 @@
       <xs:enumeration value="ALLOCATE_FROM_POOL"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="entitySorterManner">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NONE"/>
@@ -720,7 +673,6 @@
       <xs:enumeration value="DECREASING_DIFFICULTY_IF_AVAILABLE"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="valueSorterManner">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NONE"/>
@@ -730,7 +682,6 @@
       <xs:enumeration value="DECREASING_STRENGTH_IF_AVAILABLE"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="selectionCacheType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="JUST_IN_TIME"/>
@@ -739,7 +690,6 @@
       <xs:enumeration value="SOLVER"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="selectionOrder">
     <xs:restriction base="xs:string">
       <xs:enumeration value="INHERIT"/>
@@ -750,7 +700,6 @@
       <xs:enumeration value="PROBABILISTIC"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="nearbySelectionDistributionType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="BLOCK_DISTRIBUTION"/>
@@ -759,14 +708,12 @@
       <xs:enumeration value="BETA_DISTRIBUTION"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="selectionSorterOrder">
     <xs:restriction base="xs:string">
       <xs:enumeration value="ASCENDING"/>
       <xs:enumeration value="DESCENDING"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="subPillarType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NONE"/>
@@ -774,7 +721,6 @@
       <xs:enumeration value="ALL"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="constructionHeuristicPickEarlyType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NEVER"/>
@@ -783,14 +729,12 @@
       <xs:enumeration value="FIRST_FEASIBLE_SCORE_OR_NON_DETERIORATING_HARD"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="exhaustiveSearchType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="BRUTE_FORCE"/>
       <xs:enumeration value="BRANCH_AND_BOUND"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="nodeExplorationType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="ORIGINAL_ORDER"/>
@@ -800,7 +744,6 @@
       <xs:enumeration value="OPTIMISTIC_BOUND_FIRST"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="localSearchType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="HILL_CLIMBING"/>
@@ -811,7 +754,6 @@
       <xs:enumeration value="VARIABLE_NEIGHBORHOOD_DESCENT"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="acceptorType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="HILL_CLIMBING"/>
@@ -825,7 +767,6 @@
       <xs:enumeration value="STEP_COUNTING_HILL_CLIMBING"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="stepCountingHillClimbingType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="SELECTED_MOVE"/>
@@ -835,7 +776,6 @@
       <xs:enumeration value="IMPROVING_STEP"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="localSearchPickEarlyType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NEVER"/>
@@ -843,7 +783,6 @@
       <xs:enumeration value="FIRST_LAST_STEP_SCORE_IMPROVING"/>
     </xs:restriction>
   </xs:simpleType>
-
   <xs:simpleType name="finalistPodiumType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="HIGHEST_SCORE"/>
