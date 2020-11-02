@@ -95,12 +95,6 @@ title: Download
 
       This is similar for Ivy and Buildr.
 
-  %div(id="execution-server" class="tab-pane fade")
-    :asciidoc
-      * image:download.png[Download] *Download OptaPlanner Execution Server #{site.pom.latestFinal.version}*
-      ** #{site.pom.latestFinal.kieExecutionServerZip}[Any application server]
-      ** License: link:../code/license.html[Apache License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
-      * For Red Hat subscription releases https://access.redhat.com/downloads[go to the product download site].
   %div(id="optaweb-employee-rostering" class="tab-pane fade")
     :asciidoc
       * image:download.png[Download] *#{site.pom.latestFinal.optawebEmployeeRosteringDistributionZip}[Download OptaWeb Employee Rostering #{site.pom.latestFinal.version}]*
@@ -156,12 +150,6 @@ title: Download
             <version>#{site.pom.latest.version}</version>
           </dependency>
         ----
-    %div(id="execution-server-nonfinal" class="tab-pane fade")
-      :asciidoc
-        * image:download.png[Download] *Download OptaPlanner Execution Server #{site.pom.latest.version}*
-        ** #{site.pom.latest.kieExecutionServerZip}[Any application server]
-        ** link:releaseNotes/releaseNotes#{site.pom.latest.releaseNotesVersion}.html#_execution_server[Release notes #{site.pom.latest.releaseNotesVersion} (OptaPlanner)]
-        ** License: link:../code/license.html[Apache License 2.0] - Date: #{site.pom.latestFinal.releaseDate.strftime('%a %-d %B %Y')}
 
 :asciidoc
   [[NightlySnapshots]]
@@ -183,11 +171,6 @@ title: Download
   %div(id="engine-nightly" class="tab-pane fade in active")
     :asciidoc
       * image:download.png[Download] *#{site.pom.nightly.distributionZip}[Download OptaPlanner Engine #{site.pom.nightly.version}]*
-  %div(id="execution-server-nightly" class="tab-pane fade")
-    :asciidoc
-      * image:download.png[Download] *Download OptaPlanner Execution Server #{site.pom.nightly.version}*
-      ** #{site.pom.nightly.kieExecutionServerJavaEE7}[JavaEE 7] -
-      #{site.pom.nightly.kieExecutionServerWebc}[Web (Servlet) container]
   %div(id="optaweb-employee-rostering-nightly" class="tab-pane fade")
     :asciidoc
       * image:download.png[Download] *#{site.pom.nightly.optawebEmployeeRosteringDistributionZip}[Download OptaWeb Employee Rostering #{site.pom.nightly.version}]*
