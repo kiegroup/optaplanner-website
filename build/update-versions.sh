@@ -27,6 +27,12 @@ readonly new_snapshot=$2
 
 readonly release_date=$(date +%Y-%m-%d)
 
-sed -i -E "s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g" _config/pom.yml
-sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.Final/$new_release/g" _config/pom.yml
-sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" _config/pom.yml
+this_script_directory="${BASH_SOURCE%/*}"
+if [[ ! -d "$this_script_directory" ]]; then
+  this_script_directory="$PWD"
+fi
+readonly pom_yml_file="$this_script_directory/../_config/pom.yml"
+
+sed -i -E "s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g" "$pom_yml_file"
+sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.Final/$new_release/g" "$pom_yml_file"
+sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
