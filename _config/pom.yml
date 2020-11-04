@@ -35,5 +35,5 @@ nightly:
   optawebVehicleRoutingDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-distribution&v=7.46.0-SNAPSHOT&e=zip
 
   engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.0.0-SNAPSHOT&e=zip
-  optwebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-docs&v=7.46.0-SNAPSHOT&e=zip
-  optwebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=7.46.0-SNAPSHOT&e=zip
+  optawebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-docs&v=7.46.0-SNAPSHOT&e=zip
+  optawebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=7.46.0-SNAPSHOT&e=zip
