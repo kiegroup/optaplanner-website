@@ -34,5 +34,5 @@ fi
 readonly pom_yml_file="$this_script_directory/../_config/pom.yml"
 
 sed -i -E "s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g" "$pom_yml_file"
-sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.Final/$new_release/g" "$pom_yml_file"
+sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.(Final|Beta[0-9]*|CR[0-9]*)/$new_release/g" "$pom_yml_file"
 sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
