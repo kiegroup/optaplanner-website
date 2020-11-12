@@ -632,3 +632,12 @@
   talks:
     - title: "OptaPlanner in Quarkus"
       presenters: Geoffrey De Smet
+
+- eventId: 20201117-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide
+  date: 2020-11-17
+  talks:
+    - title: "OptaPlanner domain models and design patterns"
+      url: https://www.youtube.com/watch?v=0uAoWU8m0pE
+      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
