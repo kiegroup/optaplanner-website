@@ -2996,8 +2996,8 @@ uiScoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 === Annotation scanning has been deprecated for removal
 
 The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated.
-Use the link:../../compatbility/quarkus.html[Quarkus extension] or
-link:../../compatbility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
+Use the link:../../compatibility/quarkus.html[Quarkus extension] or
+link:../../compatibility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
 
 Before in `*.xml`:
 

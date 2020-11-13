@@ -331,8 +331,8 @@ solver.addEventListener(event -> {
 === Annotation scanning has been removed
 
 The `<scanAnnotatedClasses/>` directive in solver configuration has been deprecated in 7.x and now removed.
-Use the link:../../compatbility/quarkus.html[Quarkus extension] or
-link:../../compatbility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
+Use the link:../../compatibility/quarkus.html[Quarkus extension] or
+link:../../compatibility/springBoot.html[Spring Boot starter] to automatically scan for annotated classes instead.
 
 Before in `*.xml`:
 
