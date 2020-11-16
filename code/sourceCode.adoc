@@ -41,11 +41,14 @@ The first time, Maven might take a lot time, because it needs to download jars.
  ...
 ----
 
-. Edit the sources in your favorite IDE (such as http://www.jetbrains.com/idea/[IntelliJ IDEA], http://www.eclipse.org/[Eclipse] or https://netbeans.org/[NetBeans]).
-
-. Optional: Use a Java profiler (such as http://www.ej-technologies.com/products/jprofiler/overview.html[JProfiler] or http://visualvm.java.net/[VisualVM]).
+. Edit the sources in your favorite IDE (such as http://www.jetbrains.com/idea/[IntelliJ IDEA], http://www.eclipse.org/[Eclipse] or https://code.visualstudio.com/[VSCode]).
 
 . Optional: Write some documentation in http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
+
+=== optaplanner-quickstarts
+
+_The source code for each Quick Start._ +
+https://github.com/kiegroup/optaplanner-quickstarts
 
 === optaweb-employee-rostering
 
@@ -56,11 +59,6 @@ https://github.com/kiegroup/optaweb-employee-rostering
 
 _The source code for the vehicle routing web application reference architecture._ +
 https://github.com/kiegroup/optaweb-vehicle-routing
-
-=== optaplanner-wb (workbench)
-
-_The source code for OptaPlanner Workbench._ +
-https://github.com/kiegroup/optaplanner-wb
 
 === optaplanner-website (www.optaplanner.org)
 
