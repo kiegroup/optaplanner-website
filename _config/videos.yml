@@ -11,6 +11,14 @@
 #
 # Order videos by date descending
 
+- youtubeId: 0uAoWU8m0pE
+  title: "Domain modeling and design patterns"
+  # Authors also included Karina Varela and Alex Porcelli
+  author: ge0ffrey
+  date: 2020-11-17
+  tags:
+    - constraint
+
 - youtubeId: Oq6kAuO_S5g
   title: "Quarkus insights: AI constraint solving"
   # Authors also included Max Andersen and Emmanuel Bernard
