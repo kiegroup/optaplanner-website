@@ -117,6 +117,58 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 If you were also passing a `ClassLoader`, pass it to both `SolverConfig.createFromXmlResource()` and `SolverFactory.create()`.
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `SolverConfig`: `buildSolver()` removed
+
+The method `SolverConfig.buildSolver()` was an inner method that should not have been used.
+Instead, use `SolverFactory.buildSolver()`.
+
+Before in `*.java`:
+
+[source,java]
+----
+SolverConfig solverConfig = SolverConfig.createFromXmlResource(".../mySolverConfig.xml");
+...
+Solver<MySolution> solver = solverConfig.buildSolver();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+SolverConfig solverConfig = SolverConfig.createFromXmlResource(".../mySolverConfig.xml");
+...
+SolverFactory<MySolution> solverFactory = SolverFactory.create(solverConfig);
+Solver<MySolution> solver = solverFactory.buildSolver();
+----
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
+=== `PlannerBenchmarkConfig`: `buildPlannerBenchmark()` removed
+
+The method `PlannerBenchmarkConfig.buildPlannerBenchmark()` was an inner method that should not have been used.
+Instead, use `PlannerBenchmarkFactory.buildPlannerBenchmark()`.
+
+Before in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+...
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+PlannerBenchmarkConfig benchmarkConfig = PlannerBenchmarkConfig.createFromXmlResource(
+        ".../cloudBalancingBenchmarkConfig.xml");
+...
+PlannerBenchmarkFactory benchmarkFactory = PlannerBenchmarkFactory.create(benchmarkConfig);
+PlannerBenchmark benchmark = benchmarkFactory.buildPlannerBenchmark();
+----
+
+[.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SolverFactory`: `cloneSolverFactory()` removed
 
 The method `SolverFactory.cloneSolverFactory()` has long been deprecated in favor of the copy constructor
