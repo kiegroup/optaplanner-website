@@ -119,7 +119,7 @@ If you were also passing a `ClassLoader`, pass it to both `SolverConfig.createFr
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SolverConfig`: `buildSolver()` removed
 
-The method `SolverConfig.buildSolver()` was an inner method that should not have been used.
+The method `SolverConfig.buildSolver()` is an inner method that doesn't belong in the public API.
 Instead, use `SolverFactory.buildSolver()`.
 
 Before in `*.java`:
