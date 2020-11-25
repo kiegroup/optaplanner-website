@@ -144,7 +144,7 @@ Solver<MySolution> solver = solverFactory.buildSolver();
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `PlannerBenchmarkConfig`: `buildPlannerBenchmark()` removed
 
-The method `PlannerBenchmarkConfig.buildPlannerBenchmark()` was an inner method that should not have been used.
+The method `PlannerBenchmarkConfig.buildPlannerBenchmark()` is an inner method that doesn't belong in the public API.
 Instead, use `PlannerBenchmarkFactory.buildPlannerBenchmark()`.
 
 Before in `*.java`:
