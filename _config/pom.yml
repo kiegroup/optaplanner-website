@@ -2,7 +2,7 @@ latestFinal:
   version: 8.0.0.Final
   distributionZip: https://download.jboss.org/optaplanner/release/8.0.0.Final/optaplanner-distribution-8.0.0.Final.zip
   releaseDate: 2020-11-27
-  releaseNotesVersion: 7
+  releaseNotesVersion: 8
 
   optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/8.0.0.Final/optaweb-employee-rostering-distribution-8.0.0.Final.zip
   optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.0.0.Final/optaweb-vehicle-routing-distribution-8.0.0.Final.zip
