@@ -6,8 +6,13 @@
         %span Read documentation
         %br
         %span.small #{site.pom.latestFinal.version}
-  %h4
-    Read the
-    %a(href="#{site.pom.latestFinal.engineDocumentationHtmlSingle}#quickStart")
+  %p(style="margin-top: 10px; margin-bottom: 0px;")
+    Read a
+    %a(href="#{site.pom.latestFinal.engineDocumentationHtmlSingle}#quickStart")<
       Quick Start
-    chapter.
+    guide
+    %br
+    or git clone
+    = succeed "." do
+      %a(href="https://github.com/kiegroup/optaplanner-quickstarts")<
+        optaplanner-quickstarts
