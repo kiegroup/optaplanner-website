@@ -3,6 +3,7 @@
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 8
+:awestruct-release_notes_version_qualifier: Final
 
 == Why OptaPlanner 8?
 
