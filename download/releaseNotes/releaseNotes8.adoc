@@ -3,7 +3,7 @@
 :awestruct-layout: releaseNotesBase
 :awestruct-priority: 1.0
 :awestruct-release_notes_version: 8
-:awestruct-release_notes_version_qualifier: Beta
+:awestruct-release_notes_version_qualifier: Final
 
 == Why OptaPlanner 8?
 
@@ -20,7 +20,7 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
 in the first half of 2021.
 
-== New and noteworthy: Engine 8.0.0.Beta1
+== New and noteworthy: Engine 8.0.0.Final
 
 === OptaPlanner quickstarts repository
 
