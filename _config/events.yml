@@ -647,3 +647,7 @@
   eventUrl: https://www.javaland.eu
   location: Worldwide
   date: 2021-03-16
+  talks:
+    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
+      url: https://programm.javaland.eu/2021/#/scheduledEvent/606390
+      presenters: Geoffrey De Smet
