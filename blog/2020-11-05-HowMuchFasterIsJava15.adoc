@@ -1,16 +1,20 @@
 = How much faster is Java 15?
 :page-interpolate: true
+:imagesdir: 2020/12
 :awestruct-author: mtomco
 :awestruct-layout: blogPostBase
 :awestruct-tags: [production, benchmark]
+:awestruct-share_image_filename: G1GCandParallelGCUsingJDK15.svg
 
 Java 15 was released on the 15th of September 2020 and has promised to bring with it a few performance tweaks in its G1GC
-and ParallelGC garbage collectors. What does it mean for
-https://www.optaplanner.org/[OptaPlanner]? Have the improvements made in the G1GC outperformed the reigning champion since Java 8 or does the ParallelGC still
-reign supreme on most use-cases? Is ParallelGC even faster than it was the previous time? Let's put it to the test!
+and ParallelGC garbage collectors.
+
+What does it mean for
+https://www.optaplanner.org/[OptaPlanner]? What are the benefits we gain from upgrading from JDK11 to JDK15? In 2019,
+we found out that ParallelGC works better for OptaPlanner. Is that still the case a year later? Let's put it to the test!
 
 This article is a follow up on our
-https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[ Java 11]
+https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[Java 11]
 and our
 https://www.optaplanner.org/blog/2014/03/20/HowMuchFasterIsJava8.html[Java 8] performance comparison benchmarks.
 
@@ -48,8 +52,8 @@ conflicts between every entity and every other entity.
 
 With Java 15, the average improvement is *10.5%* for G1 and *6.2%* for Parallel GC. The difference between the two
 garbage collectors running on JDK 15 is *10.7%* leaning in favor of Parallel GC.
-For more information about difference between various GC algorithms, please see
-https://dzone.com/articles/choosing-the-best-garbage-collection-algorithm-for[this article].
+For more information about difference between various GC algorithms, please see the following article that compares
+https://dzone.com/articles/choosing-the-best-garbage-collection-algorithm-for[Java garbage collectors performance].
 
 The Parallel GC is the superior GC for OptaPlanner than G1, since the throughput is still the most relevant factor when it comes to garbage collection.
 
@@ -64,10 +68,10 @@ image::JDK11andJDK15UsingG1GC.svg[]
 |===
 | 2+^.^|Cloud balancing 2+^.^|Machine reassignment 2+^.^|Course scheduling 2+^.^|Exam scheduling 2+^.^|Nurse rostering^.^|Traveling Tournament
 |JDK ^|200c ^|800c ^|B1 ^|B10 ^|c7 ^|c8 ^|s2 ^|s3 ^|m1 ^|mh1 ^|nl14
-|OpenJDK 11 >|77,073 >|75,343 >|239,262 >|37,991 >|6,861 >|8,577 >|12,748 >|8,375 >|3,047 >|2,872 >|1,905
-|JDK 15 >|79,275 >|76,276 >|298,923 >|39,883 >|7,694 >|10,049 >|14,438 >|9,421 >|3,384 >|3,155 >|2,015
-|Difference >|2.9% >|1.2% >|25.0% >|5.0% >|12.1% >|17.2% >|13.3% >|12.5% >|11.0% >|9.9% >|5.8%
-|Average 11+^.^|*10.5%*
+|OpenJDK 11 >|77073 >|75343 >|239262 >|37991 >|6861 >|8577 >|12748 >|8375 >|3047 >|2872 >|1905
+|JDK 15 >|79275 >|76276 >|298923 >|39883 >|7694 >|10049 >|14438 >|9421 >|3384 >|3155 >|2015
+|Difference (in %) >|2.9 >|1.2 >|25.0 >|5.0 >|12.1 >|17.2 >|13.3 >|12.5 >|11.0 >|9.9 >|5.8
+|Average (in %) 11+^.^|*10.5*
 |===
 
 image::JDK11andJDK15UsingParallelGC.svg[]
@@ -77,16 +81,16 @@ image::JDK11andJDK15UsingParallelGC.svg[]
 |===
 | 2+^.^|Cloud balancing 2+^.^|Machine reassignment 2+^.^|Course scheduling 2+^.^|Exam scheduling 2+^.^|Nurse rostering^.^|Traveling Tournament
 |JDK ^|200c ^|800c ^|B1 ^|B10 ^|c7 ^|c8 ^|s2 ^|s3 ^|m1 ^|mh1 ^|nl14
-|OpenJDK 11 >|95,716 >|91,519 >|313,653 >|29,254 >|8,079 >|10,510 >|14,842 >|9,474 >|3,810 >|3,518 >|2,641
-|JDK 15	>|100,246 >|95,220 >|309,048 >|26,090 >|9,109 >|11,690 >|16,529 >|10,827 >|4,209 >|3,921 >|2,657
-|Difference >|4.7% >|4.0% >|-1.5% >|-10.9% >|12.8% >|11.2% >|11.4% >|14.3% >|10.5% >|11.5% >|0.6%
-|Average 11+^.^|*6.2%*
+|OpenJDK 11 >|95716 >|91519 >|313653 >|29254 >|8079 >|10510 >|14842 >|9474 >|3810 >|3518 >|2641
+|JDK 15	>|100246 >|95220 >|309048 >|26090 >|9109 >|11690 >|16529 >|10827 >|4209 >|3921 >|2657
+|Difference (in %) >|4.7 >|4.0 >|-1.5 >|-10.9 >|12.8 >|11.2 >|11.4 >|14.3 >|10.5 >|11.5 >|0.6
+|Average (in %) 11+^.^|*6.2*
 |===
 
 
 === Parallel GC vs. G1 GC on Java 15
 
-image::G1GCandParallelGCUsingJDK15.svg.svg[]
+image::G1GCandParallelGCUsingJDK15.svg[]
 
 
 [#table3]
@@ -94,12 +98,12 @@ image::G1GCandParallelGCUsingJDK15.svg.svg[]
 |===
 | 2+^.^|Cloud balancing 2+^.^|Machine reassignment 2+^.^|Course scheduling 2+^.^|Exam scheduling 2+^.^|Nurse rostering^.^|Traveling Tournament
 |Java 15 ^|200c ^|800c ^|B1 ^|B10 ^|c7 ^|c8 ^|s2 ^|s3 ^|m1 ^|mh1 ^|nl14
-|JDK 15 G1GC >|79,275 >|76,276 >|298,923 >|39,883 >|7,694 >|10,049 >|14,438 >|9,421 >|3,384 >|3,155 >|2,015
-|JDK 15	ParallelGC >|100,246 >|95,220 >|309,048 >|26,090 >|9,109 >|11,690 >|16,529 >|10,827 >|4,209 >|3,921 >|2,657
-|Difference >|20.92% >|24.8% >|3.4% >|-34.6% >|18.4% >|16.3% >|14.5% >|14.9% >|24.4% >|24.3% >|31.9%
-|Average 11+^.^|*10.7%*
+|JDK 15 G1GC >|79275 >|76276 >|298923 >|39883 >|7694 >|10049 >|14438 >|9421 >|3384 >|3155 >|2015
+|JDK 15	ParallelGC >|100246 >|95220 >|309048 >|26090 >|9109 >|11690 >|16529 >|10827 >|4209 >|3921 >|2657
+|Difference (in %) >|20.92 >|24.8 >|3.4 >|-34.6 >|18.4 >|16.3 >|14.5 >|14.9 >|24.4 >|24.3 >|31.9
+|Average (in %) 11+^.^|*10.7*
 |===
 
 == Conclusion
 
-For running OptaPlanner, the best garbage collector to use is still ParallelGC, which performance is even better in comparison with G1GC than it was in JDK11.
+In conclusion, the performance gained in the JDK15 version is well worth considering regarding OptaPlanner. In addition, the best garbage collector to use is still ParallelGC, the performance of which is even better in comparison with G1GC than it was in our https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[previous JDK performance comparison].
