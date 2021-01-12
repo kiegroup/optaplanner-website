@@ -642,6 +642,15 @@
       url: https://www.youtube.com/watch?v=0uAoWU8m0pE
       presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
 
+- eventId: 20210119-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide
+  date: 2021-01-19
+  talks:
+    - title: "OptaPlanner Shadow Variables for the Vehicle Routing Problem and Task Assignment"
+      url: https://www.eventbrite.com/e/kielive22-optaplanner-shadow-variables-for-the-task-assignment-and-vrp-registration-136429314753
+      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
+
 - eventId: 20210316-javaland
   eventOrganization: "Javaland"
   eventUrl: https://www.javaland.eu
