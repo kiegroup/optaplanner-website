@@ -11,6 +11,12 @@
 #
 # Order videos by date descending
 
+- youtubeId: ENKHGBMDaCM
+  title: "Shadow variables"
+  # Authors also included Karina Varela and Alex Porcelli
+  author: ge0ffrey
+  date: 2021-01-19
+
 - youtubeId: 0uAoWU8m0pE
   title: "Domain modeling and design patterns"
   # Authors also included Karina Varela and Alex Porcelli
