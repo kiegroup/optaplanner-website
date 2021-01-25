@@ -660,3 +660,12 @@
     - title: "AI on Quarkus: I love it when an OptaPlan comes together"
       url: https://programm.javaland.eu/2021/#/scheduledEvent/606390
       presenters: Geoffrey De Smet
+
+- eventId: 20210415-soujavamotu
+  eventOrganization: "SouJava MOTU"
+  location: Worldwide
+  date: 2021-04-15
+  talks:
+    - title: "Planejamento de Recursos com OptaPlanner"
+      url: https://www.meetup.com/SouJava/events/275951378/
+      presenters: Karina Varela, Otávio Santana
