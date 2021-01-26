@@ -1,6 +1,6 @@
 = How much faster is Java 15?
 :page-interpolate: true
-:imagesdir: 2021/01
+:imagesdir: 2021/01/26
 :awestruct-author: michaltomco
 :awestruct-layout: blogPostBase
 :awestruct-tags: [production, benchmark]
@@ -46,7 +46,7 @@ CPU is completely saturated.* It constantly creates many short-lived objects, an
 * Each run solves 11 planning problems with OptaPlanner. Each planning problem runs for 5 minutes and starts with a
 30 second JVM warm up which is discarded.
 
-* The benchmarks measure the number of scores calculated per millisecond. Higher is better. Calculating
+* The benchmarks measure the number of scores calculated per second. Higher is better. Calculating
 a score for a proposed planning solution is non-trivial: it involves many calculations, including checking for
 conflicts between every entity and every other entity.
 
