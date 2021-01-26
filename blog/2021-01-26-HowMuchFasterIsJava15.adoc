@@ -1,7 +1,7 @@
 = How much faster is Java 15?
 :page-interpolate: true
-:imagesdir: 2020/12
-:awestruct-author: mtomco
+:imagesdir: 2021/01
+:awestruct-author: michaltomco
 :awestruct-layout: blogPostBase
 :awestruct-tags: [production, benchmark]
 :awestruct-share_image_filename: G1GCandParallelGCUsingJDK15.svg
