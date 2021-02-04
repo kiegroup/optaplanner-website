@@ -1410,6 +1410,75 @@ end</code></pre>
     <section>
         <section>
             <h2>
+                Vaccination appointment scheduling
+            </h2>
+            <p class="instruction instruction-bottom">
+                <i>Press down to show</i><br/>
+                <i>Press right to skip</i>
+            </p>
+        </section>
+        <section>
+            <figure>
+                <img src="extra/quickstarts-showcase/quarkus-vaccination-scheduling-screenshot.png"/>
+            </figure>
+        </section>
+        <section>
+            <h3>Goals and constraints</h3>
+            <ul>
+                <li class="fragment">Maximize vaccination throughput
+                    <ul>
+                        <li class="fragment">Don't waste vaccines
+                            <ul>
+                                <li>1 Pfizer bottle = 6 people within 4 hours</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Vaccination center capacity</li>
+                    </ul>
+                </li>
+                <li class="fragment">2th shot
+                    <ul>
+                        <li class="fragment">Same vaccine</li>
+                        <li class="fragment">21/28 days later</li>
+                    </ul>
+                </li>
+                <li class="fragment">Elderly and priority groups first</li>
+                <li class="fragment">Minimize driving distance</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Techniques</h3>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-md-6">
+                    <b>Ticket master</b>
+                    <p>User picks<br/>an appointment</p>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <p>Challenges:</p>
+                        <ul>
+                            <li>Concurrency on a few spots</li>
+                            <li class="fragment">Is FIFO fair?</li>
+                            <li class="fragment">Far from optimal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <b>Central allocation</b>
+                    <p>we assign<br/>an appointment</p>
+                    <div class="fragment" style="padding-top: 20px;">
+                        <p>Challenges:</p>
+                        <ul>
+                            <li>Inconvenient time</li>
+                            <li class="fragment">Rejections and cancellations</li>
+                            <li class="fragment">Constraint optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <section>
+            <h2>
                 Cloud optimization
             </h2>
             <p class="instruction instruction-bottom">
