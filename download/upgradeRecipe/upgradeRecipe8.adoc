@@ -1588,5 +1588,6 @@ As a result, no two different instances of the class will be considered equal.
 This is in contrast to the `compareTo()` method, which continues to consider two instances equal
 if all their field values are equal.
 
-Behavior of `ConstraintMatch` has always been considered an implementation detail.
-Users are discouraged from relying on undocumented behavior.
+The `equals()` override in `ConstraintMatch` has been removed in order to not fail on constraints with non-distinct
+matches.
+
