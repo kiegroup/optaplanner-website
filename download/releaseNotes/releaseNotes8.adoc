@@ -24,10 +24,10 @@ in the first half of 2021.
 
 === Major performance improvements for Constraint Streams
 
-The default implementation of the link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+The default implementation of the link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
 has seen major performance improvements.
 Use cases with tri and quad streams may experience order of magnitude speedups.
-Use cases with link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[grouping]
+Use cases with link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[grouping]
 are likely to experience some speedups too, albeit comparatively smaller.
 
 Kudos to the link:https://drools.org/[Drools] team for helping make this possible!
