@@ -26,7 +26,7 @@ in the first half of 2021.
 
 The default implementation of the link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
 has seen major performance improvements.
-Use cases with tri and quad streams may experience speedups on the order of magnitude.
+Use cases with tri and quad streams may experience order of magnitude speedups.
 Use cases with link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[grouping]
 are likely to experience some speedups too, albeit comparatively smaller.
 
