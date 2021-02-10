@@ -3547,3 +3547,12 @@ After in `*StatefulVariableListener.java*`:
   }
 
 ----
+
+== From 7.49.0.Final to 7.50.0.Final
+
+[.upgrade-recipe-major]
+=== Quarkus integration removed in favor of OptaPlanner 8
+
+The existing Quarkus integration and the Quarkus quickstart have been removed from the distribution.
+Users are encouraged to move to OptaPlanner 8,
+which is our latest and greatest release and provides full integration with Quarkus.

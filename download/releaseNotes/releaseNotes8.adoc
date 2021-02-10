@@ -20,6 +20,18 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
 in the first half of 2021.
 
+== New and noteworthy: Engine 8.3.0.Final
+
+=== Major performance improvements for Constraint Streams
+
+The default implementation of the link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+has seen major performance improvements.
+Use cases with tri and quad streams may experience speedups on the order of magnitude.
+Use cases with link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[grouping]
+are likely to experience some speedups too, albeit comparatively smaller.
+
+Kudos to the link:https://drools.org/[Drools] team for helping make this possible!
+
 == New and noteworthy: Engine 8.0.0.Final
 
 === OptaPlanner quickstarts repository
