@@ -32,6 +32,19 @@ are likely to experience some speedups too, albeit comparatively smaller.
 
 Kudos to the link:https://drools.org/[Drools] team for helping make this possible!
 
+=== Constraint Streams `groupBy()` overloads for multiple collectors
+
+The link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+has been extended to allow using more than 2 collectors in a single link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[grouping].
+The following is now possible:
+
+[source,java]
+----
+return constraintFactory.from(ProductPrice.class)
+    .groupBy(min(), max(), sum())
+    .penalize(..., SimpleScore.ONE, (minPrice, maxPrice, sumPrices) -> ...);
+----
+
 == New and noteworthy: Engine 8.0.0.Final
 
 === OptaPlanner quickstarts repository
