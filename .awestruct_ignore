@@ -5,3 +5,4 @@ Gemfile
 Gemfile.lock
 Rakefile.rb
 *.iml
+vendor
