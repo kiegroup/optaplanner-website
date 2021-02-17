@@ -44,6 +44,6 @@
           %content{:type=>'html'}
             -# Trick to make images work from blog posts work in the atom feed
             - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-            - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(entry.output_path).parent.to_s)
+            - site.asciidoctor.attributes['imagesdir'] = Pathname.new(entry.output_path).parent.to_s
             = clean_html( html_escape( fully_qualify_urls( site.base_url, find_and_preserve( entry.content ) ) ) )
             - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
