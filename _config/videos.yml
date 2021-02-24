@@ -11,6 +11,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: gIaHtATz6n8
+  title: "Maintenance scheduling"
+  author: jucui
+  date: 2021-02-24
+  tags:
+    - maintenance scheduling
+
 - youtubeId: LTkoaBk-P6U
   title: "Vaccination appointment scheduling"
   author: ge0ffrey
