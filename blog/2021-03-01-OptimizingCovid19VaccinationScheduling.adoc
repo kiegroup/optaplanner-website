@@ -1,13 +1,13 @@
 = Optimizing COVID-19 vaccination appointment scheduling
 :page-interpolate: true
-//:imagesdir: 2021/03/01
-:awestruct-author: pbrown and emmurphy
-//not sure if can have two authors. If not, we'll make it Paul.
+:imagesdir: 2021/03/01
+:awestruct-author: pauljamesbrown
 :awestruct-layout: blogPostBase
-:awestruct-tags:
+:awestruct-tags: [production, vaccination scheduling]
+:awestruct-share_image_filename: vaccination-scheduling.png
 
 
-COVID-19 vaccination appointment scheduling has proven to be a world-wide challenge. People eligible for vaccinations haven’t been able to secure appointments despite repeated attempts. Those scheduled for vaccinations sometimes arrive at a vaccination center only to learn that their appointment has been cancelled. Others find that they share the same vaccination time window with hundreds of people and must wait in line for hours. However, this doesn’t have to be the case. You can use the OptaPlanner vaccination appointment scheduler quickstart to develop a schedule that is both efficient and fair. The vaccination appointment scheduler uses artificial intelligence (AI) to prioritize people and allocate time slots based on multiple constraints and priorities.  It is part of the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner quickstart collection], available on GitHub.
+COVID-19 vaccination appointment scheduling has proven to be a world-wide challenge. People eligible for vaccinations haven’t been able to secure appointments despite repeated attempts. Those scheduled for vaccinations sometimes arrive at a vaccination center only to learn that their appointment has been canceled. Others find that they share the same vaccination time window with hundreds of people and must wait in line for hours. However, this doesn’t have to be the case. You can use the OptaPlanner vaccination appointment scheduler quickstart to develop a schedule that is both efficient and fair. The vaccination appointment scheduler uses artificial intelligence (AI) to prioritize people and allocate time slots based on multiple constraints and priorities. It is part of the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner quickstart collection], available on GitHub.
 
 Watch the https://www.youtube.com/watch?v=LTkoaBk-P6U[OptaPlanner vaccination appointment scheduling] video or read on to learn more.
 
@@ -52,11 +52,11 @@ Challenges with this approach:
 The system-automatically-assigns method is easier for people to use, is fairer, and is more efficient for vaccination appointment scheduling than the user-selects method.
 
 == The second dose challenge
-Most COVID-19 vaccines require two doses. For optimal effectiveness, the second dose must be given within a specific time frame in relation to the first dose, using the same vaccine type. On top of that, different vaccines have different second-dose time frames. And within those time frames, there is a ready date (the first date that the second dose can be taken), an ideal date (the best date to take the second dose), and an end date (the last date that the second dose is considered to be effective). For example, the ideal date for the Pfizer  second dose is 21 days after the first dose but the ideal date for the Moderna  second dose is 28 days after the first dose.
+Most COVID-19 vaccines require two doses. For optimal effectiveness, the second dose must be given within a specific time frame in relation to the first dose, using the same vaccine type. On top of that, different vaccines have different second-dose time frames. And within those time frames, there is a ready date (the first date that the second dose can be taken), an ideal date (the best date to take the second dose), and an end date (the last date that the second dose is considered to be effective). For example, the ideal date for the Pfizer  second dose is 21 days after the first dose but the ideal date for the Moderna second dose is 28 days after the first dose.
 
 So let’s say that you start vaccinating people with the Moderna vaccine. After four weeks, you are still giving people the first dose, but now it’s time for people who already received their first dose to get their second dose. You have to decide whether to give an appointment to the person who needs the second dose or to give an appointment to someone for a first dose. That might seem like a no-brainer, but this scenario has potential complications. Let’s say that in the first week of vaccinations, you vaccinated people with a high priority but you also vaccinated other people as well because you found you had extra vaccines at the end of a day and you didn't want to waste them. Now, four weeks later, you must choose whether to give an appointment to a first-dose high-priority person or give it to the lower-priority person that needs second dose.
 
-One solution is to equally share appointments between people receiving first and second doses, but doing this will create a backlog of people needing a second dose. If you keep giving the first dose without prioritizing people that need the second dose, eventually the backlog of people that need the second dose will snowball. The second dose vaccination date will move very far away from the ideal date and might exceed the due date which will make the first vaccination much less effective.
+One solution is to equally share appointments between people receiving first and second doses, but doing this might create a backlog of people needing a second dose. If you keep giving the first dose without prioritizing people that need the second dose, eventually the backlog of people that need the second dose will snowball. The second dose vaccination date will move very far away from the ideal date and might exceed the due date which will make the first vaccination much less effective.
 
 Therefore, prioritize second-dose appointments over first-dose appointments regardless of the first-dose person’s priority rating.
 
@@ -64,7 +64,7 @@ Therefore, prioritize second-dose appointments over first-dose appointments rega
 
 The OptaPlanner vaccination appointment scheduler uses the system-automatically-assigns method to solve the problem of vaccinating as many people as possible by using planning constraints to create a score for each person. The person’s score determines when they get an appointment. The higher the person’s score, the better chance they have of receiving an earlier appointment. Constraints are either hard, medium, or soft:
 
-* Hard constraints cannot be broken. If any hard constraint is broken, the plan is infeasible and cannot be executed:
+* Hard constraints cannot be broken. If any hard constraint is broken, the plan is unfeasible and cannot be executed:
 ** Capacity: Do not over-book vaccine capacity at any time at any location.
 ** Vaccine max age: If a vaccine has a maximum age, do not administer it to people who at the time of the first dose vaccination are older than the vaccine maximum age. Ensure people are given a vaccine type appropriate for their age. For example, don’t assign a 75 year old person an appointment for a vaccine that has a maximum age restriction of 65 years.
 ** Required vaccine type: Use the required vaccine type. For example, the second dose of a vaccine must be the same vaccine type as the first dose.
@@ -112,12 +112,12 @@ Because you have more people than you have appointment slots, you need to make t
 === The solver
 At the core of OptaPlanner is the solver,  the engine that takes the problem data set and overlays the planning constraints and configurations. The problem data set includes all of the information about the people, the vaccines, and the vaccination centers. The solver works through the various combinations of data and eventually determines an optimized appointment schedule with people assigned to vaccination appointments at a specific center.  The following illustration shows a schedule that the solver created:
 
-image::2021/03/01/vaccination-scheduling.png[]
+image::vaccinationSchedulingValueProposal.png[]
 
 == Continuous planning
 Continuous planning is the technique of managing one or more upcoming planning periods at the same time and repeating that process monthly, weekly, daily, hourly, or even more frequently. The planning window advances incrementally by a specified interval. The following illustration shows a two week planning window that is updated daily:
 
-image::2021/03/01/continuous-planning.png[]
+image::vaccinationSchedulingContinuousPlanning.png[]
 
 The two week planning window is divided in half. The first week is in the published state and the second week is in the draft state.  People are assigned to appointments in both the published and draft parts of the planning window. However, only people in the published part of the planning window are notified of their appointments. The other appointments can still change easily in the next run. Doing this prevents the schedule from painting itself in a corner. For example, if a person who needs a second dose has a ready date of Monday and an ideal date of Wednesday, you don’t have to invite them for Monday if-and-only-if you can prove you can give them a draft appointment later in the week.
 
@@ -142,4 +142,6 @@ Stay tuned. We’ll be posting a follow-up blog for a deeper, more technical loo
 .Additional resources
 * https://www.youtube.com/watch?v=LTkoaBk-P6U[Vaccination appointment scheduling video]
 * https://github.com/kiegroup/optaplanner-quickstarts[Github appointment planner code]
-* https://docs.optaplanner.org/8.3.0.Final/optaplanner-docs/html_single/[OptaPlanner User Guide]
+* https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/[OptaPlanner User Guide]
+
+Co-authored by Emily Murphy.
