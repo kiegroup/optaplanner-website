@@ -661,6 +661,15 @@
       url: https://programm.javaland.eu/2021/#/scheduledEvent/606390
       presenters: Geoffrey De Smet
 
+- eventId: 20210324-webinar
+  eventOrganization: "Red Hat Webinar"
+  location: Worldwide
+  date: 2021-03-24
+  talks:
+    - title: "AI planning: Top 3 use cases and benefits"
+      url: https://www.redhat.com/en/events/webinar/ai-planning-top%203-cases-and-benefits
+      presenters: Ronald Meuwsen, Geoffrey De Smet
+
 - eventId: 20210415-soujavamotu
   eventOrganization: "SouJava MOTU"
   location: Worldwide
@@ -669,3 +678,4 @@
     - title: "Planejamento de Recursos com OptaPlanner"
       url: https://www.meetup.com/SouJava/events/275951378/
       presenters: Karina Varela, Otávio Santana
+
