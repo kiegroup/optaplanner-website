@@ -1,6 +1,6 @@
 = Optimizing COVID-19 vaccination appointment scheduling
 :page-interpolate: true
-:imagesdir: 2021/03/01
+:imagesdir: 2021/03/04
 :awestruct-author: pauljamesbrown
 :awestruct-layout: blogPostBase
 :awestruct-tags: [production, vaccination scheduling]
