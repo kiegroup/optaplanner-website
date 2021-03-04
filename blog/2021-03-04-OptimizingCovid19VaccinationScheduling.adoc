@@ -144,4 +144,4 @@ Stay tuned. We’ll be posting a follow-up blog for a deeper, more technical loo
 * https://github.com/kiegroup/optaplanner-quickstarts[Github appointment planner code]
 * https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/[OptaPlanner User Guide]
 
-Co-authored by emmurphy1.
+Co-authored by Emily Murphy.
