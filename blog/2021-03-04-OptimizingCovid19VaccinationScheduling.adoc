@@ -17,7 +17,7 @@ There are two main approaches to scheduling appointments. The system can either 
 
 Here is a quick comparison of the two approaches:
 
-.User selects
+=== User selects
 This approach is similar to the approach used with concert ticket sites such as Ticketmaster&#8482;. It’s how most concert tickets are sold. People compete with each other for a fixed number of tickets or appointments.
 
 Characteristics of this approach:
@@ -36,7 +36,7 @@ On the other hand, less desirable  appointment slots might not be filled.
 
 It could be argued that the user-selects method is not the most efficient method for vaccination scheduling. People can choose the closest vaccination center but that center might not have the greatest capacity. What's good for one person isn't always optimal for the population as a whole. There is no way for the system to direct a person to a vaccination center that meets the needs of the individual and is at the same time efficient for the entire population because of capacity. In addition, the system can easily be overloaded.
 
-.System automatically assigns
+=== System automatically assigns
 With this push-based approach, people provide their information to the system and the system assigns an appointment.
 
 Characteristics of this approach:
