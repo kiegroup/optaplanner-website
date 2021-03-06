@@ -651,6 +651,15 @@
       url: https://www.youtube.com/watch?v=ENKHGBMDaCM
       presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
 
+- eventId: 20210309-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide
+  date: 2021-03-09
+  talks:
+    - title: "Testing your constraints with OptaPlanner"
+      url: https://www.eventbrite.com/e/kielive27-testing-your-constraints-with-optaplanner-registration-144109590665
+      presenters: Lukáš Petrovický, Karina Varela, Alex Porcelli
+
 - eventId: 20210316-javaland
   eventOrganization: "Javaland"
   eventUrl: https://www.javaland.eu
