@@ -11,6 +11,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: blK7gxqu2B0
+  title: "Unit testing constraints"
+  author: triceo
+  date: 2021-03-09
+  tags:
+    - testing
+
 - youtubeId: gIaHtATz6n8
   title: "Maintenance scheduling"
   author: jucui
