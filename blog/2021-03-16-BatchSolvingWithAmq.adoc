@@ -16,7 +16,7 @@ Either these come from splitting enormous input problem into smaller pieces, or 
 Imagine scheduling routes of vehicles independently per regions, or optimizing school timetables for numerous schools.
 To take advantage of time, you run OptaPlanner every night to prepare for the next day in the business or even longer for the next semester.
 On the other hand, during the day or in the middle of the semester, there is nothing to optimize and so there should be no OptaPlanner running.
-In other words, these cases call for a batch solving.
+In other words, these cases call for batch solving.
 
 == School Timetabling
 
