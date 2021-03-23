@@ -3,7 +3,7 @@
 :imagesdir: 2021/03/16
 :awestruct-author: rsynek
 :awestruct-layout: blogPostBase
-:awestruct-tags: [amq, quarkus, messaging, integration]
+:awestruct-tags: [amq, quarkus, integration]
 :awestruct-share_image_filename: architecture.png
 
 Let's take a look at a new https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/amq-quarkus-school-timetabling[quickstart], which shows how to build a scalable, stateless service capable of solving numerous instances of the same planning problem.
