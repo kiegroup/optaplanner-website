@@ -20,6 +20,21 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
 in the first half of 2021.
 
+== New and noteworthy: Engine 8.5.0.Final
+
+=== Bigger and better Constraint Streams
+
+The link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API] received a major new functionality.
+You can now modify your streams using link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsMappingTuples[mapping functions].
+
+Besides that, the API has seen further performance improvements.
+In link:/blog/2021/03/04/OptimizingCovid19VaccinationScheduling.html[OptaPlanner vaccination scheduling], we have seen speedups of up to 50 %.
+
+=== Ready for OpenJDK 16
+
+We have made some tweaks under the hood
+so that your experience with the recently released link:https://openjdk.java.net/projects/jdk/16/[OpenJDK 16] continues to be smooth.
+
 == New and noteworthy: Engine 8.3.0.Final
 
 === Major performance improvements for Constraint Streams
