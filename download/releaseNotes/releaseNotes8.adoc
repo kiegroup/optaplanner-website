@@ -22,7 +22,7 @@ in the first half of 2021.
 
 == New and noteworthy: Engine 8.5.0.Final
 
-=== Bigger and better Constraint Streams
+=== Better and faster Constraint Streams
 
 The link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API] received a major new functionality.
 You can now modify your streams using link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsMappingTuples[mapping functions].
