@@ -142,10 +142,10 @@ The example below shows how to reply and acknowledge the original request messag
 [source,java]
 ----
 private void replySuccess(Message<String> solverRequestMessage) {
-...
-solverResponseEmitter.send(jsonResponse)
-    .thenAccept(x -> solverRequestMessage.ack()); // <1>
-...
+    ...
+    solverResponseEmitter.send(jsonResponse)
+        .thenAccept(x -> solverRequestMessage.ack()); // <1>
+    ...
 }
 ----
 <1> `thenAccept()` defines what happens when the AMQ broker acknowledges the response message sent via the `Emitter`.
