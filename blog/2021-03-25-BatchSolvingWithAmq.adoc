@@ -1,16 +1,16 @@
-= Batch solving an AMQ queue that contains planning problem data sets in a scalable way
+= Batch solving an ActiveMQ queue that contains planning problem data sets in a scalable way
 :page-interpolate: true
 :imagesdir: 2021/03/25
 :awestruct-author: rsynek
 :awestruct-layout: blogPostBase
-:awestruct-tags: [amq, quarkus, integration]
-:awestruct-share_image_filename: amqSolvingArchitecture.png
+:awestruct-tags: [activemq, quarkus, integration]
+:awestruct-share_image_filename: activemqSolvingArchitecture.png
 
 If I want to solve many data sets of a planning problem every night, what architecture can easily scale out horizontally without loss of data?
-In this article, we will take a look at how to use a transactional AMQ queue in front of a set of stateless https://www.optaplanner.org[OptaPlanner] pods.
+In this article, we will take a look at how to use a transactional ActiveMQ queue in front of a set of stateless https://www.optaplanner.org[OptaPlanner] pods.
 Client applications can submit data sets to solve and listen to the resulting solutions without worrying about which OptaPlanner pod does the actual solving.
 
-The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/amq-quarkus-school-timetabling[amq-quarkus-school-timetabling quickstart], along with the other https://github.com/kiegroup/optaplanner-quickstarts[optaplanner-quickstarts].
+The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/development/activemq-quarkus-school-timetabling[activemq-quarkus-school-timetabling quickstart], along with the other https://github.com/kiegroup/optaplanner-quickstarts[optaplanner-quickstarts].
 
 == Batch Solving
 
@@ -42,18 +42,18 @@ The `TimeTableConstraintProvider` defines the following constraints on how the l
 
 == Quickstart structure
 
-image::amqProjectStructure.png[Project structure]
+image::activemqProjectStructure.png[Project structure]
 
 The project consists of three modules:
 
-* *amq-quarkus-school-timetabling-common* defines the problem domain, and the `SolverRequest` and `SolverResponse` classes for messaging.
+* *activemq-quarkus-school-timetabling-common* defines the problem domain, and the `SolverRequest` and `SolverResponse` classes for messaging.
 The following two modules depend on this one.
-* *amq-quarkus-school-timetabling-client* is the Client Quarkus application that contains a UI, a REST endpoint and a demo data generator.
-* *amq-quarkus-school-timetabling-solver* is the Solver Server Quarkus application that solves school timetabling problem instances coming via a message queue `solver_request`.
+* *activemq-quarkus-school-timetabling-client* is the Client Quarkus application that contains a UI, a REST endpoint and a demo data generator.
+* *activemq-quarkus-school-timetabling-solver* is the Solver Server Quarkus application that solves school timetabling problem instances coming via a message queue `solver_request`.
 
 == Messaging
 
-image::amqSolvingArchitecture.png[Architecture]
+image::activemqSolvingArchitecture.png[Architecture]
 
 The Client application serializes an unsolved `TimeTable` wrapped by the `SolverRequest` class into a JSON and sends it to the `solver_request` queue.
 The Solver Server receives the request from this queue, deserializes it and solves the `TimeTable` via OptaPlanner.
@@ -65,15 +65,15 @@ After the solving finishes, the Solver Server wraps the `TimeTable` by the `Solv
 . Any error that occurs in the Solver Server must be propagated back to the Client.
 . Invalid solver request message is sent to a dead letter queue.
 
-=== AMQ is a natural fit
+=== ActiveMQ is a natural fit
 
-AMQ Artemis comes as a natural fit for this use case for multiple reasons.
+ActiveMQ comes as a natural fit for this use case for multiple reasons.
 First, it supports huge messages without extra configuration.
 Second, solving may often take several hours before the Solver Server can send a response with a solution and finally approve the request message.
-Last but not least, the AMQ guarantees to deliver each message exactly once, provided the messages are persisted at the broker.
+Last but not least, the ActiveMQ guarantees to deliver each message exactly once, provided the messages are persisted at the broker.
 These properties let the Solver Server avoid keeping any state and just transform the input planning problems into solutions.
 
-For different use cases, for example, real-time planning, other technologies like Kafka may be a better fit, but for this use case, AMQ wins.
+For different use cases, for example, real-time planning, other technologies like Kafka may be a better fit, but for this use case, the ActiveMQ wins.
 
 == When messaging meets OptaPlanner
 
@@ -148,32 +148,32 @@ private void replySuccess(Message<String> solverRequestMessage) {
     ...
 }
 ----
-<1> `thenAccept()` defines what happens when the AMQ broker acknowledges the response message sent via the `Emitter`.
+<1> `thenAccept()` defines what happens when the ActiveMQ broker acknowledges the response message sent via the `Emitter`.
 In this case, the request message is acknowledged.
 This way, the request message is never lost even if the Solver Server dies.
 
 To understand how the channels correspond to messaging queues, see the `application.properties` file located in `src/main/resources`:
 [source]
 ----
-# Configure the AMQ source
+# Configure the ActiveMQ source
 mp.messaging.incoming.solver_request.connector=smallrye-amqp # <1>
 mp.messaging.incoming.solver_request.durable=true # <2>
 mp.messaging.incoming.solver_request.failure-strategy=reject # <3>
 
-# Configure the AMQ sink
+# Configure the ActiveMQ sink
 mp.messaging.outgoing.solver_response.connector=smallrye-amqp
 mp.messaging.outgoing.solver_response.durable=true
 ----
 <1> Use the `smallrye-amqp` connector for the `solver_request` channel.
-<2> To have the AMQ broker persist messages, make the queue durable.
+<2> To have the ActiveMQ broker persist messages, make the queue durable.
 <3> If a message is rejected, the broker redirects it to a dead letter queue and proceeds with the next message.
 
-Every property contains the channel name. By default, it matches the name of the queue at the AMQ broker.
+Every property contains the channel name. By default, it matches the name of the queue at the ActiveMQ broker.
 
 == Running the quickstart
 *Prerequisites:* install https://docs.docker.com/get-docker/[docker] and https://docs.docker.com/compose/install[docker-compose].
 
-. git clone https://github.com/kiegroup/optaplanner-quickstarts
-. cd optaplanner-quickstarts/amq-quarkus-school-timetabling
+. git clone https://github.com/kiegroup/optaplanner-quickstarts && cd optaplanner-quickstarts
+. git checkout development && cd activemq-quarkus-school-timetabling
 . ./run.sh
 . Open http://localhost:8080 in a browser and click the Solve button.
