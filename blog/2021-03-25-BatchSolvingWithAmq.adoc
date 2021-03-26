@@ -10,7 +10,7 @@ If I want to solve many data sets of a planning problem every night, what archit
 In this article, we will take a look at how to use a transactional ActiveMQ queue in front of a set of stateless https://www.optaplanner.org[OptaPlanner] pods.
 Client applications can submit data sets to solve and listen to the resulting solutions without worrying about which OptaPlanner pod does the actual solving.
 
-The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/activemq-quarkus-school-timetabling[activemq-quarkus-school-timetabling quickstart], along with the other https://github.com/kiegroup/optaplanner-quickstarts[optaplanner-quickstarts].
+The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/development/activemq-quarkus-school-timetabling[activemq-quarkus-school-timetabling quickstart], along with the other https://github.com/kiegroup/optaplanner-quickstarts[optaplanner-quickstarts].
 
 == Batch Solving
 
@@ -173,7 +173,7 @@ Every property contains the channel name. By default, it matches the name of the
 == Running the quickstart
 *Prerequisites:* install https://docs.docker.com/get-docker/[docker] and https://docs.docker.com/compose/install[docker-compose].
 
-. git clone https://github.com/kiegroup/optaplanner-quickstarts
-. cd optaplanner-quickstarts/activemq-quarkus-school-timetabling
+. git clone https://github.com/kiegroup/optaplanner-quickstarts && cd optaplanner-quickstarts
+. git checkout development && cd activemq-quarkus-school-timetabling
 . ./run.sh
 . Open http://localhost:8080 in a browser and click the Solve button.
