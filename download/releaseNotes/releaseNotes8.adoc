@@ -32,6 +32,18 @@ You can now modify your streams using link:https://docs.optaplanner.org/latestFi
 We have made some tweaks under the hood
 so that your experience with the recently released link:https://openjdk.java.net/projects/jdk/16/[OpenJDK 16] continues to be smooth.
 
+=== Inject and Autowire ConstraintVerifier in Quarkus and Spring Boot
+
+You can now link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsTestingQuarkus[inject the Constraint Verifier in Quarkus] and
+link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsTestingSpringBoot[autowire the Constraint Verifier in Spring Boot], allowing
+you to link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsTesting[test your constraint streams] more easily.
+
+=== Faster Domain Accessors and Cloning with Gizmo
+
+We have added link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#domainAccess[Gizmo generated domain accessors and solution
+cloners], which offer better performance than the reflection based
+domain accessors and solution cloners.
+
 == New and noteworthy: Engine 8.3.0.Final
 
 === Major performance improvements for Constraint Streams
