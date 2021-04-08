@@ -1580,14 +1580,21 @@ After in `*StatefulVariableListener.java*`:
 
 == From 8.2.0.Final to 8.3.0.Final
 
-[.upgrade-recipe-minor.upgrade-recipe-constraint-match-equals]
+[.upgrade-recipe-minor]
 === `ConstraintMatch.compareTo()` inconsistent with `equals()`
 
 The `equals()` override in `ConstraintMatch` has been removed.
-As a result, no two different instances of the class will be considered equal.
+As a result, two different `ConstraintMatch` instances are never considered equal.
 This is in contrast to the `compareTo()` method, which continues to consider two instances equal
 if all their field values are equal.
 
-The `equals()` override in `ConstraintMatch` has been removed in order to not fail on constraints with non-distinct
-matches.
+The `equals()` override in `ConstraintMatch` has been removed
+in order to not fail on constraints with non-distinct matches.
 
+== From 8.5.0.Final to 8.6.0.Final
+
+[.upgrade-recipe-minor]
+=== `@PlanningId` can no longer return null
+
+If a field (or getter) annotated with a `@PlanningId` annotation returns a `null` value,
+the `Solver` now fails fast immediately, instead of failing fast when the second instance with `null` value appears.
