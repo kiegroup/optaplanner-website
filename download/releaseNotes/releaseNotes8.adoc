@@ -38,6 +38,16 @@ You can now link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_
 link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsTestingSpringBoot[autowire the Constraint Verifier in Spring Boot], allowing
 you to link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsTesting[test your constraint streams] more easily.
 
+=== OptaWebs on Quarkus
+
+OptaWeb Vehicle Routing and OptaWeb Employee Rostering have been migrated from Spring Boot to Quarkus.
+
+Other noteworthy changes done during the migration to Quarkus:
+
+* OptaWeb Vehicle Routing back end has a new RESTful API.
+  Client-server communication, that was previously done using WebSockets, now uses a combination of REST calls and Server-Sent Events.
+* OptaWeb Employee Rostering now uses Constraint Streams instead of DRL for score calculation.
+
 === Faster Domain Accessors and Cloning with Gizmo
 
 We have added link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#domainAccess[Gizmo generated domain accessors and solution
