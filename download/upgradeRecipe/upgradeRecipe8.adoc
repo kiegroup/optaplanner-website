@@ -80,7 +80,7 @@ After in `*.java`:
 [source,java]
 ----
 ScoreManager<CloudBalance> scoreManager = ScoreManager.create(solverFactory);
-Score score = guiScoreDirector.updateScore(solution);
+Score score = scoreManager.updateScore(solution);
 ----
 
 Methods that allowed users to retrieve an instance of `ScoreDirector` and `ScoreDirectorFactory` have been removed from public API without replacement.
