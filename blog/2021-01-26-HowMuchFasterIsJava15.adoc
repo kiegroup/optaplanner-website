@@ -110,3 +110,5 @@ image::G1GCandParallelGCUsingJDK15.png[]
 == Conclusion
 
 In conclusion, the performance gained in the JDK15 version is well worth considering regarding OptaPlanner. In addition, the preferred garbage collector to use is still ParallelGC, the performance of which is even better in comparison with G1GC than it was in our https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[previous JDK performance comparison].
+
+Updated with minor corrections on April 15 2021.
