@@ -425,6 +425,9 @@
           <xs:element maxOccurs="unbounded" minOccurs="0" name="scoreDrlFile" type="xs:string"/>
                               
           
+          <xs:element minOccurs="0" name="droolsAlphaNetworkCompilationEnabled" type="xs:boolean"/>
+                              
+          
           <xs:element minOccurs="0" name="kieBaseConfigurationProperties" type="tns:jaxbAdaptedMap"/>
                               
           
