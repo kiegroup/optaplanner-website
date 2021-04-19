@@ -688,3 +688,12 @@
       url: https://www.meetup.com/SouJava/events/275951378/
       presenters: Karina Varela, Otávio Santana
 
+- eventId: 20210423-viaboxx
+  eventOrganization: "Red Hat Germany"
+  location: Germany
+  date: 2021-04-23
+  talks:
+    - title: "Optimierung des Field Service Management mit Hilfe von Constraint Solving Algorithmen"
+      url: https://events.redhat.com/profile/form/index.cfm?PKformID=0x362692d869
+      presenters: Stephan Kraft, Simon Tiffert
+
