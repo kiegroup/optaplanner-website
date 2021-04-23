@@ -99,10 +99,14 @@ change_frequency: monthly
             %li(style="padding: 12px 5px")<
               %a.github-button(href="https://github.com/kiegroup/optaplanner" data-show-count="true" aria-label="Star OptaPlanner on GitHub")< Star
             %li(style="padding: 12px 5px")<
-              %a.twitter-follow-button(href="https://twitter.com/OptaPlanner" data-show-count="false" data-show-screen-name="false")< @OptaPlanner
+              %a(style="padding: 0" href="https://twitter.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Twitter")<
+                %img{:src => relative("/headerFooter/twitterLogo.png"), :alt => "T"}
             %li(style="padding: 12px 5px")<
               %a(style="padding: 0" href="https://www.facebook.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Facebook")<
                 %img{:src => relative("/headerFooter/facebookLogo.png"), :alt => "Fb"}
+            %li(style="padding: 12px 5px")<
+              %a(style="padding: 0" href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" target="_blank" title="OptaPlanner YouTube channel")<
+                %img{:src => relative("/headerFooter/youtubeLogo.png"), :style => "height: 16px", :alt => "YT"}
 
     .body-without-header-footer
       .forkMeOnGithub
@@ -180,8 +184,6 @@ change_frequency: monthly
       hljs.initHighlightingOnLoad();
     -# GitHub star script
     %script(async defer src="https://buttons.github.io/buttons.js")
-    -# Twitter follow script
-    %script(async src="https://platform.twitter.com/widgets.js" charset="utf-8")
     -# Adobe Analytics for Red Hat - DPAL (DTM Property Auto-Loader) - part 2/2
     :plain
       <script type="text/javascript">
