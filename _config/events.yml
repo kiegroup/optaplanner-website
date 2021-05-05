@@ -697,3 +697,11 @@
       url: https://events.redhat.com/profile/form/index.cfm?PKformID=0x362692d869
       presenters: Stephan Kraft, Simon Tiffert
 
+- eventId: 20210712-euro2021
+  eventOrganization: "European Conference on Operational Research"
+  eventUrl: https://euro2021athens.com
+  location: Athens, Greece
+  date: 2021-07-12
+  talks:
+    - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
+      presenters: Geoffrey De Smet
