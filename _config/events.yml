@@ -697,6 +697,17 @@
       url: https://events.redhat.com/profile/form/index.cfm?PKformID=0x362692d869
       presenters: Stephan Kraft, Simon Tiffert
 
+- eventId: 20210517-kieweek
+  eventOrganization: "KIE week"
+  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x381217abcd
+  location: Worldwide
+  date: 2021-05-17
+  talks:
+    - title: "Optimize vaccine appointments to save the world with OptaPlanner AI"
+      presenters: Geoffrey De Smet
+    - title: "Success Stories in Process & Business Automation"
+      presenters: Jeremy Davis
+
 - eventId: 20210712-euro2021
   eventOrganization: "European Conference on Operational Research"
   eventUrl: https://euro2021athens.com
