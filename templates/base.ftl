@@ -148,7 +148,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    © Copyright 2006-2021, Red Hat, Inc. or third-party contributors
+                    © Copyright 2006-${published_date?string("yyyy")}, Red Hat, Inc. or third-party contributors
                     -
                     <a href="https://www.redhat.com/en/about/privacy-policy" target="_blank">Privacy statement</a>
                     -

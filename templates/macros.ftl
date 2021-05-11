@@ -91,6 +91,27 @@
 </#macro>
 
 <#macro latestBlogPosts>
+    <div class="panel panel-default">
+        <div class="panel-heading">Latest blog posts</div>
+        <div class="panel-body">
+            <ul class="list-unstyled">
+                <#list published_posts?reverse[0..6] as blog>
+                    <li style="margin-bottom: 10px;">
+                        <div class="title">
+                            <a href="${content.rootpath}${blog.uri}">
+                                ${blog.title}
+                            </a>
+                        </div>
+                        <div class="small">${blog.date?string("EEE d MMMM yyyy")}</div>
+                        <@userBadgeInline userId=blog.author/>
+                    </li>
+                </#list>
+                <div class="small pull-right">
+                    <a href="${content.rootpath}blog/archive.html">Blog archive</a>
+                </div>
+            </ul>
+        </div>
+    </div>
 </#macro>
 
 <#macro latestVideos>
@@ -109,7 +130,7 @@
                         </div>
                         <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
                         <#if video.author??>
-                            TODO
+                            <@userBadgeInline userId=video.author/>
                         </#if>
                     </li>
                 </#list>
@@ -119,4 +140,8 @@
             </ul>
         </div>
     </div>
+</#macro>
+
+<#macro userBadgeInline userId>
+    TODO ${userId}
 </#macro>

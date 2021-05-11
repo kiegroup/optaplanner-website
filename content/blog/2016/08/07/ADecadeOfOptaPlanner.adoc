@@ -1,0 +1,151 @@
+= A decade of OptaPlanner
+:page-interpolate: true
+:jbake-author: ge0ffrey
+:jbake-type: post
+:jbake-tags: [community]
+
+10 years ago, I started a little project during my vacation.
+Nothing serious. _Just a hobby, it wouldn't be big and professional._
+Another contraption in my long list of side projects in an attempt to build something cool.
+Today, that same project is now the leading Open Source constraint satisfaction solver in Java: https://www.optaplanner.org/[OptaPlanner].
+It is used across the world to create better logistic schedules, such as https://www.optaplanner.org/learn/useCases/employeeRostering.html[employee rosters],
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[vehicle routes] and https://www.optaplanner.org/learn/useCases/cloudOptimization.html[cloud distributions].
+
+How did my project become successful? What did I do right? What did I do wrong?
+
+
+== Proving a point
+
+After graduating in 2003, I worked 2 years as a Java consultant and then took a job as an academic researcher on multi-agent systems.
+Those were going to change the world. They didn't.
+One of my colleagues was working on optimizing a nurse rostering problem and presented his approach to our research group.
+His solution applied https://en.wikipedia.org/wiki/Tabu_search[Tabu Search] (an optimization algorithm invented in the '80s).
+It worked well.
+However, he had spent a lot of time and energy to manually implement the incremental delta calculation for each constraint in the fitness function.
+Writing that code is difficult, time consuming and error prone, but absolutely required to get good results when scaling out.
+
+The year before, I had seen Mark Proctor's presentation at JavaPolis (now called DevoxxBE),
+explaining the https://www.drools.org/[Drools] rule engine and the RETE algorithm.
+A stateful rule engine tracks changes so it only has to check the rules that might be affected by those changes.
+
+Light bulb.
+_What if we use Tabu Search but implement the fitness function in a rule engine?_
+I proposed it to the group. They laughed at me.
+Of course, at the time I had zero experience with optimization algorithms.
+
+Talk is cheap, so I implemented a proof of concept during my 2006 summer holiday
+to schedule a simplistic lesson scheduling problem.
+I called it Taseree. That's an abbreviation for Tabu Search Rule Engine Evaluation.
+Later that year, I added 2 more examples (N Queens and TTP) and open sourced it on https://sourceforge.net/projects/taseree/[SourceForge].
+
+Nobody ever used Taseree, let alone deployed it in a production environment.
+Turns out *if you don't release it, nobody uses it.*
+
+
+== Research competitions
+
+This is probably where the story would have ended - just like my dozens of other hobby projects of that period.
+But I heard about a few academic research competitions: given an optimization problem, find the best solution for each dataset in 5 minutes.
+So I entered the _International Timetabling Competition 2007_ to solve an exam rostering problem.
+I finished http://www.cs.qub.ac.uk/itc2007/winner/finalorder.htm[4th]. Out of maybe two hundred contenders.
+
+So I must have been doing something right. But I did a lot of things wrong, too.
+The winner had also open sourced his implementation and when we started discussing and comparing our implementation,
+we learned a lot from each other.
+It turns out there are many ways to skin a cat and there are far more ways to implement Tabu Search.
+So I started implementing alternative algorithms. That made me (and later Lukáš) write the https://www.youtube.com/watch?v=JpcPEieU3Cg[benchmarker] toolkit, to compare those algorithms statistically.
+All just to rank better in the next competition. It takes an hour to understand these algorithms, but 10 000 hours to master them.
+
+*Motivation is key.* Find a way to motivate yourself to build the next feature, especially in the absence of a paycheck.
+And avoid creating technical debt: nothing is more demotivating in a hobby project.
+
+Another advantage was that each competition results in a new example.
+So I had to _eat my own dog food_.
+I ended up doing a lot of framework changes to make it easier for me to implement those use cases.
+This is an important, old rule in project management: _Those that create the pain, should feel the pain._
+Writing examples against a predefined set of requirements, is a great way to feel the pain.
+
+
+== No man is an island
+
+Around the same time I reached out to the Drools team,
+simply by *https://www.optaplanner.org/community/getHelp.html[joining their IRC channel]*.
+I started talking. Networking really. I learned what I needed to learn.
+By September 2007, Mark invited me to make Taseree a subproject of Drools and we called it Drools Solver.
+So I cleaned up the code, removed the spring-core dependency (which I had dragged in for no good reason except to have an XML configuration)
+and wrote the first chapter of the reference manual. It got released as part of Drools 5.0.
+
+By December 2007, I gave my first presentation about Drools Solver's exam rostering example
+at a late evening Bird of a Feather session at JavaPolis, for about 20 developers.
+I had prepared my text word by word in advance and read it out aloud.
+Not my best moment. But they did seemed to like my demo though.
+I am not a natural born presenter,
+but I soon realized that https://www.optaplanner.org/learn/slides.html[great slides] and https://www.optaplanner.org/learn/video.html[polished demos] can make up for that.
+These days I can step into a room - unprepared - and talk for 5 days without showing the same slide or demo twice.
+Presenting skills can be http://presentationpatterns.com/[acquired].
+
+In 2008, I heard about the first production use of Drools Solver.
+A consultant had seen my presentation at JavaPolis and he used it for an employee rostering problem.
+He liked it. _So I expected him to tell the world about it._ He didn't. He had already moved on to his next project.
+*To get people to use my project, they need to know it first*.
+I needed to toot my own horn.
+So I wrote a few articles about Drools Solver, published them to a few Java news sites, recorded a video even and even got a https://twitter.com/GeoffreyDeSmet[twitter account].
+
+
+== Perseverance
+
+Up to 2008, I had enough spare time in my personal life to dedicate several hours per week on Drools Solver.
+But then I bought an old house with my girlfriend (who's now my wonderful wife) and I spent most of my free time renovating it.
+This naturally stalled development, often for months at a time.
+
+Meanwhile, I learned more about other, similar projects. And they seemed to have more people working on them.
+And they had sales people. It was a race and my project was falling behind.
+I needed to find a way to get paid to work on it. A way to _make my hobby my job_.
+No matter how good the code is technically, *without a proper business model behind it, an Open Source project is unsustainable.*
+
+During this tough period, I regularly considered giving up my Open Source project a few times.
+Somehow, I couldn't. _I just soldiered on._ And in the end, it all worked out well.
+
+Ironically, this was also the period when the project became successful:
+downloads took off, the forum became vibrant, I got to talk at more conferences and the first https://github.com/kiegroup/optaplanner/pulls?q=is%3Apr+is%3Aclosed[Pull Request] arrived.
+Due to its success, more bugs surfaced - so I heavily invested in unit tests and integration tests.
+By the end of 2009 I also renamed the project to Drools Planner.
+
+Luckily Red Hat - sponsor of the Drools project - had noticed my steady stream of contributions.
+They originally hired me to work on Drools itself, but as of January 2013 they assigned me full time on Planner.
+Red Hat pays the wage of the core engineers of many Open Source projects
+and makes a business from selling support subscriptions and consultancy for those projects.
+
+
+== Productization: going enterprise
+
+By the end of 2012, my little project had already grown quite big: it had a high test coverage with unit, integration and stress tests,
+a complete reference manual, demonstrable examples, javadocs and a growing community.
+But there were also many services missing before a Fortune 500 company would consider using it in mission critical software.
+*Technical excellence alone doesn't suffice.*
+
+Red Hat doesn't just employ the core engineers of an open source project, such as Drools or OptaPlanner.
+It also builds out a dedicated QA team, support team, consultancy team, security team and productized build/documentation team.
+This enables customers to deploy our Open Source software in large scale production cases confidently.
+In 2013, we started this process, called productization.
+
+I was no longer alone on the project. Quality Assurance, Product Management and our productization build/document team got involved to strengthen it.
+Our QA engineers double checked the code, increased test coverage, added performance regression tests,
+certified it on a lot of environments (including Windows, IBM JDK, OSGi and other notorious technologies) and guess what - they found bugs (and still do on occasion).
+Meanwhile our Product Manager helped organizationally.
+We talked to customers and helped complex use cases succeed: all very satisfying.
+And I got to travel to interesting places around the globe, such as San Francisco, Boston, Buenos Aires, London, Paris and Tokyo.
+
+Meanwhile, _our_ project also graduated from the Drools project to become a top-level project.
+So we had to https://www.optaplanner.org/community/droolsPlannerRenamed.html[rename] the project again, one last time (I promise), to OptaPlanner.
+Changing a project's name is a delicate operation: it always reduces the mind share. Try to avoid it.
+We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
+
+In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of https://www.optaplanner.org/product/services.html[the BRMS subscription].
+And by March 2015, we upgraded it to _full enterprise support_.
+Sales took off. So earlier this year, we could hire https://www.optaplanner.org/community/team.html[a core engineer] to develop OptaPlanner Workbench.
+Meanwhile, all our code is still Open Source, under https://www.optaplanner.org/code/license.html[the Apache License]
+and thousands of projects use it. A win-win situation.
+
+The future is bright.
+

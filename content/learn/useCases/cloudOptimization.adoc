@@ -1,9 +1,8 @@
 = Cloud Optimization
 :jbake-type: useCaseBase
-:awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize cloud allocations.
-:awestruct-layout: useCaseBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: cloud optimization
+:jbake-description: OptaPlanner is an Open Source Java™ engine to optimize cloud allocations.
+:jbake-priority: 1.0
+:jbake-related_tag: cloud optimization
 :showtitle:
 
 image:cloudOptimizationValueProposition.png[Cloud optimization value proposition]
