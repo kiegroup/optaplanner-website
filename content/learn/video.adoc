@@ -1,7 +1,7 @@
 = Videos
-:awestruct-description: Watch these videos for example demonstrations, feature explanations and more.
-:awestruct-layout: normalBase
-:awestruct-priority: 0.8
+:jbake-type: normalBase
+:jbake-description: Watch these videos for example demonstrations, feature explanations and more.
+:jbake-priority: 0.8
 :showtitle:
 
 == YouTube channel

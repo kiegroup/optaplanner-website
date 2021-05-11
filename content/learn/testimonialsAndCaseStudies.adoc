@@ -1,7 +1,7 @@
 = Testimonials and Case Studies
-:awestruct-description: Usage across the world, such as case studies, articles, related open source projects and testimonials
-:awestruct-layout: normalBase
-:awestruct-priority: 0.4
+:jbake-type: normalBase
+:jbake-description: Usage across the world, such as case studies, articles, related open source projects and testimonials
+:jbake-priority: 0.4
 :showtitle:
 
 OptaPlanner is used all over the world to optimize all kinds of planning problems.

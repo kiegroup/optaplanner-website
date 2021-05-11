@@ -5,9 +5,7 @@
 /.*
 !.gitignore
 !.gitattributes
-!.awestruct_ignore
 !.htaccess
-!.travis.yml
 /nbproject
 /*.ipr
 /*.iws
@@ -16,7 +14,11 @@
 # Repository wide ignore mac DS_Store files
 .DS_Store
 
+# JBake files
+/output
+
 # Awestruct files
+!.awestruct_ignore
 /_site
 /_tmp
 /.awestruct

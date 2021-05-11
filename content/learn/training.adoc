@@ -1,7 +1,7 @@
 = Training
-:awestruct-description: Complete these labs and workshops to improve your OptaPlanner experience.
-:awestruct-layout: normalBase
-:awestruct-priority: 0.4
+:jbake-type: normalBase
+:jbake-description: Complete these labs and workshops to improve your OptaPlanner experience.
+:jbake-priority: 0.4
 :showtitle:
 
 == Free online training (recommended)
