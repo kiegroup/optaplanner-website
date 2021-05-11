@@ -1,17 +1,17 @@
-= Task assignment optimization
-:awestruct-description: Use OptaPlanner (java™, open source) to optimize assigning tasks to employees with different skills and affinities.
+= Cloud Optimization
+:jbake-type: useCaseBase
+:awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize cloud allocations.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0
-:awestruct-related_tag: task assignment
+:awestruct-related_tag: cloud optimization
 :showtitle:
 
-image:taskAssigningValueProposition.png[Task assigning value proposition]
+image:cloudOptimizationValueProposition.png[Cloud optimization value proposition]
 
 == What is OptaPlanner?
 
 OptaPlanner is the leading Open Source Java™ AI constraint solver
-to optimize assigning tasks to employees,
-adhering to skill, affinity and other constraints.
+to optimize process/container to machine/node assignments in the cloud.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
 It enables everyday Java™ programmers to solve optimization problems efficiently.
@@ -27,4 +27,4 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 
 == Videos
 
-video::ksXjQ851RAU[youtube]
+video::xhCtuM-Hiic[youtube]

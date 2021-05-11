@@ -17,8 +17,6 @@ A fraction of our users have shared their story publicly:
 
 * https://healthcare.axians.be/solutions/mystaff/oncall/[Schedule shifts of hospital doctors]
 
-* link:caseStudies/OptaPlannerCaseStudy_RJV_2013-06-14.pdf[Task assignment] for RJV (Belgium)
-
 == Articles (English)
 
 * http://www.lshift.net/blog/2015/07/14/automatic-scheduling-of-people-and-rooms/[Automatic scheduling of people and rooms]

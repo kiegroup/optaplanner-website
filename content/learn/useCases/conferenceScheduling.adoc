@@ -1,4 +1,5 @@
 = Conference scheduling
+:jbake-type: useCaseBase
 :awestruct-description: Use OptaPlanner (java™, open source) to optimize assigning conference talks to timeslots and rooms.
 :awestruct-layout: useCaseBase
 :awestruct-priority: 1.0

@@ -1,6 +1,6 @@
 = Benchmarks
-:awestruct-description: Reproduce our open benchmarks on your machine.
-:awestruct-layout: normalBase
+:jbake-type: normalBase
+:jbake-description: Reproduce our open benchmarks on your machine.
 :showtitle:
 
 == Why reproduce benchmarks?

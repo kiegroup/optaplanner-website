@@ -1,8 +1,8 @@
 = Employee rostering
-:awestruct-description: OptaPlanner is an Open Source Java™ engine to optimize employee timetabling and shift rostering.
-:awestruct-layout: useCaseBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: employee rostering
+:jbake-type: useCaseBase
+:jbake-description: OptaPlanner is an Open Source Java™ engine to optimize employee timetabling and shift rostering.
+:jbake-priority: 1.0
+:jbake-related_tag: employee rostering
 :showtitle:
 
 image:employeeRosteringValueProposition.png[Employee rostering value proposition]

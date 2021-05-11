@@ -1,7 +1,7 @@
 = Source code
-:awestruct-description: Build OptaPlanner or the website (optaplanner.org) from source.
-:awestruct-layout: normalBase
-:awestruct-priority: 0.8
+:jbake-type: normalBase
+:jbake-description: Build OptaPlanner or the website (optaplanner.org) from source.
+:jbake-priority: 0.8
 :linkattrs:
 :showtitle:
 

@@ -68,14 +68,14 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Learn <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="${content.rootpath}documentation.html">Documentation</a></li>
-                            <li><a href="${content.rootpath}video.html">Videos</a></li>
-                            <li><a href="${content.rootpath}slides.html">Slides</a></li>
-                            <li><a href="${content.rootpath}training.html">Training</a></li>
+                            <li><a href="${content.rootpath}learn/documentation.html">Documentation</a></li>
+                            <li><a href="${content.rootpath}learn/video.html">Videos</a></li>
+                            <li><a href="${content.rootpath}learn/slides.html">Slides</a></li>
+                            <li><a href="${content.rootpath}learn/training.html">Training</a></li>
                             <li class="divider"></li>
-                            <li><a href="${content.rootpath}useCases/index.html">Use cases</a></li>
+                            <li><a href="${content.rootpath}learn/useCases/index.html">Use cases</a></li>
                             <li><a href="${content.rootpath}compatibility/index.html">Compatibility</a></li>
-                            <li><a href="${content.rootpath}testimonialsAndCaseStudies.html">Testimonials and case studies</a></li>
+                            <li><a href="${content.rootpath}learn/testimonialsAndCaseStudies.html">Testimonials and case studies</a></li>
                         </ul>
                     </li>
                     <li><a href="${content.rootpath}community/getHelp.html">Get help</a></li>

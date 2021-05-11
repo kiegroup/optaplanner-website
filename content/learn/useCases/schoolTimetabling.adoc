@@ -1,20 +1,20 @@
-= Maintenance scheduling
-:awestruct-description: Use OptaPlanner (java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLA's and other constraints.
-:awestruct-layout: useCaseBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: maintenance scheduling
+= School timetabling
+:jbake-type: useCaseBase
+:jbake-description: Use OptaPlanner (java™, open source) to optimize school timetabling, adhering to teacher availability, room capacity and other constraints.
+:jbake-priority: 1.0
+:jbake-related_tag: school timetabling
 :showtitle:
 
-Machinery and other types of equipment in use (such as elevators, escalators, airplanes, trains, ...)
-tend to deteriorate over time, requiring regular maintenance.
-Depending on how often each machine requires care,
-_maintenance scheduling_ decides when and which skilled engineer visits each machine.
-Optimizing this planning problem with a constraint solver AI saves costs
-by reducing both too early and too late maintenance,
-while adhering to other constraints such as skill requirements, employee availability
-and the geographic location of machines.
+Universities and schools aim to provide high quality lesson schedules
+to their teachers and students.
+Depending on room capacity and availability,
+_school timetabling_ decides when and where a lecture takes place.
+Optimizing this planning problem with a constraint solver AI improves
+teacher and student satisfaction by reducing commute and gap hours
+while adhering to other constraints such as conflicting lessons, teacher availability, room availability and room capacity.
 
-// TODO Maintenance scheduling value proposition image
+// TODO School timetabling value proposition image
+image:schoolTimetablingInputOutput.png[School timetabling input output]
 
 == What is OptaPlanner?
 
@@ -36,10 +36,14 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 
 == Quick start (source code)
 
-Run the https://github.com/kiegroup/optaplanner-quickstarts#maintenance-scheduling[maintenance scheduling quickstart].
+Run the https://github.com/kiegroup/optaplanner-quickstarts#school-timetabling[school timetabling quickstart].
 
 == Videos
 
-video::gIaHtATz6n8[youtube]
+video::AqTuRiWGLZQ[youtube]
 
-video::Y4wyPU_B2gU[youtube]
+video::4meWIhPRVn8[youtube]
+
+video::u_bl6E7aiNY[youtube]
+
+video::7IuOA9n6kh0[youtube]
