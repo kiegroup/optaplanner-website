@@ -1,4 +1,5 @@
 = Workflow processes with AI scheduling
+2020-05-05
 :page-interpolate: true
 :jbake-type: post
 :jbake-author: Christopher-Chianelli

@@ -1,4 +1,5 @@
 = Mechanic scheduling (part 1) - Can OptaPlanner keep up with a keynote audience of thousands?
+2019-05-09
 :page-interpolate: true
 :jbake-author: ge0ffrey
 :jbake-type: post

@@ -16,11 +16,3 @@
 
 # JBake files
 /output
-
-# Awestruct files
-!.awestruct_ignore
-/_site
-/_tmp
-/.awestruct
-/.sass-cache
-/Gemfile.lock

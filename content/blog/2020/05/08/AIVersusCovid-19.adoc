@@ -1,4 +1,5 @@
 = AI versus Covid-19&#58; How Java helps nurses and doctors in this fight
+2020-05-08
 :page-interpolate: true
 :jbake-type: post
 :jbake-author: Christopher-Chianelli

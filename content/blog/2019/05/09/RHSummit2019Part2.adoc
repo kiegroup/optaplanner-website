@@ -1,4 +1,5 @@
 = Mechanic scheduling (part 2) - Architecture and integration
+2019-05-09
 :page-interpolate: true
 :jbake-author: MusaTalluzi
 :jbake-type: post

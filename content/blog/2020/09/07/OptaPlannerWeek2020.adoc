@@ -1,4 +1,5 @@
 = OptaPlanner Week 2020 recordings
+2020-07-09
 :page-interpolate: true
 :jbake-type: post
 :jbake-author: ge0ffrey

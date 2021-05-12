@@ -143,5 +143,71 @@
 </#macro>
 
 <#macro userBadgeInline userId>
-    TODO ${userId}
+    <#assign users = data.get('users.yml').data>
+    <#assign user = users?filter(u -> u.userId == userId)?first >
+    <div class="userBadge">
+        <span>
+            <img class="img-rounded pull-left" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=20&d=mm"/>
+            &nbsp;${user.fullName}
+        </span>
+    </div>
+</#macro>
+
+<#macro userBadge userId long>
+    <#assign users = data.get('users.yml').data>
+    <#assign user = users?filter(u -> u.userId == userId)?first >
+    <div class="userBadge">
+        <div class="well well-sm" style="padding: 5px; width: ${long?then("600px", "320px")};">
+            <div class="media">
+                <img class="img-rounded pull-left" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=50&d=mm" style="width: 50px;" alt="Avatar ${user.fullName}"/>
+                <div class="media-body">
+                    <h4 class="media-heading">${user.fullName}</h4>
+                    <hr style="margin:2px auto; border-color: #ddd;"/>
+                    <span class="pull-right">
+                        <#if user.twitterUsername??>
+                            <a href="https://twitter.com/${user.twitterUsername}"><img src="${content.rootpath}headerFooter/twitterLogo.png" alt="Twitter"/></a>
+                        </#if>
+                        <#if user.facebookUsername??>
+                            <a href="https://www.facebook.com/${user.facebookUsername}"><img src="${content.rootpath}headerFooter/facebookLogo.png" alt="Facebook"/></a>
+                        </#if>
+                        <#if user.linkedInId??>
+                            <a href="https://www.linkedin.com/in/${user.linkedInId}"><img src="${content.rootpath}headerFooter/linkedInLogo.png" alt="LinkedIn"/></a>
+                        </#if>
+                        <#if user.githubUsername??>
+                            <a href="https://github.com/${user.githubUsername}"><img src="${content.rootpath}headerFooter/gitHubLogo.png" alt="GitHub"/></a>
+                        </#if>
+                    </span>
+                    <p class="small">${user.role}</p>
+                    <#if long>
+                        <#if user.email??>
+                            <p>
+                                <span class="emailSupportPopover">
+                                    <strong>Email:</strong>
+                                    ${user.email}
+                                </span>
+                            </p>
+                        </#if>
+                        <#if user.employedBy??>
+                            <p>
+                                <strong>Employed by:</strong>
+                                ${user.employedBy}
+                            </p>
+                        </#if>
+                        <#if user.contributionsDescription??>
+                            <p>
+                                <strong>Contributions:</strong>
+                                ${user.contributionsDescription}
+                            </p>
+                        </#if>
+                        <#if user.biography??>
+                            <p>
+                                <strong>Bio:</strong>
+                                ${user.biography}
+                            </p>
+                        </#if>
+                    </#if>
+                </div>
+            </div>
+        </div>
+    </div>
 </#macro>

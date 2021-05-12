@@ -1,4 +1,5 @@
 = Java Reflection, but much faster
+2018-01-09
 :page-interpolate: true
 :jbake-author: ge0ffrey
 :jbake-type: post

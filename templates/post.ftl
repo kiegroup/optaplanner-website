@@ -1,10 +1,48 @@
 <#import "base.ftl" as base>
 <#import "macros.ftl" as macros>
 
+<#-- TODO
+change_frequency: yearly
+- page.description = summarize(html_to_text(page.content).strip, 50) if !page.description
+- page.share_image_url = "#{site.canonicalBaseUrl}#{page.output_path.sub(Regexp.new('/[^/]*$'), '/')}#{page.share_image_filename}" if page.share_image_filename
+-->
+
 <@base.layout>
     <div class="row">
         <div class="col-md-9">
-            ${content.body}
+            <@blogNavigation/>
+            <div class="post">
+                <h1 class="title" style="border-bottom: 1px solid #eee;">
+                    <a href="${config.canonicalBaseUrl}/${content.uri}">${content.title}</a>
+                </h1>
+                <div>
+                    <div class="pull-right">
+                        <p style="text-align: right;">${content.date?string("EEE d MMMM yyyy")}</p>
+                    </div>
+                    <@macros.userBadge userId=content.author long=false/>
+                </div>
+                <div class="body">
+                    ${content.body}
+                </div>
+                <hr style="margin-bottom: 5px;"/>
+                <div style="margin-bottom: 20px;">
+                    <div class="pull-right">
+                        <a href="${config.canonicalBaseUrl}/${content.uri}"><span class="label label-default">Permalink</span></a>
+                    </div>
+                    <div class="tags">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        &nbsp;tagged as
+                        <#list content.tags as tag>
+                            <a href="${content.rootpath}/blog/tags/${tag}/"><span class="label label-info">${tag}</span></a>
+                        </#list>
+                    </div>
+                </div>
+            </div>
+            <div class="comments">
+                <h2>Comments</h2>
+                <a class="btn btn-default" href="${config.googleGroupURL}" style="margin-left: 20px">Visit our forum to comment</a>
+            </div>
+            <@blogNavigation/>
         </div>
         <div class="col-md-3">
             <div class="jumbotron" style="padding: 10px;">
@@ -32,3 +70,38 @@
         </div>
     </div>
 </@base.layout>
+
+<#macro blogNavigation>
+    <ul class="pager">
+        <#if content.previousContent??>
+            <li class="previous">
+                <a href="${content.rootpath}${content.previousContent.uri}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    ${content.previousContent.title?truncate(50, "...")}
+                </a>
+            </li>
+        <#else>
+            <li class="previous disabled">
+                <a href="#">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    Previous
+                </a>
+            </li>
+        </#if>
+        <#if content.nextContent??>
+            <li class="next">
+                <a href="${content.rootpath}${content.nextContent.uri}">
+                    ${content.nextContent.title?truncate(50, "...")}
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+        <#else>
+            <li class="next disabled">
+                <a href="#">
+                    Next
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+        </#if>
+    </ul>
+</#macro>

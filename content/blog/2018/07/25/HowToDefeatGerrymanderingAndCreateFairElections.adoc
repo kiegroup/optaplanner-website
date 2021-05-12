@@ -1,4 +1,5 @@
 = How to defeat gerrymandering and create fair elections
+2018-07-25
 :page-interpolate: true
 :jbake-author: jgoldsmith613
 :jbake-type: post

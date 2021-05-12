@@ -1,4 +1,5 @@
 = Will Skynet control our schedule if the computer optimizes it for us?
+2013-10-11
 :page-interpolate: true
 :jbake-author: ge0ffrey
 :jbake-type: post

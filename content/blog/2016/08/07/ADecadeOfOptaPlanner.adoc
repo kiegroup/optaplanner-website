@@ -1,4 +1,5 @@
 = A decade of OptaPlanner
+2016-08-07
 :page-interpolate: true
 :jbake-author: ge0ffrey
 :jbake-type: post

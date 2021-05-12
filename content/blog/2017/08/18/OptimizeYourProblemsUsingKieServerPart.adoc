@@ -1,4 +1,5 @@
 = Optimize your problems using KIE Execution Server
+2017-08-18
 :page-interpolate: true
 :jbake-author: mcimbora
 :jbake-type: post

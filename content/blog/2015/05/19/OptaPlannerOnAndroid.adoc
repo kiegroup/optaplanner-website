@@ -1,4 +1,5 @@
 = OptaPlanner on Android
+2015-05-19
 :page-interpolate: true
 :jbake-author: tdavid
 :jbake-type: post

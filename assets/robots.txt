@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /website/jbossorg.properties
-
-User-agent: *
 Disallow: /website/javascriptLibraries.txt
 
 User-agent: *

@@ -1,4 +1,5 @@
 = Let's OptaPlan your jBPM tasks (part 1) - Integrating the two worlds
+2020-07-03
 :page-interpolate: true
 :jbake-type: post
 :jbake-author: wmedvede

@@ -1,4 +1,5 @@
 = Batch solving an ActiveMQ queue that contains planning problem data sets in a scalable way
+2021-03-25
 :page-interpolate: true
 :jbake-type: post
 :jbake-author: rsynek
