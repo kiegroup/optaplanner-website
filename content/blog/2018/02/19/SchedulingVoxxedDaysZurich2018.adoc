@@ -3,7 +3,7 @@ mariofusco
 2018-02-19
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case, conference scheduling]
+:jbake-tags: use case, conference scheduling
 :jbake-share_image_filename: voxxedZurichConferenceSchedulingApp.png
 :jbake-canonical_url: "https://developers.redhat.com/blog/2018/02/19/voxxed-days-zurich-2018/"
 

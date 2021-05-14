@@ -3,7 +3,7 @@ ge0ffrey
 2015-06-03
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [insight, tsp, vehicle routing]
+:jbake-tags: insight, tsp, vehicle routing
 
 Are we smarter than machines when it comes to planning? Or can automated planning beat humans?
 I did an experiment with a group of innocent software engineers. These are the results.

@@ -3,7 +3,7 @@ oskopek
 2015-09-30
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [production]
+:jbake-tags: production
 
 For a long time, it was uncertain if choosing different random seeds impacted the results of OptaPlanner.
 Are there random seeds that yield statistically significant improvements to the

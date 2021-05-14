@@ -3,7 +3,7 @@ ge0ffrey
 2014-11-17
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [community]
+:jbake-tags: community
 
 For the 10th year in a row, I attended http://www.devoxx.com[DevoxxBe].
 It's my favorite Java conference, but the talk schedule isn't always optimal: sometimes I want to see 2 great talks at the same time!

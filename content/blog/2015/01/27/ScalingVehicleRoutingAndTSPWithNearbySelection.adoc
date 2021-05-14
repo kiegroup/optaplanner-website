@@ -3,7 +3,7 @@ ge0ffrey
 2015-01-27
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [vehicle routing, algorithm, feature]
+:jbake-tags: vehicle routing, algorithm, feature
 
 https://www.optaplanner.org[OptaPlanner] 6.2 has made a big step forward for the Vehicle Routing Problem (VRP),
 Traveling Salesman Problem (TSP) and similar use cases.

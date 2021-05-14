@@ -3,7 +3,7 @@ jgoldsmith613
 2018-07-25
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case]
+:jbake-tags: use case
 :jbake-share_image_filename: NorthCarolinaDistrictsOptaPlanner.png
 
 Over the years, politicians have redrawn electoral voting lines to gain an unfair advantage.

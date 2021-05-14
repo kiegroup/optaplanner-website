@@ -3,7 +3,7 @@ jucui
 2019-10-22
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [employee rostering, coding, algorithm, production]
+:jbake-tags: employee rostering, coding, algorithm, production
 
 To help you solve employee shift rostering challenges,
 we maintain an end-to-end web application called OptaWeb Employee Rostering.

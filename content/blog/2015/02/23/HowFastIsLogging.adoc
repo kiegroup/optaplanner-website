@@ -3,7 +3,7 @@ ge0ffrey
 2015-02-23
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [production, benchmark]
+:jbake-tags: production, benchmark
 
 What's the cost of trace/debug logging in production? What's the performance cost of logging to a file?
 In these benchmarks, I compare the performance impact of logging levels (`error`, `warn`, `info`, `debug`, `trace`)

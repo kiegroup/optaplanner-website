@@ -3,7 +3,7 @@ mcimbora
 2017-08-18
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [feature, howto, execution server]
+:jbake-tags: feature, howto, execution server
 
 KIE Server provides separation of execution environment from your client application,
 making it easy to use OptaPlanner outside Java ecosystem (e.g. .NET).

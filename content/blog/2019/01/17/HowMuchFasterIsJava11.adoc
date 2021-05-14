@@ -3,7 +3,7 @@ rsynek
 2019-01-17
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [production, benchmark]
+:jbake-tags: production, benchmark
 
 Java 11 was released some time ago, although the https://www.baeldung.com/java-in-2018[majority of developers stay on Java 8].
 Let's see which one of them is faster for https://www.optaplanner.org/[OptaPlanner]. The best way to find out is

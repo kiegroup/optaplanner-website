@@ -3,7 +3,7 @@ tdavid
 2015-05-19
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [android, vehicle routing]
+:jbake-tags: android, vehicle routing
 
 Developing of mobile applications on Android is currently very popular.
 One of the reasons for this popularity is Java programming language.

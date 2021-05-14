@@ -3,7 +3,7 @@ ge0ffrey
 2018-07-03
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [algorithm, benchmark]
+:jbake-tags: algorithm, benchmark
 :jbake-share_image_filename: multithreadedSolvingVrpTabuSearch.png
 
 OptaPlanner finally supports _multithreaded incremental solving_.

@@ -3,7 +3,7 @@ ge0ffrey
 2016-08-07
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [community]
+:jbake-tags: community
 
 10 years ago, I started a little project during my vacation.
 Nothing serious. _Just a hobby, it wouldn't be big and professional._

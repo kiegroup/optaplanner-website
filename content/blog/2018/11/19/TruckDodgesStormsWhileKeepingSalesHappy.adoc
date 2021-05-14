@@ -3,7 +3,7 @@ sudheerchekka
 2018-11-19
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case, vehicle routing]
+:jbake-tags: use case, vehicle routing
 :jbake-share_image_filename: mpcTruckRedHat.png
 
 The Mobile Portfolio Truck is Red Hat’s 18-wheel semi truck bringing enterprise IT solutions to customers

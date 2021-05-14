@@ -3,7 +3,7 @@ MusaTalluzi
 2018-08-21
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case, conference scheduling]
+:jbake-tags: use case, conference scheduling
 :jbake-share_image_filename: xlsxUnitTestingRoomConflict1.png
 
 The business experts explain the business constraints to us, the developers. But how can we be sure that we understood

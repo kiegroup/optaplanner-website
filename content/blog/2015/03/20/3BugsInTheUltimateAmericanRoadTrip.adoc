@@ -3,7 +3,7 @@ ge0ffrey
 2015-03-20
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [tsp, vehicle routing]
+:jbake-tags: tsp, vehicle routing
 
 Earlier this week, The Washington Post published an article about how
 http://www.washingtonpost.com/blogs/wonkblog/wp/2015/03/10/a-data-genius-computes-the-ultimate-american-road-trip/[a data genius has computed the ultimate American road trip].

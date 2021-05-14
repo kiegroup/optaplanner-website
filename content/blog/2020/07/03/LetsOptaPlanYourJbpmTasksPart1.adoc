@@ -3,7 +3,7 @@ wmedvede
 2020-07-03
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [feature, task assignment, integration]
+:jbake-tags: feature, task assignment, integration
 :jbake-share_image_filename: CreditDisputeProcessDiagram.png
 
 Traditionally, business process management systems (BPMS) assign human tasks to users on a group basis.

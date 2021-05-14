@@ -3,7 +3,7 @@ ge0ffrey
 2015-03-10
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [vehicle routing]
+:jbake-tags: vehicle routing
 
 After https://www.optaplanner.org[OptaPlanner] finds the best solution for a Vehicle Routing Problem,
 users usually want to see it on a real map, such as Google Maps or OpenStreetMap.

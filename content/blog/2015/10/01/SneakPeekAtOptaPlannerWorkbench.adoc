@@ -3,7 +3,7 @@ ge0ffrey
 2015-10-01
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [workbench]
+:jbake-tags: workbench
 
 One critical bit missing for OptaPlanner is a web application to define an optimization problem in a web UI
 and to deploy it to the cloud.

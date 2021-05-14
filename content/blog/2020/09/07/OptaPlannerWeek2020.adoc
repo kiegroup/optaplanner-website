@@ -3,7 +3,7 @@ ge0ffrey
 2020-07-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [feature, coding]
+:jbake-tags: feature, coding
 :jbake-share_image_filename: optaPlannerWeek2020Speakers.jpg
 
 It's a wrap! Last week, during the online *OptaPlanner Week* event,

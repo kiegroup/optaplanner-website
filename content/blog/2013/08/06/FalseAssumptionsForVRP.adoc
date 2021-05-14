@@ -3,7 +3,7 @@ ge0ffrey
 2013-08-06
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [vehicle routing, insight]
+:jbake-tags: vehicle routing, insight
 
 Many companies are faced with the vehicle routing problem, when they need to:
 

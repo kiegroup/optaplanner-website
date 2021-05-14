@@ -3,7 +3,7 @@ ge0ffrey
 2014-05-12
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [insight, benchmark]
+:jbake-tags: insight, benchmark
 
 Many Solver distributions include an N Queens example,
 in which `n` queens need to be placed on a `n*n` sized chessboard, with no attack opportunities.

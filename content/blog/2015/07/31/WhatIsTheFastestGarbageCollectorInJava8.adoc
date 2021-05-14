@@ -3,7 +3,7 @@ ge0ffrey
 2015-07-31
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [production]
+:jbake-tags: production
 
 OpenJDK 8 has several Garbage Collector algorithms, such as _Parallel GC_, _CMS_ and _G1_. Which one is the fastest?
 What will happen if the default GC changes from Parallel GC in Java 8 to G1 in Java 9 (as currently proposed)?

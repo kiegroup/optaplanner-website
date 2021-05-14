@@ -3,7 +3,7 @@ ge0ffrey
 2014-11-07
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [community]
+:jbake-tags: community
 
 Recently, there was some commotion on https://twitter.com/fbahr/status/529976664022081536[Twitter]
 because *a competitor heavily restricts publicising benchmarks of their Solver* as part of their license.

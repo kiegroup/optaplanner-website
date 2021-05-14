@@ -3,7 +3,7 @@ ge0ffrey
 2014-03-03
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [tsp, insight, algorithm]
+:jbake-tags: tsp, insight, algorithm
 
 To solve a planning or optimization problem, some solvers tend to scale out poorly:
 As the problem has more variables and more constraints, they use a lot more RAM memory and CPU power.

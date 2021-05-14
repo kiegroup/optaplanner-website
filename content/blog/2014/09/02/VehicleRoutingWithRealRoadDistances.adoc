@@ -3,7 +3,7 @@ ge0ffrey
 2014-09-02
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [vehicle routing, insight]
+:jbake-tags: vehicle routing, insight
 
 In the real world, vehicles in a Vehicle Routing Problem (VRP) have to follow the roads:
 they can't travel in a straight line from customer to customer.

@@ -3,7 +3,7 @@ ge0ffrey
 2014-03-20
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [production, benchmark]
+:jbake-tags: production, benchmark
 
 Java SE 8 was https://blogs.oracle.com/java/entry/java_se_8_is_now[released] yesterday.
 Traditionally, every new major JRE version comes with a free performance boost.

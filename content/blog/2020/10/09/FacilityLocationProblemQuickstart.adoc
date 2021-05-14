@@ -3,7 +3,7 @@ yurloc
 2020-10-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case, facility location problem, quarkus]
+:jbake-tags: use case, facility location problem, quarkus
 :jbake-share_image_filename: facilityLocationProblemSolved.png
 
 We have created a new https://github.com/kiegroup/optaplanner-quickstarts/tree/development/quarkus-facility-location[quickstart] that extends OptaPlanner use case portfolio with the https://en.wikipedia.org/wiki/Facility_location_problem[facility location problem] and also demonstrates building a cloud-native application using https://quarkus.io/[Quarkus], the new Java Native stack.
@@ -63,7 +63,7 @@ image::facilityLocationProblemClassDiagram.png[Class diagram]
 
 === Constraints
 
-The constraints are implemented using the xref:2020-04-07-ConstraintStreams[Constraint Streams] API.
+The constraints are implemented using the Constraint Streams API.
 You can find them in the `org.acme.facilitylocation.domain.FacilityLocationConstraintProvider` class.
 It defines the following constraints:
 

@@ -3,7 +3,7 @@ ge0ffrey
 2013-10-11
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [school timetabling, insight, feature]
+:jbake-tags: school timetabling, insight, feature
 
 Not every organization is comfortable with letting a computer program,
 such as https://www.optaplanner.org[OptaPlanner] (java, open source planning engine), optimize their schedules.

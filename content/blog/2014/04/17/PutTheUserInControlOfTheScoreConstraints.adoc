@@ -3,7 +3,7 @@ ge0ffrey
 2014-04-17
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [howto, feature]
+:jbake-tags: howto, feature
 
 OptaPlanner optimizes towards the plan with the best score.
 But who defines the score function?

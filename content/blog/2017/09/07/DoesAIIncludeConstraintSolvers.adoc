@@ -3,7 +3,7 @@ ge0ffrey
 2017-09-07
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [community, insight]
+:jbake-tags: community, insight
 :jbake-share_image_filename: theRightAIForTheJob.png
 
 The A.I. winter is over.

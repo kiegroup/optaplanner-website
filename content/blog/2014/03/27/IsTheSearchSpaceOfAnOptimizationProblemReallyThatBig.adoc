@@ -3,7 +3,7 @@ ge0ffrey
 2014-03-27
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [insight, algorithm, school timetabling]
+:jbake-tags: insight, algorithm, school timetabling
 
 Given an planning or optimization problem, how big is the search space?
 Can we hope to enumerate every possible solution, looking for the optimal solution?

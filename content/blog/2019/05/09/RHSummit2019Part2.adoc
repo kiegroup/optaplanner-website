@@ -3,7 +3,7 @@ MusaTalluzi
 2019-05-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [integration, production, coding]
+:jbake-tags: integration, production, coding
 :jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 

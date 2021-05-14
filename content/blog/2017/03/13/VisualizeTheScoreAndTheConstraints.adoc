@@ -3,7 +3,7 @@ ge0ffrey
 2017-03-13
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [feature, howto, school timetabling]
+:jbake-tags: feature, howto, school timetabling
 
 So we solved the planning problem and found a best solution which has a score of `0hard/-123soft`.
 Why `-123soft`? Where does that penalty come from? Which constraints are broken?

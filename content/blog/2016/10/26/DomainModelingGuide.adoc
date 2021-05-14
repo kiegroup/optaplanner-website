@@ -3,7 +3,7 @@ ge0ffrey
 2016-10-26
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [howto, design]
+:jbake-tags: howto, design
 
 New OptaPlanner users sometimes struggle to create a good domain model,
 especially if their use case is complex.

@@ -3,7 +3,7 @@ ge0ffrey
 2016-04-18
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [insight, feature, howto]
+:jbake-tags: insight, feature, howto
 
 When you put your optimization project into production,
 your enterprise will decrease expenses, increase customer satisfaction,

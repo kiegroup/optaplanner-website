@@ -3,7 +3,7 @@ ge0ffrey
 2015-09-23
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [integration]
+:jbake-tags: integration
 
 We've been improving the integration of OptaPlanner with the rest of JEE,
 so it's easier to build end user applications that just work.

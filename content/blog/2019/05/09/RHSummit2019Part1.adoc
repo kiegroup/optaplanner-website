@@ -3,7 +3,7 @@ ge0ffrey
 2019-05-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [use case, vehicle routing, maintenance scheduling, insight]
+:jbake-tags: use case, vehicle routing, maintenance scheduling, insight
 :jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 This year, my team and I participated in the Red Hat Summit keynote.

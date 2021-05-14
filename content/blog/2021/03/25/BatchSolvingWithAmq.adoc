@@ -3,7 +3,7 @@ rsynek
 2021-03-25
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [activemq, quarkus, integration]
+:jbake-tags: activemq, quarkus, integration
 :jbake-share_image_filename: activemqSolvingArchitecture.png
 
 If I want to solve many data sets of a planning problem every night, what architecture can easily scale out horizontally without loss of data?

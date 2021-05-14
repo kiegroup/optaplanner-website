@@ -17,7 +17,7 @@ This website uses:
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
-// TODO FIXME this doesn't work
+// TODO https://github.com/jbake-org/jbake/issues/694
 This website was generated on {published_date}.
 
 == Website feedback

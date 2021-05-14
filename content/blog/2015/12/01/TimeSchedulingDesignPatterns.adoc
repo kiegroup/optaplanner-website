@@ -3,7 +3,7 @@ ge0ffrey
 2015-12-01
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [design, algorithm]
+:jbake-tags: design, algorithm
 
 Designing an efficient domain model for a scheduling problem that involves time (or dates) can seem difficult.
 Typical use cases are course timetabling, meeting scheduling, vehicle routing with time windows and TV advertisement scheduling.

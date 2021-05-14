@@ -3,7 +3,7 @@ ge0ffrey
 2016-02-12
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: [insight, benchmark, algorithm]
+:jbake-tags: insight, benchmark, algorithm
 :jbake-share_image_filename: letTheBestScoreStatisticGuideYou.png
 
 Once we have a vanilla setup of an OptaPlanner project,
