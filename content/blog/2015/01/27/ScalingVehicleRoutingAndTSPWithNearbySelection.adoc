@@ -1,7 +1,7 @@
 = Scaling Vehicle Routing with Nearby Selection
+ge0ffrey
 2015-01-27
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [vehicle routing, algorithm, feature]
 

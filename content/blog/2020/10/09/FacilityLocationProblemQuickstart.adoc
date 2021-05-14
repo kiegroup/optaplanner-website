@@ -1,8 +1,8 @@
 = Solve the facility location problem
+yurloc
 2020-10-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: yurloc
 :jbake-tags: [use case, facility location problem, quarkus]
 :jbake-share_image_filename: facilityLocationProblemSolved.png
 

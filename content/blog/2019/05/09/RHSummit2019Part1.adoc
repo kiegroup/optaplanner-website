@@ -1,7 +1,7 @@
 = Mechanic scheduling (part 1) - Can OptaPlanner keep up with a keynote audience of thousands?
+ge0ffrey
 2019-05-09
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [use case, vehicle routing, maintenance scheduling, insight]
 :jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif

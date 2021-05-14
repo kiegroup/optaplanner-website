@@ -1,7 +1,7 @@
 = How lucky are your random seeds?
+oskopek
 2015-09-30
 :page-interpolate: true
-:jbake-author: oskopek
 :jbake-type: post
 :jbake-tags: [production]
 

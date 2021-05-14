@@ -1,7 +1,7 @@
 = Sneak peek at OptaPlanner Workbench
+ge0ffrey
 2015-10-01
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [workbench]
 

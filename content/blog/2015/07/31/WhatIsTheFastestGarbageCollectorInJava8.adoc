@@ -1,7 +1,7 @@
 = What is the fastest Garbage Collector in Java 8?
+ge0ffrey
 2015-07-31
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [production]
 

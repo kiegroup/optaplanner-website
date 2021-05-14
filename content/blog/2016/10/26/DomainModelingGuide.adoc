@@ -1,7 +1,7 @@
 = Domain modeling guide
+ge0ffrey
 2016-10-26
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [howto, design]
 

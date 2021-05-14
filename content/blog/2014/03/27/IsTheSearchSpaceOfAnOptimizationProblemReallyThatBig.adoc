@@ -1,7 +1,7 @@
 = Is the search space of an optimization problem really that big?
+ge0ffrey
 2014-03-27
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, algorithm, school timetabling]
 

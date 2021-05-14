@@ -1,8 +1,8 @@
 = The path to OptaPlanner enlightenment starts in the logs
+ge0ffrey
 2021-05-06
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: ge0ffrey
 :jbake-tags: [algorithm, insight, production]
 :jbake-share_image_filename: generalPhaseSequence.png
 

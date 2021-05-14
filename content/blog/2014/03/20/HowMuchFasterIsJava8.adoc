@@ -1,7 +1,7 @@
 = How much faster is Java 8?
+ge0ffrey
 2014-03-20
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [production, benchmark]
 

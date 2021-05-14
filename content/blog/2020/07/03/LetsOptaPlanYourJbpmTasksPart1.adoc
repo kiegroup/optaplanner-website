@@ -1,8 +1,8 @@
 = Let's OptaPlan your jBPM tasks (part 1) - Integrating the two worlds
+wmedvede
 2020-07-03
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: wmedvede
 :jbake-tags: [feature, task assignment, integration]
 :jbake-share_image_filename: CreditDisputeProcessDiagram.png
 

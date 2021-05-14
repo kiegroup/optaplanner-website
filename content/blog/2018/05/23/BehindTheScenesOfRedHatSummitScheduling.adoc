@@ -1,7 +1,7 @@
 = Behind the scenes of Red Hat Summit 2018 scheduling
+ge0ffrey
 2018-05-23
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [use case, conference scheduling]
 :jbake-share_image_filename: summitConferenceScheduling_0.png

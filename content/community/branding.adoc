@@ -1,6 +1,6 @@
 = Branding
-:awestruct-description: Project naming and logo.
-:awestruct-layout: normalBase
+:jbake-type: normalBase
+:jbake-description: Project naming and logo.
 :showtitle:
 
 == Naming

@@ -1,7 +1,7 @@
 = Scheduling Voxxed Days Zurich 2018 with OptaPlanner
+mariofusco
 2018-02-19
 :page-interpolate: true
-:jbake-author: mariofusco
 :jbake-type: post
 :jbake-tags: [use case, conference scheduling]
 :jbake-share_image_filename: voxxedZurichConferenceSchedulingApp.png

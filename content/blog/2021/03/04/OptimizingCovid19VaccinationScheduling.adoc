@@ -1,8 +1,8 @@
 = Optimizing COVID-19 vaccination appointment scheduling
+pauljamesbrown
 2021-03-04
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: pauljamesbrown
 :jbake-tags: [production, vaccination scheduling]
 :jbake-share_image_filename: vaccinationSchedulingValueProposal.png
 

@@ -1,7 +1,7 @@
 = KIE Server OptaPlanner Task Assignment
+MusaTalluzi
 2019-03-13
 :page-interpolate: true
-:jbake-author: MusaTalluzi
 :jbake-type: post
 :jbake-tags: [use case, task assignment, execution server]
 

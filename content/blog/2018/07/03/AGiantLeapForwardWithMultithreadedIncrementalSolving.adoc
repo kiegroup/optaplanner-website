@@ -1,7 +1,7 @@
 = A giant leap forward with multithreaded incremental solving
+ge0ffrey
 2018-07-03
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [algorithm, benchmark]
 :jbake-share_image_filename: multithreadedSolvingVrpTabuSearch.png

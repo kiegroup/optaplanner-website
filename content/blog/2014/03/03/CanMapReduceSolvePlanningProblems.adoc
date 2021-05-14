@@ -1,7 +1,7 @@
 = Can MapReduce solve planning problems?
+ge0ffrey
 2014-03-03
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [tsp, insight, algorithm]
 

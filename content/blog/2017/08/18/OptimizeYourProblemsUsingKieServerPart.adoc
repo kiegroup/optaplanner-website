@@ -1,7 +1,7 @@
 = Optimize your problems using KIE Execution Server
+mcimbora
 2017-08-18
 :page-interpolate: true
-:jbake-author: mcimbora
 :jbake-type: post
 :jbake-tags: [feature, howto, execution server]
 

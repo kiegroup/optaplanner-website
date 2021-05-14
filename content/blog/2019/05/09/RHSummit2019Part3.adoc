@@ -1,7 +1,7 @@
 = Mechanic scheduling (part 3) - Simulation and load testing
+rsynek
 2019-05-09
 :page-interpolate: true
-:jbake-author: rsynek
 :jbake-type: post
 :jbake-tags: [production, benchmark, algorithm]
 :jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif

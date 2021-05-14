@@ -95,7 +95,7 @@
         <div class="panel-heading">Latest blog posts</div>
         <div class="panel-body">
             <ul class="list-unstyled">
-                <#list published_posts?reverse[0..6] as blog>
+                <#list published_posts[0..6] as blog>
                     <li style="margin-bottom: 10px;">
                         <div class="title">
                             <a href="${content.rootpath}${blog.uri}">

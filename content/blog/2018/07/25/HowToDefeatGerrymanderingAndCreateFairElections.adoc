@@ -1,7 +1,7 @@
 = How to defeat gerrymandering and create fair elections
+jgoldsmith613
 2018-07-25
 :page-interpolate: true
-:jbake-author: jgoldsmith613
 :jbake-type: post
 :jbake-tags: [use case]
 :jbake-share_image_filename: NorthCarolinaDistrictsOptaPlanner.png

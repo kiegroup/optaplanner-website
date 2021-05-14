@@ -1,7 +1,7 @@
 = Time scheduling design patterns
+ge0ffrey
 2015-12-01
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [design, algorithm]
 

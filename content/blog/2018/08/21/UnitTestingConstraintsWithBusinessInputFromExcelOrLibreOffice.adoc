@@ -1,7 +1,7 @@
 = Unit testing constraints with business input from Excel or LibreOffice
+MusaTalluzi
 2018-08-21
 :page-interpolate: true
-:jbake-author: MusaTalluzi
 :jbake-type: post
 :jbake-tags: [use case, conference scheduling]
 :jbake-share_image_filename: xlsxUnitTestingRoomConflict1.png

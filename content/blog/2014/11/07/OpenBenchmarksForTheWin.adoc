@@ -1,7 +1,7 @@
 = Open benchmarks for the win
+ge0ffrey
 2014-11-07
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [community]
 

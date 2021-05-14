@@ -1,8 +1,8 @@
 = Constraint Streams - Modern Java constraints without the Drools Rule Language
+ge0ffrey
 2020-04-07
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: ge0ffrey
 :jbake-tags: [feature, coding, constraint]
 :jbake-share_image_filename: constraintStreamGroupBy.png
 

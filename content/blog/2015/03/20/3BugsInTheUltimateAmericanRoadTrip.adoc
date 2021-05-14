@@ -1,7 +1,7 @@
 = 3 Bugs in The Ultimate American Road Trip of The Washington Post
+ge0ffrey
 2015-03-20
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [tsp, vehicle routing]
 

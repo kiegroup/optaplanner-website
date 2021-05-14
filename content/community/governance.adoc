@@ -1,6 +1,6 @@
 = Governance
-:awestruct-description: Disclosure of the governance of this project
-:awestruct-layout: normalBase
+:jbake-type: normalBase
+:jbake-description: Disclosure of the governance of this project
 :showtitle:
 
 

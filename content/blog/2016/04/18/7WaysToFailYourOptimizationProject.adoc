@@ -1,7 +1,7 @@
 = 7 ways to fail your optimization project
+ge0ffrey
 2016-04-18
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, feature, howto]
 

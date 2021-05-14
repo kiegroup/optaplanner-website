@@ -1,7 +1,7 @@
 = Does A.I. include constraint solvers?
+ge0ffrey
 2017-09-07
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [community, insight]
 :jbake-share_image_filename: theRightAIForTheJob.png

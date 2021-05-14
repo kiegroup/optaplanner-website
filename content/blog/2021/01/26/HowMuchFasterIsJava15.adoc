@@ -1,8 +1,8 @@
 = How much faster is Java 15?
+michaltomco
 2021-01-26
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: michaltomco
 :jbake-tags: [production, benchmark]
 :jbake-share_image_filename: G1GCandParallelGCUsingJDK15.png
 

@@ -1,8 +1,8 @@
 = Formula for measuring unfairness
+ge0ffrey
 2017-02-03
 :page-interpolate: true
 :stem:
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, design, task assignment, employee rostering, constraint]
 

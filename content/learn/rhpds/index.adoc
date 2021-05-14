@@ -1,7 +1,7 @@
 = RHPDS instructions for OptaPlanner demos
-:awestruct-description: How to demo OptaPlanner with RHPDS
-:awestruct-layout: normalBase
-:awestruct-priority: 0.1
+:jbake-type: normalBase
+:jbake-description: How to demo OptaPlanner with RHPDS
+:jbake-priority: 0.1
 :showtitle:
 
 Red Hat features OptaPlanner demos on https://rhpds.redhat.com/[RHPDS],

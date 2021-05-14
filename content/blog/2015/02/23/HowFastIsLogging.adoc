@@ -1,7 +1,7 @@
 = How fast is logging?
+ge0ffrey
 2015-02-23
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [production, benchmark]
 

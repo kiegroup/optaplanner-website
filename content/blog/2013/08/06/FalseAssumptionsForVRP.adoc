@@ -1,7 +1,7 @@
 = False assumptions for the Vehicle Routing Problem
+ge0ffrey
 2013-08-06
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [vehicle routing, insight]
 

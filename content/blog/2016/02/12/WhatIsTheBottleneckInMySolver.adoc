@@ -1,7 +1,7 @@
 = What is the bottleneck in my Solver?
+ge0ffrey
 2016-02-12
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, benchmark, algorithm]
 :jbake-share_image_filename: letTheBestScoreStatisticGuideYou.png

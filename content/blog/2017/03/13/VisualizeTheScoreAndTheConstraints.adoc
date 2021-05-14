@@ -1,7 +1,7 @@
 = Visualize the score and the constraints
+ge0ffrey
 2017-03-13
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [feature, howto, school timetabling]
 

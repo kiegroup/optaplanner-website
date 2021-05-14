@@ -1,7 +1,7 @@
 = Exploring the new OptaWeb Employee Rostering backend
+jucui
 2019-10-22
 :page-interpolate: true
-:jbake-author: jucui
 :jbake-type: post
 :jbake-tags: [employee rostering, coding, algorithm, production]
 

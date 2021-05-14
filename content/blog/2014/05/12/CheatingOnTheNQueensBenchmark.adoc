@@ -1,7 +1,7 @@
 = Cheating on the N Queens benchmark
+ge0ffrey
 2014-05-12
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, benchmark]
 

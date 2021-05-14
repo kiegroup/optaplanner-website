@@ -1,7 +1,7 @@
 = Java Reflection, but much faster
+ge0ffrey
 2018-01-09
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [coding, benchmark]
 :jbake-share_image_filename: reflectionButFasterUseCase.png

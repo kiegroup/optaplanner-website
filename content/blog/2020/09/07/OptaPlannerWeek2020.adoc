@@ -1,8 +1,8 @@
 = OptaPlanner Week 2020 recordings
+ge0ffrey
 2020-07-09
 :page-interpolate: true
 :jbake-type: post
-:jbake-author: ge0ffrey
 :jbake-tags: [feature, coding]
 :jbake-share_image_filename: optaPlannerWeek2020Speakers.jpg
 

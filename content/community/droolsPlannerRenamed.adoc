@@ -1,6 +1,6 @@
 = Drools Planner renamed to OptaPlanner
-:awestruct-description: OptaPlanner is the new name for Drools Planner.
-:awestruct-layout: normalBase
+:jbake-type: normalBase
+:jbake-description: OptaPlanner is the new name for Drools Planner.
 :showtitle:
 
 In 2013, as of version `6.0.0.Beta1`, *Drools Planner was renamed to OptaPlanner*.

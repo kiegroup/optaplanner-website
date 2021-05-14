@@ -1,7 +1,7 @@
 = RHPDS instructions for OptaWeb Employee Rostering
-:awestruct-description: How to demo OptaWeb Employee Rostering with RHPDS
-:awestruct-layout: normalBase
-:awestruct-priority: 0.1
+:jbake-type: normalBase
+:jbake-description: How to demo OptaWeb Employee Rostering with RHPDS
+:jbake-priority: 0.1
 :showtitle:
 :demo-catalog-item: DM7 OptaWeb Employee Rostering Demo
 :demo-name: OptaWeb Employee Rostering
@@ -13,4 +13,4 @@ video::3CvadujUN1k[youtube]
 
 == Written instructions
 
-include::learn/rhpds/rhpds_order.adoc[]
+include::rhpds_order.adoc[]

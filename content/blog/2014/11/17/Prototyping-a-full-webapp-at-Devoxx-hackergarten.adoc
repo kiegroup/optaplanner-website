@@ -1,7 +1,7 @@
 = Prototyping an enterprise webapp at Devoxx Hackergarten
+ge0ffrey
 2014-11-17
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [community]
 

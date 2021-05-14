@@ -1,7 +1,7 @@
 = Visualizing Vehicle Routing with Leaflet and Google Maps
+ge0ffrey
 2015-03-10
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [vehicle routing]
 

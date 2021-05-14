@@ -1,7 +1,7 @@
 = Website info
-:awestruct-description: Website technology and feedback
-:awestruct-layout: normalBase
-:awestruct-priority: 0.1
+:jbake-type: normalBase
+:jbake-description: Website technology and feedback
+:jbake-priority: 0.1
 :page-interpolate: true
 :showtitle:
 
@@ -9,7 +9,7 @@
 
 This website uses:
 
-* http://awestruct.org/[Awestruct]
+* https://jbake.org/[JBake]
 
 * http://asciidoctor.org[Asciidoctor] (AsciiDoc)
 
@@ -17,7 +17,8 @@ This website uses:
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
-This website was generated on #{Time.now.strftime('%a %-d %B %Y at %H:%M:%S %Z')}.
+// TODO FIXME this doesn't work
+This website was generated on {published_date}.
 
 == Website feedback
 

@@ -1,7 +1,7 @@
 = How to become US president with less than a quarter of the votes
+ge0ffrey
 2016-12-06
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [use case]
 

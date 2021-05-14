@@ -1,7 +1,7 @@
 = How good are human planners?
+ge0ffrey
 2015-06-03
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [insight, tsp, vehicle routing]
 

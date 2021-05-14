@@ -1,7 +1,7 @@
 = Vehicle routing with real road distances
+ge0ffrey
 2014-09-02
 :page-interpolate: true
-:jbake-author: ge0ffrey
 :jbake-type: post
 :jbake-tags: [vehicle routing, insight]
 

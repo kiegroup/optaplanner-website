@@ -1,6 +1,6 @@
 = Research
-:awestruct-description: Academic research for papers and articles.
-:awestruct-layout: normalBase
+:jbake-type: normalBase
+:jbake-description: Academic research for papers and articles.
 :showtitle:
 
 OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in
