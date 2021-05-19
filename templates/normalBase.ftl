@@ -1,10 +1,13 @@
-<#import "base.ftl" as base>
+<#import "base.ftl" as parent>
 <#import "macros.ftl" as macros>
 
-<@base.layout>
+<@layout>${content.body}</@layout>
+
+<#macro layout>
+<@parent.layout>
     <div class="row">
         <div class="col-md-9">
-            ${content.body}
+            <#nested>
         </div>
         <div class="col-md-3">
             <@macros.latestReleases/>
@@ -14,4 +17,5 @@
             <@macros.latestVideos/>
         </div>
     </div>
-</@base.layout>
+</@parent.layout>
+</#macro>

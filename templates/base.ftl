@@ -1,7 +1,8 @@
+<@layout>${content.body}</@layout>
+
 <#macro layout>
 <!DOCTYPE html>
-<#-- TODO {:lang => page.lang ? page.lang : site.lang} -->
-<html lang="en">
+<html lang="${(content.lang)!"en"}">
 <head>
     <#-- Adobe Analytics for Red Hat - DPAL (DTM Property Auto-Loader) - part 1/2 -->
     <script id="dpal" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
