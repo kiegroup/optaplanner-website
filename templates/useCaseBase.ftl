@@ -1,6 +1,13 @@
-<#import "base.ftl" as base>
+<#import "normalBase.ftl" as parent>
+<#import "macros.ftl" as macros>
 
-<@base.layout>
-    <p>TODO useCaseBase</p>
-    ${content.body}
-</@base.layout>
+<@layout>${content.body}</@layout>
+
+<#macro layout>
+    <@parent.layout>
+        <h1>${content.title}</h1>
+
+
+
+    </@parent.layout>
+</#macro>

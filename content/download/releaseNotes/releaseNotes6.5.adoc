@@ -1,9 +1,9 @@
 = Release Notes 6.5
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 6.5.
-:awestruct-layout: releaseNotesBase
-:awestruct-priority: 1.0
-:awestruct-release_notes_version: 6.5
-:awestruct-release_notes_version_qualifier: Final
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 6.5.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 6.5
+:jbake-release_notes_version_qualifier: Final
 
 [[NewAndNoteWorthy]]
 == New and noteworthy

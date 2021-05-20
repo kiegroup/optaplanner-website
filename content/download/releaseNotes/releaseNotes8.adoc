@@ -1,9 +1,9 @@
 = Release Notes 8
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 8.
-:awestruct-layout: releaseNotesBase
-:awestruct-priority: 1.0
-:awestruct-release_notes_version: 8
-:awestruct-release_notes_version_qualifier: Final
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 8.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 8
+:jbake-release_notes_version_qualifier: Final
 
 == Why OptaPlanner 8?
 

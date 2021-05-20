@@ -1,9 +1,9 @@
 = Release Notes 7
-:awestruct-description: New and noteworthy, demos and status for OptaPlanner 7.
-:awestruct-layout: releaseNotesBase
-:awestruct-priority: 1.0
-:awestruct-release_notes_version: 7
-:awestruct-release_notes_version_qualifier: Final
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 7.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 7
+:jbake-release_notes_version_qualifier: Final
 
 == New and noteworthy: Engine 7.39.0.Final
 
