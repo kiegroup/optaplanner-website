@@ -211,3 +211,48 @@
         </div>
     </div>
 </#macro>
+
+<#macro productToProjectVersionMapping>
+<div class="panel panel-default">
+    <div class="panel-heading">Note for Red Hat Decision Manager customers</div>
+    <div class="panel-body">
+        <p>
+            The RHDM version differs from the OptaPlanner version:
+        </p>
+        <table class="tableblock frame-all grid-all spread">
+            <colgroup>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>RHDM version</th>
+                <th>OptaPlanner version</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>7.7</td>
+                <td>7.33</td>
+            </tr>
+            <tr>
+                <td>7.8</td>
+                <td>7.39</td>
+            </tr>
+            <tr>
+                <td>7.9</td>
+                <td>7.44</td>
+            </tr>
+            <tr>
+                <td>7.10</td>
+                <td>7.48</td>
+            </tr>
+            <tr>
+                <td>7.11</td>
+                <td>8.5 (and 7.52)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</#macro>

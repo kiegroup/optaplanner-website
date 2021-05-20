@@ -14,5 +14,3 @@ This is a list of all past and upcoming release notes:
 * link:releaseNotes6.2.html[Release Notes OptaPlanner 6.2]
 * link:releaseNotes6.1.html[Release Notes OptaPlanner 6.1]
 * link:releaseNotes6.0.html[Release Notes OptaPlanner 6.0]
-
-Older release notes (for Drools Planner) are available in the old Drools documentation.

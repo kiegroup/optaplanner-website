@@ -1,8 +1,8 @@
 = Upgrade recipe 6.3
-:awestruct-description: Upgrade to OptaPlanner 6.3 from a previous version.
-:awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 0.5
-:awestruct-upgrade_recipe_version: 6.3
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 6.3 from a previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 6.3
 
 == From 6.2.0.Final to 6.3.0.Beta1
 

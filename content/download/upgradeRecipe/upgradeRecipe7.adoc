@@ -1,9 +1,8 @@
 = Upgrade recipe 7
-:awestruct-description: Upgrade to OptaPlanner 7 from a previous version.
-:awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 0.5
-:awestruct-upgrade_recipe_version: 7
-
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 7 from a previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 7
 
 == From 6.5.0.Final to 7.0.0.Beta1
 

@@ -1,16 +1,18 @@
 = Upgrade recipe 8
-:awestruct-description: Upgrade to OptaPlanner 8 from the previous version.
-:awestruct-layout: upgradeRecipeBase
-:awestruct-priority: 0.5
-:awestruct-upgrade_recipe_version: 8
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 8 from the previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 8
 
-Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years, it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
+== From 7.48+ to 8.0.0.Final
 
-We kept these backwards incompatible changes to a strict minimum and will not introduce any additional ones during the 8.x era.
+Because this is a new major version number (8.0), which is the foundation for the 8.x series for the next few years,
+it allows us to make backwards incompatible changes to the public API _for the long term benefit of this project_.
+
+We kept these backwards incompatible changes to a strict minimum
+and will not introduce any additional ones during the 8.x era.
 
 Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
-
-== Backwards incompatible changes to the public API since 7.x
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Java 11 or higher required
