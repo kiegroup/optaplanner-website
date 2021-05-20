@@ -1580,7 +1580,7 @@ After in `*StatefulVariableListener.java*`:
 
 == From 8.2.0.Final to 8.3.0.Final
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-impl-detail]
 === `ConstraintMatch.compareTo()` inconsistent with `equals()`
 
 The `equals()` override in `ConstraintMatch` has been removed.
@@ -1598,3 +1598,41 @@ in order to not fail on constraints with non-distinct matches.
 
 If a field (or getter) annotated with a `@PlanningId` annotation returns a `null` value,
 the `Solver` now fails fast immediately, instead of failing fast when the second instance with `null` value appears.
+
+== From 8.7.0.Final to 8.8.0.Final
+
+[.upgrade-recipe-minor]
+=== `PlannerBenchmark.benchmark()` now returns `java.util.File`
+
+The return type of `org.optaplanner.benchmark.api.PlannerBenchmark` methods `benchmark()` and `benchmarkAndShowReportInBrowser()`
+has changed from `void` to `File`.
+Users can read this value to retrieve the directory in which the benchmark results were written.
+
+[.upgrade-recipe-minor]
+=== `ConstraintCollectors.toSortedSet(BiFunction)` newly ambiguous
+
+The addition of `ConstraintCollectors.toSortedSet(Comparator)` has caused a Java compiler ambiguity
+with the pre-existing method `ConstraintCollectors.toSortedSet(BiFunction)`.
+Users of the original method need to inform the compiler of the particular overload they wish to use.
+
+Before in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+  ...
+
+  ConstraintCollectors.toSortedSet(Integer::sum);
+
+  ...
+----
+
+After in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+  ...
+
+  ConstraintCollectors.toSortedSet((BiFunction<Integer, Integer, Integer>) Integer::sum);
+
+  ...
+----
