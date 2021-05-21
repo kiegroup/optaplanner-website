@@ -375,3 +375,26 @@
     </div>
 </div>
 </#macro>
+
+<#macro flags>
+    <div style="text-align: right; padding-right: 10px; margin-bottom: 20px;">
+        <a href="${content.rootpath}index.html" style="text-decoration: none;"><img src="${content.rootpath}website/flags/us.png"><img src="${content.rootpath}website/flags/gb.png">
+        </a>
+        -
+        <a href="${content.rootpath}localized/fr/index.html" style="text-decoration: none;">
+            <img src="${content.rootpath}website/flags/fr.png">
+        </a>
+        -
+        <a href="${content.rootpath}localized/de/index.html" style="text-decoration: none;">
+            <img src="${content.rootpath}website/flags/de.png">
+        </a>
+        -
+        <a href="${content.rootpath}localized/zh/index.html" style="text-decoration: none;">
+            <img src="${content.rootpath}website/flags/cn.png">
+        </a>
+        -
+        <a href="${content.rootpath}localized/ja/index.html" style="text-decoration: none;">
+            <img src="${content.rootpath}website/flags/jp.png">
+        </a>
+    </div>
+</#macro>

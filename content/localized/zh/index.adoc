@@ -1,8 +1,8 @@
 = 约束求解器 (Java ™, Open Source)
-:awestruct-description: OptaPlanner是一个100%使用Java编写，轻量级，可集成的开源引擎。
-:awestruct-layout: localizedBase
-:awestruct-lang: cn
-:awestruct-priority: 1.0
+:jbake-type: localizedBase
+:jbake-description: OptaPlanner是一个100%使用Java编写，轻量级，可集成的开源引擎。
+:jbake-lang: cn
+:jbake-priority: 1.0
 :showtitle:
 
 == OptaPlanner是什么？

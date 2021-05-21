@@ -1,8 +1,8 @@
 = 制約充足ソルバー（Java™、オープンソース）
-:awestruct-description: OptaPlannerは100％Javaで書かれた、軽量、組み込み可能な、オープンソースの計画エンジンです。
-:awestruct-layout: localizedBase
-:awestruct-lang: ja
-:awestruct-priority: 1.0
+:jbake-type: localizedBase
+:jbake-description: OptaPlannerは100％Javaで書かれた、軽量、組み込み可能な、オープンソースの計画エンジンです。
+:jbake-lang: ja
+:jbake-priority: 1.0
 :showtitle:
 
 == OptaPlannerとは何ですか？

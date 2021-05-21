@@ -1,8 +1,8 @@
 = Chapter 1. OptaPlanner イントロダクション
-:awestruct-description: Chapter 1. OptaPlanner イントロダクション
-:awestruct-layout: localizedBase
-:awestruct-lang: ja
-:awestruct-priority: 1.0
+:jbake-type: localizedBase
+:jbake-description: Chapter 1. OptaPlanner イントロダクション
+:jbake-lang: ja
+:jbake-priority: 1.0
 :showtitle:
 
 
