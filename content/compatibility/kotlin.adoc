@@ -1,8 +1,8 @@
 = Artificial Intelligence planning optimization for Kotlin
-:awestruct-description: Use OptaPlanner (open source) for Artificial Intelligence planning optimization on Kotlin.
-:awestruct-layout: compatibilityBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: kotlin
+:jbake-type: compatibilityBase
+:jbake-description: Use OptaPlanner (open source) for Artificial Intelligence planning optimization on Kotlin.
+:jbake-priority: 1.0
+:jbake-related_tag: kotlin
 :showtitle:
 
 OptaPlanner is very often used by Kotlin programmers.

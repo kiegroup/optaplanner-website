@@ -1,5 +1,9 @@
+<#assign pom = data.get('pom.yml')>
+<#assign events = data.get('events.yml').data>
+<#assign videos = data.get('videos.yml').data>
+<#assign users = data.get('users.yml').data>
+
 <#macro latestReleases>
-    <#assign pom = data.get('pom.yml')>
     <div class="panel panel-default">
         <div class="panel-heading">Latest release</div>
         <div class="panel-body">
@@ -43,7 +47,6 @@
 </#macro>
 
 <#macro latestEvents>
-    <#assign events = data.get('events.yml').data>
     <div class="panel panel-default">
         <div class="panel-heading">Upcoming events</div>
         <div class="panel-body">
@@ -113,7 +116,6 @@
 </#macro>
 
 <#macro latestVideos>
-    <#assign videos = data.get('videos.yml').data>
     <div class="panel panel-default">
         <div class="panel-heading">Latest videos</div>
         <div class="panel-body">
@@ -141,7 +143,6 @@
 </#macro>
 
 <#macro userBadgeInline userId>
-    <#assign users = data.get('users.yml').data>
     <#assign user = users?filter(u -> u.userId == userId)?first >
     <div class="userBadge">
         <span>
@@ -152,7 +153,6 @@
 </#macro>
 
 <#macro userBadge userId long>
-    <#assign users = data.get('users.yml').data>
     <#assign user = users?filter(u -> u.userId == userId)?first >
     <div class="userBadge">
         <div class="well well-sm" style="padding: 5px; width: ${long?then("600px", "320px")};">
@@ -210,6 +210,30 @@
     </div>
 </#macro>
 
+<#macro relatedVideos>
+    <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
+    <#if relatedVideos?size &gt; 0>
+        <h2>Related videos</h2>
+        <ul>
+            <#list relatedVideos as video>
+                <#-- TODO use card layout and show youtube-thumbnails -->
+                <li style="margin-bottom: 10px;">
+                    <div class="title">
+                        <a href="https://youtu.be/${video.youtubeId}">
+                            <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
+                            ${video.title}
+                        </a>
+                    </div>
+                    <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
+                    <#if video.author??>
+                        <@userBadgeInline userId=video.author/>
+                    </#if>
+                </li>
+            </#list>
+        </ul>
+    </#if>
+</#macro>
+
 <#macro relatedBlogPosts>
     <#assign relatedTags = tags?filter(tag -> tag.name == content.related_tag)>
     <#if relatedTags?size &gt; 0>
@@ -230,7 +254,6 @@
 </#macro>
 
 <#macro downloadJumbotron>
-    <#assign pom = data.get('pom.yml')>
     <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
         <div class="text-center"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
             <div>
@@ -253,7 +276,6 @@
 </#macro>
 
 <#macro documentationJumbotron>
-    <#assign pom = data.get('pom.yml')>
     <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
         <div class="text-center"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
             <div>
@@ -266,6 +288,47 @@
             or git clone <a href="https://github.com/kiegroup/optaplanner-quickstarts">optaplanner-quickstarts</a>.
         </p>
     </div>
+</#macro>
+
+<#macro whatIsOptaPlanner>
+    <h2>What is OptaPlanner?</h2>
+    <p>
+        OptaPlanner is <b>an AI constraint solver</b>.
+        It optimizes planning and scheduling problems, such as
+        <a href="${content.rootpath}learn/useCases/vehicleRoutingProblem.html">the Vehicle Routing Problem</a>,
+        <a href="${content.rootpath}learn/useCases/employeeRostering.html">Employee Rostering</a>,
+        <a href="${content.rootpath}learn/useCases/maintenanceScheduling.html">Maintenance Scheduling</a>,
+        <a href="${content.rootpath}learn/useCases/taskAssignmentOptimization.html">Task Assignment</a>,
+        <a href="${content.rootpath}learn/useCases/schoolTimetabling.html">School Timetabling</a>,
+        <a href="${content.rootpath}learn/useCases/cloudOptimization.html">Cloud Optimization</a>,
+        <a href="${content.rootpath}learn/useCases/conferenceScheduling.html">Conference Scheduling</a>,
+        Job Shop Scheduling, Bin Packing and
+        <a href="${content.rootpath}learn/useCases/">many more</a>.
+        Every organization faces such challenges:
+        assign a limited set of <i>constrained</i> resources (employees, assets, time and/or money)
+        to provide products or services.
+        OptaPlanner delivers more efficient plans, which reduce costs and improve service quality.
+    </p>
+    <p>
+        OptaPlanner is <b>a lightweight, embeddable planning solver</b>.
+        It enables everyday <a href="${content.rootpath}compatibility/java.html">Java</a> programmers
+        to solve optimization problems efficiently.
+        It is also compatible with other JVM languages (such as
+        <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a>
+        and  <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
+        Constraints apply on plain domain objects and can call existing code.
+        There's no need to input constraints as mathematical equations.
+        Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
+        (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
+        with very efficient score calculation and other state-of-the-art constraint solving techniques.
+    </p>
+    <p>
+        OptaPlanner is <b>open source software</b>, released under <a href="${content.rootpath}code/license.html">the Apache License</a>.
+        It is written in 100% pure Java™, runs on any JVM and is available in
+        <a href="${content.rootpath}download/download.html">the Maven Central repository</a> too.
+        It works with <a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a>
+        and  <a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a>.
+    </p>
 </#macro>
 
 <#macro productToProjectVersionMapping>

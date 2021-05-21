@@ -1,8 +1,8 @@
 = Artificial Intelligence planning optimization in Java
-:awestruct-description: Use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Java.
-:awestruct-layout: compatibilityBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: java
+:jbake-type: compatibilityBase
+:jbake-description: Use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Java.
+:jbake-priority: 1.0
+:jbake-related_tag: java
 :showtitle:
 
 OptaPlanner itself is written in 100% pure Java.

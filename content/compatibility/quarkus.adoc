@@ -1,8 +1,8 @@
 = Artificial Intelligence in Java on Quarkus
-:awestruct-description: Use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Quarkus.
-:awestruct-layout: compatibilityBase
-:awestruct-priority: 1.0
-:awestruct-related_tag: quarkus
+:jbake-type: compatibilityBase
+:jbake-description: Use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Quarkus.
+:jbake-priority: 1.0
+:jbake-related_tag: quarkus
 :showtitle:
 
 The https://quarkus.io/[Quarkus] extension for OptaPlanner enriches
