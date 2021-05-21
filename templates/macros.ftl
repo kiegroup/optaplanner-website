@@ -98,9 +98,7 @@
                 <#list published_posts[0..6] as blog>
                     <li style="margin-bottom: 10px;">
                         <div class="title">
-                            <a href="${content.rootpath}${blog.uri}">
-                                ${blog.title}
-                            </a>
+                            <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
                         </div>
                         <div class="small">${blog.date?string("EEE d MMMM yyyy")}</div>
                         <@userBadgeInline userId=blog.author/>
@@ -209,6 +207,64 @@
                 </div>
             </div>
         </div>
+    </div>
+</#macro>
+
+<#macro relatedBlogPosts>
+    <#assign relatedTags = tags?filter(tag -> tag.name == content.related_tag)>
+    <#if relatedTags?size &gt; 0>
+        <#assign relatedTag = relatedTags?first>
+        <h2>Related blog posts</h2>
+        <ul>
+            <#list relatedTag.tagged_posts as blog>
+                <li style="margin-bottom: 10px;">
+                    <div class="title">
+                        <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
+                    </div>
+                    <div class="small">${blog.date?string("EEE d MMMM yyyy")}</div>
+                    <@userBadgeInline userId=blog.author/>
+                </li>
+            </#list>
+        </ul>
+    </#if>
+</#macro>
+
+<#macro downloadJumbotron>
+    <#assign pom = data.get('pom.yml')>
+    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
+        <div class="text-center"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
+            <div>
+                <span>Download OptaPlanner</span><br/>
+                <span class="small">${pom.latestFinal.version}</span>
+            </div>
+        </a></div>
+        <h4>Try the examples now:</h4>
+        <ol>
+            <li>Download the zip and unzip it</li>
+            <li>
+                On Linux/macOS, run <code>examples/runExamples.sh</code><br/>
+                On Windows, run <code>examples/runExamples.bat</code>
+            </li>
+        </ol>
+        <div class="small">
+            Requires <a href="https://www.java.com">Java™</a> to run.
+        </div>
+    </div>
+</#macro>
+
+<#macro documentationJumbotron>
+    <#assign pom = data.get('pom.yml')>
+    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
+        <div class="text-center"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
+            <div>
+                <span>Read documentation</span><br/>
+                <span class="small">${pom.latestFinal.version}</span>
+            </div>
+        </a></div>
+        <p style="margin-top: 10px; margin-bottom: 0;">
+            Read a <a href="${pom.latestFinal.engineDocumentationHtmlSingle}">Quick Start</a> guide<br/>
+            or git clone <a href="https://github.com/kiegroup/optaplanner-quickstarts">optaplanner-quickstarts</a>.
+        </p>
     </div>
 </#macro>
 
