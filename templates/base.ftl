@@ -28,7 +28,8 @@
 
     <#-- Social media: make it look good when shared -->
     <meta content="${content.title}" property="og:title">
-    <meta content="${(content.description)!config.description}" property="og:description">
+    <#assign description = content.description!((content.type == "post")?then(content.body?replace("<[\\w/][^>]*>", "", "r")?replace("\\s+", " ", "r")?truncate(200, "...")?trim, config.description))/>
+    <meta content="${description}" property="og:description">
     <meta content="${config.canonicalBaseUrl}/${content.uri}" property="og:url">
     <meta content="OptaPlanner" property="og:site_name">
     <meta content="${(content.ogType)!"website"}" property="og:type">
