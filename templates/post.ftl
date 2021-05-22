@@ -4,7 +4,6 @@
 <#-- TODO
 change_frequency: yearly
 - page.description = summarize(html_to_text(page.content).strip, 50) if !page.description
-- page.share_image_url = "#{site.canonicalBaseUrl}#{page.output_path.sub(Regexp.new('/[^/]*$'), '/')}#{page.share_image_filename}" if page.share_image_filename
 -->
 
 <@base.layout>
