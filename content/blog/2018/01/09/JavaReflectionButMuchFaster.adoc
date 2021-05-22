@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: coding, benchmark
-:jbake-share_image_filename: reflectionButFasterUseCase.png
+:jbake-social_media_share_image: reflectionButFasterUseCase.png
 
 What is the fastest way to read a getter from a Java class without knowing the class at compilation time?
 Java frameworks often do this. A lot. And it can directly influence their performance.

@@ -4,7 +4,7 @@ rsynek
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: production, benchmark, algorithm
-:jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
+:jbake-social_media_share_image: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 The goals of the RH Summit 2019 Keynote Demo was showing multiple Red Hat products working together on OpenShift,
 demonstrating how OptaPlanner can schedule mechanics repair machines in an assembly line, with the audience sensing

@@ -4,7 +4,7 @@ Christopher-Chianelli
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case
-:jbake-share_image_filename: CovidWardNoExtremeRisk.png
+:jbake-social_media_share_image: CovidWardNoExtremeRisk.png
 
 Scheduling a hospital is tough. To maintain employees' happiness and health,
 you need to take into account sick days, days off requests, and assure

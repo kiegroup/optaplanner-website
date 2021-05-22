@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: algorithm, benchmark
-:jbake-share_image_filename: multithreadedSolvingVrpTabuSearch.png
+:jbake-social_media_share_image: multithreadedSolvingVrpTabuSearch.png
 
 OptaPlanner finally supports _multithreaded incremental solving_.
 *The speedup is spectacular. Even with just a few CPU cores, it triples the score calculation speed.*

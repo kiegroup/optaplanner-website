@@ -4,7 +4,7 @@ michaltomco
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: production, benchmark
-:jbake-share_image_filename: G1GCandParallelGCUsingJDK15.png
+:jbake-social_media_share_image: G1GCandParallelGCUsingJDK15.png
 
 Java 15 was released on the 15th of September 2020 and has promised to bring with it a few performance tweaks in its G1GC
 and ParallelGC garbage collectors.

@@ -4,7 +4,7 @@ MusaTalluzi
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case, conference scheduling
-:jbake-share_image_filename: xlsxUnitTestingRoomConflict1.png
+:jbake-social_media_share_image: xlsxUnitTestingRoomConflict1.png
 
 The business experts explain the business constraints to us, the developers. But how can we be sure that we understood
 them correctly? Or worse, how can we test that they agree among themselves once the constraints are formalized?

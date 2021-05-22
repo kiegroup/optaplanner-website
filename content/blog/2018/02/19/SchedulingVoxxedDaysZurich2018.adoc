@@ -4,7 +4,7 @@ mariofusco
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case, conference scheduling
-:jbake-share_image_filename: voxxedZurichConferenceSchedulingApp.png
+:jbake-social_media_share_image: voxxedZurichConferenceSchedulingApp.png
 :jbake-canonical_url: "https://developers.redhat.com/blog/2018/02/19/voxxed-days-zurich-2018/"
 
 My name is Mario Fusco and I’m honored to be the Program Committee Lead of https://voxxeddays.com/zurich/[Voxxed Days Zurich]

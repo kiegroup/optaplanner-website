@@ -4,7 +4,7 @@ jgoldsmith613
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case
-:jbake-share_image_filename: NorthCarolinaDistrictsOptaPlanner.png
+:jbake-social_media_share_image: NorthCarolinaDistrictsOptaPlanner.png
 
 Over the years, politicians have redrawn electoral voting lines to gain an unfair advantage.
 This has led to district boundaries with shapes that have no obvious pattern or reason other than political gain.

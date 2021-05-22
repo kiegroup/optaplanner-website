@@ -4,7 +4,7 @@ rsynek
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: activemq, quarkus, integration
-:jbake-share_image_filename: activemqSolvingArchitecture.png
+:jbake-social_media_share_image: activemqSolvingArchitecture.png
 
 If I want to solve many data sets of a planning problem every night, what architecture can easily scale out horizontally without loss of data?
 In this article, we will take a look at how to use a transactional ActiveMQ queue in front of a set of stateless https://www.optaplanner.org[OptaPlanner] pods.

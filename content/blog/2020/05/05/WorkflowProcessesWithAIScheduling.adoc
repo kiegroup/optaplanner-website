@@ -4,7 +4,7 @@ Christopher-Chianelli
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case
-:jbake-share_image_filename: FinalBPMN.png
+:jbake-social_media_share_image: FinalBPMN.png
 
 A BPMN diagram models a Business Process. When the Business
 Process involves optimization at some step,

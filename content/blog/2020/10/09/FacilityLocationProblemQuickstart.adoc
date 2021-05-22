@@ -4,7 +4,7 @@ yurloc
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case, facility location problem, quarkus
-:jbake-share_image_filename: facilityLocationProblemSolved.png
+:jbake-social_media_share_image: facilityLocationProblemSolved.png
 
 We have created a new https://github.com/kiegroup/optaplanner-quickstarts/tree/development/quarkus-facility-location[quickstart] that extends OptaPlanner use case portfolio with the https://en.wikipedia.org/wiki/Facility_location_problem[facility location problem] and also demonstrates building a cloud-native application using https://quarkus.io/[Quarkus], the new Java Native stack.
 

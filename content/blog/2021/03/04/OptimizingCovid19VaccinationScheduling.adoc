@@ -4,7 +4,7 @@ pauljamesbrown
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: production, vaccination scheduling
-:jbake-share_image_filename: vaccinationSchedulingValueProposal.png
+:jbake-social_media_share_image: vaccinationSchedulingValueProposal.png
 
 
 COVID-19 vaccination appointment scheduling has proven to be a world-wide challenge. People eligible for vaccinations haven’t been able to secure appointments despite repeated attempts. Those scheduled for vaccinations sometimes arrive at a vaccination center only to learn that their appointment has been canceled. Others find that they share the same vaccination time window with hundreds of people and must wait in line for hours. However, this doesn’t have to be the case. You can use the OptaPlanner vaccination appointment scheduler quickstart to develop a schedule that is both efficient and fair. The vaccination appointment scheduler uses artificial intelligence (AI) to prioritize people and allocate time slots based on multiple constraints and priorities. It is part of the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner quickstart collection], available on GitHub.

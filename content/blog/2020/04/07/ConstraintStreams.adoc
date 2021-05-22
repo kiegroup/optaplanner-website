@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: feature, coding, constraint
-:jbake-share_image_filename: constraintStreamGroupBy.png
+:jbake-social_media_share_image: constraintStreamGroupBy.png
 
 Traditionally, to scale out with https://www.optaplanner.org/[OptaPlanner],
 you had to learn DRL. _No more._

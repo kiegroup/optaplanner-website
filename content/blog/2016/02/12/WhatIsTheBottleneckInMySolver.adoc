@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: insight, benchmark, algorithm
-:jbake-share_image_filename: letTheBestScoreStatisticGuideYou.png
+:jbake-social_media_share_image: letTheBestScoreStatisticGuideYou.png
 
 Once we have a vanilla setup of an OptaPlanner project,
 where should we invest our time to improve it?

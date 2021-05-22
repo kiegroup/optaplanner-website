@@ -32,7 +32,7 @@
     <meta content="${config.canonicalBaseUrl}/${content.uri}" property="og:url">
     <meta content="OptaPlanner" property="og:site_name">
     <meta content="${(content.ogType)!"website"}" property="og:type">
-    <meta content="${config.canonicalBaseUrl + "/" + ((content.share_image_filename??)?then(content.uri?replace("/[^/]*$", "/", "r") + content.share_image_filename, "headerFooter/optaPlannerIcon.png"))}" property="og:image">
+    <meta content="${config.canonicalBaseUrl + "/" + ((content.social_media_share_image??)?then(content.uri?replace("/[^/]*$", "/", "r") + content.social_media_share_image, "headerFooter/optaPlannerIcon.png"))}" property="og:image">
     <meta content="summary" name="twitter:card">
     <meta content="@OptaPlanner" name="twitter:site">
 

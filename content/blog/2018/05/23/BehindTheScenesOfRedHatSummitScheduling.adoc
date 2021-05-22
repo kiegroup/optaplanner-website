@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case, conference scheduling
-:jbake-share_image_filename: summitConferenceScheduling_0.png
+:jbake-social_media_share_image: summitConferenceScheduling_0.png
 
 Earlier this month, Red Hat organized it's annual Summit conference in San Francisco for more than 7000 attendees.
 As https://youtu.be/r8e4bT0-zhU?t=1m47s[Jim Whitehurst explained in his opening keynote],

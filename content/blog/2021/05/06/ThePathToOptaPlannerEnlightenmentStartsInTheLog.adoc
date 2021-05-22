@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: algorithm, insight, production
-:jbake-share_image_filename: generalPhaseSequence.png
+:jbake-social_media_share_image: generalPhaseSequence.png
 
 Do you want to understand what OptaPlanner is doing while it is solving?
 Which decisions it makes? When? And why?

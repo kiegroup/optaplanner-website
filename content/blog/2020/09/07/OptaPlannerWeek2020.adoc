@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: feature, coding
-:jbake-share_image_filename: optaPlannerWeek2020Speakers.jpg
+:jbake-social_media_share_image: optaPlannerWeek2020Speakers.jpg
 
 It's a wrap! Last week, during the online *OptaPlanner Week* event,
 we had 10 talks by 13 speakers across 3 days with - per day -

@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: community, insight
-:jbake-share_image_filename: theRightAIForTheJob.png
+:jbake-social_media_share_image: theRightAIForTheJob.png
 
 The A.I. winter is over.
 For a few years now, the interest in Artificial Intelligence technologies is growing again.

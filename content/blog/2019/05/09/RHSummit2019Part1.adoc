@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: use case, vehicle routing, maintenance scheduling, insight
-:jbake-share_image_filename: RHSummit2019OptaPlanner2MechanicsDance.gif
+:jbake-social_media_share_image: RHSummit2019OptaPlanner2MechanicsDance.gif
 
 This year, my team and I participated in the Red Hat Summit keynote.
 In front of 7000 people, we demonstrated real-time scheduling,
