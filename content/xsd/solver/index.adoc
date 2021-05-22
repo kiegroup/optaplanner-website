@@ -1,0 +1,8 @@
+= XSD files of the https://www.optaplanner.org/xsd/solver namespace.
+:jbake-type: normalBase
+:jbake-description: A list of solver XML schema files.
+:jbake-priority: 0.1
+:showtitle:
+
+* link:solver.xsd[solver.xsd]
+* link:solver-8.xsd[solver-8.xsd]

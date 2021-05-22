@@ -1,0 +1,8 @@
+= XSD files
+:jbake-type: normalBase
+:jbake-description: A list of XML schema files.
+:jbake-priority: 0.1
+:showtitle:
+
+* link:solver/[solver.xsd files]
+* link:benchmark/[benchmark.xsd files]
