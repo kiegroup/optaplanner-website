@@ -24,9 +24,9 @@
     <title>${config.title + " - " + _title}</title>
     <meta content="${_description}" property="description">
     <meta content="${config.keywords}" property="keywords">
-    <link content="${(content.canonical_url)!config.canonicalBaseUrl + "/" + _uri}" rel="canonical">
+    <link href="${(content.canonical_url)!config.canonicalBaseUrl + "/" + _uri}" rel="canonical">
     <#if googleWebmasterToolsVerification>
-    <meta content="${config.googleWebmasterToolsVerificationId}" property="google-site-verification">
+    <meta content="${config.googleWebmasterToolsVerificationId}" name="google-site-verification">
     </#if>
 
     <#-- Social media: make it look good when shared -->

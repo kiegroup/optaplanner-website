@@ -284,7 +284,7 @@
             </div>
         </a></div>
         <p style="margin-top: 10px; margin-bottom: 0;">
-            Read a <a href="${pom.latestFinal.engineDocumentationHtmlSingle}">Quick Start</a> guide<br/>
+            Read a <a href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart">Quick Start</a> guide<br/>
             or git clone <a href="https://github.com/kiegroup/optaplanner-quickstarts">optaplanner-quickstarts</a>.
         </p>
     </div>
