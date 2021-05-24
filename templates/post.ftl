@@ -1,11 +1,6 @@
 <#import "base.ftl" as base>
 <#import "macros.ftl" as macros>
 
-<#-- TODO
-change_frequency: yearly
-- page.description = summarize(html_to_text(page.content).strip, 50) if !page.description
--->
-
 <@base.layout>
     <div class="row">
         <div class="col-md-9">

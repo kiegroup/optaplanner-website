@@ -1,6 +1,10 @@
-<@layout>${content.body}</@layout>
-
-<#macro layout>
+<#macro layout title="" description="" uri="" googleWebmasterToolsVerification=false>
+<#assign _title = content.title!title/>
+<#-- Description is mandatory because it is very important for SEO. -->
+<#assign _description = content.description!
+    ((content.type == "post")?then(content.body?replace("<[\\w/][^>]*>", "", "r")?replace("\\s+", " ", "r")?truncate(200, "...")?trim,
+    ((description == "")?then(config.errorDescriptionIsMandatory, description))))/>
+<#assign _uri = content.uri!uri/>
 <!DOCTYPE html>
 <html lang="${(content.lang)!"en"}">
 <head>
@@ -17,23 +21,21 @@
     </script>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>${config.title + " - " + content.title}</title>
-    <#--TODO Crash rendering if the page has no content.description, because its very important for SEO. -->
-    <meta content="${(content.description)!config.description}" property="description">
+    <title>${config.title + " - " + _title}</title>
+    <meta content="${_description}" property="description">
     <meta content="${config.keywords}" property="keywords">
-    <link content="${(content.canonical_url)!config.canonicalBaseUrl + "/" + content.uri}" rel="canonical">
-    <#if content.uri == "index.html">
+    <link content="${(content.canonical_url)!config.canonicalBaseUrl + "/" + _uri}" rel="canonical">
+    <#if googleWebmasterToolsVerification>
     <meta content="${config.googleWebmasterToolsVerificationId}" property="google-site-verification">
     </#if>
 
     <#-- Social media: make it look good when shared -->
-    <meta content="${content.title}" property="og:title">
-    <#assign description = content.description!((content.type == "post")?then(content.body?replace("<[\\w/][^>]*>", "", "r")?replace("\\s+", " ", "r")?truncate(200, "...")?trim, config.description))/>
-    <meta content="${description}" property="og:description">
-    <meta content="${config.canonicalBaseUrl}/${content.uri}" property="og:url">
+    <meta content="${_title}" property="og:title">
+    <meta content="${_description}" property="og:description">
+    <meta content="${config.canonicalBaseUrl}/${_uri}" property="og:url">
     <meta content="OptaPlanner" property="og:site_name">
     <meta content="${(content.ogType)!"website"}" property="og:type">
-    <meta content="${config.canonicalBaseUrl + "/" + ((content.social_media_share_image??)?then(content.uri?replace("/[^/]*$", "/", "r") + content.social_media_share_image, "headerFooter/optaPlannerIcon.png"))}" property="og:image">
+    <meta content="${config.canonicalBaseUrl + "/" + ((content.social_media_share_image??)?then(_uri?replace("/[^/]*$", "/", "r") + content.social_media_share_image, "headerFooter/optaPlannerIcon.png"))}" property="og:image">
     <meta content="summary" name="twitter:card">
     <meta content="@OptaPlanner" name="twitter:site">
 
