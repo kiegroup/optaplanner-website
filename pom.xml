@@ -66,6 +66,11 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.31</version>
           </dependency>
+          <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.28</version>
+          </dependency>
         </dependencies>
       </plugin>
     </plugins>
