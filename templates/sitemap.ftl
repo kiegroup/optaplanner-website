@@ -6,7 +6,7 @@
         <loc>${config.site_host}/${content.uri}</loc>
         <lastmod>${content.date?string("yyyy-MM-dd")}</lastmod>
         <priority>${(content.priority)!(content.type == "post")?then("0.5","0.2")}</priority>
-        <changefreq>${(content.change_frequency)!(content.type == "post")?then("weekly","monthly")}</changefreq>
+        <changefreq>${(content.change_frequency)!(content.type == "post")?then("yearly","monthly")}</changefreq>
     </url>
 </#list>
 </urlset>

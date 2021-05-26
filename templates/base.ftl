@@ -22,8 +22,8 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>${config.title + " - " + _title}</title>
-    <meta content="${_description}" property="description">
-    <meta content="${config.keywords}" property="keywords">
+    <meta content="${_description}" name="description">
+    <meta content="${config.keywords}" name="keywords">
     <link href="${(content.canonical_url)!config.canonicalBaseUrl + "/" + _uri}" rel="canonical">
     <#if googleWebmasterToolsVerification>
     <meta content="${config.googleWebmasterToolsVerificationId}" name="google-site-verification">
@@ -34,7 +34,7 @@
     <meta content="${_description}" property="og:description">
     <meta content="${config.canonicalBaseUrl}/${_uri}" property="og:url">
     <meta content="OptaPlanner" property="og:site_name">
-    <meta content="${(content.ogType)!"website"}" property="og:type">
+    <meta content="${(content.type == "post")?then("article", "website")}" property="og:type">
     <meta content="${config.canonicalBaseUrl + "/" + ((content.social_media_share_image??)?then(_uri?replace("/[^/]*$", "/", "r") + content.social_media_share_image, "headerFooter/optaPlannerIcon.png"))}" property="og:image">
     <meta content="summary" name="twitter:card">
     <meta content="@OptaPlanner" name="twitter:site">
@@ -141,7 +141,7 @@
                     <div class="sponsorMessage">
                         <span>Sponsored by</span>
                         <br>
-                        <a href="https://www.redhat.com/"><img alt="Red Hat" height="48" src="${content.rootpath}headerFooter/redHatLogo.png" width="164"></a>
+                        <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" height="48px" width="164px"></a>
                     </div>
                     <div class="sponsorMessage">
                         <span>More coder content at</span>
