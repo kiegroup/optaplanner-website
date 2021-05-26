@@ -105,9 +105,9 @@ After all, we couldn't risk that it crashes during the keynote, in front of the 
 (including all our bosses, all the way up to our CEO, Jim Whitehurst).
 
 * To learn more about *our architecture and the integration with all those other technologies*,
-https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's article (part 2)].
+https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part2.html[read Musa's article (part 2)].
 * To learn more about the scaling challenges and *the benchmarks on simulations and load tests we ran*,
-https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article (part 3)].
+https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part3.html[read Radovan's article (part 3)].
 
 To run it yourself, download https://github.com/rhdemo/2019-demo4-optaplanner[the source code]
 and follow the readme instructions.

@@ -11,9 +11,9 @@ demonstrating how OptaPlanner can schedule mechanics repair machines in an assem
 machine damage by shaking their smartphones.
 And of course, not to fail in front of several thousands of people.
 
-To learn more about the Summit Keynote Demo, https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part1.html[read Geoffrey's article].
+To learn more about the Summit Keynote Demo, https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part1.html[read Geoffrey's article].
 Also, to find out more about the architecture and the integration with other technologies,
-https://www.optaplanner.org//blog/2019/05/09/RHSummit2019Part2.html[read Musa's article].
+https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part2.html[read Musa's article].
 
 The application is running and working. But how are players going to enjoy it? Is the game going to be boring,
 as no machine will ever get close to being broken? Or is it going to be the opposite - will players break all

@@ -131,7 +131,7 @@
                     <h4>Code</h4>
                     <ul>
                         <li><a href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
-                        <li><a href="https://issues.redhat.com/projects/PLANNER">Submit a bug</a></li>
+                        <li><a href="${config.issueTracker}">Submit a bug</a></li>
                         <li><a href="${content.rootpath}code/license.html">License (Apache-2.0)</a></li>
                         <li><a href="${content.rootpath}download/releaseNotes/">Release notes</a></li>
                         <li><a href="${content.rootpath}download/upgradeRecipe/">Upgrade recipes</a></li>

@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center"><a class="btn btn-default versionedButton" href="https://issues.redhat.com/projects/PLANNER"><div>
+            <div class="text-center"><a class="btn btn-default versionedButton" href="${config.issueTracker}"><div>
                         <span>Create an issue in JIRA</span>
                     </div></a>
                 <div class="small">

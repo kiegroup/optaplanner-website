@@ -31,7 +31,7 @@ To build from source:
  ...
 ----
 +
-The first time, Maven might take a lot time, because it needs to download jars.
+The first time, Maven might take a lot of time, because it needs to download jars.
 
 . Run the examples:
 +
