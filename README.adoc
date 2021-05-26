@@ -7,17 +7,6 @@ https://www.optaplanner.org/[www.optaplanner.org]
 To build the optaplanner-website (before and after your changes):
 
 ```
-# TODO replace with "mvn clean generate-resources" to avoid having to install jbake first
-# Requires jbake 2.7.0 or higher (for yml support)
-$ .../jbake-*-bin/bin/jbake -b
-$ firefox output/index.html
+$ mvn clean generate-resources
+$ firefox target/website/index.html
 ```
-
-== Developing Drools, OptaPlanner and jBPM
-
-*If you want to build or contribute to a kiegroup project, https://github.com/kiegroup/droolsjbpm-build-bootstrap/blob/master/README.md[read this document].*
-
-*It will save you and us a lot of time by setting up your development environment correctly.*
-It solves all known pitfalls that can disrupt your development.
-It also describes all guidelines, tips and tricks.
-If you want your pull requests (or patches) to be merged into master, please respect those guidelines.

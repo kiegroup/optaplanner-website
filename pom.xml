@@ -49,6 +49,7 @@
         </executions>
         <configuration>
           <inputDirectory>${project.basedir}</inputDirectory>
+          <outputDirectory>${project.build.directory}/website</outputDirectory>
         </configuration>
         <dependencies>
           <dependency>

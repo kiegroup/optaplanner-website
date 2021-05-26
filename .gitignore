@@ -1,4 +1,5 @@
 # Local files
+/target
 /local
 
 # Eclipse, Netbeans and IntelliJ files
