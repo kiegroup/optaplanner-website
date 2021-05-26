@@ -1000,7 +1000,7 @@ ConstraintMatchTotal maximumCapacityMatchTotal = new DefaultConstraintMatchTotal
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `ScoreManager`: generic type `Score` added
 
-The `ScoreManager` and `ScoreExplanation` API's
+The `ScoreManager` and `ScoreExplanation` APIs
 now have a generic type `Score` to avoid downcasts in your code, for example from `Score` to `HardSoftScore`.
 
 Before in `*.java`:
@@ -1038,7 +1038,7 @@ After in `*.java`:
 [.upgrade-recipe-major]
 === `ConstraintMatchTotal`, `ConstraintMatch` and `Indictment`: generic type `Score` added
 
-Just like `ScoreManager` and `ScoreExplanation`, the `ConstraintMatchTotal`, `ConstraintMatch` and `Indictment` API's
+Just like `ScoreManager` and `ScoreExplanation`, the `ConstraintMatchTotal`, `ConstraintMatch` and `Indictment` APIs
 now have a generic type `Score` to avoid downcasts in your code, for example from `Score` to `HardSoftScore`.
 
 Before in `*.java`:
@@ -1289,7 +1289,7 @@ and then `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)` instead.
 The method `PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has long been deprecated in favor of
 `PlannerBenchmarkFactory.create(PlannerBenchmarkConfig)`.
 A `PlannerBenchmarkConfig` is now instantiated before a `PlannerBenchmarkFactory` is instantiated, which is more natural.
-The old was has now been removed.
+`PlannerBenchmarkFactory.getPlannerBenchmarkConfig()` has been removed.
 
 Before in `*.java`:
 
@@ -1432,7 +1432,7 @@ BenchmarkAggregatorFrame.createAndDisplayFromXmlResource(
         ".../cloudBalancingBenchmarkConfig.xml");
 ----
 
-If you programmatically adjust the benchmark configuration, you can use ``BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
+If you programmatically adjust the benchmark configuration, you can use `BenchmarkAggregatorFrame.createAndDisplay(PlannerBenchmarkConfig)` instead.
 
 [.upgrade-recipe-minor]
 === Removed JavaScript expression support in configuration
