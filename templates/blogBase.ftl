@@ -24,7 +24,7 @@
                         <li><a href="https://twitter.com/OptaPlanner" target="_blank" title="News stream via Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
                         <li><a href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
                     </ul>
-                    <a class="btn btn-default" href="${content.rootpath}blog/archive.html" type="button">
+                    <a class="btn btn-default" href="${content.rootpath}blog/index.html" type="button">
                         Blog archive
                     </a></div>
             </div>

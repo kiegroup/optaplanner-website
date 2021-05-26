@@ -108,7 +108,7 @@
                     </li>
                 </#list>
                 <div class="small pull-right">
-                    <a href="${content.rootpath}blog/archive.html">Blog archive</a>
+                    <a href="${content.rootpath}blog/index.html">Blog archive</a>
                 </div>
             </ul>
         </div>
