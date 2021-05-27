@@ -1,0 +1,38 @@
+= Bedingungserfüllungslöser (Java™, Open Source)
+:jbake-type: localizedBase
+:jbake-description: OptaPlanner ist ein leichtgewichtiger, einbaubarer, Open Source Planung Engine, geschrieben in 100% Java.
+:jbake-lang: de
+:jbake-priority: 1.0
+:showtitle:
+
+== Was ist OptaPlanner?
+
+OptaPlanner ist **ein Bedingungserfüllungslöser**.
+Es optimiert Business Geschäfts-Ressourcen Planung.
+Jede Organisation steht vor einem Zeitplan Rätsel: eine limitierte Menge von *gezwungenen* Ressourcen (Arbeiter, Kapital, Zeit und Geld) verteilen,
+um Produkte und Dienste dem Kunden zu liefern.
+OptaPlanner optimiert solche Planungsprobleme um **mehr Business mit weniger Ressourcen** zu machen.
+Zu Anwendungsfälle gehören link:../../learn/useCases/vehicleRoutingProblem.html[Tourenplanung], Arbeiter Dienstplanung, Aufgaben Zeitplanung,
+Behälter verpacken und viel mehr.
+
+OptaPlanner ist **ein leichtgewichtiger, einbaubarer Planung Engine**. Es erlaubt normalen Java™ Programmierern Optimierungsprobleme
+effizient zu lösen. Bedingungen sind auf gewöhnliche domain Objekte angewendet und können existierenden Code wiederverwenden.
+Es gibt keinen Grund um komplizierte mathematische Gleichungen einzutragen.
+Unter der Haube kombiniert OptaPlanner hochentwickelte Optimierungsheuristiken und Metaheuristiken
+(so wie Tabu Search, Simulierte Abkühlung und Late Acceptance) mit sehr effizienter Punktzahlkalkulation.
+
+OptaPlanner ist **Open Source Software**, veröffentlicht unter link:../../code/license.html[der Apache Software Lizenz].
+Es ist in 100% pur Java™ geschrieben, läuft auf jeder JVM und ist auch in link:../../download/download.html[der Maven Central Repository] erhältlich.
+
+== Beiträge
+
+* https://redhat.lookbookhq.com/red-hat-alps-webinar-series/watch-94?lx=8RVvca[Optimierung des Field Service Management mit Hilfe von Constraint Solving Algorithmen]  (Red Hat Partner)
+
+* http://blog-de.akquinet.de/2015/02/17/optaplanner-teil1/[OptaPlanner hilft bei verteilten Schulstandorten] - http://de.slideshare.net/tnfink/optaplanner-hilft-bei-verteilten-schulstandorten[slides] (Red Hat Partner)
+
+* http://www.viadee.de/news/aktuelle-meldungen/nachricht/archiv/2015/januar/artikel/optimal-geplant.html[Webbasierte Schichtplan - Optimierung mit Smart GWT und OptaPlanner]
+(veröffentlicht in http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html[JavaSPEKTRUM])
+and http://jaxenter.de/artikel/jboss-optaplanner-optimierung-2-0-176855[Optimierung 2.0]
+(veröffentlicht in https://jaxenter.de/Java-Magazin-215-178070[Java Magazin 2.15])
+
+* https://www.heise.de/ix/inhalt/2017/1/104/[Schneller, kürzer, billiger] - iX

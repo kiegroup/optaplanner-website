@@ -1,0 +1,149 @@
+= Optimize your problems using KIE Execution Server
+mcimbora
+2017-08-18
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: feature, howto, execution server
+
+KIE Server provides separation of execution environment from your client application,
+making it easy to use OptaPlanner outside Java ecosystem (e.g. .NET).
+In the 7 release stream, we worked to improve OptaPlanner/KIE Server integration.
+The new API is less verbose and more intuitive.
+Let's take a closer look at its usage in more detail.
+
+== How a typical workflow looks like?
+
+. Install your optimization app kjar to a maven repository accessible by the KIE Server.
+This step assumes the following conditions are met:
+
+* `kmodule.xml` file is located in `META-INF` folder of your project.
+* Project uses packaging type `kjar`.
+* `kie-maven-plugin` is configured for the project.
+
++
+[source,xml,options="nowrap"]
+----
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.kie</groupId>
+        <artifactId>kie-maven-plugin</artifactId>
+        <version>${version.org.kie}</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+----
+
+. Create a container (server unit of execution) wrapping the project.
+This example uses Java KIE Server client, which performs REST calls in the background.
++
+The following dependencies are required in your client application.
+Make sure to use version 7.0.0.Final, or later.
++
+[source,xml,options="nowrap"]
+----
+  <dependency>
+    <groupId>org.kie.server</groupId>
+    <artifactId>kie-server-api</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.kie.server</groupId>
+    <artifactId>kie-server-client</artifactId>
+  </dependency>
+----
+Client and container creation:
++
+[source,java,options="nowrap"]
+----
+  KieServicesConfiguration kieServicesConfiguration = new KieServicesConfigurationImpl(SERVER_URL, USERNAME, PASSWORD, CLIENT_TIMEOUT);
+  KieServicesClient kieServicesClient = KieServicesFactory.newKieServicesClient(kieServicesConfiguration)
+
+  // ReleaseId corresponds to groupId:artifactId:version (GAV) of the project installed in the first step
+  ReleaseId releaseId = new ReleaseId("org.optaplanner", "kie-server-example", "1.0.0-SNAPSHOT");
+  KieContainerResource containerResource = new KieContainerResource(CONTAINER_ID, releaseId);
+  kieServicesClient.createContainer(CONTAINER_ID, containerResource);
+----
+
+. Create a solver within the container.
+A single container can hold multiple solvers, each of them having a unique identifier.
+This is useful if you want to try out different solver configurations.
++
+[source,java,options="nowrap"]
+----
+SolverServicesClient solverClient = kieServicesClient.getServicesClient(SolverServicesClient.class);
+solverClient.createSolver(CONTAINER_ID, SOLVER_ID, SOLVER_CONFIG_XML_PATH);
+----
+
+. Submit your optimization problem
++
+[source,java,options="nowrap"]
+----
+CloudBalance cloudBalance = loadPlanningSolution();
+solverClient.solvePlanningProblem(CONTAINER_ID, SOLVER_ID, cloudBalance);
+----
+
+. Check the solver state.
+At this point of time the best solution notifications are not supported yet on the client side,
+you need to periodically check the solver status/best solution.
++
+[source,java,options="nowrap"]
+----
+  SolverInstance solver = solverClient.getSolver(CONTAINER_ID, SOLVER_ID);
+  if (solver.getStatus() == SolverInstance.SolverStatus.SOLVING) {
+    // continue
+  } else {
+    CloudBalance cloudBalance = (CloudBalance) solverClient.getSolverWithBestSolution(CONTAINER_ID, SOLVER_ID).getBestSolution()
+    // process the solution
+  }
+----
+
+. Once you are done with the optimization, terminate the solver.
++
+[source,java,options="nowrap"]
+----
+  solverClient.terminateSolverEarly(CONTAINER_ID, SOLVER_ID);
+----
+
+. If you don't plan to reuse the solver anymore, dispose it to free the resources on the server.
++
+[source,java,options="nowrap"]
+----
+  solverClient.disposeSolver(CONTAINER_ID, SOLVER_ID);
+----
+
+== New OptaPlanner REST API overview
+
+The following table shows an overview of the new API introduced in version 7.0.0.Final.
+All solver action URLs are normally prefixed by container URL, e.g. `http://${kie-server}/services/rest/server/containers/${container_id}`,
+which is not included in the table to keep the output short.
+
+|===
+|Action |Method |URL suffix | Payload
+
+|Register solver a|PUT a|solvers/${solver_id} |-
+|Get solver a|GET a|solvers/${solver_id} |SolverInstance object
+|Submit solution a|POST a|solvers/${solver_id}/state/solving |Solution object
+|Get best solution a|GET a|solvers/${solver_id}/bestsolution |SolverInstance object including the best solution
+|Terminate solver a|POST a|solvers/${solver_id}/state/terminating-early |-
+|Dispose solver a|DELETE a|solvers/${solver_id} |-
+|===
+
+== Where do I start?
+https://www.optaplanner.org/download/download.html[Download KIE (Execution) Server].
+
+Check https://docs.optaplanner.org/latest/optaplanner-wb-es-docs/html_single/#_kie_server_integration[KIE Server Integration] chapter
+of OptaPlanner Workbench quickstart or https://docs.optaplanner.org/7.1.0.Final/optaplanner-wb-es-docs/html_single/#_optaplanner_rest_api[OptaPlanner REST API]
+documentation for more details on the API.
+
+Optionally try out KIE Workbench, which integrates with the KIE Server.
+The following video demonstrates the process of setting up a Workbench example and optimizing it using the KIE Server.
+
+video::bpBGujiMCAs[youtube]
+
+== Conclusion
+
+KIE Server provides an alternative way of optimizing your constraint satisfaction problems.
+If you want to offload workload to cloud (possibly with a large amount of resources),
+or you use non-Java client, KIE Server is the right pick.
+

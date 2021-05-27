@@ -1,0 +1,16 @@
+= Upgrade Recipe Archive
+:jbake-type: normalBase
+:jbake-description: A list of all upgrade recipes for each OptaPlanner version.
+:jbake-priority: 0.1
+:showtitle:
+
+These are all past, present and future upgrade recipes:
+
+* link:upgradeRecipe8.html[Upgrade recipe from OptaPlanner 7 to 8.x]
+* link:upgradeRecipe7.html[Upgrade recipe from OptaPlanner 6.5 to 7.x]
+* link:upgradeRecipe6.5.html[Upgrade recipe from OptaPlanner 6.4 to 6.5]
+* link:upgradeRecipe6.4.html[Upgrade recipe from OptaPlanner 6.3 to 6.4]
+* link:upgradeRecipe6.3.html[Upgrade recipe from OptaPlanner 6.2 to 6.3]
+* link:upgradeRecipe6.2.html[Upgrade recipe from OptaPlanner 6.1 to 6.2]
+* link:upgradeRecipe6.1.html[Upgrade recipe from OptaPlanner 6.0 to 6.1]
+* link:upgradeRecipe6.0.html[Upgrade recipe from Drools Planner 5.5 to OptaPlanner 6.0]

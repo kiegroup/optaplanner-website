@@ -1,0 +1,31 @@
+= Artificial Intelligence in Java on Quarkus
+:jbake-type: compatibilityBase
+:jbake-description: Use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Quarkus.
+:jbake-priority: 1.0
+:jbake-related_tag: quarkus
+:showtitle:
+
+The https://quarkus.io/[Quarkus] extension for OptaPlanner enriches
+your project with the typical _supersonic subatomic java_ benefits, such as:
+
+- Instantaneous refresh during development
+- Increased performance (both bootstrap and runtime)
+- Reduced memory usage
+- Native executable compilation (optional)
+
+video::7IuOA9n6kh0[youtube]
+
+== Guide
+
+**https://quarkus.io/guides/optaplanner[Read the OptaPlanner on Quarkus guide.]**
+
+== Quick start
+
+Run the quick start yourself:
+
+. Git clone https://github.com/kiegroup/optaplanner-quickstarts
+. Descend into the directory `quarkus-school-timetabling`
+. Run `mvn quarkus:dev`
+. Open http://localhost:8080 in your browser and click on the _Solve_ button.
+
+Or try any of the other Quarkus quickstarts there for other use cases!

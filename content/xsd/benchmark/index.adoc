@@ -1,0 +1,8 @@
+= XSD files of the https://www.optaplanner.org/xsd/benchmark namespace.
+:jbake-type: normalBase
+:jbake-description: A list of benchmark XML schema files.
+:jbake-priority: 0.1
+:showtitle:
+
+* link:benchmark.xsd[benchmark.xsd]
+* link:benchmark-8.xsd[benchmark-8.xsd]

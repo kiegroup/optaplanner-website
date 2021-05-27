@@ -1,0 +1,79 @@
+= Testimonials and Case Studies
+:jbake-type: normalBase
+:jbake-description: Usage across the world, such as case studies, articles, related open source projects and testimonials
+:jbake-priority: 0.4
+:showtitle:
+
+OptaPlanner is used all over the world to optimize all kinds of planning problems.
+A fraction of our users have shared their story publicly:
+
+== Case Studies
+
+* Plan when to do maintenance of 220K+ elevators and escalators over 2500+ mechanics.
+** https://www.redhat.com/files/summit/session-assets/2017/S103192-goldsmith.pdf[2017 slides]
+** https://www.youtube.com/watch?v=rgi1YzAvBKk[2019 video]
+
+* https://www.rtinsights.com/powering-todays-digital-service-providers-with-automation-optimization-and-intelligence-case-study/[Vehicle routing for digital service providers]
+
+* https://healthcare.axians.be/solutions/mystaff/oncall/[Schedule shifts of hospital doctors]
+
+== Articles (English)
+
+* http://www.lshift.net/blog/2015/07/14/automatic-scheduling-of-people-and-rooms/[Automatic scheduling of people and rooms]
+
+* http://community.redhat.com/blog/2014/11/smart-vm-scheduling-in-ovirt-clusters/[oVirt OptaPlanner plugin: Cloud optimization of Virtual Machines]
+
+* https://www.viaboxx.de/route-optimization/vehicle-routing-optaplanner/[Vehicle routing with real routes],
+https://www.viaboxx.de/route-optimization/scaling-the-vehicle-routing-problem/[scaling it] (before nearby selection)
+and http://www.viaboxx.de/route-optimization/distances-for-vehicle-routing-with-graphhopper[using GraphHopper] in Germany
+
+* http://java.dzone.com/articles/drools-planner-billboard[Billboard advertisement scheduling] for EPAMEDIA in Austria
+
+== Articles (non-English)
+
+* French, German and Japanese: see the language specific pages linked from link:../[the homepage].
+
+* Portuguese: http://www.devmedia.com.br/red-hat-resolvendo-problemas-de-planejamento-com-optaplanner-parte-1/31981[Resolving planning problems] (partially paywalled)
+
+* Finnish: http://www.alfame.com/blog/optaplanner-rajallisten-resurssien-optimointiin[Limited resources optimization]
+
+== 3rd party open source projects
+
+* https://github.com/yurloc/iypt-planner[IYPT Jury Planner]
+
+* Wedding Tables Planner (https://github.com/juanignaciosl/wedding-tables-planner-web[Web] - https://github.com/juanignaciosl/wedding-tables-planner[Core]): uses OptaPlanner with OpenShift, Scala, Play, AngularJS, ...
+
+* https://github.com/ge0ffrey/optaconf[OptaConf Conference Planner] uses OptaPlanner with JavaEE 7 (JAXRS, CDI, WildFly) to expose a REST service.
+
+* https://github.com/gemoc/farmingmodeling[Farm optimization] uses OptaPlanner with Drools DSL and EMF.
+
+== Podcasts
+
+* http://pca.st/akwU[JBoss Asylum: OptaPlanner for the masses]
+
+== Testimonials
+
+* I am really impressed by OptaPlanner. You really did a great job! Up to 4 days ago I didn't even know planning on such a scale is even possible without a years of programming investment... now, I have almost fully working prototype product for 1 use-case in less than 3 days! - Luka Bradesko (CEO Solvesall)
+
+* OptaPlanner rocks! Complex planning problems solving & optimization made easy. We love it! - https://twitter.com/veggen/status/185712254036094976[Vincent Eggen]
+
+* Thanks to OptaPlanner we are able to provide fast and affordable automated resource planning cloud service to IT organisations in Germany. - Reinis Vicups
+
+* Speedyroute.com changed from OpenOpt to OptaPlanner to provide optimised delivery routes - https://twitter.com/magic_hat_ltd/status/460154384463441923[Magic Hat Solutions]
+
+* Using OptaPlanner for the first time, I was able to build a proof-of-concept for a complex scheduling and packing problem in less than 2 days. - Jannes Verstichel
+
+* OptaPlanner (as well as Drools) rocks! - https://twitter.com/juanignaciosl/status/471581556218544128[Juan Ignacio Sánchez]
+
+* There are few things more satisfying in life than getting an OptaPlanner system up and running. It's like magic. - https://twitter.com/divideby0/status/522952030932189185[Cedric Hurst]
+
+* It is very easy to add custom modules on top of OptaPlanner's elegant framework. - Isaac Zhang
+
+== Papers
+
+* https://www.researchgate.net/publication/338983323_Uma_analise_do_framework_OptaPlanner_aplicado_ao_problema_de_empacotamento_unidimensional[Uma análise do framework OptaPlanner aplicado ao problema de empacotamento unidimensional]
+
+== Share your story
+
+If you would like share a case study, article or 1-line testimonial, link:../community/team.html[let us know]:
+we might add it here and share it on the OptaPlanner Twitter and Facebook.

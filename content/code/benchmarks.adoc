@@ -1,0 +1,20 @@
+= Benchmarks
+:jbake-type: normalBase
+:jbake-description: Reproduce our open benchmarks on your machine.
+:showtitle:
+
+== Why reproduce benchmarks?
+
+_Never trust a benchmark report that you can't run locally._
+
+Decision makers hold benchmark reports in high regard, because they represent an objective comparison.
+However, it's common for benchmark creators to unknowingly distort a benchmark in favor of their own project,
+even without malicious intent. To minimize this impact, a benchmark should be open and easily reproducible.
+
+== How to reproduce our benchmarks
+
+. Build `optaplanner-examples` link:../code/sourceCode.html[from source] or link:../download/download.html[from the distribution zip].
+. Find the relevant `BenchmarkApp` class, for example
+https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/cloudbalancing/optional/benchmark/CloudBalancingBenchmarkApp.java[`CloudBalancingBenchmarkApp.java`]
+for cloud optimization.
+. Run it with the VM Options `-Xmx2G -server`.

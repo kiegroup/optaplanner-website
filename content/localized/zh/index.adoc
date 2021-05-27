@@ -1,0 +1,23 @@
+= 约束求解器 (Java ™, Open Source)
+:jbake-type: localizedBase
+:jbake-description: OptaPlanner是一个100%使用Java编写，轻量级，可集成的开源引擎。
+:jbake-lang: cn
+:jbake-priority: 1.0
+:showtitle:
+
+== OptaPlanner是什么？
+
+OptaPlanner 是一个AI(人工智能)约束求解器，它可以优化规划和调度问题，例如:车辆路线规划，人员排班，云端优化，任务分配，会议日程安排，生产车间调度，背包问题及很多其它规划类问题。每个组织都面临着以下挑战: 需要将一组有限的、受约束的资源（如员工，资产，时间 和/或资金)分配到产品或服务中去。OptaPlanner提供更高效的计划，从而降低生产成本并提高服务质量。
+
+OptaPlanner是一款轻量级，可嵌入的规划引擎。通过它，我们使普通的Java™程序，即可有效地解决优化问题。它还与其它JVM语言（如Kotlin和Scala）兼容。这些约束被应用于普通业务领域对象，并可以调用现有代码。使用这个引擎，不需要将这些约束以数学规划模型的形式输入。在引擎内部，OptaPlanner将复杂的AI优化算法（如禁忌搜索，模拟退火，延迟接受和其他元启发式算法）与一些非常有效的约束评分计算技术，还有其他最先进的约束求解技术相结合起来。
+
+OptaPlanner是一个基于Apache软件许可的开源软件。它使用100％纯Java™编写，可运行在任何JVM上，也可以在Maven中心库中找到。
+
+== 相关中文资料
+
+* https://zhuanlan.zhihu.com/p/35369689[OptaPlanner - 把example运行起来]
+* https://zhuanlan.zhihu.com/kentzhang[OptaPlanner专栏文章]
+* https://optaplanner-cn.blogspot.com[中文Blog(海外)]
+
+== 相关论坛
+* https://groups.google.com/forum/#!forum/optaplanner-cn[OptaPlanner中文讨论组]

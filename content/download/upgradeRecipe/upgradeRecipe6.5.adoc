@@ -1,0 +1,9 @@
+= Upgrade recipe 6.5
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 6.5 from a previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 6.5
+
+== From 6.4.0.Final to 6.5.0.Final
+
+There is no impact on your code: this release contains only bugfixes.

@@ -1,0 +1,9 @@
+= License
+:jbake-type: normalBase
+:jbake-description: OptaPlanner is open source, under the Apache License 2.0.
+:showtitle:
+
+OptaPlanner is open source software, released under the http://www.apache.org/licenses/LICENSE-2.0.html[Apache License 2.0].
+
+This license is very liberal: it allows reuse for commercial purposes.
+Read http://www.apache.org/foundation/licence-FAQ.html#WhatDoesItMEAN[the layman's explanation] for more information.

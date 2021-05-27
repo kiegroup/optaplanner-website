@@ -1,0 +1,31 @@
+= Solveur de satisfaction (Java ™, Open Source)
+:jbake-type: localizedBase
+:jbake-description: OptaPlanner est un moteur léger, intégrable, ouvert la planification de la source, écrit en 100% Java.
+:jbake-lang: fr
+:jbake-priority: 1.0
+:showtitle:
+
+== Qu'est-ce qu' OptaPlanner?
+
+OptaPlanner est un solveur de satisfaction de contraintes.
+Il optimise la planification des ressources de l’entreprise.
+Chaque organisation est confrontée à des problèmes de planification: attribuer un ensemble limité de ressources limitées (employés, actifs, temps et argent) pour fournir des produits ou des services à des clients.
+OptaPlanner optimise ces problèmes de planification pour faire plus et mieux avec moins de ressources.
+Les cas d’utilisation sont les tournées de véhicules, affectation d'employés, planification, optimisation de contenu de livraison, et beaucoup d'autres encore.
+
+OptaPlanner est un moteur de planification léger et facilement intégrable.
+Il permet aux programmeurs Java ™ de résoudre des problèmes d’optimisation de manière efficace.
+Les contraintes s'appliquent sur des objets métier et peuvent réutiliser le code existant.
+Il n’y a pas besoin de saisir d’équations mathématiques complexes.
+OptaPlanner combine des heuristiques et des métaheuristiques (telles que Recherche Tabou, Recuit Simulé et Late Acceptance) avec un calcul de scores très efficace en utilisant des techniques d'optimisation sophistiquées.
+
+OptaPlanner est un logiciel open source, sous licence Apache Software.
+Il est écrit 100% en Java ™, fonctionne sur toute JVM et est également disponible dans un dépôt central Maven.
+
+== Articles
+
+* https://blog.elao.com/fr/dev/planification-de-rdv-avec-optaplanner/[Planification de rendez-vous avec OptaPlanner]
+Aussi https://www.youtube.com/watch?v=_gXtxjHogtw[voir la vidéo de cette présentation].
+
+* http://blog.soat.fr/2015/04/devoxx-france-2015-optaplanner-ou-comment-optimiser-les-itineraires-les-plannings-et-bien-plus-encore/[Devoxx France 2015 : OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore]
+Aussi https://www.youtube.com/watch?v=sJHPjHsSsXQ[voir la vidéo de cette présentation].

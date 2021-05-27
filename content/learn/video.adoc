@@ -1,0 +1,18 @@
+= Videos
+:jbake-type: normalBase
+:jbake-description: Watch these videos for example demonstrations, feature explanations and more.
+:jbake-priority: 0.8
+:showtitle:
+
+== YouTube channel
+
+Watch all OptaPlanner videos on *https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ[the OptaPlanner YouTube channel]*.
+
+== Make your own videos
+
+* All images shown are available as `png` and `svg`. See link:slides.html[the slides].
+* The https://github.com/kiegroup/optaplanner-website[optaplanner-website]
+has a `videoUtils` directory which includes overlay and thumbnail templates.
+
+If it's a public video, link:../community/team.html[let us know]
+and we'll share it on OptaPlanner's Twitter and Facebook.

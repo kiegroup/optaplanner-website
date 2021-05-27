@@ -1,0 +1,1536 @@
+= Upgrade recipe 6.1
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 6.1 from a previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 6.1
+
+== From 6.0.0.Final to 6.1.0.Beta1
+
+[.upgrade-recipe-readme]
+=== Backwards Compatible Public API
+
+As promised, starting from OptaPlanner 6.1.0.Final, there will be a public API,
+which will be backwards compatible in later versions (such as 6.2, 6.3, etc).
+The public API are all classes in the package `org.optaplanner.core.api` (or subpackages thereof).
+For more information, see the documentation, chapter "Status of OptaPlanner".
+Bear with us: this should be the last time we require you to do a large number of migrations during upgrading.
+
+[.upgrade-recipe-impl-detail]
+=== Simulated Annealing behaviour change
+
+Simulated Annealing now uses the time gradient of the current step instead of the time gradient of the last step.
+The impact of this change is negligible.
+
+[.upgrade-recipe-impl-detail]
+=== `AbstractScore`: methods changes
+
+On `AbstractScore`, the methods `parseLevelStrings(...)` and `buildScorePattern(...)` have been changed from public to protected.
+It's highly unlikely that this affects your code.
+
+[.upgrade-recipe-recommended]
+=== `@ValueRangeProvider` that returns numbers: use `ValueRange`
+
+If you have `@ValueRangeProvider` that returns a collection of numbers (for example `List<Integer>` or `List<BigDecimal>`),
+then you probably want to switch to a `ValueRange`, which uses less memory and offers additional opportunities.
+
+Before in `*.java`:
+[source, java]
+----
+@ValueRangeProvider(id = "delayRange")
+public List<Integer> getDelayRange() {
+    List<Integer> = new ArrayList<Integer>(5000);
+    for (int i = 0; i < 5000; i++) {
+        delayRange.add(i);
+    }
+    return delayRange;
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@ValueRangeProvider(id = "delayRange")
+public CountableValueRange<Integer> getDelayRange() {
+    return ValueRangeFactory.createIntValueRange(0, 5000);
+}
+----
+
+[.upgrade-recipe-major]
+=== `@ValueRangeProvider`: moved
+
+The annotation `@ValueRangeProvider` has been moved into another package
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.api.domain.value.ValueRangeProvider;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
+----
+
+[.upgrade-recipe-impl-detail]
+=== `Descriptor` classes: moved
+
+The `*Descriptor` classes have been moved into a descriptor package.
+
+[.upgrade-recipe-minor]
+=== `Selector`: `isContinuous()` renamed
+
+`Selector.isContinuous()` has been renamed to `isCountable` and its boolean return value has been inverted.
+It's highly unlikely that your code uses `isContinuous()` because uncountable value ranges weren't supported yet.
+
+[.upgrade-recipe-impl-detail]
+=== `SolutionDescriptor`: `isInitialized(...)` changed
+
+`SolutionDescriptor.isInitialized(Solution)` now requires a `ScoreDirector` parameter too
+
+[.upgrade-recipe-minor]
+=== `IMPROVING_STEP_PERCENTAGE` removed
+
+The deprecated `statisticType` `IMPROVING_STEP_PERCENTAGE` has been removed.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<problemBenchmarks>
+  ...
+  <problemStatisticType>IMPROVING_STEP_PERCENTAGE</problemStatisticType>
+</problemBenchmarks>
+----
+
+[.upgrade-recipe-minor]
+=== Custom Benchmarker ranking: `Benchmark` classes renamed
+
+If you have custom Benchmarker ranking:
+`SolverBenchmark` has been renamed to `SolverBenchmarkResult`.
+`ProblemBenchmark` has been renamed to `ProblemBenchmarkResult`.
+`SingleBenchmark` has been renamed to `SingleBenchmarkResult`.
+They also moved into the package `result`.
+
+Before in `*.java`:
+[source, java]
+----
+public int compare(SolverBenchmark a, SolverBenchmark b) {...}
+----
+
+After in `*.java`:
+[source, java]
+----
+public int compare(SolverBenchmarkResult a, SolverBenchmarkResult b) {...}
+----
+
+Before in `*.java`:
+[source, java]
+----
+public Comparable createRankingWeight(List<SolverBenchmark> solverBenchmarkList, SolverBenchmark solverBenchmark) {...}
+----
+
+After in `*.java`:
+[source, java]
+----
+public Comparable createRankingWeight(List<SolverBenchmarkResult> solverBenchmarkResultList, SolverBenchmarkResult solverBenchmarkResult) {...}
+----
+
+[.upgrade-recipe-minor]
+=== Non-default Benchmarker rank: config change
+
+If you explicitly specify Benchmarker rankings:
+All `solverBenchmarkRanking*` properties have been renamed to `solverRanking*`.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverBenchmarkRankingType>TOTAL_SCORE</solverBenchmarkRankingType>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverRankingType>TOTAL_SCORE</solverRankingType>
+----
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverBenchmarkRankingComparatorClass>...</solverBenchmarkRankingComparatorClass>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverRankingComparatorClass>...</solverRankingComparatorClass>
+----
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverBenchmarkRankingWeightFactoryClass>...</solverBenchmarkRankingWeightFactoryClass>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+   <solverRankingWeightFactoryClass>...</solverRankingWeightFactoryClass>
+----
+
+Before in `*.java`:
+[source, java]
+----
+   ... implements SolverRankingWeightFactory
+----
+
+After in `*.java`:
+[source, java]
+----
+   ... implements SolverBenchmarkRankingWeightFactory
+----
+
+[.upgrade-recipe-impl-detail]
+=== `optaplanner-benchmark` refactoring
+
+The internals of `optaplanner-benchmark` have been deeply refactored to support the new aggregator functionality.
+
+[.upgrade-recipe-minor]
+=== Benchmarker: output report directory structure changed
+
+The benchmark output report directory structure is slightly different: the CSV files have been renamed.
+
+[.upgrade-recipe-minor]
+=== Non-default Benchmarker ranking or report locale: config change
+
+If you explicitly specify Benchmarker rankings or report locale:
+The elements `<benchmarkReportLocale>`, `<solverRankingType>`, `<solverRankingComparatorClass>`
+and `<solverRankingWeightFactoryClass>` have been moved inside the new element `<benchmarkReport>`.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<benchmarkReportLocale>...</benchmarkReportLocale>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<benchmarkReport>
+  <locale>...</locale>
+</benchmarkReport>
+----
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<solverRankingType>...</solverRankingType>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<benchmarkReport>
+  <solverRankingType>...</solverRankingType>
+</benchmarkReport>
+----
+
+[.upgrade-recipe-minor]
+=== `<entitySelector>`: `<cacheType>PHASE</cacheType>` obsolete
+
+If you explicitly configured all your `<entitySelector>` elements with `<cacheType>PHASE</cacheType>` for performance,
+you now no longer have to do that, as OptaPlanner does the fast thing out of the box,
+if and only if no other properties (such as filtering) were specified on that `<entitySelector>`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<unionMoveSelector>
+  <changeMoveSelector>
+    <entitySelector>
+      <cacheType>PHASE</cacheType>
+    </entitySelector>
+  </changeMoveSelector>
+  <swapMoveSelector>
+    <entitySelector>
+      <cacheType>PHASE</cacheType>
+    </entitySelector>
+  </swapMoveSelector>
+</unionMoveSelector>
+----
+
+After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
+[source, xml]
+----
+<unionMoveSelector>
+  <changeMoveSelector/>
+  <swapMoveSelector/>
+</unionMoveSelector>
+----
+
+[.upgrade-recipe-readme]
+=== _time spend_ typo fixed
+
+The phrase _time spend_ has been renamed to _time spent_.
+This includes the log output and the benchmark report.
+
+[.upgrade-recipe-major]
+=== `<termination>`: config changed
+
+All child elements of `<termination>` have been renamed:
+The element `<maximumTimeMillisSpend>` has been renamed to `<millisecondsSpentLimit>`
+The element `<maximumSecondsSpend>` has been renamed to `<secondsSpentLimit>`
+The element `<maximumMinutesSpend>` has been renamed to `<minutesSpentLimit>`
+The element `<maximumHoursSpend>` has been renamed to `<hoursSpentLimit>`
+The element `<scoreAttained>` has been renamed to `<bestScoreLimit>`
+The element `<maximumStepCount>` has been renamed to `<stepCountLimit>`
+The element `<maximumUnimprovedStepCount>` has been renamed to `<unimprovedStepCountLimit>`
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<termination>
+  <maximumTimeMillisSpend>...</maximumTimeMillisSpend>
+  <maximumSecondsSpend>...</maximumSecondsSpend>
+  <maximumMinutesSpend>...</maximumMinutesSpend>
+  <maximumHoursSpend>...</maximumHoursSpend>
+  <scoreAttained>...</scoreAttained>
+  <maximumStepCount>...</maximumStepCount>
+  <maximumUnimprovedStepCount>...</maximumUnimprovedStepCount>
+</termination>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<termination>
+  <millisecondsSpentLimit>...</millisecondsSpentLimit>
+  <secondsSpentLimit>...</secondsSpentLimit>
+  <minutesSpentLimit>...</minutesSpentLimit>
+  <hoursSpentLimit>...</hoursSpentLimit>
+  <bestScoreLimit>...</bestScoreLimit>
+  <stepCountLimit>...</stepCountLimit>
+  <unimprovedStepCountLimit>...</unimprovedStepCountLimit>
+</termination>
+----
+
+[.upgrade-recipe-major]
+=== `Solver` and `BestSolutionChangedEvent`: `getTimeMillisSpend()` renamed
+
+In `Solver` and `BestSolutionChangedEvent`, the method `getTimeMillisSpend()` has been renamed to `getTimeMillisSpent()`.
+
+Before in `*.java`:
+[source, java]
+----
+... = solver.getTimeMillisSpend();
+----
+
+After in `*.java`:
+[source, java]
+----
+... = solver.getTimeMillisSpent();
+----
+
+Before in `*.java`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent event) {
+        ... = event.getTimeMillisSpend();
+    }
+----
+
+After in `*.java`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent event) {
+        ... = event.getTimeMillisSpent();
+    }
+----
+
+[.upgrade-recipe-major]
+=== Benchmarker: `<warmUp*>` config renamed
+
+Benchmarker: the `<warmUp*>` elements have been renamed:
+The element `<warmUpTimeMillisSpend>` has been renamed to `<warmUpMillisecondsSpentLimit>`
+The element `<warmUpSecondsSpend>` has been renamed to `<warmUpSecondsSpentLimit>`
+The element `<warmUpMinutesSpend>` has been renamed to `<warmUpMinutesSpentLimit>`
+The element `<warmUpHoursSpend>` has been renamed to `<warmUpHoursSpentLimit>`
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<plannerBenchmark>
+  <warmUpTimeMillisSpend>...</warmUpTimeMillisSpend>
+  <warmUpSecondsSpend>...</warmUpSecondsSpend>
+  <warmUpMinutesSpend>...</warmUpMinutesSpend>
+  <warmUpHoursSpend>...</warmUpHoursSpend>
+  ...
+</plannerBenchmark>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<plannerBenchmark>
+  <warmUpMillisecondsSpentLimit>...</warmUpMillisecondsSpentLimit>
+  <warmUpSecondsSpentLimit>...</warmUpSecondsSpentLimit>
+  <warmUpMinutesSpentLimit>...</warmUpMinutesSpentLimit>
+  <warmUpHoursSpentLimit>...</warmUpHoursSpentLimit>
+  ...
+</plannerBenchmark>
+----
+
+[.upgrade-recipe-minor]
+=== Real time planning: `addProblemFactChange(...)` behaviour changed
+
+Real time planning: `addProblemFactChange(...)` no longer causes solver `Termination`s to reset
+(but it still causes phase terminations to reset).
+
+[.upgrade-recipe-major]
+=== `BestSolutionChangedEvent` and `SolverEventListener`: moved
+
+Classes `BestSolutionChangedEvent` and `SolverEventListener` moved from package `impl.event` to `api.solver.event`.
+They are now part of the public api.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.event.BestSolutionChangedEvent;
+import org.optaplanner.core.impl.event.SolverEventListener;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.api.solver.event.BestSolutionChangedEvent;
+import org.optaplanner.core.api.solver.event.SolverEventListener;
+----
+
+[.upgrade-recipe-minor]
+=== Package `config.termination`: moved
+
+The package `config.termination` has been moved to `config.solver.termination`.
+Similarly, the package `impl.termination` has been moved to `impl.solver.termination`.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.config.termination....;
+import org.optaplanner.core.impl.termination....;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.config.solver.termination....;
+import org.optaplanner.core.impl.solver.termination....;
+----
+
+[.upgrade-recipe-impl-detail]
+=== `RandomUtils`: moved
+
+`RandomUtils` moved from package `impl.util` to `impl.solver.random`.
+
+[.upgrade-recipe-impl-detail]
+=== `AbstractSolverPhaseScope` and `AbstractStepScope`: moved
+
+`AbstractSolverPhaseScope` and `AbstractStepScope` moved to package `impl.phase.scope`.
+
+[.upgrade-recipe-major]
+=== Package `impl.move`: moved
+
+All classes in the package `impl.move` have been moved to `impl.heuristic.move`.
+None of them are future-proof enough at this time to be added the public API.
+Prefer generic moves whenever possible.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.move.Move;
+import org.optaplanner.core.impl.move.CompositeMove;
+import org.optaplanner.core.impl.move.NoChangeMove;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.heuristic.move.Move;
+import org.optaplanner.core.impl.heuristic.move.CompositeMove;
+import org.optaplanner.core.impl.heuristic.move.NoChangeMove;
+----
+
+[.upgrade-recipe-minor]
+=== `PLANNING_ENTITY_TABU` and `PLANNING_VALUE_TABU`: renamed
+
+The `<acceptorType>` values `PLANNING_ENTITY_TABU` and `PLANNING_VALUE_TABU` are renamed to `ENTITY_TABU` and `VALUE_TABU`.
+It's very unlikely that you're using either, because neither specifies the tabu size.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<acceptorType>PLANNING_ENTITY_TABU</acceptorType>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<acceptorType>ENTITY_TABU</acceptorType>
+----
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<acceptorType>PLANNING_VALUE_TABU</acceptorType>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<acceptorType>VALUE_TABU</acceptorType>
+----
+
+[.upgrade-recipe-impl-detail]
+=== `BestSolutionRecaller`: moved
+
+`BestSolutionRecaller` moved from package `impl.bestsolution` to `impl.solver.recaller`.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.bestsolution.BestSolutionRecaller;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.solver.recaller.BestSolutionRecaller;
+----
+
+== From 6.1.0.Beta1 to 6.1.0.Beta2
+
+[.upgrade-recipe-impl-detail]
+=== `PlanningEntityDescriptor`: renamed
+
+`PlanningEntityDescriptor` has been renamed to `EntityDescriptor`.
+
+[.upgrade-recipe-impl-detail]
+=== `PlanningVariableDescriptor`: renamed
+
+`PlanningVariableDescriptor` has been renamed to `GenuineVariableDescriptor`.
+
+[.upgrade-recipe-major]
+=== `PlanningVariableListener`: renamed
+
+The interface `PlanningVariableListener` has been renamed to `VariableListener`.
+
+Before in `*.java`:
+[source, java]
+----
+public class VehicleUpdatingVariableListener implements PlanningVariableListener<Customer> {
+----
+
+After in `*.java`:
+[source, java]
+----
+public class VehicleUpdatingVariableListener implements VariableListener<Customer> {
+----
+
+[.upgrade-recipe-major]
+=== `AbstractPlanningVariableListener`: renamed
+
+The class `AbstractPlanningVariableListener` has been removed.
+
+Before in `*.java`:
+[source, java]
+----
+public class VehicleUpdatingVariableListener extends AbstractPlanningVariableListener<Customer> {
+----
+
+After in `*.java`:
+[source, java]
+----
+public class VehicleUpdatingVariableListener implements VariableListener<Customer> {
+----
+
+[.upgrade-recipe-minor]
+=== `solutionEquals()` and `solutionHashCode()`: removed
+
+If you've copied the `solutionEquals()` and `solutionHashCode()` from the examples,
+it's safe to remove it if you're not using `solutionTabu` (which is often pointless to use).
+Also remove the `equals()` and `hashCode()` method on your `Solution` implementation.
+
+[.upgrade-recipe-minor]
+=== `DEBUG` logging: changed
+
+In `DEBUG` logging, each step now mentions it's phase type first:
+CH is Construction Heuristic, LS is Local Search, ES is Exhaustive Search.
+
+[.upgrade-recipe-minor]
+=== `GreatDelugeAcceptor`: removed
+
+`GreatDelugeAcceptor`, an experimental implementation, has been removed. Use Late Acceptance instead.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <greatDelugeWaterLevelUpperBoundRate>...</greatDelugeWaterLevelUpperBoundRate>
+  <greatDelugeWaterRisingRate>...</greatDelugeWaterRisingRate>
+----
+
+[.upgrade-recipe-recommended]
+=== Specify an `<initializingScoreTrend>`
+
+Specify an `<initializingScoreTrend>` in the `<scoreDirectorFactory>`,
+to increase performance of some algorithms (Construction Heuristics and Exhaustive Search).
+See the documentation section on `InitializingScoreTrend` when to use `ANY`, `ONLY_UP` or `ONLY_DOWN`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+<scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+<scoreDrl>.../cloudBalancingScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+<scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+<scoreDrl>.../cloudBalancingScoreRules.drl</scoreDrl>
+<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+  </scoreDirectorFactory>
+----
+
+[.upgrade-recipe-major]
+=== `<pickEarlyType>`: replaced
+
+Replace `<pickEarlyType>` `FIRST_NON_DETERIORATING_SCORE` with `<initializingScoreTrend>` `ONLY_DOWN`.
+If the `<initializingScoreTrend>` is specified,
+the `<constructionHeuristic>` will automatically use the most appropriate `<pickEarlyType>`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+...
+  </scoreDirectorFactory>
+  ...
+  <constructionHeuristic>
+<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+<forager>
+  <pickEarlyType>FIRST_NON_DETERIORATING_SCORE</pickEarlyType>
+</forager>
+  </constructionHeuristic>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+...
+<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+  </scoreDirectorFactory>
+  ...
+  <constructionHeuristic>
+<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+[.upgrade-recipe-major]
+=== `<bruteForce>`: renamed
+
+The solver phase `<bruteForce>` has been replaced by ``<exhaustiveSearch>``'s `BRUTE_FORCE` type.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <bruteForce/>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <exhaustiveSearch>
+    <exhaustiveSearchType>BRUTE_FORCE</exhaustiveSearchType>
+  </exhaustiveSearch>
+----
+There is now a better alternative to Brute Force: Branch And Bound, see docs for more information.
+
+[.upgrade-recipe-major]
+=== `ConstraintOccurrence` classes: removed
+
+The `ConstraintOccurrence` classes (which were deprecated) have been removed.
+If you hadn't switch them to the `ConstraintMatch` system yet,
+scroll up to the section *From 6.0.0.Alpha9 to 6.0.0.Beta1* for instructions.
+
+[.upgrade-recipe-major]
+=== `Solver`: `setPlanningProblem(Solution)` and `solve()` merged
+
+`Solver` interface: the methods `setPlanningProblem(Solution)` and `solve()` have been merged
+as the method `solve(Solution)`.
+
+Before in `*.java`:
+[source, java]
+----
+solver.setPlanningProblem(planningProblem);
+solver.solve();
+----
+
+After in `*.java`:
+[source, java]
+----
+solver.solve(planningProblem);
+----
+
+Note: you still need to use `solver.getBestSolution()` to retrieve the best solution.
+That is intentional due to real-time planning and to support pareto optimization in the future.
+
+== From 6.1.0.Beta2 to 6.1.0.Beta3
+
+[.upgrade-recipe-minor]
+=== `@ValueRangeProvider` on an entity class: use `<swapMoveSelector>` as is
+
+If you have a `@ValueRangeProvider` on an entity class (instead of the `Solution` class),
+then it's now safe to use the `<swapMoveSelector>` as is.
+It's no longer needed to filter out swaps which could put a value in an entity's variable that's not in its value range.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <swapMoveSelector>
+    <filterClass>...ValidSwapsOnlySwapMoveFilter</filterClass>
+  </swapMoveSelector>
+----
+
+After in `*SolverConfig.xml and *BenchmarkConfig.xml`:
+[source, xml]
+----
+  <swapMoveSelector/>
+----
+
+[.upgrade-recipe-minor]
+=== `ScoreDirector`: split up
+
+The interface `ScoreDirector` has been split up in `ScoreDirector` and `InnerScoreDirector`.
+`ScoreDirector` now only has methods which might make the public API in a future version.
+`InnerScoreDirector` extends `ScoreDirector` and it holds all methods which will never be made part of the public API.
+Similarly, `ScoreDirectorFactory` has been split up in `ScoreDirectorFactory` and `InnerScoreDirectorFactory`.
+
+[.upgrade-recipe-minor]
+=== Programmatic configuration: usage changed
+
+If you're doing programmatic configuration (instead of by XML),
+Config methods that accepted a property wrapped in a singleton list (due to XStream limitations),
+now no longer need the property wrapped in a list.
+
+Before in `*.java`:
+[source, java]
+----
+  localSearchSolverPhaseConfig.setMoveSelectorConfigList(Collections.singletonList(moveSelectorConfig));
+----
+
+After in `*.java`:
+[source, java]
+----
+  localSearchSolverPhaseConfig.setMoveSelectorConfig(moveSelectorConfig);
+----
+
+[.upgrade-recipe-major]
+=== `XmlSolverFactory`: removed
+
+The class `XmlSolverFactory` (which was not part of the public API) has been removed
+and replaced by static methods on `SolverFactory` (which are part of the public API).
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = new XmlSolverFactory("...solverConfig.xml");
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = SolverFactory.createFromXmlResource("...solverConfig.xml");
+----
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = new XmlSolverFactory().configure(inputStream);
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = SolverFactory.createFromXmlInputStream(inputStream);
+----
+
+Before in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = new XmlSolverFactory().configure(reader);
+----
+
+After in `*.java`:
+[source, java]
+----
+SolverFactory solverFactory = SolverFactory.createFromXmlReader(reader);
+----
+
+Note: If you used the method `addXstreamAnnotations()`, take a look at the non-public API class `XStreamXmlSolverFactory`.
+
+[.upgrade-recipe-major]
+=== `XmlPlannerBenchmarkFactory`: removed
+
+Benchmarker: The class `XmlPlannerBenchmarkFactory` has been removed
+and replaced by static methods on `PlannerBenchmarkFactory`.
+
+Before in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory plannerBenchmarkFactory = new XmlPlannerBenchmarkFactory(...);
+----
+
+After in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory plannerBenchmarkFactory = PlannerBenchmarkFactory.createFromXmlResource(...);
+----
+
+Note: If you used the method `addXstreamAnnotations()`, take a look at the non-public API class XStreamXmlPlannerBenchmarkFactory.
+
+[.upgrade-recipe-minor]
+=== `FreemarkerXmlPlannerBenchmarkFactory`: removed
+
+Benchmarker: The class `FreemarkerXmlPlannerBenchmarkFactory` has been removed
+and replaced by static methods on `PlannerBenchmarkFactory`.
+
+Before in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory plannerBenchmarkFactory = new FreemarkerXmlPlannerBenchmarkFactory(...);
+----
+
+After in `*.java`:
+[source, java]
+----
+PlannerBenchmarkFactory plannerBenchmarkFactory = PlannerBenchmarkFactory.createFromFreemarkerXmlResource(...);
+----
+
+[.upgrade-recipe-major]
+=== `<xstreamAnnotatedClass>`: renamed
+
+Benchmarker configuration: the element `<xstreamAnnotatedClass>` has been renamed to `<xStreamAnnotatedClass>`.
+
+Before in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<problemBenchmarks>
+  <xstreamAnnotatedClass>org.optaplanner.examples.nqueens.domain.NQueens</xstreamAnnotatedClass>
+  ...
+</problemBenchmarks>
+----
+
+After in `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<problemBenchmarks>
+  <xStreamAnnotatedClass>org.optaplanner.examples.nqueens.domain.NQueens</xStreamAnnotatedClass>
+  ...
+</problemBenchmarks>
+----
+
+[.upgrade-recipe-readme]
+=== Classpath resources configuration changed
+
+All classpath resources must lose their leading slash,
+because OptaPlanner now expects them to adhere to `ClassLoader.getResource(String)` instead of `Class.getResource(String)`.
+
+[.upgrade-recipe-major]
+=== `SolverFactory.createFromXmlResource(String)`: changed
+
+The `SolverFactory.createFromXmlResource(String)` parameter must lose its leading slash.
+
+Before in `*.java`:
+[source, java]
+----
+... = SolverFactory.createFromXmlResource(
+        "/org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+----
+
+After in `*.java`:
+[source, java]
+----
+... = SolverFactory.createFromXmlResource(
+        "org/optaplanner/examples/cloudbalancing/solver/cloudBalancingSolverConfig.xml");
+----
+
+[.upgrade-recipe-major]
+=== `<scoreDrl>`: changed
+
+All elements `<scoreDrl>` must lose their leading slash.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<scoreDrl>/org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules.drl</scoreDrl>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules.drl</scoreDrl>
+----
+
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory.createFromXmlResource(String)`: changed
+
+The `PlannerBenchmarkFactory.createFromXmlResource(String)` parameter must lose its leading slash.
+
+Before in `*.java`:
+[source, java]
+----
+... = PlannerBenchmarkFactory.createFromXmlResource(
+        "/org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfig.xml");
+----
+
+After in `*.java`:
+[source, java]
+----
+... = PlannerBenchmarkFactory.createFromXmlResource(
+        "org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfig.xml");
+----
+
+[.upgrade-recipe-major]
+=== `PlannerBenchmarkFactory.createFromFreemarkerXmlResource(String)`: changed
+
+The `PlannerBenchmarkFactory.createFromFreemarkerXmlResource(String)` parameter must lose its leading slash.
+
+Before in `*.java`:
+[source, java]
+----
+... = PlannerBenchmarkFactory.createFromFreemarkerXmlResource(
+        "/org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfigTemplate.xml.ftl");
+----
+
+After in `*.java`:
+[source, java]
+----
+... = PlannerBenchmarkFactory.createFromFreemarkerXmlResource(
+        "org/optaplanner/examples/cloudbalancing/benchmark/cloudBalancingBenchmarkConfigTemplate.xml.ftl");
+----
+
+[.upgrade-recipe-major]
+=== `SimpleScoreCalculator`: renamed
+
+The interface `SimpleScoreCalculator` has been renamed to `EasyScoreCalculator`
+to avoid confusion with `SimpleScore` and `SimpleScore`: it can return other `Score` types too.
+The package name has changed too.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.score.director.simple.SimpleScoreCalculator;
+public class CloudBalancingEasyScoreCalculator implements SimpleScoreCalculator<CloudBalance> {
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
+public class CloudBalancingEasyScoreCalculator implements EasyScoreCalculator<CloudBalance> {
+    ...
+}
+----
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<simpleScoreCalculatorClass>org.optaplanner.examples.cloudbalancing.optional.score.CloudBalancingEasyScoreCalculator<simpleScoreCalculatorClass>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<easyScoreCalculatorClass>org.optaplanner.examples.cloudbalancing.optional.score.CloudBalancingEasyScoreCalculator<easyScoreCalculatorClass>
+----
+
+== From 6.1.0.Beta3 to 6.1.0.Beta4
+
+[.upgrade-recipe-minor]
+=== Custom `ScoreDefinition`: `Score` changed
+
+If you have a custom `ScoreDefinition`: the `Score` interface has an extra method `negate()`.
+
+[.upgrade-recipe-minor]
+=== Simulated Annealing with `<bestScoreLimit>`: behaviour changed
+
+If you combine Simulated Annealing with `<bestScoreLimit>`:
+The `timeGradient` (used only by Simulated Annealing) calculation has changed for `BestScoreTermination`.
+On average, this should be for the better.
+
+[.upgrade-recipe-minor]
+=== `BestSolutionChangedEvent` and `SolverEventListener`: generified
+
+`BestSolutionChangedEvent` and `SolverEventListener` now have a generic parameter which you can optionally use.
+
+Before in `*.java`:
+[source, java]
+----
+solver.addEventListener(new SolverEventListener() {
+    public void bestSolutionChanged(BestSolutionChangedEvent event) {
+        CloudBalance solution = (CloudBalance) event.getNewBestSolution();
+    }
+});
+----
+
+After in `*.java`:
+[source, java]
+----
+solver.addEventListener(new SolverEventListener<CloudBalance>() {
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        CloudBalance solution = event.getNewBestSolution();
+    }
+});
+----
+
+[.upgrade-recipe-minor]
+=== `BestSolutionChangedEvent`: `isNewBestSolutionInitialized()` and `isEveryProblemFactChangeProcessed()` added
+
+`BestSolutionChangedEvent` now has the methods `isNewBestSolutionInitialized()` and `isEveryProblemFactChangeProcessed()`.
+In real-time planning, if you're only interested in processing valid solutions, you'll want to filter and check those.
+
+Note: in 6.0, filtering `BestSolutionChangedEvents` for only valid solutions was cumbersome.
+
+Note: often you're interested in invalid, uninitialized solutions too, to show to the user you've processed his problem fact changes.
+
+After in `*.java`:
+[source, java]
+----
+    public void bestSolutionChanged(BestSolutionChangedEvent<CloudBalance> event) {
+        // Ignore invalid solutions
+        if (event.isEveryProblemFactChangeProcessed()
+                && event.isNewBestSolutionInitialized()
+                && event.getNewBestSolution().getScore().isFeasible()) {
+            ...
+        }
+    }
+----
+
+[.upgrade-recipe-minor]
+=== `<writeOutputSolutionEnabled>`: output location changed
+
+A benchmark configuration with `<writeOutputSolutionEnabled>true</...>` now writes the solution files
+in the single benchmark directory (instead of the problem benchmark directory)
+and no longer alters the filename.
+
+[.upgrade-recipe-minor]
+=== `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: default parameters changed
+
+`<subChainChangeMoveSelector>` and ``<subChainSwapMoveSelector>``'s ``<subChainSelector>``s now default
+to a `<minimumSubChainSize>` of 1 instead of 2.
+This is to enable `<subChainSwapMoveSelector>` to swap a subchain of size 1 and a subchain of at least size 2 too.
+
+[.upgrade-recipe-minor]
+=== `<pillarSwapMoveSelector>`: default parameters changed
+
+``<pillarSwapMoveSelector>``'s `<pillarSelector>` now selects subpillars too by default.
+Normally, that's an improvement.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <pillarSwapMoveSelector/>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml` (if you don't want this new behaviour):
+[source, xml]
+----
+  <pillarSwapMoveSelector>
+    <pillarSelector>
+      <subPillarEnabled>false</subPillarEnabled>
+    </pillarSelector>
+  </pillarSwapMoveSelector>
+----
+
+Note: `<pillarChangeMoveSelector>` is not supported too
+
+[.upgrade-recipe-minor]
+=== `SolverPhase`: renamed
+
+`SolverPhase` has been renamed to `Phase`. `SolverPhaseConfig` has been renamed to `PhaseConfig`.
+
+Before in `*.java`:
+[source, java]
+----
+    List<SolverPhaseConfig> solverPhaseConfigList = new ArrayList<SolverPhaseConfig>();
+    ConstructionHeuristicSolverPhaseConfig solverPhaseConfig = new ConstructionHeuristicSolverPhaseConfig();
+    ...
+    solverPhaseConfigList.add(solverPhaseConfig);
+    ...
+    solverConfig.setPhaseConfigList(phaseConfigList);
+----
+
+After in `*.java`:
+[source, java]
+----
+    List<PhaseConfig> phaseConfigList = new ArrayList<PhaseConfig>();
+    ConstructionHeuristicPhaseConfig phaseConfig = new ConstructionHeuristicPhaseConfig();
+    ...
+    phaseConfigList.add(phaseConfig);
+    ...
+    solverConfig.setPhaseConfigList(phaseConfigList);
+----
+
+[.upgrade-recipe-major]
+=== `CustomSolverPhaseCommand`: renamed
+
+The interface `CustomSolverPhaseCommand` has been renamed to `CustomPhaseCommand`.
+The element `<customSolverPhase>` has been renamed to `<customPhase>`.
+The element `<customSolverPhaseCommandClass>` has been renamed to `<customPhaseCommandClass>`.
+
+Before in `*.java`:
+[source, java]
+----
+public class ToOriginalMachineSolutionInitializer implements CustomSolverPhaseCommand {
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public class ToOriginalMachineSolutionInitializer implements CustomPhaseCommand {
+    ...
+}
+----
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <customSolverPhase>
+<customSolverPhaseCommandClass>...ToOriginalMachineSolutionInitializer</customSolverPhaseCommandClass>
+  </customSolverPhase>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <customPhase>
+<customPhaseCommandClass>....ToOriginalMachineSolutionInitializer</customPhaseCommandClass>
+  </customPhase>
+----
+
+== From 6.1.0.Beta4 to 6.1.0.CR1
+
+[.upgrade-recipe-impl-detail]
+=== `ScoreDefinition`: `getLevelCount()` renamed
+
+The method `ScoreDefinition.getLevelCount()` has been renamed to `ScoreDefinition.getLevelsSize()`.
+
+[.upgrade-recipe-major]
+=== `BendableScore`: configuration changed
+
+`BendableScore`: the configuration has changed: `...LevelCount` has been renamed to `...LevelsSize`
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+<scoreDefinitionType>BENDABLE</scoreDefinitionType>
+<bendableHardLevelCount>2</bendableHardLevelCount>
+<bendableSoftLevelCount>3</bendableSoftLevelCount>
+...
+  </scoreDirectorFactory>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <scoreDirectorFactory>
+<scoreDefinitionType>BENDABLE</scoreDefinitionType>
+<bendableHardLevelsSize>2</bendableHardLevelsSize>
+<bendableSoftLevelsSize>3</bendableSoftLevelsSize>
+...
+  </scoreDirectorFactory>
+----
+
+[.upgrade-recipe-minor]
+=== `SolverRankingWeightFactory`: moved
+
+The interface `SolverRankingWeightFactory` has moved package (but almost nobody uses that).
+
+[.upgrade-recipe-minor]
+=== Programmatic configuration: classes moved
+
+Configuration by Java (instead of XML):
+Enums for the Config classes have been moved into the config package
+and any inner classes of those enums have been moved to the top level.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.config.score.director.ScoreDirectorFactoryConfig.ScoreDefinitionType;
+import org.optaplanner.core.config.solver.termination.TerminationConfig.TerminationCompositionStyle;
+import org.optaplanner.core.impl.heuristic.selector.common.SelectionCacheType;
+import org.optaplanner.core.impl.heuristic.selector.common.decorator.SelectionSorterOrder;
+import org.optaplanner.core.config.constructionheuristic.ConstructionHeuristicPhaseConfig.ConstructionHeuristicType;
+import org.optaplanner.core.impl.constructionheuristic.decider.forager.ConstructionHeuristicPickEarlyType;
+import org.optaplanner.core.impl.localsearch.decider.forager.PickEarlyType;
+import org.optaplanner.core.config.localsearch.decider.acceptor.AcceptorConfig.AcceptorType;
+import org.optaplanner.benchmark.impl.statistic.ProblemStatisticType;
+import org.optaplanner.benchmark.api.ranking.SolverRankingType;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.config.score.definition.ScoreDefinitionType;
+import org.optaplanner.core.config.solver.termination.TerminationCompositionStyle;
+import org.optaplanner.core.config.heuristic.selector.common.SelectionCacheType;
+import org.optaplanner.core.config.heuristic.selector.common.decorator.SelectionSorterOrder;
+import org.optaplanner.core.config.constructionheuristic.ConstructionHeuristicType;
+import org.optaplanner.core.config.constructionheuristic.decider.forager.ConstructionHeuristicPickEarlyType;
+import org.optaplanner.core.config.localsearch.decider.forager.LocalSearchPickEarlyType;
+import org.optaplanner.core.config.localsearch.decider.acceptor.AcceptorType;
+import org.optaplanner.benchmark.config.statistic.ProblemStatisticType;
+import org.optaplanner.benchmark.config.ranking.SolverRankingType;
+----
+
+[.upgrade-recipe-impl-detail]
+=== `ForagerConfig`: renamed
+
+`ForagerConfig` has been renamed to `LocalSearchForagerConfig`
+
+[.upgrade-recipe-major]
+=== `Solution`: moved
+
+The interface `Solution` has been promoted to the public API.
+It has also moved package from `impl.solution` to `api.domain.solution`
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.solution.Solution;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.api.domain.solution.Solution;
+----
+
+[.upgrade-recipe-major]
+=== `@PlanningVariable`: `chained` refactored
+
+The `@PlanningVariable` property `chained` has been refactored to `graphType`.
+This is to allow support for other graph types (such as `TREE`) in the future.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningVariable(chained = true, ...)
+public Standstill getPreviousStandstill() {
+    return previousStandstill;
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningVariable(graphType = PlanningVariableGraphType.CHAINED, ...)
+public Standstill getPreviousStandstill() {
+    return previousStandstill;
+}
+----
+
+[.upgrade-recipe-major]
+=== `BEST_FIT`: renamed
+
+The `constructionHeuristicType` `BEST_FIT` has been renamed into `WEAKEST_FIT`.
+The terminology "Best Fit" was not correct and did not allow for `STRONGEST_FIT`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>BEST_FIT</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>WEAKEST_FIT</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+[.upgrade-recipe-major]
+=== `BEST_FIT_DECREASING`: renamed
+
+The `constructionHeuristicType` `BEST_FIT_DECREASING` has been renamed into `WEAKEST_FIT_DECREASING`.
+The terminology "Best Fit" was not correct and did not allow for `STRONGEST_FIT_DECREASING`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>BEST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+  <constructionHeuristic>
+    <constructionHeuristicType>WEAKEST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+----
+
+[.upgrade-recipe-major]
+=== `@PlanningVariable(mappedBy)` renamed
+
+For the shadow variable of a bi-directional relationship,
+the declaration has changed from `@PlanningVariable(mappedBy)` to `@InverseRelationShadowVariable(sourceVariableName)`.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningVariable(mappedBy = "previousStandstill")
+Customer getNextCustomer();
+void setNextCustomer(Customer nextCustomer);
+----
+
+After in `*.java`:
+[source, java]
+----
+@InverseRelationShadowVariable(sourceVariableName = "previousStandstill")
+Customer getNextCustomer();
+void setNextCustomer(Customer nextCustomer);
+----
+
+[.upgrade-recipe-major]
+=== `VariableListener`: usage changed
+
+`VariableListener`: the `VariableListener` is now declared on the shadow side, instead of the `@PlanningVariable` side.
+This way, OptaPlanner recognizes the shadow variables, and all shadow variables are declared in a consistent matter.
+Furthermore, it allows a shadow variable to based on other shadow variable.
+
+Before in `*.java`:
+[source, java]
+----
+@PlanningVariable(valueRangeProviderRefs = {"vehicleRange", "customerRange"},
+        graphType = PlanningVariableGraphType.CHAINED,
+        variableListenerClasses = {VehicleUpdatingVariableListener.class, ArrivalTimeUpdatingVariableListener.class})
+public Standstill getPreviousStandstill() {
+    return previousStandstill;
+}
+public Vehicle getVehicle() {
+    return vehicle;
+}
+public Integer getArrivalTime() {
+    return arrivalTime;
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningVariable(...)
+public Standstill getPreviousStandstill() {
+    return previousStandstill;
+}
+@CustomShadowVariable(variableListenerClass = VehicleUpdatingVariableListener.class,
+        sources = {@CustomShadowVariable.Source(variableName = "previousStandstill")})
+public Vehicle getVehicle() {
+    return vehicle;
+}
+@CustomShadowVariable(variableListenerClass = ArrivalTimeUpdatingVariableListener.class,
+        sources = {@CustomShadowVariable.Source(variableName = "previousStandstill")})
+public Integer getArrivalTime() {
+    return arrivalTime;
+}
+----
+
+[.upgrade-recipe-minor]
+=== Shadow entities
+
+Even classes that only have shadow variables (and extend a planning entity class),
+now need to be explicitly registered as planning entities.
+Previously, it was only required for inverse relationship shadow variables. Now it's required for all shadow variables.
+
+Before in `*.java`:
+[source, java]
+----
+public class TimeWindowedCustomer extends Customer {
+----
+
+After in `*.java`:
+[source, java]
+----
+@PlanningEntity
+public class TimeWindowedCustomer extends Customer {
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<planningEntityClass>org.optaplanner.examples.vehiclerouting.domain.timewindowed.TimeWindowedCustomer</planningEntityClass>
+----
+
+[.upgrade-recipe-major]
+=== `<planningEntityClass>`: ordering changed
+
+Multiple `<planningEntityClass>` elements now need to be ordered by superclasses (and superinterfaces) first,
+instead of superclasses (and superinterfaces) last.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<planningEntityClass>...TimeWindowedCustomer</planningEntityClass>
+<planningEntityClass>...Customer</planningEntityClass>
+<planningEntityClass>...Standstill</planningEntityClass>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<planningEntityClass>...Standstill</planningEntityClass>
+<planningEntityClass>...Customer</planningEntityClass>
+<planningEntityClass>...TimeWindowedCustomer</planningEntityClass>
+----
+
+[.upgrade-recipe-major]
+=== `<planningEntityClass>`: renamed
+
+The element `<planningEntityClass>` has been renamed to `<entityClass>`.
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<planningEntityClass>org.optaplanner.examples.cloudbalancing.domain.CloudProcess</planningEntityClass>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<entityClass>org.optaplanner.examples.cloudbalancing.domain.CloudProcess</entityClass>
+----
+
+[.upgrade-recipe-major]
+=== `XStreamScoreConverter` and `XStreamBendableScoreConverter`: moved
+
+`XStreamScoreConverter` and `XStreamBendableScoreConverter` have moved package.
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.XStreamScoreConverter;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.api.score.XStreamScoreConverter;
+----
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.XStreamBendableScoreConverter;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.api.score.XStreamBendableScoreConverter;
+----
+
+[.upgrade-recipe-major]
+=== `ProblemIO`: renamed
+
+`ProblemIO` has been renamed to `SolutionFileIO` and moved package (into the public API).
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.core.impl.solution.ProblemIO;
+public class MachineReassignmentFileIO implements ProblemIO {
+    ...
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
+public class MachineReassignmentFileIO implements SolutionFileIO {
+    ...
+}
+----
+
+Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<problemBenchmarks>
+  <problemIOClass>...MachineReassignmentProblemIO</problemIOClass>
+  ...
+</problemBenchmarks>
+----
+
+After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
+[source, xml]
+----
+<problemBenchmarks>
+  <solutionFileIOClass>...MachineReassignmentFileIO</solutionFileIOClass>
+  ...
+</problemBenchmarks>
+----
+
+Before in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.XStreamProblemIO;
+----
+
+After in `*.java`:
+[source, java]
+----
+import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
+----
+
+[.upgrade-recipe-major]
+=== `SolutionFileIO`: `getFileExtension()` split up
+
+The method `SolutionFileIO.getFileExtension()` has been split up in `getInputFileExtension()` and `getOutputFileExtension()`;
+It's still highly recommended to use the same input and output file extension.
+
+Before in `*.java`:
+[source, java]
+----
+public String getFileExtension() {
+    return FILE_EXTENSION;
+}
+----
+
+After in `*.java`:
+[source, java]
+----
+public String getInputFileExtension() {
+    return FILE_EXTENSION;
+}
+public String getOutputFileExtension() {
+    return FILE_EXTENSION;
+}
+----
+
+== From 6.1.0.CR1 to 6.1.0.CR2
+
+[.upgrade-recipe-impl-detail]
+=== `SolutionDescriptor`: `getEntityDescriptor(...)` renamed
+
+`SolutionDescriptor.getEntityDescriptor(...)` has been renamed to `SolutionDescriptor.findEntityDescriptorOrFail(...)`

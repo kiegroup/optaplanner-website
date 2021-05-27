@@ -2,64 +2,11 @@
 
 https://www.optaplanner.org/[www.optaplanner.org]
 
-image:https://travis-ci.org/kiegroup/optaplanner-website.svg["Build Status", link="https://travis-ci.org/kiegroup/optaplanner-website"]
+== How to build with JBake
 
-== How to build with Awestruct
-
-=== On Fedora 31
-
-Follow these instructions:
+To build the optaplanner-website (before and after your changes):
 
 ```
-# Optional: clean your system first.
-$ sudo dnf remove ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-build gcc-c++ make
-
-# Install ruby and other native RPM packages
-# TODO Is rpm-build obsolete? It was once needed for ffi
-# TODO Is gcc-c++ obsolete? It was needed for eventmachine
-$ sudo dnf install ruby rubygems rubygem-rake rubygem-bundler ruby-devel rpm-build gcc-c++ make
-
-$ ruby --version
-ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux]
-
-# Setup the gem dependencies
-$ rake setup
+$ mvn clean generate-resources
+$ firefox target/website/index.html
 ```
-
-Then build the optaplanner-website (before and after your changes):
-
-```
-$ rake clean build
-$ firefox _site/index.html
-```
-
-And publish your changes (if you got authorization, otherwise Jenkins will do it):
-
-```
-$ rake clean build publish
-```
-
-==== Troubleshooting:
-
-* Error message `Could not find ffi-1.13.1 in any of the sources`
-+
-If you get that error message, run:
-+
-```
-sudo gem pristine ffi --version 1.13.1
-...
-rake setup
-```
-
-=== On other systems
-
-Follow the instructions of Awestruct's http://awestruct.org/getting_started/[getting started guide].
-
-== Developing Drools, OptaPlanner and jBPM
-
-*If you want to build or contribute to a kiegroup project, https://github.com/kiegroup/droolsjbpm-build-bootstrap/blob/master/README.md[read this document].*
-
-*It will save you and us a lot of time by setting up your development environment correctly.*
-It solves all known pitfalls that can disrupt your development.
-It also describes all guidelines, tips and tricks.
-If you want your pull requests (or patches) to be merged into master, please respect those guidelines.

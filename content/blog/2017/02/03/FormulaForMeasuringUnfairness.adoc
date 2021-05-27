@@ -1,0 +1,322 @@
+= Formula for measuring unfairness
+ge0ffrey
+2017-02-03
+:page-interpolate: true
+:stem:
+:jbake-type: post
+:jbake-tags: insight, design, task assignment, employee rostering, constraint
+
+Load balancing is a common constraint for many OptaPlanner use cases.
+Especially when scheduling employees, the workload needs to be spread out fairly.
+Easier said than done. Let's take a look at this challenging problem.
+
+For example, let's assign `15` undesirable tasks to `5` employees.
+Each task takes a day, but they have different skill requirements.
+
+== What is fair?
+
+*In a perfectly fair schedule, each employee will get `3` tasks*,
+because the mean (= average) is `15 / 5 = 3`.
+Or explained more formally, for the math geeks:
+
+* Mean (= average): latexmath:[\overline{x} = \frac{\sum_{i=1}^{n} x_i}{n}]
+
+So this schedule is perfectly fair:
+
+|===
+.2+| 5+h|Number of tasks per employee .2+h|Quality h|Measurement of fairness
+ h|Ann h|Beth h|Carl h|Dan h|Ed h|Mean
+
+|Schedule A |3 |3 |3 |3 |3 |Fair |3
+|===
+
+Problem solved? Unfortunately not, because there are other constraints.
+For example, there are 7 tasks that require a skill which only Ann and Beth posses.
+One of them will have to do at least 4 tasks.
+
+*Our schedule will not be perfectly fair, but how can we make it as fair as possible?*
+
+== What is fairer?
+
+Let's look at two opposing definitions of fairness:
+
+* A schedule is fair if most users think it is fair to them.
+* A schedule is fair if the employee with most tasks has as little tasks as possible.
+
+Obviously, since we want to treat all employees equally, the second definition is correct.
+Besides, if we make almost everyone happy by letting Ann do all the work, she would probably quit on us.
+That wouldn't help.
+
+|===
+.2+| 5+h|Number of tasks per employee .2+h|Quality
+ h|Ann h|Beth h|Carl h|Dan h|Ed
+|Schedule |*15* |0 |0 |0 |0 | Unfair. Ann quits her job.
+|===
+
+== Sorting solutions by fairness
+
+Let's look at a few different solutions of the same dataset.
+Each one has `15` undesirable tasks:
+
+|===
+.2+| 5+h|Number of tasks per employee .2+h|Quality
+ h|Ann h|Beth h|Carl h|Dan h|Ed
+
+|Schedule A |3 |3 |3 |3 |3 |Fairest
+|Schedule B |*4* |*4* |3 |2 |2 |
+|Schedule C |*5* |3 |3 |2 |2 |
+|Schedule D |*5* |*5* |2 |2 |1 |
+|Schedule E |*6* |3 |3 |2 |1 |
+|Schedule F |*6* |*5* |2 |1 |1 |
+|Schedule G |*11* |1 |1 |1 |1 | Unfairest
+|===
+
+These are sorted from fair to unfair.
+Several of these are probably infeasible, due to hard constraints such as skill requirements.
+
+Ann has most tasks each time. How do we compare 2 schedules in which Ann has the same number of tasks?
+
+|===
+.2+| 5+h|Number of tasks per employee .2+h|Quality
+ h|Ann h|Beth h|Carl h|Dan h|Ed
+
+|Schedule C |*5* |3 |3 |2 |2 |More fair
+|Schedule D |*5* |*5* |2 |2 |1 |Less fair
+|===
+
+In that case, we look at the second unfairest treated employee: Beth in this case.
+And we minimize her tasks.
+
+Now that we've defined fairness, how do we implement it?
+
+== Measuring unfairness
+
+Ideally, we want to calculate a number for each schedule to measures the fairness of that solution.
+The lower, the fairer. How do we calculate that number? Let's look at some formula's:
+
+=== Deviation from the mean
+
+Because a perfectly fair schedule has all employees working the average number of tasks,
+what if we simply sum the difference with the mean per employee?
+
+* Absolute deviation from the mean: latexmath:[f(n) = \sum_{i=1}^{n} |x_i - \overline{x}|]
+* Average deviation from the mean: latexmath:[f(n) = \frac{\sum_{i=1}^{n} |x_i - \overline{x}|}{n}]
+
+|===
+.2+| 5+h|Number of tasks per employee 2+h|Measurement of fairness
+ h|Ann h|Beth h|Carl h|Dan h|Ed h|Absolute deviation h|Average deviation
+
+|Schedule A |3 |3 |3 |3 |3 |*0* |*0.00*
+|Schedule B |4 |4 |3 |2 |2 |*4* - _Bad_ |*0.80* - _Bad_
+|Schedule C |5 |3 |3 |2 |2 |*4* |*0.80*
+|Schedule D |5 |5 |2 |2 |1 |*8* - _Very bad_ |*1.60* - _Very bad_
+|Schedule E |6 |3 |3 |2 |1 |*6* |*1.20*
+|Schedule F |6 |5 |2 |1 |1 |*10* |*2.00*
+|Schedule G |11 |1 |1 |1 |1 |*16* |*3.20*
+|===
+
+These measurements are terrible. Both claim that schedule B and C are equally fair. They aren't.
+Both claim that schedule D is worse than E. It's not: just ask Ann.
+
+=== Variance and standard deviation
+
+In statistics, variance and standard deviation are used to penalize outliers more.
+That sounds like exactly what we need:
+
+* Variance: latexmath:[f(n) = \frac{\sum_{i=1}^{n} (x_i - \overline{x})^2}{n}]
+* Standard deviation: latexmath:[f(n) = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \overline{x})^2}{n}}]
+* Squared deviation from the mean (= variance * n): latexmath:[f(n) = \sum_{i=1}^{n} (x_i - \overline{x})^2]
+* Root of squared deviation from the mean: latexmath:[f(n) = \sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2}]
+
+|===
+.2+| 5+h|Number of tasks per employee 4+h|Measurement of fairness
+ h|Ann h|Beth h|Carl h|Dan h|Ed h|Variance h|Standard deviation h|Squared deviation h|Root squared deviation
+
+|Schedule A |3 |3 |3 |3 |3 |*0.00* |*0.00* |*0* |*0.00*
+|Schedule B |4 |4 |3 |2 |2 |*0.80* |*0.89* |*4* |*2.00*
+|Schedule C |5 |3 |3 |2 |2 |*1.20* |*1.10* |*6* |*2.45*
+|Schedule D |5 |5 |2 |2 |1 |*2.80* - _Bad_ |*1.67* - _Bad_ |*14* - _Bad_ |*3.74* - _Bad_
+|Schedule E |6 |3 |3 |2 |1 |*2.80* |*1.67* |*14* |*3.74*
+|Schedule F |6 |5 |2 |1 |1 |*4.40* |*2.10* |*22* |*4.69*
+|Schedule G |11 |1 |1 |1 |1 |*16.00* |*4.00* |*80* |*8.94*
+|===
+
+These measurements are good, but still not ideal. They claim that schedule D and E are equally fair.
+They aren't.
+
+=== Maximum
+
+What if we simply take the maximum of each row?
+
+* Maximum: latexmath:[f(n) = \underset{0 < i \leq n}\max x_i]
+
+|===
+.2+| 5+h|Number of tasks per employee h|Measurement of fairness
+ h|Ann h|Beth h|Carl h|Dan h|Ed h|Maximum
+
+|Schedule A |3 |3 |3 |3 |3 |*3*
+|Schedule B |4 |4 |3 |2 |2 |*4*
+|Schedule C |5 |3 |3 |2 |2 |*5* - _Bad_
+|Schedule D |5 |5 |2 |2 |1 |*5*
+|Schedule E |6 |3 |3 |2 |1 |*6* - _Bad_
+|Schedule F |6 |5 |2 |1 |1 |*6*
+|Schedule G |11 |1 |1 |1 |1 |*11*
+|===
+
+That's worse than variance: it only looks at one employee.
+Furthermore, it completely discards fairness between the remaining employees.
+That might be ok if there's one employee, but not if there are thousands.
+
+=== List of maximums
+
+What if we don't use any formula but just store the list of numbers sorted by decreasing size?
+
+|===
+.2+| 5+h|Number of tasks per employee h|Measurement of fairness
+ h|Ann h|Beth h|Carl h|Dan h|Ed h|List of maximums
+
+|Schedule A |3 |3 |3 |3 |3 |*[3,3,3,3,3]*
+|Schedule B |4 |4 |3 |2 |2 |*[4,4,3,2,2]*
+|Schedule C |5 |3 |3 |2 |2 |*[5,3,3,2,2]*
+|Schedule D |5 |5 |2 |2 |1 |*[5,5,2,2,1]*
+|Schedule E |6 |3 |3 |2 |1 |*[6,3,3,2,1]*
+|Schedule F |6 |5 |2 |1 |1 |*[6,5,2,1,1]*
+|Schedule G |11 |1 |1 |1 |1 |*[11,1,1,1,1]*
+|===
+
+That will compare perfectly. In OptaPlanner it can be implemented by adding 5 score levels for this dataset.
+
+However, besides obvious memory consumption issues when scaling to thousands of employees,
+this isn't compatible with other soft constraints...
+
+== No constraint is an island
+
+Fairness is typically a soft constraint.
+But there are other soft constraints that we'll need to optimize for too,
+so we'll need to weight them against each other.
+
+=== An example
+
+For example, presume there's a soft constraint on priority violations,
+that's 10 times as important as a fairness violation.
+Let's also add a schedule with 1500 tasks, to see how it scales out:
+
+|===
+| h|Number of tasks h|Priority violations h|Fairness violations h|Soft score h|Quality
+
+|Schedule F |15 |1 |? |? |Best
+|Schedule C |15 |2 |? |? |
+|Schedule D |15 |2 |? |? |Worst
+|Schedule X |1500 |100 |? |? |Different dataset
+|===
+
+To calculate the soft score, we sum the fairness violations with 5 times the priority violations and make that negative.
+
+Let's start the process of elimination...
+
+=== Represented by a single number
+
+_List of maximums_ isn't represented as single number
+(because it uses multiple score levels),
+so it's difficult to mix in priority violations:
+
+|===
+.2+| .2+h|Number of tasks .2+h|Priority violations h|Measurement of fairness .2+h|Soft score
+h|List of maximums
+
+|Schedule F |15 |1 |[6,5,2,1,1] |ERROR?
+|Schedule C |15 |2 |[5,3,3,2,2] |ERROR?
+|Schedule D |15 |2 |[5,5,2,2,1] |ERROR?
+|Schedule X |1500 |100 |[8,8,7,7,7,7,...] |ERROR?
+|===
+
+=== Grow with the number of violations
+
+If we scale out to 1500 employees,
+we notice that _maximum_ gets dwarfed by the priority violations:
+
+|===
+.2+| .2+h|Number of tasks .2+h|Priority violations h|Measurement of fairness .2+h|Soft score
+h|Maximum
+
+|Schedule F |15 |1 |6 |16
+|Schedule C |15 |2 |5 |25
+|Schedule D |15 |2 |5 |25
+|Schedule X |1500 |100 |8 |1008 - _Dwarfed_
+|===
+
+Similarly, _average deviation from the mean_, _variance_ and _standard deviation_ get dwarfed
+on bigger datasets too:
+
+|===
+.2+| .2+h|Number of tasks .2+h|Priority violations 3+h|Measurement of fairness
+h|Average deviation h|Variance h|Standard deviation
+
+|Schedule F |15 |1 |2.00 |4.40 |2.10
+|Schedule C |15 |2 |0.80 |1.20 |1.10
+|Schedule D |15 |2 |1.60 |2.80 |1.67
+|Schedule X |1500 |100 |1.50 - _Dwarfed_ |2.50 - _Dwarfed_ |1.58 - _Dwarfed_
+|===
+
+As the number of fairness violations grow, so should the fairness measurement.
+
+=== Do not grow exponentially with the number of violations
+
+On the other hand, as the dataset grows, the fairness violations shouldn't dwarf the other violations either.
+_Squared deviation_ does that:
+
+|===
+.2+| .2+h|Number of tasks .2+h|Priority violations h|Measurement of fairness
+h|Squared deviation
+
+|Schedule F |15 |1 |80
+|Schedule C |15 |2 |6
+|Schedule D |15 |2 |14
+|Schedule X |1500 |100 - _Dwarfed_ |10201
+|===
+
+== Conclusion
+
+That just leaves:
+
+* _absolute deviation from the mean_ which compares terribly for fairness
+* _root squared deviation_ which isn't perfect but works well enough
+
+*So the recommended approach is:*
+
+* Root of squared deviation from the mean: latexmath:[f(n) = \sqrt{\sum_{i=1}^{n} (x_i - \overline{x})^2}]
+
+|===
+.2+| .2+h|Number of tasks .2+h|Priority violations h|Measurement of fairness .2+h|Soft score
+h|Root squared deviation
+
+|Schedule F |15 |1 |4.69 |14.69
+|Schedule C |15 |2 |2.45 |22.45
+|Schedule D |15 |2 |3.74 |23.74
+|Schedule X |1500 |100 |101.00 |1101.00
+|===
+
+== Additional notes
+
+=== Part-time employees
+
+To deal with unequal employees,
+for example if some employees work half as many hours as other employees,
+multiply their number of tasks by the inverse of their FTE (full time equivalent)
+before feeding into this formula.
+
+Other reasons to treat employees unequally (such as disabilities or talent retention)
+can be handled in a similar fashion or with separate constraints, depending on the requirement.
+
+++++
+<!-- Renders Math formula in this page -->
+<script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+++++
+
+== Update
+
+There is a formula that seems to compare perfectly,
+see http://math.stackexchange.com/a/2144813/86787[this mathexchange answer],
+but it might suffer from numerical instability and overflow.

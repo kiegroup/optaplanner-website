@@ -1,0 +1,16 @@
+= RHPDS instructions for OptaWeb Vehicle Routing
+:jbake-type: normalBase
+:jbake-description: How to demo OptaWeb Vehicle Routing with RHPDS
+:jbake-priority: 0.1
+:showtitle:
+:demo-catalog-item: DM7 OptaWeb VRP Demo
+:demo-name: OptaWeb Vehicle Routing
+:demo-app-name: optaweb-vehicle-routing
+
+== Video instructions
+
+video::ylPEIf7Mc2M[youtube]
+
+== Written instructions
+
+include::rhpds_order.adoc[]

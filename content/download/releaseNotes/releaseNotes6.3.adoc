@@ -1,0 +1,197 @@
+= Release Notes 6.3
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 6.3.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 6.3
+:jbake-release_notes_version_qualifier: Final
+
+[[NewAndNoteWorthy]]
+== New and noteworthy
+
+=== Easier solver configuration
+
+Defining the optimization algorithms and their parameters is now optional (but still possible and desirable for power users).
+If you don't define any solver phases, a default Construction Heuristic followed by a default Local Search is used.
+
+[source,xml]
+----
+<solver>
+  ...
+  <scoreDirectorFactory>
+    ...
+  </scoreDirectorFactory>
+
+  <!-- No longer required to configure <constructionHeuristic> and <localSearch> -->
+</solver>
+----
+
+=== Automatic scanning for annotated classes
+
+Instead of declaring all annotated classes:
+
+[source,xml]
+----
+<solver>
+  <solutionClass>org.optaplanner.examples.cloudbalancing.domain.CloudBalance</solutionClass>
+  <entityClass>org.optaplanner.examples.cloudbalancing.domain.CloudProcess</entityClass>
+  ...
+</solver>
+----
+
+Planner can now also automatically scan for them instead:
+
+[source,xml]
+----
+<solver>
+  <scanAnnotatedClasses/>
+  ...
+</solver>
+----
+
+It's even possible to limit the scan to specific packages.
+
+=== Field annotations
+
+Instead of getter annotations (on JavaBean properties), Planner now also supports field annotations:
+
+[source,java]
+----
+@PlanningEntity
+public class CloudProcess {
+
+    @PlanningVariable(valueRangeProviderRefs = {"computerRange"})
+    private CloudComputer computer;
+
+    ...
+}
+----
+
+[source,java]
+----
+@PlanningSolution
+public class CloudBalance ... {
+
+    @ValueRangeProvider(id = "computerRange")
+    private List<CloudComputer> computerList;
+
+    @PlanningEntityCollectionProperty
+    private List<CloudProcess> processList;
+
+    ...
+}
+----
+
+=== Unfolding move selectors for multiple entity classes or multiple planning variables
+
+With multiple planning variables, it's no longer needed to specify each variable name:
+
+[source,xml]
+----
+      <changeMoveSelector>
+        <valueSelector>
+          <variableName>period</variableName>
+        </valueSelector>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <valueSelector>
+          <variableName>room</variableName>
+        </valueSelector>
+      </changeMoveSelector>
+----
+
+Instead, this now works:
+
+[source,xml]
+----
+      <changeMoveSelector/>
+----
+
+With multiple entity classes, it's no longer needed to specify each entity class:
+
+[source,xml]
+----
+      <changeMoveSelector>
+        <entitySelector>
+          <entityClass>...CoachEntity</entityClass>
+        </entitySelector>
+      </changeMoveSelector>
+      <changeMoveSelector>
+        <entitySelector>
+          <entityClass>...ShuttleEntity</entityClass>
+        </entitySelector>
+      </changeMoveSelector>
+      <swapMoveSelector>
+        <entitySelector>
+          <entityClass>...CoachEntity</entityClass>
+        </entitySelector>
+      </swapMoveSelector>
+      <swapMoveSelector>
+        <entitySelector>
+          <entityClass>...ShuttleEntity</entityClass>
+        </entitySelector>
+      </swapMoveSelector>
+----
+
+Instead, this now works:
+
+[source,xml]
+----
+      <changeMoveSelector/>
+      <swapMoveSelector/>
+----
+
+This applies to the programmatic API too, of course.
+
+=== VariableListeners now trigger in a smart order
+
+In advanced use cases with multiple custom shadow variables (or even just one),
+the immediate order in which a `VariableListener` was triggered could drive a developer insane
+because (s)he had to deal with intermediate, inconsistent states for which not all of the genuine variables were already changed.
+
+This has been fixed. OptaPlanner now triggers the `VariableListener.after*()` methods in the order defined by the shadow variable dependency graph.
+It guarantees that the first VariableListener triggers _after_ the last genuine variable has changed.
+It also guarantees that the second VariableListener triggers _after_ all the first VariableListener calls are done, and so on.
+
+image:6.3/shadowVariableOrder.png[Shadow variable order]
+
+=== New Benchmarker bluePrints
+
+There are 2 new benchmarker blueprints:
+
+* EVERY_LOCAL_SEARCH_TYPE
+* EVERY_CONSTRUCTION_HEURISTIC_TYPE_WITH_EVERY_LOCAL_SEARCH_TYPE
+
+It's now even easier to try out all Local Search algorithms:
+
+[source,xml]
+----
+<plannerBenchmark>
+  <benchmarkDirectory>local/data/cloudbalancing</benchmarkDirectory>
+  <inheritedSolverBenchmark>
+    ...
+  </inheritedSolverBenchmark>
+  <solverBenchmarkBluePrint>
+    <solverBenchmarkBluePrintType>EVERY_LOCAL_SEARCH_TYPE</solverBenchmarkBluePrintType>
+  </solverBenchmarkBluePrint>
+</plannerBenchmark>
+----
+
+=== New example: Investment asset class allocation
+
+To optimize an investment portfolio. See https://www.youtube.com/watch?v=NdyIf0JG94Y[this video].
+Partially contributed by Satish Irrinki.
+
+=== Other improvements
+
+* A bi-directional relationship with a planning variable is now also supported for a non-chained variable.
+* 2 shadow variables can now share the same `VariableListener` instance.
+* `ValueRangeProvider` now supports `long` ranges with `createLongValueRange(from, to)` too.
+* `ValueRangeProvider` now supports `BigInteger` ranges with `createBigIntegerValueRange(from, to)` too.
+* Improved `Move.toString()` methods for more clearer log messages.
+* Benchmarker report mentions logging level used. Contributed by Matej Čimbora.
+* Documentation for Android. Contributed by Tomáš David.
+* Benchmarker's `<solverBenchmark>` name now allows non-ASCII characters too (for example Japanese characters).
+* An OSGi `features.xml` that includes `optaplanner-engine`
+* Drools score calculation now support multiple constraint matches in the consequences part of a rule.
+* More JavaDocs, including package JavaDocs.
+* Various bugs resolved. See https://issues.redhat.com/projects/PLANNER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released[our issue tracker].

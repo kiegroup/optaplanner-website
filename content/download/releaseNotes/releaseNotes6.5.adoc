@@ -1,0 +1,14 @@
+= Release Notes 6.5
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 6.5.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 6.5
+:jbake-release_notes_version_qualifier: Final
+
+[[NewAndNoteWorthy]]
+== New and noteworthy
+
+=== Bugs fixed
+
+We're focusing all forward development on 7.0, link:../../download/download.html[which you can find in the download section].
+So this release only contains bugfixes.

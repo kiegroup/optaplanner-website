@@ -1,0 +1,38 @@
+= Governance
+:jbake-type: normalBase
+:jbake-description: Disclosure of the governance of this project
+:showtitle:
+
+
+== Stewardship
+
+This project is developed and released by Red Hat with assistance from the Java developer community.
+link:team.html[The project lead] is appointed by Red Hat, and has the power to accept and reject contributions to the project and set the roadmap.
+Red Hat employees assigned to work on this project as well as community contributors, in this regard,
+all answer to the project lead.
+
+
+== Requirement Definition
+
+The requirements and roadmap for this project are driven by Red Hat and by the community.
+Typically, when a major release is being planned, the project lead will take input from both Red Hat and the community,
+and evaluate what can be done in the necessary time.
+This will define what features will be addressed in a given release.
+The project lead will then publish the roadmap on link:getHelp.html[the developer mailing list],
+and update the version information in link:../community/getHelp.html[JIRA].
+
+OptaPlanner is the basis for the commercial (yet open source) link:../product/services.html[RHDM and RHPAM products],
+so many requirements for this project come from its users.
+However, all requirements are fed into the same community process that our community users follow.
+We create JIRAs for all feature requests on our schedule.
+
+The best way for you to suggest requirements for a future release of this project is to enter a feature request in JIRA.
+Lobbying for features using the voting feature in link:../community/getHelp.html[JIRA],
+and posting to link:../community/getHelp.html[the community forum], is a great way to express interest as well.
+Although, contributing is the single most expedient way to get a capability into a particular release.
+
+
+== Contribution
+
+This project welcomes, thrives on and greatly values community contribution.
+Please fork link:../code/sourceCode.html[the source code] and submit a Pull Request.

@@ -1,0 +1,34 @@
+= Research
+:jbake-type: normalBase
+:jbake-description: Academic research for papers and articles.
+:showtitle:
+
+OptaPlanner is a good base for metaheuristics research. Read about some of the advantages in
+http://www.orcomplete.com/research/geoffrey-de-smet/open-source-metaheuristics-research-on-drools-planner[this article].
+Especially https://www.youtube.com/watch?v=JpcPEieU3Cg[OptaPlanner Benchmarker] and our big set of already implemented use cases,
+make it easy to test your new algorithm objectively against the existing algorithms.
+
+If you're doing academic or professional research on top of OptaPlanner, link:../community/team.html[let us know].
+
+To reference OptaPlanner or the user manual, please use this BibTeX reference:
+
+----
+@manual{optaplanner,
+  author        = {De Smet, Geoffrey and open source contributors},
+  title         = {OptaPlanner User Guide},
+  year          = {2006},
+  organization  = {Red Hat, Inc. or third-party contributors},
+  url           = {https://www.optaplanner.org},
+  note          = {OptaPlanner is an open source constraint solver in Java}
+}
+----
+
+== OptaPlanner related papers
+
+
+* *Multithreaded incremental solving for local search based metaheuristics with step chasing* by Geoffrey De Smet, Tony Wauters (2020)
+** Paper: https://patatconference.org/patat2020/proceedings/papers/8.%20PATAT_2020_paper_41.pdf[PDF]
+** Publication: https://patatconference.org/patat2020/proceedings/[Proceedings of the 13th International Conference on the Practice and Theory of Automated Timetabling - PATAT 2021: Volume I]
+** ISBN: 978-0-9929984-3-1
+
+If your paper relates to OptaPlanner, link:../community/team.html[let us know] and we'll add it here.

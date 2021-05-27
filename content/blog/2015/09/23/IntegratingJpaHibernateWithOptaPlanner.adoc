@@ -1,0 +1,108 @@
+= Integrating JPA Hibernate with OptaPlanner
+ge0ffrey
+2015-09-23
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: integration
+
+We've been improving the integration of OptaPlanner with the rest of JEE,
+so it's easier to build end user applications that just work.
+Let's take a look at the improved JPA Hibernate integration.
+
+== The basics
+
+Both JPA Hibernate and OptaPlanner work on POJO's (Plain Old Java Objects),
+so just add some JPA annotations on your domain objects to persist them with JPA Hibernate
+and add some OptaPlanner annotations to solve your optimization problem with OptaPlanner.
+
+On each problem fact class, there are usually only JPA annotations:
+
+[source,java]
+----
+@Entity // JPA annotation
+public class Computer {
+
+    private int cpuPower;
+    private int memory;
+    private int networkBandwidth;
+    private int cost;
+
+    ...
+}
+----
+
+On each planning entity class, there are both JPA and OptaPlanner annotations:
+
+[source,java]
+----
+@PlanningEntity // OptaPlanner annotation
+@Entity // JPA annotation
+public class Process {
+
+    private int requiredCpuPower;
+    private int requiredMemory;
+    private int requiredNetworkBandwidth;
+
+    @PlanningVariable(...) // OptaPlanner annotation
+    @ManyToOne() // JPA annotation
+    private Computer computer;
+
+    ...
+}
+----
+
+Don't confuse a JPA entity (anything object that gets persisted in the database)
+with an OptaPlanner planning entity (an object that gets changed by OptaPlanner during solving).
+
+== Persisting a score
+
+By default, JPA Hibernate will put a `Score` in a `BLOB` column through Java serialization.
+This is undesirable because it prevents using the score in a JPA-QL query.
+Furthermore, it triggers database issues when upgrading the OptaPlanner version.
+
+Therefore, OptaPlanner `6.4.0.Beta1` has a new jar `optaplanner-persistence-jpa` that contains a Hibernate type for each score type.
+Use it like this:
+
+[source,java]
+----
+@PlanningSolution // OptaPlanner annotation
+@Entity // JPA annotation
+@TypeDef(defaultForType = HardSoftScore.class, typeClass = HardSoftScoreHibernateType.class) // Hibernate annotation
+public class CloudBalance implements Solution<HardSoftScore> {
+
+    @Columns(columns = {@Column(name = "hardScore"), @Column(name = "softScore")}) // JPA annotation
+    private HardSoftScore score;
+
+    ...
+}
+----
+
+This puts the `HardSoftScore` into 2 `INTEGER` columns, instead of a `BLOB` column.
+The OptaPlanner reference manual contain more information on how to deal with `BigDecimal` and/or bendable scores properly.
+
+== Cloning pitfall
+
+In a JPA model it's common that the problem facts reference the planning solution,
+which can corrupt planning cloning (if the default planning cloner is used).
+
+To overcome this, simply annotate the problem fact classes that reference the planning solution or a planning entity
+with a `@DeepPlanningClone` annotation:
+
+[source,java]
+----
+@DeepPlanningClone // OptaPlanner annotation: Force the default planning cloner to planning clone this class too
+@Entity // JPA annotation
+public class Computer {
+
+    @ManyToOne
+    private CloudBalance cloudBalance;
+
+    ...
+}
+----
+
+This way, the `Computer` class is planning cloned too and the clone's `cloudBalance` field will point to the `CloudBalance` clone.
+
+== Conclusion
+
+You can use the same domain classes for JPA Hibernate and OptaPlanner, there is no need duplicate your domain!

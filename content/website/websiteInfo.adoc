@@ -1,0 +1,27 @@
+= Website info
+:jbake-type: normalBase
+:jbake-description: Website technology and feedback
+:jbake-priority: 0.1
+:page-interpolate: true
+:showtitle:
+
+== Website technology
+
+This website uses:
+
+* https://jbake.org/[JBake]
+
+* http://asciidoctor.org[Asciidoctor] (AsciiDoc)
+
+* https://twitter.github.com/bootstrap/[Twitter Bootstrap]
+
+* http://tango.freedesktop.org/[Tango Desktop Project icons]
+
+// TODO https://github.com/jbake-org/jbake/issues/694
+This website was generated on {published_date}.
+
+== Website feedback
+
+We welcome any feedback about this website on the link:../community/getHelp.html[our forum or issue tracker].
+
+To submit a change to any page in this website, click on the button _Edit this page_ on the bottom of that page.

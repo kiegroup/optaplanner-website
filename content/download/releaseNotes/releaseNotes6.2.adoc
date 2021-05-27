@@ -1,0 +1,85 @@
+= Release Notes 6.2
+:jbake-type: releaseNotesBase
+:jbake-description: New and noteworthy, demos and status for OptaPlanner 6.2.
+:jbake-priority: 1.0
+:jbake-release_notes_version: 6.2
+:jbake-release_notes_version_qualifier: Final
+
+[[NewAndNoteWorthy]]
+== New and noteworthy
+
+=== Scalable VRP with nearby selection
+
+Nearby selection allows a vehicle routing problem to scale out gracefully beyond 1000 locations,
+without the need for partitioning.
+It works by focusing on move selections that modify locations that are near each other:
+
+image:6.2/nearbySelectionRandomDistribution.png[Nearby selection random distribution]
+
+It results in much better scalability on larger datasets, for example a VRP with 2750 customers
+(higher is better), which reduces fuel and labor expenses by `15%` in a 5 minute run:
+
+image:6.2/belgium-road-time-n2750-k55_nearbyWithLA.png[Nearby selection random distribution]
+
+Several nearby selection probability distributions are supported:
+block distribution, linear distribution, parabolic distribution and beta distribution.
+
+=== TailChainSwapMove (2-opt) for VRP
+
+TailChainSwapMove is a new move type for chained variables.
+It's a subset of SubchainChangeMove and SubchainSwapMove, but it's generally more efficient,
+especially for time windowed cases.
+
+In our benchmarks, a union of ChangeMove, SwapMove and TailChainSwapMove (using nearby selection on all 3)
+performed best.
+
+=== Improved built-in variable listener efficiency
+
+VRP with a `@InverseRelationShadowVariable` is now more efficient. In some cases, it's up to *`32%` faster*.
+
+=== Strategic Oscillation Tabu Search
+
+Strategic Oscillation Tabu Search is often an improvement over normal Tabu Search.
+Instead of picking the accepted move with the highest score, it employs a different mechanism:
+If there's an improving move, it picks it. If there's no improving move however,
+it prefers moves which improve a softer score level, over moves which break a harder score level less.
+
+To enable it, do this:
+
+[source,xml]
+----
+  <localSearch>
+    ...
+    <acceptor>
+      <entityTabuSize>7</entityTabuSize>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>1000</acceptedCountLimit>
+      <finalistPodiumType>STRATEGIC_OSCILLATION</finalistPodiumType>
+    </forager>
+  </localSearch>
+----
+
+=== New example: Cheap time scheduling
+
+Schedule all tasks in time and on a machine to minimize the power cost.
+Each machine must have enough hardware to run all of its tasks.
+Each task and machine consumes power. The power price differs over time.
+
+image:6.2/cheapTimeExampleScreenshot.png[Cheap time example]
+
+Based on contributions by Lukáš Petrovický.
+
+=== New benchmarker statistics: Constraint Match Total Best/Step score
+
+These new statistics visualize how the individual constraint types change over time.
+
+image:6.2/constraintMatchTotalBestScoreStatistic.png[constraint match total best score statistic]
+
+This gives a better insight as to which constraints impact the score the most.
+
+=== Other improvements
+
+* Construction Heuristics: new pick early type: `FIRST_FEASIBLE_SCORE` which is useful for scaling.
+* Benchmarker: logarithmic scale for Problem scale axis when appropriate. Contributed by Ondrej Skopek.
+* BendableLongScore: Bendable score with long types. Contributed by Dieter De Paepe.

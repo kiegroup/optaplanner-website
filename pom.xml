@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-parent</artifactId>
+    <version>37</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>org.optaplanner</groupId>
+  <artifactId>optaplanner-website</artifactId>
+  <packaging>pom</packaging>
+  <version>999-SNAPSHOT</version>
+
+  <name>OptaPlanner website</name>
+  <description>
+    OptaPlanner solves planning problems.
+    This lightweight, embeddable planning engine implements powerful and scalable algorithms
+    to optimize business resource scheduling and planning.
+
+    This module builds the website.
+  </description>
+  <url>https://www.optaplanner.org</url>
+  <inceptionYear>2006</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jbake</groupId>
+        <artifactId>jbake-maven-plugin</artifactId>
+        <version>0.3.6-rc.2</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <inputDirectory>${project.basedir}</inputDirectory>
+          <outputDirectory>${project.build.directory}/website</outputDirectory>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jbake</groupId>
+            <artifactId>jbake-core</artifactId>
+            <version>2.7.0-rc.2</version>
+          </dependency>
+          <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctorj</artifactId>
+            <version>2.4.3</version>
+          </dependency>
+          <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.31</version>
+          </dependency>
+          <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.28</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>

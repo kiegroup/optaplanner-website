@@ -1,0 +1,101 @@
+= Source code
+:jbake-type: normalBase
+:jbake-description: Build OptaPlanner or the website (optaplanner.org) from source.
+:jbake-priority: 0.8
+:linkattrs:
+:showtitle:
+
+== GitHub repositories
+
+link:../community/team.html[The OptaPlanner team] takes care of these repositories:
+
+=== optaplanner (engine)
+
+_The source code of the OptaPlanner engine, examples and documentation._ +
+https://github.com/kiegroup/optaplanner
+
+To build from source:
+
+. Get the source code locally with http://git-scm.com/[Git]:
++
+----
+ $ git clone https://github.com/kiegroup/optaplanner.git
+ ...
+----
+
+. Build it with http://maven.apache.org/[Maven]:
++
+----
+ $ cd optaplanner
+ $ mvn clean install -DskipTests
+ ...
+----
++
+The first time, Maven might take a lot of time, because it needs to download jars.
+
+. Run the examples:
++
+----
+ $ cd optaplanner-examples
+ $ mvn exec:java
+ ...
+----
+
+. Edit the sources in your favorite IDE (such as http://www.jetbrains.com/idea/[IntelliJ IDEA], http://www.eclipse.org/[Eclipse] or https://code.visualstudio.com/[VSCode]).
+
+. Optional: Write some documentation in http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
+
+=== optaplanner-quickstarts
+
+_The source code for each Quick Start._ +
+https://github.com/kiegroup/optaplanner-quickstarts
+
+=== optaweb-employee-rostering
+
+_The source code for the employee rostering web application reference architecture._ +
+https://github.com/kiegroup/optaweb-employee-rostering
+
+=== optaweb-vehicle-routing
+
+_The source code for the vehicle routing web application reference architecture._ +
+https://github.com/kiegroup/optaweb-vehicle-routing
+
+=== optaplanner-website (www.optaplanner.org)
+
+_The source code for this website and the presentation slides._ +
+https://github.com/kiegroup/optaplanner-website
+
+To build from source:
+
+. Get the source code locally with http://git-scm.com/[Git]:
++
+----
+ $ git clone git@github.com:kiegroup/optaplanner-website.git
+ ...
+----
+
+. Build it with http://awestruct.org/[Awestruct]:
++
+----
+ $ cd optaplanner-website
+ $ ./build.sh clean build
+ ...
+----
+
+. Show it in a browser:
++
+----
+ $ firefox _site/index.html
+ ...
+----
+
+. Edit the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] sources.
+
+== Contribute
+
+Want to help improve our project? *GitHub Pull Requests are welcome!* +
+If you don't know where to start, take a look at
+https://issues.redhat.com/issues/?filter=12327406[the list of starter issues for new contributors].
+
+If you've found a bug and just want to report it, please open a ticket in https://issues.redhat.com/projects/PLANNER[our issue tracker]
+with a reproducer.

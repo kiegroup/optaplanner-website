@@ -1,0 +1,16 @@
+= Release Notes Archive
+:jbake-type: normalBase
+:jbake-description: A list of all release notes for each OptaPlanner version.
+:jbake-priority: 0.1
+:showtitle:
+
+This is a list of all past and upcoming release notes:
+
+* link:releaseNotes8.html[Release Notes OptaPlanner 8.x]
+* link:releaseNotes7.html[Release Notes OptaPlanner 7.x]
+* link:releaseNotes6.5.html[Release Notes OptaPlanner 6.5]
+* link:releaseNotes6.4.html[Release Notes OptaPlanner 6.4]
+* link:releaseNotes6.3.html[Release Notes OptaPlanner 6.3]
+* link:releaseNotes6.2.html[Release Notes OptaPlanner 6.2]
+* link:releaseNotes6.1.html[Release Notes OptaPlanner 6.1]
+* link:releaseNotes6.0.html[Release Notes OptaPlanner 6.0]

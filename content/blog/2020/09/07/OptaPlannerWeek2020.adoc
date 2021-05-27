@@ -1,0 +1,80 @@
+= OptaPlanner Week 2020 recordings
+ge0ffrey
+2020-07-09
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: feature, coding
+:jbake-social_media_share_image: optaPlannerWeek2020Speakers.jpg
+
+It's a wrap! Last week, during the online *OptaPlanner Week* event,
+we had 10 talks by 13 speakers across 3 days with - per day -
+up to 250+ live attendees and 1300+ viewers afterwards.
+We've split up the talks into separate videos for your convenience, watch them below.
+
+Big thanks to all speakers for their superb content,
+all attendees for their great questions
+and especially Karina Varela for organizing, hosting and moderating this event perfectly.
+
+image::optaPlannerWeek2020Speakers.jpg[]
+
+There was a lot of interaction with the audience
+through live questions during the sessions and a very active YouTube chat.
+Some reactions on Twitter:
+
+* _Learnt so much @optaplanner at the #optaplannerweek looking forward to next year's already :) cracking virtual event! Kudos to everyone that made it happen._
+  https://twitter.com/AbstractRef/status/1301601544916406272[Terry Strachan]
+* _Thanks again @optaplanner
+for the great week with so many insights into how to build constrained optimization solutions from both a business and also a technical perspective._
+https://twitter.com/holgerbrandl/status/1301761856126750721[Holger Brandl]
+
+== Day 1
+
+=== Kickstarting your OptaPlanner project: patterns and common practices
+
+video::x4PkS962eFs[youtube]
+
+=== Vehicle routing with OptaPlanner
+
+video::sIZpmQTq1lo[youtube]
+
+=== Visualizing indictments: Explaining the solution to the user and identifying deficient resources
+
+video::MZgWrKwfVx0[youtube]
+
+=== TrustyAI and explanation by example with OptaPlanner
+
+video::4H3U6xyCgMI[youtube]
+
+
+== Day 2
+
+=== Tasks Optimization: understand the chained models
+
+video::07E_v-mZ2As[youtube]
+
+=== Business optimizer: I bet you I'm better than a human
+
+video::NHU-UZM6fKI[youtube]
+
+=== Constraint Streams 101: The future of score constraints in OptaPlanner
+
+video::XCyIdmUDMtI[youtube]
+
+
+== Day 3
+
+=== Business use cases and the impact of OptaPlanner
+
+video::waU8zZtx--g[youtube]
+
+=== Quarkus and OptaPlanner: create a school timetable application
+
+video::E35pYMKaukw[youtube]
+
+=== Planning agility: continuous planning, real-time planning and more
+video::Ew6pq9nJKog[youtube]
+
+
+== Onwards
+
+See you next year!
