@@ -287,7 +287,7 @@ OptaPlanner をソースからビルドするのは簡単です。
 {empty}1. link:https://help.github.com/articles/set-up-git/[Git を設定]し、GitHub からの +clone optaplanner+ を実行します。(または、link:https://github.com/kiegroup/optaplanner/zipball/master[zipball] をダウンロードします。)
 
 ----
-$ git clone git@github.com:kiegroup/optaplanner.git optaplanner
+$ git clone https://github.com/kiegroup/optaplanner.git
 ...
 ----
 
