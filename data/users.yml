@@ -313,3 +313,12 @@
   fullName: Paul Brown
   role: Contributor
   gravatarHashId: 50e2ded669d235709d5d7a28269ca94a
+
+- userId: tradisso
+  fullName: Tristan Radisson
+  role: Senior Sofware Quality Engineer
+  gravatarHashId: f811db29788c9fb7c36bd8372d6ceba7
+  twitterUsername: radtriste
+  githubUsername: radtriste
+  email: tradisso AT redhat.com
+  employedBy: Red Hat
