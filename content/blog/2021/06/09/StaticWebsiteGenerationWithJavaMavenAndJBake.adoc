@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: community
-//:jbake-social_media_share_image: ggg.png
+:jbake-social_media_share_image: staticWebsiteTemplateHierarchy.png
 
 Did you notice?
 Last week, we migrated the entire https://www.optaplanner.org/[www.optaplanner.org] website (1399 files)
