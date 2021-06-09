@@ -177,7 +177,7 @@ title: "Vaccination appointment scheduling"
 All HTML pages typically share the same HTML head (metadata), header (navigation) and footer.
 These fit well into a `base.ftl` layout, extended by all other templates:
 
-image::staticWebsiteTemplateHierarchy.png[Videos screenshot]
+image::staticWebsiteTemplateHierarchy.png[Template hierarchy]
 
 Even though most content uses the `normalBase.ftl`,
 there's separate `useCaseBase.ftl` template for all the use case pages,
