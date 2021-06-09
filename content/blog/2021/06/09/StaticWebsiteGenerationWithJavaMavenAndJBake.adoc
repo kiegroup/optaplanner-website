@@ -8,11 +8,11 @@ ge0ffrey
 
 Did you notice?
 Last week, we migrated the entire https://www.optaplanner.org/[www.optaplanner.org] website (1399 files)
-to build with Java and Maven (instead of Ruby and Rake).
-You probably didn't notice. After all, on the face of it, nothing changed.
-
+to build with Java and Maven, instead of Ruby and Rake.
+On the face of it, nothing changed.
 But in the sources, for our team of Java developers, it is a game changer.
-They can now contribute to the website easily.
+
+Our java team can now contribute to the website easily.
 Within hours of completing the migration, there was already a commit of one of our developers
 who would _rather not touch the previous source code with a ten-foot pole_.
 
@@ -29,9 +29,9 @@ This has many advantages over a Content Management System (CMS) for projects suc
 
 * *Hosting* is cheap. https://pages.github.com/[GitHub pages] even hosts static websites for free.
 * The source files go into Git for *backup* and *history*.
-* The source files are *plain text*:
-** Changes come in as a Pull Request for *review* with CI validation.
-** The sources are open in our IDE, which encourages refactoring them alongside the code.
+* The source files are in *plain text*:
+** Changes come in as a Pull Request for proper *review* and CI validation.
+** The sources are open in our IDEs, which encourages refactoring them alongside the code.
 This results in *less stale* content.
 
 For many years, Awestruct has served us well.
@@ -77,7 +77,8 @@ We choose https://maven.apache.org/[Maven], because all our repos build with Mav
 * Write content in Asciidoc, Markdown or HTML.
 +
 We choose https://asciidoc.org/[Asciidoc]
-because it's richer and more reliable than Markdown and all our documentation is written in Asciidoc.
+because it's https://docs.asciidoctor.org/asciidoc/latest/asciidoc-vs-markdown/[richer and more reliable] than Markdown.
+Also, all our documentation is written in Asciidoc.
 
 * Create templates with Freemarker, Thymeleaf or Groovy.
 +
@@ -86,17 +87,17 @@ because it's a powerful, battle-tested templating engine.
 
 == Tips and tricks
 
-Here are common tasks to build an advanced static website
-and how to implement them in JBake-Freemarker.
+These are common tasks to build an advanced static website
+and how to implement each task in JBake-Freemarker.
 You might even call these _JBake Design Patterns_:
 
 === Use a macro to render shared content
 
-Almost all our templates show the same latest releases panel:
+Almost all our templates show the same _Latest releases_ panel:
 
 image::staticWebsiteMacroLatestReleases.png[Latest releases screenshot]
 
-A Freemarker templates is perfect to avoid repeating yourself (DRY):
+A Freemarker template is perfect to avoid repeating yourself (DRY):
 
 . Create `templates/macros.ftl` with a macro that outputs the HTML:
 +
@@ -126,7 +127,7 @@ A Freemarker templates is perfect to avoid repeating yourself (DRY):
 </div>
 ----
 
-=== Use data files to add videos, events and other volatile data
+=== Use data files to add videos, events or other volatile data
 
 Some data changes too often to maintain in a content or template file:
 
@@ -180,7 +181,7 @@ image::staticWebsiteTemplateHierarchy.png[Videos screenshot]
 
 Even though most content uses the `normalBase.ftl`,
 there's separate `useCaseBase.ftl` template for all the use case pages,
-such as https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[the Vehicle Routing Problem],
+such as the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem (VRP)],
 https://www.optaplanner.org/learn/useCases/maintenanceScheduling.html[Maintenance Scheduling]
 and https://www.optaplanner.org/learn/useCases/employeeRostering.html[Shift Rostering].
 
@@ -191,24 +192,24 @@ Use a macro with the `<\#nested>` to build layout inheritance:
 [source]
 ----
 <#macro layout>
-<!DOCTYPE html>
-<html lang="${(content.lang)!"en"}">
-    <head>
-      ...
-    </head>
-    <body>
-        <div>
-            ... <#-- header -->
-        </div>
-        <#nested>
-        <div>
-          ... <#-- footer -->
-        </div>
-    </body>
-</html>
+    <html>
+        <head>
+          ...
+        </head>
+        <body>
+            <div>
+                ... <#-- header -->
+            </div>
+            <#nested>
+            <div>
+              ... <#-- footer -->
+            </div>
+        </body>
+    </html>
+</#macro>
 ----
 
-. Extend it in `templates/normalBase.ftl`:
+. Extend it in `templates/useCaseBase.ftl` and introduce the custom attribute `related_tag`:
 +
 [source]
 ----
@@ -217,23 +218,41 @@ Use a macro with the `<\#nested>` to build layout inheritance:
 <@layout>${content.body}</@layout>
 
 <#macro layout>
-<@parent.layout>
-    <div class="row">
-        <div class="col-md-9">
-            <#nested>
-        </div>
-        <div class="col-md-3">
-            ...
-        </div>
-    </div>
-</@parent.layout>
+    <@parent.layout>
+        <h1>${content.title}</h1>
+        <#nested>
+        <h2>Related videos</h2>
+        <#assign videos = data.get('videos.yml').data>
+        <#assign relatedVideos = videos?filter(video -> video.tags.contains(content.related_tag))>
+        <ul>
+            <#list relatedVideos as video>
+                <li><a href="https://youtu.be/${video.youtubeId}">${video.title}</a></li>
+            </#list>
+        </ul>
+    </@parent.layout>
 </#macro>
 ----
 
+. Create the use case page `content/vehicleRoutingProblem.adoc` that uses that template
+and sets that `related_tag` attribute:
++
+[source, asciidoc]
+----
+= Vehicle Routing Problem
+:jbake-type: useCaseBase
+:jbake-related_tag: vehicle routing
+
+The Vehicle Routing Problem (VRP) optimizes the routes of delivery trucks,
+cargo lorries, public transportation (buses, taxis and airplanes)
+or technicians on the road, by improving the order of the visits.
+This routing optimization heavily reduces driving time and fuel consumption compared to manual planning:
+
+...
+----
 
 == Get started
 
-Try it yourself. To build our website, run these commands:
+Try it yourself. To build the https://www.optaplanner.org/[www.optaplanner.org] website, run these commands:
 
 [source, shell]
 ----

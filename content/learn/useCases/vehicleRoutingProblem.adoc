@@ -6,7 +6,7 @@
 :showtitle:
 
 The Vehicle Routing Problem (VRP) optimizes the routes of delivery trucks,
-cargo lorries, public transportation (buses, taxi's and airplanes)
+cargo lorries, public transportation (buses, taxis and airplanes)
 or technicians on the road, by improving the order of the visits.
 This routing optimization heavily reduces driving time and fuel consumption compared to manual planning:
 
@@ -23,7 +23,7 @@ and customize that template to your needs.**
 
 OptaPlanner is the leading Open Source Java™ AI constraint solver
 to optimize the Vehicle Routing Problem, the Traveling Salesman Problem and similar use cases.
-It covers any type of fleet scheduling, such as routing of airplanes, trucks, buses, taxi's, bicycles and ships,
+It covers any type of fleet scheduling, such as routing of airplanes, trucks, buses, taxis, bicycles and ships,
 regardless if the vehicles are transporting products or passengers or if the drivers are delivering services.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
