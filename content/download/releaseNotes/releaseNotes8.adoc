@@ -20,6 +20,12 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
 in the first half of 2021.
 
+== New and noteworthy: Engine 8.7.0.Final
+
+=== OptaPlanner quickstarts repository
+
+There is a new `quarkus-call-center` quickstart that shows https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#realTimePlanning[real-time planning] of incoming calls in a call center.
+
 == New and noteworthy: Engine 8.5.0.Final
 
 === Mapping in Constraint Streams
@@ -53,6 +59,10 @@ Other noteworthy changes done during the migration to Quarkus:
 We have added link:https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#domainAccess[Gizmo generated domain accessors and solution
 cloners], which offer better performance than the reflection based
 domain accessors and solution cloners.
+
+=== OptaPlanner quickstarts repository
+
+There is a new `activemq-quarkus-school-timetabling` quickstart showing integration of ActiveMQ with OptaPlanner on the School timetabling use case.
 
 == New and noteworthy: Engine 8.3.0.Final
 
