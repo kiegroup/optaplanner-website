@@ -715,4 +715,5 @@
   date: 2021-07-12
   talks:
     - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
+      url: https://www.euro-online.org/conf/euro31/treat_abstract?paperid=121
       presenters: Geoffrey De Smet
