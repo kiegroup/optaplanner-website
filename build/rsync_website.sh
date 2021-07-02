@@ -12,4 +12,4 @@
 #
 #############################################################################################################################################################################
 
-rsync -Pavqr -e "ssh -i $WORKSPACE/optaplanner-website/.ssh/optaplanner/id_rsa" --protocol=28 --delete-after target/website/* optaplanner@filemgmt.jboss.org:www_htdocs/optaplanner
+rsync -Pavqr --protocol=28 --delete-after target/website/* optaplanner@filemgmt.jboss.org:www_htdocs/optaplanner
