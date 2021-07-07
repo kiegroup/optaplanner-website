@@ -26,6 +26,8 @@ in the first half of 2021.
 
 There is a new `quarkus-call-center` quickstart that shows https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#realTimePlanning[real-time planning] of incoming calls in a call center.
 
+image:8.0/quarkusCallCenter.png[Quarkus Call Center]
+
 == New and noteworthy: Engine 8.5.0.Final
 
 === Mapping in Constraint Streams
@@ -62,7 +64,7 @@ domain accessors and solution cloners.
 
 === OptaPlanner quickstarts repository
 
-There is a new `activemq-quarkus-school-timetabling` quickstart showing integration of ActiveMQ with OptaPlanner on the School timetabling use case.
+There is a new `activemq-quarkus-school-timetabling` quickstart that shows how to integrate ActiveMQ with OptaPlanner to horizontally scale when solving multiple data sets.
 
 == New and noteworthy: Engine 8.3.0.Final
 
