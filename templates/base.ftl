@@ -115,6 +115,7 @@
                         <li><a href="https://www.drools.org/" target="_blank">Drools rule engine</a></li>
                         <li><a href="https://www.optaplanner.org/" target="_blank">OptaPlanner constraint solver</a></li>
                         <li><a href="https://www.jbpm.org/" target="_blank">jBPM workflow engine</a></li>
+                        <li><a href="https://kogito.kie.org/" target="_blank">Kogito Business Automation platform</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
