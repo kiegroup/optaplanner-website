@@ -17,8 +17,14 @@ and makes a few minor backwards incompatible changes.
 Just follow the instructions in link:../upgradeRecipe/upgradeRecipe8.html[the upgrade recipe].
 
 As usual, Red Hat offers link:../../product/services.html[enterprise support and consulting] on OptaPlanner 8,
-with the _Red Hat build of OptaPlanner_ in an upcoming release of Red Hat Decision Manager 7
-in the first half of 2021.
+with the _Red Hat build of OptaPlanner 8_ available and fully supported
+in the latest release of Red Hat Decision Manager 7.
+
+== New and noteworthy: Engine 8.10.0.Final
+
+=== Support for Quarkus 2.0
+
+OptaPlanner is now fully compatible with the recently released https://quarkus.io/quarkus2/[Quarkus 2.0].
 
 == New and noteworthy: Engine 8.7.0.Final
 
