@@ -22,12 +22,9 @@ in the latest release of Red Hat Decision Manager 7.
 
 == New and noteworthy: Engine 8.10.0.Final
 
-=== Java 11 or later required
+=== Support for Quarkus 2.0
 
-Together with the Quarkus and Kogito projects, we have raised the minimum required version of the Java Platform to 11.
-OpenJDK is an open source Java implementation and is https://adoptopenjdk.net/[free to download].
-
-OptaPlanner 8.10.0.Final also works flawlessly with the current OpenJDK release, which is OpenJDK 16.
+OptaPlanner is now fully compatible with the recently released https://quarkus.io/quarkus2/[Quarkus 2.0].
 
 == New and noteworthy: Engine 8.7.0.Final
 

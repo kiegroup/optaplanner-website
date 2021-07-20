@@ -1642,9 +1642,11 @@ After in `*ConstraintProvider.java*`:
 == From 8.9.0.Final to 8.10.0.Final
 
 [.upgrade-recipe-major]
-=== Java 11 or later required
+=== Switch to Quarkus 2
 
-Together with the Quarkus and Kogito projects, we have raised the minimum required version of the Java Platform to 11.
-OpenJDK is an open source Java implementation and is https://adoptopenjdk.net/[free to download].
+OptaPlanner has been realigned with recently released Quarkus 2.0.
+Users of the OptaPlanner Quarkus integration should refer to https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0[Quarkus 2.0 migration guide].
 
-OptaPlanner 8.10.0.Final also works flawlessly with the current OpenJDK release, which is OpenJDK 16.
+Consequently, OptaPlanner binaries now require JDK 11 or higher to run.
+Even though OptaPlanner 8.x has always required JDK 11, this only becomes a hard requirement with OptaPlanner 8.10.0.Final.
+
