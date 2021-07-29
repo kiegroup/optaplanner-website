@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<feed xml:lang="en-US" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
     <id>${config.canonicalBaseUrl}/</id>
     <title>${config.title}</title>
     <updated>${published_date?string("yyyy-MM-dd'T00:00:00+00:00'")}</updated>
@@ -10,7 +10,7 @@
     <#list published_posts as post>
         <entry>
             <id>${config.canonicalBaseUrl}/${post.uri}</id>
-            <title><#escape x as x?xml>${post.title}</#escape></title>
+            <title type="html"><#escape x as x?xml>${post.title}</#escape></title>
             <updated>${post.date?string("yyyy-MM-dd'T00:00:00+00:00'")}</updated>
             <published>${post.date?string("yyyy-MM-dd'T00:00:00+00:00'")}</published>
             <link href="${config.site_host}/${post.uri}" rel="alternate" type="text/html" />
@@ -22,7 +22,7 @@
                     <category term="${tag}"></category>
                 </#list>
             </#if>
-            <summary>
+            <summary type="html">
                 <#escape x as x?xml>${post.body?replace("<[\\w/][^>]*>", "", "r")?replace("\\s+", " ", "r")?truncate(200, "...")}</#escape>
             </summary>
             <content type="html">
