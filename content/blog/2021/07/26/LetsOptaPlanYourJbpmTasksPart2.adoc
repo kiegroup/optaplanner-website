@@ -8,7 +8,7 @@ wmedvede
 
 In the following paragraphs we will show that by combining the https://kogito.kie.org/[Kogito] business processes with OptaPlanner optimization, it is possible to automatically assign tasks to users. Furthermore, we can optimize those assignments, for example, to ensure that every user has the right skills for executing a task, a fair workload between users is produced, tasks are assigned according priorities, and other criteria. Finally, all this will take place in the cloud.
 
-But, wait! Isn't this _task assigning problem_ already solved in link:../../../2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)]?
+But, wait! Isn't this _task assigning problem_ already solved in https://www.optaplanner.org/blog/2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)]?
 
 Yes…, but this time we challenged OptaPlanner to solve it by coordinating independent business processes that execute as cloud-native services, and this last definitely means https://kogito.kie.org/[Kogito]!
 
@@ -20,11 +20,11 @@ Essentially, when you use https://kogito.kie.org/[Kogito] you are building a clo
 
 As a user, you simply focus on creating your business processes, rules, etc. and https://kogito.kie.org/[Kogito] will take care of the most difficult part of the job: _to make these assets work as cloud-native services_.
 
-Finally, by using any of the OptaPlanner link:../../../../compatibility/quarkus.html[Quarkus] or link:../../../../compatibility/springBoot.html[SpringBoot] extensions, your optimization problems can be easily solved in your cloud-application.
+Finally, by using any of the OptaPlanner https://www.optaplanner.org/compatibility/quarkus.html[Quarkus] or https://www.optaplanner.org/compatibility/springBoot.html[SpringBoot] extensions, your optimization problems can be easily solved in your cloud-application.
 
 == The new context
 
-To make comparison with the previous results easy, we'll use the same "Credit Dispute" process presented in: link:../../../2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)].
+To make comparison with the previous results easy, we'll use the same "Credit Dispute" process presented in: https://www.optaplanner.org/blog/2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)].
 
 But let's take a look at how things look like when we move to https://kogito.kie.org/[Kogito]:
 
@@ -44,7 +44,7 @@ image::KogitoProject2Built.png[]
 
 === OptaPlanner with Kogito
 
-On the other hand, when the OptaPlanner link:../../../../compatibility/quarkus.html[Quarkus] or link:../../../../compatibility/springBoot.html[SpringBoot] extension is included in your application, the following actions take place:
+On the other hand, when the OptaPlanner https://www.optaplanner.org/compatibility/quarkus.html[Quarkus] or https://www.optaplanner.org/compatibility/springBoot.html[SpringBoot] extension is included in your application, the following actions take place:
 
 . When your project is built, OptaPlanner definitions like the Solver configuration file, the PlanningSolution, the PlanningEntities, etc., are processed and proper ready for cloud runtime components are automatically generated.
 
@@ -70,7 +70,7 @@ When the CreditDispute process is executed the following actions takes place:
 
 . When the human tasks are created/completed/etc. Cloud Events are produced and delivered to Kafka thanks to the inclusion of the kogito-addons-quarkus-events-smallrye.
 
-. Different https://kogito.kie.org/[Kogito] supporting services like the https://docs.kogito.kie.org/latest/html_single/#con-data-index-service_kogito-configuring[Data Index Service] or the https://docs.kogito.kie.org/latest/html_single/#con-task-assigning-service_kogito-configuring[Task Assigning Service] receives these events.
+. Different https://kogito.kie.org/[Kogito] supporting services like the https://docs.kogito.kie.org/latest/html_single/#con-data-index-service_kogito-configuring[Data Index Service] or the https://docs.kogito.kie.org/latest/html_single/#con-kogito-task-assigning-service_kogito-configuring[Task Assigning Service] receives these events.
 
 . At the https://docs.kogito.kie.org/latest/html_single/#con-kogito-task-assigning-service_kogito-configuring[Task Assigning Service], OptaPlanner takes immediate control on these events, and the new task assignments plan is calculated and optimized.
 
@@ -78,7 +78,7 @@ When the CreditDispute process is executed the following actions takes place:
 
 This cycle is repeated over and over.
 
-For more information see: https://docs.kogito.kie.org/latest/html_single/#con-task-assigning-service_kogito-configuring[Task Assigning Service]
+For more information see: https://docs.kogito.kie.org/latest/html_single/#con-kogito-task-assigning-service_kogito-configuring[Task Assigning Service]
 
 == Process execution
 
@@ -92,7 +92,7 @@ The following image shows how a new process instance is created by using the Kog
 
 image::Start_CreditDispute_1111_MASTER_Spanish.png[]
 
-Analogous the previous use case (see: link:../../../2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)]), this information combined with the user's configuration is used to establish which of the available users are best suited for each task.
+Analogous the previous use case (see: https://www.optaplanner.org/blog/2020/07/03/LetsOptaPlanYourJbpmTasksPart1.html[Let's OptaPlan your jBPM tasks (part 1)]), this information combined with the user's configuration is used to establish which of the available users are best suited for each task.
 
 This time, the following user's configuration is used:
 
@@ -129,7 +129,7 @@ Again, the example above is quite linear, a few users are defined, and the possi
 
 We started by formulating an already solved problem, but using a completely different underlying ecosystem. This time, our business processeses are cloud-native services. All this is facilitated by https://kogito.kie.org/[Kogito] .
 
-To integrate OptaPlanner in your cloud application is straightforward: you instruct OptaPlanner with the model, and the Solver configuration to use, and that’s all ;), OptaPlanner link:../../../../compatibility/quarkus.html[Quarkus] or link:../../../../compatibility/springBoot.html[SpringBoot] extensions will manage all the complexity of the Solver instantiation and management. This has represented a very important simplification for building the https://docs.kogito.kie.org/latest/html_single/#con-task-assigning-service_kogito-configuring[Task Assigning Service].
+To integrate OptaPlanner in your cloud application is straightforward: you instruct OptaPlanner with the model, and the Solver configuration to use, and that’s all ;), OptaPlanner https://www.optaplanner.org/compatibility/quarkus.html[Quarkus] or https://www.optaplanner.org/compatibility/springBoot.html[SpringBoot] extensions will manage all the complexity of the Solver instantiation and management. This has represented a very important simplification for building the https://docs.kogito.kie.org/latest/html_single/#con-kogito-task-assigning-service_kogito-configuring[Task Assigning Service].
 
 Lastly, former conclusions still apply, that is: by integrating OptaPlanner the responsibility of the task assignments and decision-making is transferred from humans to optimization algorithms.
 
