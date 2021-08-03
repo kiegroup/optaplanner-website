@@ -214,20 +214,21 @@
     <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
-        <ul>
+        <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
+        <ul class="list-unstyled">
             <#list relatedVideos as video>
-                <#-- TODO use card layout and show youtube-thumbnails -->
-                <li style="margin-bottom: 10px;">
-                    <div class="title">
-                        <a href="https://youtu.be/${video.youtubeId}">
+                <li style="margin-bottom: 20px;">
+                    <a href="https://youtu.be/${video.youtubeId}">
+                        <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
+                        <div class="title">
                             <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
                             ${video.title}
-                        </a>
-                    </div>
-                    <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
+                        </div>
+                    </a>
                     <#if video.author??>
                         <@userBadgeInline userId=video.author/>
                     </#if>
+                    <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
                 </li>
             </#list>
         </ul>

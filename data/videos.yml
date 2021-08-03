@@ -95,7 +95,7 @@
   author: dmarrazzo
   date: 2020-09-02
   tags:
-    - task assigning
+    - task assignment
 
 - youtubeId: 4H3U6xyCgMI
   title: "TrustyAI and Explanation by example with OptaPlanner"
@@ -124,7 +124,7 @@
   author: wmedvede
   date: 2020-07-03
   tags:
-    - task assigning
+    - task assignment
 
 - youtubeId: JqtF2PLYTvI
   title: "AI on Quarkus"
@@ -176,3 +176,101 @@
   date: 2020-03-31
   tags:
     - spring
+
+- youtubeId: Y4wyPU_B2gU
+  author: ge0ffrey
+  title: "Routing 2 mechanics with OptaPlanner for Red Hat Summit 2019 keynote"
+  date: 2019-05-13
+  tags:
+    - maintenance scheduling
+
+- youtubeId: ylPEIf7Mc2M
+  author: yurloc
+  title: "OptaWeb Vehicle Routing before Red Hat Summit 2019"
+  date: 2019-05-07
+  tags:
+    - vehicle routing
+
+- youtubeId: ykF8DjxhQJI
+  author: ge0ffrey
+  title: "Conference Scheduling Devoxx and Voxxed with OptaPlanner"
+  date: 2019-02-28
+  tags:
+    - conference scheduling
+
+- youtubeId: 3CvadujUN1k
+  author: ge0ffrey
+  title: "OptaWeb Employee Rostering with OptaPlanner"
+  date: 2018-11-29
+  tags:
+    - employee rostering
+
+- youtubeId: eG_ky8jIRBk
+  author: yurloc
+  title: "OptaWeb VRP - Belgium"
+  date: 2018-11-21
+  tags:
+    - vehicle routing
+
+- youtubeId: GnnMHkY6vKk
+  author: ge0ffrey
+  title: "The battle of 2 automated conference talk scheduling algorithms for Devoxx"
+  date: 2018-11-15
+  tags:
+    - conference scheduling
+
+- youtubeId: R0JizNdxEjU
+  author: ge0ffrey
+  title: "Conference talk scheduling with OptaPlanner"
+  date: 2018-02-02
+  tags:
+    - conference scheduling
+
+- youtubeId: ksXjQ851RAU
+  title: "Task assigning for skills, affinity and priority with OptaPlanner"
+  author: ge0ffrey
+  date: 2016-04-28
+  tags:
+    - task assignment
+
+- youtubeId: u_bl6E7aiNY
+  author: ge0ffrey
+  title: "Exam timetabling with OptaPlanner"
+  date: 2014-05-17
+  tags:
+    - school timetabling
+
+- youtubeId: xhCtuM-Hiic
+  author: ge0ffrey
+  title: "Cloud optimization with OptaPlanner"
+  date: 2013-11-08
+  tags:
+    - cloud optimization
+
+- youtubeId: 4meWIhPRVn8
+  author: ge0ffrey
+  title: "Course Scheduling with OptaPlanner"
+  date: 2013-10-09
+  tags:
+    - school timetabling
+
+- youtubeId: BxO3UFmtAPg
+  author: ge0ffrey
+  title: "Vehicle Routing with Time Windows in OptaPlanner"
+  date: 2013-09-23
+  tags:
+    - vehicle routing
+
+- youtubeId: 4hp_Qg1hFgE
+  author: ge0ffrey
+  title: "Vehicle routing demo to show score flexibility in OptaPlanner"
+  date: 2012-12-13
+  tags:
+    - vehicle routing
+
+- youtubeId: 7nPagqJK3bs
+  author: ge0ffrey
+  title: "Continuous Planning for Nurse Rostering with OptaPlanner"
+  date: 2012-08-17
+  tags:
+    - employee rostering

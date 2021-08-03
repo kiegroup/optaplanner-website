@@ -37,13 +37,3 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 == Quick start (source code)
 
 Run the https://github.com/kiegroup/optaplanner-quickstarts#school-timetabling[school timetabling quickstart].
-
-== Videos
-
-video::AqTuRiWGLZQ[youtube]
-
-video::4meWIhPRVn8[youtube]
-
-video::u_bl6E7aiNY[youtube]
-
-video::7IuOA9n6kh0[youtube]
