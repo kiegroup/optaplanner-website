@@ -36,11 +36,3 @@ with very efficient score calculation and other state-of-the-art constraint solv
 
 OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache License].
 It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
-
-== Videos
-
-video::ykF8DjxhQJI[youtube]
-
-video::GnnMHkY6vKk[youtube]
-
-video::R0JizNdxEjU[youtube]
