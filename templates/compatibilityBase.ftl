@@ -9,8 +9,12 @@
             <div class="col-md-9">
                 <#nested>
                 <@macros.whatIsOptaPlanner/>
-                <@macros.relatedBlogPosts/>
-                <@macros.relatedVideos/>
+                <div class="col-md-6">
+                    <@macros.relatedVideos/>
+                </div>
+                <div class="col-md-6">
+                    <@macros.relatedBlogPosts/>
+                </div>
             </div>
             <div class="col-md-3">
                 <@macros.downloadJumbotron/>
