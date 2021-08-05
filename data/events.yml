@@ -717,3 +717,12 @@
     - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
       url: https://www.euro-online.org/conf/euro31/treat_abstract?paperid=121
       presenters: Geoffrey De Smet
+
+- eventId: 20210913-decisioncamp
+  eventOrganization: "DecisionCAMP"
+  eventUrl: https://decisioncamp2021.wordpress.com/
+  location: Leuven, Belgium
+  date: 2021-09-13
+  talks:
+    - title: "A modern OO/FP constraint solver to solve VRP, rostering or scheduling problems"
+      presenters: Geoffrey De Smet
