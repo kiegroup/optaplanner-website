@@ -40,40 +40,35 @@ Consider the following https://docs.optaplanner.org/latestFinal/optaplanner-docs
 
 [source, drl]
 ----
-	rule "insertEmployeeConsecutiveAssignmentStart"
-	    when
-		... // Omitted for brevity.
-	    then
-		insertLogical(new EmployeeConsecutiveAssignmentStart($employee, $shiftDate));
-	end
+    rule "insertEmployeeConsecutiveAssignmentStart" when
+        ... // Omitted for brevity.
+    then
+        insertLogical(new EmployeeConsecutiveAssignmentStart($employee, $shiftDate));
+    end
 
-	rule "insertEmployeeConsecutiveAssignmentEnd"
-	    when
-		... // Omitted for brevity.
-	    then
-		insertLogical(new EmployeeConsecutiveAssignmentEnd($employee, $shiftDate));
-	end
+    rule "insertEmployeeConsecutiveAssignmentEnd" when
+        ... // Omitted for brevity.
+    then
+        insertLogical(new EmployeeConsecutiveAssignmentEnd($employee, $shiftDate));
+    end
 
-	rule "insertEmployeeWorkSequence"
-	    when
-		EmployeeConsecutiveAssignmentStart($employee : employee, $firstDayIndex : shiftDateDayIndex)
-		EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex, $lastDayIndex : shiftDateDayIndex )
-		not EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex && < $lastDayIndex)
-	    then
-		insertLogical(new EmployeeWorkSequence($employee, $firstDayIndex, $lastDayIndex));
-	end
+    rule "insertEmployeeWorkSequence" when
+        EmployeeConsecutiveAssignmentStart($employee : employee, $firstDayIndex : shiftDateDayIndex)
+        EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex, $lastDayIndex : shiftDateDayIndex )
+        not EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex && < $lastDayIndex)
+    then
+        insertLogical(new EmployeeWorkSequence($employee, $firstDayIndex, $lastDayIndex));
+    end
 
-	rule "minimumConsecutiveWorkingDays"
-	    when
-		$contractLine : MinMaxContractLine(
-		    contractLineType == ContractLineType.CONSECUTIVE_WORKING_DAYS, minimumEnabled == true,
-		    $contract : contract, $minimumValue : minimumValue
-		)
-		EmployeeWorkSequence(getEmployee().getContract() == $contract, dayLength < $minimumValue, $dayLength : dayLength
-		)
-	    then
-		scoreHolder.addSoftConstraintMatch(kcontext, ($dayLength - $minimumValue) * $contractLine.getMinimumWeight());
-	end
+    rule "minimumConsecutiveWorkingDays" when
+        $contractLine : MinMaxContractLine(
+            contractLineType == ContractLineType.CONSECUTIVE_WORKING_DAYS, minimumEnabled == true,
+            $contract : contract, $minimumValue : minimumValue
+        )
+        EmployeeWorkSequence(getEmployee().getContract() == $contract, dayLength < $minimumValue, $dayLength : dayLength)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, ($dayLength - $minimumValue) * $contractLine.getMinimumWeight());
+    end
 ----
 
 As you can see, this is a lot of DRL which fundamentally does this:
