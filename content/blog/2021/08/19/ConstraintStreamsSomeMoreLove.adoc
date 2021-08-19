@@ -5,11 +5,13 @@ triceo
 :jbake-type: post
 :jbake-tags: constraint, feature
 
-I find it hard to believe that it's been over two years already since we've introduced https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams] into OptaPlanner; how time flies!
-Everyone's favorite API is constantly being improved, and only recently have we merged a whole lot of improvements to make it even easier to use.
-Let's take a closer look at some of them, available as of OptaPlanner 8.11.0.Final, coming soon to a mirror near you.
+We have recently merged a lot of improvements to the https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+in order to make it faster and even easier to use.
+Let's take a closer look at some of them.
 
 == Constraint Streams by default
+
+I find it hard to believe that it's been over two years already since we've introduced Constraint Streams into OptaPlanner; how time flies!
 
 To get you started, OptaPlanner has always brought a https://www.optaplanner.org/download/download.html[wide selection of examples] and more recently https://github.com/kiegroup/optaplanner-quickstarts[quickstarts].
 While quickstarts have always used Constraint Streams and Constraint Streams only, the examples being older in age, they typically bring more scoring implementations, such as https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#droolsScoreCalculation[DRL] or https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#incrementalJavaScoreCalculation[incremental Java].
@@ -30,8 +32,7 @@ Especially with the latter two collectors, the expressive power of Constraint St
 == Faster constraint collectors
 
 Until recently, constraint collectors `toList()`, `toSet()`, `toSortedSet()`, `toMap()` and `toSortedMap()` have been comparatively slow.
-The reason for that was that, on every incremental change of the inputs, the resulting collections were built all over again.
-We have changed the underlying implementation to be much more friendly to incremental calculation, and the end result is a performance improvement on the order of magnitudes on large enough data sets.
+We have now changed the underlying implementation to be much more friendly to incremental calculation, and the end result is a performance improvement on the order of magnitudes on large enough data sets.
 
 == Experimental constraint collectors
 
@@ -109,6 +110,8 @@ Before we make it part of the public API, we are looking for your feedback to ma
 If you have any questions or see issues in applying this pattern to your own constraints, please reach out to us on https://kie.zulipchat.com/#narrow/stream/232679-optaplanner[KIE Zulip], or https://stackoverflow.com/questions/tagged/optaplanner[ask a question on StackOverflow].
 
 == Conclusion
+
+All of these improvements are available as of OptaPlanner 8.11.0.Final, coming soon to a mirror near you.
 
 We will continue improving Constraint Streams as we find more and more problems to solve.
 If you want to make sure we can solve your problems too, share them with us.
