@@ -5,7 +5,7 @@ triceo
 :jbake-type: post
 :jbake-tags: constraint, feature
 
-We have recently merged a lot of improvements to the https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+We have recently merged a lot of improvements to https://www.optaplanner.org[OptaPlanner]'s https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
 in order to make it faster and even easier to use.
 Let's take a closer look at some of them.
 
@@ -107,11 +107,11 @@ As you can see, this is a much more concise implementation of the same behavior,
 
 This constraint collector https://github.com/kiegroup/optaplanner/blob/8.10.0.Final/optaplanner-examples/src/main/java/org/optaplanner/examples/common/experimental/ExperimentalConstraintCollectors.java[is not part of our public API] and we consider it experimental.
 Before we make it part of the public API, we are looking for your feedback to make sure it fits the various use cases that are out there.
-If you have any questions or see issues in applying this pattern to your own constraints, please reach out to us on https://kie.zulipchat.com/#narrow/stream/232679-optaplanner[KIE Zulip], or https://stackoverflow.com/questions/tagged/optaplanner[ask a question on StackOverflow].
+If you have any questions or see issues in applying this pattern to your own constraints, do not hesitate to https://www.optaplanner.org/community/getHelp.html[reach out to us].
 
 == Conclusion
 
 All of these improvements are available as of OptaPlanner 8.11.0.Final, coming soon to a mirror near you.
 
 We will continue improving Constraint Streams as we find more and more problems to solve.
-If you want to make sure we can solve your problems too, share them with us.
+If you want to make sure we can solve your problems too, https://www.optaplanner.org/community/getHelp.html[share them with us].
