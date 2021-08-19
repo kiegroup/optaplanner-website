@@ -1,0 +1,117 @@
+= Constraint Streams get some more love
+triceo
+2021-08-19
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: constraint, feature
+
+We have recently merged a lot of improvements to https://www.optaplanner.org[OptaPlanner]'s https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams API]
+in order to make it faster and even easier to use.
+Let's take a closer look at some of them.
+
+== Constraint Streams by default
+
+I find it hard to believe that it's been over two years already since we've introduced Constraint Streams into OptaPlanner; how time flies!
+
+To get you started, OptaPlanner has always brought a https://www.optaplanner.org/download/download.html[wide selection of examples] and more recently https://github.com/kiegroup/optaplanner-quickstarts[quickstarts].
+While quickstarts have always used Constraint Streams and Constraint Streams only, the examples being older in age, they typically bring more scoring implementations, such as https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#droolsScoreCalculation[DRL] or https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#incrementalJavaScoreCalculation[incremental Java].
+To clearly state that Constraint Streams are now the scoring method of choice, we have recently converted all OptaPlanner examples to use Constraint Streams by default.
+That said, we do not intend to deprecate any of the other scoring methods any time soon.
+
+== New constraint collectors
+
+Seeing increased adoption of Constraint Streams, we have been expanding the selection of https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsGroupingAndCollectors[constraint collectors] available out of the box.
+Recently, we have added the following new constraint collectors:
+
+* `average()` constraint collector allows you to calculate an average of a group of items.
+* `compose()` collector allows you to merge results of several constraint collectors. (For example, the `average()` collector is a composite of `count()` and `sum()`.)
+* `conditionally()` constraint collectors allows you to only delegate to another collector if a given condition is met first.
+
+Especially with the latter two collectors, the expressive power of Constraint Streams has grown significantly.
+
+== Faster constraint collectors
+
+Until recently, constraint collectors `toList()`, `toSet()`, `toSortedSet()`, `toMap()` and `toSortedMap()` have been comparatively slow.
+We have now changed the underlying implementation to be much more friendly to incremental calculation, and the end result is a performance improvement on the order of magnitudes on large enough data sets.
+
+== Experimental constraint collectors
+
+As we were implementing constraint providers for all the various examples, we noticed some constraints (which were already hard to implement in DRL) were impossible with Constraint Streams as it stands.
+Consider the following https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#nurseRostering[Nurse Rostering] https://github.com/kiegroup/optaplanner/blob/8.10.0.Final/optaplanner-examples/src/main/resources/org/optaplanner/examples/nurserostering/solver/nurseRosteringConstraints.drl#L97[DRL-based constraint] to penalize too many consecutive shifts:
+
+[source, drl]
+----
+    rule "insertEmployeeConsecutiveAssignmentStart" when
+        ... // Omitted for brevity.
+    then
+        insertLogical(new EmployeeConsecutiveAssignmentStart($employee, $shiftDate));
+    end
+
+    rule "insertEmployeeConsecutiveAssignmentEnd" when
+        ... // Omitted for brevity.
+    then
+        insertLogical(new EmployeeConsecutiveAssignmentEnd($employee, $shiftDate));
+    end
+
+    rule "insertEmployeeWorkSequence" when
+        EmployeeConsecutiveAssignmentStart($employee : employee, $firstDayIndex : shiftDateDayIndex)
+        EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex, $lastDayIndex : shiftDateDayIndex )
+        not EmployeeConsecutiveAssignmentEnd(employee == $employee, shiftDateDayIndex >= $firstDayIndex && < $lastDayIndex)
+    then
+        insertLogical(new EmployeeWorkSequence($employee, $firstDayIndex, $lastDayIndex));
+    end
+
+    rule "minimumConsecutiveWorkingDays" when
+        $contractLine : MinMaxContractLine(
+            contractLineType == ContractLineType.CONSECUTIVE_WORKING_DAYS, minimumEnabled == true,
+            $contract : contract, $minimumValue : minimumValue
+        )
+        EmployeeWorkSequence(getEmployee().getContract() == $contract, dayLength < $minimumValue, $dayLength : dayLength)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, ($dayLength - $minimumValue) * $contractLine.getMinimumWeight());
+    end
+----
+
+As you can see, this is a lot of DRL which fundamentally does this:
+
+1. Infer the first shift in a sequence of consecutive shifts.
+2. Infer the last shift in a sequence of consecutive shifts.
+3. Infer all the non-overlapping sequences.
+4. Penalize sequences longer than what is prescribed by the contract.
+
+Now consider how the same constraint is accomplished with Constraint Streams, using the experimental consecutive constraint collector:
+
+[source, java]
+----
+    Constraint consecutiveWorkingDays(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(MinMaxContractLine.class)
+            .filter(minMaxContractLine -> minMaxContractLine
+                .getContractLineType() == ContractLineType.CONSECUTIVE_WORKING_DAYS &&
+                minMaxContractLine.isEnabled())
+            .join(ShiftAssignment.class,
+                Joiners.equal(ContractLine::getContract, ShiftAssignment::getContract))
+            .groupBy((contract, shift) -> shift.getEmployee(),
+                (contract, shift) -> contract,
+                ExperimentalConstraintCollectors.consecutive((contract, shift) -> shift.getShiftDate(),
+                    ShiftDate::getDayIndex))
+            .flattenLast(ConsecutiveInfo::getConsecutiveSequences)
+            .filter((employee, contract, shiftList) -> contract.isViolated(shiftList.getLength()))
+            .penalize("consecutiveWorkingDays", HardSoftScore.ONE_SOFT,
+                    (employee, contract, shiftList) -> contract.getViolationAmount(shiftList.getLength()));
+    }
+----
+
+This constraint uses the experimental consecutive constraint collector to get us a list of all sequences of consecutive shifts.
+This list is then https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#constraintStreamsFlattening[flattened], giving us each sequence individually.
+As you can see, this is a much more concise implementation of the same behavior, with the brunt of the logic hidden inside the constraint collector itself.
+
+This constraint collector https://github.com/kiegroup/optaplanner/blob/8.10.0.Final/optaplanner-examples/src/main/java/org/optaplanner/examples/common/experimental/ExperimentalConstraintCollectors.java[is not part of our public API] and we consider it experimental.
+Before we make it part of the public API, we are looking for your feedback to make sure it fits the various use cases that are out there.
+If you have any questions or see issues in applying this pattern to your own constraints, do not hesitate to https://www.optaplanner.org/community/getHelp.html[reach out to us].
+
+== Conclusion
+
+All of these improvements are available as of OptaPlanner 8.11.0.Final, coming soon to a mirror near you.
+
+We will continue improving Constraint Streams as we find more and more problems to solve.
+If you want to make sure we can solve your problems too, https://www.optaplanner.org/community/getHelp.html[share them with us].
