@@ -6,10 +6,18 @@
 #  author: (optional) Existing userId from users.yml
 #  date: Must be in format "yyyy-mm-dd".
 #  tags: Avoid inventing new tags. Existing tags include:
-#    Use cases: "conference scheduling", "employee rostering", "maintenance scheduling", "school timetabling", "task assignment", "vehicle routing"
+#    Use cases: "conference scheduling", "employee rostering", "maintenance scheduling", "school timetabling",
+#               "task assignment", "vehicle routing", "call-center scheduling"
 #    Compatibility: "android", "kotlin", "quarkus", "scala", "spring"
 #
 # Order videos by date descending
+
+- youtubeId: NPTzXIyQdqU
+  title: "Schedule incoming calls real-time"
+  author: rsynek
+  date: 2021-08-23
+  tags:
+    - call-center scheduling
 
 - youtubeId: blK7gxqu2B0
   title: "Unit testing constraints"
