@@ -126,7 +126,7 @@ You can determine the size of the planning window but just be mindful of the siz
 == Pinned planning entities
 If you are continuously planning on a daily basis, there will be appointments within the two week period that are already allocated to people. To ensure that appointments are not double-booked, you need to mark existing appointments as allocated by pinning them. Pinning is used to anchor one or more specific assignments and force OptaPlanner to schedule around those fixed assignments.  A pinned planning entity, such as an appointment, doesn’t change during solving.
 
-Whether an entity is pinned or not is determined by the appointment state. If you take a look at the previous image, you can see to the left of the image that an appointment can have five states : Open, Invited, Accepted, Rejected, or Rescheduled.
+Whether an entity is pinned or not is determined by the appointment state. If you take a look at the previous image, you can see to the left of the image that an appointment can have five states: Open, Invited, Accepted, Rejected, or Rescheduled.
 
 NOTE: You don’t actually see these states directly in the quickstart demo code because the OptaPlanner engine is only interested in whether the appointment is pinned or not.
 
@@ -136,12 +136,12 @@ In this example,  when the solver runs it searches across the entire two week pl
 
 Notice that the appointments on the new day have been assigned and Amy and Edna who were previously scheduled in the draft part of the planning window are now scheduled in the published part of the window. This was possible because Gus and Hugo requested a reschedule. This won’t cause any confusion because Amy and Edna were never notified about their draft dates. Now, because they have appointments in the published section of the planning window, they will be notified and asked to accept or reject their appointments, and their appointments are now pinned.
 
-Stay tuned. We’ll be posting a follow-up blog for a deeper, more technical look at the Optaplanner vaccination appointment scheduler quickstart.
+Stay tuned. We’ll be posting a follow-up blog for a deeper, more technical look at the OptaPlanner vaccination appointment scheduler quickstart.
 
 
 .Additional resources
 * https://www.youtube.com/watch?v=LTkoaBk-P6U[Vaccination appointment scheduling video]
-* https://github.com/kiegroup/optaplanner-quickstarts[Github appointment planner code]
+* https://github.com/kiegroup/optaplanner-quickstarts[GitHub appointment planner code]
 * https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/[OptaPlanner User Guide]
 
 Co-authored by Emily Murphy.
