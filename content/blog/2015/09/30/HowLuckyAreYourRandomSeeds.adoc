@@ -34,10 +34,10 @@ configuration reliability in production are correct.
 
 * To reproduce, we need OptaPlanner 6.4.0.Beta1 or newer.
 * We run 3 of OptaPlanner's use cases with a `subSingleCount` greater than 1 in environment mode `PRODUCTION` (as of 7.0 renamed to `NON_REPRODUCIBLE`).
-** OptaPlanner supports several so called *environment modes*.
+** OptaPlanner supports several so-called *environment modes*.
 One of them, `PRODUCTION`,
 is obviously meant for runs in a production environment.
-In this environment mode, OptaPlanner will choose a *random seed* for it's
+In this environment mode, OptaPlanner will choose a *random seed* for its
 https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#randomNumberGenerator[pseudo-random number generator]
 (PRNG) at random (JDK default).
 Read more about this https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#environmentModeProduction[in the documentation].
@@ -123,7 +123,7 @@ This indicates that the variance is more influenced by the dataset than by the r
 The various outliers suggest that there are "lucky" and "unlucky" random seeds,
 but they don't seem to influence the results in any significant way *in general*.
 Again, there are specific datasets and use-cases which are more or less prone to changes in random seeds
--- we can can make use of statistical benchmarking to confirm if this is or isn't our case.
+-- we can make use of statistical benchmarking to confirm if this is or isn't our case.
 
 == Do we need a lucky random seed to get optimal results?
 

@@ -102,7 +102,7 @@ but can't afford to transmit the entire game state for every change.
 
 As soon as one thread goes out of sync, all calculations of that thread are corrupted,
 and the entire system is affected.
-But through a well designed orchestration of concurrent components
+But through a well-designed orchestration of concurrent components
 (and multi-day test runs), we prevent race conditions. And it works. Like a charm.
 
 Furthermore, the threads must be able to send moves to each other,
@@ -137,7 +137,7 @@ and reordering evaluated moves in their originally selected order when they come
 Multithreaded incremental solving is easy to activate.
 Just add a `<moveThreadCount>` line in your solver config:
 
-[source,java,options="nowrap"]
+[source,xml,options="nowrap"]
 ----
 <solver>
   <moveThreadCount>4</moveThreadCount>
@@ -188,7 +188,7 @@ On other Local Search algorithms, such as Late Acceptance, we see similar result
 
 image::multithreadedSolvingVrpLateAcceptance.png[]
 
-Late Acceptance is a fast stepping algorithm (especially in the beginning), which implies that it has less moves per step.
+Late Acceptance is a fast stepping algorithm (especially in the beginning), which implies that it has fewer moves per step.
 Yet, it has a similar relative speed gain for the Vehicle Routing Problem.
 
 We also see a slight reduction of the relative speed gain on the biggest dataset with 2750 VRP locations,

@@ -51,7 +51,7 @@ Notice that you don't need to repeat the rule name or the causes (the lectures) 
 OptaPlanner figures out it itself through the `kcontext` variable.
 Drools automatically exposes the `kcontext` variable in the RHS, so you don't need any extra code for it.
 
-You also no longer need to hack the API's to get a list of all `ConstraintOcurrence`'s:
+You also no longer need to hack the APIs to get a list of all ``ConstraintOccurrence``s:
 the `ConstraintMatch` objects (and their totals per constraint) are available directly on the `ScoreDirector` API.
 
 For more information, see http://blog.athico.com/2013/04/score-drl-faster-and-easier-in.html[this blog post]
@@ -67,7 +67,7 @@ you can now switch to a far more scalable configuration.
 
 === Automatic solution cloning
 
-Implementing the `Solution`'s planning clone method is now optional.
+Implementing the ``Solution``'s planning clone method is now optional.
 This means there's less boilerplate code to write and it's harder to cause score corruption in your code.
 
 For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]

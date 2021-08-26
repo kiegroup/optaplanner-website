@@ -113,7 +113,7 @@ See this video for a detailed demonstration:
 
 video::K084NKRZqkg[youtube]
 
-Note that a _decision table_ is more powerful then a _data driven DRL rule_: the user decides which conditions to apply.
+Note that a _decision table_ is more powerful than a _data driven DRL rule_: the user decides which conditions to apply.
 The other conditions are not even included (which is faster than checking them against default values).
 
 == Rule templates
@@ -124,10 +124,10 @@ use Drools _rule templates_ with a custom UI.
 
 == Drools Workbench
 
-Workbench (formerly known as Guvnor) is a full blown web application to manage rules and workflows.
+Workbench (formerly known as Guvnor) is a full-blown web application to manage rules and workflows.
 Using a web interface, business users can create and edit rules, including the score rules used by OptaPlanner.
 
-This is a very interesting setup, which I 'll demonstrate in a future blog post.
+This is a very interesting setup, which I'll demonstrate in a future blog post.
 Meanwhile, for more information, see https://www.drools.org/learn/documentation.html[the Drools documentation].
 
 == Conclusion

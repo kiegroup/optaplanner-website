@@ -6,7 +6,7 @@ https://www.optaplanner.org/[www.optaplanner.org]
 
 To build the optaplanner-website (before and after your changes):
 
-```
+----
 $ mvn clean generate-resources
 $ firefox target/website/index.html
-```
+----

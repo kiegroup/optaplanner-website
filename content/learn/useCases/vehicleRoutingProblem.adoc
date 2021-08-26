@@ -43,7 +43,7 @@ It is written in 100% pure Java™, runs on any JVM and is available in link:../
 Many enterprises face a vehicle routing problem daily:
 *determine the optimal order to deliver a number of items to number of locations with a fleet of vehicles*.
 They face this problem to restock their shops, to deliver products/services to customers, to fulfill maintenance on their devices, ...
-For example, truck routing with google maps:
+For example, truck routing with Google Maps:
 
 image:vehicleRoutingGoogleMapsDirections.png[Vehicle routing with Google Maps]
 

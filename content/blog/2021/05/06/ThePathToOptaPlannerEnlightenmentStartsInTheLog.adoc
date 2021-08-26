@@ -96,7 +96,7 @@ INFO Solving ended ... best score (0hard/10soft) ...
 * The starting score `-38init/0hard/0soft` indicates there are 38 unassigned planning variables.
 That's because there are 19 lessons, each with 2 planning variables to initialize.
 * The Construction Heuristic ends with a solution of score `0hard/-11soft`, which is already feasible (no hard constraints broken). That's not always the case.
-* The Local Search improves the score further to score `0hard/10soft`. That's an difference of `+21soft` in 29 seconds.
+* The Local Search improves the score further to score `0hard/10soft`. That's a difference of `+21soft` in 29 seconds.
 
 == Performance
 

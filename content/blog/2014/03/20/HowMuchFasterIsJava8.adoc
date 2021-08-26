@@ -27,7 +27,7 @@ Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
 *A single CPU is completely saturated.*
-It constantly creates many short lived objects, and the GC collects them afterwards.
+It constantly creates many short-lived objects, and the GC collects them afterwards.
 
 * The benchmarks measure the number of scores that can be calculated per millisecond. Higher is better.
 Calculating a score for a proposed planning solution is non-trivial:
@@ -55,7 +55,7 @@ Hopefully new releases of Java 8 will resolve this performance regression soon.
 * On average, Java 8 is only `1%` faster than Java 7. This while Java 7 is already `16%` faster than Java 6.
 
 * Despite that this is the first final release of OpenJDK 8, I did not find any regressions in Java 8.
-OptaPlanner's examples are 100% reproducible, so as expected, the different JRE's give the exact same results at every single iteration.
+OptaPlanner's examples are 100% reproducible, so as expected, the different JREs give the exact same results at every single iteration.
 
 === Raw benchmark numbers
 
@@ -80,7 +80,7 @@ On average, the result is less convincing (with the current release), but a free
 I wrote this blog more than a year ago. Meanwhile both Java 8 and OptaPlanner have had a number of releases.
 *How much do the Java 8 updates affect performance?*
 
-To make a fair comparison, I 've (re)ran the latest OptaPlanner code on both the original Java 8 release (build 0) and the latest release (build 45).
+To make a fair comparison, I've (re)run the latest OptaPlanner code on both the original Java 8 release (build 0) and the latest release (build 45).
 These are the results:
 
 |===

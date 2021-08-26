@@ -15,7 +15,7 @@ https://play.google.com/store/apps/details?id=org.tomasdavid.vehicleroutingprobl
 
 == How to use OptaPlanner on Android
 
-*Update: as of OptaPlanner `6.3.0.Beta2`, this workaround is no longer needed, because OptaPlanner does not import the `java.beans` package any more.*
+*Update: as of OptaPlanner `6.3.0.Beta2`, this workaround is no longer needed, because OptaPlanner does not import the `java.beans` package anymore.*
 
 Android is not a complete JVM. Some JDK libraries of the `java.beans` package are missing for OptaPlanner 6.2 to work out of the box.
 However, it is possible to use OptaPlanner with Java score calculation by adding those missing libraries to your
@@ -44,7 +44,7 @@ $ java -jar jarjar-1.4.jar process jarJarRule.txt openbeans-1.0.jar javabeans-1.
 * Add these lines to `android` area in the `build.gradle` file in your Android project to allow classes of the `java.*` package
 inside the `javabeans-1.0.jar` file to be used:
 
-[source,txt]
+[source,groovy]
 ----
 android {
     ...
@@ -60,7 +60,7 @@ android {
 
 * Add a dependency to the `build.gradle` file in your Android project and exclude `org.drools` and `xmlpull` dependencies:
 
-[source,txt]
+[source,groovy]
 ----
 dependencies {
     ...

@@ -53,18 +53,18 @@ In a chained variable design, the focus lies on deciding the order of a set of p
 instead of assigning them to a date/time (although there can be an assigned date/time as a shadow variable).
 A typical use case is vehicle routing.
 
-. If there is an orange _many to many_ relationship, *replace that _many to many_ relationship*
-with a _one to many_ and a _many to one_ relationship to a new intermediate class.
+. If there is an orange _many-to-many_ relationship, *replace that _many-to-many_ relationship*
+with a _one-to-many_ and a _many-to-one_ relationship to a new intermediate class.
 ** OptaPlanner currently doesn't support a `@PlanningVariable` on a collection.
 Although a future version will support it for flexibility reasons,
 it probably has an inherent performance and complexity cost, so it might be better to avoid it anyway.
 ** For example in employee rostering the `ShiftAssignment` class is
-the _many to many_ relationship between the `Shift` and `Employee`.
+the _many-to-many_ relationship between the `Shift` and `Employee`.
 It's effectively every spot that needs to be filled with an employee.
 +
 image::employeeShiftRosteringModelingGuideA.png[]
 
-. In a _many to one_ relationship, *usually the _many_ side is the planning entity class*.
+. In a _many-to-one_ relationship, *usually the _many_ side is the planning entity class*.
 Annotate it with a `@PlanningEntity` annotation.
 ** For example in employee rostering, the `ShiftAssignment` class has a `@PlanningEntity` annotation.
 

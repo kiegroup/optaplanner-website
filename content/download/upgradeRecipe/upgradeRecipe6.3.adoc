@@ -10,7 +10,7 @@
 === `@InverseRelationShadowVariable` for non-chained planning variables
 
 `@InverseRelationShadowVariable` is now also supported for non-chained planning variables,
-in which case it the inverse property must be `Collection` (`Set` or `List`).
+in which case the inverse property must be `Collection` (`Set` or `List`).
 So it's no longer needed to use a `CustomShadowVariable` to implement the bi-directional relationship behaviour.
 
 Before in `*.java`:
@@ -48,15 +48,15 @@ which state that an `Object.toString()` should identify an instance and be short
 the `Move.toString()` methods have been modified to mention the old value too (as well as the entity and the new value).
 Their notations have also been made consistent:
 
-* `ChangeMove`:         `a {v1 -> v2}`
-* `SwapMove`:           `a {v1} <-> b {v2}`
-* `PillarChangeMove`:   `[a, b] {v1 -> v2}`
-* `PillarSwapMove`:     `[a, b] {v1} <-> [c, d, e] {v2}`
-* `TailChainSwapMove`:  `a3 {a2} <-tailChainSwap-> b1 {b0}`
-* `SubChainChangeMove`: `[a2..a5] {a1 -> b0}`
-** Reversing: `[a2..a5] {a1 -reversing-> b0}`
-* `SubChainSwapMove`:   `[a2..a5] {a1} <-> [b1..b3] {b0}`
-** Reversing: `[a2..a5] {a1} <-reversing-> [b1..b3] {b0}`
+* `ChangeMove`:         `a {v1 \-> v2}`
+* `SwapMove`:           `a {v1} \<\-> b {v2}`
+* `PillarChangeMove`:   `[a, b] {v1 \-> v2}`
+* `PillarSwapMove`:     `[a, b] {v1} \<\-> [c, d, e] {v2}`
+* `TailChainSwapMove`:  `a3 {a2} \<-tailChainSwap\-> b1 {b0}`
+* `SubChainChangeMove`: `[a2..a5] {a1 \-> b0}`
+** Reversing: `[a2..a5] {a1 -reversing\-> b0}`
+* `SubChainSwapMove`:   `[a2..a5] {a1} \<\-> [b1..b3] {b0}`
+** Reversing: `[a2..a5] {a1} \<-reversing\-> [b1..b3] {b0}`
 
 This mainly affects the logging output.
 In the examples, the `toString()` method of planning entities and planning values has been modified accordingly
@@ -68,7 +68,7 @@ Before in `*.java`:
 public class CloudProcess {
     ...
 
-    public String `toString()` {
+    public String toString() {
         return processName + "@" + computer.getName();
     }
 }
@@ -224,7 +224,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 
 If your planning solution has a superclass with planner annotations,
 those will now be ignored (just like solution subclass annotations are ignored
-and just like entity superclass or subclass annotations are ignored unless they are a declare planning entity class too).
+and just like entity superclass or subclass annotations are ignored unless they are a declared planning entity class too).
 Declare the `@PlanningSolution` on the superclass instead, the solver will handle subclass instances gracefully
 (presuming there are no planner annotations in the subclass).
 
@@ -312,9 +312,9 @@ public Integer getCapacity() {
 === `VariableListeners` no longer trigger chaotically
 
 `VariableListeners` no longer trigger chaotically. This applies to both out of the box shadow variables and custom shadow variables.
-Planner now guarantees that the first `VariableListener` 's `after*()` method triggers *AFTER* the last genuine variable has been modified.
+Planner now guarantees that the first ``VariableListener``'s `after*()` method triggers *AFTER* the last genuine variable has been modified.
 This means a `VariableListener` is no longer exposed to intermediate state.
-The `before*()` methods still trigger immediately (otherwise they would not be able to capture the source variable's orginal state).
+The `before*()` methods still trigger immediately (otherwise they would not be able to capture the source variable's original state).
 Furthermore, Planner guarantees this triggering in stages also for `VariableListener` for a shadow variable that depend on earlier shadow variables.
 
 
@@ -459,7 +459,7 @@ SingletonInverseVariableSupply inverseVariableSupply = ((InnerScoreDirector) sco
 return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, toValue);
 ----
 
-Furthermore, a `ChainedSwapMove` 's constructor now requires a `List` instead of `Collection` of `VariableDescriptor` s.
+Furthermore, a ``ChainedSwapMove``'s constructor now requires a `List` instead of `Collection` of ``VariableDescriptor``s.
 
 [.upgrade-recipe-impl-detail]
 === `InnerScoreDirector`: `getTrailingEntity()` removed

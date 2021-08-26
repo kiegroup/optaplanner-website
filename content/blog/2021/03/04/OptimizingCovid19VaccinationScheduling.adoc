@@ -30,7 +30,7 @@ Challenges with this approach:
 * First-come first-serve might not be fair.
 * System overloads can repeatedly shut out people with slower internet.
 * When many people try to reserve the same appointment slot at the same time, all but one person fails to secure the appointment which results in a poor user experience. Some people might give up trying to reserve an appointment.
-On the other hand, less desirable  appointment slots might not be filled.
+On the other hand, less desirable appointment slots might not be filled.
 * It’s tricky to prioritize based on criteria such as priority, age, or second dose status.
 * The desired vaccine type (Pfizer&#8482;, Moderna&#8482;, AstraZeneca&#8482;) might not be available.
 
@@ -52,7 +52,7 @@ Challenges with this approach:
 The system-automatically-assigns method is easier for people to use, is fairer, and is more efficient for vaccination appointment scheduling than the user-selects method.
 
 == The second dose challenge
-Most COVID-19 vaccines require two doses. For optimal effectiveness, the second dose must be given within a specific time frame in relation to the first dose, using the same vaccine type. On top of that, different vaccines have different second-dose time frames. And within those time frames, there is a ready date (the first date that the second dose can be taken), an ideal date (the best date to take the second dose), and an end date (the last date that the second dose is considered to be effective). For example, the ideal date for the Pfizer  second dose is 21 days after the first dose but the ideal date for the Moderna second dose is 28 days after the first dose.
+Most COVID-19 vaccines require two doses. For optimal effectiveness, the second dose must be given within a specific time frame in relation to the first dose, using the same vaccine type. On top of that, different vaccines have different second-dose time frames. And within those time frames, there is a ready date (the first date that the second dose can be taken), an ideal date (the best date to take the second dose), and an end date (the last date that the second dose is considered to be effective). For example, the ideal date for the Pfizer second dose is 21 days after the first dose but the ideal date for the Moderna second dose is 28 days after the first dose.
 
 So let’s say that you start vaccinating people with the Moderna vaccine. After four weeks, you are still giving people the first dose, but now it’s time for people who already received their first dose to get their second dose. You have to decide whether to give an appointment to the person who needs the second dose or to give an appointment to someone for a first dose. That might seem like a no-brainer, but this scenario has potential complications. Let’s say that in the first week of vaccinations, you vaccinated people with a high priority but you also vaccinated other people as well because you found you had extra vaccines at the end of a day and you didn't want to waste them. Now, four weeks later, you must choose whether to give an appointment to a first-dose high-priority person or give it to the lower-priority person that needs second dose.
 

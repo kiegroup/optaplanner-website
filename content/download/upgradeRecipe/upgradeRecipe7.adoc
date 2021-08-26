@@ -26,7 +26,7 @@ We currently intend to support a minimal version of Java 8 throughout the entire
 
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
-===  Deprecated methods removed
+=== Deprecated methods removed
 
 The following long term deprecated methods have been finally removed:
 
@@ -424,7 +424,7 @@ Before in XStream `*.xml` output with `optaplanner-persistence-xstream`:
       <score>0/0/-1/-2/-3</score>
 ----
 
-After in in XStream `*.xml` output with `optaplanner-persistence-xstream`:
+After in XStream `*.xml` output with `optaplanner-persistence-xstream`:
 [source, xml]
 ----
       <score>[0/0]hard/[-1/-2/-3]soft</score>
@@ -966,7 +966,7 @@ After in `*.java`:
 [.upgrade-recipe-major]
 === Solver configuration: `<scoreDefinitionType>` removed
 
-Don't specify the `scoreDefinitionType` in the solver configuration any more
+Don't specify the `scoreDefinitionType` in the solver configuration anymore
 because OptaPlanner will now figure it out automatically from the domain.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
@@ -1367,7 +1367,7 @@ public class EditComputerProblemFactChange implements ProblemFactChange<CloudBal
 [.upgrade-recipe-minor]
 === Benchmarker warms up by default
 
-It is no longer needed to explicitly configure a warm up time for the benchmarks.
+It is no longer needed to explicitly configure a warm-up time for the benchmarks.
 It now warms up for 30 seconds by default.
 
 Before in `*BenchmarkConfig.xml`:
@@ -1388,7 +1388,7 @@ After in `*BenchmarkConfig.xml`:
 </plannerBenchmark>
 ----
 
-To disable the warm up, explicitly set it to 0:
+To disable the warm-up, explicitly set it to 0:
 [source, xml]
 ----
 <plannerBenchmark>
@@ -1702,7 +1702,7 @@ After in `*.java`:
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `ConstraintMatchAwareIncrementalScoreCalculator`: `getConstraintMatchTotals()` impact
 
-When implementing the interface `ConstraintMatchAwareIncrementalScoreCalculator`'s method `getConstraintMatchTotals()`,
+When implementing the interface ``ConstraintMatchAwareIncrementalScoreCalculator``'s method `getConstraintMatchTotals()`,
 the constructor of `ConstraintMatchTotal` and the method `addConstraintMatch(...)`
 now use `Score` instances instead of numbers.
 
@@ -1878,7 +1878,7 @@ public class MachineReassignmentIncrementalScoreCalculator
 [.upgrade-recipe-minor]
 === Custom `MoveListFactory` and `MoveIteratorFactory`: method return `Move<Solution_>`
 
-The `MoveListFactory` and `MoveIteratorFactory`'s methods now use `Move<Solution_>` instead of a raw-typed `Move`.
+The `MoveListFactory` and ``MoveIteratorFactory``'s methods now use `Move<Solution_>` instead of a raw-typed `Move`.
 This way your `MoveListFactory` can return `List<ChangeMove<MySolution>>` instead of `List<ChangeMove>`.
 
 Before in `*.java`:
@@ -2299,7 +2299,7 @@ it must now be added to that justification's `Indictment` only once.
 === Replace `movableEntitySelectionFilter` with `@PlanningPin` when possible
 
 In many cases, the complex use of a `movableEntitySelectionFilter` to pin down planning entities
-can by simplified by a `@PlanningPin` annotation on a field or method
+can be simplified by a `@PlanningPin` annotation on a field or method
 that returns true if the entity is immovable.
 
 Before in `*.java`:
@@ -3183,7 +3183,7 @@ The `FeasibilityScore` interface has been deprecated and its only method `isFeas
 The method has a new default implementation and most users therefore should not notice any changes.
 However, for users who were extending `Score` (not `FeasibilityScore`), an exception may be thrown unless they override the method in their custom score implementations.
 
-Users should refer to their ``Score``s by their ultimate type, eg. `HardSoftScore` as opposed to `Score`
+Users should refer to their ``Score``s by their ultimate type, e.g. `HardSoftScore` as opposed to `Score`
 or the now deprecated `FeasibilityScore`.
 
 == From 7.38.0.Final to 7.39.0.Final
@@ -3368,7 +3368,7 @@ We recommend users replace the use of the deprecated interfaces and classes with
 
 Before in `*EasyScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
@@ -3381,7 +3381,7 @@ Before in `*EasyScoreCalculator.java*`:
 
 After in `*EasyScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
@@ -3394,7 +3394,7 @@ After in `*EasyScoreCalculator.java*`:
 
 Before in `*IncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
@@ -3407,7 +3407,7 @@ Before in `*IncrementalScoreCalculator.java*`:
 
 After in `*IncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.IncrementalScoreCalculator;
@@ -3420,7 +3420,7 @@ After in `*IncrementalScoreCalculator.java*`:
 
 Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
@@ -3436,7 +3436,7 @@ Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
 After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.ConstraintMatchAwareIncrementalScoreCalculator;

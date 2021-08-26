@@ -66,7 +66,7 @@ image::fastest-vs-shortest.png[]
 Contrary to popular belief, *the shortest trip on the fastest routes is not the shortest trip.*
 https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/images/Chapter-Use_cases_and_examples/roadDistanceTriangleInequality.png[Here's my elaborate proof of that.]
 
-Most people tend to prefer highways over dirt roads, so they prefer prefer the fastest trip over the shortest trip.
+Most people tend to prefer highways over dirt roads, so they prefer the fastest trip over the shortest trip.
 In more advanced use cases, we would also want to take additional constraints into account:
 
 * Not all routes are equally beautiful or equally safe.

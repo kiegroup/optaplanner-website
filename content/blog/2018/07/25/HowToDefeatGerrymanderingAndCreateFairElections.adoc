@@ -51,7 +51,7 @@ image::NorthCarolinaDistrictsOptaPlanner.png[]
 
 The shapes in this image are much more regular.
 The small blocks you see are based of the US 2010 decennial census.
-There are about 8000 of them in North Carolina and they are the Planning Entity in this example, with the Planning Variable being just a integer 1-13 representing the districts.
+There are about 8000 of them in North Carolina and they are the Planning Entity in this example, with the Planning Variable being just an integer 1-13 representing the districts.
 The average population in each district is about 714,000 people.
 Each district in this example is about plus or minus 2,000 from each other.
 Depending on how we want to weight the constraints, we can make the population in each district closer to the average.

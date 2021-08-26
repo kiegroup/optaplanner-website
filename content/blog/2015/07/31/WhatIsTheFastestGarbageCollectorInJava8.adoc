@@ -25,7 +25,7 @@ Each planning problem runs for 5 minutes. It starts with a 30 second JVM warm up
 
 * Solving a planning problem involves *no IO* (except a few milliseconds during startup to load the input).
 *A single CPU is completely saturated.*
-It constantly creates many short lived objects, and the GC collects them afterwards.
+It constantly creates many short-lived objects, and the GC collects them afterwards.
 
 * The benchmarks measure the number of scores that can be calculated per millisecond. Higher is better.
 Calculating a score for a proposed planning solution is non-trivial:
@@ -92,7 +92,7 @@ On the other hand, there are a few nuances to note:
 * G1 focuses on limiting GC pauses, instead of throughput.
 For these use cases (with heavy calculations) GC pause length mostly doesn't matter.
 
-* This was an (almost) single threaded benchmark.
+* This was an (almost) single-threaded benchmark.
 Further benchmarking with multiple solvers in parallel or multithreaded solving might influence results.
 
 * G1 is recommended for a heap size of at least `6 GB`.

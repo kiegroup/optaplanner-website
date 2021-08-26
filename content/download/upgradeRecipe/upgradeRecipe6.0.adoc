@@ -204,7 +204,7 @@ public class Exam {
 }
 ----
 
-After in `*.java`, option 2: if you want keep your code:
+After in `*.java`, option 2: if you want to keep your code:
 [source, java]
 ----
 @PlanningSolution
@@ -326,7 +326,7 @@ then
 [.upgrade-recipe-minor]
 === `@PlanningVariable`: `uninitializedEntityFilter` renamed
 
-`@PlanningVariable` 's property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
+``@PlanningVariable``'s property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
 
 Before in `*.java`:
 [source, java]
@@ -962,10 +962,10 @@ And resync your IDE (IntelliJ, Eclipse, NetBeans) from the pom.xml files.
 If you're still using ANT, replace `drools-planner-\*.jar` with `optaplanner-*.jar`
 and adjust your ANT script and your IDE's classpath accordingly.
 
-Note: because of package name changes (see below), you 'll get a lot of compile errors at this point.
+Note: because of package name changes (see below), you'll get a lot of compile errors at this point.
 
 [.upgrade-recipe-major]
-=== Loggign category renamed
+=== Logging category renamed
 
 The logging category `org.drools.planner` has been renamed to `org.optaplanner`
 
@@ -1034,7 +1034,7 @@ After in `*.xml`:
 <...>org.optaplanner...</...>
 ----
 
-Note: because of other package name changes (see below), you 'll get a lot of compile errors after these changes.
+Note: because of other package name changes (see below), you'll get a lot of compile errors after these changes.
 
 [.upgrade-recipe-readme]
 === Packages split up into api, config and implementation classes
@@ -1323,7 +1323,7 @@ It has skipped the Drools 5 `KnowledgeBase` API.
 [.upgrade-recipe-major]
 === `ScoreDirectorFactoryConfig`: `setRuleBase()` replaced
 
-`ScoreDirectorFactoryConfig` 's method `setRuleBase()` has been replaced by `setKieBase()`
+``ScoreDirectorFactoryConfig``'s method `setRuleBase()` has been replaced by `setKieBase()`
 
 Before in `*.java`:
 [source, java]
@@ -1380,17 +1380,17 @@ import org.kie.api.runtime.KieSession;
 ----
 
 [.upgrade-recipe-readme]
-===  `ConstraintOccurrence` replaced
+=== `ConstraintOccurrence` replaced
 
-In score DRL's, the insertLogical `ConstraintOccurrence` technique has been replaced with the `ConstraintMatch` technique.
+In score DRLs, the insertLogical `ConstraintOccurrence` technique has been replaced with the `ConstraintMatch` technique.
 That new technique is much faster (see blog for details), easier to use and far less error-prone.
 Unlike `ConstraintOccurrence`, `ConstraintMatch` doesn't care about the equals/hashcode implementations of your classes.
 Also, the `ConstraintMatch` and `ConstraintMatchTotal` instances are designed to be reused outside Planner.
 
 [.upgrade-recipe-major]
-=== scoreDrl's: use `ConstraintMatch` technique
+=== ``scoreDrl``s: use `ConstraintMatch` technique
 
-Change your scoreDrl's to use the `ConstraintMatch` technique.
+Change your ``scoreDrl``s to use the `ConstraintMatch` technique.
 Instead of doing an insertLogical of a `ConstraintOccurrence`, they now call `scoreHolder.add*ConstraintMatch()`
 and no longer need to supply the infamous causes parameter.
 In the DRL, the LHS (= when parts) remain unchanged: only the RHS (= then parts) change
@@ -1496,7 +1496,7 @@ Note: `kcontext` is a magic variable name automatically made available by Drools
 Note: The causes array parameter (for example `$leftLecture`, `$rightLecture`, `$computer`) is gone,
 because it is automatically deduced from `kcontext`.
 
-Warning: Because `ConstraintMatch` doesn't do an `insertLogical`, nor does it depends on the equals/hashcode of your objects,
+Warning: Because `ConstraintMatch` doesn't do an `insertLogical`, nor does it depend on the equals/hashcode of your objects,
 there is a small chance that the `ConstraintOccurrence` counted a lower score (often unintentional by the author).
 
 To detect this uncomment this code in `*SolverConfig.xml` to verify that the new DRL works exactly the same as the old one:
@@ -1802,7 +1802,7 @@ After in `*BenchmarkConfig.xml`:
 ----
 
 [.upgrade-recipe-major]
-=== `ScoreDirector`: `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` revmoed
+=== `ScoreDirector`: `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` removed
 
 The methods `beforeAllVariablesChanged()` and `afterAllVariablesChanged()` have been removed
 from `IncrementalScoreCalculator` and `ScoreDirector`.
@@ -1905,7 +1905,7 @@ public class VrpCustomer ... {
 ----
 To make it easier to implement that listener, a bi-directional relationship was introduced on `VrpStandstill`,
 which made `VrpStandstill` a `@PlanningEntity` (which effectively makes `VrpVehicle` a planning entity too)
-and `Solution.getVehicleList()` 's method annotated with `@PlanningEntityCollectionProperty`:
+and ``Solution.getVehicleList()``'s method annotated with `@PlanningEntityCollectionProperty`:
 
 Before in `VrpStandstill.java`:
 [source, java]
@@ -1977,7 +1977,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-minor]
 === `SolverConfig`: `setPlanningEntityClassSet()` changed
 
-`SolverConfig` 's method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
+``SolverConfig``'s method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
 because the order is important.
 
 Before in `*.java`:

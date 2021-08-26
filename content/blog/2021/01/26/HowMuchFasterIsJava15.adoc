@@ -13,7 +13,7 @@ What does it mean for
 https://www.optaplanner.org/[OptaPlanner]? Are there any benefits to be gained from upgrading from JDK11 to JDK15? In 2019,
 we found out that ParallelGC works better for OptaPlanner. Is that still the case a year later? Let's put it to the test!
 
-This article is a follow up on our
+This article is a follow-up on our
 https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[Java 11]
 and our
 https://www.optaplanner.org/blog/2014/03/20/HowMuchFasterIsJava8.html[Java 8] performance comparison benchmarks.
@@ -111,4 +111,4 @@ image::G1GCandParallelGCUsingJDK15.png[]
 
 In conclusion, the performance gained in the JDK15 version is well worth considering regarding OptaPlanner. In addition, the preferred garbage collector to use is still ParallelGC, the performance of which is even better in comparison with G1GC than it was in our https://www.optaplanner.org/blog/2019/01/17/HowMuchFasterIsJava11.html[previous JDK performance comparison].
 
-Updated with minor corrections on April 15 2021.
+Updated with minor corrections on April 15, 2021.

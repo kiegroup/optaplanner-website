@@ -6,7 +6,7 @@ ge0ffrey
 :jbake-tags: use case, conference scheduling
 :jbake-social_media_share_image: summitConferenceScheduling_0.png
 
-Earlier this month, Red Hat organized it's annual Summit conference in San Francisco for more than 7000 attendees.
+Earlier this month, Red Hat organized its annual Summit conference in San Francisco for more than 7000 attendees.
 As https://youtu.be/r8e4bT0-zhU?t=1m47s[Jim Whitehurst explained in his opening keynote],
 OptaPlanner optimized attendee experience by scheduling all of the 325 non-keynote sessions.
 Let's take a look behind the scenes.
@@ -57,7 +57,7 @@ It took us a while to figure out the cause, due to talk type complexity, the she
 I even got side-tracked on trying to fix the feasibility, instead of prioritizing the visualization first, for more insight into the result quality.
 
 Once I improved the visualization in the output spreadsheet, the real problem surfaced immediately:
-https://en.wikipedia.org/wiki/Pigeonhole_principle[not enough pigeon holes].
+https://en.wikipedia.org/wiki/Pigeonhole_principle[not enough pigeonholes].
 There were 325 talks and only 300 slots to put them in.
 
 We added the 2 missing rooms in the input data and got our first feasible solution.
@@ -112,7 +112,7 @@ Part 2 needed to start when part 1 ended, in the same room.
 To proceed quickly, we just _pinned_ those 2 session manually to a room and timeslots, before solving it. It worked.
 OptaPlanner scheduled all other talks while respecting those 2 pre-set assignments.
 
-Of course, if we do see more of these 2-part session cases, I 'll add a new constraint to deal with it properly.
+Of course, if we do see more of these 2-part session cases, I'll add a new constraint to deal with it properly.
 
 
 == Conclusion

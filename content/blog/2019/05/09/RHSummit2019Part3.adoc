@@ -142,7 +142,7 @@ blindly hope that the amount of damage mechanics can handle is proportional to t
 
 The purpose of load testing is to tell if the system under test is able to handle certain load. If there are
 requirements regarding expected throughput, these can be verified based on the results. With no such requirements,
-load testing can help finding limits of the system in terms of load.
+load testing can help to find limits of the system in terms of load.
 
 Let me share in the lines below what we learned from load testing and what issues we had to fix.
 
@@ -169,7 +169,7 @@ The devil was hidden in Infinispan and also in the way we contacted Infinispan f
 Having only 4 infinispan nodes trying to handle all the requests from multiple components didn't scale
 because of the network traffic. Involving more Infinispan notes did help for the network part of the issue,
 as the traffic was balanced between more nodes. Using a separate thread to query for each machine's health did
-help on OptaPlanner part of the issue, as the time keeper thread was not blocked any more, waiting for the information
+help on OptaPlanner part of the issue, as the timekeeper thread was not blocked anymore, waiting for the information
 about machines' health to be retrieved from Infinispan.
 
 *Lesson two: despite you've read one hundred times that you should do I/O in separate threads, make sure you do I/O in separate threads.*
@@ -181,7 +181,7 @@ being surprised. To minimize the risk, we gather as much data as possible to con
 Both the simulations and load testing proved an invaluable source of information.
 They helped us understand what we could expect and built a good level of confidence about what we wanted to show.
 
----
+'''
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
