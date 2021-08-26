@@ -10,7 +10,7 @@ and to deploy it to the cloud.
 Drools and jBPM both already have such a web application: _Drools Workbench_ and _jBPM Workbench_.
 So it's no big surprise that the OptaPlanner version of this will be called _OptaPlanner Workbench_.
 
-On the side line, we've build **a quick prototype** to investigate what OptaPlanner Workbench could do (thanks Walter, Toni and Michael).
+On the side line, we've built **a quick prototype** to investigate what OptaPlanner Workbench could do (thanks Walter, Toni and Michael).
 Let's take a sneak peek at that.
 
 == Video
@@ -24,7 +24,7 @@ Let's take a look how that example could look like in the OptaPlanner Workbench:
 
 === Define the data objects
 
-Here's how we 'd define the `Computer` data object:
+Here's how we'd define the `Computer` data object:
 
 image::workbenchDataObjectCBComputer.png[]
 
@@ -58,5 +58,5 @@ You'll still be able to embed the OptaPlanner engine as before, without the Work
 But the Workbench will offer new opportunities for many use cases.
 
 We're still looking into how and when we'll fracture the Workbench development into our schedule,
-but in time, the OptaPlanner Workbench will offer a business user friendly web interface to define an optimization problem.
+but in time, the OptaPlanner Workbench will offer a business user-friendly web interface to define an optimization problem.
 It will be part of the KIE Workbench (also known as Business Central) and seamlessly integrate with Drools and jBPM.

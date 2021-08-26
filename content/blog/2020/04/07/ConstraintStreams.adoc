@@ -138,7 +138,7 @@ Just to highlight one of these, let's take a look at the powerful `groupBy` meth
 image::constraintStreamGroupBy.png[]
 
 Similar to an SQL `GROUP BY` operator or a Java 8 Stream `Collector`,
-it support `sum()`, `count()`, `countDistinct()`, `min()`, `max()`, `toList()`
+it supports `sum()`, `count()`, `countDistinct()`, `min()`, `max()`, `toList()`
 and even custom functions, again without loss of incremental score calculation.
 
 == Future work for Constraint Streams

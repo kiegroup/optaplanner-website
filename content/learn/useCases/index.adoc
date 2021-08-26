@@ -28,7 +28,7 @@ Each of these videos demonstrates an example and/or a special feature:
 * https://www.youtube.com/watch?v=u_bl6E7aiNY&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Exam timetabling]: User defined score parametrization
 * https://www.youtube.com/watch?v=L98J6HhSCXQ&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Dinner party scheduling]: Decision tables
 * https://www.youtube.com/watch?v=K084NKRZqkg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cloud optimization]: Decision tables
-* https://www.youtube.com/watch?v=xhCtuM-Hiic&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cloud optimization]: Real time planning
+* https://www.youtube.com/watch?v=xhCtuM-Hiic&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Cloud optimization]: Real-time planning
 * https://www.youtube.com/watch?v=4meWIhPRVn8&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Course scheduling]: Immovable planning entities
 * https://www.youtube.com/watch?v=_2zweB9JD7c&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Project job scheduling]: Built-in hard constraints
 * https://www.youtube.com/watch?v=IB2CxfLhHG4&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Tennis club scheduling]: Fairness and load balancing constraints

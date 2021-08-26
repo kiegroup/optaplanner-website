@@ -83,7 +83,7 @@ OptaPlanner supports different forms of probability distributions:
 == Benchmark results
 
 Below are the results in a big VRP dataset with real-world time distances (collected from OpenStreetMap with GraphHopper)
-with 2750 locations. In the nearby selection configuration, I 've used a parabolic distribution of the 40 nearest locations.
+with 2750 locations. In the nearby selection configuration, I've used a parabolic distribution of the 40 nearest locations.
 
 image::belgium-road-time-n2750-k55_nearbyWithLA.png[]
 

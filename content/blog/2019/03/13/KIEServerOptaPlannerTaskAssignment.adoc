@@ -65,9 +65,9 @@ public class PinTaskProblemFactChange implements ProblemFactChange<TaskAssigning
 }
 ----
 
-The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/master/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[on github].
+The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/master/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[on GitHub].
 
-===  https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#solverConfiguration[Solver Configuration]
+=== https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#solverConfiguration[Solver Configuration]
 
 The solver configuration file determines how the solving process works. For a KJAR deployed to a KIE Server and since we are using
 Drools for score calculation, use a `ksessionName`. This tells the KieContainer where to find the DRL file.
@@ -214,7 +214,7 @@ To integrate an OptaPlanner service with your application on KIE Server:
 
 1. Build the service as a KJAR.
 2. Send an HTTP request to the KIE Server to start a container that runs this service.
-3. Communicate with the service through the REST API the the KIE Server exposes.
+3. Communicate with the service through the REST API the KIE Server exposes.
 
 
 == Related material

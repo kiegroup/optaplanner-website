@@ -112,7 +112,7 @@ This application connects to a relational database and exposes a REST API, rende
 ** `quarkus-school-timetabling`: Java, Maven or Gradle, Quarkus, H2
 ** `spring-boot-school-timetabling`: Java, Maven or Gradle, Spring Boot, H2
 ** `kotlin-quarkus-school-timetabling`: Kotlin, Maven, Quarkus, H2
-* *Facility location problem (FLP)*: Pick the best geographical locations for new stores, distribution centers, covid test centers or telco masts.
+* *Facility location problem (FLP)*: Pick the best geographical locations for new stores, distribution centers, COVID-19 test centers or telco masts.
 ** `quarkus-facility-location`: Java, Maven, Quarkus
 * *Factorio layout*: Assign machines to assembly line locations to design the best factory layout.
 ** `quarkus-factorio-layout`: Java, Maven, Quarkus

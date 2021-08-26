@@ -127,7 +127,7 @@ Again, the example above is quite linear, a few users are defined, and the possi
 
 == Conclusions
 
-We started by formulating an already solved problem, but using a completely different underlying ecosystem. This time, our business processeses are cloud-native services. All this is facilitated by https://kogito.kie.org/[Kogito] .
+We started by formulating an already solved problem, but using a completely different underlying ecosystem. This time, our business processes are cloud-native services. All this is facilitated by https://kogito.kie.org/[Kogito] .
 
 To integrate OptaPlanner in your cloud application is straightforward: you instruct OptaPlanner with the model, and the Solver configuration to use, and that’s all ;), OptaPlanner https://www.optaplanner.org/compatibility/quarkus.html[Quarkus] or https://www.optaplanner.org/compatibility/springBoot.html[SpringBoot] extensions will manage all the complexity of the Solver instantiation and management. This has represented a very important simplification for building the https://docs.kogito.kie.org/latest/html_single/#con-kogito-task-assigning-service_kogito-configuring[Task Assigning Service].
 

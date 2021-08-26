@@ -8,7 +8,7 @@ rsynek
 Java 11 was released some time ago, although the https://www.baeldung.com/java-in-2018[majority of developers stay on Java 8].
 Let's see which one of them is faster for https://www.optaplanner.org/[OptaPlanner]. The best way to find out is
 of course running OptaPlanner benchmarks.
-This article is a follow up on https://www.optaplanner.org/blog/2014/03/20/HowMuchFasterIsJava8.html[our similar article for Java 8].
+This article is a follow-up on https://www.optaplanner.org/blog/2014/03/20/HowMuchFasterIsJava8.html[our similar article for Java 8].
 
 == Benchmark methodology
 

@@ -134,7 +134,7 @@ singleBenchmarkResult.getAverageUninitializedVariableCount();
 [.upgrade-recipe-impl-detail]
 === Every `SingleStatistic` class: renamed
 
-If you're using `SingleStatistic` or any of it's subclasses: all of them were renamed to include "Sub" as a part of
+If you're using `SingleStatistic` or any of its subclasses: all of them were renamed to include "Sub" as a part of
 Statistical benchmarking. The package `org.optaplanner.benchmark.impl.statistic.single` was also renamed to
 `org.optaplanner.benchmark.impl.statistic.subsingle`. `SingleStatisticType` has not been changed, therefore no changes
 in the configuration are needed.

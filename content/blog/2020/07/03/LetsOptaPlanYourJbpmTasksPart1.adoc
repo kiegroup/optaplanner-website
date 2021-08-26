@@ -18,7 +18,7 @@ At runtime, every time a new instance of one of these tasks is created it is aut
 group with the status Ready.
 
 This makes the task automatically available to all users that belong to the group.
-All users in the group  see it in their respective *Task Inbox* but none are the actual owner or responsible for the task.
+All users in the group see it in their respective *Task Inbox* but none are the actual owner or responsible for the task.
 To be able to work with a particular task, a user must execute the claim operation to reserve the task for that user.
 This is a completely manual procedure.
 
@@ -98,7 +98,7 @@ completing these human tasks. This cycle is repeated over and over.
 
 https://www.optaplanner.org/[OptaPlanner] addresses this situation by recalculating the optimized plan when new human tasks are created or completed
 and produces new assignments to reflect the new optimized plan. This is often achieved by combining different
-"Repeated Planning and Real Time Planning" techniques.
+"Repeated Planning and Real-time Planning" techniques.
 
 Additionally, it might be the case that a plan that was optimal at time N is no longer optimal at time N+1. For example,
 a higher priority task has arrived and must be performed as soon as possible. The direct impact of this situation is that

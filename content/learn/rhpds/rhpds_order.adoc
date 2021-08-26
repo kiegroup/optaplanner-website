@@ -43,4 +43,4 @@ Then open the *Networking* section on the left hand side menu and click *Routes*
 
 image::ocp_routes.png[]
 
-Follow the walkthrough document you have previously opened from the catalog item description.
+Follow the walk-through document you have previously opened from the catalog item description.

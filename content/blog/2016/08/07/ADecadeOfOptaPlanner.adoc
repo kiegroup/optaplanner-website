@@ -23,7 +23,7 @@ One of my colleagues was working on optimizing a nurse rostering problem and pre
 His solution applied https://en.wikipedia.org/wiki/Tabu_search[Tabu Search] (an optimization algorithm invented in the '80s).
 It worked well.
 However, he had spent a lot of time and energy to manually implement the incremental delta calculation for each constraint in the fitness function.
-Writing that code is difficult, time consuming and error prone, but absolutely required to get good results when scaling out.
+Writing that code is difficult, time-consuming and error-prone, but absolutely required to get good results when scaling out.
 
 The year before, I had seen Mark Proctor's presentation at JavaPolis (now called DevoxxBE),
 explaining the https://www.drools.org/[Drools] rule engine and the RETE algorithm.
@@ -79,8 +79,8 @@ and wrote the first chapter of the reference manual. It got released as part of 
 By December 2007, I gave my first presentation about Drools Solver's exam rostering example
 at a late evening Bird of a Feather session at JavaPolis, for about 20 developers.
 I had prepared my text word by word in advance and read it out aloud.
-Not my best moment. But they did seemed to like my demo though.
-I am not a natural born presenter,
+Not my best moment. But they did seem to like my demo though.
+I am not a natural-born presenter,
 but I soon realized that https://www.optaplanner.org/learn/slides.html[great slides] and https://www.optaplanner.org/learn/video.html[polished demos] can make up for that.
 These days I can step into a room - unprepared - and talk for 5 days without showing the same slide or demo twice.
 Presenting skills can be http://presentationpatterns.com/[acquired].
@@ -90,7 +90,7 @@ A consultant had seen my presentation at JavaPolis and he used it for an employe
 He liked it. _So I expected him to tell the world about it._ He didn't. He had already moved on to his next project.
 *To get people to use my project, they need to know it first*.
 I needed to toot my own horn.
-So I wrote a few articles about Drools Solver, published them to a few Java news sites, recorded a video even and even got a https://twitter.com/GeoffreyDeSmet[twitter account].
+So I wrote a few articles about Drools Solver, published them to a few Java news sites, recorded a video even and even got a https://twitter.com/GeoffreyDeSmet[Twitter account].
 
 
 == Perseverance
@@ -131,7 +131,7 @@ This enables customers to deploy our Open Source software in large scale product
 In 2013, we started this process, called productization.
 
 I was no longer alone on the project. Quality Assurance, Product Management and our productization build/document team got involved to strengthen it.
-Our QA engineers double checked the code, increased test coverage, added performance regression tests,
+Our QA engineers double-checked the code, increased test coverage, added performance regression tests,
 certified it on a lot of environments (including Windows, IBM JDK, OSGi and other notorious technologies) and guess what - they found bugs (and still do on occasion).
 Meanwhile our Product Manager helped organizationally.
 We talked to customers and helped complex use cases succeed: all very satisfying.
@@ -140,7 +140,7 @@ And I got to travel to interesting places around the globe, such as San Francisc
 Meanwhile, _our_ project also graduated from the Drools project to become a top-level project.
 So we had to https://www.optaplanner.org/community/droolsPlannerRenamed.html[rename] the project again, one last time (I promise), to OptaPlanner.
 Changing a project's name is a delicate operation: it always reduces the mind share. Try to avoid it.
-We also created the optaplanner.org website as a one stop location for all information. *Centralization of information is essential to pull the community together.*
+We also created the optaplanner.org website as a one-stop location for all information. *Centralization of information is essential to pull the community together.*
 
 In March 2014, we released the first version with _tech preview_ support from Red Hat, as part of https://www.optaplanner.org/product/services.html[the BRMS subscription].
 And by March 2015, we upgraded it to _full enterprise support_.

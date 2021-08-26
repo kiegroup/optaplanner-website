@@ -46,8 +46,8 @@ Here, together with the track which each talk belongs to, you can also specify a
 . Difficulty of the talk – you may want to assure that less technical attendees will always have at least one interesting talk for them.
 . Topic – in this case there were a few talks on functional programming belonging to different tracks which shouldn’t be scheduled at the same time.
 . Language of the talk –  in Zurich, all talks are in English, so I don’t have any problems with language.
-However, I organize another Voxxed Days event in Ticino, located in the Italian speaking area of Switzerland.
-For this event I want to make sure that both English and Italian speaking guests will always have a talk that they can attend.
+However, I organize another Voxxed Days event in Ticino, located in the Italian-speaking area of Switzerland.
+For this event I want to make sure that both English and Italian-speaking guests will always have a talk that they can attend.
 
 There are a few other tabs in the spreadsheet that allow you to configure the different rooms for the conference and tag them,
 to list all the speakers together with their timing constraints,

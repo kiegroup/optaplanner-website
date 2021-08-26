@@ -312,7 +312,7 @@ http://blog.athico.com/2018/11/workbench-is-now-business-central.html[renamed to
 Deciding the correct weight and level for each constraint is difficult.
 It often involves negotiating with different stakeholders and their priorities.
 Furthermore, quantifying the impact of soft constraints is often a new experience for business managers,
-so they 'll need a number of iterations to get it right.
+so they'll need a number of iterations to get it right.
 
 So don't hard-code the constraint weights. Put them in a new constraint configuration class:
 
@@ -338,7 +338,7 @@ based on negotiations with the different stakeholders.
 In DRL, call the new `reward()` and `penalize()` methods to change the score
 by the constraint weight (optionally multiplied a match weight parameter):
 
-[source,options="nowrap"]
+[source,drl,options="nowrap"]
 ----
 rule "Theme track conflict"
     when
@@ -416,7 +416,7 @@ image:7.9/multithreadedSolvingVrpTabuSearch.png[searchTableOfContents]
 Multithreaded incremental solving is easy to activate.
 Just add a `<moveThreadCount>` line in your solver config:
 
-[source,java,options="nowrap"]
+[source,xml,options="nowrap"]
 ----
 <solver>
   <moveThreadCount>4</moveThreadCount>
@@ -517,13 +517,13 @@ Soft constraints:
 * Audience level diversity: For every timeslot, maximize the number of talks with a different audience level.
 * Language diversity: For every timeslot, maximize the number of talks with a different language.
 * Speaker preferred timeslot tag: If a speaker has a preferred timeslot tag, then all his/her talks should be assigned to a timeslot with that tag.
-* Speaker undesired timeslot tag: If a speaker has a undesired timeslot tag, then all his/her talks should not be assigned to a timeslot with that tag.
+* Speaker undesired timeslot tag: If a speaker has an undesired timeslot tag, then all his/her talks should not be assigned to a timeslot with that tag.
 * Talk preferred timeslot tag: If a talk has a preferred timeslot tag, then it should be assigned to a timeslot with that tag.
-* Talk undesired timeslot tag: If a talk has a undesired timeslot tag, then it should not be assigned to a timeslot with that tag.
+* Talk undesired timeslot tag: If a talk has an undesired timeslot tag, then it should not be assigned to a timeslot with that tag.
 * Speaker preferred room tag: If a speaker has a preferred room tag, then all his/her talks should be assigned to a room with that tag.
-* Speaker undesired room tag: If a speaker has a undesired room tag, then all his/her talks should not be assigned to a room with that tag.
+* Speaker undesired room tag: If a speaker has an undesired room tag, then all his/her talks should not be assigned to a room with that tag.
 * Talk preferred room tag: If a talk has a preferred room tag, then it should be assigned to a room with that tag.
-* Talk undesired room tag: If a talk has a undesired room tag, then it should not be assigned to a room with that tag.
+* Talk undesired room tag: If a talk has an undesired room tag, then it should not be assigned to a room with that tag.
 
 video::R0JizNdxEjU[youtube]
 
@@ -556,7 +556,7 @@ To use it, configure it like this:
 
 === Benchmark a solver configuration quickly
 
-*There isn't a valid excuse any more to not use the benchmarker.*
+*There isn't a valid excuse anymore to not use the benchmarker.*
 You can now run it in just a few lines of java code (no XML code):
 
 [source,java,options="nowrap"]
@@ -675,7 +675,7 @@ because when a result is needed within hours or less, the solution quality is st
 Especially for Construction Heuristics, it can deliver an initial, feasible solution in a fraction of the time.
 For example, *we've benchmarked a 30 time speed increase by partitioning Construction Heuristics in 4 parts
 running on 4 CPU cores*, on an 8 core machine for a dataset with 4800 entities and 1200 planning values.
-This speeds is attributed not just to the utilization of more CPU cores (at most a times 4 increase),
+This speed is attributed not just to the utilization of more CPU cores (at most a times 4 increase),
 but mainly to the problem search space size reduction per part thread.
 
 Partitioned Search is configured like any other solver phase:
@@ -688,7 +688,7 @@ Partitioned Search is configured like any other solver phase:
     <!-- The SolutionParititioner splits a dataset into parts -->
     <solutionPartitionerClass>...CloudBalancePartitioner</solutionPartitionerClass>
 
-    <!-- Optionally configure which phaes to run on each part -->
+    <!-- Optionally configure which phase to run on each part -->
     <constructionHeuristic>...</constructionHeuristic>
     <localSearch>...</localSearch>
   </partitionedSearch>
@@ -739,7 +739,7 @@ to see which specific constraints that lecture actually triggered.
 === No longer needed to implement the `Solution` interface
 
 Your solution class no longer needs both have the `@PlanningSolution` annotation and implement the `Solution` interface.
-No need to repeat yourself any more.
+No need to repeat yourself anymore.
 The `Solution` interface is now deprecated (but still works for backwards compatibility):
 only the `@PlanningSolution` annotation suffices.
 

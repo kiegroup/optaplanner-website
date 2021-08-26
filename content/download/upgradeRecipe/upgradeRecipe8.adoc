@@ -1176,7 +1176,7 @@ Replace the use of the removed interfaces and classes with their counterparts in
 
 Before in `*EasyScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
@@ -1189,7 +1189,7 @@ Before in `*EasyScoreCalculator.java*`:
 
 After in `*EasyScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
@@ -1202,7 +1202,7 @@ After in `*EasyScoreCalculator.java*`:
 
 Before in `*IncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
@@ -1215,7 +1215,7 @@ Before in `*IncrementalScoreCalculator.java*`:
 
 After in `*IncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.IncrementalScoreCalculator;
@@ -1228,7 +1228,7 @@ After in `*IncrementalScoreCalculator.java*`:
 
 Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.impl.score.director.incremental.AbstractIncrementalScoreCalculator;
@@ -1244,7 +1244,7 @@ Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
 After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
 
-[source,xml]
+[source,java]
 ----
   ...
   import org.optaplanner.core.api.score.calculator.ConstraintMatchAwareIncrementalScoreCalculator;
@@ -1488,7 +1488,7 @@ After in `benchmarkConfig.xml`:
 [.upgrade-recipe-major]
 === Removed the deprecated variable listeners
 
-A deprecated interface `VariableListener` from package `org.optaplanner.core.impl.domain.variable.listener` has ben removed,
+A deprecated interface `VariableListener` from package `org.optaplanner.core.impl.domain.variable.listener` has been removed,
 along with a deprecated interface `StatefulVariableListener`
 and a deprecated class `VariableListenerAdapter` in that same package.
 Instead, use an interface `VariableListener` from package `org.optaplanner.core.api.domain.variable`.

@@ -128,7 +128,7 @@ A few other things you can do with this application:
 will not change that shift's employee when solving.
 
 * You can create a rotation for the employees, giving them more consistency
-in their day to day lives and allowing automatic provisioning of new shifts.
+in their day-to-day lives and allowing automatic provisioning of new shifts.
 
 == Conclusion
 

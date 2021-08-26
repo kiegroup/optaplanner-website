@@ -19,7 +19,7 @@ Generally speaking, it works like this:
 
 * The data is *partitioned* across multiple computer nodes.
 * A *map* function runs on every partition and returns a result.
-* A *reduce* function reduces 2 results into one result. Its continuously run until only a single result remains.
+* A *reduce* function reduces 2 results into one result. It's continuously run until only a single result remains.
 
 For example, suppose we need to find the most expensive invoice record in a data cluster:
 

@@ -83,7 +83,7 @@ This allows to load a solver configuration or score rules at runtime that are no
 
 A ksession defined in `META-INF/kmodule.xml` can now be referenced from a Solver configuration:
 
-[source, java]
+[source, xml]
 ----
 <solver>
   ...
@@ -105,7 +105,7 @@ https://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[ti
 
 === Other improvements
 
-* Benchmark warm ups now run in parallel threads, just like the actual benchmarks.
+* Benchmark warm-ups now run in parallel threads, just like the actual benchmarks.
 * Apache Camel's camel-optaplanner 2.16 supports async solving, daemon mode and ProblemFactChange processing. Contributed by Bilgin Ibryam.
 * A `SolverFactory` can now be cloned with `cloneSolverFactory()` to concurrently configure it dynamically per user request without parsing the solver config XML each time.
 * The examples application has switched to a more modern look and feel.
@@ -116,7 +116,7 @@ https://www.optaplanner.org/blog/2015/12/01/TimeSchedulingDesignPatterns.html[ti
 === Workbench and Execution server
 
 As https://www.optaplanner.org/blog/2015/10/01/SneakPeekAtOptaPlannerWorkbench.html[mentioned in our blog],
-we 've build first version of OptaPlanner Workbench and OptaPlanner Execution Server. Take a look at what it can do:
+we've built first version of OptaPlanner Workbench and OptaPlanner Execution Server. Take a look at what it can do:
 
 video::t8Qu9J2D2aA[youtube]
 
@@ -124,5 +124,5 @@ To try out OptaPlanner Workbench, link:../../download/download.html[download] an
 Note that a user with the `admin` role currently doesn't see OptaPlanner screens yet.
 
 To try out OptaPlanner Execution Server, link:../../download/download.html[download] and deploy the KIE Execution Server war
-and use the KIE and OptaPlanner REST API (both are currently documented in https://drools.org/learn/documentation.html[the drools documentation]).
+and use the KIE and OptaPlanner REST API (both are currently documented in https://drools.org/learn/documentation.html[the Drools documentation]).
 It's enabled by default (although it can be disabled with a configuration property).

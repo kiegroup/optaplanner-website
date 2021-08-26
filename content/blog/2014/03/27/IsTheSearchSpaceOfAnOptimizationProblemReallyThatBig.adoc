@@ -5,7 +5,7 @@ ge0ffrey
 :jbake-type: post
 :jbake-tags: insight, algorithm, school timetabling
 
-Given an planning or optimization problem, how big is the search space?
+Given a planning or optimization problem, how big is the search space?
 Can we hope to enumerate every possible solution, looking for the optimal solution?
 Let's calculate the search space of a few use cases.
 
@@ -13,10 +13,10 @@ Let's calculate the search space of a few use cases.
 
 image::searchSpaceSizeCalculationUseCases.png[]
 
-We 'll look at these 3 use cases:
+We'll look at these 3 use cases:
 
 * *Cloud Balancing*: Assign processes to computers.
-Each computer should have enough hardware capacity (CPU power, RAM, etc) for all its processes.
+Each computer should have enough hardware capacity (CPU power, RAM, etc.) for all its processes.
 Use as few computers as possible to minimize the maintenance costs.
 
 ** Model: The class `Process` has a planning variable `computer` of type class `Computer`.
@@ -65,7 +65,7 @@ Can we cut any corners?
 
 If we look at the course scheduling example, there is relatively little point in enumerating all solutions
 for which the first and the second lecture (A and B) are both in the same period and the same room.
-Regardless of the values of other lectures (C, etc), the solution is infeasible and our business doesn't want it.
+Regardless of the values of other lectures (C, etc.), the solution is infeasible and our business doesn't want it.
 So let's ignore those solutions.
 
 How big is our search space if we discard all infeasible solutions?
@@ -84,7 +84,7 @@ So, the feasible search space is the same as the base search space, `n!`.
 
 * *Course Scheduling*: We can successfully take into account 1 hard constraint:
 _no room should have 2 lectures in the same period_.
-In that case, the feasible search space is a number digits less than the base search space.
+In that case, the feasible search space is a number of digits less than the base search space.
 The other hard constraints are far more difficult (or impossible) to taken into account,
 especially because they can overlap.
 

@@ -34,7 +34,7 @@ By using the excellent Java library https://graphhopper.com/[GraphHopper],
 based on http://www.openstreetmap.org[OpenStreetMap], querying practical road distances was relatively easy.
 It's also fast, as long as the entire road network (only 200MB for Belgium) can be loaded into memory.
 Loading the entire road network of North-America (6GB) is a bit more challenging.
-I 'll submit these datasets to the VRP Web, so others researchers can use them too.
+I'll submit these datasets to the VRP Web, so others researchers can use them too.
 
 All this happens _before_ https://www.optaplanner.org/[OptaPlanner]'s VRP example starts solving it.
 During solving, the distances are already available in a lookup table.

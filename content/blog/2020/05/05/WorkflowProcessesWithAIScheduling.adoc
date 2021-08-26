@@ -10,7 +10,7 @@ A BPMN diagram models a Business Process. When the Business
 Process involves optimization at some step,
 https://www.optaplanner.org/[OptaPlanner] can help you quickly find an optimal solution.
 Now with https://kogito.kie.org/[Kogito], it is easier than ever before to integrate
-OptaPlanner into your BPMN diagrams! It so simple, that by the end of this blog,
+OptaPlanner into your BPMN diagrams! It is so simple, that by the end of this blog,
 you will create a Business Process for scheduling a flight in an airline from scratch using
 OptaPlanner, BPMN and Quarkus in 15 minutes.
 

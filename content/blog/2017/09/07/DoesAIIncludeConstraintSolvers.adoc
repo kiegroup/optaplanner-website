@@ -25,7 +25,7 @@ Suddenly research money fell out of the sky. The 80's summer of A.I.
 It failed. Despite decadent funding for almost 10 years,
 the fifth generation research had little practical use to show for.
 Some of the research was ahead of its time:
-lacking big data, smart phones and faster computers, it couldn't work yet.
+lacking big data, smartphones and faster computers, it couldn't work yet.
 Other research was completely useless.
 
 In the aftermath of that failure, in the 90's and early 2000's, the term A.I. was tainted.
@@ -52,7 +52,7 @@ they can even beat the world's champion of Go.
 Sounds like magic. But *these are all pattern recognition problems.
 They can't handle other problems.*
 Neural nets can't find the fastest route from La Louvre to the Colosseum.
-They can't build https://www.optaplanner.org/blog/2015/03/20/3BugsInTheUltimateAmericanRoadTrip.html[the ultimate American roadtrip].
+They can't build https://www.optaplanner.org/blog/2015/03/20/3BugsInTheUltimateAmericanRoadTrip.html[the ultimate American road trip].
 
 == The right A.I. for the job
 
@@ -78,7 +78,7 @@ https://www.youtube.com/watch?v=ACmydtFDTGs[the infamous image recognition of a 
 == Do all algorithms produce intelligence?
 
 Multiplying `1234` by `5678` isn't easy, yet we don't consider this artificial intelligence.
-Similarly, sorting algorithms aren't A.I either. Why is that?
+Similarly, sorting algorithms aren't A.I. either. Why is that?
 
 Maybe it's because those problems don't have an error margin.
 A.I. problems do:

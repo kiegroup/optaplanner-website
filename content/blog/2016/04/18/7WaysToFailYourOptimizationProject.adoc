@@ -93,7 +93,7 @@ For example in Cloud Balancing, a computer might break down:
 
 image::nonvolatileReplanningSubset.png[]
 
-The middle solution is slightly more cost effective, but the last solution is far less disruptive.
+The middle solution is slightly more cost-effective, but the last solution is far less disruptive.
 *Especially when scheduling people, who planned their social life based on the tentative schedule,
 it's important to minimize disruption.*
 
@@ -151,7 +151,7 @@ They can always negotiate the tuning of the score weights later.
 
 In a war story that came to my ear, I've heard about a VRP case for inspectors
 that heavily reduced driving time to inspection sites, allowing the same work to be done in less time.
-*Because the prototype focused only on using less inspectors, the unions shot it down.*
+*Because the prototype focused only on using fewer inspectors, the unions shot it down.*
 If instead the prototype had focused on increasing inspection time,
 it would have increased inspection quality, reduced worker stress, lowered fuel expenses
 and decreased the need for new hires. That's far more acceptable to all stakeholders.

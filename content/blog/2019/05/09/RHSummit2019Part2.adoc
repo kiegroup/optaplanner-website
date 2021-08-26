@@ -77,7 +77,7 @@ and dispatches that mechanic to next machine, both updates are sent to Infinispa
 and polls machines health at fixed intervals.
 
 You might have already guessed what can go wrong here, if the UI gets notified with the dispatch event before it polls
-for the full health, the mechanic will start moving away from the machine while it's health is still not reset,
+for the full health, the mechanic will start moving away from the machine while its health is still not reset,
 this doesn't look good.
 
 Therefore, we introduced “thumbs up” duration, an interval longer than the rate at which both OptaPlanner ticks
@@ -99,7 +99,7 @@ adapting the inner workings to accommodate other services' behaviour and maintai
 * To learn more about scaling challenges and the benchmarks as well as the load tests we ran,
 read https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part3.html[Part 3 by Radovan].
 
----
+'''
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to

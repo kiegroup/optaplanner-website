@@ -79,7 +79,7 @@ the less likely that OptaPlanner's solution will schedule that.
 == It's just a Vehicle Routing Problem
 
 In the academic Operations Research world, this problem is known as the Vehicle Routing Problem (VRP),
-in which we need to send a number vehicles (such as trucks) to a number of locations:
+in which we need to send a number of vehicles (such as trucks) to a number of locations:
 
 image::mechanicSchedulingIsAVehicleRoutingProblem.png[]
 
@@ -91,7 +91,7 @@ by reducing their overall travel time by 15% or more.
 This also heavily reduces their fuel consumption,
 decreases their carbon footprint, which is great for the environment too!
 
-https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Learn more about optimizing VRP's with OptaPlanner]
+https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Learn more about optimizing VRPs with OptaPlanner]
 or take a look at Jiri's latest demo of the https://github.com/kiegroup/optaweb-vehicle-routing[optaweb-vehicle-routing] reference architecture:
 
 video::ylPEIf7Mc2M[youtube]
@@ -112,7 +112,7 @@ https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part3.html[read Radovan'
 To run it yourself, download https://github.com/rhdemo/2019-demo4-optaplanner[the source code]
 and follow the readme instructions.
 
----
+'''
 
 Let me thank the entire team for their great work
 and specifically in this part, a big thanks to
