@@ -16,7 +16,7 @@
 
 - eventId: 20140924-webinar
   eventOrganization: Red Hat Webinar
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2014-09-24
   talks:
     - title: How to solve impossible business resource planning problems
@@ -99,7 +99,7 @@
 
 - eventId: 20150318-webinar
   eventOrganization: Red Hat Webinar
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2015-03-18
   talks:
     - title: Business resource planning for Java developers
@@ -212,7 +212,7 @@
 
 - eventId: 20160315-webinar
   eventOrganization: Red Hat Webinar
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2016-03-15
   talks:
     - title: Deliver real value with business resource optimization technology
@@ -435,7 +435,7 @@
 - eventId: 20180912-webinar
   eventOrganization: "Red Hat Webinar"
   eventUrl: https://www.redhat.com/en/events
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2018-09-12
   talks:
     - title: "Business Optimizer: \"I bet you I'm better than a human\""
@@ -560,7 +560,7 @@
 
 - eventId: 20200409-soujava
   eventOrganization: "SouJava Online"
-  location: Worldwide
+  location: Brazil (virtual)
   date: 2020-04-09
   talks:
   - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
@@ -570,7 +570,7 @@
 - eventId: 20200429-redhatsummit
   eventOrganization: "Red Hat Summit"
   eventUrl: https://www.redhat.com/summit/
-  location: Worldwide
+  location: San Fransisco (virtual)
   date: 2020-04-29
   talks:
   - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
@@ -578,7 +578,7 @@
 
 - eventId: 20200504-devnation
   eventOrganization: "DevNation Tech Talks"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-05-08
   talks:
     - title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
@@ -587,16 +587,16 @@
 
 - eventId: 20200515-springiobridge
   eventOrganization: "Spring I/O Bridge"
-  location: Worldwide
+  eventUrl: https://2020.springio.net/bridge/
+  location: Barcelona (virtual)
   date: 2020-05-15
   talks:
     - title: "AI on Spring: I love it when an OptaPlan comes together"
-      url: https://2020.springio.net/bridge/
       presenters: Geoffrey De Smet
 
 - eventId: 20200528-bordeauxjug
   eventOrganization: "Bordeaux JUG"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-05-28
   talks:
     - title: "AI on Quarkus: I love it when an OptaPlan comes together"
@@ -606,13 +606,13 @@
 - eventId: 20200801-geekle
   eventOrganization: "Global Summit for Java devs"
   eventUrl: https://java.geekle.us/
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-08-01
 
 - eventId: 20200901-optaplannerweek
   eventOrganization: "OptaPlanner Week"
   eventUrl: https://www.optaplanner.org/blog/2020/09/07/OptaPlannerWeek2020.html
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-09-01
 
 - eventId: 20200925-downloadinnovation
@@ -627,7 +627,7 @@
 - eventId: 20201019-quarkusinsights
   eventOrganization: "Quarkus insights"
   eventUrl: https://quarkus.io/insights/
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-10-19
   talks:
     - title: "OptaPlanner in Quarkus"
@@ -635,7 +635,7 @@
 
 - eventId: 20201117-kielive
   eventOrganization: "KIE Live"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2020-11-17
   talks:
     - title: "OptaPlanner domain models and design patterns"
@@ -644,7 +644,7 @@
 
 - eventId: 20210119-kielive
   eventOrganization: "KIE Live"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2021-01-19
   talks:
     - title: "OptaPlanner Shadow Variables for the Vehicle Routing Problem and Task Assignment"
@@ -653,7 +653,7 @@
 
 - eventId: 20210309-kielive
   eventOrganization: "KIE Live"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2021-03-09
   talks:
     - title: "Testing your constraints with OptaPlanner"
@@ -663,7 +663,7 @@
 - eventId: 20210316-javaland
   eventOrganization: "Javaland"
   eventUrl: https://www.javaland.eu
-  location: Worldwide
+  location: Germany (virtual)
   date: 2021-03-16
   talks:
     - title: "AI on Quarkus: I love it when an OptaPlan comes together"
@@ -672,7 +672,7 @@
 
 - eventId: 20210324-webinar
   eventOrganization: "Red Hat Webinar"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2021-03-24
   talks:
     - title: "AI planning: Top 3 use cases and benefits"
@@ -681,7 +681,7 @@
 
 - eventId: 20210415-soujavamotu
   eventOrganization: "SouJava MOTU"
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2021-04-15
   talks:
     - title: "Planejamento de Recursos com OptaPlanner"
@@ -690,7 +690,7 @@
 
 - eventId: 20210423-viaboxx
   eventOrganization: "Red Hat Germany"
-  location: Germany
+  location: Germany (virtual)
   date: 2021-04-23
   talks:
     - title: "Optimierung des Field Service Management mit Hilfe von Constraint Solving Algorithmen"
@@ -700,7 +700,7 @@
 - eventId: 20210517-kieweek
   eventOrganization: "KIE week"
   eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x381217abcd
-  location: Worldwide
+  location: Worldwide (virtual)
   date: 2021-05-17
   talks:
     - title: "Optimize vaccine appointments to save the world with OptaPlanner AI"
@@ -711,7 +711,7 @@
 - eventId: 20210712-euro2021
   eventOrganization: "European Conference on Operational Research"
   eventUrl: https://euro2021athens.com
-  location: Athens, Greece
+  location: Athens, Greece (virtual)
   date: 2021-07-12
   talks:
     - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
@@ -721,8 +721,35 @@
 - eventId: 20210913-decisioncamp
   eventOrganization: "DecisionCAMP"
   eventUrl: https://decisioncamp2021.wordpress.com/
-  location: Leuven, Belgium
+  location: Leuven, Belgium (virtual)
   date: 2021-09-13
   talks:
     - title: "A modern OO/FP constraint solver to solve VRP, rostering or scheduling problems"
+      presenters: Geoffrey De Smet
+
+- eventId: 20211012-icodejavaafrica
+  eventOrganization: "I code Java Africa"
+  eventUrl: https://j-sa.co/
+  location: Africa (virtual)
+  date: 2021-10-12
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
+- eventId: 20211025-joker
+  eventOrganization: "Joker"
+  eventUrl: https://jokerconf.com/en/
+  location: St. Petersburg, Russia (virtual)
+  date: 2021-10-25
+  talks:
+    - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
+      presenters: Geoffrey De Smet
+
+- eventId: 20211119-devoxxua
+  eventOrganization: "Devoxx Ukraine"
+  eventUrl: https://devoxx.com.ua/
+  location: Ukraine (virtual)
+  date: 2021-11-19
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
       presenters: Geoffrey De Smet
