@@ -265,8 +265,12 @@
         <ol>
             <li>Download the zip and unzip it.</li>
             <li>
-                Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
-                Or run <code>examples/runExamples.bat</code> (Windows).
+                Run quickstarts or examples:
+                <br/>
+                <ul>
+                    <li>Run <code>runQuickstarts.sh</code> (Linux/macOS) or <code>runQuickstarts.bat</code> (Windows).</li>
+                    <li>Run <code>runExamples.sh</code> (Linux/macOS) or <code>runExamples.bat</code> (Windows).</li>
+                </ul>
             </li>
         </ol>
         <div class="text-center">
