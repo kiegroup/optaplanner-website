@@ -74,7 +74,7 @@ A longer makespan reduces productivity:
 
 image::mechanicsFixTheWorstMachineFirstMakespan.png[]
 
-So we ended up having to weight these two constraints against each other.
+So we ended up having to weigh these two constraints against each other.
 We implemented that by penalizing, per machine,
 the amount of attrition multiplied by the duration until the machine is fixed.
 So the more damage, or the longer it takes to fix a machine,
