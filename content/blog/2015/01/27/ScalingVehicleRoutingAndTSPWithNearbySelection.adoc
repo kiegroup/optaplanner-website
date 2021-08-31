@@ -51,7 +51,7 @@ the number of moves per location grows, evaluation time drops and the number of 
 In practice, benchmarks show that normal distribution (which is giving the same selection probability for `B` and `Z`)
 doesn't scale well.
 
-== Partitioning, Geo-fencing, MapReduce, etc
+== Partitioning, Geo-fencing, MapReduce, etc.
 
 One traditional way to deal with this scaling issue is partitioning (also called geo-fencing):
 Before solving, the locations are divided in clusters and the vehicles are distributed across them.
