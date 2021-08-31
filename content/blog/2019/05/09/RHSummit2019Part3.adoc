@@ -93,7 +93,7 @@ image::cj_2_mech_16_damage.png[]
 
 That's a difference!
 
-On the other hand, there is no need to be pessimistic every day. Normal (gauss) distribution represents “reality” better.
+On the other hand, there is no need to be pessimistic every day. Normal (Gaussian) distribution represents “reality” better.
 
 [source,java]
 ----
@@ -111,10 +111,10 @@ if (damagePerSecond < 0) {
 image::uniform_2_mech_16_damage.png[]
 image::gauss_2_mech_16_damage.png[]
 
-Again, machines can get easily broken with normal (gauss) distribution, although 16% damage per second under uniform
+Again, machines can get easily broken with normal (Gaussian) distribution, although 16% damage per second under uniform
 distribution was perfectly possible to fix by just two mechanics.
 
-Let's now find where the limits are with the normal (gauss) distribution.
+Let's now find where the limits are with the normal (Gaussian) distribution.
 
 image::gauss_1_mech_8_damage.png[]
 image::gauss_1_mech_10_damage.png[]
