@@ -41,10 +41,10 @@ Do notice that the set of nearby locations differ from location to location.
 
 == Scaling problem
 
-Suppose we have `2 000` locations in our VRP problem. That results `4 000 000` moves to change a single location.
-If we can evaluate `100 000` moves per second and we need to `40` seconds to try all moves of just 1 location.
+Suppose we have `2 000` locations in our VRP problem. That results in `4 000 000` moves to change a single location.
+If we can evaluate `100 000` moves per second, we need `40` seconds to try all moves of just 1 location.
 Our algorithms will need to change each location multiple times: let's presume just `4` times,
-resulting in `8 000` steps, which results into `320 000` seconds or over `3` days.
+resulting in `8 000` steps, which results in `320 000` seconds or over `3` days.
 And it gets worse when the dataset grows:
 the number of moves per location grows, evaluation time drops and the number of steps increases too...
 
