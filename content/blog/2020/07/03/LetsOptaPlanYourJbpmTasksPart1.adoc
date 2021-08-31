@@ -49,8 +49,8 @@ the proper order is delegated to the users.
 
 In the last months we've been working on integrating https://www.optaplanner.org/[OptaPlanner] and https://jbpm.org/[jBPM]  with that purpose.
 
-The concept is very simple: *"_let each tool do the piece of work it is good at, integrate the results, and provide a
-better user experience_"*.
+The concept is very simple: __ *"`let each tool do the piece of work it is good at, integrate the results, and provide a
+better user experience`"* __.
 
 The following image shows a simplified view of the integration:
 
@@ -98,7 +98,7 @@ completing these human tasks. This cycle is repeated over and over.
 
 https://www.optaplanner.org/[OptaPlanner] addresses this situation by recalculating the optimized plan when new human tasks are created or completed
 and produces new assignments to reflect the new optimized plan. This is often achieved by combining different
-"Repeated Planning and Real-time Planning" techniques.
+"`Repeated Planning and Real-time Planning`" techniques.
 
 Additionally, it might be the case that a plan that was optimal at time N is no longer optimal at time N+1. For example,
 a higher priority task has arrived and must be performed as soon as possible. The direct impact of this situation is that

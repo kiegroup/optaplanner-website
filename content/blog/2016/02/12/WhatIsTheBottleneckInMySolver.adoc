@@ -14,7 +14,7 @@ How can I track down my bottleneck?
 
 == The scapegoat: machine performance
 
-"_We need faster hardware._" It is the typical knee-jerk reaction to any performance problem.
+__ "`We need faster hardware.`" __ It is the typical knee-jerk reaction to any performance problem.
 However, for most optimization problems, throwing hardware at the problem doesn't help much
 (in part because of https://www.optaplanner.org/blog/2014/03/27/IsTheSearchSpaceOfAnOptimizationProblemReallyThatBig.html[the size of the search space]).
 

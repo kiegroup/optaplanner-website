@@ -354,7 +354,7 @@ scoreExplanation = scoreManager.explainScore(solution);
 ----
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
-=== ``Solver``'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` removed
+=== ``Solver``’s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` removed
 
 Several methods on the `Solver` interface have been deprecated in 7.x and now removed.
 The same information can be obtained by registering an `EventListener` via `Solver.addEventListener(...)`.

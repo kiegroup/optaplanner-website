@@ -47,7 +47,7 @@ make a strong argument:
 * To close sales deals, when in direct competition with the other Solver.
 * To convince developers, researchers and students to learn and use your technology.
 * To build a strong, long-term reputation.
-** Benchmarks from the 90's can still affect the Google search results today, for example for "performance of Java vs C++".
+** Benchmarks from the 90's can still affect the Google search results today, for example for "`performance of Java vs C++`".
 ** Such information spreads virally, and counter claims might not.
 
 == Empirical evidence

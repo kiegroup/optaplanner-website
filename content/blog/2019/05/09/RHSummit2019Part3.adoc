@@ -165,12 +165,12 @@ So, template fixed and ready for another load test! Which only revealed that mec
 dispatched on time. What did go wrong this time, we asked ourselves? We had enough CPU and memory resources, but still
 we saw the same issue.
 
-The devil was hidden in Infinispan and also in the way we contacted Infinispan for machines' health every 40 milliseconds.
+The devil was hidden in Infinispan and also in the way we contacted Infinispan for machines`' health every 40 milliseconds.
 Having only 4 infinispan nodes trying to handle all the requests from multiple components didn't scale
 because of the network traffic. Involving more Infinispan notes did help for the network part of the issue,
 as the traffic was balanced between more nodes. Using a separate thread to query for each machine's health did
 help on OptaPlanner part of the issue, as the timekeeper thread was not blocked anymore, waiting for the information
-about machines' health to be retrieved from Infinispan.
+about machines`' health to be retrieved from Infinispan.
 
 *Lesson two: despite you've read one hundred times that you should do I/O in separate threads, make sure you do I/O in separate threads.*
 

@@ -30,7 +30,7 @@ image::skynet2.png[]
 The schedule is now infeasible because `Geo` and `Math` are now in the same room at the same time.
 So we ask the computer to make it feasible...
 
-== _"I'm sorry Dave, I'm afraid I can't do that"_
+== __ "`I'm sorry Dave, I'm afraid I can't do that`" __
 
 \... and the first thing the computer does is change the `Math` lecture to another time and place:
 

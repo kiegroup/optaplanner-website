@@ -640,7 +640,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-major]
 === `<bruteForce>`: renamed
 
-The solver phase `<bruteForce>` has been replaced by ``<exhaustiveSearch>``'s `BRUTE_FORCE` type.
+The solver phase `<bruteForce>` has been replaced by ``<exhaustiveSearch>``’s `BRUTE_FORCE` type.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [source, xml]
@@ -1030,14 +1030,14 @@ and no longer alters the filename.
 [.upgrade-recipe-minor]
 === `<subChainChangeMoveSelector>` and `<subChainSwapMoveSelector>`: default parameters changed
 
-`<subChainChangeMoveSelector>` and ``<subChainSwapMoveSelector>``'s ``<subChainSelector>``s now default
+`<subChainChangeMoveSelector>` and ``<subChainSwapMoveSelector>``’s ``<subChainSelector>``s now default
 to a `<minimumSubChainSize>` of 1 instead of 2.
 This is to enable `<subChainSwapMoveSelector>` to swap a subchain of size 1 and a subchain of at least size 2 too.
 
 [.upgrade-recipe-minor]
 === `<pillarSwapMoveSelector>`: default parameters changed
 
-``<pillarSwapMoveSelector>``'s `<pillarSelector>` now selects subpillars too by default.
+``<pillarSwapMoveSelector>``’s `<pillarSelector>` now selects subpillars too by default.
 Normally, that's an improvement.
 
 Before in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:

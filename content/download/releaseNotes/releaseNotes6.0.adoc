@@ -67,7 +67,7 @@ you can now switch to a far more scalable configuration.
 
 === Automatic solution cloning
 
-Implementing the ``Solution``'s planning clone method is now optional.
+Implementing the ``Solution```'s planning clone method is now optional.
 This means there's less boilerplate code to write and it's harder to cause score corruption in your code.
 
 For more information, see http://blog.athico.com/2013/02/automatic-solution-cloning-in-planner.html[this blog post]

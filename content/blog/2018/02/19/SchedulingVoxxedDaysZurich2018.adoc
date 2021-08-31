@@ -81,8 +81,8 @@ In conclusion, I ended up with a very satisfying schedule which was published to
 Overall, it’s been a great experience being able to abandon the old completely manual process and give OptaPlanner a try.
 It not only allowed me to schedule the entire conference in only a few minutes with minimal effort
 (which previously took a half day of headaches), but also enabled me to perform many simulations with different sets of constraints.
-Questions like: "what happens if I want this speaker in a larger room?",
-or "could I avoid having these two talks at the same time even if they belong to different tracks?",
+Questions like: "`what happens if I want this speaker in a larger room?`",
+or "`could I avoid having these two talks at the same time even if they belong to different tracks?`",
 would have been very difficult with the traditional approach I had been using.
 
 Now the https://cfp-vdz.exteso.com/2018/byday/thursday[definitive conference schedule] is in place

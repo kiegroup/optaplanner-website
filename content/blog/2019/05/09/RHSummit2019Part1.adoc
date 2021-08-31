@@ -19,11 +19,11 @@ We wrote a simulation of a typical manufacturing floor, involving machines at as
 This led to an interesting conversation when I first showed it to my wife:
 
 ""
-"Look, darling. This is the keynote demo we've been working on the past few weeks." +
-"That looks like a video-game... Is that Mario and Luigi running around?" +
-"Well, notice how OptaPlanner optimizes their traveling time so they can spend more time fixing machines." +
-"Are you really going to show this to 7000 business people?" +
-"Yes, of course. It's going to be beautiful."
+"`Look, darling. This is the keynote demo we've been working on the past few weeks.`" +
+"`That looks like a video-game... Is that Mario and Luigi running around?`" +
+"`Well, notice how OptaPlanner optimizes their traveling time so they can spend more time fixing machines.`" +
+"`Are you really going to show this to 7000 business people?`" +
+"`Yes, of course. It's going to be beautiful.`"
 ""
 
 This is how it turned out:
