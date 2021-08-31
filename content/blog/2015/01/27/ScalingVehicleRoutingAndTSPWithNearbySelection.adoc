@@ -48,7 +48,7 @@ resulting in `8 000` steps, which results in `320 000` seconds or over `3` days.
 And it gets worse when the dataset grows:
 the number of moves per location grows, evaluation time drops and the number of steps increases too...
 
-In practice, benchmarks show that normal distribution (which is giving the same selection probability for `B` and `Z`)
+In practice, benchmarks show that uniform distribution (which is giving the same selection probability for `B` and `Z`)
 doesn't scale well.
 
 == Partitioning, Geo-fencing, MapReduce, etc.
