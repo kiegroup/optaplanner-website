@@ -326,7 +326,7 @@ then
 [.upgrade-recipe-minor]
 === `@PlanningVariable`: `uninitializedEntityFilter` renamed
 
-``@PlanningVariable``'s property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
+``@PlanningVariable``’s property `uninitializedEntityFilter` has been renamed to `reinitializeVariableEntityFilter`
 
 Before in `*.java`:
 [source, java]
@@ -1323,7 +1323,7 @@ It has skipped the Drools 5 `KnowledgeBase` API.
 [.upgrade-recipe-major]
 === `ScoreDirectorFactoryConfig`: `setRuleBase()` replaced
 
-``ScoreDirectorFactoryConfig``'s method `setRuleBase()` has been replaced by `setKieBase()`
+``ScoreDirectorFactoryConfig``’s method `setRuleBase()` has been replaced by `setKieBase()`
 
 Before in `*.java`:
 [source, java]
@@ -1773,7 +1773,7 @@ did not select all possible moves previously. If you use this, you might want to
 [.upgrade-recipe-impl-detail]
 === `Descriptor` classes: method renamed
 
-`*Descriptor` classes' methods have dropped the Planning prefix verbosity:
+`*Descriptor` classes`' methods have dropped the Planning prefix verbosity:
 Methods like `getPlanningEntityDescriptor()` have been renamed to `getEntityDescriptor()`
 Methods like `getPlanningVariableDescriptor()` have been renamed to `getVariableDescriptor()`
 Normally, your code should not be using those classes/methods.
@@ -1905,7 +1905,7 @@ public class VrpCustomer ... {
 ----
 To make it easier to implement that listener, a bi-directional relationship was introduced on `VrpStandstill`,
 which made `VrpStandstill` a `@PlanningEntity` (which effectively makes `VrpVehicle` a planning entity too)
-and ``Solution.getVehicleList()``'s method annotated with `@PlanningEntityCollectionProperty`:
+and ``Solution.getVehicleList()``’s method annotated with `@PlanningEntityCollectionProperty`:
 
 Before in `VrpStandstill.java`:
 [source, java]
@@ -1977,7 +1977,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-minor]
 === `SolverConfig`: `setPlanningEntityClassSet()` changed
 
-``SolverConfig``'s method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
+``SolverConfig``’s method `setPlanningEntityClassSet()` has changed into `setPlanningEntityClassList()`
 because the order is important.
 
 Before in `*.java`:

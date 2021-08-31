@@ -312,7 +312,7 @@ public Integer getCapacity() {
 === `VariableListeners` no longer trigger chaotically
 
 `VariableListeners` no longer trigger chaotically. This applies to both out of the box shadow variables and custom shadow variables.
-Planner now guarantees that the first ``VariableListener``'s `after*()` method triggers *AFTER* the last genuine variable has been modified.
+Planner now guarantees that the first ``VariableListener``’s `after*()` method triggers *AFTER* the last genuine variable has been modified.
 This means a `VariableListener` is no longer exposed to intermediate state.
 The `before*()` methods still trigger immediately (otherwise they would not be able to capture the source variable's original state).
 Furthermore, Planner guarantees this triggering in stages also for `VariableListener` for a shadow variable that depend on earlier shadow variables.
@@ -459,7 +459,7 @@ SingletonInverseVariableSupply inverseVariableSupply = ((InnerScoreDirector) sco
 return new ChainedChangeMove(entity, variableDescriptor, inverseVariableSupply, toValue);
 ----
 
-Furthermore, a ``ChainedSwapMove``'s constructor now requires a `List` instead of `Collection` of ``VariableDescriptor``s.
+Furthermore, a ``ChainedSwapMove``’s constructor now requires a `List` instead of `Collection` of ``VariableDescriptor``s.
 
 [.upgrade-recipe-impl-detail]
 === `InnerScoreDirector`: `getTrailingEntity()` removed

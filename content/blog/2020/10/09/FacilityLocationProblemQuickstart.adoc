@@ -76,7 +76,7 @@ Soft constraint that penalizes the setup cost of used facility locations.
 distanceFromFacility::
 Soft constraint that penalizes the distance of a consumer from its assigned facility.
 
-Notice that there are two soft constraints that "compete" against each other because they affect the same score level.
+Notice that there are two soft constraints that "`compete`" against each other because they affect the same score level.
 You can control how each constraint affects the score by tweaking the constraint weights in `org.acme.facilitylocation.domain.FacilityLocationConstraintConfiguration`.
 The more weight you put on a constraint, the more it will affect the score when it is broken, and the more will OptaPlanner try to avoid it.
 

@@ -13,7 +13,7 @@ Task Assignment problem and deploy it to the KIE Server.
 
 == https://github.com/kiegroup/kie-server-optaplanner-task-assignment[Task Assignment KJAR]
 
-https://developers.redhat.com/blog/2018/03/14/what-is-a-kjar/[KJAR] or "Knowledge JAR" is a standard JAR file that has
+https://developers.redhat.com/blog/2018/03/14/what-is-a-kjar/[KJAR] or "`Knowledge JAR`" is a standard JAR file that has
 some extra files included (at least a `META-INF/kmodule.xml` file). You will build Task Assignment Service as a KJAR.
 
 NOTE: In order to build the KJAR, the project's pom.xml needs to have a `<packaging>kjar</packaging>` entry and contains

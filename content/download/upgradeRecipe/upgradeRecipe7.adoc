@@ -1702,7 +1702,7 @@ After in `*.java`:
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `ConstraintMatchAwareIncrementalScoreCalculator`: `getConstraintMatchTotals()` impact
 
-When implementing the interface ``ConstraintMatchAwareIncrementalScoreCalculator``'s method `getConstraintMatchTotals()`,
+When implementing the interface ``ConstraintMatchAwareIncrementalScoreCalculator``’s method `getConstraintMatchTotals()`,
 the constructor of `ConstraintMatchTotal` and the method `addConstraintMatch(...)`
 now use `Score` instances instead of numbers.
 
@@ -1878,7 +1878,7 @@ public class MachineReassignmentIncrementalScoreCalculator
 [.upgrade-recipe-minor]
 === Custom `MoveListFactory` and `MoveIteratorFactory`: method return `Move<Solution_>`
 
-The `MoveListFactory` and ``MoveIteratorFactory``'s methods now use `Move<Solution_>` instead of a raw-typed `Move`.
+The `MoveListFactory` and ``MoveIteratorFactory``’s methods now use `Move<Solution_>` instead of a raw-typed `Move`.
 This way your `MoveListFactory` can return `List<ChangeMove<MySolution>>` instead of `List<ChangeMove>`.
 
 Before in `*.java`:
@@ -3044,7 +3044,7 @@ import org.optaplanner.core.api.domain.solution.ProblemFactProperty;
 ----
 
 [.upgrade-recipe-minor]
-=== ``Solver``'s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
+=== ``Solver``’s `getBestSolution()`, `getBestScore()` and `getTimeMillisSpent()` deprecated for removal
 
 Several methods on the `Solver` interface have been deprecated.
 The same information can be obtained by registering an `EventListener` via `Solver.addEventListener(...)`.

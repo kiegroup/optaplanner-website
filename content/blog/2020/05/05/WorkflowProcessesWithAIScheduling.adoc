@@ -61,7 +61,7 @@ into the "Package" field.
 
 image::BPMNNameIdFields.png[]
 
-Before proceeding, we need to know our business process' variables (that is,
+Before proceeding, we need to know our business process`' variables (that is,
 what data is processed by the business process). Expand the "Process Data"
 tab in the Properties Sidebar and click the "+" icon in the "Process Variable"
 table. In this case, we only have one process variable: the flight we are
@@ -109,7 +109,7 @@ If the Event-based subprocess is covering other nodes, you can move it by
 dragging the Event-based subprocess. Open the Event-based subprocess properties
 by clicking on it (opening the properties sidebar if necessary), and rename it
 to "Passenger Requests Ticket Subprocess". This subprocess can have its own
-variables, and also inherits the main process' variables. In this case, we
+variables, and also inherits the main process`' variables. In this case, we
 need two additional variables:
 
 - The passenger who requested a ticket

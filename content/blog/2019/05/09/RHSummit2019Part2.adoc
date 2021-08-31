@@ -21,7 +21,7 @@ image::rhdemo2019SystemDiagram.png[link="rhdemo2019SystemDiagram.png"]
 To simulate damage source, we created a mobile app whose users signalize damage to machines by shaking their phones.
 The shaking data is sent to a web server that filters the bad data using TensorFlow service, then exports resulting
 predictions to AMQ streams. These predictions are consumed by Red Hat Integration, which processes the data and puts the result
-in Infinispan. Machine healths and mechanics' states are also stored in Infinispan.
+in Infinispan. Machine healths and mechanics`' states are also stored in Infinispan.
 
 Lastly, given the data in Infinispan, we need to decide how to schedule repairs optimally to reduce travel time and failure costs.
 We used OptaPlanner to do that. OptaPlanner reads machines health from Infinispan, updates the planning problem and sends
@@ -31,7 +31,7 @@ new dispatch events back to Infinispan, then the web server gets notified and se
 == Mechanic Scheduling service architecture
 
 image::mechanicSchedulingServiceDiagram.png[link="mechanicSchedulingServiceDiagram.png"]
-OptaPlanner's goal is to schedule repairs in an optimal way. To accomplish this, it needs to keep track of current machines' health,
+OptaPlanner's goal is to schedule repairs in an optimal way. To accomplish this, it needs to keep track of current machines`' health,
 dispatch mechanics and update healths once mechanics are done fixing the machines. There are two pitfalls here:
 
 * Machines health can be updated thousands of times per second.
@@ -94,7 +94,7 @@ image::mechanicsOverTime.png[link="mechanicsOverTime.png"]
 == Conclusion
 
 In conclusion, the two main challenges in designing this microservices architecture were
-adapting the inner workings to accommodate other services' behaviour and maintaining consistency with other services.
+adapting the inner workings to accommodate other services`' behaviour and maintaining consistency with other services.
 
 * To learn more about scaling challenges and the benchmarks as well as the load tests we ran,
 read https://www.optaplanner.org/blog/2019/05/09/RHSummit2019Part3.html[Part 3 by Radovan].

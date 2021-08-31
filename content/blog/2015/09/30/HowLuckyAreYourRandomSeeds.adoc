@@ -120,7 +120,7 @@ The difference between the best and worst run can seem large, but this measureme
 where all solver configuration runs vary only by a tiny bit (`model_b_4` of MachineReassignment).
 This indicates that the variance is more influenced by the dataset than by the random seed or solver configuration.
 
-The various outliers suggest that there are "lucky" and "unlucky" random seeds,
+The various outliers suggest that there are "`lucky`" and "`unlucky`" random seeds,
 but they don't seem to influence the results in any significant way *in general*.
 Again, there are specific datasets and use-cases which are more or less prone to changes in random seeds
 -- we can make use of statistical benchmarking to confirm if this is or isn't our case.

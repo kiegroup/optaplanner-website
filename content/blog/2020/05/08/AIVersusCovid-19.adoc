@@ -6,13 +6,13 @@ Christopher-Chianelli
 :jbake-tags: use case
 :jbake-social_media_share_image: CovidWardNoExtremeRisk.png
 
-Scheduling a hospital is tough. To maintain employees' happiness and health,
+Scheduling a hospital is tough. To maintain employees`' happiness and health,
 you need to take into account sick days, days off requests, and assure
 the employees have ample time between shifts. This is doubly so in a pandemic,
 where you need to minimize exposure to the new disease and have nurses with
 varying susceptibilities to the disease. Let's take a look at how we can quickly and efficiently
 schedule a hospital roster that minimizes cross-contamination between wards
-and maximizes employees' happiness using OptaWeb Employee Rostering.
+and maximizes employees`' happiness using OptaWeb Employee Rostering.
 
 == The domain
 
