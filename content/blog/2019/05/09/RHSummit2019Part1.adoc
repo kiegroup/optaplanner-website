@@ -12,7 +12,7 @@ reacting on input coming from the audience's smartphones.
 In the past 2 months, we created this application together with the other middleware teams
 and under the excellent guidance of Burr Sutter.
 It integrates various technologies
-such as Android/Iphone accelerometers, OpenShift/Kubernetes, Quarkus,
+such as Android/iPhone accelerometers, OpenShift/Kubernetes, Quarkus,
 KNative, TensorFlow, Kafka/Strimzi, Camel, Node.js, Godot, Infinispan, Drools and of course OptaPlanner.
 
 We wrote a simulation of a typical manufacturing floor, involving machines at assembly lines.
