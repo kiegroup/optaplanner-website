@@ -42,7 +42,7 @@ Therefore, `SolverFactory` no longer allows to create `Solver` instances from KI
 Likewise for `PlannerBenchmarkFactory` and benchmarks.
 
 Users are encouraged to check out our
-https://github.com/kiegroup/kogito-examples/tree/master/process-optaplanner-quarkus[OptaPlanner Kogito quickstart]
+https://github.com/kiegroup/kogito-examples/tree/main/process-optaplanner-quarkus[OptaPlanner Kogito quickstart]
 to see how to integrate with processes in a modern, cloud-native way.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]

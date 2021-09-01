@@ -70,10 +70,10 @@ Hardware: `Intel(R) Core(TM) i7-4810MQ CPU @ 2.80GHz`
 
 * To reproduce these benchmarks locally, https://www.optaplanner.org/code/sourceCode.html[build OptaPlanner from source]
 and run the classes
-https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp],
-https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/curriculumcourse/app/CurriculumCourseBenchmarkApp.java[CurriculumCourseBenchmarkApp]
+https://github.com/kiegroup/optaplanner/blob/main/optaplanner-examples/src/main/java/org/optaplanner/examples/app/GeneralOptaPlannerBenchmarkApp.java[GeneralOptaPlannerBenchmarkApp],
+https://github.com/kiegroup/optaplanner/blob/main/optaplanner-examples/src/main/java/org/optaplanner/examples/curriculumcourse/app/CurriculumCourseBenchmarkApp.java[CurriculumCourseBenchmarkApp]
 and
-https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/machinereassignment/app/MachineReassignmentBenchmarkApp.java[MachineReassignmentBenchmarkApp]
+https://github.com/kiegroup/optaplanner/blob/main/optaplanner-examples/src/main/java/org/optaplanner/examples/machinereassignment/app/MachineReassignmentBenchmarkApp.java[MachineReassignmentBenchmarkApp]
 after applying the configuration changes described above.
 
 == Benchmark results

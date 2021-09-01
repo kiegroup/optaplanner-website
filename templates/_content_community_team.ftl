@@ -10,7 +10,7 @@
     <p>
         This page mentions <em>active contributors</em>, who have contributed to OptaPlanner in the last year.
         If your name belongs in this list,
-        <a href="https://github.com/kiegroup/optaplanner-website/blob/master/data/users.yml">submit a pull request</a>
+        <a href="https://github.com/kiegroup/optaplanner-website/blob/main/data/users.yml">submit a pull request</a>
         with the appropriate changes.
     </p>
     <h2>Research &amp; Development</h2>
