@@ -70,7 +70,7 @@ For more complex constraints, it gets too cumbersome to write traditional unit t
 
 == Unit tests in `xlsx` files
 
-In order to avoid initializing unwanted fields, you can take advantage of https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/java/org/optaplanner/examples/conferencescheduling/persistence/ConferenceSchedulingXlsxFileIO.java[ConferenceSchedulingXlsxFileIO]
+In order to avoid initializing unwanted fields, you can take advantage of https://github.com/kiegroup/optaplanner/blob/main/optaplanner-examples/src/main/java/org/optaplanner/examples/conferencescheduling/persistence/ConferenceSchedulingXlsxFileIO.java[ConferenceSchedulingXlsxFileIO]
 to initialize them for you, and only write what you use in that test or in other tests in the same spreadsheet.
 
 To test room conflict using an `xlsx` file, create three timeslots, two talks and one room:
@@ -104,7 +104,7 @@ To test score rules in an `xlsx` file:
 1. List all the required fields for your tests in the setup sheets.
 2. For every score verification, create a separate blue test sheet with the constraint package, constraint name and expected score.
 3. List only the fields that you want to use for the corresponding rule.
-4. Set _testFileName_ in https://github.com/kiegroup/optaplanner/blob/master/optaplanner-examples/src/main/test/java/org/optaplanner/examples/conferencescheduling/solver/ConferenceSchedulingConstraintsXlsxTest.java[ConferenceSchedulingConstraintsXlsxTest] and run the test file.
+4. Set _testFileName_ in https://github.com/kiegroup/optaplanner/blob/main/optaplanner-examples/src/main/test/java/org/optaplanner/examples/conferencescheduling/solver/ConferenceSchedulingConstraintsXlsxTest.java[ConferenceSchedulingConstraintsXlsxTest] and run the test file.
 
 
 == Related material

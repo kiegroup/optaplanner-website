@@ -65,7 +65,7 @@ public class PinTaskProblemFactChange implements ProblemFactChange<TaskAssigning
 }
 ----
 
-The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/master/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[on GitHub].
+The full class can be found https://github.com/kiegroup/kie-server-optaplanner-task-assignment/blob/main/task-assignment-kjar/src/main/java/org/kie/server/examples/optaplanner/taskassignment/kjar/domain/realtime/PinTaskProblemFactChange.java[on GitHub].
 
 === https://docs.optaplanner.org/latestFinal/optaplanner-docs/html_single/index.html#solverConfiguration[Solver Configuration]
 

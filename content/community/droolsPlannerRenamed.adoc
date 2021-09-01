@@ -72,7 +72,7 @@ https://www.redhat.com/en/technologies/jboss-middleware/bpm[BPM] platforms.
 
 * The API's namespace has changed.
 
-** As usual, see https://github.com/kiegroup/optaplanner/blob/master/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe] on how to deal with this efficiently.
+** As usual, see https://github.com/kiegroup/optaplanner/blob/main/optaplanner-distribution/src/main/assembly/filtered-resources/UpgradeFromPreviousVersionRecipe.txt[the upgrade recipe] on how to deal with this efficiently.
 
 ** Starting from 6.1.0.Final, OptaPlanner will have a 100% backwards compatible API.
 

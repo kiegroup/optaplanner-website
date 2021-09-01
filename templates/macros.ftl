@@ -84,7 +84,7 @@
                     </#if>
                 </#list>
                 <div class="small pull-right">
-                    <a href="https://github.com/kiegroup/optaplanner-website/blob/master/data/events.yml">Add event</a>
+                    <a href="https://github.com/kiegroup/optaplanner-website/blob/main/data/events.yml">Add event</a>
                     /
                     <a href="${content.rootpath}community/eventsArchive.html">Archive</a>
                 </div>
