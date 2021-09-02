@@ -557,7 +557,7 @@ To use it, configure it like this:
 === Benchmark a solver configuration quickly
 
 *There isn't a valid excuse anymore to not use the benchmarker.*
-You can now run it in just a few lines of java code (no XML code):
+You can now run it in just a few lines of Java code (no XML code):
 
 [source,java,options="nowrap"]
 ----

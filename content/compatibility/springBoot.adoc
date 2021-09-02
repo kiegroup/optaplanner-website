@@ -1,6 +1,6 @@
 = Artificial Intelligence for Spring Boot
 :jbake-type: compatibilityBase
-:jbake-description: Learn how to use OptaPlanner (open source, java) for Artificial Intelligence planning optimization on Spring Boot.
+:jbake-description: Learn how to use OptaPlanner (open source, Java) for Artificial Intelligence planning optimization on Spring Boot.
 :jbake-priority: 1.0
 :jbake-related_tag: spring
 :showtitle:

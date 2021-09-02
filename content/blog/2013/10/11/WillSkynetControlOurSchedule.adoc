@@ -6,7 +6,7 @@ ge0ffrey
 :jbake-tags: school timetabling, insight, feature
 
 Not every organization is comfortable with letting a computer program,
-such as https://www.optaplanner.org[OptaPlanner] (java, open source planning engine), optimize their schedules.
+such as https://www.optaplanner.org[OptaPlanner] (Java, open source planning engine), optimize their schedules.
 Let's take a look why - and how to remedy it - on the course scheduling example.
 
 == Course scheduling introduction

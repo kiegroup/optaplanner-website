@@ -155,8 +155,8 @@ image::reflectionTspIncrementalCalculationSamplingProfiler.png[link="reflectionT
 
 === MethodHandles
 
-MethodHandle was introduced in java 7 to support _invokedynamic_ instructions.
-According to the javadoc, it's _a typed, directly executable reference to an underlying method._
+MethodHandle was introduced in Java 7 to support _invokedynamic_ instructions.
+According to the Javadoc, it's _a typed, directly executable reference to an underlying method._
 Sounds fast, right?
 
 [source,java]

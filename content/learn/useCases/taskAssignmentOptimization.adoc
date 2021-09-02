@@ -1,6 +1,6 @@
 = Task assignment optimization
 :jbake-type: useCaseBase
-:jbake-description: Use OptaPlanner (java™, open source) to optimize assigning tasks to employees with different skills and affinities.
+:jbake-description: Use OptaPlanner (Java™, open source) to optimize assigning tasks to employees with different skills and affinities.
 :jbake-priority: 1.0
 :jbake-related_tag: task assignment
 :showtitle:

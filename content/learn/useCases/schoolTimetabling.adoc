@@ -1,6 +1,6 @@
 = School timetabling
 :jbake-type: useCaseBase
-:jbake-description: Use OptaPlanner (java™, open source) to optimize school timetabling, adhering to teacher availability, room capacity and other constraints.
+:jbake-description: Use OptaPlanner (Java™, open source) to optimize school timetabling, adhering to teacher availability, room capacity and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: school timetabling
 :showtitle:

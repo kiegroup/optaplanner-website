@@ -1,6 +1,6 @@
 = Conference scheduling
 :jbake-type: useCaseBase
-:jbake-description: Use OptaPlanner (java™, open source) to optimize assigning conference talks to timeslots and rooms.
+:jbake-description: Use OptaPlanner (Java™, open source) to optimize assigning conference talks to timeslots and rooms.
 :jbake-priority: 1.0
 :jbake-related_tag: conference scheduling
 :showtitle:
