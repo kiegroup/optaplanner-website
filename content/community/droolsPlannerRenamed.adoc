@@ -56,9 +56,9 @@ https://www.redhat.com/en/technologies/jboss-middleware/bpm[BPM] platforms.
 
 ** Jar names changes:
 
-*** `drools-planner-core-*.jar` is now `optaplanner-core-*.jar`
+*** `+drools-planner-core-*.jar+` is now `+optaplanner-core-*.jar+`
 
-*** `drools-planner-benchmark-*.jar` is now `optaplanner-benchmark-*.jar`
+*** `+drools-planner-benchmark-*.jar+` is now `+optaplanner-benchmark-*.jar+`
 
 ** Maven identification groupId's and artifactId's changes:
 
