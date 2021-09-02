@@ -21,7 +21,7 @@
                     <i class="fas fa-question-circle"></i>&nbsp;Ask/view questions on StackOverflow
                 </a>
                 <div class="small">
-                    Opinionated questions aren't welcome on StackOverflow,
+                    Opinionated questions aren’t welcome on StackOverflow,
                     <br>
                     so those belong on our discussion forum below.
                 </div>
@@ -38,7 +38,7 @@
                         <p>Be crystal clear. Reread your question before posting it.</p>
                     </li>
                     <li>
-                        <p>Add relevant technical details: stacktrace, code snippet, &#8230;&#8203;</p>
+                        <p>Add relevant technical details: stacktrace, code snippet, &hellip;</p>
                     </li>
                 </ul>
             </div>
@@ -48,7 +48,7 @@
                 <h2 id="_create_an_issue">Create an issue</h2>
                 <div class="sectionbody">
                     <div class="paragraph">
-                        <p>If you&#8217;ve found a bug,
+                        <p>If you’ve found a bug,
                             please open a ticket in our issue tracker <em>with a reproducer</em>:</p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <h2 id="_discussions_and_contributions">Discussions and contributions</h2>
                 <div class="sectionbody">
                     <div class="paragraph">
-                        <p>If you&#8217;re working on a contribution or want to start an opinionated discussion, join our discussion forum
+                        <p>If you’re working on a contribution or want to start an opinionated discussion, join our discussion forum
                             or mail directly through <a href="mailto:optaplanner-dev@googlegroups.com">optaplanner-dev@googlegroups.com</a>.</p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
             <div class="text-center">
                 <a class="btn btn-secondary" href="${config.googleGroupURL}">Start/view discussions on our forum</a>
                 <div class="small">
-                    Please don't cross post to both our forum and StackOverflow.
+                    Please don’t cross post to both our forum and StackOverflow.
                 </div>
             </div>
         </div>

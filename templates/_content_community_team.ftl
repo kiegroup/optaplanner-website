@@ -25,9 +25,9 @@
     <@listUserBadges userIds=["mbiarnes", "mareknovotny", "emingora", "tradisso"]/>
     <h2>Community contributors</h2>
     <@listUserBadges userIds=["DuncanDoyle", "jucui", "michaltomco", "MusaTalluzi", "gsheldon", "mcimbora", "oskopek", "snurkabill", "elsam", "fhornain", "rbourner", "tdavid", "bibryam", "mdanter", "blackjack92", "mrietveld", "psiroky", "FredPraca", "taiuti"]/>
-    <h2>Umbrella KIE R&amp;D team (Drools, Kogito, ...)</h2>
+    <h2>Umbrella KIE R&amp;D team (Drools, Kogito, &hellip;)</h2>
     <@listUserBadges userIds=["mariofusco", "etirelli", "mdproctor"]/>
-    <p>... and the rest of the KIE team.</p>
+    <p>&hellip; and the rest of the KIE team.</p>
 </@parent.layout>
 </#macro>
 

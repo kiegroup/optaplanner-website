@@ -306,7 +306,7 @@
         <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a>
         and  <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
         Constraints apply on plain domain objects and can call existing code.
-        There's no need to input constraints as mathematical equations.
+        There’s no need to input constraints as mathematical equations.
         Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
         (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
         with very efficient score calculation and other state-of-the-art constraint solving techniques.

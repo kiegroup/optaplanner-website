@@ -35,7 +35,7 @@
                             It enables everyday <a href="${content.rootpath}compatibility/java.html">Java</a> programmers to solve optimization problems efficiently.
                             It is also compatible with other JVM languages (such as <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a> and <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
                             Constraints apply on plain domain objects and can call existing code.
-                            There&#8217;s no need to input constraints as mathematical equations.
+                            There’s no need to input constraints as mathematical equations.
                             Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
                             (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
                             with very efficient score calculation and other state-of-the-art constraint solving techniques.</p>

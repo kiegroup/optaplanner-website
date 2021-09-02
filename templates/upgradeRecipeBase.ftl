@@ -7,7 +7,7 @@
 <@parent.layout>
     <h1>${content.title}</h1>
     <div class="paragraph summaryParagraph">
-        <p><strong>OptaPlanner's public API classes are backwards compatible</strong> (per series),
+        <p><strong>OptaPlanner’s public API classes are backwards compatible</strong> (per series),
             but users often also use impl classes (which are documented in the reference manual too).
             This upgrade recipe <em>minimizes the pain</em> to upgrade your code
             and to take advantage of <a href="${content.rootpath}download/releaseNotes/releaseNotes8.html">the newest features in OptaPlanner 8</a>.</p>
