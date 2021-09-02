@@ -16,7 +16,7 @@
                         <img class="me-1" alt="Atom" src="${content.rootpath}headerFooter/atomFeedIcon.png">News feed
                     </a>
                     <div class="small">
-                        <span>Don't want to miss a single blog post?</span>
+                        <span>Don’t want to miss a single blog post?</span>
                         <br>
                         <span>Follow us on</span>
                     </div>

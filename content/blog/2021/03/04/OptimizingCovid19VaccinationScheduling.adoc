@@ -18,7 +18,7 @@ There are two main approaches to scheduling appointments. The system can either 
 Here is a quick comparison of the two approaches:
 
 === User selects
-This approach is similar to the approach used with concert ticket sites such as Ticketmaster&#8482;. It’s how most concert tickets are sold. People compete with each other for a fixed number of tickets or appointments.
+This approach is similar to the approach used with concert ticket sites such as Ticketmaster&trade;. It’s how most concert tickets are sold. People compete with each other for a fixed number of tickets or appointments.
 
 Characteristics of this approach:
 
@@ -32,7 +32,7 @@ Challenges with this approach:
 * When many people try to reserve the same appointment slot at the same time, all but one person fails to secure the appointment which results in a poor user experience. Some people might give up trying to reserve an appointment.
 On the other hand, less desirable appointment slots might not be filled.
 * It’s tricky to prioritize based on criteria such as priority, age, or second dose status.
-* The desired vaccine type (Pfizer&#8482;, Moderna&#8482;, AstraZeneca&#8482;) might not be available.
+* The desired vaccine type (Pfizer&trade;, Moderna&trade;, AstraZeneca&trade;) might not be available.
 
 It could be argued that the user-selects method is not the most efficient method for vaccination scheduling. People can choose the closest vaccination center but that center might not have the greatest capacity. What's good for one person isn't always optimal for the population as a whole. There is no way for the system to direct a person to a vaccination center that meets the needs of the individual and is at the same time efficient for the entire population because of capacity. In addition, the system can easily be overloaded.
 
