@@ -46,7 +46,7 @@ Both community and product use the same code base.
 |Integration testing |image:checkYes.png[Yes] |image:checkYes.png[Yes] On certification matrix
 |Stress testing |image:checkYes.png[Yes] |image:checkYes.png[Yes]
 |Performance testing and sizing |image:checkNo.png[No] |image:checkYes.png[Yes]
-|QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OS's, JDK's, application containers, databases, ... See https://access.redhat.com/articles/3354301[supported configurations].
+|QA certification |image:checkNo.png[No] |image:checkYes.png[Yes] Cross matrix of OSs, JDKs, application containers, databases, ... See https://access.redhat.com/articles/3354301[supported configurations].
 
 |*Help* | |
 |Roadmap impact |image:checkNo.png[No] except through link:../code/sourceCode.html[Pull Requests] |image:checkYes.png[Yes] Customer issues are prioritized

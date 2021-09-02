@@ -121,7 +121,7 @@ or other products to machines and employees (thanks to Lukáš Petrovický)
 
 === Example improvements
 
-* The GUI's of course scheduling, exam scheduling, hospital bed planning and sport scheduling have been improved.
+* The GUIs of course scheduling, exam scheduling, hospital bed planning and sport scheduling have been improved.
 * The optaplanner examples Swing GUI has been redesigned to take up less space.
 * A webapp variant of the cloud balancing example has been added to `optaplanner-webexamples.war` (thanks to Frederic Hornain).
 

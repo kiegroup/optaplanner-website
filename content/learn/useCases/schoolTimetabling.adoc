@@ -22,7 +22,7 @@ image:schoolTimetablingInputOutput.png[School timetabling input output]
 
 OptaPlanner is the leading Open Source Java™ AI constraint solver
 to optimize maintenance scheduling,
-adhering to skill, capacity, SLA's and other constraints.
+adhering to skill, capacity, SLAs and other constraints.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
 It enables normal Java™ programmers to solve optimization problems efficiently.

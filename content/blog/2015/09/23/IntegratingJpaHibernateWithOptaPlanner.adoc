@@ -11,7 +11,7 @@ Let's take a look at the improved JPA Hibernate integration.
 
 == The basics
 
-Both JPA Hibernate and OptaPlanner work on POJO's (Plain Old Java Objects),
+Both JPA Hibernate and OptaPlanner work on POJOs (Plain Old Java Objects),
 so just add some JPA annotations on your domain objects to persist them with JPA Hibernate
 and add some OptaPlanner annotations to solve your optimization problem with OptaPlanner.
 
