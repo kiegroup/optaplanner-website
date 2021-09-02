@@ -41,7 +41,7 @@ https://developers.google.com/maps/[Google Maps] is a proprietary JavaScript tha
 == Apply it now in your case
 
 If you're using the latest OptaPlanner final release (`6.2.0.Final` at the time of writing),
-you easily do such visualization too: those webexamples don't require any API's new in optaplanner-core 6.3,
+you easily do such visualization too: those webexamples don't require any APIs new in optaplanner-core 6.3,
 so https://www.optaplanner.org/download/download.html[download the nightly snapshot] and look for `webexamples/sources`
 to see how it's done.
 

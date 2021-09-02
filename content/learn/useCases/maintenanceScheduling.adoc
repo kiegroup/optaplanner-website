@@ -1,6 +1,6 @@
 = Maintenance scheduling
 :jbake-type: useCaseBase
-:jbake-description: Use OptaPlanner (java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLA's and other constraints.
+:jbake-description: Use OptaPlanner (java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLAs and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: maintenance scheduling
 :showtitle:
@@ -22,7 +22,7 @@ and the geographic location of machines.
 
 OptaPlanner is the leading Open Source Java™ AI constraint solver
 to optimize maintenance scheduling,
-adhering to skill, capacity, SLA's and other constraints.
+adhering to skill, capacity, SLAs and other constraints.
 
 OptaPlanner is *a lightweight, embeddable planning engine*.
 It enables normal Java™ programmers to solve optimization problems efficiently.
