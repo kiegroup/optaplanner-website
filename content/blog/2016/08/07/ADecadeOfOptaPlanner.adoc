@@ -121,7 +121,7 @@ and makes a business from selling support subscriptions and consultancy for thos
 == Productization: going enterprise
 
 By the end of 2012, my little project had already grown quite big: it had a high test coverage with unit, integration and stress tests,
-a complete reference manual, demonstrable examples, javadocs and a growing community.
+a complete reference manual, demonstrable examples, Javadocs and a growing community.
 But there were also many services missing before a Fortune 500 company would consider using it in mission critical software.
 *Technical excellence alone doesn't suffice.*
 

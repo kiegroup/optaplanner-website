@@ -16,7 +16,7 @@ As preparation for that, every part of the API is being reviewed.
 === Important upgrade advice
 
 Don't directly upgrade the jars to 6.0.0.Final.
-In 6.0.0.Beta1, Drools Planner has been renamed to OptaPlanner and the java package structure has been changed severely.
+In 6.0.0.Beta1, Drools Planner has been renamed to OptaPlanner and the Java package structure has been changed severely.
 Instead, upgrade the jars to 6.0.0.Alpha9 first.
 Once that compiles, immediately upgrade the jars to your desired version and continue following the upgrade recipe.
 The 6.0.0.Alpha9 jars are available in the maven repository and in this zip:

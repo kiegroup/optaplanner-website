@@ -12,7 +12,7 @@ to build with Java and Maven, instead of Ruby and Rake.
 On the face of it, nothing changed.
 But in the sources, for our team of Java developers, it is a game changer.
 
-Our java team can now contribute to the website easily.
+Our Java team can now contribute to the website easily.
 Within hours of completing the migration, there was already a commit of one of our developers
 who would _rather not touch the previous source code with a ten-foot pole_.
 
