@@ -5,6 +5,8 @@
 :jbake-related_tag: task assignment
 :showtitle:
 
+// TODO show use case video NPTzXIyQdqU (call centers) ?
+
 image:taskAssigningValueProposition.png[Task assigning value proposition]
 
 == What is OptaPlanner?
