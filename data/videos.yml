@@ -12,6 +12,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: hXPzelZHjYk
+  title: "Business processes task optimization in Kogito"
+  author: wmedvede
+  date: 2021-09-07
+  tags:
+    - task assignment
+
 - youtubeId: HO7l3rWb_uo
   title: "School timetable optimization"
   author: ge0ffrey
