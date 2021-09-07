@@ -12,6 +12,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: HO7l3rWb_uo
+  title: "School timetable optimization"
+  author: ge0ffrey
+  date: 2021-09-06
+  tags:
+    - school timetabling
+
 - youtubeId: NPTzXIyQdqU
   title: "Schedule incoming calls real-time"
   author: rsynek

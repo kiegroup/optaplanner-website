@@ -5,6 +5,8 @@
 :jbake-related_tag: maintenance scheduling
 :showtitle:
 
+// TODO show use case video NPTzXIyQdqU ?
+
 Machinery and other types of equipment in use (such as elevators, escalators, airplanes, trains, ...)
 tend to deteriorate over time, requiring regular maintenance.
 Depending on how often each machine requires care,
