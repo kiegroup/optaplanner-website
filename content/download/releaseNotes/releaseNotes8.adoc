@@ -20,6 +20,12 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner 8_ available and fully supported
 in the latest release of Red Hat Decision Manager 7.
 
+== New and noteworthy: Engine 8.12.0.Final
+
+=== Monitoring Support
+
+OptaPlanner now uses Micrometer to monitor key metrics such as active solver count, solve durations, and error count.
+
 == New and noteworthy: Engine 8.10.0.Final
 
 === Support for Quarkus 2.0
