@@ -1650,3 +1650,9 @@ Users of the OptaPlanner Quarkus integration should refer to https://github.com/
 Consequently, OptaPlanner binaries now require JDK 11 or higher to run.
 Even though OptaPlanner 8.x has always required JDK 11, this only becomes a hard requirement with OptaPlanner 8.10.0.Final.
 
+== From 8.11.0.Final to 8.12.0.Final
+
+[.upgrade-recipe-major]
+=== Rename optaplanner.solver.solve-length to optaplanner.solver.solve.duration
+
+The Micrometer meter `optaplanner.solver.solve-length` has been renamed to `optaplanner.solver.solve.duration` to follow Micrometer naming conventions and make it appear better in a variety of monitoring systems. References to `optaplanner.solver.solve-length.+++*+++` in the monitoring system should be changed to `optaplanner.solver.solve.duration.+++*+++`.
