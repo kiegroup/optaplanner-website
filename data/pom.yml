@@ -37,3 +37,15 @@ nightly:
   engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.12.0-SNAPSHOT&e=zip
   optawebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-docs&v=8.12.0-SNAPSHOT&e=zip
   optawebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=8.12.0-SNAPSHOT&e=zip
+
+productToCommunityVersionMap:
+  - productVersion: 7.8
+    communityVersion: 7.39
+  - productVersion: 7.9
+    communityVersion: 7.44
+  - productVersion: 7.10
+    communityVersion: 7.48
+  - productVersion: 7.11
+    communityVersion: 8.5 (and 7.52)
+  - productVersion: 7.12
+    communityVersion: 8.11 (and 7.59)

@@ -354,26 +354,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>7.7</td>
-                <td>7.33</td>
-            </tr>
-            <tr>
-                <td>7.8</td>
-                <td>7.39</td>
-            </tr>
-            <tr>
-                <td>7.9</td>
-                <td>7.44</td>
-            </tr>
-            <tr>
-                <td>7.10</td>
-                <td>7.48</td>
-            </tr>
-            <tr>
-                <td>7.11</td>
-                <td>8.5 (and 7.52)</td>
-            </tr>
+            <#list pom.productToCommunityVersionMap as productToCommunityVersionEntry>
+                <tr>
+                    <td>${productToCommunityVersionEntry.productVersion}</td>
+                    <td>${productToCommunityVersionEntry.communityVersion}</td>
+                </tr>
+            </#list>
             </tbody>
         </table>
     </div>
