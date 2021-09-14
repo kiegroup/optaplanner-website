@@ -28,7 +28,7 @@
                 <span class="glyphicon glyphicon-tags"></span>
                 &nbsp;tagged as
                 <#list content.tags as tag>
-                    <a href="${content.rootpath}blog/tags/${tag}.html"><span class="label label-info">${tag}</span></a>
+                    <a href="${content.rootpath}blog/tags/${tag?url}.html"><span class="label label-info">${tag}</span></a>
                 </#list>
             </div>
         </div>
