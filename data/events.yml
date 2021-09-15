@@ -718,11 +718,11 @@
       url: https://www.euro-online.org/conf/euro31/treat_abstract?paperid=121
       presenters: Geoffrey De Smet
 
-- eventId: 20210913-decisioncamp
+- eventId: 20210914-decisioncamp
   eventOrganization: "DecisionCAMP"
   eventUrl: https://decisioncamp2021.wordpress.com/
   location: Leuven, Belgium (virtual)
-  date: 2021-09-13
+  date: 2021-09-14
   talks:
     - title: "A modern OO/FP constraint solver to solve VRP, rostering or scheduling problems"
       presenters: Geoffrey De Smet

@@ -12,6 +12,11 @@
 #
 # Order videos by date descending
 
+- youtubeId: HO7l3rWb_uo
+  title: "A modern OO/FP constraint solver"
+  author: ge0ffrey
+  date: 2021-09-14
+
 - youtubeId: hXPzelZHjYk
   title: "Business processes task optimization in Kogito"
   author: wmedvede
