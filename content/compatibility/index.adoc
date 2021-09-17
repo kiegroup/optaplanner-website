@@ -11,6 +11,7 @@ OptaPlanner is compatible and integrates with:
 * link:java.html[Java]
 * link:kotlin.html[Kotlin]
 * link:scala.html[Scala]
+* link:python.html[Python]
 
 == Platforms
 
