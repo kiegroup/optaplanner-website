@@ -6,7 +6,7 @@
 :showtitle:
 
 https://www.optapy.org[OptaPy] allows you to run OptaPlanner from Python code,
-at a performance cost.
+at a high performance cost.
 
 It is https://pypi.org/project/optapy/[available in PyPi].
 
