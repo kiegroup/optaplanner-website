@@ -7,5 +7,6 @@
 
 OptaPlanner itself is written in 100% pure Java.
 
-- It runs on OpenJDK 8 and higher.
-- If you use with the link:quarkus.html[Quarkus] extension, it runs on GraalVM too.
+* OptaPlanner 8.x runs on Java 11 and higher.
+** OptaPlanner 7.x for Java 8.
+* If you use with the link:quarkus.html[Quarkus] extension, it runs on GraalVM too.
