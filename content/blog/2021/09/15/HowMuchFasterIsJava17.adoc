@@ -70,6 +70,8 @@ conflicts between every entity and every other entity.
 * Runs: Each JDK and each garbage collector combination is run 3 times sequentially.
 The results below is the average of those 3 runs.
 
+link:runBenchmarkJDKComparison.sh.txt[Here is the shell script to reproduce these results.]
+
 == Results
 
 === Java 11 (LTS) and Java 16 versus Java 17 (LTS)
