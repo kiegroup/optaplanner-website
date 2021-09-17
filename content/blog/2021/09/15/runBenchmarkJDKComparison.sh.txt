@@ -1,0 +1,144 @@
+#!/bin/bash
+
+# To prepare enviromnent
+########################
+# mkdir downloads
+# mkdir jdk
+# mkdir maven
+
+# To add a new JDK
+##################
+# Find url on https://jdk.java.net/17/ or 
+# cd downloads
+# wget https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz
+# cd ..
+# tar -xf downloads/openjdk-17_linux-x64_bin.tar.gz -C ./jdk/
+
+# To add a new Maven version
+############################
+# Find url on https://maven.apache.org/
+# cd downloads
+# wget https://dlcdn.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz
+# cd ..
+# tar -xf downloads/apache-maven-3.8.2-bin.tar.gz -C ./maven/
+# Adjust mavenVersion below
+
+
+# Change directory to the directory of the script
+cd "$(dirname $0)" || exit
+
+mavenVersion="3.8.2"
+optaplannerVersion="8.10.0.Final"
+readonly scriptDir=`pwd`
+readonly startDate=$(date +%Y-%m-%d_%H-%M)
+readonly MAVEN_HOME=$scriptDir/maven/apache-maven-${mavenVersion}
+
+if [ ! -d "${scriptDir}/sources" ]; then
+  mkdir sources
+  cd sources
+  git clone https://github.com/kiegroup/optaplanner.git
+    if [ $? != 0 ]; then
+      echo "ERROR git clone optaplanner repo"; exit
+    fi
+  git clone https://github.com/kiegroup/optaplanner-quickstarts.git
+    if [ $? != 0 ]; then
+      echo "ERROR git clone optaplanner-quickstarts repo"; exit
+    fi
+  cd ..
+fi
+
+cd sources/optaplanner
+git fetch
+git checkout $optaplannerVersion
+if [ $? != 0 ]; then
+  echo "ERROR git checkout optaplanner repo with $optaplannerVersion"; exit
+fi
+cd ../optaplanner-quickstarts
+git fetch
+git checkout $optaplannerVersion
+if [ $? != 0 ]; then
+  echo "ERROR git checkout optaplanner-quickstarts repo with $optaplannerVersion"; exit
+fi
+cd ../..
+
+if [ ! -d "${scriptDir}/results" ]; then
+  mkdir results
+fi
+mkdir results/$startDate
+if [ ! -f "${scriptDir}/results/summary.csv" ]; then
+  echo "startDate,jdk,garbageCollector,solverId,timeMillisSpent,scoreCalculationCount" >> ${scriptDir}/results/summary.csv
+fi
+
+echo
+echo "JDK versions:"
+echo "`ls jdk`"
+echo "Maven version: $mavenVersion"
+echo "OptaPlanner version: $optaplannerVersion"
+echo "Starting benchmarking in 10 seconds..."
+sleep 10
+echo "Starting..."
+echo
+
+for jdkDir in `ls jdk`
+do
+  export JAVA_HOME="$scriptDir/jdk/$jdkDir"
+  echo "JAVA_HOME: $JAVA_HOME"
+  $MAVEN_HOME/bin/mvn --version
+  echo
+  cd sources/optaplanner
+  $MAVEN_HOME/bin/mvn clean install -Dfull -DskipTests
+  if [ $? != 0 ]; then
+    echo "ERROR mvn clean install with $jdkDir"; exit
+  fi
+  
+  cd optaplanner-distribution
+  cd target/optaplanner-distribution-$optaplannerVersion
+  mainClasspath="binaries/*:examples/binaries/*"
+# TODO AFTER 8.12
+#  cd ../optaplanner-quickstarts
+#  $MAVEN_HOME/bin/mvn clean install -Dfull -DskipTests
+#  if [ $? != 0 ]; then
+#    echo "ERROR mvn clean install with $jdkDir"; exit
+#  fi
+#  cd build/optaplanner-distribution
+#  cd target/optaplanner-distribution-$optaplannerVersion/optaplanner-distribution-$optaplannerVersion
+#  mainClasspath="examples/binaries/*"
+
+  cp -r examples/sources/data ./data
+  for garbageCollector in UseParallelGC UseG1GC
+  do
+    $JAVA_HOME/bin/java \
+      -cp "${mainClasspath}" \
+      -Xmx3840M \
+      -XX:+$garbageCollector \
+      -Dlogback.level.org.optaplanner=info \
+      org.optaplanner.examples.app.GeneralOptaPlannerBenchmarkApp
+    if [ $? != 0 ]; then
+      echo "ERROR running benchmark with $jdkDir and $garbageCollector"; exit
+    fi
+    mkdir "${scriptDir}/results/${startDate}/${jdkDir}_${garbageCollector}"
+    mv local/data/general/*/ "${scriptDir}/results/${startDate}/${jdkDir}_${garbageCollector}"
+    
+    cat ${scriptDir}/results/${startDate}/${jdkDir}_${garbageCollector}/*/plannerBenchmarkResult.xml \
+        | grep 'scoreCalculationCount\|timeMillisSpent\|singleBenchmarkResult id' \
+        | sed 's/.*>\-1<.*//g' | sed '/^$/d' \
+        | sed -z 's/ *<singleBenchmarkResult id\=\"\([0-9]*\)\">\n/\1,/g' \
+        | sed -z 's/ *<timeMillisSpent>\([0-9]*\)<\/timeMillisSpent>\n/\1,/g' \
+        | sed -z 's/ *<scoreCalculationCount>\([0-9]*\)<\/scoreCalculationCount>/\1/g' \
+        | sed "s/^/${startDate},${jdkDir},${garbageCollector},/" \
+        >> ${scriptDir}/results/summary.csv
+  done
+  
+  cd ../..
+  cd ..
+# TODO AFTER 8.12
+#  cd ../../..
+#  cd ../..
+
+  cd ../..
+  echo
+  echo "================================================================================"
+  echo
+done
+
+echo "Date: $startDate"
