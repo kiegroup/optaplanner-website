@@ -322,3 +322,13 @@
   githubUsername: radtriste
   email: tradisso AT redhat.com
   employedBy: Red Hat
+
+- userId: taiuti
+  fullName: Marco Taiuti
+  role: Contributor
+  gravatarHashId: 0a174299359165a113173a821909b84c
+  twitterUsername: marco_taiuti
+  linkedInId: marco-taiuti-509a6797
+  githubUsername: taiuti
+  employedBy: PlanSoft
+  contributionsDescription: VRP quickstarts to optaplanner-quickstarts
