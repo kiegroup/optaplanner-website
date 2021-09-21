@@ -1,0 +1,438 @@
+= Optimize your Python
+Christopher-Chianelli
+2021-10-05
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: python, integration
+
+OptaPlanner can now be used in Python using https://pypi.org/project/optapy[OptaPy]!
+Let's create the school timetabling example in pure Python. Feel free to follow along in the https://mybinder.org/v2/gh/optapy/optapy/main?filepath=index.ipynb[OptaPy Jupyter notebook].
+
+
+==  Prerequisites
+
+- https://www.python.org/[Install Python 3.9 or later].
+- https://adoptopenjdk.net/[Install JDK 11 or later] with the environment variable JAVA_HOME configured to the JDK installation directory.
+
+== Setup
+
+. Create a new Python virtual environment
++
+[source,bash]
+----
+python3 -m venv optapy-env
+----
+
+. Activate the Python virtual environment
++
+[source,bash]
+----
+source optapy-env/bin/activate
+----
+
+. Install OptaPy using pip
++
+[source,bash]
+----
+python3 -m pip install optapy
+----
+
+== School timetabling
+
+In school timetabling, we have a list of lessons that we need to assign to timeslot and rooms.
+Additionally, we want some constraints to be followed:
+
+- A room can have at most one lesson at the same time.
+
+- A teacher can teach at most one lesson at the same time.
+
+- A student can attend at most one lesson at the same time.
+
+- A teacher prefers to teach all lessons in the same room.
+
+- A teacher prefers to teach sequential lessons and dislikes gaps between lessons.
+
+- A student dislikes sequential lessons on the same subject.
+
+== Modelling the domain
+
+The Objects used in constraints are known as the domain of the problem. In school timetabling, this consist of lessons, rooms and timeslots.
+
+=== Problem Facts
+
+Problem facts do not change throughout solving. Rooms and timeslots are examples of problem facts. Let's create the Room class:
+
+[source,python]
+----
+from optapy import problem_fact, planning_id
+
+@problem_fact
+class Room:
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+    @planning_id
+    def getId(self):
+        return self.id
+
+    def __str__(self):
+        return "Room(id=" + str(self.id) + ", name=" + str(self.name) + ")"
+----
+
+The `@problem_fact` decorator registers the class as a problem fact, which allows it to be used in constraints.
+The `@planning_id` decorator registers `getId` as the planning id for `Room`. OptaPlanner requires a planning id for some functionality, such as generating unique pairs. The planning id should be unique for instances of the same class.
+
+In similar fashion, let's create the `Timeslot` class:
+
+[source,python]
+----
+
+
+@problem_fact
+class Timeslot:
+    def __init__(self, id, dayOfWeek, startTime, endTime):
+        self.id = id
+        self.dayOfWeek = dayOfWeek
+        self.startTime = startTime
+        self.endTime = endTime
+
+    @planning_id
+    def getId(self):
+        return self.id
+
+    def __str__(self):
+        return "Timeslot(id=" + str(self.id) + \
+               ", dayOfWeek=" + str(self.dayOfWeek) + ", startTime=" + str(self.startTime) + \
+               ", endTime=" + str(self.endTime) + ")"
+----
+
+=== Planning Entities
+
+Planning entities change throughout solving. Lesson is a planning entity, since its `room` and
+`timeslot` properties change throughout solving. Since the `room` and `timeslot` properties change throughout solving, they are known as planning variables. Let's create the `Lesson` class.
+
+[source,python]
+----
+from optapy import planning_entity, planning_variable
+
+@planning_entity
+class Lesson:
+    def __init__(self, id, subject, teacher, studentGroup, timeslot=None, room=None):
+        self.id = id
+        self.subject = subject
+        self.teacher = teacher
+        self.studentGroup = studentGroup
+        self.timeslot = timeslot
+        self.room = room
+
+    @planning_id
+    def getId(self):
+        return self.id
+
+    @planning_variable(Timeslot, ["timeslotRange"])
+    def getTimeslot(self):
+        return self.timeslot
+
+    def setTimeslot(self, newTimeslot):
+        self.timeslot = newTimeslot
+
+    @planning_variable(Room, ["roomRange"])
+    def getRoom(self):
+        return self.room
+
+    def setRoom(self, newRoom):
+        self.room = newRoom
+
+    def __str__(self):
+        return "Lesson(id=" + str(self.id) + \
+                ", timeslot=" + str(self.timeslot) + ", room=" + str(self.room) + \
+                ", teacher=" + str(self.teacher) + ", subject=" + str(self.subject) + \
+                ", studentGroup=" + str(self.studentGroup) + ")"
+----
+
+The `@planning_entity` decorator registers the class as a planning entity, which allows OptaPlanner to assign its planning variables and for it to be used in constraints.
+The `@planning_variable(variable_type, [value_range_provider_refs...])` decorator registers a method as the getter of a planning variable.
+The getter must be named `get<X>` and the setter must be named `set<X>`.
+The first argument, `variable_type`, tells OptaPlanner what type of values OptaPlanner can assign to this planning variable.
+The second argument, `value_range_provider_refs`, tells OptaPlanner what value ranges (more info on that later) it takes its values from.
+
+== Constraints
+
+Constraints tell OptaPlanner the score of the solution. A score represents the quality of a specific solution. The higher the better. OptaPlanner looks for the best solution, which is the solution with the highest score found in the available time. It might be the optimal solution.
+
+Because this use case has hard and soft constraints, use the HardSoftScore class to represent the score:
+
+- Hard constraints must not be broken. For example: _A room can have at most one lesson at the same time_.
+
+- Soft constraints should not be broken. For example: _A teacher prefers to teach in a single room_.
+
+Hard constraints are weighted against other hard constraints. Soft constraints are weighted too, against other soft constraints. Hard constraints always outweigh soft constraints, regardless of their respective weights.
+
+To calculate the score, create a constraint provider function:
+
+[source,python]
+----
+from optapy import constraint_provider, get_class
+from optapy.types import Joiners, HardSoftScore
+
+# Constraint Factory takes Java Classes, not Python Classes
+LessonClass = get_class(Lesson)
+RoomClass = get_class(Room)
+
+@constraint_provider
+def defineConstraints(constraintFactory):
+    return [
+        # Hard constraints
+        roomConflict(constraintFactory),
+        teacherConflict(constraintFactory),
+        studentGroupConflict(constraintFactory),
+        # Soft constraints are only implemented in the optapy-quickstarts code
+    ]
+
+def roomConflict(constraintFactory):
+    # A room can accommodate at most one lesson at the same time.
+    return constraintFactory \
+            .fromUniquePair(LessonClass,
+                [
+                    # ... in the same timeslot ..
+                    Joiners.equal(lambda lesson: lesson.timeslot),
+                    # ... in the same room ...
+                    Joiners.equal(lambda lesson: lesson.room)
+                ]) \
+            .penalize("Room conflict", HardSoftScore.ONE_HARD)
+
+
+def teacherConflict(constraintFactory):
+    # A teacher can teach at most one lesson at the same time.
+    return constraintFactory \
+                .fromUniquePair(LessonClass,
+                        [
+                            Joiners.equal(lambda lesson: lesson.timeslot),
+                            Joiners.equal(lambda lesson: lesson.teacher)
+                        ]) \
+                .penalize("Teacher conflict", HardSoftScore.ONE_HARD)
+
+def studentGroupConflict(constraintFactory):
+    # A student can attend at most one lesson at the same time.
+    return constraintFactory \
+            .fromUniquePair(LessonClass,
+                [
+                    Joiners.equal(lambda lesson: lesson.timeslot),
+                    Joiners.equal(lambda lesson: lesson.studentGroup)
+                ]) \
+            .penalize("Student group conflict", HardSoftScore.ONE_HARD)
+----
+
+The `@constraint_provider` decorator allows OptaPlanner to use a function as a constraint provider.
+The function must take exactly one argument; the passed argument is a `ConstraintFactory` used for creating constraints.
+For more information, see https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintStreams[Constraint Streams in the OptaPlanner Docs].
+
+== Gather the domain objects in a planning solution
+
+A TimeTable wraps all Timeslot, Room, and Lesson instances of a single dataset.
+Furthermore, because it contains all lessons, each with a specific planning variable state, it is a planning solution and it has a score:
+
+- If lessons are still unassigned, then it is an _uninitialized_ solution, for example, a solution with the score -4init/0hard/0soft.
+
+- If it breaks hard constraints, then it is an _infeasible_ solution, for example, a solution with the score -2hard/-3soft.
+
+- If it adheres to all hard constraints, then it is a _feasible_ solution, for example, a solution with the score 0hard/-7soft.
+
+[source,python]
+----
+from optapy import planning_solution, planning_entity_collection_property, problem_fact_collection_property, \
+                   value_range_provider, planning_score
+
+@planning_solution
+class TimeTable:
+    def __init__(self, timeslotList=[], roomList=[], lessonList=[], score=None):
+        self.timeslotList = timeslotList
+        self.roomList = roomList
+        self.lessonList = lessonList
+        self.score = score
+
+    @problem_fact_collection_property(Timeslot)
+    @value_range_provider("timeslotRange")
+    def getTimeslotList(self):
+        return self.timeslotList
+
+    @problem_fact_collection_property(Room)
+    @value_range_provider("roomRange")
+    def value_range_provider(self):
+        return self.roomList
+
+    @planning_entity_collection_property(Lesson)
+    def getLessonList(self):
+        return self.lessonList
+
+    @planning_score(HardSoftScore)
+    def getScore(self):
+        return self.score
+
+    def setScore(self, score):
+        self.score = score
+
+    def __str__(self):
+        return "TimeTable(timeSlotList=" + str(self.timeslotList) + \
+               ",\nroomList=" + str(self.roomList) + ",\nlessonList=" + str(self.lessonList) + \
+               ",\nscore=" + (str(self.score.toString()) if self.score is not None else 'None') + ")"
+----
+
+The `@planning_solution` decorator tells OptaPlanner the class `TimeTable` holds the input and output data.
+The `@problem_fact_collection_property(fact_type)` decorator tells OptaPlanner the function provide problem facts.
+The `fact_type` argument tell OptaPlanner what type of fact it provides (for instance, Rooms).
+
+The `@value_range_provider(range_id)` decorator tell OptaPlanner the function provide a value range, which is used to get possible values of planning variables.
+Its argument, `range_id` is a string which is used in `@planning_variable` decorators to link the two (for example, `@planning_variable(Room, ['roomRange'])` is linked to `@value_range_provider('roomRange')`.
+
+The `@planning_entity_collection_property(entity_type)` decorator tells OptaPlanner the function provide planning entities.
+The `entity_type` argument tell OptaPlanner what type of entities it provides (for instance, Lessons).
+
+The `@planning_score(score_type)` decorator tells OptaPlanner the function returns the score.
+It must be named `get<X>` and have a corresponding a setter `set<X>`.
+The `score_type` argument tell OptaPlanner what type of score to use (for instance, `HardSoftScore`).
+The type should be taken from the `optapy.types` module.
+
+== Solving
+
+To solve, we first need to create an instance of our problem:
+[source,python]
+----
+from datetime import time
+
+def generate_problem():
+    timeslotList = [
+        Timeslot(1, "MONDAY", time(hour=8, minute=30), time(hour=9, minute=30)),
+        Timeslot(2, "MONDAY", time(hour=9, minute=30), time(hour=10, minute=30)),
+        Timeslot(3, "MONDAY", time(hour=10, minute=30), time(hour=11, minute=30)),
+        Timeslot(4, "MONDAY", time(hour=13, minute=30), time(hour=14, minute=30)),
+        Timeslot(5, "MONDAY", time(hour=14, minute=30), time(hour=15, minute=30)),
+        Timeslot(6, "TUESDAY", time(hour=8, minute=30), time(hour=9, minute=30)),
+        Timeslot(7, "TUESDAY", time(hour=9, minute=30), time(hour=10, minute=30)),
+        Timeslot(8, "TUESDAY", time(hour=10, minute=30), time(hour=11, minute=30)),
+        Timeslot(9, "TUESDAY", time(hour=13, minute=30), time(hour=14, minute=30)),
+        Timeslot(10, "TUESDAY", time(hour=14, minute=30), time(hour=15, minute=30)),
+    ]
+    roomList = [
+        Room(1, "Room A"),
+        Room(2, "Room B"),
+        Room(3, "Room C")
+    ]
+    lessonList = [
+        Lesson(1, "Math", "A. Turing", "9th grade"),
+        Lesson(2, "Math", "A. Turing", "9th grade"),
+        Lesson(3, "Physics", "M. Curie", "9th grade"),
+        Lesson(4, "Chemistry", "M. Curie", "9th grade"),
+        Lesson(5, "Biology", "C. Darwin", "9th grade"),
+        Lesson(6, "History", "I. Jones", "9th grade"),
+        Lesson(7, "English", "I. Jones", "9th grade"),
+        Lesson(8, "English", "I. Jones", "9th grade"),
+        Lesson(9, "Spanish", "P. Cruz", "9th grade"),
+        Lesson(10, "Spanish", "P. Cruz", "9th grade"),
+        Lesson(11, "Math", "A. Turing", "10th grade"),
+        Lesson(12, "Math", "A. Turing", "10th grade"),
+        Lesson(13, "Math", "A. Turing", "10th grade"),
+        Lesson(14, "Physics", "M. Curie", "10th grade"),
+        Lesson(15, "Chemistry", "M. Curie", "10th grade"),
+        Lesson(16, "French", "M. Curie", "10th grade"),
+        Lesson(17, "Geography", "C. Darwin", "10th grade"),
+        Lesson(18, "History", "I. Jones", "10th grade"),
+        Lesson(19, "English", "P. Cruz", "10th grade"),
+        Lesson(20, "Spanish", "P. Cruz", "10th grade"),
+    ]
+    lesson = lessonList[0]
+    lesson.setTimeslot(timeslotList[0])
+    lesson.setRoom(roomList[0])
+
+    return TimeTable(timeslotList, roomList, lessonList)
+----
+
+Next, we need to create a `SolverConfig`, which tell OptaPlanner about the problem and what strategies to employ:
+
+[source,python]
+----
+from optapy.types import SolverConfig, Duration
+
+solver_config = SolverConfig().withEntityClasses(get_class(Lesson)) \
+    .withSolutionClass(get_class(TimeTable)) \
+    .withConstraintProviderClass(get_class(defineConstraints)) \
+    .withTerminationSpentLimit(Duration.ofSeconds(30))
+----
+
+For the `SolverConfig` above, we use the default strategies, use the model we defined above, and set it terminate after 30 seconds.
+
+Finally, we pass the `SolverConfig` and the
+problem instance to the `solve` function, which return the last best solution found:
+
+[source,python]
+----
+from optapy import solve
+
+solution = solve(solverConfig, generate_problem())
+print(solution)
+----
+
+The solution returned is a `TimeTable` instance
+of the best solution found.
+When the solution is formatted into a table, it should look similar to this:
+[source,text]
+----
+|------------|------------|------------|------------|
+|            | Room A     | Room B     | Room C     |
+|------------|------------|------------|------------|
+| MON 08:30: |            | Math       | History    |
+|            |            | A. Turing  | I. Jones   |
+|            |            | 9th grade  | 10th grade |
+|------------|------------|------------|------------|
+| MON 09:30: |            | Math       | History    |
+|            |            | A. Turing  | I. Jones   |
+|            |            | 10th grade | 9th grade  |
+|------------|------------|------------|------------|
+| MON 10:30: |            | Math       | English    |
+|            |            | A. Turing  | I. Jones   |
+|            |            | 10th grade | 9th grade  |
+|------------|------------|------------|------------|
+| MON 13:30: | Math       | Spanish    |            |
+|            | A. Turing  | P. Cruz    |            |
+|            | 10th grade | 9th grade  |            |
+|------------|------------|------------|------------|
+| MON 14:30: | Math       | English    |            |
+|            | A. Turing  | P. Cruz    |            |
+|            | 9th grade  | 10th grade |            |
+|------------|------------|------------|------------|
+| TUE 08:30: | Physics    | Spanish    |            |
+|            | M. Curie   | P. Cruz    |            |
+|            | 9th grade  | 10th grade |            |
+|------------|------------|------------|------------|
+| TUE 09:30: | Chemistry  |            | English    |
+|            | M. Curie   |            | I. Jones   |
+|            | 10th grade |            | 9th grade  |
+|------------|------------|------------|------------|
+| TUE 10:30: | Physics    | Spanish    |            |
+|            | M. Curie   | P. Cruz    |            |
+|            | 10th grade | 9th grade  |            |
+|------------|------------|------------|------------|
+| TUE 13:30: | French     |            | Biology    |
+|            | M. Curie   |            | C. Darwin  |
+|            | 10th grade |            | 9th grade  |
+|------------|------------|------------|------------|
+| TUE 14:30: | Chemistry  | Geography  |            |
+|            | M. Curie   | C. Darwin  |            |
+|            | 9th grade  | 10th grade |            |
+|------------|------------|------------|------------|
+----
+
+== Run the application
+
+To run the application, put all the code
+into a single Python file and run it:
+[source,bash]
+----
+python3 main.py
+----
+
+== Conclusion
+
+With OptaPy, Python projects can now use OptaPlanner without needing to write any Java code.
+The full example can be found in the https://github.com/optapy/optapy/tree/main/optapy-quickstarts/school-timetabling[OptaPy quickstarts].
