@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-parent</artifactId>
+    <version>37</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>org.optaplanner</groupId>
+  <artifactId>optaplanner-website-docs</artifactId>
+  <packaging>pom</packaging>
+  <version>999-SNAPSHOT</version>
+
+  <name>OptaPlanner documentation assembly</name>
+
+  <properties>
+    <antora.playbook>antora-playbook.yml</antora.playbook>
+    <version.antora>2.3.3</version.antora>
+    <version.node>v12.18.2</version.node>
+    <version.npm>6.14.5</version.npm>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>node</directory>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+            <fileset>
+              <directory>node_modules</directory>
+              <followSymlinks>false</followSymlinks>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.10.0</version>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <nodeVersion>${version.node}</nodeVersion>
+              <npmVersion>${version.npm}</npmVersion>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm install antora</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <arguments>install @antora/cli@${version.antora} @antora/site-generator-default@${version.antora} antora-site-generator-lunr</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>compile</phase>
+            <configuration>
+              <executable>node/node</executable>
+              <environmentVariables>
+                <DOCSEARCH_ENABLED>true</DOCSEARCH_ENABLED>
+                <DOCSEARCH_ENGINE>lunr</DOCSEARCH_ENGINE>
+                <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
+              </environmentVariables>
+              <arguments>
+                <argument>node_modules/.bin/antora</argument>
+                <argument>--generator</argument>
+                <argument>antora-site-generator-lunr</argument>
+                <argument>${antora.playbook}</argument>
+                <argument>--to-dir=target/website/docs</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <!-- Enables the Antora author mode https://docs.antora.org/antora/2.3/playbook/author-mode/. -->
+      <id>author</id>
+      <properties>
+        <antora.playbook>antora-playbook-author.yml</antora.playbook>
+      </properties>
+    </profile>
+  </profiles>
+</project>

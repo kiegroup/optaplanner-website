@@ -33,6 +33,10 @@
     </license>
   </licenses>
 
+  <modules>
+    <module>optaplanner-website-docs</module>
+  </modules>
+
   <build>
     <plugins>
       <plugin>

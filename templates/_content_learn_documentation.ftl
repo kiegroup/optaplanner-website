@@ -25,7 +25,10 @@
             <div class="ulist">
                 <ul>
                     <li>
-                        <p><span class="image"><img src="documentation.png" alt="Documentation"></span> OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
+                       <p><span class="image"><img src="documentation.png" alt="Documentation"></span><a href="${content.rootpath}docs">Try the new documentation website.</a></p>
+                    </li>
+                    <li>
+                        <p>OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
                         <div class="ulist">
                             <ul>
                                 <li>

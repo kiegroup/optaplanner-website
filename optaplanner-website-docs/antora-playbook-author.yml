@@ -1,0 +1,18 @@
+# This file serves for local development. Keep it in sync with antora-playbook.yml.
+site:
+  title: OptaPlanner Documentation
+  url: /
+  start_page: optaplanner-docs::planner-introduction/planner-introduction.adoc
+  robots: allow
+  keys:
+    google_analytics: 'UA-39485370-1'
+content:
+  sources:
+    # Assuming the optaplanner local repository resides next to the optaplanner-website.
+    - url: ../../optaplanner
+      branches: [HEAD]
+      start_path: optaplanner-docs/src
+ui:
+  bundle:
+    url: ./ui-bundle/ui-bundle.zip
+  supplemental_files: ./supplemental-ui
