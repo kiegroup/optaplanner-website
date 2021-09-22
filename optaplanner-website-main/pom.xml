@@ -18,7 +18,6 @@
       <plugin>
         <groupId>org.jbake</groupId>
         <artifactId>jbake-maven-plugin</artifactId>
-        <version>0.3.6-rc.2</version>
         <executions>
           <execution>
             <phase>generate-resources</phase>
@@ -57,7 +56,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.3.0</version>
         <executions>
           <execution>
             <phase>package</phase>
