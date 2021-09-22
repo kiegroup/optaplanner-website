@@ -2,7 +2,7 @@
 # For local development, see antora-playbook-author.yml.
 site:
   title: OptaPlanner Documentation
-  url: /
+  url: https://www.optaplanner.org/docs
   start_page: optaplanner-docs::planner-introduction/planner-introduction.adoc
   robots: allow
   keys:
