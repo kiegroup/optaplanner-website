@@ -137,7 +137,7 @@
                     <div class="sponsorMessage mb-2">
                         <span>Sponsored by</span>
                         <br>
-                        <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" height="48px" width="164px"></a>
+                        <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" width="164px"></a>
                     </div>
                     <div class="sponsorMessage mb-2">
                         <span>More coder content at</span>
