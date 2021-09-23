@@ -14,6 +14,14 @@
  * limitations under the License.
  */
 
+/* Bootstrap 5 tweak: do not underline links unless hovered over */
+a:not([class*="btn"]) {
+    text-decoration: none;
+}
+a:not([class*="btn"]):hover {
+    text-decoration: underline;
+}
+
 img {
     /* No images in release notes and blog posts wider than screen. Also mobile friendly. */
     max-width: 100%;
