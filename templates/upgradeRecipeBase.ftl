@@ -18,23 +18,23 @@
             <p>Every upgrade note has an indication how likely your code will be affected by that change:</p>
             <ul class="upgrade-recipe-label-list">
                 <li>
-                    <span class="label label-danger label-as-badge">Major</span>
+                    <span class="badge bg-danger label-as-badge">Major</span>
                     Likely to affect your code.
                 </li>
                 <li>
-                    <span class="label label-warning label-as-badge">Minor</span>
+                    <span class="badge bg-warning label-as-badge">Minor</span>
                     Unlikely to affect your code (especially if you followed the examples), unless you have hacks.
                 </li>
                 <li>
-                    <span class="label label-info label-as-badge">Impl detail</span>
+                    <span class="badge bg-info label-as-badge">Impl detail</span>
                     Will not affect your code, unless you have very deep hacks.
                 </li>
                 <li>
-                    <span class="label label-primary label-as-badge">Recommended</span>
+                    <span class="badge bg-primary label-as-badge">Recommended</span>
                     Not a backward incompatible change, but you probably want to do this.
                 </li>
                 <li>
-                    <span class="label label-success label-as-badge">Readme</span>
+                    <span class="badge bg-success label-as-badge">Readme</span>
                     Read this to better understand why the subsequent major changes were made.
                 </li>
             </ul>

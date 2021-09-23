@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-html {
-    background-color: #f8f8f8;
-}
-body {
+img {
+    /* No images in release notes and blog posts wider than screen. Also mobile friendly. */
+    max-width: 100%;
 }
 
+/* TODO use bootstrap color classes (bg-dark etc) in footer */
+
 footer {
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     color: rgba(255,255,255,.5);
     background-color: #1b1c1d;
 }
@@ -33,7 +31,6 @@ footer h4 {
 }
 footer ul {
     list-style: none;
-    padding-left: 10px;
 }
 
 footer a {
@@ -46,7 +43,6 @@ footer a:hover, footer a:focus {
 
 footer .sponsorMessage {
     color: rgba(255,255,255,.5);
-    margin-bottom: 10px;
 }
 
 .forkMeOnGithub {
@@ -54,6 +50,7 @@ footer .sponsorMessage {
     right: 0;
     border: 0;
     max-width: 20%;
+    z-index: 1;
 }
 
 .versionedButton > img {
@@ -64,46 +61,6 @@ footer .sponsorMessage {
     text-align: left;
     display: inline-block;
     white-space: normal;
-}
-
-/* Twitter bootstrap's navbar-fixed-top's hides content head */
-@media (max-width: 380px) {
-    .navbar-brand img {
-        max-width: 150px;
-    }
-}
-@media (max-width: 767px) {
-    .body-without-header-footer {
-        padding-top: 40px;
-    }
-}
-@media (min-width: 768px) {
-    .body-without-header-footer {
-        padding-top: 90px;
-    }
-}
-@media (min-width: 992px) {
-    .body-without-header-footer {
-        padding-top: 40px;
-    }
-}
-
-/* Menu look, especially needed on small media */
-li.navbar-form {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-img {
-    /* Mobile friendly: No content wider than screen */
-    max-width: 100%;
-}
-
-iframe.youtube, .videoblock iframe {
-    width: 853px;
-    height: 480px;
-    /* Mobile friendly: No content wider than screen */
-    max-width: 100%;
 }
 
 .summaryParagraph {
@@ -118,13 +75,30 @@ iframe.youtube, .videoblock iframe {
     color: #A40000;
 }
 
-/******************************************************************************
-* Upgrade recipe
-******************************************************************************/
-
 .line-through {
     text-decoration: line-through;
 }
+
+/******************************************************************************
+* Asciidoctor tweaks
+******************************************************************************/
+
+/* Make Asciidoctor's ".listingblock > .content > pre" act like bootstrap's "code > pre" */
+.listingblock > .content {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    padding: 0.5rem !important; /* Simulate p-2 */
+    margin: 0 0 1.0rem; /* Simulate mb-3 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.listingblock > .content > pre {
+    margin: 0;
+}
+
+/******************************************************************************
+* Upgrade recipe
+******************************************************************************/
 
 ul.upgrade-recipe-label-list {
     padding-left: 10px;
@@ -164,6 +138,10 @@ a.upgrade-recipe-note-header {
     text-decoration: line-through;
 }
 
+.label-public-api {
+    background-color: #6f5499;
+}
+
 /******************************************************************************
 * Blog content
 ******************************************************************************/
@@ -193,149 +171,132 @@ td > p:last-child {
 * Components
 ******************************************************************************/
 
-/* Reduce space taken by alerts */
-.alert {
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-.alert-dismissable .close {
-    top: 0;
-    right: 0;
-}
+/*!* Reduce space taken by alerts *!*/
+/*.alert {*/
+/*    margin-top: 0;*/
+/*    margin-bottom: 20px;*/
+/*    padding: 10px;*/
+/*}*/
+/*.alert-dismissable .close {*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*}*/
 
-.label-public-api {
-    background-color: #6f5499;
-}
-
-/* Carousel: center images, remove gradient, tabs instead of indicators */
-.frontPageCarousel .item > img {
+#frontPageCarousel .carousel-item * {
+    max-height: 600px;
+    max-width: 800px;
+    display: flex;
     margin: 0 auto;
-    display: block;
-}
-.frontPageCarousel .carousel-control.left, .carousel-control.right {
-    background-image: none;
-    color: inherit;
-}
-.frontPageCarouselButtons > li {
-    vertical-align: bottom;
-}
-.frontPageCarouselButtons > li.active a {
-    background-color: white;
-    color: inherit;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    border-radius: 4px 4px 0 0;
 }
 
-/******************************************************************************
-* Tabs left, right and below (not supported in Twitter Bootstrap 3.1)
-******************************************************************************/
+/*!*******************************************************************************/
+/** Tabs left, right and below (not supported in Twitter Bootstrap 3.1)*/
+/*******************************************************************************!*/
 
-.tabs-below > .nav-tabs,
-.tabs-right > .nav-tabs,
-.tabs-left > .nav-tabs {
-    border-bottom: 0;
-}
+/*.tabs-below > .nav-tabs,*/
+/*.tabs-right > .nav-tabs,*/
+/*.tabs-left > .nav-tabs {*/
+/*    border-bottom: 0;*/
+/*}*/
 
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
-    display: none;
-}
+/*.tab-content > .tab-pane,*/
+/*.pill-content > .pill-pane {*/
+/*    display: none;*/
+/*}*/
 
-.tab-content > .active,
-.pill-content > .active {
-    display: block;
-}
+/*.tab-content > .active,*/
+/*.pill-content > .active {*/
+/*    display: block;*/
+/*}*/
 
-.tabs-below > .nav-tabs {
-    border-top: 1px solid #ddd;
-}
+/*.tabs-below > .nav-tabs {*/
+/*    border-top: 1px solid #ddd;*/
+/*}*/
 
-.tabs-below > .nav-tabs > li {
-    margin-top: -1px;
-    margin-bottom: 0;
-}
+/*.tabs-below > .nav-tabs > li {*/
+/*    margin-top: -1px;*/
+/*    margin-bottom: 0;*/
+/*}*/
 
-.tabs-below > .nav-tabs > li > a {
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
-}
+/*.tabs-below > .nav-tabs > li > a {*/
+/*    -webkit-border-radius: 0 0 4px 4px;*/
+/*    -moz-border-radius: 0 0 4px 4px;*/
+/*    border-radius: 0 0 4px 4px;*/
+/*}*/
 
-.tabs-below > .nav-tabs > li > a:hover,
-.tabs-below > .nav-tabs > li > a:focus {
-    border-top-color: #ddd;
-    border-bottom-color: transparent;
-}
+/*.tabs-below > .nav-tabs > li > a:hover,*/
+/*.tabs-below > .nav-tabs > li > a:focus {*/
+/*    border-top-color: #ddd;*/
+/*    border-bottom-color: transparent;*/
+/*}*/
 
-.tabs-below > .nav-tabs > .active > a,
-.tabs-below > .nav-tabs > .active > a:hover,
-.tabs-below > .nav-tabs > .active > a:focus {
-    border-color: transparent #ddd #ddd #ddd;
-}
+/*.tabs-below > .nav-tabs > .active > a,*/
+/*.tabs-below > .nav-tabs > .active > a:hover,*/
+/*.tabs-below > .nav-tabs > .active > a:focus {*/
+/*    border-color: transparent #ddd #ddd #ddd;*/
+/*}*/
 
-.tabs-left > .nav-tabs > li,
-.tabs-right > .nav-tabs > li {
-    float: none;
-}
+/*.tabs-left > .nav-tabs > li,*/
+/*.tabs-right > .nav-tabs > li {*/
+/*    float: none;*/
+/*}*/
 
-.tabs-left > .nav-tabs > li > a,
-.tabs-right > .nav-tabs > li > a {
-    min-width: 74px;
-    margin-right: 0;
-    margin-bottom: 3px;
-}
+/*.tabs-left > .nav-tabs > li > a,*/
+/*.tabs-right > .nav-tabs > li > a {*/
+/*    min-width: 74px;*/
+/*    margin-right: 0;*/
+/*    margin-bottom: 3px;*/
+/*}*/
 
-.tabs-left > .nav-tabs {
-    float: left;
-    margin-right: 19px;
-    border-right: 1px solid #ddd;
-}
+/*.tabs-left > .nav-tabs {*/
+/*    float: left;*/
+/*    margin-right: 19px;*/
+/*    border-right: 1px solid #ddd;*/
+/*}*/
 
-.tabs-left > .nav-tabs > li > a {
-    margin-right: -1px;
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-}
+/*.tabs-left > .nav-tabs > li > a {*/
+/*    margin-right: -1px;*/
+/*    -webkit-border-radius: 4px 0 0 4px;*/
+/*    -moz-border-radius: 4px 0 0 4px;*/
+/*    border-radius: 4px 0 0 4px;*/
+/*}*/
 
-.tabs-left > .nav-tabs > li > a:hover,
-.tabs-left > .nav-tabs > li > a:focus {
-    border-color: #eeeeee #dddddd #eeeeee #eeeeee;
-}
+/*.tabs-left > .nav-tabs > li > a:hover,*/
+/*.tabs-left > .nav-tabs > li > a:focus {*/
+/*    border-color: #eeeeee #dddddd #eeeeee #eeeeee;*/
+/*}*/
 
-.tabs-left > .nav-tabs .active > a,
-.tabs-left > .nav-tabs .active > a:hover,
-.tabs-left > .nav-tabs .active > a:focus {
-    border-color: #ddd transparent #ddd #ddd;
-    *border-right-color: #ffffff;
-}
+/*.tabs-left > .nav-tabs .active > a,*/
+/*.tabs-left > .nav-tabs .active > a:hover,*/
+/*.tabs-left > .nav-tabs .active > a:focus {*/
+/*    border-color: #ddd transparent #ddd #ddd;*/
+/*    *border-right-color: #ffffff;*/
+/*}*/
 
-.tabs-right > .nav-tabs {
-    float: right;
-    margin-left: 19px;
-    border-left: 1px solid #ddd;
-}
+/*.tabs-right > .nav-tabs {*/
+/*    float: right;*/
+/*    margin-left: 19px;*/
+/*    border-left: 1px solid #ddd;*/
+/*}*/
 
-.tabs-right > .nav-tabs > li > a {
-    margin-left: -1px;
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
-}
+/*.tabs-right > .nav-tabs > li > a {*/
+/*    margin-left: -1px;*/
+/*    -webkit-border-radius: 0 4px 4px 0;*/
+/*    -moz-border-radius: 0 4px 4px 0;*/
+/*    border-radius: 0 4px 4px 0;*/
+/*}*/
 
-.tabs-right > .nav-tabs > li > a:hover,
-.tabs-right > .nav-tabs > li > a:focus {
-    border-color: #eeeeee #eeeeee #eeeeee #dddddd;
-}
+/*.tabs-right > .nav-tabs > li > a:hover,*/
+/*.tabs-right > .nav-tabs > li > a:focus {*/
+/*    border-color: #eeeeee #eeeeee #eeeeee #dddddd;*/
+/*}*/
 
-.tabs-right > .nav-tabs .active > a,
-.tabs-right > .nav-tabs .active > a:hover,
-.tabs-right > .nav-tabs .active > a:focus {
-    border-color: #ddd #ddd #ddd transparent;
-    *border-left-color: #ffffff;
-}
+/*.tabs-right > .nav-tabs .active > a,*/
+/*.tabs-right > .nav-tabs .active > a:hover,*/
+/*.tabs-right > .nav-tabs .active > a:focus {*/
+/*    border-color: #ddd #ddd #ddd transparent;*/
+/*    *border-left-color: #ffffff;*/
+/*}*/
 
 .download-nav-tabs {
     margin-bottom: 0px;

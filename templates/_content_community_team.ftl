@@ -35,7 +35,7 @@
 <#macro listUserBadges userIds>
     <ul style="list-style: none">
         <#list userIds as userId>
-            <li>
+            <li class="mb-4">
                 <@macros.userBadge userId="${userId}" long=true/>
             </li>
         </#list>

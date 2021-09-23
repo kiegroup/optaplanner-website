@@ -5,10 +5,10 @@
 <@parent.layout
         title="Tag: ${tag}"
         description="Blog pages with the tag ${tag}">
-    <h1>Tag: ${tag}</h1>
+    <h1>Blog posts with the tag ${tag}</h1>
     <ul>
         <#list tag_posts as blog>
-            <li style="margin-bottom: 10px;">
+            <li class="mb-2">
                 <div class="title">
                     <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
                 </div>

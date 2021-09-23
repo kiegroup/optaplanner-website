@@ -9,7 +9,7 @@
     <h1>${content.title}</h1>
     <ul>
         <#list published_posts as blog>
-            <li style="margin-bottom: 10px;">
+            <li class="mb-2">
                 <div class="title">
                     <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
                 </div>

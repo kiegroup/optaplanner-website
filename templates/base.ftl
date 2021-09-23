@@ -39,79 +39,74 @@
     <meta content="summary" name="twitter:card">
     <meta content="@OptaPlanner" name="twitter:site">
 
-    <link href="${content.rootpath}website/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${content.rootpath}website/highlight/highlight.css" rel="stylesheet">
-    <link href="${content.rootpath}website/optaplannerWebsite.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="${content.rootpath}website/highlight/highlight.css">
+    <link rel="stylesheet" href="${content.rootpath}website/optaplannerWebsite.css">
     <link href="${content.rootpath}favicon.ico" rel="shortcut icon">
 </head>
 
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
-    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <div class="navbar-header">
-                <a class="button navbar-toggle" data-target="#baseNavigation" data-toggle="collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="navbar-brand" href="${content.rootpath}" style="padding: 10px;">
-                    <img alt="OptaPlanner logo" src="${content.rootpath}headerFooter/optaPlannerLogo200px.png">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="baseNavigation">
-                <ul class="nav navbar-nav">
-                    <li><a href="${content.rootpath}">Home</a></li>
-                    <li><a href="${content.rootpath}download/download.html">Download</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Learn <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="${content.rootpath}learn/documentation.html">Documentation</a></li>
-                            <li><a href="${content.rootpath}learn/video.html">Videos</a></li>
-                            <li><a href="${content.rootpath}learn/slides.html">Slides</a></li>
-                            <li><a href="${content.rootpath}learn/training.html">Training</a></li>
-                            <li class="divider"></li>
-                            <li><a href="${content.rootpath}learn/useCases/index.html">Use cases</a></li>
-                            <li><a href="${content.rootpath}compatibility/index.html">Compatibility</a></li>
-                            <li><a href="${content.rootpath}learn/testimonialsAndCaseStudies.html">Testimonials and case studies</a></li>
+            <a class="navbar-brand" href="#">
+                <img alt="OptaPlanner logo" src="${content.rootpath}headerFooter/optaPlannerLogo200px.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}download/download.html">Download</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLearn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarLearn">
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/documentation.html">Documentation</a></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/video.html">Videos</a></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/slides.html">Slides</a></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/training.html">Training</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/useCases/index.html">Use cases</a></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}compatibility/index.html">Compatibility</a></li>
+                            <li><a class="dropdown-item" href="${content.rootpath}learn/testimonialsAndCaseStudies.html">Testimonials and case studies</a></li>
                         </ul>
                     </li>
-                    <li><a href="${content.rootpath}community/getHelp.html">Get help</a></li>
-                    <li><a href="${content.rootpath}code/sourceCode.html">Source</a></li>
-                    <li><a href="${content.rootpath}community/team.html">Team</a></li>
-                    <li><a href="${content.rootpath}product/services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}community/getHelp.html">Get help</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}code/sourceCode.html">Source</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}community/team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}product/services.html">Services</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li style="padding: 12px 5px"><a aria-label="Star OptaPlanner on GitHub" class="github-button" data-show-count="true" href="https://github.com/kiegroup/optaplanner">Star</a></li>
-                    <li style="padding: 12px 5px"><a href="https://twitter.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
-                    <li style="padding: 12px 5px"><a href="https://www.facebook.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
-                    <li style="padding: 12px 5px"><a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" style="padding: 0" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="${content.rootpath}headerFooter/youtubeLogo.png" style="height: 16px"></a></li>
+                <ul class="navbar-nav">
+                    <li class="p-2"><a aria-label="Star OptaPlanner on GitHub" class="github-button" data-show-count="true" href="https://github.com/kiegroup/optaplanner">Star</a></li>
+                    <li class="p-1"><a href="https://twitter.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
+                    <li class="p-1"><a href="https://www.facebook.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
+                    <li class="p-1"><a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" style="padding: 0" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="${content.rootpath}headerFooter/youtubeLogo.png" style="height: 16px"></a></li>
                 </ul>
             </div>
         </div>
-    </header>
+    </nav>
+
     <div class="body-without-header-footer">
         <div class="forkMeOnGithub">
             <a href="https://github.com/kiegroup/optaplanner">
                 <img alt="Fork me on GitHub" src="${content.rootpath}headerFooter/forkMeOnGithub.png">
             </a>
         </div>
-        <div class="container" style="padding-top: 20px;">
+        <div class="container py-4">
         <#nested>
         </div>
     </div>
-    <footer>
+    <footer class="py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <h4>KIE projects</h4>
-                    <ul>
+                    <ul class="pl-2">
                         <li><a href="https://www.drools.org/" target="_blank">Drools rule engine</a></li>
                         <li><a href="https://www.optaplanner.org/" target="_blank">OptaPlanner constraint solver</a></li>
                         <li><a href="https://www.jbpm.org/" target="_blank">jBPM workflow engine</a></li>
@@ -120,7 +115,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Community</h4>
-                    <ul>
+                    <ul class="pl-2">
                         <li><a href="${content.rootpath}blog/">Blog</a></li>
                         <li><a href="${content.rootpath}community/getHelp.html">Get Help</a></li>
                         <li><a href="${content.rootpath}community/team.html">Team</a></li>
@@ -130,7 +125,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Code</h4>
-                    <ul>
+                    <ul class="pl-2">
                         <li><a href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
                         <li><a href="${config.issueTracker}">Submit a bug</a></li>
                         <li><a href="${content.rootpath}code/license.html">License (Apache-2.0)</a></li>
@@ -139,12 +134,12 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <div class="sponsorMessage">
+                    <div class="sponsorMessage mb-2">
                         <span>Sponsored by</span>
                         <br>
                         <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" height="48px" width="164px"></a>
                     </div>
-                    <div class="sponsorMessage">
+                    <div class="sponsorMessage mb-2">
                         <span>More coder content at</span>
                         <br>
                         <a href="https://developers.redhat.com/"><img alt="Red Hat Developers" height="48" src="${content.rootpath}headerFooter/redHatDevelopersLogo.png" width="164"></a>
@@ -164,8 +159,10 @@
             </div>
         </div>
     </footer>
-    <script src="${content.rootpath}website/jquery/jquery.min.js"></script>
-    <script src="${content.rootpath}website/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="${content.rootpath}website/highlight/highlight.js"></script>
     <script src="${content.rootpath}website/optaplannerWebsite.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
