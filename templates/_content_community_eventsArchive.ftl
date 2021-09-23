@@ -10,7 +10,7 @@
     <h1>${content.title}</h1>
     <ul class="list-unstyled">
         <#list events?reverse as event>
-            <li style="margin-bottom: 10px;">
+            <li class="mb-2">
                 <div class="title">
                     <#if event.eventUrl??>
                         <a href="${event.eventUrl}">${event.eventOrganization}</a>
@@ -23,7 +23,7 @@
                     <#if event.talks??>
                         <ul class="list-unstyled">
                             <#list event.talks as talk>
-                                <li style="margin-left: 20px;">
+                                <li class="ms-4">
                                     <#if talk.url??>
                                         <a href="${talk.url}">${talk.title}</a>
                                     <#else>

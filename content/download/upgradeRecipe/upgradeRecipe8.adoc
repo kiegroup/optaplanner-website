@@ -12,7 +12,7 @@ it allows us to make backwards incompatible changes to the public API _for the l
 We kept these backwards incompatible changes to a strict minimum
 and will not introduce any additional ones during the 8.x era.
 
-Any backwards incompatible changes are annotated with a [.label.label-danger.label-as-badge.label-public-api]#Public API# badge.
+Any backwards incompatible changes are annotated with a [.badge.label-as-badge.label-public-api]#Public API# badge.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === Java 11 or higher required

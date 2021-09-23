@@ -9,19 +9,19 @@
     <#assign pom = data.get('pom.yml')>
     <h1>${content.title}</h1>
     <h2 id="FinalReleases">Final releases</h2>
-    <ul class="nav nav-tabs download-nav-tabs">
-        <li class="active">
-            <a data-toggle="pill" href="#engine">Engine</a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="engine-tab" data-bs-toggle="tab" data-bs-target="#engine" type="button" role="tab" aria-controls="engine" aria-selected="true">Engine</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-employee-rostering">OptaWeb Employee Rostering</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="optaweb-employee-rostering-tab" data-bs-toggle="tab" data-bs-target="#optaweb-employee-rostering" type="button" role="tab" aria-controls="optaweb-employee-rostering" aria-selected="false">OptaWeb Employee Rostering</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-vehicle-routing">OptaWeb Vehicle Routing</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="optaweb-vehicle-routing-tab" data-bs-toggle="tab" data-bs-target="#optaweb-vehicle-routing" type="button" role="tab" aria-controls="optaweb-vehicle-routing" aria-selected="false">OptaWeb Vehicle Routing</button>
         </li>
     </ul>
-    <div class="tab-content download-tab-content">
-        <div class="tab-pane fade in active" id="engine">
+    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
+        <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
             <div class="sect2">
                 <h3>Distribution zip</h3>
                 <div class="paragraph">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-employee-rostering">
+        <div class="tab-pane fade" id="optaweb-employee-rostering" role="tabpanel" aria-labelledby="optaweb-employee-rostering-tab">
             <div class="ulist">
                 <ul>
                     <li>
@@ -108,7 +108,7 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing">
+        <div class="tab-pane fade" id="optaweb-vehicle-routing" role="tabpanel" aria-labelledby="optaweb-vehicle-routing-tab">
             <div class="ulist">
                 <ul>
                     <li>
@@ -138,13 +138,13 @@
     <#if pom.latest.version == pom.latestFinal.version>
         <p><em>There is no Alpha or Beta yet because we just released a Final version.</em></p>
     <#else>
-        <ul class="nav nav-tabs download-nav-tabs">
-            <li class="active">
-                <a data-toggle="pill" href="#engine-latest">Engine</a>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="engine-latest-tab" data-bs-toggle="tab" data-bs-target="#engine-latest" type="button" role="tab" aria-controls="engine-latest" aria-selected="true">Engine</button>
             </li>
         </ul>
-        <div class="tab-content download-tab-content">
-            <div class="tab-pane fade in active" id="engine-latest">
+        <div class="tab-content border-bottom border-start border-end p-4 mb-4">
+            <div class="tab-pane fade show active" id="engine-latest" role="tabpanel" aria-labelledby="engine-latest-tab">
                 <div class="sect2">
                     <h3>Distribution zip</h3>
                     <div class="ulist">
@@ -192,19 +192,19 @@
     
     <h3 id="NightlySnapshots">Nightly snapshots</h3>
     <p>Nightly snapshots are unstable binaries, built automatically by our CI server.</p>
-    <ul class="nav nav-tabs download-nav-tabs">
-        <li class="active">
-            <a data-toggle="pill" href="#engine-nightly">Engine</a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="engine-nightly-tab" data-bs-toggle="tab" data-bs-target="#engine-nightly" type="button" role="tab" aria-controls="engine-nightly" aria-selected="true">Engine</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-employee-rostering-nightly">OptaWeb Employee Rostering</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="optaweb-employee-rostering-nightly-tab" data-bs-toggle="tab" data-bs-target="#optaweb-employee-rostering-nightly" type="button" role="tab" aria-controls="optaweb-employee-rostering-nightly" aria-selected="false">OptaWeb Employee Rostering</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-vehicle-routing-nightly">OptaWeb Vehicle Routing</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="optaweb-vehicle-routing-nightly-tab" data-bs-toggle="tab" data-bs-target="#optaweb-vehicle-routing-nightly" type="button" role="tab" aria-controls="optaweb-vehicle-routing-nightly" aria-selected="false">OptaWeb Vehicle Routing</button>
         </li>
     </ul>
-    <div class="tab-content download-tab-content">
-        <div class="tab-pane fade in active" id="engine-nightly">
+    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
+        <div class="tab-pane fade show active" id="engine-nightly" role="tabpanel" aria-labelledby="engine-nightly-tab">
             <div class="ulist">
                 <ul>
                     <li>
@@ -213,7 +213,7 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-employee-rostering-nightly">
+        <div class="tab-pane fade" id="optaweb-employee-rostering-nightly" role="tabpanel" aria-labelledby="optaweb-employee-rostering-nightly-tab">
             <div class="ulist">
                 <ul>
                     <li>
@@ -222,7 +222,7 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing-nightly">
+        <div class="tab-pane fade" id="optaweb-vehicle-routing-nightly" role="tabpanel" aria-labelledby="optaweb-vehicle-routing-nightly-tab">
             <div class="ulist">
                 <ul>
                     <li>

@@ -10,27 +10,30 @@
             <#nested/>
         </div>
         <div class="col-md-3">
-            <div class="jumbotron" style="padding: 10px;">
-                <div class="text-center"><a class="btn btn-default btn-lg" href="${content.rootpath}blog/news.atom" style="margin-top: 10px;" type="button">
-                        <img alt="Atom" src="${content.rootpath}headerFooter/atomFeedIcon.png">
-                        News feed
+            <div class="card p-2">
+                <div class="text-center">
+                    <a href="${content.rootpath}blog/news.atom">
+                        <img class="me-1" alt="Atom" src="${content.rootpath}headerFooter/atomFeedIcon.png">News feed
                     </a>
-                    <div class="small" style="margin-top: 10px;">
+                    <div class="small">
                         <span>Don't want to miss a single blog post?</span>
                         <br>
                         <span>Follow us on</span>
                     </div>
-                    <ul class="list-inline">
-                        <li><a href="https://twitter.com/OptaPlanner" target="_blank" title="News stream via Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
-                        <li><a href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="https://twitter.com/OptaPlanner" target="_blank" title="News stream via Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/OptaPlanner" target="_blank" title="News stream via Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
                     </ul>
-                    <a class="btn btn-default" href="${content.rootpath}blog/index.html" type="button">
-                        Blog archive
-                    </a></div>
+                    <a href="${content.rootpath}blog/index.html">Blog archive</a>
+                </div>
             </div>
+            <div class="mb-4"></div>
             <@macros.latestReleases/>
+            <div class="mb-4"></div>
             <@macros.latestEvents/>
+            <div class="mb-4"></div>
             <@macros.latestBlogPosts/>
+            <div class="mb-4"></div>
             <@macros.latestVideos/>
         </div>
     </div>

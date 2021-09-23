@@ -17,15 +17,15 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center" style="margin-bottom: 10px"><a class="btn btn-lg btn-success versionedButton" href="https://stackoverflow.com/questions/tagged/optaplanner"><img alt="Question" src="question.png">
-                    <div>
-                        <span>Ask/view questions on StackOverflow</span>
-                    </div></a>
+            <div class="text-center mb-4"><a class="btn btn-lg btn-primary" href="https://stackoverflow.com/questions/tagged/optaplanner">
+                    <i class="fas fa-question-circle"></i>&nbsp;Ask/view questions on StackOverflow
+                </a>
                 <div class="small">
                     Opinionated questions aren't welcome on StackOverflow,
                     <br>
                     so those belong on our discussion forum below.
-                </div></div>
+                </div>
+            </div>
             <div class="paragraph">
                 <p>To get a helpful answer, follow <a href="https://stackoverflow.com/help/how-to-ask">the StackOverflow guidelines</a> such as:</p>
             </div>
@@ -53,12 +53,12 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center"><a class="btn btn-default versionedButton" href="${config.issueTracker}"><div>
-                        <span>Create an issue in JIRA</span>
-                    </div></a>
+            <div class="text-center">
+                <a class="btn btn-secondary" href="${config.issueTracker}">Create an issue in JIRA</a>
                 <div class="small">
                     Do not use our issue tracker for questions.
-                </div></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -72,36 +72,30 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center"><a class="btn btn-default versionedButton" href="${config.googleGroupURL}"><div>
-                        <span>Start/view discussions on our forum</span>
-                    </div></a>
+            <div class="text-center">
+                <a class="btn btn-secondary" href="${config.googleGroupURL}">Start/view discussions on our forum</a>
                 <div class="small">
                     Please don't cross post to both our forum and StackOverflow.
-                </div></div>
+                </div>
+            </div>
         </div>
         <div class="col-md-5">
-            <div class="panel panel-default">
-                <div class="panel-body" style="padding-top: 0">
-                    <div class="sect1">
-                        <h2 id="_customer_support">Customer support</h2>
-                        <div class="sectionbody">
-                            <div class="paragraph">
-                                <p>Red Hat offers support for Red Hat Decision Manager and Red Hat Process Automation Manager. Both enterprise products include OptaPlanner. For a fast and detailed answer, open a support case with Red Hat.</p>
-                            </div>
-                            <div class="paragraph">
-                                <p>Red Hat sponsors this open source project by employing its core developers.
-                                    They have a dedicated QA and support team around the enterprise version of this project.</p>
-                            </div>
-                        </div>
+            <div class="sect1">
+                <h2 id="_customer_support">Customer support</h2>
+                <div class="sectionbody">
+                    <div class="paragraph">
+                        <p>Red Hat offers support for Red Hat Decision Manager and Red Hat Process Automation Manager. Both enterprise products include OptaPlanner. For a fast and detailed answer, open a support case with Red Hat.</p>
                     </div>
-                    <div class="text-center"><a class="btn btn-default versionedButton" href="https://access.redhat.com/support/cases/#/case/new"><div>
-                                <span>Open a support case</span>
-                            </div></a>
-                        <div class="small">
-                            <div class="paragraph">
-                                <p>This requires <a href="${content.rootpath}product/services.html">a paid support subscription</a>.</p>
-                            </div>
-                        </div></div>
+                    <div class="paragraph">
+                        <p>Red Hat sponsors this open source project by employing its core developers.
+                            They have a dedicated QA and support team around the enterprise version of this project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-secondary" href="https://access.redhat.com/support/cases/#/case/new">Open a support case</a>
+                <div class="small">
+                    This requires <a href="${content.rootpath}product/services.html">a paid support subscription</a>.
                 </div>
             </div>
         </div>

@@ -9,9 +9,9 @@
             description="OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java."
             uri=""
             googleWebmasterToolsVerification=true>
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-7">
-                <div style="margin-bottom: 10px">
+                <div>
                     <h1>What is OptaPlanner?</h1>
                     <div class="paragraph">
                         <p>OptaPlanner is <strong>an AI constraint solver.</strong>
@@ -49,77 +49,70 @@
                 <@macros.flags/>
             </div>
             <div class="col-md-5">
-                <div style="margin-top: 10px;">
-                    <@macros.downloadJumbotron/>
-                    <@macros.documentationJumbotron/>
+                <@macros.tryItButton/>
+                <div class="mb-4"></div>
+                <@macros.getStartedButton/>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div id="frontPageCarousel" class="carousel carousel-dark" data-bs-ride="carousel" data-bs-interval="false">
+<#--                <div class="carousel-indicators">-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="0"-->
+<#--                            aria-label="Video" class="active" aria-current="true"></button>-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="1"-->
+<#--                            aria-label="Use Cases"></button>-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="2"-->
+<#--                            aria-label="Usage"></button>-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="3"-->
+<#--                            aria-label="Integration"></button>-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="4"-->
+<#--                            aria-label="Compatibility"></button>-->
+<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="5"-->
+<#--                            aria-label="Scalability"></button>-->
+<#--                </div>-->
+                <div class="carousel-inner" style="max-height: 600px;">
+                    <div class="carousel-item active">
+                        <iframe allowfullscreen frameborder="0" height="600" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0" width="800"></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Use case overview" src="${content.rootpath}landingPage/useCaseOverview.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Usage" src="${content.rootpath}landingPage/inputOutputOverview.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Integration" src="${content.rootpath}landingPage/integrationOverview.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Compatibility" src="${content.rootpath}landingPage/compatibility.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Scalability" src="${content.rootpath}landingPage/scalabilityOfOptimizationAlgorithms.png">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#frontPageCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#frontPageCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row mb-2"><#-- listingblock adds mb-2 too -->
+            <div class="paragraph">
+                <p>To optimize a problem from Java™ code, add the <code>optaplanner-core</code> jar and call <code>Solver.solve()</code>:</p>
+            </div>
+            <div class="listingblock">
+                <div class="content">
+                    <pre class="highlight"><code class="language-java" data-lang="java">// My domain specific class as input&#x000A;MyRoster problem = ...;&#x000A;&#x000A;SolverFactory&lt;MyRoster&gt; factory = SolverFactory&#x000A;    .createFromXmlResource(".../mySolverConfig.xml");&#x000A;Solver&lt;MyRoster&gt; solver = factory.buildSolver();&#x000A;&#x000A;// My domain specific class as output&#x000A;MyRoster solution = solver.solve(problem);&#x000A;&#x000A;for (MyShift shift : solution.getShifts()) {&#x000A;  // Each shift is now assigned to an employee&#x000A;  assertNotNull(shift.getEmployee());&#x000A;}</code></pre>
                 </div>
             </div>
         </div>
-        <div class="jumbotron pagination-centered" style="padding: 10px; margin-bottom: 20px;">
-            <ul class="nav nav-justified frontPageCarouselButtons" id="whatIsCarouselButtons">
-                <li class="active" data-slide-to="0" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Video</a>
-                </li>
-                <li data-slide-to="1" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Use cases</a>
-                </li>
-                <li data-slide-to="2" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Usage</a>
-                </li>
-                <li data-slide-to="3" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Integration</a>
-                </li>
-                <li data-slide-to="4" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Compatibility</a>
-                </li>
-                <li data-slide-to="5" data-target="#whatIsCarousel">
-                    <a data-toggle="tab" href="#">Scalability</a>
-                </li>
-            </ul>
-            <div class="carousel slide frontPageCarousel" data-interval="false" data-ride="carousel" id="whatIsCarousel" style="background-color: white;">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div style="min-width: 800px; min-height: 600px; text-align: center; padding-top: 75px;">
-                            <iframe allowfullscreen frameborder="0" height="450" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0" width="800"></iframe>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img alt="Use case overview" height="600" src="${content.rootpath}landingPage/useCaseOverview.png" width="800">
-                    </div>
-                    <div class="item">
-                        <img alt="Usage" height="600" src="${content.rootpath}landingPage/inputOutputOverview.png" width="800">
-                    </div>
-                    <div class="item">
-                        <img alt="Integration" height="600" src="${content.rootpath}landingPage/integrationOverview.png" width="800">
-                    </div>
-                    <div class="item">
-                        <img alt="Compatibility" height="600" src="${content.rootpath}landingPage/compatibility.png" width="800">
-                    </div>
-                    <div class="item">
-                        <img alt="Scalability" height="600" src="${content.rootpath}landingPage/scalabilityOfOptimizationAlgorithms.png" width="800">
-                    </div>
-                </div>
-                <a class="left carousel-control" data-slide="prev" href="#whatIsCarousel">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" data-slide="next" href="#whatIsCarousel">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div>
-        </div>
-        <div class="jumbotron pagination-centered" style="padding: 10px; margin-bottom: 20px;">
-            <div style="vertical-align: middle; margin:0 auto; max-width: 600px; padding: 20px;">
-                <div class="paragraph">
-                    <p>To optimize a problem from Java™ code, add the <code>optaplanner-core</code> jar and call <code>Solver.solve()</code>:</p>
-                </div>
-                <div class="listingblock">
-                    <div class="content">
-                        <pre class="highlight"><code class="language-java" data-lang="java">// My domain specific class as input&#x000A;MyRoster problem = ...;&#x000A;&#x000A;SolverFactory&lt;MyRoster&gt; factory = SolverFactory&#x000A;    .createFromXmlResource(".../mySolverConfig.xml");&#x000A;Solver&lt;MyRoster&gt; solver = factory.buildSolver();&#x000A;&#x000A;// My domain specific class as output&#x000A;MyRoster solution = solver.solve(problem);&#x000A;&#x000A;for (MyShift shift : solution.getShifts()) {&#x000A;  // Each shift is now assigned to an employee&#x000A;  assertNotNull(shift.getEmployee());&#x000A;}</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-6">
                 <@macros.latestBlogPosts/>
             </div>

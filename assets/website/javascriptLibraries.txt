@@ -1,12 +1,12 @@
 Javascript libraries
 ====================
 
-Twitter bootstrap version: 3.1.1
-Downloaded from: https://getbootstrap.com/
+Twitter bootstrap version: 5.1.1
+Using CDN url for performance.
 License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
-jQuery version: 1.11.0
-Downloaded from: http://jquery.com/
+jQuery version
+Using CDN url for performance.
 License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
 highlight.js version: 7.3

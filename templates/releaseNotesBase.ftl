@@ -50,9 +50,9 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Status of OptaPlanner</div>
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-header">Status of OptaPlanner</div>
+                    <div class="card-body">
                         <ul class="list-unstyled">
                             <li>
                                 <strong>Stable:</strong>

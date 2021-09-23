@@ -4,11 +4,11 @@
 <#assign users = data.get('users.yml').data>
 
 <#macro latestReleases>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest release</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">Latest release</div>
+        <div class="card-body">
             <ul class="list-unstyled">
-                <li style="margin-bottom: 10px;">
+                <li class="mb-2">
                     <div class="title">
                         <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
                             ${pom.latestFinal.version} released
@@ -34,9 +34,9 @@
 </#macro>
 
 <#macro servicesOffer>
-    <div class="panel panel-primary">
-        <div class="panel-heading">Paid support and consulting</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header bg-dark text-white">Paid support and consulting</div>
+        <div class="card-body">
             <p>
                 <b>Want to talk to the experts?</b>
                 Red Hat offers certified binaries with enterprise consulting.
@@ -47,13 +47,13 @@
 </#macro>
 
 <#macro latestEvents>
-    <div class="panel panel-default">
-        <div class="panel-heading">Upcoming events</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">Upcoming events</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list events as event>
                     <#if .now?date <= event.date?date>
-                        <li style="margin-bottom: 10px;">
+                        <li class="mb-2">
                             <div class="title">
                                 <#if event.eventUrl??>
                                     <a href="${event.eventUrl}">${event.eventOrganization}</a>
@@ -66,7 +66,7 @@
                                 <#if event.talks??>
                                     <ul class="list-unstyled">
                                         <#list event.talks as talk>
-                                            <li style="margin-left: 20px;">
+                                            <li class="ms-4">
                                                 <#if talk.url??>
                                                     <a href="${talk.url}">${talk.title}</a>
                                                 <#else>
@@ -83,7 +83,7 @@
                         </li>
                     </#if>
                 </#list>
-                <div class="small pull-right">
+                <div class="small float-end">
                     <a href="https://github.com/kiegroup/optaplanner-website/blob/main/data/events.yml">Add event</a>
                     /
                     <a href="${content.rootpath}community/eventsArchive.html">Archive</a>
@@ -94,12 +94,12 @@
 </#macro>
 
 <#macro latestBlogPosts>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest blog posts</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">Latest blog posts</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list published_posts[0..6] as blog>
-                    <li style="margin-bottom: 10px;">
+                    <li class="mb-2">
                         <div class="title">
                             <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
                         </div>
@@ -107,7 +107,7 @@
                         <@userBadgeInline userId=blog.author/>
                     </li>
                 </#list>
-                <div class="small pull-right">
+                <div class="small float-end">
                     <a href="${content.rootpath}blog/index.html">Blog archive</a>
                 </div>
             </ul>
@@ -116,25 +116,24 @@
 </#macro>
 
 <#macro latestVideos>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest videos</div>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">Latest videos</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list videos[0..6] as video>
-                    <li style="margin-bottom: 10px;">
-                        <div class="title">
-                            <a href="https://youtu.be/${video.youtubeId}">
-                                <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
-                                ${video.title}
-                            </a>
-                        </div>
+                    <li class="mb-2">
+                        <a href="https://youtu.be/${video.youtubeId}">
+                            <span class="d-flex align-items-center">
+                                <img class="me-1" src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>${video.title}
+                            </span>
+                        </a>
                         <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
                         <#if video.author??>
                             <@userBadgeInline userId=video.author/>
                         </#if>
                     </li>
                 </#list>
-                <div class="small pull-right">
+                <div class="small float-end">
                     <a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ">Video archive</a>
                 </div>
             </ul>
@@ -144,24 +143,24 @@
 
 <#macro userBadgeInline userId>
     <#assign user = users?filter(u -> u.userId == userId)?first >
-    <div class="userBadge">
-        <span>
-            <img class="img-rounded pull-left" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=20&d=mm"/>
-            &nbsp;${user.fullName}
-        </span>
+    <div class="d-flex align-items-center">
+        <img class="rounded me-1" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=20&d=mm"/>
+        <span>${user.fullName}</span>
     </div>
 </#macro>
 
 <#macro userBadge userId long>
     <#assign user = users?filter(u -> u.userId == userId)?first >
-    <div class="userBadge">
-        <div class="well well-sm" style="padding: 5px; width: ${long?then("600px", "320px")};">
-            <div class="media">
-                <img class="img-rounded pull-left" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=50&d=mm" style="width: 50px;" alt="Avatar ${user.fullName}"/>
-                <div class="media-body">
-                    <h4 class="media-heading">${user.fullName}</h4>
-                    <hr style="margin:2px auto; border-color: #ddd;"/>
-                    <span class="pull-right">
+    <div class="card bg-light" style="width: ${long?then("600px", "320px")};">
+        <div class="row gx-2">
+            <div class="col-auto">
+                <img class="rounded m-1" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=64&d=mm" width="64" height="64" alt="Avatar ${user.fullName}"/>
+            </div>
+            <div class="col">
+                <div class="card-body p-0 me-1">
+                    <h5 class="card-title my-1">${user.fullName}</h5>
+                    <hr class="m-0"/>
+                    <span class="float-end mx-1">
                         <#if user.twitterUsername??>
                             <a href="https://twitter.com/${user.twitterUsername}"><img src="${content.rootpath}headerFooter/twitterLogo.png" alt="Twitter"/></a>
                         </#if>
@@ -175,33 +174,21 @@
                             <a href="https://github.com/${user.githubUsername}"><img src="${content.rootpath}headerFooter/gitHubLogo.png" alt="GitHub"/></a>
                         </#if>
                     </span>
-                    <p class="small">${user.role}</p>
+                    <p class="small mb-1">${user.role}</p>
                     <#if long>
                         <#if user.email??>
-                            <p>
-                                <span class="emailSupportPopover">
-                                    <strong>Email:</strong>
-                                    ${user.email}
-                                </span>
+                            <p class="mb-1">
+                                <span class="emailSupportPopover"><strong>Email:</strong> ${user.email}</span>
                             </p>
                         </#if>
                         <#if user.employedBy??>
-                            <p>
-                                <strong>Employed by:</strong>
-                                ${user.employedBy}
-                            </p>
+                            <p class="mb-1"><strong>Employed by:</strong> ${user.employedBy}</p>
                         </#if>
                         <#if user.contributionsDescription??>
-                            <p>
-                                <strong>Contributions:</strong>
-                                ${user.contributionsDescription}
-                            </p>
+                            <p class="mb-1"><strong>Contributions:</strong> ${user.contributionsDescription}</p>
                         </#if>
                         <#if user.biography??>
-                            <p>
-                                <strong>Bio:</strong>
-                                ${user.biography}
-                            </p>
+                            <p class="mb-1"><strong>Bio:</strong> ${user.biography}</p>
                         </#if>
                     </#if>
                 </div>
@@ -217,13 +204,12 @@
         <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
         <ul class="list-unstyled">
             <#list relatedVideos as video>
-                <li style="margin-bottom: 20px;">
+                <li class="mb-4">
                     <a href="https://youtu.be/${video.youtubeId}">
                         <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
-                        <div class="title">
-                            <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
-                            ${video.title}
-                        </div>
+                        <span class="d-flex align-items-center">
+                            <img class="me-1" src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>${video.title}
+                        </span>
                     </a>
                     <#if video.author??>
                         <@userBadgeInline userId=video.author/>
@@ -242,7 +228,7 @@
         <h2>Related blog posts</h2>
         <ul>
             <#list relatedTag.tagged_posts as blog>
-                <li style="margin-bottom: 10px;">
+                <li class="mb-2">
                     <div class="title">
                         <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
                     </div>
@@ -254,42 +240,41 @@
     </#if>
 </#macro>
 
-<#macro downloadJumbotron>
-    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
-        <div class="text-center" style="margin-bottom: 10px;"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
+<#macro tryItButton>
+    <div class="card bg-light">
+        <div class="text-center mt-2"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
             <div>
                 <span>Try OptaPlanner</span><br/>
                 <span class="small">Download ${pom.latestFinal.version}</span>
             </div>
         </a></div>
-        <ol>
-            <li>Download the zip and unzip it.</li>
-            <li>
-                Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
-                Or run <code>examples/runExamples.bat</code> (Windows).
-            </li>
-        </ol>
-        <div class="text-center">
-            <div class="small">
+        <div class="card-body">
+            <ol class="mb-2">
+                <li>Download the zip and unzip it.</li>
+                <li>
+                    Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
+                    Or run <code>examples/runExamples.bat</code> (Windows).
+                </li>
+            </ol>
+            <div class="text-center small">
                 Requires <a href="https://adoptopenjdk.net">Java™</a> to run.
             </div>
         </div>
     </div>
 </#macro>
-
-<#macro documentationJumbotron>
-    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
-        <div class="text-center" style="margin-bottom: 10px;"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
+<#macro getStartedButton>
+    <div class="card bg-light">
+        <div class="text-center mt-2"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
             <div>
                 <span>Get started</span><br/>
                 <span class="small">User guide ${pom.latestFinal.version}</span>
             </div>
         </a></div>
-        <div class="text-center">
-            <a href="https://github.com/kiegroup/optaplanner-quickstarts">
-                <img alt="GitHub" src="${content.rootpath}headerFooter/gitHubLogo.png">
-                <span>Clone the Quickstarts code.</span>
-            </a>
+        <div class="card-body">
+            <div class="text-center">
+                <a href="https://github.com/kiegroup/optaplanner-quickstarts"><img alt="GitHub" src="${content.rootpath}headerFooter/gitHubLogo.png"></a>
+                <a href="https://github.com/kiegroup/optaplanner-quickstarts">Clone the Quickstarts code.</a>
+            </div>
         </div>
     </div>
 </#macro>
@@ -336,12 +321,10 @@
 </#macro>
 
 <#macro productToProjectVersionMapping>
-<div class="panel panel-default">
-    <div class="panel-heading">Note for Red Hat Decision Manager customers</div>
-    <div class="panel-body">
-        <p>
-            The RHDM version differs from the OptaPlanner version:
-        </p>
+<div class="card">
+    <div class="card-header">Note for Red Hat Decision Manager customers</div>
+    <div class="card-body">
+        <p>The RHDM version differs from the OptaPlanner version:</p>
         <table class="tableblock frame-all grid-all spread">
             <colgroup>
                 <col style="width: 50%;">
@@ -367,24 +350,15 @@
 </#macro>
 
 <#macro flags>
-    <div style="text-align: right; padding-right: 10px; margin-bottom: 20px;">
-        <a href="${content.rootpath}index.html" style="text-decoration: none;"><img src="${content.rootpath}website/flags/us.png"><img src="${content.rootpath}website/flags/gb.png">
-        </a>
+    <div class="float-end px-2">
+        <a href="${content.rootpath}index.html"><img src="${content.rootpath}website/flags/us.png"><img src="${content.rootpath}website/flags/gb.png"></a>
         -
-        <a href="${content.rootpath}localized/fr/index.html" style="text-decoration: none;">
-            <img src="${content.rootpath}website/flags/fr.png">
-        </a>
+        <a href="${content.rootpath}localized/fr/index.html"><img src="${content.rootpath}website/flags/fr.png"></a>
         -
-        <a href="${content.rootpath}localized/de/index.html" style="text-decoration: none;">
-            <img src="${content.rootpath}website/flags/de.png">
-        </a>
+        <a href="${content.rootpath}localized/de/index.html"><img src="${content.rootpath}website/flags/de.png"></a>
         -
-        <a href="${content.rootpath}localized/zh/index.html" style="text-decoration: none;">
-            <img src="${content.rootpath}website/flags/cn.png">
-        </a>
+        <a href="${content.rootpath}localized/zh/index.html"><img src="${content.rootpath}website/flags/cn.png"></a>
         -
-        <a href="${content.rootpath}localized/ja/index.html" style="text-decoration: none;">
-            <img src="${content.rootpath}website/flags/jp.png">
-        </a>
+        <a href="${content.rootpath}localized/ja/index.html"><img src="${content.rootpath}website/flags/jp.png"></a>
     </div>
 </#macro>
