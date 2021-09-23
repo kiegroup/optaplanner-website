@@ -4,7 +4,7 @@
 <#assign users = data.get('users.yml').data>
 
 <#macro latestReleases>
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header">Latest release</div>
         <div class="card-body">
             <ul class="list-unstyled">
@@ -34,7 +34,7 @@
 </#macro>
 
 <#macro servicesOffer>
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header bg-dark text-white">Paid support and consulting</div>
         <div class="card-body">
             <p>
@@ -47,7 +47,7 @@
 </#macro>
 
 <#macro latestEvents>
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header">Upcoming events</div>
         <div class="card-body">
             <ul class="list-unstyled">
@@ -94,7 +94,7 @@
 </#macro>
 
 <#macro latestBlogPosts>
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header">Latest blog posts</div>
         <div class="card-body">
             <ul class="list-unstyled">
@@ -116,7 +116,7 @@
 </#macro>
 
 <#macro latestVideos>
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header">Latest videos</div>
         <div class="card-body">
             <ul class="list-unstyled">
@@ -241,7 +241,7 @@
 </#macro>
 
 <#macro tryItButton>
-    <div class="card bg-light">
+    <div class="card bg-light mb-4">
         <div class="text-center mt-2"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
             <div>
                 <span>Try OptaPlanner</span><br/>
@@ -263,7 +263,7 @@
     </div>
 </#macro>
 <#macro getStartedButton>
-    <div class="card bg-light">
+    <div class="card bg-light mb-4">
         <div class="text-center mt-2"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
             <div>
                 <span>Get started</span><br/>
@@ -321,7 +321,7 @@
 </#macro>
 
 <#macro productToProjectVersionMapping>
-<div class="card">
+<div class="card mb-4">
     <div class="card-header">Note for Red Hat Decision Manager customers</div>
     <div class="card-body">
         <p>The RHDM version differs from the OptaPlanner version:</p>

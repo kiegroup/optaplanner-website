@@ -10,7 +10,7 @@
             <#nested/>
         </div>
         <div class="col-md-3">
-            <div class="card p-2">
+            <div class="card p-2 mb-4">
                 <div class="text-center">
                     <a href="${content.rootpath}blog/news.atom">
                         <img class="me-1" alt="Atom" src="${content.rootpath}headerFooter/atomFeedIcon.png">News feed
@@ -27,13 +27,9 @@
                     <a href="${content.rootpath}blog/index.html">Blog archive</a>
                 </div>
             </div>
-            <div class="mb-4"></div>
             <@macros.latestReleases/>
-            <div class="mb-4"></div>
             <@macros.latestEvents/>
-            <div class="mb-4"></div>
             <@macros.latestBlogPosts/>
-            <div class="mb-4"></div>
             <@macros.latestVideos/>
         </div>
     </div>

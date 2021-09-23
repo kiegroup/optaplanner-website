@@ -9,8 +9,8 @@
             description="OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java."
             uri=""
             googleWebmasterToolsVerification=true>
-        <div class="row mb-4">
-            <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-7 mb-4">
                 <div>
                     <h1>What is OptaPlanner?</h1>
                     <div class="paragraph">
@@ -50,7 +50,6 @@
             </div>
             <div class="col-md-5">
                 <@macros.tryItButton/>
-                <div class="mb-4"></div>
                 <@macros.getStartedButton/>
             </div>
         </div>
@@ -112,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
+        <div class="row">
             <div class="col-md-6">
                 <@macros.latestBlogPosts/>
             </div>

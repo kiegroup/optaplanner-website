@@ -43,7 +43,7 @@
                 <p>To upgrade from an older version, first apply <a href="./">the previous upgrade recipes</a>.</p>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 mb-4">
             <@macros.productToProjectVersionMapping/>
         </div>
     </div>
