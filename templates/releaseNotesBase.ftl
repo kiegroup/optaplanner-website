@@ -24,9 +24,9 @@
                 <a href="${content.rootpath}learn/useCases/conferenceScheduling.html">Conference Scheduling</a> and many
                 more.</p>
         </div>
-        <div class="row" style="margin-bottom: 10px;">
+        <div class="row">
             <div class="col-md-6">
-                <div class="text-center"><a class="btn btn-lg btn-success versionedButton"
+                <div class="text-center mb-4"><a class="btn btn-lg btn-success versionedButton"
                                             href="${releaseNotesAreFinal?then(pom.latestFinal.distributionZip, pom.latest.distributionZip)}">
                         <img alt="Download" src="${content.rootpath}download/download.png">
                         <div>
@@ -37,7 +37,7 @@
                     </a></div>
             </div>
             <div class="col-md-6">
-                <div class="text-center"><a class="btn btn-lg btn-primary versionedButton"
+                <div class="text-center mb-4"><a class="btn btn-lg btn-primary versionedButton"
                                             href="${releaseNotesAreFinal?then(pom.latestFinal.engineDocumentationHtmlSingle, pom.latest.engineDocumentationHtmlSingle)}">
                         <img alt="Documentation" src="${content.rootpath}learn/documentation.png">
                         <div>
@@ -50,7 +50,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">Status of OptaPlanner</div>
                     <div class="card-body">
                         <ul class="list-unstyled">
