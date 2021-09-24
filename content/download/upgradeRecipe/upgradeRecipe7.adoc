@@ -14,7 +14,7 @@ it allows us to make backwards incompatible changes to the public API _for the l
 We kept these backwards incompatible changes to a strict minimum
 (by favoring deprecation over removal) and will not introduce any additional ones during the 7.x era.
 
-Any backwards incompatible changes are annotated with a [.badge.label-public-api]#Public API# badge.
+Any backwards incompatible changes are annotated with a [.badge.bg-public-api]#Public API# badge.
 
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
