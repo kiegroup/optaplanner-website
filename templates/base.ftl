@@ -83,9 +83,9 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="p-2"><a aria-label="Star OptaPlanner on GitHub" class="github-button" data-show-count="true" href="https://github.com/kiegroup/optaplanner">Star</a></li>
-                    <li class="p-1"><a href="https://twitter.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
-                    <li class="p-1"><a href="https://www.facebook.com/OptaPlanner" style="padding: 0" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
-                    <li class="p-1"><a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" style="padding: 0" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="${content.rootpath}headerFooter/youtubeLogo.png" style="height: 16px"></a></li>
+                    <li class="p-1"><a href="https://twitter.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
+                    <li class="p-1"><a href="https://www.facebook.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
+                    <li class="p-1"><a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="${content.rootpath}headerFooter/youtubeLogo.png" style="height: 16px"></a></li>
                 </ul>
             </div>
         </div>

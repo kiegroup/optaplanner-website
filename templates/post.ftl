@@ -6,18 +6,16 @@
 <#macro layout>
 <@parent.layout>
     <div class="post">
-        <h1 class="title" style="border-bottom: 1px solid #eee;">${content.title}</h1>
-        <div>
-            <div class="float-end">
-                <p style="text-align: right;">${content.date?string("EEE d MMMM yyyy")}</p>
-            </div>
+        <h1 class="title border-bottom">${content.title}</h1>
+        <div class="mb-4">
+            <span class="float-end mb-2">${content.date?string("EEE d MMMM yyyy")}</span>
             <@macros.userBadge userId=content.author long=false/>
         </div>
-        <div class="body">
+        <div>
             <#nested>
         </div>
-        <hr style="margin-bottom: 5px;"/>
-        <div style="margin-bottom: 20px;">
+        <hr class="mb-1"/>
+        <div class="mb-4">
             <div class="float-end">
                 <a href="${config.canonicalBaseUrl}/${content.uri}"><span class="badge bg-dark">Permalink</span></a>
             </div>
@@ -31,7 +29,7 @@
     </div>
     <div class="comments">
         <h2>Comments</h2>
-        <a class="btn btn-secondary" href="${config.googleGroupURL}" style="margin-left: 20px">Visit our forum to comment</a>
+        <a class="btn btn-secondary mb-4" href="${config.googleGroupURL}">Visit our forum to comment</a>
     </div>
 </@parent.layout>
 </#macro>
