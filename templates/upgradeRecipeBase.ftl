@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div class="col-md-7">
-            <h2 style="margin-top: 0;">Legend</h2>
+            <h2 class="mt-0">Legend</h2>
             <p>Every upgrade note has an indication how likely your code will be affected by that change:</p>
             <ul class="upgrade-recipe-label-list">
                 <li>
