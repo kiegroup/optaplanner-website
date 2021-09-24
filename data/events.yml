@@ -745,6 +745,15 @@
     - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
       presenters: Geoffrey De Smet
 
+- eventId: 20211104-jfall
+  eventOrganization: "J-Fall"
+  eventUrl: https://jfall.nl/
+  location: Ede, Netherlands
+  date: 2021-11-04
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
 - eventId: 20211119-devoxxua
   eventOrganization: "Devoxx Ukraine"
   eventUrl: https://devoxx.com.ua/
