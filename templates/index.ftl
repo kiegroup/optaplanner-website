@@ -56,20 +56,6 @@
 
         <div class="row mb-4">
             <div id="frontPageCarousel" class="carousel carousel-dark" data-bs-ride="carousel" data-bs-interval="false">
-<#--                <div class="carousel-indicators">-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="0"-->
-<#--                            aria-label="Video" class="active" aria-current="true"></button>-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="1"-->
-<#--                            aria-label="Use Cases"></button>-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="2"-->
-<#--                            aria-label="Usage"></button>-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="3"-->
-<#--                            aria-label="Integration"></button>-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="4"-->
-<#--                            aria-label="Compatibility"></button>-->
-<#--                    <button type="button" data-bs-target="#frontPageCarousel" data-bs-slide-to="5"-->
-<#--                            aria-label="Scalability"></button>-->
-<#--                </div>-->
                 <div class="carousel-inner" style="max-height: 600px;">
                     <div class="carousel-item active">
                         <iframe allowfullscreen frameborder="0" height="600" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0" width="800"></iframe>
