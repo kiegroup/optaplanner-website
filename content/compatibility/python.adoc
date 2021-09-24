@@ -12,4 +12,4 @@ It is https://pypi.org/project/optapy/[available in PyPi].
 
 == Jupyter notebook
 
-https://mybinder.org/v2/gh/optapy/optapy/main?filepath=index.ipynb[Try the OptaPy Jypiter notebook.]
+https://mybinder.org/v2/gh/optapy/optapy/main?filepath=index.ipynb[Try the OptaPy Jupyter notebook.]
