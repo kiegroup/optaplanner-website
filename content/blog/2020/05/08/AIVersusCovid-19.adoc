@@ -1,4 +1,4 @@
-= AI versus Covid-19&#58; How Java helps nurses and doctors in this fight
+= AI versus COVID-19: How Java helps nurses and doctors in this fight
 Christopher-Chianelli
 2020-05-08
 :page-interpolate: true
@@ -19,10 +19,10 @@ and maximizes employees`' happiness using OptaWeb Employee Rostering.
 First, let's set out the domain of our model:
 
 * There are _wards_, which are sections of the hospital, and are separated into
-Covid-19 wards and non-Covid-19 wards
+COVID-19 wards and non-COVID-19 wards
 
 * There are _employees_, who are doctors and nurses who can be assigned to a ward,
-each having different susceptibilities to Covid-19 (for instance,
+each having different susceptibilities to COVID-19 (for instance,
 some nurses are older and thus are more vulnerable)
 
 * There are _skills_, which describes what skill set an employee must have in
@@ -30,7 +30,7 @@ order to work in a particular ward
 
 * There are _shifts_, which are positions that need to be filled at a given ward
 at a particular time, and may require additional skills in addition to those of
-its ward (for example, we need a repository specialist nurse in a Covid-19
+its ward (for example, we need a repository specialist nurse in a COVID-19
 ward, as well as a nurse and a doctor)
 
 * Finally, there are _availabilities_, which describes when an employee is unable to
@@ -54,8 +54,8 @@ meaning a schedule is infeasible if broken.
 Since the schedule remains feasible when an employee is working on a day they want off,
 this is a soft constraint.
 
-* The higher an employee's Covid-19 susceptibility is, the less they should
-work in a Covid-19 ward. This is another soft constraint.
+* The higher an employee's COVID-19 susceptibility is, the less they should
+work in a COVID-19 ward. This is another soft constraint.
 
 These, and the rest of the constraints, can be found in the
 https://github.com/kiegroup/optaweb-employee-rostering/blob/15c515de6c9faa79df957146a029531d49ea650c/optaweb-employee-rostering-backend/src/main/resources/org/optaweb/employeerostering/service/solver/employeeRosteringScoreRules.drl[Drools constraints
@@ -91,15 +91,15 @@ While solving, OptaPlanner will keep looking for better solutions, gradually imp
 the score. You might have already seen the schedule change several times already.
 Let's stop solving for now. Click the Ward selector (left side of the toolbar) and
 change to the ward "COVID-19 Ward 1". Every shift has a small circle at the top of
-it denoting the Covid-19 susceptibility of its employee. A shield represents
-inoculated employees; people who have acquired immunity to Covid-19. A near-empty
-circle means the employee has a low Covid-19 susceptibility, while a more filled in
-circle means a higher Covid-19 susceptibility. Finally, a red circle means the employee
-is extremely susceptible to Covid-19, and should not be placed in a ward with Covid-19.
-Notice how there are no Extreme risk employees in the Covid-19 ward? Moreover, most
-of the Covid-19's ward shifts either have inoculated or low-risk employees.
+it denoting the COVID-19 susceptibility of its employee. A shield represents
+inoculated employees; people who have acquired immunity to COVID-19. A near-empty
+circle means the employee has a low COVID-19 susceptibility, while a more filled in
+circle means a higher COVID-19 susceptibility. Finally, a red circle means the employee
+is extremely susceptible to COVID-19, and should not be placed in a ward with COVID-19.
+Notice how there are no Extreme risk employees in the COVID-19 ward? Moreover, most
+of the COVID-19's ward shifts either have inoculated or low-risk employees.
 
-image::CovidWardNoExtremeRisk.png[No Extreme Risk Employees in Covid-19 Ward]
+image::CovidWardNoExtremeRisk.png[No Extreme Risk Employees in COVID-19 Ward]
 
 One second, I am getting a call. Okay, I'm back. Beth P. Watt caught the flu and
 as such is not able to make her shift this Saturday. Luckily for us, OptaPlanner
@@ -133,11 +133,11 @@ in their day-to-day lives and allowing automatic provisioning of new shifts.
 == Conclusion
 
 As you just saw, OptaWeb Employee Rostering allows you to easily create
-and optimize rosters, that does not only minimize Covid-19's effect on
+and optimize rosters, that does not only minimize COVID-19's effect on
 health care workers, but also maximizes their happiness. You can find the
 source code of this application at
 https://github.com/kiegroup/optaweb-employee-rostering/tree/covid-19[the OptaWeb Employee Rostering GitHub repository]. This was only
 possible as OptaPlanner has such a flexible and easy way to add new constraints,
 allowing us to quickly modify OptaWeb Employee Rostering to accommodate
-the new constraints that came with Covid-19. You might also be interested
+the new constraints that came with COVID-19. You might also be interested
 in https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/[Geoffrey De Smet's talk on the application].
