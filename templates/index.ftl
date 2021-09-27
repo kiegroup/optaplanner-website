@@ -58,7 +58,7 @@
             <div id="frontPageCarousel" class="carousel carousel-dark" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" style="max-height: 600px;">
                     <div class="carousel-item active">
-                        <iframe allowfullscreen frameborder="0" height="600" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0" width="800"></iframe>
+                        <iframe allowfullscreen frameborder="0" height="600" width="800" src="https://www.youtube.com/embed/f4jIWbQpjdE?rel=0"></iframe>
                     </div>
                     <div class="carousel-item">
                         <img alt="Use case overview" src="${content.rootpath}landingPage/useCaseOverview.png">

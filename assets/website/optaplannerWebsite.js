@@ -1,3 +1,15 @@
+function autoPlayYouTubeModal() {
+    var youtubeLink = $("body").find('[data-youtubeId]');
+    youtubeLink.click(function() {
+        var modalDialog = $(this).data("bs-target");
+        var videoUrl = "https://www.youtube.com/embed/" + $(this).attr("data-youtubeId");
+        $(modalDialog + " iframe").attr("src", videoUrl + "?autoplay=1&rel=0");
+        $(modalDialog + " button.btn-close").click(function() {
+            $(modalDialog + " iframe").attr("src", videoUrl);
+        });
+    });
+}
+
 function toggleCollapseSection(collapseButton, collapseSection) {
     if ($(collapseButton).hasClass("fa-angle-down")) {
         $(collapseButton).removeClass("fa-angle-down").addClass("fa-angle-up");
@@ -66,6 +78,7 @@ function insertServicesMailAddress() {
 }
 
 $(document).ready(function() {
+    $(autoPlayYouTubeModal);
     $(insertUpgradeRecipePriorities);
     $(insertEmailSupportPopover);
     $(insertServicesMailAddress);
