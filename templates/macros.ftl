@@ -122,10 +122,9 @@
             <ul class="list-unstyled">
                 <#list videos[0..6] as video>
                     <li class="mb-2">
-                        <a href="https://youtu.be/${video.youtubeId}">
-                            <span class="d-flex align-items-center">
-                                <img class="me-1" src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>${video.title}
-                            </span>
+                        <a style="cursor: pointer" data-bs-toggle="modal" data-youtubeId="${video.youtubeId}" data-bs-target="#videoModal">
+                            <span><i class="fas fa-play-circle"></i></span>
+                            <span class="align-text-middle link-primary">${video.title}</span>
                         </a>
                         <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
                         <#if video.author??>
@@ -143,10 +142,10 @@
 
 <#macro userBadgeInline userId>
     <#assign user = users?filter(u -> u.userId == userId)?first >
-    <div class="d-flex align-items-center">
+    <span>
         <img class="rounded me-1" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=20&d=mm"/>
-        <span>${user.fullName}</span>
-    </div>
+        <span class="align-middle">${user.fullName}</span>
+    </span>
 </#macro>
 
 <#macro userBadge userId long>
@@ -202,22 +201,27 @@
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
         <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
-        <ul class="list-unstyled">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
             <#list relatedVideos as video>
-                <li class="mb-4">
-                    <a href="https://youtu.be/${video.youtubeId}">
-                        <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
-                        <span class="d-flex align-items-center">
-                            <img class="me-1" src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>${video.title}
-                        </span>
-                    </a>
-                    <#if video.author??>
-                        <@userBadgeInline userId=video.author/>
-                    </#if>
-                    <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
-                </li>
+                <div class="col">
+                    <div class="card" style="cursor: pointer">
+                        <img class="card-img-top" src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
+                        <div class="card-img-overlay">
+                            <div class="text-center mt-5 text-white"><i class="fas fa-play-circle fa-2x"></i></div>
+                        </div>
+                        <div class="card-body p-2">
+                            <a class="stretched-link" data-bs-toggle="modal" data-youtubeId="${video.youtubeId}" data-bs-target="#videoModal">
+                                <div>${video.title}</div>
+                            </a>
+                            <#if video.author??>
+                                <@userBadgeInline userId=video.author/>
+                            </#if>
+                            <span class="float-end align-bottom small">${video.date?string("d MMM yyyy")}</span>
+                        </div>
+                    </div>
+                </div>
             </#list>
-        </ul>
+        </div>
     </#if>
 </#macro>
 
