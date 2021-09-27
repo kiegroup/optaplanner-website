@@ -762,3 +762,12 @@
   talks:
     - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
       presenters: Geoffrey De Smet
+
+- eventId: 20211119-jcconf
+  eventOrganization: "JCConf"
+  eventUrl: https://jcconf.tw/
+  location: Taiwan (virtual)
+  date: 2021-11-19
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
