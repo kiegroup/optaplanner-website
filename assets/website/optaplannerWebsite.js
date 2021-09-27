@@ -4,7 +4,7 @@ function autoPlayYouTubeModal() {
         var modalDialog = $(this).data("bs-target");
         var videoUrl = "https://www.youtube.com/embed/" + $(this).attr("data-youtubeId");
         $(modalDialog + " iframe").attr("src", videoUrl + "?autoplay=1&rel=0");
-        $(modalDialog + " button.btn-close").click(function() {
+        $(modalDialog).on('hidden.bs.modal', function() {
             $(modalDialog + " iframe").attr("src", videoUrl);
         });
     });
