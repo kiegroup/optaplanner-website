@@ -200,7 +200,6 @@
     <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
-        <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
         <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
             <#list relatedVideos as video>
                 <div class="col">

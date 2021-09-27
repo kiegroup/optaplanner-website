@@ -159,6 +159,7 @@
             </div>
         </div>
     </footer>
+    <#-- Workaround: data-bs-backdrop="static" data-bs-keyboard="false" to stop playing video (sound) when closed. -->
     <div class="modal fade" id="videoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
