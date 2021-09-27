@@ -1,0 +1,215 @@
+= Monitor the solver
+Christopher-Chianelli
+2021-10-02
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: monitoring, production
+
+It's 11pm on Friday evening. Everything was working fine -- until now.
+Suddenly services are failing left and right, and your boss want to know why.
+One tool in achieving a diagnosis is to use a monitoring system. Let's add monitoring to OptaPlanner and see if we can diagnose this issue.
+
+== What is monitoring?
+
+_Monitoring_ is observing the quality of a service over time.
+Mointoring is similar to logging, except its output is more easily analyzed by a machine.
+The software being monitored output _metrics_, a numerical measurement of some aspect of the software.
+The metrics then get recorded in a monitoring system, where it can be graphed, trigger alerts, and be correlated with events.
+
+For instance, you can monitor a web service.
+Its metrics could include the number of hits to a particular endpoint, time to respond to a request, and the number of failures.
+If the number of hits suddenly increase, it could correspond to the Slashdot effect or a potential Denial of Service attack.
+If the average time to respond to a request is increasing because there are not enough servers to fulfill requests, you might want to acquire additional servers.
+Additionally, monitoring allow you to see the effect a change has on the entire system.
+If you notice the time to respond to a request with the same load as before decreases after a change was pushed, you can conclude the change improved performance.
+
+
+== Connecting monitoring systems to OptaPlanner
+
+OptaPlanner uses https://micrometer.io/[Micrometer] to collect its metrics.
+Micrometer then send the metrics to different monitoring systems using _registries_.
+Every monitoring system supported by Micrometer has its own registry.
+For instance, to connect OptaPlanner to https://prometheus.io/[Prometheus], you would
+add its registry as a dependency in the `pom.xml`:
+
+[source,xml]
+----
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-registry-prometheus</artifactId>
+  <version>${micrometer.version}</version>
+</dependency>
+----
+
+Then you would add the Prometheus registry to the global registry:
+
+[source,java]
+----
+PrometheusMeterRegistry prometheusRegistry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
+
+try {
+   HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+   server.createContext("/prometheus", httpExchange -> {
+       String response = prometheusRegistry.scrape();
+       httpExchange.sendResponseHeaders(200, response.getBytes().length);
+       try (OutputStream os = httpExchange.getResponseBody()) {
+           os.write(response.getBytes());
+       }
+   });
+
+   new Thread(server::start).start();
+} catch (IOException e) {
+   throw new RuntimeException(e);
+}
+
+Metrics.addRegistry(prometheusRegistry);
+----
+
+If you use Quarkus or Spring Boot, this is already set up for you; you just need to add the registry dependency for your monitoring system.
+
+For information on how to connect Micrometer to other monitoring system, visit https://micrometer.io/docs[the Micrometer documentation].
+
+== Monitoring the Solver
+
+Now that we know what monitoring is and how it can be useful, let walk through an actual example. We'll be running a modified version of the https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/school-timetabling[school timetabling quickstart] with support for multitenancy.
+The complete source code, along with scripts for running, can be https://github.com/Christopher-Chianelli/optaplanner-micrometer-blog[found on GitHub].
+
+== Starting the application
+
+Clone the example code:
+
+[source,bash]
+----
+git clone https://github.com/Christopher-Chianelli/optaplanner-micrometer-blog
+cd optaplanner-micrometer-blog
+----
+
+The application can be started by running development mode:
+
+[source,bash]
+----
+mvn quarkus:dev
+----
+
+Once started, you can access the application at https://localhost:8080. To see available metrics for the application, visit https://localhost:8080/q/metrics.
+
+image:ExampleMonitoringApp.png[Example Application]
+
+== Starting Prometheus
+
+Prometheus has a prebuilt Docker image on Dockerhub that can be used for running Prometheus.
+We'll need to modify it configuration so it'll scrape our metrics endpoint.
+
+Create `prometheus.yml` with the following text:
+
+[source,yaml]
+----
+scrape_configs:
+- job_name: local application
+  scrape_interval: 1s
+  metrics_path: /q/metrics
+  static_configs:
+  - targets:
+    - localhost:8080
+----
+
+This configures Prometheus to scrape metrics from `localhost:8080/q/metrics` every second.
+
+To start Prometheus using the following configuration, run the command below:
+
+[source,bash]
+----
+docker run \
+    --network host \
+    --mount type=bind,source=prometheus.yml,destination=/etc/prometheus/prometheus.yml,ro=true,relabel=shared \
+     prom/prometheus
+----
+
+You can see the Prometheus UI by visiting https://localhost:9090.
+
+image::PrometheusUI.png[Prometheus UI]
+
+== Starting Grafana
+
+https://grafana.com/[Grafana] provides a much more robust UI with additional features.
+Grafana has a prebuilt image on Dockerhub you can use to run Grafana locally. Start it using the command below.
+
+[source,bash]
+----
+docker run --network host grafana/grafana
+----
+
+It may take a while to start. Once started,
+visit https://localhost:3000 to see the Grafana UI. Login with the username "admin" and the password "admin".
+
+== Connecting Grafana to Prometheus
+
+. Click on the Gear icon to go to the Configuration page.
+. Click the "Add data source" button.
+. Select "Prometheus".
+. Enter "http://localhost:9090" for the URL field.
+. (Optional) Set the Scrape Interval to be equal to the one set for Prometheus (1s).
+. Click "Save & Test".
+
+If it is set up correctly, a green textbox should appear above "Save & Test" with text "Data source is working".
+
+image::GrafanaConfigurePrometheus.png[Grafana Prometheus Configuration]
+
+== Create a dashboard to monitor metrics
+
+With all that setup, we can finally graph some metrics.
+
+. Click on the "+" icon on the left sidebar.
+. Click "Add an empty panel".
+. Beneath "A", in the text box to the right of "Metrics", enter "optaplanner_solver_solve_duration_seconds_active_count". This adds a graph for the number of active solvers. It might say "No data" if no solvers were started yet.
+. Click on the clock icon in the top right, and select "Last 5 minutes" under "Relative time range". This make the dashboard show data that occurred during the past 5 minutes.
+. Click on the arrow to the right of the Refresh icon, and click "5s". This make the dashboard refresh every 5 seconds.
+
+Go to "http://localhost:8080" and start some solvers. Use the "School Id" selector to change schools, and click the "Solve" button to start solving the current school timetable.
+
+The dashboard should display a graph similar to this one depending on how many solvers were started:
+
+image::GrafanaGraphExample.png[Grafana Graph]
+
+== Metrics available
+
+Beside "optaplanner_solver_solve_duration_seconds_active_count", there are several other metrics available by default:
+
+- optaplanner_solver_errors_total: the total number of errors that occurred while solving since the start of the measuring.
+
+- optaplanner_solver_solve_duration_seconds_max: run time of the longest-running currently active solver.
+
+- optaplanner_solver_solve_duration_seconds_duration_sum: the sum of each active solver’s solve duration. For example, if there are two active solvers, one running for three minutes and the other for one minute, the total solve time is four minutes.
+
+In 8.12.0.Final and above, additional metrics can be configured by adding a `<monitoring>` section to the solver config:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+  <monitoring>
+    <metric>BEST_SCORE</metric>
+    <metric>CONSTRAINT_MATCH_TOTAL_BEST_SCORE</metric>
+    <!-- ... -->
+  </monitoring>
+</solver>
+----
+
+For full details on OptaPlanner monitoring support, see the https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#monitoring[the monitoring section of the OptaPlanner docs].
+
+== What next?
+
+This tutorial only covered the basics of what you can do with Grafana. Additional things you can do:
+
+- https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/[Create alerts that trigger whenever a certain condition is met]
+- https://grafana.com/docs/grafana/latest/panels/transformations/[Perform transformations on queries]
+- https://grafana.com/docs/grafana/latest/visualizations/[Visualize data in a variety of graphs and charts]
+
+== Conclusion
+
+Monitoring systems are a helpful tool for diagnosing and alerting us to issues.
+https://www.optaplanner.org/[OptaPlanner] integrates with monitoring systems using https://micrometer.io/[Micrometer], providing useful metrics such as active solver count.
+One example of a monitoring system is https://prometheus.io/[Prometheus], which scrape metrics from an endpoint.
+https://grafana.com/[Grafana] is an analytics visualization platform that allows us to visualize data and create alerts when certain conditions are met.
+As always, the complete source code for this example is https://github.com/Christopher-Chianelli/optaplanner-micrometer-blog[available on GitHub].
