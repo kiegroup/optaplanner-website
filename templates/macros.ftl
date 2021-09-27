@@ -122,7 +122,7 @@
             <ul class="list-unstyled">
                 <#list videos[0..6] as video>
                     <li class="mb-2">
-                        <a style="cursor: pointer" data-bs-toggle="modal" data-youtubeId="${video.youtubeId}" data-bs-target="#videoModal">
+                        <a style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#videoModal" data-youtube-id="${video.youtubeId}" data-video-title="${video.title}">
                             <span><i class="fas fa-play-circle"></i></span>
                             <span class="align-text-middle link-primary">${video.title}</span>
                         </a>
@@ -209,7 +209,7 @@
                             <div class="text-center mt-5 text-white"><i class="fas fa-play-circle fa-2x"></i></div>
                         </div>
                         <div class="card-body p-2">
-                            <a class="stretched-link" data-bs-toggle="modal" data-youtubeId="${video.youtubeId}" data-bs-target="#videoModal">
+                            <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#videoModal" data-youtube-id="${video.youtubeId}" data-video-title="${video.title}">
                                 <div>${video.title}</div>
                             </a>
                             <#if video.author??>
