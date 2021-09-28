@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom shadow">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img alt="OptaPlanner logo" src="${content.rootpath}headerFooter/optaPlannerLogo200px.png">
