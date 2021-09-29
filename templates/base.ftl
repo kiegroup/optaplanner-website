@@ -167,9 +167,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="ratio ratio-16x9">
-                        <#-- src filled in dynamically by JavaScript -->
-                        <iframe src="" allow="autoplay;" allowfullscreen></iframe>
+                    <div class="ratio ratio-16x9" id="player-container">
+                        <#-- iframe filled in dynamically by JavaScript -->
                     </div>
                 </div>
             </div>
