@@ -200,7 +200,7 @@
     <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
             <#list relatedVideos as video>
                 <div class="col">
                     <@videoCard youtubeId=video.youtubeId/>
@@ -213,20 +213,27 @@
 <#macro videoCard youtubeId long=true>
     <#assign video = videos?filter(v -> v.youtubeId == youtubeId)?first >
     <div class="card" style="cursor: pointer">
-        <img class="card-img-top" src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
-        <div class="card-img-overlay">
-            <div class="text-center mt-5 text-white"><i class="fas fa-play-circle fa-3x bg-dark bg-opacity-25 rounded-pill p-1"></i></div>
-        </div>
         <#if long>
-        <div class="card-body p-2">
-            <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#videoModal" data-youtube-id="${video.youtubeId}" data-video-title="${video.title}">
-                <div>${video.title}</div>
+            <img class="card-img-top ratio ratio-16x9" src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" alt="Video thumbnail">
+            <div class="card-img-overlay">
+                <div class="text-center mt-5"><i class="fas fa-play-circle fa-3x text-white bg-dark bg-opacity-25 rounded-pill p-1"></i></div>
+            </div>
+            <div class="card-body p-2">
+                <#-- As a stretched-link for the hover over effect -->
+                <a class="stretched-link" data-bs-toggle="modal" data-bs-target="#videoModal" data-youtube-id="${video.youtubeId}" data-video-title="${video.title}">${video.title}</a>
+                <br/>
+                <#if video.author??>
+                    <@userBadgeInline userId=video.author/>
+                </#if>
+                <span class="float-end align-bottom small">${video.date?string("d MMM yyyy")}</span>
+            </div>
+        <#else>
+            <a data-bs-toggle="modal" data-bs-target="#videoModal" data-youtube-id="${video.youtubeId}" data-video-title="${video.title}">
+                <img class="card-img-top ratio ratio-16x9" src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" alt="Video thumbnail">
+                <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                    <i class="fas fa-play-circle fa-3x text-white bg-dark bg-opacity-25 rounded-pill p-1"></i>
+                </div>
             </a>
-            <#if video.author??>
-                <@userBadgeInline userId=video.author/>
-            </#if>
-            <span class="float-end align-bottom small">${video.date?string("d MMM yyyy")}</span>
-        </div>
         </#if>
     </div>
 </#macro>
