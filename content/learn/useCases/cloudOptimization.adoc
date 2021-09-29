@@ -3,7 +3,7 @@
 :jbake-description: OptaPlanner is an Open Source Java™ engine to optimize cloud allocations.
 :jbake-priority: 1.0
 :jbake-related_tag: cloud optimization
-:showtitle:
+:jbake-use_case_demo_youtube_id: xhCtuM-Hiic
 
 image:cloudOptimizationValueProposition.png[Cloud optimization value proposition]
 

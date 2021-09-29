@@ -3,7 +3,10 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize assigning conference talks to timeslots and rooms.
 :jbake-priority: 1.0
 :jbake-related_tag: conference scheduling
-:showtitle:
+:jbake-use_case_demo_youtube_id: ykF8DjxhQJI
+
+Conference scheduling assigns each talk to a timeslot and a room.
+Our implementation scheduled talks for for major IT events, such as Devoxx, Red Hat Summit and Voxxed.
 
 image:conferenceSchedulingValueProposition.png[Conference scheduling value proposition]
 

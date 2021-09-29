@@ -3,17 +3,17 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize school timetabling, adhering to teacher availability, room capacity and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: school timetabling
-:showtitle:
-
-// TODO show use case video HO7l3rWb_uo
+:jbake-use_case_demo_youtube_id: HO7l3rWb_uo
+:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/school-timetabling#readme
 
 Universities and schools aim to provide high quality lesson schedules
 to their teachers and students.
 Depending on room capacity and availability,
 _school timetabling_ decides when and where a lecture takes place.
-Optimizing this planning problem with a constraint solver AI improves
-teacher and student satisfaction by reducing commute and gap hours
-while adhering to other constraints such as conflicting lessons, teacher availability, room availability and room capacity.
+Optimize this planning problem with an AI constraint solver to improve
+teacher and student satisfaction.
+Reduce commute and gap hours while adhering to other constraints such as
+conflicting lessons, teacher availability, room availability and room capacity.
 
 // TODO School timetabling value proposition image
 image:schoolTimetablingInputOutput.png[School timetabling input output]

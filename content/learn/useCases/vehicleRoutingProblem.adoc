@@ -3,7 +3,9 @@
 :jbake-description: OptaPlanner is an Open Source Java™ engine to optimize Vehicle Routing Problem and Traveling Salesman Problem variants.
 :jbake-priority: 1.0
 :jbake-related_tag: vehicle routing
-:showtitle:
+:jbake-use_case_demo_youtube_id: rEeAML74oWo
+:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaweb-vehicle-routing#readme
+
 
 The Vehicle Routing Problem (VRP) optimizes the routes of delivery trucks,
 cargo lorries, public transportation (buses, taxis and airplanes)

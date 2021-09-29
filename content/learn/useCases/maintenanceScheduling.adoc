@@ -3,9 +3,8 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLAs and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: maintenance scheduling
-:showtitle:
-
-// TODO show use case video gIaHtATz6n8 ?
+:jbake-use_case_demo_youtube_id: gIaHtATz6n8
+:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/maintenance-scheduling#readme
 
 Machinery and other types of equipment in use (such as elevators, escalators, airplanes, trains, ...)
 tend to deteriorate over time, requiring regular maintenance.
