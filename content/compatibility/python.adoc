@@ -1,14 +1,14 @@
 = Artificial Intelligence planning optimization in Python
 :jbake-type: compatibilityBase
-:jbake-description: Use OptaPy (open source) for Artificial Intelligence planning optimization on Java.
+:jbake-description: Use OptaPy (open source) for Artificial Intelligence planning optimization on Python.
 :jbake-priority: 1.0
 :jbake-related_tag: python
 :showtitle:
 
-https://www.optapy.org[OptaPy] allows you to run OptaPlanner from Python code,
-at a high performance cost.
+https://www.optapy.org[OptaPy] allows you to run OptaPlanner from plain Python code.
 
-It is https://pypi.org/project/optapy/[available in PyPI].
+* OptaPy is currently an experimental module. It is significantly slower than OptaPlanner itself.
+* OptaPy is https://pypi.org/project/optapy/[available in PyPI].
 
 == Jupyter notebook
 
