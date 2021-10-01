@@ -7,8 +7,15 @@
 
 OptaPlanner is very often used by Kotlin programmers.
 
-- It works, there are no issues.
-- There is a feature request for nullability annotations on all APIs,
+* OptaPlanner works on Kotlin.
+* OptaPlanner has dedicated extensions for:
+** link:quarkus.html[Quarkus]
+** link:springBoot.html[Spring Boot]
+* OptaPlanner is available in *Maven Central*.
+Import the BOM (`org.optaplanner:optaplanner-bom`) in:
+** Maven
+** Gradle
+* There is a feature request for nullability annotations on all APIs,
 which we will add once Kotlin supports those from `jakarta.annotation:jakarta.annotation-api`.
 
 video::n6fl60gR8Gc[youtube]

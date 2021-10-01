@@ -260,6 +260,10 @@
   tags:
     - task assignment
 
+- youtubeId: f4jIWbQpjdE
+  title: "Solve optimization and scheduling problems with business resource planning"
+  date: 2015-04-02
+
 - youtubeId: u_bl6E7aiNY
   author: ge0ffrey
   title: "Exam timetabling with OptaPlanner"
@@ -280,6 +284,13 @@
   date: 2013-10-09
   tags:
     - school timetabling
+
+- youtubeId: _2zweB9JD7c
+  author: ge0ffrey
+  title: "Project Job Scheduling in OptaPlanner"
+  date: 2013-09-30
+  tags:
+    - project job scheduling
 
 - youtubeId: BxO3UFmtAPg
   author: ge0ffrey

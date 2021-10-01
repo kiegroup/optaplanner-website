@@ -295,6 +295,55 @@
     </div>
 </#macro>
 
+<#macro useCaseCards>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4">
+        <@featureCard uri="learn/useCases/vehicleRoutingProblem.html"
+                iconClass="fas fa-truck"
+                title="Vehicle routing (VRP)"
+                description="Quicker routes for a fleet of vehicles."/>
+        <@featureCard uri="learn/useCases/employeeRostering.html"
+                iconClass="fas fa-user-nurse"
+                title="Employee rostering"
+                description="Assign shifts to employees by skills and availability."/>
+        <@featureCard uri="learn/useCases/maintenanceScheduling.html"
+                iconClass="fas fa-wrench"
+                title="Maintenance scheduling"
+                description="Timely upkeep of machinery and equipment."/>
+        <@featureCard uri="learn/useCases/conferenceScheduling.html"
+                iconClass="fas fa-microphone"
+                title="Conference scheduling"
+                description="Schedule speakers and talks by availability and topic."/>
+        <@featureCard uri="learn/useCases/schoolTimetabling.html"
+                iconClass="fas fa-graduation-cap"
+                title="School timetabling"
+                description="Compacter schedules for teachers and students."/>
+        <@featureCard uri="learn/useCases/taskAssignmentOptimization.html"
+                iconClass="fas fa-tasks"
+                title="Task assignment"
+                description="Assign tasks by priority, skills and affinity."/>
+        <@featureCard uri="learn/useCases/cloudOptimization.html"
+                iconClass="fas fa-cloud"
+                title="Cloud optimization"
+                description="Bin packing and defragmentation of cloud resources."/>
+        <@featureCard uri="learn/useCases/jobShopScheduling.html"
+                iconClass="fas fa-industry"
+                title="Job shop scheduling"
+                description="Reduce makespan for assembly lines."/>
+    </div>
+</#macro>
+<#macro featureCard uri iconClass title description>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title"><i class="${iconClass} me-2"></i>${title}</h5>
+                <p class="card-text">${description}</p>
+                <a class="stretched-link mt-auto" href="${content.rootpath}${uri}">Learn more</a>
+            </div>
+        </div>
+    </div>
+</#macro>
+
+
 <#macro whatIsOptaPlanner>
     <h2>What is OptaPlanner?</h2>
     <p>
