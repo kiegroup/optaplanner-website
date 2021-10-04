@@ -343,7 +343,6 @@
     </div>
 </#macro>
 
-
 <#macro whatIsOptaPlanner>
     <h2>What is OptaPlanner?</h2>
     <p>

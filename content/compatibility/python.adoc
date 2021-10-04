@@ -7,8 +7,11 @@
 
 https://www.optapy.org[OptaPy] allows you to run OptaPlanner from plain Python code.
 
-* OptaPy is currently an experimental module. It is significantly slower than OptaPlanner itself.
+* OptaPy is currently an experimental module.
+It works, but it is at least 20 slower than OptaPlanner itself.
+We're working on reducing this performance difference.
 * OptaPy is https://pypi.org/project/optapy/[available in PyPI].
+* Questions?  https://stackoverflow.com/questions/tagged/optapy[Ask/view questions on StackOverflow.]
 
 == Jupyter notebook
 

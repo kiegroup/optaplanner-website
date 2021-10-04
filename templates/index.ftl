@@ -11,9 +11,9 @@
             googleWebmasterToolsVerification=true>
         <div class="row">
             <div class="col-md-7">
-                <h1>OptaPlanner</h1>
-                <h2>AI constraint solver for plans and schedules</h2>
-                <div class="float-start">
+                <h1>Solve planning and scheduling problems with OptaPlanner</h1>
+                <p><i>An easy-to-use constraint solver with AI algorithms</i></p>
+                <div class="d-flex justify-content-center" style="width: auto;">
                     <@macros.videoCard youtubeId="f4jIWbQpjdE" long=false/>
                 </div>
             </div>
@@ -38,7 +38,8 @@
                     There’s no need to input constraints as mathematical equations.</p>
                 <p>Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
                     (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
-                    with very efficient score calculation and other state-of-the-art constraint solving techniques.</p>
+                    with very efficient score calculation and other state-of-the-art constraint solving techniques
+                    for NP-complete or NP-hard problems.</p>
             </div>
             <div class="col-md-6">
                 <h2>Compatibility</h2>
@@ -47,7 +48,7 @@
                     <li><a href="${content.rootpath}compatibility/java.html">Java<i class="fab fa-java ms-1"></i></a></li>
                     <li><a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a></li>
                     <li><a href="${content.rootpath}compatibility/scala.html">Scala</a></li>
-                    <li><a href="${content.rootpath}compatibility/python.html">Python<i class="fab fa-python ms-1"></i></a></li>
+                    <li><a href="${content.rootpath}compatibility/python.html">Python<i class="fab fa-python ms-1"></i> (experimental)</a></li>
                 </ul>
                 <span>Integrates seamlessly with:</span>
                 <ul>
