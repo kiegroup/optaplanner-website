@@ -67,7 +67,7 @@ The Objects used in constraints are known as the domain of the problem. In schoo
 
 === Problem Facts
 
-Problem facts do not change throughout solving. Rooms and timeslots are examples of problem facts. Let's create the Room class:
+Problem facts do not change throughout solving. Rooms and timeslots are examples of problem facts. Let's create the `Room` class:
 
 [source,python]
 ----
