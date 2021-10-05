@@ -185,7 +185,7 @@ such as the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.htm
 https://www.optaplanner.org/learn/useCases/maintenanceScheduling.html[Maintenance Scheduling]
 and https://www.optaplanner.org/learn/useCases/employeeRostering.html[Shift Rostering].
 
-Use a macro with the `<\#nested>` to build layout inheritance:
+Use a macro with the `<#nested>` directive to build layout inheritance:
 
 . Create `templates/base.ftl`:
 +
