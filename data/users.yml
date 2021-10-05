@@ -24,7 +24,7 @@
   githubUsername: ge0ffrey
   email: gds.geoffrey.de.smet AT gmail.com
   employedBy: Red Hat
-  biography: Geoffrey founded OptaPlanner in 2006 and has been working for Red Hat since 2010.
+  biography: Geoffrey created OptaPlanner in 2006 and has been working for Red Hat since 2010.
 
 - userId: triceo
   fullName: Lukáš Petrovický
@@ -41,7 +41,7 @@
 
 - userId: yurloc
   fullName: Jiří Locker
-  role: OptaWeb Vehicle Routing lead developer
+  role: OptaPlanner developer
   gravatarHashId: c4e5f1a35064cb21de3b3e4bf5bd7ae8
   githubUsername: yurloc
   employedBy: Red Hat
@@ -225,7 +225,7 @@
 
 - userId: Christopher-Chianelli
   fullName: Christopher Chianelli
-  role: OptaWeb Employee Rostering developer
+  role: OptaPlanner developer
   gravatarHashId: 16f228a9f340e2a2ca5b42485a17bc3d
   githubUsername: Christopher-Chianelli
   employedBy: Red Hat
