@@ -294,7 +294,7 @@ The `@value_range_provider(range_id)` decorator tells OptaPlanner the function t
 Its argument, `range_id` is a string which is used in `@planning_variable` decorators to link the two (for example, `@planning_variable(Room, ['roomRange'])` is linked to `@value_range_provider('roomRange')`.
 
 The `@planning_entity_collection_property(entity_type)` decorator tells OptaPlanner the function that provides planning entities.
-The `entity_type` argument tell OptaPlanner what type of entities it provides (for instance, Lessons).
+The `entity_type` argument tells OptaPlanner what type of entities it provides (for instance, Lessons).
 
 The `@planning_score(score_type)` decorator tells OptaPlanner the function that returns the score.
 It must be named `get<X>` and have a corresponding a setter `set<X>`.
