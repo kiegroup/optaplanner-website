@@ -24,9 +24,9 @@
         </div>
 
         <h2 class="mb-2">What can OptaPlanner do?</h2>
-        <p>OptaPlanner optimizes plans and schedules with hard and soft constraints
-            to <b>heavily reduce costs</b>, improve <b>service quality</b>, fulfill <b>employee wishes</b>
-            and <b>lower carbon emissions</b>.</p>
+        <p>OptaPlanner optimizes plans and schedules with hard and soft constraints.
+            It <b>heavily reduces costs</b>, improves <b>service quality</b>, fulfills <b>employee wishes</b>
+            and helps to <b>lower carbon emissions</b>.</p>
         <@macros.useCaseCards/>
 
         <div class="row">
