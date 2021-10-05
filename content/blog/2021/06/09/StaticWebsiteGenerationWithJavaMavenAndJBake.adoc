@@ -20,7 +20,7 @@ who would _rather not touch the previous source code with a ten-foot pole_.
 We built this site. +
 We built this site on Java and Maven. +
 We built this site. +
-We built this site on JBake and Freemarker.
+We built this site on JBake and FreeMarker.
 
 == Why a static website generator?
 
@@ -80,15 +80,15 @@ We choose https://asciidoc.org/[Asciidoc]
 because it's https://docs.asciidoctor.org/asciidoc/latest/asciidoc-vs-markdown/[richer and more reliable] than Markdown.
 Also, all our documentation is written in Asciidoc.
 
-* Create templates with Freemarker, Thymeleaf or Groovy.
+* Create templates with FreeMarker, Thymeleaf or Groovy.
 +
-We choose https://freemarker.apache.org/[Freemarker]
+We choose https://freemarker.apache.org/[FreeMarker]
 because it's a powerful, battle-tested templating engine.
 
 == Tips and tricks
 
 These are common tasks to build an advanced static website
-and how to implement each task in JBake-Freemarker.
+and how to implement each task in JBake-FreeMarker.
 You might even call these _JBake Design Patterns_:
 
 === Use a macro to render shared content
@@ -97,7 +97,7 @@ Almost all our templates show the same _Latest releases_ panel:
 
 image::staticWebsiteMacroLatestReleases.png[Latest releases screenshot]
 
-A Freemarker template is perfect to avoid repeating yourself (DRY):
+A FreeMarker template is perfect to avoid repeating yourself (DRY):
 
 . Create `templates/macros.ftl` with a macro that outputs the HTML:
 +
