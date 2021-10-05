@@ -1644,9 +1644,9 @@ public class ...Dao extends XStreamSolutionDao {...}
 ----
 
 [.upgrade-recipe-major]
-=== Benchmarker from a Freemarker Template: usage changed
+=== Benchmarker from a FreeMarker Template: usage changed
 
-The API to configure a Benchmarker from a Freemarker Template has moved to a separate calls
+The API to configure a Benchmarker from a FreeMarker Template has moved to a separate calls
 and the methods have been renamed.
 
 Before in `*.java`:
