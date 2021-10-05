@@ -67,7 +67,7 @@ The Objects used in constraints are known as the domain of the problem. In schoo
 
 === Problem Facts
 
-Problem facts do not change throughout solving. Rooms and timeslots are examples of problem facts. Let's create the `Room` class:
+Problem facts do not change throughout solving. Rooms and timeslots are examples of problem facts. Create a `domain.py` file with the following code to create the `Room` class:
 
 [source,python]
 ----
@@ -90,12 +90,10 @@ class Room:
 The `@problem_fact` decorator registers the class as a problem fact, which allows it to be used in constraints.
 The `@planning_id` decorator registers `getId` as the planning ID for `Room`. OptaPlanner requires a planning ID for some functionality, such as generating unique pairs. The planning ID should be unique for instances of the same class.
 
-Now, let's create the `Timeslot` class:
+Now, in `domain.py`, let's add the following code to create the `Timeslot` class:
 
 [source,python]
 ----
-
-
 @problem_fact
 class Timeslot:
     def __init__(self, id, dayOfWeek, startTime, endTime):
@@ -117,7 +115,7 @@ class Timeslot:
 === Planning Entities
 
 Planning entities change throughout solving. Lesson is a planning entity, since its `room` and
-`timeslot` properties change throughout solving. Since the `room` and `timeslot` properties change throughout solving, they are known as planning variables. Let's create the `Lesson` class.
+`timeslot` properties change throughout solving. Since the `room` and `timeslot` properties change throughout solving, they are known as planning variables. Let's add the following code to `domain.py` to create the `Lesson` class.
 
 [source,python]
 ----
@@ -176,10 +174,11 @@ Because this use case has hard and soft constraints, use the HardSoftScore class
 
 Hard constraints are weighted against other hard constraints. Soft constraints are weighted too, against other soft constraints. Hard constraints always outweigh soft constraints, regardless of their respective weights.
 
-To calculate the score, create a constraint provider function:
+To calculate the score, create a constraint provider function in the file `constraints.py`:
 
 [source,python]
 ----
+from domain import Lesson, Room
 from optapy import constraint_provider, get_class
 from optapy.types import Joiners, HardSoftScore
 
@@ -200,12 +199,15 @@ def defineConstraints(constraintFactory):
 def roomConflict(constraintFactory):
     # A room can accommodate at most one lesson at the same time.
     return constraintFactory \
-            .fromUniquePair(LessonClass,
+            .from_(LessonClass) \
+            .join(LessonClass,
                 [
-                    # ... in the same timeslot ..
+                    # ... in the same timeslot ...
                     Joiners.equal(lambda lesson: lesson.timeslot),
                     # ... in the same room ...
-                    Joiners.equal(lambda lesson: lesson.room)
+                    Joiners.equal(lambda lesson: lesson.room),
+                    # ... and the pair is unique (different id, no reverse pairs) ...
+                    Joiners.lessThan(lambda lesson: lesson.id)
                 ]) \
             .penalize("Room conflict", HardSoftScore.ONE_HARD)
 
@@ -213,20 +215,24 @@ def roomConflict(constraintFactory):
 def teacherConflict(constraintFactory):
     # A teacher can teach at most one lesson at the same time.
     return constraintFactory \
-                .fromUniquePair(LessonClass,
+                .from_(LessonClass)\
+                .join(LessonClass,
                         [
                             Joiners.equal(lambda lesson: lesson.timeslot),
-                            Joiners.equal(lambda lesson: lesson.teacher)
+                            Joiners.equal(lambda lesson: lesson.teacher),
+                    Joiners.lessThan(lambda lesson: lesson.id)
                         ]) \
                 .penalize("Teacher conflict", HardSoftScore.ONE_HARD)
 
 def studentGroupConflict(constraintFactory):
     # A student can attend at most one lesson at the same time.
     return constraintFactory \
-            .fromUniquePair(LessonClass,
+            .from_(LessonClass) \
+            .join(LessonClass,
                 [
                     Joiners.equal(lambda lesson: lesson.timeslot),
-                    Joiners.equal(lambda lesson: lesson.studentGroup)
+                    Joiners.equal(lambda lesson: lesson.studentGroup),
+                    Joiners.lessThan(lambda lesson: lesson.id)
                 ]) \
             .penalize("Student group conflict", HardSoftScore.ONE_HARD)
 ----
@@ -246,10 +252,16 @@ Furthermore, because it contains all lessons, each with a specific planning vari
 
 - If it adheres to all hard constraints, then it is a _feasible_ solution, for example, a solution with the score 0hard/-7soft.
 
+In `domain.py`, add the following code to create the `TimeTable` class:
 [source,python]
 ----
-from optapy import planning_solution, planning_entity_collection_property, problem_fact_collection_property, \
+from optapy import planning_solution, planning_entity_collection_property, \
+                   problem_fact_collection_property, \
                    value_range_provider, planning_score
+from optapy.types import HardSoftScore
+
+def format_list(a_list):
+    return ',\n'.join(map(str, a_list))
 
 @planning_solution
 class TimeTable:
@@ -281,8 +293,8 @@ class TimeTable:
         self.score = score
 
     def __str__(self):
-        return "TimeTable(timeSlotList=" + str(self.timeslotList) + \
-               ",\nroomList=" + str(self.roomList) + ",\nlessonList=" + str(self.lessonList) + \
+        return "TimeTable(timeSlotList=" + format_list(self.timeslotList) + \
+               ",\nroomList=" + format_list(self.roomList) + ",\nlessonList=" + format_list(self.lessonList) + \
                ",\nscore=" + (str(self.score.toString()) if self.score is not None else 'None') + ")"
 ----
 
@@ -303,7 +315,7 @@ The type should be taken from the `optapy.types` module.
 
 == Solving
 
-To solve, we first need to create an instance of our problem:
+To solve, we first need to create an instance of our problem. Add the following code to `domain.py`:
 [source,python]
 ----
 from datetime import time
@@ -355,10 +367,13 @@ def generate_problem():
     return TimeTable(timeslotList, roomList, lessonList)
 ----
 
-Next, we need to create a `SolverConfig`, which tells OptaPlanner about the problem and what strategies to employ:
+Next, we need to create a `SolverConfig`, which tells OptaPlanner about the problem and what strategies to employ. In `main.py`, add the following code:
 
 [source,python]
 ----
+from domain import Lesson, TimeTable, generate_problem
+from constraints import defineConstraints
+from optapy import get_class
 from optapy.types import SolverConfig, Duration
 
 solver_config = SolverConfig().withEntityClasses(get_class(Lesson)) \
@@ -369,13 +384,13 @@ solver_config = SolverConfig().withEntityClasses(get_class(Lesson)) \
 
 For the `SolverConfig` above, we use the default strategies, use the model we defined above, and set it terminate after 30 seconds.
 
-Finally, we pass the `SolverConfig` and the problem instance to the `solve` function, which returns the last best solution found:
+Finally, we pass the `SolverConfig` and the problem instance to the `solve` function, which returns the last best solution found. Add the following code to `main.py`:
 
 [source,python]
 ----
 from optapy import solve
 
-solution = solve(solverConfig, generate_problem())
+solution = solve(solver_config, generate_problem())
 print(solution)
 ----
 
@@ -431,8 +446,7 @@ When the solution is formatted into a table, it should look similar to this:
 
 == Run the application
 
-To run the application, put all the code
-into a single Python file and run it:
+To run the application, execute the main file.
 [source,bash]
 ----
 python3 main.py
