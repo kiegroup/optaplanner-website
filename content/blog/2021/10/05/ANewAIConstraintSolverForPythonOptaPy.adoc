@@ -290,7 +290,7 @@ The `@planning_solution` decorator tells OptaPlanner that the class `TimeTable` 
 The `@problem_fact_collection_property(fact_type)` decorator tells OptaPlanner the function that provides problem facts.
 The `fact_type` argument tells OptaPlanner what type of fact it provides (for instance, Rooms).
 
-The `@value_range_provider(range_id)` decorator tell OptaPlanner the function that provides a value range, which is used to get possible values of planning variables.
+The `@value_range_provider(range_id)` decorator tells OptaPlanner the function that provides a value range, which is used to get possible values of planning variables.
 Its argument, `range_id` is a string which is used in `@planning_variable` decorators to link the two (for example, `@planning_variable(Room, ['roomRange'])` is linked to `@value_range_provider('roomRange')`.
 
 The `@planning_entity_collection_property(entity_type)` decorator tells OptaPlanner the function that provides planning entities.
