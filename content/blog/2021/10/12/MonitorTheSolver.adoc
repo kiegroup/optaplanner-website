@@ -6,7 +6,7 @@ Christopher-Chianelli
 :jbake-tags: monitoring, production
 :jbake-social_media_share_image: GrafanaGraphExample.png
 
-It's 11pm on Friday evening. Everything was working fine -- until now.
+It's 11 PM on Friday evening. Everything was working fine -- until now.
 Suddenly services are failing left and right, and your boss wants to know why.
 One tool in achieving a diagnosis is to use a monitoring system. Let's enable monitoring to the OptaPlanner nodes and see if we can diagnose this issue.
 
@@ -156,8 +156,7 @@ With all that setup, we can finally graph some metrics.
 . Click the "+" icon on the left sidebar.
 . Click "Add an empty panel".
 . Beneath "A", in the text box to the right of "Metrics", enter "optaplanner_solver_solve_duration_seconds_active_count". This adds a graph for the number of active solvers. It might say "No data" if no solvers were started yet.
-. Click the clock icon in the top right, and select "Last 5 minutes" under "Relative time range". This make the dashboard show data that occurred during the past 5 minutes.
-. Click the arrow to the right of the Refresh icon, and click "5s". This make the dashboard refresh every 5 seconds.
+. Click the clock icon in the top right, and select "Last 15 minutes" under "Relative time range". This make the dashboard show data that occurred during the past 15 minutes.
 
 Go to "http://localhost:8080" and start some solvers. Use the "School Id" selector to change schools, and click the "Solve" button to start solving the current school timetable.
 
