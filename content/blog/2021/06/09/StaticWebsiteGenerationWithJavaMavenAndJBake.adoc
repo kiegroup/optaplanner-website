@@ -140,16 +140,16 @@ A data file, for example a simple `*.yml` file, works well to hold such volatile
 [source, yaml]
 ----
 - youtubeId: blK7gxqu2B0
-title: "Unit testing constraints"
-...
+  title: "Unit testing constraints"
+  ...
 
 - youtubeId: gIaHtATz6n8
-title: "Maintenance scheduling"
-...
+  title: "Maintenance scheduling"
+  ...
 
 - youtubeId: LTkoaBk-P6U
-title: "Vaccination appointment scheduling"
-...
+  title: "Vaccination appointment scheduling"
+  ...
 ----
 
 . Then use it in `ftl` templates:
