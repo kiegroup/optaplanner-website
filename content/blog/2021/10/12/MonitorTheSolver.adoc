@@ -1,6 +1,6 @@
 = Monitor OptaPlanner solvers through Micrometer
 Christopher-Chianelli
-2021-10-02
+2021-10-12
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: monitoring, production
@@ -35,8 +35,8 @@ In Quarkus, to connect OptaPlanner to https://prometheus.io/[Prometheus], you wo
 [source,xml]
 ----
 <dependency>
-    <groupId>io.quarkus</groupId>
-    <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
+  <groupId>io.quarkus</groupId>
+  <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
 </dependency>
 ----
 
@@ -45,12 +45,12 @@ In Spring Boot, add the Spring Boot actuator to your project along with the regi
 [source,xml]
 ----
 <dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
 <dependency>
-    <groupId>io.micrometer</groupId>
-    <artifactId>micrometer-registry-prometheus</artifactId>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-registry-prometheus</artifactId>
 </dependency>
 ----
 and enable the metrics endpoint in `application.properties`:
@@ -134,7 +134,8 @@ docker run --network host grafana/grafana
 ----
 
 It might take a while to start.
-After it starts, visit http://localhost:3000 to see the Grafana UI. Login with the username "admin" and the password "admin".
+After it starts, visit http://localhost:3000 to see the Grafana UI.
+Log in with the username "admin" and the password "admin".
 
 == Connecting Grafana to Prometheus
 
@@ -156,7 +157,7 @@ With all that setup, we can finally graph some metrics.
 . Click the "+" icon on the left sidebar.
 . Click "Add an empty panel".
 . Beneath "A", in the text box to the right of "Metrics", enter "optaplanner_solver_solve_duration_seconds_active_count". This adds a graph for the number of active solvers. It might say "No data" if no solvers were started yet.
-. Click the clock icon in the top right, and select "Last 15 minutes" under "Relative time range". This make the dashboard show data that occurred during the past 15 minutes.
+. Click the clock icon in the top right, and select "Last 15 minutes" under "Relative time range". This makes the dashboard show data that occurred during the past 15 minutes.
 
 Go to "http://localhost:8080" and start some solvers. Use the "School Id" selector to change schools, and click the "Solve" button to start solving the current school timetable.
 
