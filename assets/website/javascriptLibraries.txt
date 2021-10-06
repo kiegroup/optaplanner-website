@@ -9,8 +9,8 @@ jQuery version
 Using CDN url for performance.
 License: MIT - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
-highlight.js version: 7.3
-Downloaded from: http://softwaremaniacs.org/soft/highlight/en/
+highlight.js
+Using CDN url for performance.
 License: BSD - this is compatible with ASL 2.0: http://www.apache.org/legal/resolved.html#category-a
 
 Flag icons version: 2015-08-21
