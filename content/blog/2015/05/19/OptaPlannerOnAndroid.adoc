@@ -44,7 +44,7 @@ $ java -jar jarjar-1.4.jar process jarJarRule.txt openbeans-1.0.jar javabeans-1.
 * Add these lines to `android` area in the `build.gradle` file in your Android project to allow classes of the `java.*` package
 inside the `javabeans-1.0.jar` file to be used:
 
-[source,groovy]
+[source,gradle]
 ----
 android {
     ...
@@ -60,7 +60,7 @@ android {
 
 * Add a dependency to the `build.gradle` file in your Android project and exclude `org.drools` and `xmlpull` dependencies:
 
-[source,groovy]
+[source,gradle]
 ----
 dependencies {
     ...

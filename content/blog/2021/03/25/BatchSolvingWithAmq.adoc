@@ -153,7 +153,7 @@ In this case, the request message is acknowledged.
 This way, the request message is never lost even if the Solver Server dies.
 
 To understand how the channels correspond to messaging queues, see the `application.properties` file located in `src/main/resources`:
-[source]
+[source,properties]
 ----
 # Configure the ActiveMQ source
 mp.messaging.incoming.solver_request.connector=smallrye-amqp # <1>
