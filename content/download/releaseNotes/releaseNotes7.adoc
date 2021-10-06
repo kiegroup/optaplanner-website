@@ -210,7 +210,7 @@ To use the starter with Maven, add this dependency to your `pom.xml` file:
 
 For Gradle, add this dependency to your `build.gradle` file:
 
-[source,groovy,options="nowrap"]
+[source,gradle,options="nowrap"]
 ----
 implementation "org.optaplanner:optaplanner-spring-boot-starter"
 ----

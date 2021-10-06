@@ -84,7 +84,7 @@
                 </div>
                 <div class="listingblock">
                     <div class="content">
-                        <pre class="highlight"><code class="language-groovy" data-lang="groovy">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latestFinal.version}'&#x000A;}</code></pre>
+                        <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latestFinal.version}'&#x000A;}</code></pre>
                     </div>
                 </div>
             </div>
@@ -182,14 +182,14 @@
                     <h3>Gradle</h3>
                     <div class="listingblock">
                         <div class="content">
-                            <pre class="highlight"><code class="language-groovy" data-lang="groovy">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latest.version}'&#x000A;}</code></pre>
+                            <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latest.version}'&#x000A;}</code></pre>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </#if>
-    
+
     <h3 id="NightlySnapshots">Nightly snapshots</h3>
     <p>Nightly snapshots are unstable binaries, built automatically by our CI server.</p>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
