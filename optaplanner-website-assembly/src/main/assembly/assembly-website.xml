@@ -11,17 +11,11 @@
 
   <fileSets>
     <fileSet>
-      <directory>../optaplanner-website-root</directory>
-      <includes>
-        <include>target/website</include>
-      </includes>
+      <directory>../optaplanner-website-root/target/website</directory>
       <outputDirectory/>
     </fileSet>
     <fileSet>
-      <directory>../optaplanner-website-docs</directory>
-      <includes>
-        <include>target/website</include>
-      </includes>
+      <directory>../optaplanner-website-docs/target/website</directory>
       <outputDirectory/>
     </fileSet>
   </fileSets>
