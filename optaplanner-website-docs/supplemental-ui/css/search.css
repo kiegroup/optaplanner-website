@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/* Taken from https://github.com/Mogztter/antora-lunr. */
+
 .navbar-brand .navbar-item + .navbar-item {
   flex-grow: 1;
   justify-content: flex-end;

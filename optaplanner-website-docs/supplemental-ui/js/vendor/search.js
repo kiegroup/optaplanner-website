@@ -1,4 +1,3 @@
-/* eslint-env browser */
 /*
 MIT License
 
@@ -22,6 +21,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
+// Taken from https://github.com/Mogztter/antora-lunr.
+
 window.antoraLunr = (function (lunr) {
   const scriptAttrs = document.getElementById('search-script').dataset
   const basePath = scriptAttrs.basePath
