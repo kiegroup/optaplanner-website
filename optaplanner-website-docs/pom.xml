@@ -17,8 +17,6 @@
 
   <properties>
     <antora.playbook>antora-playbook.yml</antora.playbook>
-    <version.antora>2.3.3</version.antora>
-    <version.antora.site-generator-lunr>0.6.1</version.antora.site-generator-lunr>
     <version.node>v12.18.2</version.node>
     <version.npm>6.14.5</version.npm>
   </properties>
@@ -62,9 +60,6 @@
               <goal>npm</goal>
             </goals>
             <phase>initialize</phase>
-            <configuration>
-              <arguments>install @antora/cli@${version.antora} @antora/site-generator-default@${version.antora} antora-site-generator-lunr@${version.antora.site-generator-lunr}</arguments>
-            </configuration>
           </execution>
           <execution>
             <id>run antora</id>
