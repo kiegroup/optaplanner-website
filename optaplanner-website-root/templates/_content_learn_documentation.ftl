@@ -43,7 +43,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>
@@ -83,7 +83,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>
