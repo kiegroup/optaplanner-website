@@ -35,7 +35,7 @@
 
   <modules>
     <module>optaplanner-website-docs</module>
-    <module>optaplanner-website-main</module>
+    <module>optaplanner-website-root</module>
     <module>optaplanner-website-assembly</module>
   </modules>
 

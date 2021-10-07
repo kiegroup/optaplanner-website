@@ -20,7 +20,7 @@
     </dependencySet>
     <dependencySet>
       <includes>
-        <include>org.optaplanner:optaplanner-website-main:zip</include>
+        <include>org.optaplanner:optaplanner-website-root:zip</include>
       </includes>
       <useProjectArtifact>false</useProjectArtifact>
       <outputDirectory/>
