@@ -66,31 +66,19 @@
               <arguments>install @antora/cli@${version.antora} @antora/site-generator-default@${version.antora} antora-site-generator-lunr@${version.antora.site-generator-lunr}</arguments>
             </configuration>
           </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <executions>
           <execution>
+            <id>run antora</id>
             <goals>
-              <goal>exec</goal>
+              <goal>npx</goal>
             </goals>
-            <phase>compile</phase>
+            <phase>generate-resources</phase>
             <configuration>
-              <executable>node/node</executable>
               <environmentVariables>
                 <DOCSEARCH_ENABLED>true</DOCSEARCH_ENABLED>
                 <DOCSEARCH_ENGINE>lunr</DOCSEARCH_ENGINE>
                 <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
               </environmentVariables>
-              <arguments>
-                <argument>node_modules/.bin/antora</argument>
-                <argument>--generator</argument>
-                <argument>antora-site-generator-lunr</argument>
-                <argument>${antora.playbook}</argument>
-                <argument>--to-dir=target/website/docs</argument>
-              </arguments>
+              <arguments>antora --generator antora-site-generator-lunr ${antora.playbook} --to-dir=target/website/docs</arguments>
             </configuration>
           </execution>
         </executions>
