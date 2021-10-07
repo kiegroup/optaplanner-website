@@ -13,17 +13,19 @@
   <packaging>pom</packaging>
 
   <dependencies>
+    <!-- The assembly depends on this module to be built first. -->
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-website-root</artifactId>
       <version>${project.version}</version>
-      <type>zip</type>
+      <type>pom</type>
     </dependency>
+    <!-- The assembly depends on this module to be built first. -->
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-website-docs</artifactId>
       <version>${project.version}</version>
-      <type>zip</type>
+      <type>pom</type>
     </dependency>
   </dependencies>
 
