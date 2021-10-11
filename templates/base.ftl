@@ -65,7 +65,7 @@
     <footer class="py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h4>KIE projects</h4>
                     <ul class="pl-2">
                         <li><a href="https://www.drools.org/" target="_blank">Drools rule engine</a></li>
@@ -74,7 +74,7 @@
                         <li><a href="https://kogito.kie.org/" target="_blank">Kogito Business Automation platform</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h4>Community</h4>
                     <ul class="pl-2">
                         <li><a href="${content.rootpath}blog/">Blog</a></li>
@@ -84,7 +84,7 @@
                         <li><a href="${content.rootpath}community/research.html">Academic research</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h4>Code</h4>
                     <ul class="pl-2">
                         <li><a href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
@@ -94,24 +94,10 @@
                         <li><a href="${content.rootpath}download/upgradeRecipe/">Upgrade recipes</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3">
-                    <div class="sponsorMessage mb-2">
-                        <span>Sponsored by</span>
-                        <br>
-                        <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" width="164px"></a>
-                    </div>
-                    <div class="sponsorMessage mb-2">
-                        <span>More coder content at</span>
-                        <br>
-                        <a href="https://developers.redhat.com/"><img alt="Red Hat Developers" height="48" src="${content.rootpath}headerFooter/redHatDevelopersLogo.png" width="164"></a>
-                    </div>
-                </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 text-center">
                     © Copyright 2006-${published_date?string("yyyy")}, Red Hat, Inc. or third-party contributors
-                    -
-                    <a href="https://www.redhat.com/en/about/privacy-policy" target="_blank">Privacy statement</a>
                     -
                     <a href="https://www.redhat.com/en/about/terms-use" target="_blank">Terms of use</a>
                     -

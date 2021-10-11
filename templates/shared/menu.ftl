@@ -208,9 +208,6 @@
         margin: unset;
         position: inherit;
     }
-    .logo.optaplanner {
-        background-image: url("/website/optaplanner_icon.svg");
-    }
 
     .navigation--logo {
         align-self: center;
@@ -442,9 +439,8 @@
         <div class="navigation--primary-left">
             <div class="navigation--logo">
                 <a class="logo ${(active_menu!config.active_menu!"kie")?lower_case}" aria-label="logo"></a>
-                <h1><a href="/"
-                       <#if ((active_menu!config.active_menu!"kie") == "kie")>class="navigation-item--active"</#if>
-                       aria-label="Home">${(active_menu!config.active_menu!"KIE")}</a></h1>
+                <h1><a href="/" class="logo-text <#if ((active_menu!config.active_menu!"kie")?lower_case == "kie")>navigation-item--active</#if>"
+                       aria-label="Home"></a></h1>
             </div>
             <div class="navigation--primary">
                 <#include (((active_menu)!config.active_menu!"kie")?lower_case + "-submenu.ftl")>

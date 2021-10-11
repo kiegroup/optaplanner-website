@@ -188,3 +188,37 @@ td > p:last-child {
     display: flex;
     margin: 0 auto;
 }
+
+/******************************************************************************
+* Logo
+******************************************************************************/
+.logo.optaplanner {
+    background-image: url("optaplanner_full_logo.svg");
+}
+a.logo.optaplanner {
+    background-position: right;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-bottom: inherit;
+
+}
+.navigation--logo .logo-text {
+    background-image: url("optaplanner_full_logo.svg");
+    background-position: left;
+    width: 15rem;
+    background-size: cover;
+    height: 50px;
+}
+
+@media screen and (max-width: 982px) {
+    .navigation--logo .logo-text {
+        width: 15.5rem;
+    }
+}
+
+/******************************************************************************
+* Specific Menu changes
+******************************************************************************/
+.navigation--primary > ul > li {
+    margin: inherit !important;
+}
