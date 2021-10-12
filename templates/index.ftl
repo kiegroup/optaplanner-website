@@ -53,7 +53,7 @@
                 <span>Integrates seamlessly with:</span>
                 <ul>
                     <li><a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a></li>
-                    <li><a href="${content.rootpath}compatibility/spring.html">Spring Boot</a></li>
+                    <li><a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a></li>
                 </ul>
                 <p>OptaPlanner is <a href="${content.rootpath}code/license.html">open source software</a>,
                     released under <a href="${content.rootpath}code/license.html">the Apache License</a>.</p>
