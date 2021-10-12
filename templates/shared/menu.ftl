@@ -449,22 +449,21 @@
         <div class="navigation--primary-right">
             <div class="navigation--primary">
                 <ul>
-                      <li>
-                          <a aria-label="Kogito" href="https://kogito.kie.org/"
-                             title="Cloud-native business automation" class="kie-tooltip">Kogito</a>
-                      </li>
-                      <li>
-                          <a aria-label="Drools" href="https://drools.org/"
-                             class="kie-tooltip" title="Business rule management">Drools</a>
-                      </li>
-                      <li>
-                          <a aria-label="jBPM" href="https://jbpm.org/"
-                             class="kie-tooltip" title="Business process management">jBPM</a>
-                      </li>
-                      <li>
-                          <a aria-label="Optaplanner" href="https://www.optaplanner.org/"
-                             class="kie-tooltip" title="Optimizing constraint solver">OptaPlanner</a>
-                      </li>
+                    <li>
+                        <a aria-label="KIE" href="https://kie.org" title="KIE Group Website" class="kie-tooltip">KIE</a>
+                    </li>
+                    <li>
+                        <a aria-label="Kogito" href="https://kogito.kie.org/"
+                           title="Cloud-native business automation" class="kie-tooltip">Kogito</a>
+                    </li>
+                    <li>
+                        <a aria-label="Drools" href="https://drools.org/"
+                           class="kie-tooltip" title="Business rule management">Drools</a>
+                    </li>
+                    <li>
+                        <a aria-label="jBPM" href="https://jbpm.org/"
+                           class="kie-tooltip" title="Business process management">jBPM</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -483,10 +482,10 @@
                 KIE Projects
             </h3>
             <ul>
+                <li><a aria-label="KIE" href="https://kie.org/">KIE</a></li>
                 <li><a aria-label="Kogito" href="https://kogito.kie.org/">Kogito</a></li>
                 <li><a aria-label="Drools" href="https://drools.org/">Drools</a></li>
                 <li><a aria-label="jBPM" href="https://jbpm.org/">jBPM</a></li>
-                <li><a aria-label="Optaplanner" href="https://www.optaplanner.org/">OptaPlanner</a></li>
             </ul>
         </li>
     </ul>
