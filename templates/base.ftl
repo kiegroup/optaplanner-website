@@ -50,47 +50,7 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom shadow">
-        <div class="container">
-            <a class="navbar-brand" href="${content.rootpath}">
-                <img alt="OptaPlanner logo" src="${content.rootpath}headerFooter/optaPlannerLogo200px.png">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}download/download.html">Download</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLearn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Learn
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarLearn">
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/documentation.html">Documentation</a></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/video.html">Videos</a></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/slides.html">Slides</a></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/training.html">Training</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/useCases/index.html">Use cases</a></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}compatibility/index.html">Compatibility</a></li>
-                            <li><a class="dropdown-item" href="${content.rootpath}learn/testimonialsAndCaseStudies.html">Testimonials and case studies</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}community/getHelp.html">Get help</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}code/sourceCode.html">Source</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}community/team.html">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${content.rootpath}product/services.html">Services</a></li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="p-2"><a aria-label="Star OptaPlanner on GitHub" class="github-button" data-show-count="true" href="https://github.com/kiegroup/optaplanner">Star</a></li>
-                    <li class="p-1"><a href="https://twitter.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="${content.rootpath}headerFooter/twitterLogo.png"></a></li>
-                    <li class="p-1"><a href="https://www.facebook.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="${content.rootpath}headerFooter/facebookLogo.png"></a></li>
-                    <li class="p-1"><a href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="${content.rootpath}headerFooter/youtubeLogo.png" style="height: 16px"></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <#include "shared/menu.ftl"/>
 
     <div class="body-without-header-footer">
         <div class="forkMeOnGithub">
@@ -102,64 +62,7 @@
         <#nested>
         </div>
     </div>
-    <footer class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h4>KIE projects</h4>
-                    <ul class="pl-2">
-                        <li><a href="https://www.drools.org/" target="_blank">Drools rule engine</a></li>
-                        <li><a href="https://www.optaplanner.org/" target="_blank">OptaPlanner constraint solver</a></li>
-                        <li><a href="https://www.jbpm.org/" target="_blank">jBPM workflow engine</a></li>
-                        <li><a href="https://kogito.kie.org/" target="_blank">Kogito Business Automation platform</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Community</h4>
-                    <ul class="pl-2">
-                        <li><a href="${content.rootpath}blog/">Blog</a></li>
-                        <li><a href="${content.rootpath}community/getHelp.html">Get Help</a></li>
-                        <li><a href="${content.rootpath}community/team.html">Team</a></li>
-                        <li><a href="${content.rootpath}community/governance.html">Governance</a></li>
-                        <li><a href="${content.rootpath}community/research.html">Academic research</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Code</h4>
-                    <ul class="pl-2">
-                        <li><a href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
-                        <li><a href="${config.issueTracker}">Submit a bug</a></li>
-                        <li><a href="${content.rootpath}code/license.html">License (Apache-2.0)</a></li>
-                        <li><a href="${content.rootpath}download/releaseNotes/">Release notes</a></li>
-                        <li><a href="${content.rootpath}download/upgradeRecipe/">Upgrade recipes</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <div class="sponsorMessage mb-2">
-                        <span>Sponsored by</span>
-                        <br>
-                        <a href="https://www.redhat.com/"><img alt="Red Hat" src="${content.rootpath}headerFooter/redHatLogo.png" width="164px"></a>
-                    </div>
-                    <div class="sponsorMessage mb-2">
-                        <span>More coder content at</span>
-                        <br>
-                        <a href="https://developers.redhat.com/"><img alt="Red Hat Developers" height="48" src="${content.rootpath}headerFooter/redHatDevelopersLogo.png" width="164"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    © Copyright 2006-${published_date?string("yyyy")}, Red Hat, Inc. or third-party contributors
-                    -
-                    <a href="https://www.redhat.com/en/about/privacy-policy" target="_blank">Privacy statement</a>
-                    -
-                    <a href="https://www.redhat.com/en/about/terms-use" target="_blank">Terms of use</a>
-                    -
-                    <a href="${content.rootpath}website/websiteInfo.html">Website info</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <#include "shared/footer.ftl"/>
     <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">

@@ -35,7 +35,16 @@
                 <p>OptaPlanner is <strong>a lightweight, embeddable planning engine</strong>.
                     It enables everyday programmers to solve optimization problems efficiently.
                     Constraints apply on plain domain objects and can call existing code.
+                    It is Object Oriented Programming (OOP) and Functional Programming (FP) friendly.
                     There’s no need to input constraints as mathematical equations.</p>
+                <span>OptaPlanner supports</span>
+                <ul>
+                    <li><b>Continuous planning</b> to weekly publish the schedule, 3 weeks before execution</li>
+                    <li><b>Non-disruptive replanning</b> for changes to an already published schedule</li>
+                    <li><b>Real-time planning</b> to react on real-time disruptions in the plan within milliseconds</li>
+                    <li><b>Overconstrained planning</b> when there are too few resources to cover all the work</li>
+                    <li><b>Pinning</b> so the user is still in control over the schedule</li>
+                </ul>
                 <p>Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
                     (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
                     with very efficient score calculation and other state-of-the-art constraint solving techniques
@@ -43,17 +52,22 @@
             </div>
             <div class="col-md-6">
                 <h2>Compatibility</h2>
-                <span>Works directly from:</span>
+                <span>OptaPlanner works directly from:</span>
                 <ul>
                     <li><a href="${content.rootpath}compatibility/java.html">Java<i class="fab fa-java ms-1"></i></a></li>
                     <li><a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a></li>
                     <li><a href="${content.rootpath}compatibility/scala.html">Scala</a></li>
                     <li><a href="${content.rootpath}compatibility/python.html">Python<i class="fab fa-python ms-1"></i> (experimental)</a></li>
                 </ul>
-                <span>Integrates seamlessly with:</span>
+                <span>OptaPlanner integrates seamlessly with:</span>
                 <ul>
                     <li><a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a></li>
                     <li><a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a></li>
+                </ul>
+                <span>For a full <i>Business Automation</i> stack, combine OptaPlanner with:</span>
+                <ul>
+                    <li>workflows and processes in <a href="https://kogito.kie.org">Kogito</a></li>
+                    <li>decision tables and DMN in <a href="https://www.drools.org/">Drools</a></li>
                 </ul>
                 <p>OptaPlanner is <a href="${content.rootpath}code/license.html">open source software</a>,
                     released under <a href="${content.rootpath}code/license.html">the Apache License</a>.</p>

@@ -24,36 +24,13 @@ a:not([class*="btn"]) {
 a:not([class*="btn"]):hover {
     text-decoration: underline;
 }
+a.link-underlined {
+    text-decoration: underline !important;
+}
 
 img {
     /* No images in release notes or blog posts wider than screen. Also mobile friendly. */
     max-width: 100%;
-}
-
-/* TODO use bootstrap color classes (bg-dark etc) in footer */
-
-footer {
-    color: rgba(255,255,255,.5);
-    background-color: #1b1c1d;
-}
-
-footer h4 {
-    color: #fff;
-}
-footer ul {
-    list-style: none;
-}
-
-footer a {
-    color: rgba(255,255,255,.5);
-}
-
-footer a:hover, footer a:focus {
-    color: #fff;
-}
-
-footer .sponsorMessage {
-    color: rgba(255,255,255,.5);
 }
 
 .forkMeOnGithub {
