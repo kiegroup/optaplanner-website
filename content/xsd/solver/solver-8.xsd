@@ -27,6 +27,8 @@
                     
           <xs:element minOccurs="0" name="threadFactoryClass" type="xs:string"/>
                     
+          <xs:element minOccurs="0" name="monitoring" type="tns:monitoringConfig"/>
+                    
           <xs:element minOccurs="0" name="solutionClass" type="xs:string"/>
                     
           <xs:element maxOccurs="unbounded" minOccurs="0" name="entityClass" type="xs:string"/>
@@ -64,6 +66,24 @@
   <xs:complexType abstract="true" name="abstractConfig">
         
     <xs:sequence/>
+      
+  </xs:complexType>
+    
+  <xs:complexType name="monitoringConfig">
+        
+    <xs:complexContent>
+            
+      <xs:extension base="tns:abstractConfig">
+                
+        <xs:sequence>
+                    
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="metric" type="tns:solverMetric"/>
+                  
+        </xs:sequence>
+              
+      </xs:extension>
+          
+    </xs:complexContent>
       
   </xs:complexType>
     
@@ -1280,6 +1300,38 @@
       <xs:enumeration value="WELL44497A"/>
             
       <xs:enumeration value="WELL44497B"/>
+          
+    </xs:restriction>
+      
+  </xs:simpleType>
+    
+  <xs:simpleType name="solverMetric">
+        
+    <xs:restriction base="xs:string">
+            
+      <xs:enumeration value="SOLVE_DURATION"/>
+            
+      <xs:enumeration value="ERROR_COUNT"/>
+            
+      <xs:enumeration value="BEST_SCORE"/>
+            
+      <xs:enumeration value="STEP_SCORE"/>
+            
+      <xs:enumeration value="SCORE_CALCULATION_COUNT"/>
+            
+      <xs:enumeration value="BEST_SOLUTION_MUTATION"/>
+            
+      <xs:enumeration value="MOVE_COUNT_PER_STEP"/>
+            
+      <xs:enumeration value="MEMORY_USE"/>
+            
+      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_BEST_SCORE"/>
+            
+      <xs:enumeration value="CONSTRAINT_MATCH_TOTAL_STEP_SCORE"/>
+            
+      <xs:enumeration value="PICKED_MOVE_TYPE_BEST_SCORE_DIFF"/>
+            
+      <xs:enumeration value="PICKED_MOVE_TYPE_STEP_SCORE_DIFF"/>
           
     </xs:restriction>
       
