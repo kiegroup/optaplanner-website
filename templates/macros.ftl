@@ -274,7 +274,7 @@
                 </li>
             </ol>
             <div class="text-center small">
-                Requires <a href="https://adoptium.net">JDK 11 or 17+</a> to run.
+                Requires <a href="https://adoptium.net">JDK 11 or later</a> to run.
             </div>
         </div>
     </div>
