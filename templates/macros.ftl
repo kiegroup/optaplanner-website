@@ -266,15 +266,15 @@
             </div>
         </a></div>
         <div class="card-body">
-            <ol class="mb-2">
-                <li>Download the zip and unzip it.</li>
+            <ol class="mb-1">
+                <li>Download and unzip.</li>
                 <li>
-                    Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
-                    Or run <code>examples/runExamples.bat</code> (Windows).
+                    Run <code>runQuickstarts.sh</code> (Linux/macOS)<br/>
+                    or <code>runQuickstarts.bat</code> (Windows).
                 </li>
             </ol>
             <div class="text-center small">
-                Requires <a href="https://adoptopenjdk.net">Java™</a> to run.
+                Requires <a href="https://adoptium.net">JDK 11 or higher</a> to run.
             </div>
         </div>
     </div>

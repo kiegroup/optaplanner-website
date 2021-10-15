@@ -30,7 +30,7 @@ For example on Fedora and RHEL:
 sudo dnf install java-11-openjdk-devel
 ----
 
-* On Windows and macOS, https://adoptopenjdk.net[download OpenJDK from AdoptOpenJDK].
+* On Windows and macOS, https://adoptium.net[download OpenJDK from Adoptium].
 
 We currently intend to support a minimal version of Java 11 throughout the entire 8.x series.
 
