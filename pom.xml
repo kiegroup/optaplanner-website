@@ -39,6 +39,11 @@
     <module>optaplanner-website-assembly</module>
   </modules>
 
+  <properties>
+    <!-- TODO: Upgrade with every product release. -->
+    <productDocsUrl>https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.11/html/developing_solvers_with_red_hat_build_of_optaplanner_in_red_hat_process_automation_manager</productDocsUrl>
+  </properties>
+
   <build>
     <pluginManagement>
       <plugins>
