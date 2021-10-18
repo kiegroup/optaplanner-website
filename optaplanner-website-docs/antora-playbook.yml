@@ -9,7 +9,7 @@ site:
     google_analytics: 'UA-39485370-1'
 content:
   sources:
-    - url: https://github.com/kiegroup/optaplanner.git
+    - url: git@github.com:kiegroup/optaplanner.git
       # Update with every release.
       branches: [8.12.x]
       start_path: optaplanner-docs/src
