@@ -12,4 +12,4 @@
 #
 #############################################################################################################################################################################
 
-rsync -Pavqr --protocol=28 --delete-after target/website/* optaplanner@filemgmt.jboss.org:www_htdocs/optaplanner
+rsync -Pavqr --protocol=28 --delete-after optaplanner-website-assembly/target/website-complete/* optaplanner@filemgmt.jboss.org:www_htdocs/optaplanner

@@ -1,0 +1,33 @@
+= OptaPlanner documentation website
+
+https://www.optaplanner.org/docs[www.optaplanner.org/docs]
+
+== How to build
+
+The documentation website builds from the top-level directory of this repository as a part of the entire
+OptaPlanner website project.
+
+== How it works
+
+This module builds a documentation website using https://antora.org/[Antora] that pulls the content from
+the latest release branch of the https://github.com/kiegroup/optaplanner[optaplanner repository].
+
+To simplify the maintenance, the documentation website is based on a pre-built default Antora UI bundle
+located in `ui-bundle/ui-bundle.zip`. Customizations are located in `supplemental-ui` that Antora uses to replace
+parts of the default `ui-bundle.zip`.
+
+== How to upgrade
+
+=== Upgrade UI bundle
+
+Download the latest ui-bundle-zip from https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable[Antora GitLab job]
+and replace the existing one in the `ui-bundle` directory.
+
+Be aware that the bundle is not versioned and in the future might not be compatible with the customizations this website uses.
+
+=== Upgrade Lunr search engine
+
+Download the new version of the https://lunrjs.com/[Lunr engine] from the https://www.npmjs.com/package/lunr[NPM registry]
+and replace the existing `supplemental-ui/js/vendor/lunr-*.min.js` file.
+
+Make sure the search box in the top-right corner of the documentation website can still provide hints.

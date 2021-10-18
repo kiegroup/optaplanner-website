@@ -1,0 +1,31 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="{{{uiRootPath}}}/../../" style="width:20%">
+          <img src="{{{uiRootPath}}}/img/optaPlannerIcon.svg" alt="OptaPlanner logo" style="width:50%">
+        </a>
+        <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
+      </div>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://docs.optaplanner.org">Archive</a>
+      </div>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+          <div class="navbar-end">
+            <!-- TODO: Upgrade with every product release. Keep in sync with the main website > Learn > Documentation. -->
+            <a class="navbar-item" href="https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.11/html/developing_solvers_with_red_hat_build_of_optaplanner_in_red_hat_process_automation_manager">Product documentation</a>
+          </div>
+        </div>
+  </nav>
+</header>

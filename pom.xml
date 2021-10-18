@@ -33,47 +33,31 @@
     </license>
   </licenses>
 
+  <modules>
+    <module>optaplanner-website-docs</module>
+    <module>optaplanner-website-root</module>
+    <module>optaplanner-website-assembly</module>
+  </modules>
+
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.jbake</groupId>
-        <artifactId>jbake-maven-plugin</artifactId>
-        <version>0.3.6-rc.2</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <inputDirectory>${project.basedir}</inputDirectory>
-          <outputDirectory>${project.build.directory}/website</outputDirectory>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.jbake</groupId>
-            <artifactId>jbake-core</artifactId>
-            <version>2.7.0-rc.4</version>
-          </dependency>
-          <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctorj</artifactId>
-            <version>2.4.3</version>
-          </dependency>
-          <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.31</version>
-          </dependency>
-          <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.28</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.eirslett</groupId>
+          <artifactId>frontend-maven-plugin</artifactId>
+          <version>1.10.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jbake</groupId>
+          <artifactId>jbake-maven-plugin</artifactId>
+          <version>0.3.6-rc.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>

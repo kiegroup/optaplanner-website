@@ -1,0 +1,13 @@
+# Local files
+/target
+/local
+
+# Eclipse, Netbeans and IntelliJ files
+/.*
+!.gitignore
+!.gitattributes
+!.htaccess
+/nbproject
+/*.ipr
+/*.iws
+/*.iml

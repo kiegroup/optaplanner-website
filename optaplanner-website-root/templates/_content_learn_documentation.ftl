@@ -25,7 +25,10 @@
             <div class="ulist">
                 <ul>
                     <li>
-                        <p><span class="image"><img src="documentation.png" alt="Documentation"></span> OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
+                       <p><span class="image"><img src="documentation.png" alt="Documentation"></span><a href="${content.rootpath}docs">Visit the documentation website.</a></p>
+                    </li>
+                    <li>
+                        <p>OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
                         <div class="ulist">
                             <ul>
                                 <li>
@@ -40,7 +43,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>
@@ -60,7 +63,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>
@@ -80,7 +83,7 @@
                         </div>
                     </li>
                     <li>
-                        <p>Red Hat subscription documentation: Check <a href="https://access.redhat.com/documentation/">the customer portal</a>.</p>
+                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
                     </li>
                 </ul>
             </div>

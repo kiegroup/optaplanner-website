@@ -36,3 +36,9 @@ readonly pom_yml_file="$this_script_directory/../data/pom.yml"
 sed -i -E "s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g" "$pom_yml_file"
 sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.(Final|Beta[0-9]*|CR[0-9]*)/$new_release/g" "$pom_yml_file"
 sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
+
+# Update antora-playbook.yml to point to the latest release branch of https://github.com/kiegroup/optaplanner.
+readonly antora_playbook_yml_file="$this_script_directory/../optaplanner-website-docs/antora-playbook.yml"
+readonly version_array=(${new_release//./ })
+readonly release_branch="${version_array[0]}.${version_array[1]}.x"
+sed -i -E "s/branches: \[[0-9]+\.[0-9]+\.x\]/branches: [$release_branch]/" "$antora_playbook_yml_file"
