@@ -9,7 +9,7 @@
                 </p>
                 <p class="small">
                     This <a class="link-light" href="${content.rootpath}website/websiteInfo.html">website</a>
-                    was build with <a class="link-light" href="https://jbake.org">JBake</a> and is completely open source.
+                    was built with <a class="link-light" href="https://jbake.org">JBake</a> and is completely open source.
                 </p>
             </div>
             <div class="col-md-3">
