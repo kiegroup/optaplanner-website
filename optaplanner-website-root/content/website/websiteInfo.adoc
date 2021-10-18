@@ -17,8 +17,9 @@ This website uses:
 
 * http://tango.freedesktop.org/[Tango Desktop Project icons]
 
+This website was generated on {maven_build_timestamp}.
 // TODO https://github.com/jbake-org/jbake/issues/694
-This website was generated on {published_date}.
+//This website was generated on {published_date}.
 
 == Website feedback
 
