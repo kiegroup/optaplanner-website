@@ -22,6 +22,12 @@ in the latest release of Red Hat Decision Manager 7.
 
 == New and noteworthy: Engine 8.12.0.Final
 
+=== Documentation website
+
+The latest final OptaPlanner documentation is now available on a new
+https://www.optaplanner.org/docs[documentation website] built by https://antora.org[Antora].
+The single-HTML and PDF documentation will keep publishing in the https://docs.optaplanner.org/[archive].
+
 === Monitoring Support
 
 OptaPlanner now uses Micrometer to monitor key metrics such as active solver count, solve durations, and error count.
