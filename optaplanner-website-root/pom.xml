@@ -12,7 +12,7 @@
   <artifactId>optaplanner-website-root</artifactId>
   <packaging>pom</packaging>
 
-  <name>OptaPlanner main website</name>
+  <name>OptaPlanner root website</name>
   <build>
     <plugins>
       <plugin>
