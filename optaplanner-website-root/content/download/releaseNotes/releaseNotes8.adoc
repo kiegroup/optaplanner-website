@@ -26,7 +26,7 @@ in the latest release of Red Hat Decision Manager 7.
 
 The latest final OptaPlanner documentation is now available on a new
 https://www.optaplanner.org/docs[documentation website] built by https://antora.org[Antora].
-The single-HTML and PDF documentation will keep publishing in the https://docs.optaplanner.org/[archive].
+The single-HTML and PDF documentation will continue to be published in the https://docs.optaplanner.org/[archive].
 
 === Monitoring Support
 
