@@ -1,6 +1,6 @@
 # This file serves for local development. Keep it in sync with antora-playbook.yml.
 site:
-  title: OptaPlanner Documentation
+  title: Documentation
   url: https://www.optaplanner.org/docs
   start_page: optaplanner-docs::planner-introduction/planner-introduction.adoc
   robots: allow
