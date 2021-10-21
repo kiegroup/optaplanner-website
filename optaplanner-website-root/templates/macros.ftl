@@ -281,7 +281,7 @@
 </#macro>
 <#macro getStartedButton>
     <div class="card bg-light mb-4">
-        <div class="text-center mt-2"><a class="btn btn-lg btn-primary versionedButton" href="${config.canonicalBaseUrl}/docs/optaplanner-docs/latest/quickstart/quickstart.html"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
+        <div class="text-center mt-2"><a class="btn btn-lg btn-primary versionedButton" href="${config.canonicalBaseUrl}/docs/optaplanner/latest/quickstart/quickstart.html"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
             <div>
                 <span>Get started</span><br/>
                 <span class="small">User guide ${pom.latestFinal.version}</span>
