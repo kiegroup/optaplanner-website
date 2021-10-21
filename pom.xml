@@ -72,11 +72,6 @@
           <artifactId>xml-maven-plugin</artifactId>
           <version>1.0.2</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
