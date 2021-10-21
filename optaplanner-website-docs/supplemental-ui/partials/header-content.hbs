@@ -2,8 +2,8 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="navbar-item">
-        <a href="{{{uiRootPath}}}/../../" style="width:20%">
-          <img src="{{{uiRootPath}}}/img/optaPlannerIcon.svg" alt="OptaPlanner logo" style="width:50%">
+        <a href="{{{uiRootPath}}}/../../">
+          <img src="{{{uiRootPath}}}/img/optaPlannerLogoDarkBackground200px.png" alt="OptaPlanner logo"/>
         </a>
         <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
       </div>
@@ -19,12 +19,13 @@
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="https://docs.optaplanner.org">Archive</a>
+        <div class="navbar-item">
+          <a class="navbar-item small-item" href="https://github.com/kiegroup/optaplanner" title="Follow OptaPlanner on GitHub"><div class="github-icon"></div></a>
+          <a class="navbar-item small-item" href="https://twitter.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Twitter"><img alt="T" src="{{{uiRootPath}}}/img/twitterLogo.png"></a>
+          <a class="navbar-item small-item" href="https://www.facebook.com/OptaPlanner" target="_blank" title="Follow OptaPlanner on Facebook"><img alt="Fb" src="{{{uiRootPath}}}/img/facebookLogo.png"></a>
+          <a class="navbar-item small-item" href="https://www.youtube.com/channel/UCcpkOKpujFlM67D2h0RdaeQ" target="_blank" title="OptaPlanner YouTube channel"><img alt="YT" src="{{{uiRootPath}}}/img/youtubeLogo.png" style="height: 16px"></a>
+        </div>
       </div>
     </div>
-    <div id="topbar-nav" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="{{{page.attributes.product-docs-url}}}">Product documentation</a>
-          </div>
-        </div>
   </nav>
 </header>

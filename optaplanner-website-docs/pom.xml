@@ -59,7 +59,7 @@
                 <DOCSEARCH_ENGINE>lunr</DOCSEARCH_ENGINE>
                 <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
               </environmentVariables>
-              <arguments>antora &#45;&#45;generator antora-site-generator-lunr ${antora.playbook} &#45;&#45;to-dir=target/website/docs &#45;&#45;attribute page-product-docs-url="${productDocsUrl}"</arguments>
+              <arguments>antora &#45;&#45;generator antora-site-generator-lunr ${antora.playbook} &#45;&#45;to-dir=target/website/docs</arguments>
             </configuration>
           </execution>
           -->
@@ -87,8 +87,6 @@
                 <argument>antora-site-generator-lunr</argument>
                 <argument>${antora.playbook}</argument>
                 <argument>--to-dir=target/website/docs</argument>
-                <argument>--attribute</argument>
-                <argument>page-product-docs-url="${productDocsUrl}"</argument>
               </arguments>
             </configuration>
           </execution>

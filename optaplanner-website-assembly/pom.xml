@@ -36,7 +36,7 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
-            <phase>package</phase>
+            <phase>generate-resources</phase>
             <goals>
               <goal>single</goal>
             </goals>
@@ -49,6 +49,60 @@
           <appendAssemblyId>false</appendAssemblyId>
           <finalName>website-complete</finalName>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>transform</goal>
+            </goals>
+            <phase>process-resources</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <transformationSets>
+            <transformationSet>
+              <dir>${build.directory}/website-complete</dir>
+              <includes>
+                <include>sitemap.xml</include>
+              </includes>
+              <stylesheet>src/main/xsl/merge-sitemaps.xsl</stylesheet>
+              <parameters>
+                <parameter>
+                  <name>docsSitemap</name>
+                  <value>${build.directory}/website-complete/docs/sitemap.xml</value>
+                </parameter>
+              </parameters>
+              <outputDir>${build.directory}/website-complete</outputDir>
+            </transformationSet>
+          </transformationSets>
+          <forceCreation>true</forceCreation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <configuration>
+              <excludeDefaultDirectories>true</excludeDefaultDirectories>
+              <filesets>
+                <fileset>
+                  <directory>${build.directory}/website-complete/docs</directory>
+                  <includes>
+                    <include>sitemap.xml</include>
+                  </includes>
+                </fileset>
+              </filesets>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
