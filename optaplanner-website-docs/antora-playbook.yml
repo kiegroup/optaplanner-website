@@ -8,6 +8,7 @@ site:
   keys:
     google_analytics: 'UA-39485370-1'
 content:
+  edit_url: '{web_url}/edit/main/{path}'
   sources:
     - url: git@github.com:kiegroup/optaplanner.git
       # Update with every release.
