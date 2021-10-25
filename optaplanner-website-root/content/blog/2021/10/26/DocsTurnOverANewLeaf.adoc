@@ -80,7 +80,7 @@ content:
 
 To preview local changes in the documentation:
 
-. Make sure the optaplanner and optaplanner-website git repositories are located in the same directory or change the local url accordingly.
+. Make sure the optaplanner and optaplanner-website Git repositories are located in the same directory or change the local URL accordingly.
 . `cd optaplanner-website/optaplanner-website-docs`
 . `mvn clean package -Pauthor`
 . Open the `index.html` located in `target/website/docs` in your browser.
