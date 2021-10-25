@@ -37,7 +37,7 @@ but the website assembly, named `optaplanner-website-docs`, became a part of the
 
 image::WebsiteStructure.png[optaplanner-website directory structure]
 
-Similarly to the entire `optaplanner-website`, the `optaplanner-website-docs` is built using maven. The maven module
+Similarly to the entire `optaplanner-website`, the `optaplanner-website-docs` is built using Maven. The Maven module
 acts as a wrapper over Antora, which generates the static site from AsciiDoc sources.
 
 There are two Antora playbooks referring to documentation sources. The first one, used by default, is `antora-playbook.yml`
