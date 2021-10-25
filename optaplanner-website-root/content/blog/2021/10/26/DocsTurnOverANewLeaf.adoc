@@ -23,7 +23,7 @@ Second, now you can search through the entire docs:
 image::DocsSearch.png[Search in the docs]
 
 The search box at the top of the page shows suggestions as soon as you start typing. Each suggestion consists of
-the chapter and a link to the occurrence of the term you search for.
+the chapter and a link to where the search term occurs.
 
 Third, if you spot a discrepancy in the documentation and would like to improve it, contributing was never easier:
 
