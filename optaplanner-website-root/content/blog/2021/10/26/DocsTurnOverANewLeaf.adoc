@@ -90,7 +90,7 @@ To preview local changes in the documentation:
 
 == Supported documentation formats
 
-Opening new ways does not always mean abandoning the old ones.
+Introducing new formats does not have to result in abandoning the old ones, and in our case it does not.
 While I encourage everyone to visit the new documentation website, the existing formats continue to be published with
 every release as before.
 
