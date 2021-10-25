@@ -8,7 +8,7 @@ rsynek
 
 For years, https://www.optaplanner.org[OptaPlanner] has been offering the documentation in two formats:
 single-page HTML and PDF.
-This now changes with launching a new documentation website, built using https://antora.org/[Antora].
+This now changes with the launch a new documentation website, built using https://antora.org/[Antora].
 
 What's so exciting about the new documentation?
 
