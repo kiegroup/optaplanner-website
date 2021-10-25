@@ -14,7 +14,7 @@ What's so exciting about the new documentation?
 
 First and foremost, it loads instantly as opposed to the old single-page HTML documentation.
 For example, if I want to read about _repeated planning_,
-I open the single-page HTML docs and wait for 25 seconds, despite having a very good cable connection, for the page to load.
+I open the single-page HTML docs and wait nearly half a minute for the page to load, despite having a very good cable connection.
 With the new documentation, it took me only 2 seconds, as each chapter has its own HTML page, and thus,
 the content that has to load is limited.
 
