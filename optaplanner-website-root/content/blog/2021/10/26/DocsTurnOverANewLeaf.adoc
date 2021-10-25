@@ -29,6 +29,9 @@ Third, if you spot a discrepancy in the documentation and would like to improve 
 
 image::DocsEdit.png[Edit the docs]
 
+Finally, this new documentation website is much friendlier to search engines, which should make it show up in Google search results more often than before.
+
+
 == Building the documentation website
 
 The documentation sources remain in
