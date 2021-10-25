@@ -63,7 +63,7 @@ To render the latest documentation:
 . Open the `index.html` located in `target/website/docs` in your browser.
 
 The second Antora playbook, `antora-playbook-author.yml`, is activated by the `author` maven profile and
-refers to the current optaplanner local git repository HEAD.
+refers to the current optaplanner local Git repository HEAD.
 
 [source,yaml]
 ----
