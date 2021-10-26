@@ -18,6 +18,8 @@ I open the single-page HTML docs and wait nearly half a minute for the page to l
 With the new documentation, it took me only 2 seconds as each chapter has its own HTML page and thus
 the content that has to be loaded is limited.
 
+This also means it's now easier to effectively share links to a particular section.
+
 Second, now you can search through the entire docs:
 
 image::DocsSearch.png[Search in the docs]
