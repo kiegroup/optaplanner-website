@@ -12,6 +12,11 @@
 #
 # Order videos by date descending
 
+- youtubeId: -RSZbMT_alo
+  title: "Optimized order picking in warehouses and supermarkets"
+  author: wmedvede
+  date: 2021-10-26
+
 - youtubeId: -7ips_GMFmo
   title: "A modern OO/FP constraint solver"
   author: ge0ffrey
