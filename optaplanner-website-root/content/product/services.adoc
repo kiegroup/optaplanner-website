@@ -14,16 +14,15 @@ To assist customers, Red Hat employs:
 - Solution architects that can define the best architecture for your scope and demonstrate the product functioning;
 - Services team with consultants and architects to help deliver reliable production implementations with Red Hat PAM;
 - A 24/7 support team.
-- and of course the OptaPlanner team itself to implement missing features of fix bugs.
+- and of course the OptaPlanner team itself to implement missing features or fix bugs.
 
 == Product subscription
 
-The Red Hat build of OptaPlanner, also known as https://www.redhat.com/en/topics/automation/business-optimization[Business Optimizer],
-is included in the following product subscriptions:
+The https://www.redhat.com/en/topics/automation/business-optimization[Red Hat Build of OptaPlanner (RHBO)]
+is part of these product subscriptions:
 
-* https://www.redhat.com/en/technologies/jboss-middleware/decision-manager[Red Hat Decision Manager]
-* https://www.redhat.com/en/technologies/jboss-middleware/process-automation-manager[Red Hat Process Automation Manager]
-
+* https://www.redhat.com/en/technologies/jboss-middleware/decision-manager[Red Hat Decision Manager] (RHDM)
+* https://www.redhat.com/en/technologies/jboss-middleware/process-automation-manager[Red Hat Process Automation Manager] (RHPAM)
 
 == Community and product comparison
 
