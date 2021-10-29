@@ -2,11 +2,29 @@
 
 https://www.optaplanner.org/[www.optaplanner.org]
 
-== How to build with JBake
+== Build the entire website
 
-To build the optaplanner-website (before and after your changes):
+To build the entire website with JBake and Antora (before and after your changes), run:
 
 ----
-$ mvn clean generate-resources
-$ firefox target/website/index.html
+$ git clone git@github.com:kiegroup/optaplanner-website.git
+$ cd optaplanner-website/
+$ mvn clean install
+$ firefox optaplanner-website-assembly/target/website-complete/index.html
 ----
+
+This can take a minute.
+To speed that up, only build the `optaplanner-website-root` directory.
+
+== Edit the website
+
+Try making some changes in any of the key files:
+
+* *Use case landing pages*: `optaplanner-website-root/content/learn/useCases/` (AsciiDoc)
+* *Compatibility landing pages*: `optaplanner-website-root/content/compatibility/` (AsciiDoc)
+* *Front page*: `optaplanner-website-root/templates/index.ftl` (Freemarker)
+* *Blog articles*: `optaplanner-website-root/content/blog/` (AsciiDoc)
+* *Users list*: `optaplanner-website-root/data/users.yml` (YAML)
+* *Videos list*: `optaplanner-website-root/data/videos.yml` (YAML)
+* *Events list*: `optaplanner-website-root/data/events.yml` (YAML)
+* *Base layout*: `optaplanner-website-root/templates/base.ftl` (Freemarker)
