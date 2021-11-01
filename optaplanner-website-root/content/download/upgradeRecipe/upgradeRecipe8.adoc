@@ -1656,3 +1656,137 @@ Even though OptaPlanner 8.x has always required JDK 11, this only becomes a hard
 === Rename optaplanner.solver.solve-length to optaplanner.solver.solve.duration
 
 The Micrometer meter `optaplanner.solver.solve-length` has been renamed to `optaplanner.solver.solve.duration` to follow Micrometer naming conventions and make it appear better in a variety of monitoring systems. References to `optaplanner.solver.solve-length.+++*+++` in the monitoring system should be changed to `optaplanner.solver.solve.duration.+++*+++`.
+
+== From 8.13.0.Final to 8.14.0.Final
+
+[.upgrade-recipe-major]
+=== Constraint Streams: use `forEach(...)` instead of `from(...)`
+
+We have deprecated the following methods on the `ConstraintFactory` interface:
+
+* `from(...)` in favor of `forEach(...)`,
+* `fromUnfiltered(...)` in favor of `forEachIncludingNullVars(...)`,
+* `fromUniquePair(...)` in favor of `forEachUniquePair(...)`.
+
+The new methods behave differently when it comes to nullable planning variables.
+The deprecated methods will eventually be removed in OptaPlanner 9.
+
+====  Impact on users without nullable planning variables
+
+Users who do not use over-constrained planning (where `@PlanningVariable(..., nullable = false)`) may simply replace all the uses of the deprecated methods.
+
+Before in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+
+    ...
+
+    Constraint roomConflict(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(Lesson.class)
+            ...
+    }
+
+    ...
+
+----
+
+After in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+
+    ...
+
+    Constraint roomConflict(ConstraintFactory constraintFactory) {
+        return constraintFactory.forEach(Lesson.class)
+            ...
+    }
+
+    ...
+
+----
+
+====  Impact on users with nullable planning variables
+
+Users who use over-constrained planning (where `@PlanningVariable(..., nullable = true)`) need to take into account the following:
+
+* `forEach(...)` will filter out planning entities with `null` values in any of their genuine planning variables,
+regardless if they are initialized or not.
+* The same applies for `join(...)` following a `forEach(...)`.
+* And the same also applies for conditional propagation (`ifExists(...)`, `ifNotExists(...)` etc.) following a `forEach(...)`.
+
+In practice, what this means is:
+
+* Where you previously used `null` checks to exclude entities with unassigned variables,
+you may remove these null checks after replacing `from(...)` with `forEach(...)`.
+
+[source,java]
+----
+
+    ...
+
+    Constraint departmentSpecialismConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(BedDesignation.class)
+                .filter(bd -> bd.getBed() != null)
+                ...
+    }
+
+
+    ...
+
+----
+
+After in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+
+    ...
+
+    Constraint departmentSpecialismConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.forEach(BedDesignation.class)
+                ...
+    }
+
+    ...
+
+----
+
+
+* Where you deliberately intend to retrieve entities with `null` variables,
+you have to replace `from(...)` with `forEachIncludingNullVars(...)`.
+
+[source,java]
+----
+
+    ...
+
+    Constraint femaleInMaleRoomConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(BedDesignation.class)
+                .filter(bd -> bd.getPatientGender() == Gender.FEMALE
+                        && bd.getRoomGenderLimitation() == GenderLimitation.MALE_ONLY)
+                ...
+    }
+
+    ...
+
+----
+
+After in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+
+    ...
+
+    public Constraint femaleInMaleRoomConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.forEachIncludingNullVars(BedDesignation.class)
+                .filter(bd -> bd.getPatientGender() == Gender.FEMALE
+                        && bd.getRoomGenderLimitation() == GenderLimitation.MALE_ONLY)
+                ...
+    }
+
+    ...
+
+----
