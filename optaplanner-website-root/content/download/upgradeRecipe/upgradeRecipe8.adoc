@@ -1673,7 +1673,7 @@ The deprecated methods will eventually be removed in a future major version.
 
 ====  Impact on users without nullable planning variables
 
-Users who do not use over-constrained planning (where `@PlanningVariable(..., nullable = false)`) may simply replace all the uses of the deprecated methods.
+If you do not use over-constrained planning (where `@PlanningVariable(..., nullable = false)`) simply replace all the uses of the `from*` methods with `forEach*` methods.
 
 Before in `*ConstraintProvider.java*`:
 
