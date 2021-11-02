@@ -1668,7 +1668,7 @@ We have deprecated the following methods on the `ConstraintFactory` interface:
 * `fromUnfiltered(...)` in favor of `forEachIncludingNullVars(...)`,
 * `fromUniquePair(...)` in favor of `forEachUniquePair(...)`.
 
-The new methods behave differently when it comes to nullable planning variables.
+The new methods behave differently when it comes to `nullable=true` planning variables.
 The deprecated methods will eventually be removed in a future major version.
 
 ====  Impact on users without nullable planning variables
