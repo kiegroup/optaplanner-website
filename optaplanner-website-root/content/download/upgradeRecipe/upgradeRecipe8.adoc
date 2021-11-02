@@ -1719,7 +1719,7 @@ regardless if they are initialized or not.
 In practice, what this means is:
 
 * Where you previously used `null` checks to exclude entities with unassigned variables,
-you may remove these null checks after replacing `from(...)` with `forEach(...)`.
+you should remove these null checks after replacing `from(...)` with `forEach(...)`.
 
 [source,java]
 ----
