@@ -22,9 +22,9 @@ Try making some changes in any of the key files:
 
 * *Use case landing pages*: `optaplanner-website-root/content/learn/useCases/` (AsciiDoc)
 * *Compatibility landing pages*: `optaplanner-website-root/content/compatibility/` (AsciiDoc)
-* *Front page*: `optaplanner-website-root/templates/index.ftl` (Freemarker)
+* *Front page*: `optaplanner-website-root/templates/index.ftl` (FreeMarker)
 * *Blog articles*: `optaplanner-website-root/content/blog/` (AsciiDoc)
 * *Users list*: `optaplanner-website-root/data/users.yml` (YAML)
 * *Videos list*: `optaplanner-website-root/data/videos.yml` (YAML)
 * *Events list*: `optaplanner-website-root/data/events.yml` (YAML)
-* *Base layout*: `optaplanner-website-root/templates/base.ftl` (Freemarker)
+* *Base layout*: `optaplanner-website-root/templates/base.ftl` (FreeMarker)
