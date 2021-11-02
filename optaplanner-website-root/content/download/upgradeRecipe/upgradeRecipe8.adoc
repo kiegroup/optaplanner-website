@@ -1755,6 +1755,7 @@ After in `*ConstraintProvider.java*`:
 
 
 * Where you deliberately intend to retrieve entities with `null` variables,
+for example in the medium constraint to penalize all unassigned entities,
 you must replace `from(...)` with `forEachIncludingNullVars(...)`.
 
 [source,java]
