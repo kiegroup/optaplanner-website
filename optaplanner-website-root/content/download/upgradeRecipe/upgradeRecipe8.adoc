@@ -1669,7 +1669,7 @@ We have deprecated the following methods on the `ConstraintFactory` interface:
 * `fromUniquePair(...)` in favor of `forEachUniquePair(...)`.
 
 The new methods behave differently when it comes to nullable planning variables.
-The deprecated methods will eventually be removed in OptaPlanner 9.
+The deprecated methods will eventually be removed in a future major version.
 
 ====  Impact on users without nullable planning variables
 
