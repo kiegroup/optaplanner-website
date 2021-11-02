@@ -1679,32 +1679,20 @@ Before in `*ConstraintProvider.java*`:
 
 [source,java]
 ----
-
-    ...
-
     Constraint roomConflict(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Lesson.class)
             ...
     }
-
-    ...
-
 ----
 
 After in `*ConstraintProvider.java*`:
 
 [source,java]
 ----
-
-    ...
-
     Constraint roomConflict(ConstraintFactory constraintFactory) {
         return constraintFactory.forEach(Lesson.class)
             ...
     }
-
-    ...
-
 ----
 
 ====  Impact on users with nullable planning variables
@@ -1723,34 +1711,21 @@ you should remove these null checks after replacing `from(...)` with `forEach(..
 
 [source,java]
 ----
-
-    ...
-
     Constraint departmentSpecialismConstraint(ConstraintFactory constraintFactory) {
         return constraintFactory.from(BedDesignation.class)
                 .filter(bd -> bd.getBed() != null)
                 ...
     }
-
-
-    ...
-
 ----
 
 After in `*ConstraintProvider.java*`:
 
 [source,java]
 ----
-
-    ...
-
     Constraint departmentSpecialismConstraint(ConstraintFactory constraintFactory) {
         return constraintFactory.forEach(BedDesignation.class)
                 ...
     }
-
-    ...
-
 ----
 
 
@@ -1760,34 +1735,22 @@ you must replace `from(...)` with `forEachIncludingNullVars(...)`.
 
 [source,java]
 ----
-
-    ...
-
-    Constraint femaleInMaleRoomConstraint(ConstraintFactory constraintFactory) {
+    Constraint assignEveryPatientToABedConstraint(ConstraintFactory constraintFactory) {
         return constraintFactory.from(BedDesignation.class)
-                .filter(bd -> bd.getPatientGender() == Gender.FEMALE
-                        && bd.getRoomGenderLimitation() == GenderLimitation.MALE_ONLY)
-                ...
+                .filter(bd -> bd.getBed() == null)
+                .penalize("assignEveryPatientToABed", HardMediumSoftScore.ONE_MEDIUM,
+                        BedDesignation::getAdmissionPartNightCount);
     }
-
-    ...
-
 ----
 
 After in `*ConstraintProvider.java*`:
 
 [source,java]
 ----
-
-    ...
-
-    public Constraint femaleInMaleRoomConstraint(ConstraintFactory constraintFactory) {
+    Constraint assignEveryPatientToABedConstraint(ConstraintFactory constraintFactory) {
         return constraintFactory.forEachIncludingNullVars(BedDesignation.class)
-                .filter(bd -> bd.getPatientGender() == Gender.FEMALE
-                        && bd.getRoomGenderLimitation() == GenderLimitation.MALE_ONLY)
-                ...
+                .filter(bd -> bd.getBed() == null)
+                .penalize("assignEveryPatientToABed", HardMediumSoftScore.ONE_MEDIUM,
+                        BedDesignation::getAdmissionPartNightCount);
     }
-
-    ...
-
 ----
