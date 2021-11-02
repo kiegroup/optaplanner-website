@@ -1709,6 +1709,8 @@ In practice, what this means is:
 * Where you previously used `null` checks to exclude entities with unassigned variables,
 you should remove these null checks after replacing `from(...)` with `forEach(...)`.
 
+Before in `*ConstraintProvider.java*`:
+
 [source,java]
 ----
     Constraint departmentSpecialismConstraint(ConstraintFactory constraintFactory) {
@@ -1732,6 +1734,8 @@ After in `*ConstraintProvider.java*`:
 * Where you deliberately intend to retrieve entities with `null` variables,
 for example in the medium constraint to penalize all unassigned entities,
 you must replace `from(...)` with `forEachIncludingNullVars(...)`.
+
+Before in `*ConstraintProvider.java*`:
 
 [source,java]
 ----
