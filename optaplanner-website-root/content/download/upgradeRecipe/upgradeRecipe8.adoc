@@ -1709,7 +1709,7 @@ After in `*ConstraintProvider.java*`:
 
 ====  Impact on users with nullable planning variables
 
-Users who use over-constrained planning (where `@PlanningVariable(..., nullable = true)`) need to take into account the following:
+If you use over-constrained planning (where `@PlanningVariable(..., nullable = true)`) take into account the following:
 
 * `forEach(...)` will filter out planning entities with `null` values in any of their genuine planning variables,
 regardless if they are initialized or not.
