@@ -1711,7 +1711,7 @@ After in `*ConstraintProvider.java*`:
 
 If you use over-constrained planning (where `@PlanningVariable(..., nullable = true)`) take into account the following:
 
-* `forEach(...)` will filter out planning entities with `null` values in any of their genuine planning variables,
+* `forEach(...)` filters out planning entities with `null` values in any of their genuine planning variables,
 regardless if they are initialized or not.
 * The same applies for `join(...)` following a `forEach(...)`.
 * And the same also applies for conditional propagation (`ifExists(...)`, `ifNotExists(...)` etc.) following a `forEach(...)`.
