@@ -12,6 +12,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: dqTrjkVxoPI
+  title: "Maintenance scheduling"
+  author: ge0ffrey
+  date: 2021-11-12
+  tags:
+    - maintenance scheduling
+
 - youtubeId: -RSZbMT_alo
   title: "Optimized order picking in warehouses and supermarkets"
   author: wmedvede
