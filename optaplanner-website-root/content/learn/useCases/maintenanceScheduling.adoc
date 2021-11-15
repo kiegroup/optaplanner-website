@@ -15,7 +15,7 @@ by reducing both too early and too late maintenance,
 while adhering to other constraints such as skill requirements, employee availability
 and the geographic location of machines.
 
-Inspection planning for bridges, schools, etc uses a very similar model to maintenance scheduling.
+Inspection planning for bridges, schools, etc., uses a very similar model to maintenance scheduling.
 
 // TODO Maintenance scheduling value proposition image
 
