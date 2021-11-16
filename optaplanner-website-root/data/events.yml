@@ -608,6 +608,9 @@
   eventUrl: https://java.geekle.us/
   location: Worldwide (virtual)
   date: 2020-08-01
+  talks:
+    - title: "Optimization AI in Java made easy with OptaPlanner"
+      presenters: Radovan Synek
 
 - eventId: 20200901-optaplannerweek
   eventOrganization: "OptaPlanner Week"
