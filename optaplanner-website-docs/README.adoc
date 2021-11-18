@@ -7,6 +7,9 @@ https://www.optaplanner.org/docs[www.optaplanner.org/docs]
 The documentation website builds from the top-level directory of this repository as a part of the entire
 OptaPlanner website project.
 
+To preview local changes made to the `optaplanner/optaplanner-docs`, run `mvn clean package -Pauthor`.
+Note that the `optaplanner` repository and the `optaplanner-website` repository have to be located in the same directory.
+
 == How it works
 
 This module builds a documentation website using https://antora.org/[Antora] that pulls the content from
