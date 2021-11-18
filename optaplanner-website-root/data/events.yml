@@ -14,6 +14,15 @@
 #
 # Order events by date descending
 
+- eventId: 20220207-jfokus
+  eventOrganization: "JFokus"
+  eventUrl: https://www.jfokus.se/
+  location: Stockholm, Sweden
+  date: 2022-02-07
+  talks:
+    - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
+      presenters: Geoffrey De Smet
+
 - eventId: 20211119-devoxxua
   eventOrganization: "Devoxx Ukraine"
   eventUrl: https://devoxx.com.ua/
