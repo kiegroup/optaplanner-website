@@ -12,750 +12,7 @@
 #      presenters: (optional) Comma separated list of presenters.
 #      videoUrl: (optional) Link to the video of the presentation
 #
-# Order events by date.
-
-- eventId: 20140924-webinar
-  eventOrganization: Red Hat Webinar
-  location: Worldwide (virtual)
-  date: 2014-09-24
-  talks:
-    - title: How to solve impossible business resource planning problems
-      url: http://www.redhat.com/en/about/events/how-solve-impossible-business-resource-planning-problems
-      presenters: Geoffrey De Smet, Phil Simpson
-
-- eventId: 20140925-brujug
-  eventOrganization: BruJUG
-  location: Brussels, Belgium
-  date: 2014-09-25
-  talks:
-    - title: Optimizing vehicle routes, shift rosters and other NP-hard problems
-      url: http://www.meetup.com/BruJUG/events/206149232/
-      presenters: Geoffrey De Smet
-
-- eventId: 20141014-cloudopen
-  eventOrganization: CloudOpen Europe
-  location: Düsseldorf, Germany
-  date: 2014-10-14
-  talks:
-    - title: Smart VM Scheduling in oVirt Cluster
-      url: http://lccoelce14.sched.org/event/c25af16e16beee7b8ec566a31481c077
-      presenters: Martin Sivak
-
-- eventId: 20141020-openblend
-  eventOrganization: OpenBlend JavaSi
-  location: Ljubljana, Slovenia
-  date: 2014-10-20
-  talks:
-    - title: OptaPlanner introduction
-      url: http://www.sioug.si/index.php/javasi-14
-      presenters: Geoffrey De Smet
-
-- eventId: 20141111-devoxx
-  eventOrganization: Devoxx Be
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2014-11-11
-  talks:
-    - title: Hackergarten
-      url: http://www.devoxx.be/hackergarten/
-      presenters: Geoffrey De Smet
-
-- eventId: 20141117-redhatbenelux
-  eventOrganization: Red Hat Benelux
-  location: Antwerp, Belgium
-  date: 2014-11-17
-  talks:
-    - title: Technical User Group
-      url: http://www.redhatonline.com/benelux/events.php
-      presenters: Geoffrey De Smet
-
-- eventId: 20150131-fosdem
-  eventOrganization: FOSDEM
-  eventUrl: https://fosdem.org
-  location: Brussels, Belgium
-  date: 2015-01-31
-  talks:
-    - title: Smart VM scheduling in oVirt cluster
-      url: https://fosdem.org/2015/schedule/event/smartvmsched/
-      presenters: Roy Golan
-
-- eventId: 20150206-devconf
-  eventOrganization: DevConf
-  location: Brno, Czech Republic
-  date: 2015-02-07
-  talks:
-    - title: Scheduling your clouds with Optaplanner - How we (almost) beat academia
-      url: http://sched.co/2B1s
-      presenters: Lukáš Petrovický
-
-- eventId: 20150219-scale13x
-  eventOrganization: SCALE 13x
-  location: Los Angeles, CA
-  date: 2015-02-19
-  talks:
-    - title: Solving (NP-Hard) Scheduling Problems with oVirt and OptaPlanner
-      url: http://www.socallinuxexpo.org/scale/13x/presentations/solving-np-hard-scheduling-problems-ovirt-and-optaplanner
-      presenters: Jason Brooks
-
-- eventId: 20150318-webinar
-  eventOrganization: Red Hat Webinar
-  location: Worldwide (virtual)
-  date: 2015-03-18
-  talks:
-    - title: Business resource planning for Java developers
-      url: https://vts.inxpo.com/Launch/QReg.htm?ShowKey=24231&AffiliateData=socialmedia
-      presenters: Geoffrey De Smet
-
-- eventId: 20150408-devoxxfr
-  eventOrganization: Devoxx Fr
-  eventUrl: https://www.devoxx.fr
-  location: Paris, France
-  date: 2015-04-08
-  talks:
-    - title: OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore...
-      url: http://cfp.devoxx.fr/2015/talk/ZUC-9786/OptaPlanner_ou_comment_optimiser_les_itineraires,_les_plannings_et_bien_plus_encore...
-      presenters: Frederic Hornain, Geoffrey De Smet
-
-- eventId: 20150422-jaxcon
-  eventOrganization: JaxCon
-  location: Mainz, Germany
-  date: 2015-04-22
-  talks:
-    - title: Optimierung 2.0 - Lösung von Optimierungsproblemen mit JBoss OptaPlanner
-      url: https://jax.de/2015/sessions/optimierung-20-loesung-von-optimierungsproblemen-mit-jboss-optaplanner
-      presenters: David Jorch
-
-- eventId: 20150423-workshop
-  eventOrganization: Red Hat workshop
-  location: Brussels, Belgium
-  date: 2015-04-23
-  talks:
-    - title: JBoss Business Resource Planner
-      url: http://www.redhatonline.com/benelux/workshops.php
-      presenters: Geoffrey De Smet, Eric D. Schabell
-
-- eventId: 20150623-redhatsummit
-  eventOrganization: Red Hat Summit
-  eventUrl: http://www.redhat.com/summit/
-  location: Boston, MA, USA
-  date: 2015-06-23
-
-- eventId: 20150917-berlinexpertdays
-  eventOrganization: Berlin Expert Days
-  location: Berlin, Germany
-  date: 2015-09-17
-  talks:
-    - title: OptaPlanner hilft bei verteilten Schulstandorten
-      url: http://www.bed-con.org/2015/talks/OptaPlanner-hilft-bei-verteilten-Schulstandorten
-      presenters: Torsten Fink, Markus Müller
-
-- eventId: 20151006-barcelonajug
-  eventOrganization: Barcelona JUG
-  location: Barcelona, Spain
-  date: 2015-10-06
-  talks:
-    - title: Drools, OptaPlanner, jBPM and KIE Workbench
-      url: http://www.barcelonajug.org/2015/10/drools-jbpm-and-friends.html
-      presenters: Drools, OptaPlanner and jBPM team
-
-- eventId: 20151012-javavienna
-  eventOrganization: Java Vienna
-  location: Vienna, Austria
-  date: 2015-10-12
-  talks:
-    - title: Smart load balancing in the cloud with OptaPlanner
-      url: http://www.meetup.com/Java-Vienna/events/225365483/
-      presenters: Lukáš Petrovický
-
-- eventId: 20151112-devoxxbe
-  eventOrganization: Devoxx Be
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2015-11-12
-  talks:
-    - title: False assumptions for the Vehicle Routing Problem
-      url: http://cfp.devoxx.be/2015/talk/OXN-8472/False_assumptions_for_the_Vehicle_Routing_Problem
-      presenters: Geoffrey De Smet
-
-- eventId: 20160126-juggraz
-  eventOrganization: JUG Graz
-  location: Graz, Austria
-  date: 2016-01-26
-  talks:
-    - title: Smart load balancing in the cloud with OptaPlanner
-      url: http://www.meetup.com/Java-User-Group-Graz/events/227269536/
-      presenters: Lukáš Petrovický
-
-- eventId: 20160130-fosdem
-  eventOrganization: FOSDEM
-  eventUrl: https://fosdem.org
-  location: Brussels, Belgium
-  date: 2016-01-30
-
-- eventId: 20160206-devconf
-  eventOrganization: DevConf
-  location: Brno, Czech Republic
-  date: 2016-02-06
-  talks:
-    - title: Smart VM Scheduling
-      url: http://devconfcz2016.sched.org/event/5m1J
-      presenters: Martin Sivák
-
-- eventId: 20160308-eclipsecon
-  eventOrganization: EclipseCon
-  location: Reston, VA, USA
-  date: 2016-03-08
-  talks:
-    - title: Modeling Avengers - Open Source Technology Mix for Saving the World
-      url: https://www.eclipsecon.org/na2016/session/modeling-avengers-open-source-technology-mix-saving-world
-      presenters: Cedric Brun, Benoit Combemale
-
-- eventId: 20160315-webinar
-  eventOrganization: Red Hat Webinar
-  location: Worldwide (virtual)
-  date: 2016-03-15
-  talks:
-    - title: Deliver real value with business resource optimization technology
-      url: https://vts.inxpo.com/scripts/Server.nxp?LASCmd=AI:4;F:QS!10100&ShowKey=30676&AffiliateData=social
-      presenters: Geoffrey De Smet, Phil Simpson
-
-- eventId: 20160602-euregjug
-  eventOrganization: EuregJUG
-  location: Aachen, Germany
-  date: 2016-06-02
-  talks:
-    - title: Solving constraint satisfaction business puzzles in Java with OptaPlanner
-      url: http://www.euregjug.eu/2016/04/25/next-talk-solving-constraint-satisfaction-puzzles-with-optaplanner
-      presenters: Geoffrey De Smet
-
-- eventId: 20160629-redhatsummit
-  eventOrganization: Red Hat Summit
-  location: San Francisco, CA, USA
-  date: 2016-06-29
-  talks:
-    - title: Automate and optimize logistic plans with BRMS Business Resource Planner
-      url: http://www.redhat.com/summit/
-      presenters: Geoffrey De Smet, Prakasha Aradhya
-
-- eventId: 20161026-eclipseconeurope
-  eventOrganization: EclipseCon Europe
-  location: Ludwigsburg, Germany
-  date: 2016-10-26
-  talks:
-    - title: Modeling Avengers - Open Source Technology Mix for Saving the World
-      url: https://www.eclipsecon.org/europe2016/session/modeling-avengers-open-source-technology-mix-saving-world
-      presenters: Cedric Brun, Benoit Combemale
-
-- eventId: 20161108-devoxxbe
-  eventOrganization: Devoxx Be
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2016-11-08
-  talks:
-    - title: Hackergarten
-      url: https://www.devoxx.be
-
-- eventId: 20161122-jbuglondon
-  eventOrganization: JBoss User Group
-  location: London, UK
-  date: 2016-11-22
-  talks:
-    - title: Red Hat BRMS and BPMS Roadmap Presentation
-      url: http://www.meetup.com/JBoss-User-Group/events/234803765/
-      presenters: Geoffrey De Smet, Mark Proctor, Kris Verlaenen, Mauricio Salatino, Max Barkley
-
-- eventId: 20170223-datascienceghent
-  eventOrganization: Data Science Ghent
-  eventUrl: https://www.meetup.com/Data-Science-Community-Meetup/
-  location: Ghent, Belgium
-  date: 2017-02-23
-  talks:
-    - title: Vehicle Routing with OptaPlanner
-      url: https://www.meetup.com/Data-Science-Community-Meetup/events/237670970/
-      presenters: Geoffrey De Smet
-
-- eventId: 20170315-grandrapidsjug
-  eventOrganization: Grand Rapids JUG
-  location: Grand Rapids, MI, US
-  date: 2017-03-15
-  talks:
-    - title: Drools and OptaPlanner
-      url: https://www.meetup.com/gr-jug/events/238240253/
-      presenters: Kevin Greene
-
-- eventId: 20170419-grandrapidsjug
-  eventOrganization: Grand Rapids JUG
-  location: Grand Rapids, MI, US
-  date: 2017-04-19
-  talks:
-    - title: Managing micromanagement, an OptaPlanner lab
-      url: https://www.meetup.com/gr-jug/events/238645412/
-      presenters: Kevin Greene
-
-- eventId: 20170502-redhatsummit
-  eventOrganization: Red Hat Summit
-  eventUrl: https://www.redhat.com/summit/
-  location: Boston, MA, USA
-  date: 2017-05-02
-  talks:
-    - title: Workforce Optimization with Business Resource Planner and OpenShift
-      url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103192
-      presenters: Justin Goldsmith, Josh Bryant, John Rinaldi
-    - title: Optimize your business with JBoss BRMS Business Resource Planner
-      url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103203
-      presenters: Geoffrey De Smet, Duncan Doyle
-
-- eventId: 20170517-apachecon
-  eventOrganization: ApacheCon North America
-  eventUrl: http://events.linuxfoundation.org/events/apachecon-north-america
-  location: Miami, FL, US
-  date: 2017-05-17
-  talks:
-    - title: IoT for a Fleet, Building a Route Optimization Platform
-      url: https://apachecon2017.sched.com/event/AZL6/iot-for-a-fleet-building-a-route-optimization-platform-using-an-open-source-stack-pedro-vidigal-procensus
-      presenters: Pedro Vidigal
-
-- eventId: 20170531-springdays
-  eventOrganization: Spring Days Chicago
-  eventUrl: https://www.springdays.io/ehome/spring-days/chicago
-  location: Chicago, IL, US
-  date: 2017-05-31
-  talks:
-    - title: Solving Planning and Optimization Problems in Real Time
-      url: https://www.springdays.io/ehome/spring-days/chicago
-      presenters: Kevin Greene
-      videoUrl: https://www.youtube.com/watch?v=_igsVQiH2GI
-
-- eventId: 20170710-londonjavacommunity
-  eventOrganization: London Java Community
-  eventUrl: https://www.meetup.com/Londonjavacommunity/
-  location: London, UK
-  date: 2017-07-10
-  talks:
-    - title: Constraint solving in Java with OptaPlanner
-      url: https://www.meetup.com/Londonjavacommunity/events/240754560/
-      presenters: Geoffrey De Smet
-      videoUrl: https://skillsmatter.com/skillscasts/10467-constraint-solving-in-java-with-optaplanner
-
-- eventId: 20170714-ruleml
-  eventOrganization: RuleML+RR
-  eventUrl: http://2017.ruleml-rr.org/
-  location: London, UK
-  date: 2017-07-14
-  talks:
-    - title: Real-time Constraint Solving with OptaPlanner
-      url: http://2017.ruleml-rr.org/decisioncamp-2017-schedule/
-      presenters: Geoffrey De Smet
-
-- eventId: 20170926-droolsday
-  eventOrganization: "Drools, jBPM and OptaPlanner day New York"
-  eventUrl: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI
-  location: New York, NY, US
-  date: 2017-09-26
-  talks:
-    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
-      url: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI#agenda
-      presenters: Geoffrey De Smet
-      videoUrl: https://www.youtube.com/watch?v=v4DibGQCD54
-
-- eventId: 20170928-droolsday
-  eventOrganization: "Drools, jBPM and OptaPlanner day Washington DC"
-  eventUrl: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI
-  location: Washington, DC, US
-  date: 2017-09-28
-  talks:
-    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
-      url: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI#agenda
-      presenters: Geoffrey De Smet
-
-- eventId: 20171010-redhatforum
-  eventOrganization: "Red Hat Forum Benelux"
-  eventUrl: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
-  location: Breda, Netherlands
-  date: 2017-10-10
-  talks:
-    - title: "Constraint solver A.I. with OptaPlanner"
-      url: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
-      presenters: Geoffrey De Smet, Eva Dauw
-
-- eventId: 20171010-humantalksparis
-  eventOrganization: "Human Talks Paris"
-  eventUrl: https://www.meetup.com/HumanTalks-Paris/
-  location: Paris, France
-  date: 2017-10-10
-  talks:
-    - title: "Planification de rendez-vous avec OptaPlanner"
-      url: https://www.meetup.com/HumanTalks-Paris/events/243915056/
-      presenters: Richard Hanna
-      videoUrl: https://www.youtube.com/watch?v=_gXtxjHogtw
-
-- eventId: 20171114-devoxxma
-  eventOrganization: "Devoxx MA"
-  eventUrl: https://www.devoxx.ma
-  location: Casablanca, Morocco
-  date: 2017-11-14
-  talks:
-    - title: "Constraint solving A.I. algorithms in OptaPlanner"
-      url: https://cfp.devoxx.ma/2017/talk/DMU-8120/Constraint_solving_A.I._algorithms_in_OptaPlanner
-      presenters: Geoffrey De Smet
-
-- eventId: 20180508-redhatsummit
-  eventOrganization: "Red Hat Summit"
-  eventUrl: https://www.redhat.com/en/summit/2018
-  location: San Francisco, CA, USA
-  date: 2018-05-08
-  talks:
-    - title: "Employee shift rostering optimization A.I. with OptaPlanner"
-      url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=154183
-      presenters: Geoffrey De Smet, Christopher Chianelli
-    - title: "Consulting Discovery Zone - Constraint Optimizer: \"I bet you I'm better than a human\""
-      url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=176035
-      presenters: Justin Goldsmith, Christian Witchger
-
-- eventId: 20180529-infofarm
-  eventOrganization: "InfoFarm and Red Hat"
-  eventUrl: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
-  location: Kontich, Belgium
-  date: 2018-05-29
-  talks:
-    - title: "Automatische planningsoptimalisatie met Business Optimiser"
-      url: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
-      presenters: Geoffrey De Smet, Robin Pauwels, Ludovic Aelbrecht
-
-- eventId: 20180912-or2018
-  eventOrganization: "Operations Research 2018"
-  eventUrl: https://www.or2018.be/
-  location: Brussels, Belgium
-  date: 2018-09-12
-  talks:
-    - title: "Employee shift rostering optimization with OptaPlanner’s metaheuristics"
-      url: https://www.euro-online.org/conf/or2018/edit_session_cluster?sessid=46
-      presenters: Geoffrey De Smet
-
-- eventId: 20180912-webinar
-  eventOrganization: "Red Hat Webinar"
-  eventUrl: https://www.redhat.com/en/events
-  location: Worldwide (virtual)
-  date: 2018-09-12
-  talks:
-    - title: "Business Optimizer: \"I bet you I'm better than a human\""
-      url: https://www.redhat.com/en/events/webinar/business-optimizer-i-bet-you-im-better-than-a-human
-      presenters: Justin Goldsmith
-
-- eventId: 20181025-fsoss
-  eventOrganization: "Free Software and Open Source Symposium"
-  eventUrl: https://fsoss.senecacollege.ca/2018
-  location: Toronto, Ontario, Canada
-  date: 2018-10-25
-  talks:
-    - title: Can Artificial Intelligence solve NP-hard problems?
-      url: https://fsoss.senecacollege.ca/2018/#present12
-      presenters: Musa Talluzi
-
-- eventId: 20181112-devoxxbe
-  eventOrganization: "Devoxx BE"
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2018-11-12
-  talks:
-    - title: "The battle of 2 automated conference talk scheduling algorithms for Devoxx"
-      url: https://dvbe18.confinabox.com/talk/FWX-0478/The_battle_of_2_automated_conference_talk_scheduling_algorithms_for_Devoxx
-      presenters: Geoffrey De Smet, Piotr Krzemiński, Viktor Tymoshenko
-
-- eventId: 20190319-voxxedzurich
-  eventOrganization: "Voxxed Zurich"
-  eventUrl: https://voxxeddays.com/zurich/
-  location: Zürich, Switzerland
-  date: 2019-03-19
-  talks:
-  - title: "A.I. constraint optimization with OptaPlanner: TSP, Vehicle Routing and Employee Rostering"
-    url: https://cfpvdz19.confinabox.com/talk/UHO-4904
-    presenters: Geoffrey De Smet
-
-- eventId: 20190406-itkonekt
-  eventOrganization: "IT-KONEKT"
-  eventUrl: https://itkonekt.com/en/it-konferencija-novi-sad/
-  location: Novi Sad, Serbia
-  date: 2019-04-06
-  talks:
-  - title: "Constraint solving A.I. algorithms in OptaPlanner"
-    presenters: Donato Marrazzo
-
-- eventId: 20190507-redhatsummit
-  eventOrganization: "Red Hat Summit"
-  eventUrl: https://www.redhat.com/en/summit/2019
-  location: Boston, MA, USA
-  date: 2019-05-07
-  talks:
-  - title: "Keynote demo"
-    url: https://youtu.be/FUu4kMc0PL8?t=7185
-    presenters: Burr Sutter, Paolo Patierno, Stuart Douglas, Hiram Chirino, Sanjay Arora, Geoffrey De Smet
-
-- eventId: 20190601-beercitycode
-  eventOrganization: "Beer City Code"
-  eventUrl: https://beercitycode.com/
-  location: Grand Rapids, MI, USA
-  date: 2019-06-01
-  talks:
-  - title: "Deciding things with OptaPlanner"
-    presenters: Kevin Greene
-
-- eventId: 20190820-soujava
-  eventOrganization: "SouJava"
-  location: São Paulo, Brasil
-  date: 2019-08-20
-  talks:
-  - title: "Resolvendo problemas de planejamento com o OptaPlanner"
-    url: https://www.meetup.com/pt-BR/SouJava/events/263502883/
-    presenters: Felipe Souto
-
-- eventId: 20190916-rhteapac
-  eventOrganization: "Red Hat APAC tech exchange"
-  eventUrl: https://www.redhat.com/en/events/rhte-apac2019
-  location: Seoul, South Korea
-  date: 2019-09-16
-  talks:
-  - title: "Hands-on lab: Building your first optimization app using OptaPlanner's AI constraint solver"
-    presenters: Duncan Doyle
-
-- eventId: 20191008-rhforumbe
-  eventOrganization: "Red Hat Forum Belgium"
-  eventUrl: https://www.redhat.com/en/events
-  location: Brussels, Belgium
-  date: 2019-10-08
-  talks:
-  - title: "How AI can boost your productivity, reduce costs & make your employees happy"
-    url: https://www.redhat.com/en/events/benelux-events
-    presenters: Geoffrey De Smet, Ronald Meuwsen
-
-- eventId: 20191009-rhforumnl
-  eventOrganization: "Red Hat Forum Netherlands"
-  eventUrl: https://www.redhat.com/en/events
-  location: Utrecht, Netherlands
-  date: 2019-10-09
-  talks:
-  - title: "How AI can boost your productivity, reduce costs & make your employees happy"
-    url: https://www.redhat.com/en/events/benelux-events
-
-- eventId: 20191204-infofarmtraining
-  eventOrganization: "Infofarm"
-  location: Kontich, Belgium
-  date: 2019-12-04
-  talks:
-  - title: "Business Optimizer (OptaPlanner) bootcamp training"
-    url: https://www.thecampus.be/business-optimizer-bootcamp-optaplanner
-    presenters: Glenn Cich
-
-- eventId: 20191104-devoxxbe
-  eventOrganization: "Devoxx BE"
-  eventUrl: https://www.devoxx.be
-  location: Antwerp, Belgium
-  date: 2019-11-04
-
-- eventId: 20200131-redhatprocessautomationday
-  eventOrganization: "Red Hat Process Automation Day"
-  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x120404abcd
-  location: Tokyo, Japan
-  date: 2020-01-31
-
-- eventId: 20200409-soujava
-  eventOrganization: "SouJava Online"
-  location: Brazil (virtual)
-  date: 2020-04-09
-  talks:
-  - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
-    url: https://www.meetup.com/SouJava/events/269692762/
-    presenters: Geoffrey De Smet
-
-- eventId: 20200429-redhatsummit
-  eventOrganization: "Red Hat Summit"
-  eventUrl: https://www.redhat.com/summit/
-  location: San Fransisco (virtual)
-  date: 2020-04-29
-  talks:
-  - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
-    presenters: Satish Kale, Geoffrey De Smet
-
-- eventId: 20200504-devnation
-  eventOrganization: "DevNation Tech Talks"
-  location: Worldwide (virtual)
-  date: 2020-05-08
-  talks:
-    - title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
-      url: https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/
-      presenters: Geoffrey De Smet
-
-- eventId: 20200515-springiobridge
-  eventOrganization: "Spring I/O Bridge"
-  eventUrl: https://2020.springio.net/bridge/
-  location: Barcelona (virtual)
-  date: 2020-05-15
-  talks:
-    - title: "AI on Spring: I love it when an OptaPlan comes together"
-      presenters: Geoffrey De Smet
-
-- eventId: 20200528-bordeauxjug
-  eventOrganization: "Bordeaux JUG"
-  location: Worldwide (virtual)
-  date: 2020-05-28
-  talks:
-    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
-      url: https://www.meetup.com/BordeauxJUG/events/270786885
-      presenters: Geoffrey De Smet
-
-- eventId: 20200801-geekle
-  eventOrganization: "Global Summit for Java devs"
-  eventUrl: https://java.geekle.us/
-  location: Worldwide (virtual)
-  date: 2020-08-01
-  talks:
-    - title: "Optimization AI in Java made easy with OptaPlanner"
-      presenters: Radovan Synek
-
-- eventId: 20200901-optaplannerweek
-  eventOrganization: "OptaPlanner Week"
-  eventUrl: https://www.optaplanner.org/blog/2020/09/07/OptaPlannerWeek2020.html
-  location: Worldwide (virtual)
-  date: 2020-09-01
-
-- eventId: 20200925-downloadinnovation
-  eventOrganization: "Download innovation 2020"
-  eventUrl: https://download-event.io/
-  location: Italy
-  date: 2020-09-25
-  talks:
-    - title: "Massimizzare i risultati con Business Optimizer (A.I. Constraint Solver)"
-      presenters: Donato Marrazzo
-
-- eventId: 20201019-quarkusinsights
-  eventOrganization: "Quarkus insights"
-  eventUrl: https://quarkus.io/insights/
-  location: Worldwide (virtual)
-  date: 2020-10-19
-  talks:
-    - title: "OptaPlanner in Quarkus"
-      presenters: Geoffrey De Smet
-
-- eventId: 20201117-kielive
-  eventOrganization: "KIE Live"
-  location: Worldwide (virtual)
-  date: 2020-11-17
-  talks:
-    - title: "OptaPlanner domain models and design patterns"
-      url: https://www.youtube.com/watch?v=0uAoWU8m0pE
-      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
-
-- eventId: 20210119-kielive
-  eventOrganization: "KIE Live"
-  location: Worldwide (virtual)
-  date: 2021-01-19
-  talks:
-    - title: "OptaPlanner Shadow Variables for the Vehicle Routing Problem and Task Assignment"
-      url: https://www.youtube.com/watch?v=ENKHGBMDaCM
-      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
-
-- eventId: 20210309-kielive
-  eventOrganization: "KIE Live"
-  location: Worldwide (virtual)
-  date: 2021-03-09
-  talks:
-    - title: "Testing your constraints with OptaPlanner"
-      url: https://youtu.be/blK7gxqu2B0
-      presenters: Lukáš Petrovický, Karina Varela, Alex Porcelli
-
-- eventId: 20210316-javaland
-  eventOrganization: "Javaland"
-  eventUrl: https://www.javaland.eu
-  location: Germany (virtual)
-  date: 2021-03-16
-  talks:
-    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
-      url: https://programm.javaland.eu/2021/#/scheduledEvent/606390
-      presenters: Geoffrey De Smet
-
-- eventId: 20210324-webinar
-  eventOrganization: "Red Hat Webinar"
-  location: Worldwide (virtual)
-  date: 2021-03-24
-  talks:
-    - title: "AI planning: Top 3 use cases and benefits"
-      url: https://www.redhat.com/en/events/webinar/ai-planning-top%203-cases-and-benefits
-      presenters: Ronald Meuwsen, Geoffrey De Smet
-
-- eventId: 20210415-soujavamotu
-  eventOrganization: "SouJava MOTU"
-  location: Worldwide (virtual)
-  date: 2021-04-15
-  talks:
-    - title: "Planejamento de Recursos com OptaPlanner"
-      url: https://www.meetup.com/SouJava/events/275951378/
-      presenters: Karina Varela, Otávio Santana
-
-- eventId: 20210423-viaboxx
-  eventOrganization: "Red Hat Germany"
-  location: Germany (virtual)
-  date: 2021-04-23
-  talks:
-    - title: "Optimierung des Field Service Management mit Hilfe von Constraint Solving Algorithmen"
-      url: https://events.redhat.com/profile/form/index.cfm?PKformID=0x362692d869
-      presenters: Stephan Kraft, Simon Tiffert
-
-- eventId: 20210517-kieweek
-  eventOrganization: "KIE week"
-  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x381217abcd
-  location: Worldwide (virtual)
-  date: 2021-05-17
-  talks:
-    - title: "Optimize vaccine appointments to save the world with OptaPlanner AI"
-      presenters: Geoffrey De Smet
-    - title: "Success Stories in Process & Business Automation"
-      presenters: Jeremy Davis
-
-- eventId: 20210712-euro2021
-  eventOrganization: "European Conference on Operational Research"
-  eventUrl: https://euro2021athens.com
-  location: Athens, Greece (virtual)
-  date: 2021-07-12
-  talks:
-    - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
-      url: https://www.euro-online.org/conf/euro31/treat_abstract?paperid=121
-      presenters: Geoffrey De Smet
-
-- eventId: 20210914-decisioncamp
-  eventOrganization: "DecisionCAMP"
-  eventUrl: https://decisioncamp2021.wordpress.com/
-  location: Leuven, Belgium (virtual)
-  date: 2021-09-14
-  talks:
-    - title: "A modern OO/FP constraint solver to solve VRP, rostering or scheduling problems"
-      presenters: Geoffrey De Smet
-
-- eventId: 20211012-icodejavaafrica
-  eventOrganization: "I code Java Africa"
-  eventUrl: https://j-sa.co/
-  location: Africa (virtual)
-  date: 2021-10-12
-  talks:
-    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
-      presenters: Geoffrey De Smet
-
-- eventId: 20211025-joker
-  eventOrganization: "Joker"
-  eventUrl: https://jokerconf.com/en/
-  location: St. Petersburg, Russia (virtual)
-  date: 2021-10-25
-  talks:
-    - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
-      presenters: Geoffrey De Smet
-
-- eventId: 20211104-jfall
-  eventOrganization: "J-Fall"
-  eventUrl: https://jfall.nl/
-  location: Ede, Netherlands
-  date: 2021-11-04
-  talks:
-    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
-      presenters: Geoffrey De Smet
+# Order events by date descending
 
 - eventId: 20211119-devoxxua
   eventOrganization: "Devoxx Ukraine"
@@ -774,3 +31,746 @@
   talks:
     - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
       presenters: Geoffrey De Smet
+
+- eventId: 20211104-jfall
+  eventOrganization: "J-Fall"
+  eventUrl: https://jfall.nl/
+  location: Ede, Netherlands
+  date: 2021-11-04
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
+- eventId: 20211025-joker
+  eventOrganization: "Joker"
+  eventUrl: https://jokerconf.com/en/
+  location: St. Petersburg, Russia (virtual)
+  date: 2021-10-25
+  talks:
+    - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
+      presenters: Geoffrey De Smet
+
+- eventId: 20211012-icodejavaafrica
+  eventOrganization: "I code Java Africa"
+  eventUrl: https://j-sa.co/
+  location: Africa (virtual)
+  date: 2021-10-12
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
+- eventId: 20210914-decisioncamp
+  eventOrganization: "DecisionCAMP"
+  eventUrl: https://decisioncamp2021.wordpress.com/
+  location: Leuven, Belgium (virtual)
+  date: 2021-09-14
+  talks:
+    - title: "A modern OO/FP constraint solver to solve VRP, rostering or scheduling problems"
+      presenters: Geoffrey De Smet
+
+- eventId: 20210712-euro2021
+  eventOrganization: "European Conference on Operational Research"
+  eventUrl: https://euro2021athens.com
+  location: Athens, Greece (virtual)
+  date: 2021-07-12
+  talks:
+    - title: "OptaPlanner - an enterprise open source constraint solver for VRP, shift rostering, etc"
+      url: https://www.euro-online.org/conf/euro31/treat_abstract?paperid=121
+      presenters: Geoffrey De Smet
+
+- eventId: 20210517-kieweek
+  eventOrganization: "KIE week"
+  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x381217abcd
+  location: Worldwide (virtual)
+  date: 2021-05-17
+  talks:
+    - title: "Optimize vaccine appointments to save the world with OptaPlanner AI"
+      presenters: Geoffrey De Smet
+    - title: "Success Stories in Process & Business Automation"
+      presenters: Jeremy Davis
+
+- eventId: 20210423-viaboxx
+  eventOrganization: "Red Hat Germany"
+  location: Germany (virtual)
+  date: 2021-04-23
+  talks:
+    - title: "Optimierung des Field Service Management mit Hilfe von Constraint Solving Algorithmen"
+      url: https://events.redhat.com/profile/form/index.cfm?PKformID=0x362692d869
+      presenters: Stephan Kraft, Simon Tiffert
+
+- eventId: 20210415-soujavamotu
+  eventOrganization: "SouJava MOTU"
+  location: Worldwide (virtual)
+  date: 2021-04-15
+  talks:
+    - title: "Planejamento de Recursos com OptaPlanner"
+      url: https://www.meetup.com/SouJava/events/275951378/
+      presenters: Karina Varela, Otávio Santana
+
+- eventId: 20210324-webinar
+  eventOrganization: "Red Hat Webinar"
+  location: Worldwide (virtual)
+  date: 2021-03-24
+  talks:
+    - title: "AI planning: Top 3 use cases and benefits"
+      url: https://www.redhat.com/en/events/webinar/ai-planning-top%203-cases-and-benefits
+      presenters: Ronald Meuwsen, Geoffrey De Smet
+
+- eventId: 20210316-javaland
+  eventOrganization: "Javaland"
+  eventUrl: https://www.javaland.eu
+  location: Germany (virtual)
+  date: 2021-03-16
+  talks:
+    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
+      url: https://programm.javaland.eu/2021/#/scheduledEvent/606390
+      presenters: Geoffrey De Smet
+
+- eventId: 20210309-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide (virtual)
+  date: 2021-03-09
+  talks:
+    - title: "Testing your constraints with OptaPlanner"
+      url: https://youtu.be/blK7gxqu2B0
+      presenters: Lukáš Petrovický, Karina Varela, Alex Porcelli
+
+- eventId: 20210119-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide (virtual)
+  date: 2021-01-19
+  talks:
+    - title: "OptaPlanner Shadow Variables for the Vehicle Routing Problem and Task Assignment"
+      url: https://www.youtube.com/watch?v=ENKHGBMDaCM
+      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
+
+- eventId: 20201117-kielive
+  eventOrganization: "KIE Live"
+  location: Worldwide (virtual)
+  date: 2020-11-17
+  talks:
+    - title: "OptaPlanner domain models and design patterns"
+      url: https://www.youtube.com/watch?v=0uAoWU8m0pE
+      presenters: Geoffrey De Smet, Karina Varela, Alex Porcelli
+
+- eventId: 20201019-quarkusinsights
+  eventOrganization: "Quarkus insights"
+  eventUrl: https://quarkus.io/insights/
+  location: Worldwide (virtual)
+  date: 2020-10-19
+  talks:
+    - title: "OptaPlanner in Quarkus"
+      presenters: Geoffrey De Smet
+
+- eventId: 20200925-downloadinnovation
+  eventOrganization: "Download innovation 2020"
+  eventUrl: https://download-event.io/
+  location: Italy
+  date: 2020-09-25
+  talks:
+    - title: "Massimizzare i risultati con Business Optimizer (A.I. Constraint Solver)"
+      presenters: Donato Marrazzo
+
+- eventId: 20200901-optaplannerweek
+  eventOrganization: "OptaPlanner Week"
+  eventUrl: https://www.optaplanner.org/blog/2020/09/07/OptaPlannerWeek2020.html
+  location: Worldwide (virtual)
+  date: 2020-09-01
+
+- eventId: 20200801-geekle
+  eventOrganization: "Global Summit for Java devs"
+  eventUrl: https://java.geekle.us/
+  location: Worldwide (virtual)
+  date: 2020-08-01
+  talks:
+    - title: "Optimization AI in Java made easy with OptaPlanner"
+      presenters: Radovan Synek
+
+- eventId: 20200528-bordeauxjug
+  eventOrganization: "Bordeaux JUG"
+  location: Worldwide (virtual)
+  date: 2020-05-28
+  talks:
+    - title: "AI on Quarkus: I love it when an OptaPlan comes together"
+      url: https://www.meetup.com/BordeauxJUG/events/270786885
+      presenters: Geoffrey De Smet
+
+- eventId: 20200515-springiobridge
+  eventOrganization: "Spring I/O Bridge"
+  eventUrl: https://2020.springio.net/bridge/
+  location: Barcelona (virtual)
+  date: 2020-05-15
+  talks:
+    - title: "AI on Spring: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
+- eventId: 20200504-devnation
+  eventOrganization: "DevNation Tech Talks"
+  location: Worldwide (virtual)
+  date: 2020-05-08
+  talks:
+    - title: "AI vs COVID-19: How Java helps nurses and doctors in this fight"
+      url: https://developers.redhat.com/devnation/tech-talks/AI-vs-covid19-java/
+      presenters: Geoffrey De Smet
+
+- eventId: 20200429-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/summit/
+  location: San Fransisco (virtual)
+  date: 2020-04-29
+  talks:
+    - title: "Solve the unsolvable: Why artificial intelligent systems can solve planning problems better than humans"
+      presenters: Satish Kale, Geoffrey De Smet
+
+- eventId: 20200409-soujava
+  eventOrganization: "SouJava Online"
+  location: Brazil (virtual)
+  date: 2020-04-09
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      url: https://www.meetup.com/SouJava/events/269692762/
+      presenters: Geoffrey De Smet
+
+- eventId: 20200131-redhatprocessautomationday
+  eventOrganization: "Red Hat Process Automation Day"
+  eventUrl: https://events.redhat.com/profile/form/index.cfm?PKformID=0x120404abcd
+  location: Tokyo, Japan
+  date: 2020-01-31
+
+- eventId: 20191104-devoxxbe
+  eventOrganization: "Devoxx BE"
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2019-11-04
+
+- eventId: 20191204-infofarmtraining
+  eventOrganization: "Infofarm"
+  location: Kontich, Belgium
+  date: 2019-12-04
+  talks:
+    - title: "Business Optimizer (OptaPlanner) bootcamp training"
+      url: https://www.thecampus.be/business-optimizer-bootcamp-optaplanner
+      presenters: Glenn Cich
+
+- eventId: 20191009-rhforumnl
+  eventOrganization: "Red Hat Forum Netherlands"
+  eventUrl: https://www.redhat.com/en/events
+  location: Utrecht, Netherlands
+  date: 2019-10-09
+  talks:
+    - title: "How AI can boost your productivity, reduce costs & make your employees happy"
+      url: https://www.redhat.com/en/events/benelux-events
+
+- eventId: 20191008-rhforumbe
+  eventOrganization: "Red Hat Forum Belgium"
+  eventUrl: https://www.redhat.com/en/events
+  location: Brussels, Belgium
+  date: 2019-10-08
+  talks:
+    - title: "How AI can boost your productivity, reduce costs & make your employees happy"
+      url: https://www.redhat.com/en/events/benelux-events
+      presenters: Geoffrey De Smet, Ronald Meuwsen
+
+- eventId: 20190916-rhteapac
+  eventOrganization: "Red Hat APAC tech exchange"
+  eventUrl: https://www.redhat.com/en/events/rhte-apac2019
+  location: Seoul, South Korea
+  date: 2019-09-16
+  talks:
+    - title: "Hands-on lab: Building your first optimization app using OptaPlanner's AI constraint solver"
+      presenters: Duncan Doyle
+
+- eventId: 20190820-soujava
+  eventOrganization: "SouJava"
+  location: São Paulo, Brasil
+  date: 2019-08-20
+  talks:
+    - title: "Resolvendo problemas de planejamento com o OptaPlanner"
+      url: https://www.meetup.com/pt-BR/SouJava/events/263502883/
+      presenters: Felipe Souto
+
+- eventId: 20190601-beercitycode
+  eventOrganization: "Beer City Code"
+  eventUrl: https://beercitycode.com/
+  location: Grand Rapids, MI, USA
+  date: 2019-06-01
+  talks:
+    - title: "Deciding things with OptaPlanner"
+      presenters: Kevin Greene
+
+- eventId: 20190507-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/en/summit/2019
+  location: Boston, MA, USA
+  date: 2019-05-07
+  talks:
+    - title: "Keynote demo"
+      url: https://youtu.be/FUu4kMc0PL8?t=7185
+      presenters: Burr Sutter, Paolo Patierno, Stuart Douglas, Hiram Chirino, Sanjay Arora, Geoffrey De Smet
+
+- eventId: 20190406-itkonekt
+  eventOrganization: "IT-KONEKT"
+  eventUrl: https://itkonekt.com/en/it-konferencija-novi-sad/
+  location: Novi Sad, Serbia
+  date: 2019-04-06
+  talks:
+    - title: "Constraint solving A.I. algorithms in OptaPlanner"
+      presenters: Donato Marrazzo
+
+- eventId: 20190319-voxxedzurich
+  eventOrganization: "Voxxed Zurich"
+  eventUrl: https://voxxeddays.com/zurich/
+  location: Zürich, Switzerland
+  date: 2019-03-19
+  talks:
+    - title: "A.I. constraint optimization with OptaPlanner: TSP, Vehicle Routing and Employee Rostering"
+      url: https://cfpvdz19.confinabox.com/talk/UHO-4904
+      presenters: Geoffrey De Smet
+
+- eventId: 20181112-devoxxbe
+  eventOrganization: "Devoxx BE"
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2018-11-12
+  talks:
+    - title: "The battle of 2 automated conference talk scheduling algorithms for Devoxx"
+      url: https://dvbe18.confinabox.com/talk/FWX-0478/The_battle_of_2_automated_conference_talk_scheduling_algorithms_for_Devoxx
+      presenters: Geoffrey De Smet, Piotr Krzemiński, Viktor Tymoshenko
+
+- eventId: 20181025-fsoss
+  eventOrganization: "Free Software and Open Source Symposium"
+  eventUrl: https://fsoss.senecacollege.ca/2018
+  location: Toronto, Ontario, Canada
+  date: 2018-10-25
+  talks:
+    - title: Can Artificial Intelligence solve NP-hard problems?
+      url: https://fsoss.senecacollege.ca/2018/#present12
+      presenters: Musa Talluzi
+
+- eventId: 20180912-webinar
+  eventOrganization: "Red Hat Webinar"
+  eventUrl: https://www.redhat.com/en/events
+  location: Worldwide (virtual)
+  date: 2018-09-12
+  talks:
+    - title: "Business Optimizer: \"I bet you I'm better than a human\""
+      url: https://www.redhat.com/en/events/webinar/business-optimizer-i-bet-you-im-better-than-a-human
+      presenters: Justin Goldsmith
+
+- eventId: 20180912-or2018
+  eventOrganization: "Operations Research 2018"
+  eventUrl: https://www.or2018.be/
+  location: Brussels, Belgium
+  date: 2018-09-12
+  talks:
+    - title: "Employee shift rostering optimization with OptaPlanner’s metaheuristics"
+      url: https://www.euro-online.org/conf/or2018/edit_session_cluster?sessid=46
+      presenters: Geoffrey De Smet
+
+- eventId: 20180529-infofarm
+  eventOrganization: "InfoFarm and Red Hat"
+  eventUrl: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
+  location: Kontich, Belgium
+  date: 2018-05-29
+  talks:
+    - title: "Automatische planningsoptimalisatie met Business Optimiser"
+      url: http://infofarm.be/articles/neem-deel-aan-het-seminarie-automatische-planningsoptimalisatie-met-business-optimiser
+      presenters: Geoffrey De Smet, Robin Pauwels, Ludovic Aelbrecht
+
+- eventId: 20180508-redhatsummit
+  eventOrganization: "Red Hat Summit"
+  eventUrl: https://www.redhat.com/en/summit/2018
+  location: San Francisco, CA, USA
+  date: 2018-05-08
+  talks:
+    - title: "Employee shift rostering optimization A.I. with OptaPlanner"
+      url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=154183
+      presenters: Geoffrey De Smet, Christopher Chianelli
+    - title: "Consulting Discovery Zone - Constraint Optimizer: \"I bet you I'm better than a human\""
+      url: https://agenda.summit.redhat.com/SessionDetail.aspx?id=176035
+      presenters: Justin Goldsmith, Christian Witchger
+
+- eventId: 20171114-devoxxma
+  eventOrganization: "Devoxx MA"
+  eventUrl: https://www.devoxx.ma
+  location: Casablanca, Morocco
+  date: 2017-11-14
+  talks:
+    - title: "Constraint solving A.I. algorithms in OptaPlanner"
+      url: https://cfp.devoxx.ma/2017/talk/DMU-8120/Constraint_solving_A.I._algorithms_in_OptaPlanner
+      presenters: Geoffrey De Smet
+
+- eventId: 20171010-humantalksparis
+  eventOrganization: "Human Talks Paris"
+  eventUrl: https://www.meetup.com/HumanTalks-Paris/
+  location: Paris, France
+  date: 2017-10-10
+  talks:
+    - title: "Planification de rendez-vous avec OptaPlanner"
+      url: https://www.meetup.com/HumanTalks-Paris/events/243915056/
+      presenters: Richard Hanna
+      videoUrl: https://www.youtube.com/watch?v=_gXtxjHogtw
+
+- eventId: 20171010-redhatforum
+  eventOrganization: "Red Hat Forum Benelux"
+  eventUrl: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
+  location: Breda, Netherlands
+  date: 2017-10-10
+  talks:
+    - title: "Constraint solver A.I. with OptaPlanner"
+      url: https://www.redhat.com/en/about/events/red-hat-forum-benelux-2017
+      presenters: Geoffrey De Smet, Eva Dauw
+
+- eventId: 20170928-droolsday
+  eventOrganization: "Drools, jBPM and OptaPlanner day Washington DC"
+  eventUrl: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI
+  location: Washington, DC, US
+  date: 2017-09-28
+  talks:
+    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
+      url: https://droolsday.com/DC?sc_cid=701f2000000h3V9AAI#agenda
+      presenters: Geoffrey De Smet
+
+- eventId: 20170926-droolsday
+  eventOrganization: "Drools, jBPM and OptaPlanner day New York"
+  eventUrl: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI
+  location: New York, NY, US
+  date: 2017-09-26
+  talks:
+    - title: "Constraint solver A.I.: Optimizing business decisions and operations"
+      url: https://droolsday.com/New_York?sc_cid=701f2000000h3V9AAI#agenda
+      presenters: Geoffrey De Smet
+      videoUrl: https://www.youtube.com/watch?v=v4DibGQCD54
+
+- eventId: 20170714-ruleml
+  eventOrganization: RuleML+RR
+  eventUrl: http://2017.ruleml-rr.org/
+  location: London, UK
+  date: 2017-07-14
+  talks:
+    - title: Real-time Constraint Solving with OptaPlanner
+      url: http://2017.ruleml-rr.org/decisioncamp-2017-schedule/
+      presenters: Geoffrey De Smet
+
+- eventId: 20170710-londonjavacommunity
+  eventOrganization: London Java Community
+  eventUrl: https://www.meetup.com/Londonjavacommunity/
+  location: London, UK
+  date: 2017-07-10
+  talks:
+    - title: Constraint solving in Java with OptaPlanner
+      url: https://www.meetup.com/Londonjavacommunity/events/240754560/
+      presenters: Geoffrey De Smet
+      videoUrl: https://skillsmatter.com/skillscasts/10467-constraint-solving-in-java-with-optaplanner
+
+- eventId: 20170531-springdays
+  eventOrganization: Spring Days Chicago
+  eventUrl: https://www.springdays.io/ehome/spring-days/chicago
+  location: Chicago, IL, US
+  date: 2017-05-31
+  talks:
+    - title: Solving Planning and Optimization Problems in Real Time
+      url: https://www.springdays.io/ehome/spring-days/chicago
+      presenters: Kevin Greene
+      videoUrl: https://www.youtube.com/watch?v=_igsVQiH2GI
+
+- eventId: 20170517-apachecon
+  eventOrganization: ApacheCon North America
+  eventUrl: http://events.linuxfoundation.org/events/apachecon-north-america
+  location: Miami, FL, US
+  date: 2017-05-17
+  talks:
+    - title: IoT for a Fleet, Building a Route Optimization Platform
+      url: https://apachecon2017.sched.com/event/AZL6/iot-for-a-fleet-building-a-route-optimization-platform-using-an-open-source-stack-pedro-vidigal-procensus
+      presenters: Pedro Vidigal
+
+- eventId: 20170502-redhatsummit
+  eventOrganization: Red Hat Summit
+  eventUrl: https://www.redhat.com/summit/
+  location: Boston, MA, USA
+  date: 2017-05-02
+  talks:
+    - title: Workforce Optimization with Business Resource Planner and OpenShift
+      url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103192
+      presenters: Justin Goldsmith, Josh Bryant, John Rinaldi
+    - title: Optimize your business with JBoss BRMS Business Resource Planner
+      url: https://rh2017.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=103203
+      presenters: Geoffrey De Smet, Duncan Doyle
+
+- eventId: 20170419-grandrapidsjug
+  eventOrganization: Grand Rapids JUG
+  location: Grand Rapids, MI, US
+  date: 2017-04-19
+  talks:
+    - title: Managing micromanagement, an OptaPlanner lab
+      url: https://www.meetup.com/gr-jug/events/238645412/
+      presenters: Kevin Greene
+
+- eventId: 20170315-grandrapidsjug
+  eventOrganization: Grand Rapids JUG
+  location: Grand Rapids, MI, US
+  date: 2017-03-15
+  talks:
+    - title: Drools and OptaPlanner
+      url: https://www.meetup.com/gr-jug/events/238240253/
+      presenters: Kevin Greene
+
+- eventId: 20170223-datascienceghent
+  eventOrganization: Data Science Ghent
+  eventUrl: https://www.meetup.com/Data-Science-Community-Meetup/
+  location: Ghent, Belgium
+  date: 2017-02-23
+  talks:
+    - title: Vehicle Routing with OptaPlanner
+      url: https://www.meetup.com/Data-Science-Community-Meetup/events/237670970/
+      presenters: Geoffrey De Smet
+
+- eventId: 20161122-jbuglondon
+  eventOrganization: JBoss User Group
+  location: London, UK
+  date: 2016-11-22
+  talks:
+    - title: Red Hat BRMS and BPMS Roadmap Presentation
+      url: http://www.meetup.com/JBoss-User-Group/events/234803765/
+      presenters: Geoffrey De Smet, Mark Proctor, Kris Verlaenen, Mauricio Salatino, Max Barkley
+
+- eventId: 20161108-devoxxbe
+  eventOrganization: Devoxx Be
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2016-11-08
+  talks:
+    - title: Hackergarten
+      url: https://www.devoxx.be
+
+- eventId: 20161026-eclipseconeurope
+  eventOrganization: EclipseCon Europe
+  location: Ludwigsburg, Germany
+  date: 2016-10-26
+  talks:
+    - title: Modeling Avengers - Open Source Technology Mix for Saving the World
+      url: https://www.eclipsecon.org/europe2016/session/modeling-avengers-open-source-technology-mix-saving-world
+      presenters: Cedric Brun, Benoit Combemale
+
+- eventId: 20160629-redhatsummit
+  eventOrganization: Red Hat Summit
+  location: San Francisco, CA, USA
+  date: 2016-06-29
+  talks:
+    - title: Automate and optimize logistic plans with BRMS Business Resource Planner
+      url: http://www.redhat.com/summit/
+      presenters: Geoffrey De Smet, Prakasha Aradhya
+
+- eventId: 20160602-euregjug
+  eventOrganization: EuregJUG
+  location: Aachen, Germany
+  date: 2016-06-02
+  talks:
+    - title: Solving constraint satisfaction business puzzles in Java with OptaPlanner
+      url: http://www.euregjug.eu/2016/04/25/next-talk-solving-constraint-satisfaction-puzzles-with-optaplanner
+      presenters: Geoffrey De Smet
+
+- eventId: 20160315-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide (virtual)
+  date: 2016-03-15
+  talks:
+    - title: Deliver real value with business resource optimization technology
+      url: https://vts.inxpo.com/scripts/Server.nxp?LASCmd=AI:4;F:QS!10100&ShowKey=30676&AffiliateData=social
+      presenters: Geoffrey De Smet, Phil Simpson
+
+- eventId: 20160308-eclipsecon
+  eventOrganization: EclipseCon
+  location: Reston, VA, USA
+  date: 2016-03-08
+  talks:
+    - title: Modeling Avengers - Open Source Technology Mix for Saving the World
+      url: https://www.eclipsecon.org/na2016/session/modeling-avengers-open-source-technology-mix-saving-world
+      presenters: Cedric Brun, Benoit Combemale
+
+- eventId: 20160206-devconf
+  eventOrganization: DevConf
+  location: Brno, Czech Republic
+  date: 2016-02-06
+  talks:
+    - title: Smart VM Scheduling
+      url: http://devconfcz2016.sched.org/event/5m1J
+      presenters: Martin Sivák
+
+- eventId: 20160130-fosdem
+  eventOrganization: FOSDEM
+  eventUrl: https://fosdem.org
+  location: Brussels, Belgium
+  date: 2016-01-30
+
+- eventId: 20160126-juggraz
+  eventOrganization: JUG Graz
+  location: Graz, Austria
+  date: 2016-01-26
+  talks:
+    - title: Smart load balancing in the cloud with OptaPlanner
+      url: http://www.meetup.com/Java-User-Group-Graz/events/227269536/
+      presenters: Lukáš Petrovický
+
+- eventId: 20151112-devoxxbe
+  eventOrganization: Devoxx Be
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2015-11-12
+  talks:
+    - title: False assumptions for the Vehicle Routing Problem
+      url: http://cfp.devoxx.be/2015/talk/OXN-8472/False_assumptions_for_the_Vehicle_Routing_Problem
+      presenters: Geoffrey De Smet
+
+- eventId: 20151012-javavienna
+  eventOrganization: Java Vienna
+  location: Vienna, Austria
+  date: 2015-10-12
+  talks:
+    - title: Smart load balancing in the cloud with OptaPlanner
+      url: http://www.meetup.com/Java-Vienna/events/225365483/
+      presenters: Lukáš Petrovický
+
+- eventId: 20151006-barcelonajug
+  eventOrganization: Barcelona JUG
+  location: Barcelona, Spain
+  date: 2015-10-06
+  talks:
+    - title: Drools, OptaPlanner, jBPM and KIE Workbench
+      url: http://www.barcelonajug.org/2015/10/drools-jbpm-and-friends.html
+      presenters: Drools, OptaPlanner and jBPM team
+
+- eventId: 20150917-berlinexpertdays
+  eventOrganization: Berlin Expert Days
+  location: Berlin, Germany
+  date: 2015-09-17
+  talks:
+    - title: OptaPlanner hilft bei verteilten Schulstandorten
+      url: http://www.bed-con.org/2015/talks/OptaPlanner-hilft-bei-verteilten-Schulstandorten
+      presenters: Torsten Fink, Markus Müller
+
+- eventId: 20150623-redhatsummit
+  eventOrganization: Red Hat Summit
+  eventUrl: http://www.redhat.com/summit/
+  location: Boston, MA, USA
+  date: 2015-06-23
+
+- eventId: 20150423-workshop
+  eventOrganization: Red Hat workshop
+  location: Brussels, Belgium
+  date: 2015-04-23
+  talks:
+    - title: JBoss Business Resource Planner
+      url: http://www.redhatonline.com/benelux/workshops.php
+      presenters: Geoffrey De Smet, Eric D. Schabell
+
+- eventId: 20150422-jaxcon
+  eventOrganization: JaxCon
+  location: Mainz, Germany
+  date: 2015-04-22
+  talks:
+    - title: Optimierung 2.0 - Lösung von Optimierungsproblemen mit JBoss OptaPlanner
+      url: https://jax.de/2015/sessions/optimierung-20-loesung-von-optimierungsproblemen-mit-jboss-optaplanner
+      presenters: David Jorch
+
+- eventId: 20150408-devoxxfr
+  eventOrganization: Devoxx Fr
+  eventUrl: https://www.devoxx.fr
+  location: Paris, France
+  date: 2015-04-08
+  talks:
+    - title: OptaPlanner ou comment optimiser les itinéraires, les plannings et bien plus encore...
+      url: http://cfp.devoxx.fr/2015/talk/ZUC-9786/OptaPlanner_ou_comment_optimiser_les_itineraires,_les_plannings_et_bien_plus_encore...
+      presenters: Frederic Hornain, Geoffrey De Smet
+
+- eventId: 20150318-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide (virtual)
+  date: 2015-03-18
+  talks:
+    - title: Business resource planning for Java developers
+      url: https://vts.inxpo.com/Launch/QReg.htm?ShowKey=24231&AffiliateData=socialmedia
+      presenters: Geoffrey De Smet
+
+- eventId: 20150219-scale13x
+  eventOrganization: SCALE 13x
+  location: Los Angeles, CA
+  date: 2015-02-19
+  talks:
+    - title: Solving (NP-Hard) Scheduling Problems with oVirt and OptaPlanner
+      url: http://www.socallinuxexpo.org/scale/13x/presentations/solving-np-hard-scheduling-problems-ovirt-and-optaplanner
+      presenters: Jason Brooks
+
+- eventId: 20150206-devconf
+  eventOrganization: DevConf
+  location: Brno, Czech Republic
+  date: 2015-02-07
+  talks:
+    - title: Scheduling your clouds with Optaplanner - How we (almost) beat academia
+      url: http://sched.co/2B1s
+      presenters: Lukáš Petrovický
+
+- eventId: 20150131-fosdem
+  eventOrganization: FOSDEM
+  eventUrl: https://fosdem.org
+  location: Brussels, Belgium
+  date: 2015-01-31
+  talks:
+    - title: Smart VM scheduling in oVirt cluster
+      url: https://fosdem.org/2015/schedule/event/smartvmsched/
+      presenters: Roy Golan
+
+- eventId: 20141117-redhatbenelux
+  eventOrganization: Red Hat Benelux
+  location: Antwerp, Belgium
+  date: 2014-11-17
+  talks:
+    - title: Technical User Group
+      url: http://www.redhatonline.com/benelux/events.php
+      presenters: Geoffrey De Smet
+
+- eventId: 20141111-devoxx
+  eventOrganization: Devoxx Be
+  eventUrl: https://www.devoxx.be
+  location: Antwerp, Belgium
+  date: 2014-11-11
+  talks:
+    - title: Hackergarten
+      url: http://www.devoxx.be/hackergarten/
+      presenters: Geoffrey De Smet
+
+- eventId: 20141020-openblend
+  eventOrganization: OpenBlend JavaSi
+  location: Ljubljana, Slovenia
+  date: 2014-10-20
+  talks:
+    - title: OptaPlanner introduction
+      url: http://www.sioug.si/index.php/javasi-14
+      presenters: Geoffrey De Smet
+
+- eventId: 20141014-cloudopen
+  eventOrganization: CloudOpen Europe
+  location: Düsseldorf, Germany
+  date: 2014-10-14
+  talks:
+    - title: Smart VM Scheduling in oVirt Cluster
+      url: http://lccoelce14.sched.org/event/c25af16e16beee7b8ec566a31481c077
+      presenters: Martin Sivak
+
+- eventId: 20140925-brujug
+  eventOrganization: BruJUG
+  location: Brussels, Belgium
+  date: 2014-09-25
+  talks:
+    - title: Optimizing vehicle routes, shift rosters and other NP-hard problems
+      url: http://www.meetup.com/BruJUG/events/206149232/
+      presenters: Geoffrey De Smet
+
+- eventId: 20140924-webinar
+  eventOrganization: Red Hat Webinar
+  location: Worldwide (virtual)
+  date: 2014-09-24
+  talks:
+    - title: How to solve impossible business resource planning problems
+      url: http://www.redhat.com/en/about/events/how-solve-impossible-business-resource-planning-problems
+      presenters: Geoffrey De Smet, Phil Simpson

@@ -51,7 +51,7 @@
         <div class="card-header">Upcoming events</div>
         <div class="card-body">
             <ul class="list-unstyled">
-                <#list events as event>
+                <#list events?reverse as event>
                     <#if .now?date <= event.date?date>
                         <li class="mb-2">
                             <div class="title">
