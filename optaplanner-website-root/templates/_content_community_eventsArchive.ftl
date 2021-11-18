@@ -9,7 +9,7 @@
     <#assign events = data.get('events.yml').data>
     <h1>${content.title}</h1>
     <ul class="list-unstyled">
-        <#list events?reverse as event>
+        <#list events as event>
             <li class="mb-2">
                 <div class="title">
                     <#if event.eventUrl??>
