@@ -64,7 +64,7 @@
         <configuration>
           <transformationSets>
             <transformationSet>
-              <dir>${build.directory}/website-complete</dir>
+              <dir>${project.build.directory}/website-complete</dir>
               <includes>
                 <include>sitemap.xml</include>
               </includes>
@@ -72,10 +72,10 @@
               <parameters>
                 <parameter>
                   <name>docsSitemap</name>
-                  <value>${build.directory}/website-complete/docs/sitemap.xml</value>
+                  <value>${project.build.directory}/website-complete/docs/sitemap.xml</value>
                 </parameter>
               </parameters>
-              <outputDir>${build.directory}/website-complete</outputDir>
+              <outputDir>${project.build.directory}/website-complete</outputDir>
             </transformationSet>
           </transformationSets>
           <forceCreation>true</forceCreation>
