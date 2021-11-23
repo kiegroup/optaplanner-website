@@ -17,6 +17,7 @@
 
   <properties>
     <antora.playbook>antora-playbook.yml</antora.playbook>
+    <antora.binary>node_modules/.bin/antora</antora.binary>
     <version.node>v12.20.0</version.node>
     <version.npm>6.14.4</version.npm>
   </properties>
@@ -82,7 +83,7 @@
                 <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
               </environmentVariables>
               <arguments>
-                <argument>node_modules/.bin/antora</argument>
+                <argument>${antora.binary}</argument>
                 <argument>--generator</argument>
                 <argument>antora-site-generator-lunr</argument>
                 <argument>${antora.playbook}</argument>
@@ -101,6 +102,19 @@
       <id>author</id>
       <properties>
         <antora.playbook>antora-playbook-author.yml</antora.playbook>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>antora-windows</id>
+      <activation>
+        <os>
+          <family>Windows</family>
+        </os>
+      </activation>
+      <properties>
+        <!-- The wrapper script node_modules/.bin/antora does not resolve the path to this file correctly. -->
+        <antora.binary>node_modules/@antora/cli/bin/antora</antora.binary>
       </properties>
     </profile>
   </profiles>
