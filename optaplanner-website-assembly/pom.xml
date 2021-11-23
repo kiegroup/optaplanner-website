@@ -85,6 +85,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <executions>
+          <!-- Remove the partial sitemap.xml located in docs. -->
           <execution>
             <phase>process-resources</phase>
             <goals>
@@ -94,7 +95,7 @@
               <excludeDefaultDirectories>true</excludeDefaultDirectories>
               <filesets>
                 <fileset>
-                  <directory>${build.directory}/website-complete/docs</directory>
+                  <directory>${project.build.directory}/website-complete/docs</directory>
                   <includes>
                     <include>sitemap.xml</include>
                   </includes>
