@@ -14,7 +14,10 @@ defaults:
 
 jobs:
   website:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -32,6 +35,5 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      # Builds the JPA module and runs tests in a PostgreSQL container
       - name: Build with Maven
         run: mvn -B clean package
