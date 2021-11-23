@@ -296,7 +296,7 @@
 </#macro>
 
 <#macro useCaseCards>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
         <@featureCard uri="learn/useCases/vehicleRoutingProblem.html"
                 iconClass="fas fa-truck"
                 title="Vehicle routing (VRP)"

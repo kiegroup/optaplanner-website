@@ -23,13 +23,15 @@
             </div>
         </div>
 
-        <h2 class="mb-2">What can OptaPlanner do?</h2>
-        <p>OptaPlanner optimizes plans and schedules with hard and soft constraints.
-            It <b>heavily reduces costs</b>, improves <b>service quality</b>, fulfills <b>employee wishes</b>
-            and helps to <b>lower carbon emissions</b>.</p>
-        <@macros.useCaseCards/>
+        <div class="mb-5">
+            <h2 class="mb-2">What can OptaPlanner do?</h2>
+            <p>OptaPlanner optimizes plans and schedules with hard and soft constraints.
+                It <b>reduces costs</b> substantially, improves <b>service quality</b>, fulfills <b>employee wishes</b>
+                and <b>lowers carbon emissions</b>.</p>
+            <@macros.useCaseCards/>
+        </div>
 
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-6">
                 <h2>Modern mathematical optimization</h2>
                 <p>OptaPlanner is <strong>a lightweight, embeddable planning engine</strong>.
@@ -74,14 +76,16 @@
             </div>
         </div>
 
-        <h2>Code example</h2>
-        <div class="row mb-2"><#-- listingblock adds mb-2 too -->
-            <div class="paragraph">
-                <p>To optimize a problem from Java™ code, add the <code>optaplanner-core</code> jar and call <code>Solver.solve()</code>:</p>
-            </div>
-            <div class="listingblock">
-                <div class="content">
-                    <pre class="highlight"><code class="language-java" data-lang="java">SolverFactory&lt;MyRoster&gt; factory = SolverFactory.create(...);&#x000A;&#x000A;// My domain specific class as input&#x000A;MyRoster problem = ...;&#x000A;&#x000A;Solver&lt;MyRoster&gt; solver = factory.buildSolver();&#x000A;// My domain specific class as output&#x000A;MyRoster solution = solver.solve(problem);&#x000A;&#x000A;for (MyShift shift : solution.getShifts()) {&#x000A;    // Each shift is now assigned to an employee&#x000A;    assertNotNull(shift.getEmployee());&#x000A;}</code></pre>
+        <div class="mb-5">
+            <h2>Code example</h2>
+            <div class="row">
+                <div class="paragraph">
+                    <p>To optimize a problem from Java™ code, add the <code>optaplanner-core</code> jar and call <code>Solver.solve()</code>:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-java" data-lang="java">SolverFactory&lt;MyRoster&gt; factory = SolverFactory.create(...);&#x000A;&#x000A;// My domain specific class as input&#x000A;MyRoster problem = ...;&#x000A;&#x000A;Solver&lt;MyRoster&gt; solver = factory.buildSolver();&#x000A;// My domain specific class as output&#x000A;MyRoster solution = solver.solve(problem);&#x000A;&#x000A;for (MyShift shift : solution.getShifts()) {&#x000A;    // Each shift is now assigned to an employee&#x000A;    assertNotNull(shift.getEmployee());&#x000A;}</code></pre>
+                    </div>
                 </div>
             </div>
         </div>

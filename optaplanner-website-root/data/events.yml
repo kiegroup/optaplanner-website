@@ -14,6 +14,15 @@
 #
 # Order events by date descending
 
+- eventId: 20220128-devconf
+  eventOrganization: "DevConf.CZ"
+  eventUrl: https://www.devconf.cz/
+  location: Brno, Czech Republic
+  date: 2022-01-28
+  talks:
+    - title: "Artificial Intelligence on Quarkus: I love it when an OptaPlan comes together"
+      presenters: Geoffrey De Smet
+
 - eventId: 20220207-jfokus
   eventOrganization: "JFokus"
   eventUrl: https://www.jfokus.se/
