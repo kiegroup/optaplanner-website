@@ -1,4 +1,3 @@
-
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light border-bottom shadow">
     <div class="container">
         <a class="navbar-brand" href="${content.rootpath}">

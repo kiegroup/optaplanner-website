@@ -1219,7 +1219,7 @@ return HardSoftScore.ofHard(hardScore);</code></pre>
             <h3>COVID-19 constraint</h3>
             <pre xml:space="preserve"><code class="java">protected Constraint roomCounterStream(ConstraintFactory f) {
   return f
-  .from(Lesson.class)
+  .forEach(Lesson.class)
   .join(Lesson.class,
       Joiners.equal(Lesson::getStudentGroup),
       Joiners.equal(

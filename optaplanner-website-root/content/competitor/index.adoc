@@ -1,0 +1,7 @@
+= OptaPlanner competitors
+:jbake-type: normalBase
+:jbake-description: OptaPlanner is a fast, open source alternative for mathematical optimization.
+:jbake-priority: 0.0
+:showtitle:
+
+OptaPlanner is a fast, open source alternative for mathematical optimization.
