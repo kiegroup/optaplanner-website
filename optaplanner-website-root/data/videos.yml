@@ -12,6 +12,14 @@
 #
 # Order videos by date descending
 
+- youtubeId: HVDPxebpSvg
+  title: "AI lesson scheduling on Quarkus with OptaPlanner"
+  author: ge0ffrey
+  date: 2021-11-18
+  tags:
+    - quarkus
+    - school timetabling
+
 - youtubeId: dqTrjkVxoPI
   title: "Maintenance scheduling"
   author: ge0ffrey
