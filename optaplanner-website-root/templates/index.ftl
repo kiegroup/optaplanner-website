@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>Solve planning and scheduling problems with OptaPlanner</h1>
-                <p><i>An easy-to-use constraint solver with AI algorithms</i></p>
+                <p class="lead">An easy-to-use, open source constraint solver with AI algorithms</p>
                 <div class="d-flex justify-content-center" style="width: auto;">
                     <@macros.videoCard youtubeId="f4jIWbQpjdE" long=false/>
                 </div>
@@ -25,12 +25,13 @@
 
         <div class="mb-5">
             <h2 class="mb-2">What can OptaPlanner do?</h2>
-            <p>OptaPlanner optimizes plans and schedules with hard and soft constraints.
+            <p>OptaPlanner optimizes plans and schedules with <i>hard constraints</i> and <i>soft constraints</i>.<br/>
                 It <b>reduces costs</b> substantially, improves <b>service quality</b>, fulfills <b>employee wishes</b>
                 and <b>lowers carbon emissions</b>.</p>
             <@macros.useCaseCards/>
         </div>
 
+        <#-- TODO OptaPlanner is easy-to-use, fast and versatile. -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <h2>Modern mathematical optimization</h2>

@@ -33,6 +33,17 @@ img {
     max-width: 100%;
 }
 
+/* Anchor links to Asciidoctor sections should not hide their title behind the sticky navbar. */
+.sect1 h2 {
+    scroll-margin-top: 5rem;
+}
+.sect2 h3 {
+    scroll-margin-top: 5rem;
+}
+.sect3 h4 {
+    scroll-margin-top: 5rem;
+}
+
 .forkMeOnGithub {
     position: absolute;
     right: 0;
@@ -153,15 +164,4 @@ td > p:last-child {
 .content img {
     margin-bottom: 10px;
     max-width: 100%;
-}
-
-/******************************************************************************
-* Components
-******************************************************************************/
-
-#frontPageCarousel .carousel-item * {
-    max-height: 600px;
-    max-width: 800px;
-    display: flex;
-    margin: 0 auto;
 }
