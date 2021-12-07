@@ -15,7 +15,7 @@ Let's take a look behind the scenes.
 == The challenge (in theory)
 
 A few weeks after the CFP closed and the program group decided which talks to accepts,
-Arrie Brown (master coordinator of Summit, the business expert) and me (the technical expert) started the automatic scheduling.
+Arrie Brown (main coordinator of Summit, the business expert) and me (the technical expert) started the automatic scheduling.
 So for everyone wondering why your brilliant talk wasn't accepted: _it's not OptaPlanner's fault!_
 
 Instead, it had to assign a timeslot and room to each talk.

@@ -128,7 +128,7 @@ Combine that with the reliance of many optimization algorithms on a seeded rando
 for a real challenge.
 
 But we did it. We have 100% reproducibility. This involves several ingenious mechanisms, such as
-using a master seeded random to generate a seeded random per thread,
+using a main seeded random to generate a seeded random per thread,
 generating a predictable number of selected, buffered moves (because move generation often relies on the random generator too)
 and reordering evaluated moves in their originally selected order when they come back from the move threads.
 

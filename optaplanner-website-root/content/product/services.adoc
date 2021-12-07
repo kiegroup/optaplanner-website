@@ -35,7 +35,7 @@ Both community and product use the same code base.
 
 |*Functionality* | |
 |All features |image:checkYes.png[Yes] Includes all enterprise features too |image:checkYes.png[Yes]
-|All bugfixes |image:checkYes.png[Yes] Master branch only |image:checkYes.png[Yes] Maintenance branches too
+|All bugfixes |image:checkYes.png[Yes] Main branch only |image:checkYes.png[Yes] Maintenance branches too
 |Documentation |image:checkYes.png[Yes] |image:checkYes.png[Yes]
 |Backport bugfixes to maintenance branches |image:checkNo.png[No] Not released |image:checkYes.png[Yes] Released in maintenance releases
 |Security (CVE) watch for maintenance branches |image:checkNo.png[No] Eventually released from main branch only |image:checkYes.png[Yes] Released as backported bugfix
