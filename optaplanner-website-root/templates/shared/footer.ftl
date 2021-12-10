@@ -6,10 +6,11 @@
                     All dependencies of this project are available under the
                     <a class="link-light" href="${content.rootpath}code/license.html">Apache Software License 2.0</a>
                     or a compatible license.
+                    OptaPlanner is <a class="link-light" href="${content.rootpath}community/branding.html">trademarked</a>.
                 </p>
                 <p class="small">
                     This <a class="link-light" href="${content.rootpath}website/websiteInfo.html">website</a>
-                    was built with <a class="link-light" href="https://jbake.org">JBake</a> and is completely open source.
+                    was built with <a class="link-light" href="https://jbake.org">JBake</a> and is open source.
                 </p>
             </div>
             <div class="col-md-3">
@@ -26,9 +27,10 @@
                 <h4>Code</h4>
                 <ul class="ps-2 list-unstyled">
                     <li><a class="link-light" href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
-                    <li><a class="link-light" href="${config.issueTracker}">Submit a bug</a></li>
+                    <li><a class="link-light" href="${config.issueTracker}">Issue tracker</a></li>
                     <li><a class="link-light" href="${content.rootpath}download/releaseNotes/">Release notes</a></li>
                     <li><a class="link-light" href="${content.rootpath}download/upgradeRecipe/">Upgrade recipes</a></li>
+                    <li><a class="link-light" href="${content.rootpath}community/branding.html">Logo and branding</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
