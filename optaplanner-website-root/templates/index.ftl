@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <div class="mb-5">
+        <div class="mb-4">
             <h2>Code example</h2>
             <div class="row">
                 <div class="paragraph">
@@ -87,6 +87,9 @@
                     <div class="content">
                         <pre class="highlight"><code class="language-java" data-lang="java">SolverFactory&lt;MyRoster&gt; factory = SolverFactory.create(...);&#x000A;&#x000A;// My domain specific class as input&#x000A;MyRoster problem = ...;&#x000A;&#x000A;Solver&lt;MyRoster&gt; solver = factory.buildSolver();&#x000A;// My domain specific class as output&#x000A;MyRoster solution = solver.solve(problem);&#x000A;&#x000A;for (MyShift shift : solution.getShifts()) {&#x000A;    // Each shift is now assigned to an employee&#x000A;    assertNotNull(shift.getEmployee());&#x000A;}</code></pre>
                     </div>
+                </div>
+                <div class="paragraph">
+                    <p><a href="https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world#readme"><i class="fab fa-github me-1 text-black"></i>Try the hello world application.</a></p>
                 </div>
             </div>
         </div>
