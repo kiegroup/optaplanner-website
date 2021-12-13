@@ -1,31 +1,31 @@
 latestFinal:
-  version: 8.14.1.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.14.1.Final/optaplanner-distribution-8.14.1.Final.zip
+  version: 8.14.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.14.0.Final/optaplanner-distribution-8.14.0.Final.zip
   releaseDate: 2021-12-08
   releaseNotesVersion: 8
 
-  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/8.14.1.Final/optaweb-employee-rostering-distribution-8.14.1.Final.zip
-  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.14.1.Final/optaweb-vehicle-routing-distribution-8.14.1.Final.zip
+  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/8.14.0.Final/optaweb-employee-rostering-distribution-8.14.0.Final.zip
+  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.14.0.Final/optaweb-vehicle-routing-distribution-8.14.0.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.1.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/8.14.1.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.1.Final/optaweb-employee-rostering-docs/html_single/index.html
-  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/8.14.1.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
-  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.1.Final/optaweb-vehicle-routing-docs/html_single/index.html
-  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/8.14.1.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/8.14.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.0.Final/optaweb-employee-rostering-docs/html_single/index.html
+  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/8.14.0.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
+  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
+  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/8.14.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
 
-  javadocs: https://docs.optaplanner.org/8.14.1.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/8.14.0.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 8.14.1.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.14.1.Final/optaplanner-distribution-8.14.1.Final.zip
+  version: 8.14.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.14.0.Final/optaplanner-distribution-8.14.0.Final.zip
   releaseDate: 2021-12-08
   releaseNotesVersion: 8
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.1.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.14.0.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/8.14.1.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/8.14.0.Final/optaplanner-javadoc/index.html
 
 nightly:
   version: 8.15.1-SNAPSHOT
