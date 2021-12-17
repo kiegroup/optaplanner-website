@@ -190,7 +190,8 @@ To calculate the score, create a constraint provider function in the file `const
 ----
 from domain import Lesson, Room
 from optapy import constraint_provider, get_class
-from optapy.types import Joiners, HardSoftScore
+from optapy.constraint import Joiners
+from optapy.score import HardSoftScore
 
 # Constraint Factory takes Java Classes, not Python Classes
 LessonClass = get_class(Lesson)
@@ -209,7 +210,7 @@ def define_constraints(constraint_factory):
 def room_conflict(constraint_factory):
     # A room can accommodate at most one lesson at the same time.
     return constraint_factory \
-            .from_(LessonClass) \
+            .forEach(LessonClass) \
             .join(LessonClass,
                 [
                     # ... in the same timeslot ...
@@ -225,7 +226,7 @@ def room_conflict(constraint_factory):
 def teacher_conflict(constraint_factory):
     # A teacher can teach at most one lesson at the same time.
     return constraint_factory \
-                .from_(LessonClass)\
+                .forEach(LessonClass)\
                 .join(LessonClass,
                         [
                             Joiners.equal(lambda lesson: lesson.timeslot),
@@ -237,7 +238,7 @@ def teacher_conflict(constraint_factory):
 def student_group_conflict(constraint_factory):
     # A student can attend at most one lesson at the same time.
     return constraint_factory \
-            .from_(LessonClass) \
+            .forEach(LessonClass) \
             .join(LessonClass,
                 [
                     Joiners.equal(lambda lesson: lesson.timeslot),
@@ -268,7 +269,7 @@ In `domain.py`, add the following code to create the `TimeTable` class:
 from optapy import planning_solution, planning_entity_collection_property, \
                    problem_fact_collection_property, \
                    value_range_provider, planning_score
-from optapy.types import HardSoftScore
+from optapy.score import HardSoftScore
 
 def format_list(a_list):
     return ',\n'.join(map(str, a_list))
@@ -389,9 +390,11 @@ Next, we need to create a `SolverConfig`, which tells OptaPlanner about the prob
 from domain import Lesson, TimeTable, generate_problem
 from constraints import define_constraints
 from optapy import get_class
-from optapy.types import SolverConfig, Duration
+import optapy.config
+from optapy.types import Duration
 
-solver_config = SolverConfig().withEntityClasses(get_class(Lesson)) \
+solver_config = optapy.config.solver.SolverConfig() \
+    .withEntityClasses(get_class(Lesson)) \
     .withSolutionClass(get_class(TimeTable)) \
     .withConstraintProviderClass(get_class(define_constraints)) \
     .withTerminationSpentLimit(Duration.ofSeconds(30))
@@ -403,9 +406,11 @@ Finally, we pass the `SolverConfig` and the problem instance to the `solve` func
 
 [source,python]
 ----
-from optapy import solve
+from optapy import solver_factory_create
 
-solution = solve(solver_config, generate_problem())
+solution = solver_factory_create(solver_config)\
+    .buildSolver()\
+    .solve(generate_problem())
 print(solution)
 ----
 
