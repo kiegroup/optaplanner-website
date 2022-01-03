@@ -14,11 +14,11 @@
 #
 # Order events by date descending
 
-- eventId: 20220207-jfokus
+- eventId: 20220503-jfokus
   eventOrganization: "JFokus"
   eventUrl: https://www.jfokus.se/
   location: Stockholm, Sweden
-  date: 2022-02-07
+  date: 2022-05-03
   talks:
     - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
       url: https://www.jfokus.se/talks/712
