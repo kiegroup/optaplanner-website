@@ -35,3 +35,4 @@ Each of these videos demonstrates an example and/or a special feature:
 * https://www.youtube.com/watch?v=BxO3UFmtAPg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing with time windows]: Shadow variables and real-time planning
 * https://www.youtube.com/watch?v=4hp_Qg1hFgE&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Vehicle routing scoring]: Score function flexibility
 * https://www.youtube.com/watch?v=7nPagqJK3bs&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Employee rostering]: Continuous planning
+* https://www.youtube.com/watch?v=784Au4PjTzg&list=PLJY69IMbAdq0uKPnjtWXZ2x7KE1eWg3ns[Order picking]
