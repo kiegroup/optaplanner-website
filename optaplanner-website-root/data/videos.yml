@@ -12,6 +12,13 @@
 #
 # Order videos by date descending
 
+- youtubeId: 784Au4PjTzg
+  title: "Order picking planning with OptaPlanner"
+  author: dupliaka
+  date: 2021-12-31
+  tags:
+    - order picking
+
 - youtubeId: HVDPxebpSvg
   title: "AI lesson scheduling on Quarkus with OptaPlanner"
   author: ge0ffrey
