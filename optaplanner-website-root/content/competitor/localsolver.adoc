@@ -1,24 +1,22 @@
-= Gurobi versus OptaPlanner comparison
+= LocalSolver versus OptaPlanner comparison
 :jbake-type: competitorBase
-:jbake-description: OptaPlanner is a fast, open source alternative to Gurobi for mathematical optimization.
+:jbake-description: OptaPlanner is a fast, open source alternative to LocalSolver for mathematical optimization.
 :jbake-priority: 1.0
-:jbake-related_tag: gurobi
+:jbake-related_tag: localsolver
 :jbake-featured_youtube_id: -7ips_GMFmo
 
 [.lead]
-Gurobi and OptaPlanner are mathematical optimization solvers.
+LocalSolver and OptaPlanner are mathematical optimization solvers.
 They are both used across the globe in production.
-But there are notable differences between OptaPlanner and Gurobi.
+But there are notable differences between OptaPlanner and LocalSolver.
 
 [.lead]
 OptaPlanner is <<openSource,open source>>,
 <<fasterAndMoreScalable,fast>>, <<fasterAndMoreScalable,scalable>> and
 <<easyToUse,easy to use>> because of
-<<objectOrientedProgrammingModel,OO models>>,
-<<codeConstraint,constraints as code>> and
-<<flexibleScoring,flexible scoring>>.
-OptaPlanner is also <<noNumericalInstability,less error prone>>,
-<<easyToIntegrate, integration friendly>> (including REST)
+<<objectOrientedProgrammingModel,OO models>> and
+<<codeConstraint,constraints as code>>.
+OptaPlanner is also <<easyToIntegrate, integration friendly>> (including REST)
 and <<cloudReady,cloud ready>>. It runs on <<operationSystemIndependent,all operating systems>>.
 
 *Try it yourself.* No license needed. +
@@ -30,7 +28,7 @@ Or https://www.optapy.org[try OptaPy] for Python.
 [#openSource]
 == OptaPlanner is Open Source
 
-Gurobi is closed source software.
+LocalSolver is closed source software.
 
 OptaPlanner is enterprise open source software under the link:../code/license.html[Apache License],
 which allows free reuse for commercial purposes.
@@ -46,50 +44,16 @@ before it is merged into the main repository.
 Red Hat also offers link:../product/services.html[support and consulting services]
 for customers who want to take their OptaPlanner implementation to the next level.
 
+
 [#fasterAndMoreScalable]
 == OptaPlanner is fast and scalable
 
-// TODO Change to "OptaPlanner is both faster and more scalable than Gurobi" after adding the open benchmarks as proof.
+// TODO Change to "OptaPlanner is both faster and more scalable than LocalSolver" after adding the open benchmarks as proof.
 OptaPlanner is both fast and scalable
 for planning and scheduling use cases, such as the link:../learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem],
 link:../learn/useCases/employeeRostering.html[Employee Rostering] and link:../learn/useCases/maintenanceScheduling.html[Maintenance scheduling].
 
-OptaPlanner delivers better results, in the same amount of CPU time.
-It also consumes less memory when scaling out. Why? Because:
-
-=== OptaPlanner uses a more efficient model
-
-Under the covers, Gurobi and OptaPlanner use very different optimization technologies,
-which impacts your modeling flexibility, which in turn impacts performance and scalability.
-
-For example, in employee rostering, to assign shifts to employees:
-
-* Gurobi creates a `boolean` variable for every `(shift, employee)` combination.
-Given `2000` shifts and `100` employees, that's an array of `200 000` elements.
-* On the other hand, OptaPlanner creates an `Employee` variable for every `Shift`.
-Given `2000` shifts and `100` employees, that's an array of `2000` elements.
-
-image:competitorDomainModelComparison.png[Domain model comparison]
-
-The OptaPlanner approach doesn't just scale better,
-it also omits the _one shift per employee_ hard constraint which the model naturally enforces by design.
-For VRP, the difference is even more stark.
-
-=== OptaPlanner handles constraints more efficiently
-
-Gurobi can handle billions of constraints.
-
-OptaPlanner counts the number of constraints differently.
-It handles the same use case with only a few dozen constraints.
-
-For example, to ensure each shift is assigned to an employee with the correct skill
-for `2000` shifts and `100` employees:
-
-* Gurobi has almost `200 000` constraints.
-* OptaPlanner has `1` constraint and a handful of _constraint matches_ internally.
-
-This allows OptaPlanner to scale to 100 000+ of non-binary optimization variables in only 2GB RAM
-for use cases such as country-wide vaccination scheduling.
+It delivers better results, in the same amount of CPU time.
 
 
 [#easyToUse]
@@ -108,32 +72,32 @@ OptaPlanner supports both Object-Orientated Programming and Functional Programmi
 [#objectOrientedProgrammingModel]
 === An OptaPlanner model is Object-Orientated Programming (OOP) friendly
 
-Both Gurobi and OptaPlanner require you to define your model, with _optimization variables_,
+Both LocalSolver and OptaPlanner require you to define your model, with _optimization variables_,
 so the mathematical optimization software knows which decisions it needs to make.
 
-Gurobi supports 3 types of optimization variables: booleans, integers and floating point numbers.
+LocalSolver supports 5 types of optimization variables: booleans, integers, floating point numbers and sets and lists.
 You must transform your domain model into those types.
 For example:
 
 [source,java]
 ----
 // Input
-Model model = ...
-Variable[][] assignments = new Variable[shifts.size()][employees.size()];
+LSModel model = ...
+LSExpression[][] assignments = new LSExpression[shifts.size()][employees.size()];
 for (int s = 0; s < shifts.size(); s++) {
     for (int e = 0; e < employees.size(); e++) {
-        assignments[s][e] = model.addVar(BINARY);
+        assignments[s][e] = model.boolVar();
     }
 }
 ... // Add constraints to enforce no shift is assigned to multiple employees
 
 // Solve
-model.solve();
+model.minimize(...);
 
 // Output
 for (int s = 0; s < shifts.size(); s++) {
     for (int e = 0; e < employees.size(); e++) {
-        if (assignments[s][e].get() > 0.99) {
+        if (assignments[s][e].getValue() == 1) {
             print(shifts[s] + " is assigned to " + employees[e]);
         }
     }
@@ -181,7 +145,7 @@ OptaPlanner even supports polymorphism.
 [#codeConstraint]
 === OptaPlanner constraints are code, not equations
 
-Gurobi constraints are implemented as *mathematical equations*.
+LocalSolver constraints are implemented as *mathematical equations*.
 For example, to assign _at most one shift per day_,
 you add an equation `s1 + s2 + s3 \<= 1` for all shifts on day 1,
 an equation `s4 + s5 \<= 1` for all shifts on day 2, and so forth:
@@ -190,14 +154,14 @@ an equation `s4 + s5 \<= 1` for all shifts on day 2, and so forth:
 ----
 for (int e = 0; e < employees.size(); e++) {
     for (int d = 0; d < dates.size(); d++) {
-        Expression expr = ...
+        LSExpression expr = ...
         for (int s = 0; s < shifts.size(); s++) {
             // If the shift is on the date
             if (shifts[s].date == dates[d])) {
-                expr.addTerm(1.0, assignments[s][e]);
+                expr.addOperand(assignments[s][e]);
             }
         }
-        model.addConstraint(expr, LESS_EQUAL, 1.0);
+        model.constraint(model.lq(expr, 1));
     }
 }
 ----
@@ -318,73 +282,6 @@ It automatically load balances overtime in fair manner across the employees,
 whenever possible. https://www.optaplanner.org/blog/2017/02/03/FormulaForMeasuringUnfairness.html[Learn more.]
 
 OptaPlanner also support positive constraints: use `reward()` instead of `penalize()`.
-
-Gurobi sometimes recommends the `M is a very large number` trick to implement challenging constraints.
-OptaPlanner never needs that hack.
-
-
-[#flexibleScoring]
-=== OptaPlanner has flexible scoring
-
-Gurobi supports 2 score levels: hard constraints as _constraints_
-and soft constraints as an _objective function_ that returns a floating point number.
-
-If one soft constraint takes total priority over another soft constraint,
-for example service quality constraints over productivity constraints,
-Gurobi multiplies the first soft constraint by a big weight and sums that with the second.
-This can lead to overflow or underflow.
-
-OptaPlanner supports any number of score levels:
-
-* 2 levels (default): hard and soft constraints with `HardSoftScore`
-* 3 levels: hard, medium and soft constraints with `HardMediumSoftScore`
-* n levels with `BendableScore`
-
-This allows users to prioritize operational constraints (such as _assign all shifts_)
-over financial constraints (such as _reduce cost_), without multiplication to with a big number.
-
-The OptaPlanner constraint weights can use:
-
-* 32-bit integer (`int`) arithmetic (default) with `HardSoftScore`, etc.
-* 64-bit integer (`long`) arithmetic with `HardSoftLongScore`, etc.
-* Decimal number (`BigDecimal`) arithmetic with `HardSoftBigDecimalScore`, etc.
-
-OptaPlanner actually no longer supports floating point (`double`) arithmetic
-because of the numerical instability issues involved for incremental score calculation.
-
-
-[#noNumericalInstability]
-== OptaPlanner does not suffer from numerical instability by design
-
-Gurobi internally solves a set of equations using the simplex algorithm.
-These equations are represented by a matrix of 64-bit floating point numbers.
-
-_Floating point arithmetic inherently suffers from mathematical instability._
-For example, `0.01 + 0.09` does not return `0.10` in all major programming languages.
-Try it out. It's off by `0.00000000000000001`.
-
-In iterating algorithms, these small rounding errors can compound to a significant rounding error.
-Gurobi minimizes its rounding errors by ordering its arithmetic operations intelligently.
-Still, by default *Gurobi tolerates going over hard constraints by margin of a `0.000001` to ignore compounded rounding errors*.
-Users tweak the infamous tolerance settings for use cases or datasets in which the tolerances are either too high or too low.
-
-Gurobi's output for binary variables also suffers from mathematical instability.
-For example, to check if an optimization variable is `true`, compare it to `0.99` instead of `1.0`:
-
-[source,java]
-----
-if (assignments[s][e].get() > 0.99) {
-    // Shift s is assigned to employee
-    ...
-}
-----
-
-OptaPlanner does not suffer from numerical instability.
-There are no tolerance settings. There is no arithmetic operations ordering.
-It does not use floating point arithmetic in any way that could compound rounding errors.
-OptaPlanner internally uses Local Search metaheuristics (such as Late Acceptance), other heuristics
-and orthogonal features (such as multithreaded solving).
-None of these algorithms compound rounding errors by design.
 
 
 [#easyToIntegrate]

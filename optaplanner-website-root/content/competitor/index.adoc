@@ -5,3 +5,9 @@
 :showtitle:
 
 OptaPlanner is a fast, open source alternative for mathematical optimization.
+
+Take a look how it stacks up to its competitors:
+
+* link:gurobi.html[Gurobi]
+* link:localsolver.html[LocalSolver]
+* link:or-tools.html[Google OR-Tools]
