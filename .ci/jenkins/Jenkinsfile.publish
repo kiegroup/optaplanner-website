@@ -1,0 +1,93 @@
+@Library('jenkins-pipeline-shared-libraries')_
+import org.kie.jenkins.MavenCommand
+
+AGENT_LABEL="kie-rhel7 && kie-mem4g"
+MVN_TOOL="kie-maven-3.8.1"
+JDK_TOOL="kie-jdk11"
+REPO="optaplanner-website"
+ORGANIZATION="kiegroup"
+BASE_BRANCH="main"
+MAIL_RECIPIENT="optaplanner-dev.766d5b50029591aa3e1ca9bbf27069ff.show-sender@streams.zulipchat.com"
+
+pipeline {
+    agent {
+        label "$AGENT_LABEL"
+    }
+    options{
+        timestamps()
+    }
+    tools {
+        maven "$MVN_TOOL"
+        jdk "$JDK_TOOL"
+    }
+    stages {
+        stage('CleanWorkspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        stage('clone optaplanner-website') {
+            steps {
+                script {
+                    checkoutStartOptaplannerWeb()
+                }
+            }
+        }
+        stage('build optaplanner-website'){
+            steps{
+                script {
+                    dir("${REPO}"){
+                        MavenCommand mvnCmd = new MavenCommand(this, ['-fae'])
+                            .withSettingsXmlId('kogito_release_settings')
+                        mvnCmd.run('clean package')
+                    }
+                }
+            }
+        }
+        stage('zip website'){
+            steps{
+                dir("${REPO}/optaplanner-website-assembly"){
+                    sh "tar -cvzf optaplanner-website.tar -C target/website-complete/ ."
+                    archiveArtifacts "optaplanner-website.tar"
+                }
+            }
+        }
+        stage('publish website to filemgmt.jboss.org') {
+            steps {
+                dir("${REPO}") {
+                    sshagent(["optaplanner-filemgmt"]) {
+                        sh './build/rsync_website.sh'
+                    }
+                }
+            }
+        }
+    }
+    post {
+        failure {
+            emailext to: "${MAIL_RECIPIENT}",
+            subject: 'status of optaplanner-website automatic publishing',
+            body: ' The status of Jenkins CI job for automatic publishing of the optaplanner-website #${BUILD_NUMBER} was: FAILURE \n' +
+            'because of ${BUILD_URL}consoleText \n' +
+            '(IMPORTANT: For visiting the links you need to have access to Red Hat VPN)'
+            cleanWs()
+        }
+        fixed {
+            emailext to: "${MAIL_RECIPIENT}",
+            subject: 'status of optaplanner-website automatic publishing',
+            body: 'The Jenkins CI job of automatic publishing of the optaplanner-website #${BUILD_NUMBER} was fixed'
+            cleanWs()
+        }
+        success {
+            emailext to: "${MAIL_RECIPIENT}",
+            subject: 'status of optaplanner-website automatic publishing',
+            body: 'The status of Jenkins CI job for automatic publishing of the optaplanner-website #${BUILD_NUMBER} was: SUCCESSFUL'
+            cleanWs()
+        }
+    }
+}
+
+void checkoutStartOptaplannerWeb() {
+    dir(REPO) {
+        checkout(githubscm.resolveRepository(REPO, ORGANIZATION, BASE_BRANCH, false))
+    }
+}
