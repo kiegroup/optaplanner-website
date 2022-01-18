@@ -20,6 +20,14 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner 8_ available and fully supported
 in the latest release of Red Hat Decision Manager 7.
 
+
+== New and noteworthy: Engine 8.17.0.Final
+
+=== Faster `Solver` creation
+
+`SolverFactory` newly caches some internal data structures, leading to much faster `Solver` creation times.
+You will benefit from this if you instantiate multiple `Solver`s in quick succession.
+
 == New and noteworthy: Engine 8.12.0.Final
 
 === Documentation website
