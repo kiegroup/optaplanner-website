@@ -35,7 +35,7 @@ Gurobi is closed source software.
 OptaPlanner is enterprise open source software under the link:../code/license.html[Apache License],
 which allows free reuse for commercial purposes.
 _All_ of OptaPlanner's source code is available on https://github.com/kiegroup/optaplanner[GitHub].
-It's community is _open_. It's decision making is _open_.
+Its community is _open_. its decision making is _open_.
 
 A dedicated link:../community/team.html[core team] of optimization experts
 (employed by https://www.redhat.com[Red Hat]) works full-time on OptaPlanner.
@@ -102,11 +102,11 @@ It's OOP friendly.
 Later, when your business reality changes, you can quickly adjust the OptaPlanner constraints.
 It is maintenance friendly.
 
-OptaPlanner supports both Object-Orientated Programming and Functional Programming:
+OptaPlanner supports both Object-Oriented Programming and Functional Programming:
 
 
 [#objectOrientedProgrammingModel]
-=== An OptaPlanner model is Object-Orientated Programming (OOP) friendly
+=== An OptaPlanner model is Object-Oriented Programming (OOP) friendly
 
 Both Gurobi and OptaPlanner require you to define your model, with _optimization variables_,
 so the mathematical optimization software knows which decisions it needs to make.
@@ -203,7 +203,7 @@ for (int e = 0; e < employees.size(); e++) {
 ----
 
 OptaPlanner constraints are implemented as *programming code*.
-If you use _ConstraintStreams_, a Function Programming (FP) approach,
+If you use _ConstraintStreams_, a Functional Programming (FP) approach,
 OptaPlanner automatically applies incremental score calculation with deltas
 for maximum scalability and performance.
 
@@ -277,7 +277,7 @@ constraintFactory.forEach(Shift.class)
 The `groupBy()` construct supports `count()`, `sum()`, `average()`, `min()`, `max()`, `toList()`, `toSet()`, `toMap()`, etc.
 You can also plug in custom collectors.
 
-For example, don't assign more that 10 shifts to any employee by counting their shifts with `count()`:
+For example, don't assign more than 10 shifts to any employee by counting their shifts with `count()`:
 
 [source,java]
 ----
@@ -292,7 +292,7 @@ constraintFactory.forEach(Shift.class)
             (employee, shiftCount) -> shiftCount - 10);
 ----
 
-OptaPlanner allow weighting constraints dynamically.
+OptaPlanner allows weighting constraints dynamically.
 It has *no linear limitations*.
 
 For example, avoid overtime and distribute it *fairly* by penalizing the number of excessive hours *squared*:
@@ -317,7 +317,7 @@ This penalizes outliers more.
 It automatically load balances overtime in fair manner across the employees,
 whenever possible. https://www.optaplanner.org/blog/2017/02/03/FormulaForMeasuringUnfairness.html[Learn more.]
 
-OptaPlanner also support positive constraints: use `reward()` instead of `penalize()`.
+OptaPlanner also supports positive constraints: use `reward()` instead of `penalize()`.
 
 Gurobi sometimes recommends the `M is a very large number` trick to implement challenging constraints.
 OptaPlanner never needs that hack.
@@ -341,7 +341,7 @@ OptaPlanner supports any number of score levels:
 * n levels with `BendableScore`
 
 This allows users to prioritize operational constraints (such as _assign all shifts_)
-over financial constraints (such as _reduce cost_), without multiplication to with a big number.
+over financial constraints (such as _reduce cost_), without multiplication with a big number.
 
 The OptaPlanner constraint weights can use:
 
@@ -391,7 +391,7 @@ None of these algorithms compound rounding errors by design.
 == OptaPlanner is easy to integrate with the REST, databases, etc
 
 The https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts]
-show how to integrate OptaPlanner various technologies to quickly:
+show how to integrate OptaPlanner with various technologies to quickly:
 
 * Expose a REST service and JSON data with link:../compatibility/quarkus.html[Quarkus] or link:../compatibility/springBoot.html[Spring].
 * Connect to a relational database with link:../compatibility/quarkus.html[Quarkus] or link:../compatibility/springBoot.html[Spring].
@@ -401,7 +401,7 @@ show how to integrate OptaPlanner various technologies to quickly:
 [#cloudReady]
 == OptaPlanner is cloud ready
 
-OptaPlanner runs on all major clouds, such as Amazon AWS, Microsoft Azure, Google Compute Engine and IBM.
+OptaPlanner runs on all major clouds, such as Amazon AWS, Microsoft Azure, Google Compute Engine and IBM Cloud.
 It works on all major cloud technologies, such as Kubernetes, OpenShift, Docker and Virtual Machines.
 
 But it just runs as fine on your local development machine without internet access,
@@ -414,7 +414,7 @@ that need to start up in milliseconds.
 [#operationSystemIndependent]
 == OptaPlanner runs on all major operating systems
 
-OptaPlanner runs on  all major operating systems, such as Linux, Windows and Mac.
+OptaPlanner runs on all major operating systems, such as Linux, Windows and macOS.
 
 
 == Get started
