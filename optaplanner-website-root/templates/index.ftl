@@ -5,8 +5,8 @@
 
 <#macro layout>
     <@parent.layout
-            title="Constraint satisfaction solver (Java™, Open Source)"
-            description="OptaPlanner optimizes business resource usage. It is a lightweight, embeddable, open source planning engine, written in 100% Java."
+            title="The fast, Open Source and easy-to-use solver"
+            description="Solve any constraint optimization problem easily, including the Vehicle Routing Problem, Employee Rostering, Maintenance Scheduling and many others."
             uri=""
             googleWebmasterToolsVerification=true>
         <div class="row">
@@ -67,10 +67,10 @@
                     <li><a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a></li>
                     <li><a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a></li>
                 </ul>
-                <span>For a full <i>Business Automation</i> stack, combine OptaPlanner with:</span>
+                <span>OptaPlanner runs on:</span>
                 <ul>
-                    <li>workflows and processes in <a href="https://kogito.kie.org">Kogito</a></li>
-                    <li>decision tables and DMN in <a href="https://www.drools.org/">Drools</a></li>
+                    <li><a href="${content.rootpath}compatibility/kubernetes-openshift.html">Kubernetes and OpenShift</a></li>
+                    <li>All major clouds</li>
                 </ul>
                 <p>OptaPlanner is <a href="${content.rootpath}code/license.html">open source software</a>,
                     released under <a href="${content.rootpath}code/license.html">the Apache License</a>.</p>

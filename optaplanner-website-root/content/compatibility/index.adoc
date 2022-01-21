@@ -19,6 +19,14 @@ OptaPlanner is compatible and integrates with:
 * link:springBoot.html[Spring Boot]
 * Android (limited)
 
+== Cloud
+
+* link:kubernetes-openshift.html[Kubernetes and OpenShift]
+* AWS
+* Azure
+* Google Cloud
+* IBM Cloud
+
 == Other
 
 Furthermore, OptaPlanner also integrates with many other technologies,
