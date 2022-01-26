@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-7">
                 <h1>Solve planning and scheduling problems with OptaPlanner</h1>
-                <p class="lead">An easy-to-use, open source constraint solver with AI algorithms</p>
+                <p class="lead">A fast, easy-to-use, open source AI constraint solver for software developers</p>
                 <div class="d-flex justify-content-center" style="width: auto;">
                     <@macros.videoCard youtubeId="f4jIWbQpjdE" long=false/>
                 </div>
