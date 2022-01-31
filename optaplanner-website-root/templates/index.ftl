@@ -14,7 +14,7 @@
                 <h1>Solve planning and scheduling problems with OptaPlanner</h1>
                 <p class="lead">A fast, easy-to-use, open source AI constraint solver for software developers</p>
                 <div class="d-flex justify-content-center" style="width: auto;">
-                    <@macros.videoCard youtubeId="f4jIWbQpjdE" long=false/>
+                    <@macros.videoCard youtubeId="bIvt9z-zVHo" long=false/>
                 </div>
             </div>
             <div class="col-md-5">
