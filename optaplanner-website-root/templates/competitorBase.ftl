@@ -8,9 +8,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h1>${content.title}</h1>
-                <div class="float-start me-4 mb-4">
-                    <@macros.videoCard youtubeId=content.featured_youtube_id long=false/>
-                </div>
+                <@macros.featuredFloat/>
                 <#nested>
                 <@macros.relatedVideos/>
                 <@macros.relatedBlogPosts/>

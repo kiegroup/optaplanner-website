@@ -3,14 +3,12 @@
 :jbake-description: Learn how to use OptaPlanner (open source, Java) for Artificial Intelligence planning optimization on Spring Boot.
 :jbake-priority: 1.0
 :jbake-related_tag: spring
-:showtitle:
+:jbake-featured_youtube_id: moiSzzy5ba0
 
 If you're using Spring and want to add AI planning,
 use the *OptaPlanner Spring Boot Starter* to get up and running quickly.
 That starter has the same features as the link:quarkus.html[Quarkus] extension,
 except for the typical Quarkus benefits (such as subsecond bootstrap performance and native compilation).
-
-video::moiSzzy5ba0[youtube]
 
 == Guide
 

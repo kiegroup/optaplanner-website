@@ -2,7 +2,6 @@
 :jbake-type: normalBase
 :jbake-description: OptaPlanner is compatibility with all these technologies
 :jbake-priority: 0.2
-:showtitle:
 
 OptaPlanner is compatible and integrates with:
 

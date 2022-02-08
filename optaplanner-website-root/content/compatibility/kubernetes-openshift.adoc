@@ -3,9 +3,10 @@
 :jbake-description: Use OptaPlanner (open source) for Artificial Intelligence planning optimization on Kubernetes and OpenShift.
 :jbake-priority: 1.0
 :jbake-related_tag: kubernetes
-:showtitle:
+:jbake-featured_youtube_id: kFoaf696VpA
 
 OptaPlanner runs great on Kubernetes,
 especially on https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift].
 
 Start a https://developers.redhat.com/developer-sandbox[Developer Sandbox for OpenShift] to deploy one of the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts] to it.
+Every `use-cases` quickstart has README instructions on how to easily deploy it on OpenShift.

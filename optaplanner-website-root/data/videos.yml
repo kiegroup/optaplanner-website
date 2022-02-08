@@ -12,6 +12,14 @@
 #
 # Order videos by date descending
 
+- youtubeId: kFoaf696VpA
+  title: "Host your OptaPlanner app on OpenShift (Kubernetes)"
+  author: ge0ffrey
+  date: 2021-02-07
+  tags:
+    - openshift
+    - quarkus
+
 - youtubeId: bIvt9z-zVHo
   title: "OptaPlanner - A fast, easy-to-use, open source AI constraint solver for software developers"
   date: 2022-01-31

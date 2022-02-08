@@ -3,7 +3,6 @@
 :jbake-description: Use OptaPlanner (open source) for Artificial Intelligence planning optimization on Scala.
 :jbake-priority: 1.0
 :jbake-related_tag: scala
-:showtitle:
 
 OptaPlanner is sometimes used by Scala programmers.
 

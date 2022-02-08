@@ -46,6 +46,30 @@
     </div>
 </#macro>
 
+<#macro featuredFloat>
+    <#if content.featured_youtube_id?? || content.featured_quickstart_guide_url?? || content.featured_quickstart_github_url??>
+    <div class="float-start me-4 mb-4">
+        <#if content.featured_youtube_id??>
+        <@macros.videoCard youtubeId=content.featured_youtube_id long=false/>
+        </#if>
+        <#if content.featured_quickstart_guide_url??>
+        <div class="text-center">
+            <a class="btn btn-outline-primary text-center mt-3" href="${content.featured_quickstart_guide_url}">
+                <i class="fas fa-book me-1"></i>Quickstart guide
+            </a>
+        </div>
+        </#if>
+        <#if content.featured_quickstart_github_url??>
+        <div class="text-center">
+            <a class="btn btn-outline-primary text-center mt-3" href="${content.featured_quickstart_github_url}">
+                <i class="fab fa-github me-1"></i>Quickstart source code
+            </a>
+        </div>
+        </#if>
+    </div>
+    </#if>
+</#macro>
+
 <#macro latestEvents>
     <div class="card mb-4">
         <div class="card-header">Upcoming events</div>

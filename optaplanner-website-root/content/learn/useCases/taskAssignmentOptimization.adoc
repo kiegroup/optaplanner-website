@@ -3,8 +3,8 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize assigning tasks to employees with different skills and affinities.
 :jbake-priority: 1.0
 :jbake-related_tag: task assignment
-:jbake-use_case_demo_youtube_id: NPTzXIyQdqU
-:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/call-center#readme
+:jbake-featured_youtube_id: NPTzXIyQdqU
+:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/call-center#readme
 
 image:taskAssigningValueProposition.png[Task assigning value proposition]
 

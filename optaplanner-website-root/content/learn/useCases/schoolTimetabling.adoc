@@ -3,8 +3,9 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize school timetabling, adhering to teacher availability, room capacity and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: school timetabling
-:jbake-use_case_demo_youtube_id: HO7l3rWb_uo
-:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/school-timetabling#readme
+:jbake-featured_youtube_id: HO7l3rWb_uo
+:jbake-featured_quickstart_guide_url: https://www.optaplanner.org/docs/optaplanner/latest/quickstart/overview/overview-quickstarts.html
+:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/school-timetabling#readme
 
 Universities and schools aim to provide high quality lesson schedules
 to their teachers and students.
@@ -35,7 +36,3 @@ with very efficient score calculation and other state-of-the-art constraint solv
 
 OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache License].
 It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
-
-== Quick start (source code)
-
-Run the https://github.com/kiegroup/optaplanner-quickstarts#school-timetabling[school timetabling quickstart].

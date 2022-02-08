@@ -3,7 +3,7 @@
 :jbake-description: Use OptaPlanner (open source) for Artificial Intelligence planning optimization on Kotlin.
 :jbake-priority: 1.0
 :jbake-related_tag: kotlin
-:showtitle:
+:jbake-featured_youtube_id: n6fl60gR8Gc
 
 OptaPlanner is very often used by Kotlin programmers.
 
@@ -17,8 +17,6 @@ Import the BOM (`org.optaplanner:optaplanner-bom`) in:
 ** Gradle
 * There is a feature request for nullability annotations on all APIs,
 which we will add once Kotlin supports those from `jakarta.annotation:jakarta.annotation-api`.
-
-video::n6fl60gR8Gc[youtube]
 
 == Quick start
 

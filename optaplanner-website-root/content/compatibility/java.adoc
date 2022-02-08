@@ -3,7 +3,6 @@
 :jbake-description: Use OptaPlanner (open source, Java) for Artificial Intelligence planning optimization on Java.
 :jbake-priority: 1.0
 :jbake-related_tag: java
-:showtitle:
 
 OptaPlanner itself is written in 100% pure Java.
 

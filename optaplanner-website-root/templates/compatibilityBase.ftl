@@ -7,6 +7,8 @@
     <@parent.layout>
         <div class="row">
             <div class="col-md-9">
+                <h1>${content.title}</h1>
+                <@macros.featuredFloat/>
                 <#nested>
                 <@macros.relatedVideos/>
                 <@macros.relatedBlogPosts/>
