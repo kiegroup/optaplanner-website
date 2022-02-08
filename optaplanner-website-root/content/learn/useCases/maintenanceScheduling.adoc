@@ -3,8 +3,8 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize maintenance scheduling, adhering to skill, capacity, SLAs and other constraints.
 :jbake-priority: 1.0
 :jbake-related_tag: maintenance scheduling
-:jbake-use_case_demo_youtube_id: dqTrjkVxoPI
-:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/maintenance-scheduling#readme
+:jbake-featured_youtube_id: dqTrjkVxoPI
+:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/maintenance-scheduling#readme
 
 Machinery and other types of equipment in use (such as elevators, airplanes, trains, roads, railroads, electricity grids, ...)
 tend to deteriorate over time, requiring regular maintenance.
@@ -36,7 +36,3 @@ with very efficient score calculation and other state-of-the-art constraint solv
 
 OptaPlanner is *open source software*, released under link:../../code/license.html[the Apache License].
 It is written in 100% pure Java™, runs on any JVM and is available in link:../../download/download.html[the Maven Central repository] too.
-
-== Quick start (source code)
-
-Run the https://github.com/kiegroup/optaplanner-quickstarts#maintenance-scheduling[maintenance scheduling quickstart].

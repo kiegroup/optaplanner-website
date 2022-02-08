@@ -3,7 +3,7 @@
 :jbake-description: Use OptaPlanner (open source, Java) for Artificial Intelligence planning optimization on Quarkus.
 :jbake-priority: 1.0
 :jbake-related_tag: quarkus
-:showtitle:
+:jbake-featured_youtube_id: 7IuOA9n6kh0
 
 The https://quarkus.io/[Quarkus] extension for OptaPlanner enriches
 your project with the typical _supersonic subatomic Java_ benefits, such as:
@@ -12,8 +12,6 @@ your project with the typical _supersonic subatomic Java_ benefits, such as:
 - Increased performance (both bootstrap and runtime)
 - Reduced memory usage
 - Native executable compilation (optional)
-
-video::7IuOA9n6kh0[youtube]
 
 == Guide
 

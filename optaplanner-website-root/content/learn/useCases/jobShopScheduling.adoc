@@ -3,7 +3,7 @@
 :jbake-description: Use OptaPlanner (Java™, open source) to optimize assigning jobs to machines or assembly lines.
 :jbake-priority: 1.0
 :jbake-related_tag: job shop scheduling
-:jbake-use_case_demo_youtube_id: _2zweB9JD7c
+:jbake-featured_youtube_id: _2zweB9JD7c
 
 Order and assign jobs to machines or assembly lines to reduce the makespan of projects
 and increase throughput.

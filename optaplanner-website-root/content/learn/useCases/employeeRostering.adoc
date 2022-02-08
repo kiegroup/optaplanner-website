@@ -3,8 +3,8 @@
 :jbake-description: OptaPlanner is an Open Source Java™ engine to optimize employee timetabling and shift rostering.
 :jbake-priority: 1.0
 :jbake-related_tag: employee rostering
-:jbake-use_case_demo_youtube_id: 3CvadujUN1k
-:jbake-use_case_demo_github_url: https://github.com/kiegroup/optaweb-employee-rostering#readme
+:jbake-featured_youtube_id: 3CvadujUN1k
+:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaweb-employee-rostering#readme
 
 image:employeeRosteringValueProposition.png[Employee rostering value proposition]
 

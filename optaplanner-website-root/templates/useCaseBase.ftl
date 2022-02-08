@@ -8,16 +8,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h1>${content.title}</h1>
-                <div class="float-start me-4 mb-4">
-                    <@macros.videoCard youtubeId=content.use_case_demo_youtube_id long=false/>
-                    <#if content.use_case_demo_github_url??>
-                    <div class="text-center">
-                        <a class="btn btn-outline-primary text-center mt-3" href="${content.use_case_demo_github_url}">
-                            <i class="fab fa-github me-1"></i>Build and run from source
-                        </a>
-                    </div>
-                    </#if>
-                </div>
+                <@macros.featuredFloat/>
                 <#nested>
                 <@macros.relatedVideos/>
                 <@macros.relatedBlogPosts/>

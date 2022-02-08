@@ -3,7 +3,6 @@
 :jbake-description: Use OptaPy (open source) for Artificial Intelligence planning optimization on Python.
 :jbake-priority: 1.0
 :jbake-related_tag: python
-:showtitle:
 
 https://www.optapy.org[OptaPy] allows you to run OptaPlanner from plain Python code.
 
