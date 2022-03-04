@@ -21,7 +21,7 @@ amount of the same resources. Processes are the planning entities; they are bein
 
 `ProblemChange` replaces the `ProblemFactChange` interface, allowing incremental changes of the working solution during
 solving without reloading it, just as the `ProblemFactChange` does. However, the `ProblemChange` reduces
-the space for mistakes as well as the amount of required boilerplate code.
+the amount of required boilerplate code and also leaves less room for mistakes.
 
 [source,java]
 ----
