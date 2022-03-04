@@ -10,7 +10,7 @@ The world, however, will not wait until the computation is finished. What if an 
 breaks down? With OptaPlanner, you can either reload the updated problem, or react in real time by submitting a `ProblemChange`.
 
 Before we look at problem changes and the `SolverManager` API, let's get familiar with the problem domain used in all the following examples,
-the cloud balance:
+Cloud Balance:
 
 image::cloudBalanceClassDiagram.png[Cloud Balance class diagram]
 
