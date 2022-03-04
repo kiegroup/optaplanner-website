@@ -193,5 +193,4 @@ public class CloudBalanceChangeTest {
 
 == Conclusion
 
-`SolverManager` now supports ``ProblemChange``s, offering real-time planning capabilities without having to write a lot
-of boilerplate code as with the `Solver` interface.
+`SolverManager` now supports ``ProblemChange``s, offering real-time planning capabilities without having to write a lot of boilerplate code.
