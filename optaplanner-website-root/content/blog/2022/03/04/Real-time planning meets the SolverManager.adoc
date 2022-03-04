@@ -57,7 +57,7 @@ public class AddProcessProblemChange implements ProblemChange<CloudBalance> {
 <2> The `addEntity()` method takes the process and a lambda describing how the new process should be included in the working solution.
 Here we add the process to the collection of all processes in the working solution.
 
-Every time OptaPlanner finds a new best solution, a component called `SolutionCloner` clones the working solution, which, in contrast to the best solution,
+Every time OptaPlanner finds a new best solution, a component called `SolutionCloner` clones the working solution, which, unlike the best solution,
 keeps changing until the solving terminates. However, for performance reasons, OptaPlanner does not make a deep clone of the working solution;
 it clones only those parts of the solution that change during solving - the planning entities.
 
