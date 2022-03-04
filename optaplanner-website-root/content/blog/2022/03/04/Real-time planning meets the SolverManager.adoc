@@ -99,25 +99,6 @@ public class DeleteComputerProblemChange implements ProblemChange<CloudBalance> 
 <3> As the `SolutionCloner` does not clone a problem fact collection, it has to be done manually.
 <4> Removes the computer from the `computerList`.
 
-Important to note, the lookup (1) is required only because we need to search for the processes assigned to this computer.
-Every method that either removes or changes an object that is supposed to already exist in the working solution
-does the lookup internally. Thus, if we passed the `computer` instance to the `removeProblemFact()` (4) it would still work correctly:
-
-[source,java]
-----
-private final CloudComputer computer;
-
-...
-
-List<CloudComputer> computerList = new ArrayList<>(cloudBalance.getComputerList());
-cloudBalance.setComputerList(computerList);
-// Internally, the method looks up the working solution counterpart of the computer.
-problemChangeDirector.removeProblemFact(computer, computerList::remove);
-
-...
-
-----
-
 While the `ProblemChange` implementation might be simple in some cases, in others it may require changing multiple connected
 parts of the working solution. A correct `ProblemChange` implementation has to perform any changes
 on the working solution instance using the `ProblemChangeDirector` and has to respect requirements on solution cloning.
@@ -186,7 +167,9 @@ public class CloudBalanceChangeTest {
     }
 }
 ----
-<1> Creates a `Mockito.spy()` object of the `MockProblemChangeDirector`.
+<1> `Mockito.spy()` wraps the `MockProblemChangeDirector` instance and acts as a proxy.
+That makes it possible to verify whether some method of the `MockProblemChangeDirector` has been called and what arguments
+have been passed to it.
 <2> Performs the problem change, supplying the `MockProblemChangeDirector`.
 <3> Verifies that the `ProblemChangeDescriptor.addEntity()` has been called with the `newProcess` as its first argument.
 <4> Verifies that the working solution contains the newly added process.
