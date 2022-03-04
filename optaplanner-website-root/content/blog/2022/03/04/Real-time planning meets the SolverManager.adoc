@@ -1,4 +1,4 @@
-= Real-time planning meets the SolverManager
+= Real-time planning meets SolverManager
 rsynek
 2022-02-04
 :page-interpolate: true
