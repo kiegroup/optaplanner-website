@@ -62,7 +62,7 @@ keeps changing until the solving terminates. However, for performance reasons, O
 it clones only those parts of the solution that change during solving - the planning entities.
 
 Other instances, called problem facts, are not cloned and thus the working solution and all the best solutions found during solving share them.
-Normally, this is right and intentional. Not if the problem facts change as a part of your `ProblemChange` implementation, though.
+This is usually the right thing to do, but not if the problem facts change as a part of your `ProblemChange` implementation.
 In that case, any problem fact or a problem fact collection must be cloned first, otherwise you may corrupt your previous best solutions.
 
 For more details about solution cloning, please read the https://www.optaplanner.org/docs/optaplanner/latest/planner-configuration/planner-configuration.html#cloningASolution[documentation].
