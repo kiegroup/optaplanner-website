@@ -168,7 +168,7 @@ the working solution must contain the expected changes.
 
 To help you with testing whether the correct methods of the `ProblemChangeDescriptor` were called, there is the `MockProblemChangeDirector`
 available in https://search.maven.org/artifact/org.optaplanner/optaplanner-test[org.optaplanner:optaplanner-test].
-The last example below shows how to use the `MockProblemChangeDirector` together with https://site.mockito.org/[Mockito].
+The final example below shows how to use the `MockProblemChangeDirector` together with https://site.mockito.org/[Mockito].
 
 [source,java]
 ----
