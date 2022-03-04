@@ -9,7 +9,7 @@ For some optimization problems it may take minutes or even hours before an accep
 The world, however, will not wait until the computation is finished. What if an employee calls in sick or a vehicle
 breaks down? With OptaPlanner, you can either reload the updated problem, or react in real time by submitting a `ProblemChange`.
 
-Before we look in the problem changes and the `SolverManager`, let's get familiar with the problem domain used in all the following examples,
+Before we look at problem changes and the `SolverManager` API, let's get familiar with the problem domain used in all the following examples,
 the cloud balance:
 
 image::cloudBalanceClassDiagram.png[Cloud Balance class diagram]
