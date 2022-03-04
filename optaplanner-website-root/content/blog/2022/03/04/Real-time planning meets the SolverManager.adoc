@@ -32,7 +32,7 @@ public interface ProblemChange<Solution> {
 }
 ----
 
-The `doChange()` method, you have to implement, receives the working solution and the `ProblemChangeDirector`.
+The `doChange()` method, which you have to implement, receives the working solution and the `ProblemChangeDirector`.
 Any change to the working solution has to be done via `ProblemChangeDirector` methods. Otherwise, OptaPlanner doesn't notice the change.
 Let's have a look at the following problem change that adds a new planning entity:
 
