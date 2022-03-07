@@ -1,6 +1,6 @@
 = Real-time planning meets SolverManager
 rsynek
-2022-02-04
+2022-03-07
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: real-time planning, SolverManager
