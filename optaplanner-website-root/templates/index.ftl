@@ -13,8 +13,11 @@
             <div class="col-md-7">
                 <h1>Solve planning and scheduling problems with OptaPlanner</h1>
                 <p class="lead">A fast, easy-to-use, open source AI constraint solver for software developers</p>
-                <div class="d-flex justify-content-center" style="width: auto;">
+                <div class="d-flex justify-content-center mb-3" style="width: auto;">
                     <@macros.videoCard youtubeId="bIvt9z-zVHo" long=false/>
+                </div>
+                <div class="alert alert-primary p-2" role="alert">
+                    <b>News:</b> <a href="https://www.redhat.com/en/blog/red-hats-response-war-ukraine">Red Hat condemns the Russian military's invasion of Ukraine.</a>
                 </div>
             </div>
             <div class="col-md-5">
