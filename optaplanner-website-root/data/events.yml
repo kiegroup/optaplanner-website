@@ -14,6 +14,25 @@
 #
 # Order events by date descending
 
+- eventId: 20220511-devoxxuk
+  eventOrganization: "Devoxx UK"
+  eventUrl: https://www.devoxx.co.uk/
+  location: London, UK
+  date: 2022-05-11
+  talks:
+    - title: "Artificial Intelligence planning with OptaPlanner"
+      url: https://www.devoxx.co.uk/talk/?id=3853
+      presenters: Geoffrey De Smet, Lukáš Petrovický
+
+- eventId: 20220510-summit
+  eventOrganization: "RH Summit"
+  eventUrl: https://www.redhat.com/en/summit
+  location: Worldwide (virtual)
+  date: 2022-05-10
+  talks:
+    - title: "Saving the planet with OptaPlanner"
+      presenters: Waqaas Kausar
+
 - eventId: 20220503-jfokus
   eventOrganization: "JFokus"
   eventUrl: https://www.jfokus.se/
