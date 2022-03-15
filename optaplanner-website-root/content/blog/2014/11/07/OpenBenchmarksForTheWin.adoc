@@ -56,7 +56,7 @@ _Are all competitive benchmark reports lying?_ *Yes*, they are probably misrepre
 
 _Should we therefore restrict users from publicizing benchmarks on our Solver?_ *No*, of course not (even if our https://www.optaplanner.org/code/license.html[open source licence] would allow such conditions, which it does not).
 
-Computer science - like any other science - is build on empirical evidence:
+Computer science - like any other science - is built on empirical evidence:
 *the promise that any experiment I publish can be repeated by others independently*.
 If we prevent people from publishing such repeated experiments, we undermine our science.
 In fact, the more people which report their benchmarks, the clearer our strengths and weaknesses show.

@@ -408,7 +408,7 @@ before it is merged into the main repository.
 
 Red Hat also offers link:../product/services.html[support and consulting services]
 for customers who want to take their OptaPlanner implementation to the next level.
-It is build on a strong, sustainable business model for open source.
+It is built on a strong, sustainable business model for open source.
 
 
 == Get started
