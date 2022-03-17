@@ -15,7 +15,7 @@
 - youtubeId: kFoaf696VpA
   title: "Host your OptaPlanner app on OpenShift (Kubernetes)"
   author: ge0ffrey
-  date: 2021-02-07
+  date: 2022-02-07
   tags:
     - openshift
     - quarkus
