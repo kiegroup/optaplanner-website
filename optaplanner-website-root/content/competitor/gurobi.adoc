@@ -242,7 +242,7 @@ because of Daylight Saving Time (DST), timezones, leap years and other semantics
 OptaPlanner empowers you to directly use their APIs (such as `LocalDate`) in your constraints.
 
 Besides the `equal()` joiner, OptaPlanner supplies `lessThan()`, `greaterThan()`, `lessThanOrEqual()`, `greaterThanOrEqual()`,
-`overlapping()`, etc. You can also plug in custom joiners.
+`overlapping()`, etc.
 OptaPlanner automatically applies indexing (hashtable techniques) on joiners for performance.
 
 For example, select two overlapping shifts with the `overlapping()` joiner
