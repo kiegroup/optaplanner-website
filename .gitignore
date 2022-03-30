@@ -17,3 +17,6 @@
 
 # Jenkinsfile for publishing the website
 !.ci
+
+# git-hub action files
+!.github
