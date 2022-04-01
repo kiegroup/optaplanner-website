@@ -20,8 +20,20 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner 8_ available and fully supported
 in the latest release of Red Hat Decision Manager 7.
 
+== New and noteworthy: Engine 8.20.0.Final
+
+=== `SolverManager.addProblemChange()` now returns `CompletableFuture<Void>`
+
+`SolverManager.addProblemChange()` returns `CompletableFuture<Void>`, which completes when a new best solution containing
+the problem change has been passed to a user-defined `Consumer`.
 
 == New and noteworthy: Engine 8.17.0.Final
+
+=== Real-time planning available on the `SolverManager`
+
+The `SolverManager` now accepts problem changes via the `addProblemChange()` method,
+allowing for https://www.optaplanner.org/docs/optaplanner/latest/repeated-planning/repeated-planning.html#realTimePlanning[real-time planning]
+without much boilerplate code.
 
 === Faster `Solver` creation
 

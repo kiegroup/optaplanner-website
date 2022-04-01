@@ -1758,3 +1758,11 @@ After in `*ConstraintProvider.java*`:
                         BedDesignation::getAdmissionPartNightCount);
     }
 ----
+
+== From 8.19.0.Final to 8.20.0.Final
+
+[.upgrade-recipe-minor]
+=== `SolverManager.addProblemChange()` and `SolverJob.addProblemChange()` now return `CompletableFuture<Void>`
+
+`SolverManager.addProblemChange()` and `SolverJob.addProblemChange()` return type has changed from `void`
+to `CompletableFuture<Void>`, which might break already compiled code depending on these methods.
