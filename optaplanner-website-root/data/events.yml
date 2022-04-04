@@ -14,6 +14,16 @@
 #
 # Order events by date descending
 
+- eventId: 20220414-devnexus-porter
+  eventOrganization: "DevNexus"
+  eventUrl: https://devnexus.org/
+  location: Atlanta, GA, USA
+  date: 2022-04-14
+  talks:
+    - title: "https://devnexus.org/"
+      url: https://devnexus.org/speakers/3358
+      presenters: Jason Porter
+
 - eventId: 20220511-devoxxuk
   eventOrganization: "Devoxx UK"
   eventUrl: https://www.devoxx.co.uk/
