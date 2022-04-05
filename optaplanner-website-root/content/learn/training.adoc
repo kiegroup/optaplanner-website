@@ -4,16 +4,16 @@
 :jbake-priority: 0.4
 :showtitle:
 
-== Free online training (recommended)
+== Getting started with Optaplanner and Quarkus, a step-by-step guide
 
-Follow https://developers.redhat.com/courses/kogito/optaplanner-and-quarkus[this Katacoda]
-to quickly learn:
+Check out https://github.com/KIE-Learning/knapsack-optaplanner-quarkus[this guide] to quickly (15-25min) learn:
 
 * How to solve a _knapsack problem_ with OptaPlanner.
-* How to expose it as a REST application on Quarkus.
+* OptaPlanner core concepts and how to apply them in a use case
+* How to expose your service as a REST application on Quarkus.
 * How to deploy that application in the cloud on OpenShift.
 
-https://developers.redhat.com/courses/kogito/optaplanner-and-quarkus[*Start the free online training now*]
+https://github.com/KIE-Learning/knapsack-optaplanner-quarkus[*Start the free training now*]
 
 == Training zip (legacy)
 
