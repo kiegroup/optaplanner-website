@@ -52,7 +52,7 @@ pipeline {
                 }
             }
         }
-        stage('publish website to filemgmt.jboss.org') {
+        stage('publish website to filemgmt-prod-sync.jboss.org') {
             steps {
                 dir("${REPO}") {
                     sshagent(["optaplanner-filemgmt"]) {
