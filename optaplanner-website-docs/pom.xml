@@ -46,6 +46,8 @@
             </goals>
             <phase>initialize</phase>
           </execution>
+          <!-- Remove the exec-maven-plugin and enable this execution when
+               https://github.com/eirslett/frontend-maven-plugin/issues/1005 is resolved.
           <execution>
             <id>run antora</id>
             <goals>
@@ -53,7 +55,30 @@
             </goals>
             <phase>generate-resources</phase>
             <configuration>
-              <arguments>antora --generator @antora/site-generator ${antora.playbook} --to-dir=target/website/docs</arguments>
+              <arguments>antora &#45;&#45;generator @antora/site-generator ${antora.playbook} &#45;&#45;to-dir=target/website/docs</arguments>
+            </configuration>
+          </execution>
+          -->
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>compile</phase>
+            <configuration>
+              <executable>node/node</executable>
+              <arguments>
+                <argument>${antora.binary}</argument>
+                <argument>--generator</argument>
+                <argument>@antora/site-generator</argument>
+                <argument>${antora.playbook}</argument>
+                <argument>--to-dir=target/website/docs</argument>
+              </arguments>
             </configuration>
           </execution>
         </executions>
