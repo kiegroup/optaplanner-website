@@ -20,3 +20,6 @@ ui:
   supplemental_files: ./supplemental-ui
 runtime:
   fetch: true
+antora:
+  extensions:
+    - '@antora/lunr-extension'
