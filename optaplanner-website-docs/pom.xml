@@ -18,8 +18,8 @@
   <properties>
     <antora.playbook>antora-playbook.yml</antora.playbook>
     <antora.binary>node_modules/.bin/antora</antora.binary>
-    <version.node>v16.14.0</version.node>
-    <version.npm>8.3.1</version.npm>
+    <version.node>v16.2.0</version.node>
+    <version.npm>7.15.1</version.npm>
   </properties>
 
   <build>
