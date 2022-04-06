@@ -18,8 +18,8 @@
   <properties>
     <antora.playbook>antora-playbook.yml</antora.playbook>
     <antora.binary>node_modules/.bin/antora</antora.binary>
-    <version.node>v12.20.0</version.node>
-    <version.npm>6.14.4</version.npm>
+    <version.node>v16.14.0</version.node>
+    <version.npm>8.3.1</version.npm>
   </properties>
 
   <build>
@@ -46,8 +46,6 @@
             </goals>
             <phase>initialize</phase>
           </execution>
-          <!-- Remove the exec-maven-plugin and enable this execution when
-                https://github.com/eirslett/frontend-maven-plugin/issues/1005 is resolved.
           <execution>
             <id>run antora</id>
             <goals>
@@ -55,40 +53,7 @@
             </goals>
             <phase>generate-resources</phase>
             <configuration>
-              <environmentVariables>
-                <DOCSEARCH_ENABLED>true</DOCSEARCH_ENABLED>
-                <DOCSEARCH_ENGINE>lunr</DOCSEARCH_ENGINE>
-                <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
-              </environmentVariables>
-              <arguments>antora &#45;&#45;generator antora-site-generator-lunr ${antora.playbook} &#45;&#45;to-dir=target/website/docs</arguments>
-            </configuration>
-          </execution>
-          -->
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>compile</phase>
-            <configuration>
-              <executable>node/node</executable>
-              <environmentVariables>
-                <DOCSEARCH_ENABLED>true</DOCSEARCH_ENABLED>
-                <DOCSEARCH_ENGINE>lunr</DOCSEARCH_ENGINE>
-                <DOCSEARCH_INDEX_VERSION>latest</DOCSEARCH_INDEX_VERSION>
-              </environmentVariables>
-              <arguments>
-                <argument>${antora.binary}</argument>
-                <argument>--generator</argument>
-                <argument>antora-site-generator-lunr</argument>
-                <argument>${antora.playbook}</argument>
-                <argument>--to-dir=target/website/docs</argument>
-              </arguments>
+              <arguments>antora --generator @antora/site-generator ${antora.playbook} --to-dir=target/website/docs</arguments>
             </configuration>
           </execution>
         </executions>
