@@ -14,16 +14,6 @@
 #
 # Order events by date descending
 
-- eventId: 20220414-devnexus-porter
-  eventOrganization: "DevNexus"
-  eventUrl: https://devnexus.org/
-  location: Atlanta, GA, USA
-  date: 2022-04-14
-  talks:
-    - title: "Solve your Planning Problems with AI"
-      url: https://devnexus.org/presentations/7089/
-      presenters: Jason Porter
-
 - eventId: 20220511-devoxxuk
   eventOrganization: "Devoxx UK"
   eventUrl: https://www.devoxx.co.uk/
@@ -52,6 +42,16 @@
     - title: "AI maintenance scheduling with OptaPlanner on Quarkus"
       url: https://www.jfokus.se/talks/712
       presenters: Geoffrey De Smet
+
+- eventId: 20220414-devnexus-porter
+  eventOrganization: "DevNexus"
+  eventUrl: https://devnexus.org/
+  location: Atlanta, GA, USA
+  date: 2022-04-14
+  talks:
+    - title: "Solve your Planning Problems with AI"
+      url: https://devnexus.org/presentations/7089/
+      presenters: Jason Porter
 
 - eventId: 20220128-devconf
   eventOrganization: "DevConf.CZ"
