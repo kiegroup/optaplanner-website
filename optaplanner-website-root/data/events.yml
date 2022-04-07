@@ -20,8 +20,8 @@
   location: Atlanta, GA, USA
   date: 2022-04-14
   talks:
-    - title: "https://devnexus.org/"
-      url: https://devnexus.org/speakers/3358
+    - title: "Solve your Planning Problems with AI"
+      url: https://devnexus.org/presentations/7089/
       presenters: Jason Porter
 
 - eventId: 20220511-devoxxuk
