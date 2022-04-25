@@ -143,7 +143,7 @@ in OR-Tools's `RoutingModel` class:
 RoutingIndexManager manager = new RoutingIndexManager(locationListSize, vehicleListSize, 0);
 RoutingModel routingModel = new RoutingModel(manager); // OR-Tools defined class
 routingModel.setArcCostEvaluatorOfAllVehicles(...);
-routingModel.addDimensionWithVehicleCapacity((...);
+routingModel.addDimensionWithVehicleCapacity(...);
 
 Assignment assignment = routingModel.solve();
 long start = manager.indexToNode(routingModel.start(v));
