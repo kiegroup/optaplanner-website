@@ -7,8 +7,8 @@
     <div class="card mb-4">
         <div class="card-header">Latest release</div>
         <div class="card-body">
-            <ul class="list-unstyled">
-                <li class="mb-2">
+            <ul class="list-unstyled mb-0">
+                <li>
                     <div class="title">
                         <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
                             ${pom.latestFinal.version} released
@@ -19,6 +19,7 @@
                     </div>
                 </li>
                 <#if pom.latest.version != pom.latestFinal.version>
+                <li class="mt-2">
                     <div class="title">
                         <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">
                             ${pom.latest.version} released
@@ -27,6 +28,7 @@
                     <div class="small">
                         ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}
                     </div>
+                </li>
                 </#if>
             </ul>
         </div>
