@@ -94,22 +94,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <@macros.latestBlogPosts/>
-            </div>
-            <div class="col-md-6">
-                <@macros.latestVideos/>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-4">
+                <@macros.latestReleases/>
+                <#--<@macros.servicesOffer/>-->
                 <@macros.latestEvents/>
             </div>
             <div class="col-md-4">
-                <@macros.latestReleases/>
+                <@macros.latestBlogPosts/>
             </div>
             <div class="col-md-4">
-                <@macros.servicesOffer/>
+                <@macros.latestVideos/>
             </div>
         </div>
     </@parent.layout>

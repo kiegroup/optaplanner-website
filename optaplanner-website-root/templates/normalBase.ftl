@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-3">
             <@macros.latestReleases/>
-            <@macros.servicesOffer/>
+            <#--<@macros.servicesOffer/>-->
             <@macros.latestEvents/>
             <@macros.latestBlogPosts/>
             <@macros.latestVideos/>
