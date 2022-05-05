@@ -12,7 +12,7 @@ Let me show you how to use OptaPy and a bit of plain Python code to tackle a typ
 OptaPy is an open source project. It's available in https://pypi.org/project/optapy/[PyPI] and is usable from a normal Python installation.
 Internally, OptaPy uses OptaPlanner, so it does need a JDK installed.
 Currently, it's significantly slower than using OptaPlanner directly from Java (or Kotlin for that matter), but it works and we're investigating ways to bridge the performance gap.
-Let's optimize that school timetable in pure Python. *Feel free to follow along in the https://mybinder.org/v2/gh/optapy/optapy/main?filepath=index.ipynb[OptaPy Jupyter notebook].*
+Let's optimize that school timetable in pure Python. *Feel free to follow along in the https://mybinder.org/v2/gh/optapy/optapy-quickstarts/stable?filepath=school-timetabling/school-timetabling-quickstart.ipynb[OptaPy Jupyter notebook].*
 
 image:schoolTimetablingInputOutput.png[Assign rooms and timeslots to lessons using OptaPy]
 
