@@ -1,0 +1,447 @@
+# Migrating OptaPlanner score DRL to Constraint Streams
+:jbake-description: Migrate deprecated Score DRL to Constraint Streams
+:toc:
+
+Ever since its introduction back in 2020,
+the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams framework] ("CS") has seen great adoption and has been used to implement any problem you can think of.
+Due to this success, we have finally decided to deprecate its predecessor, the score DRL framework.
+
+## What does deprecating score DRL mean?
+
+Users of OptaPlanner 8 can continue using score DRL without any concern as we will continue maintaining score DRL support for the lifetime of OptaPlanner 8.
+However, OptaPlanner 9 will completely remove all support for score DRL.
+Users of score DRL are therefore encouraged to start planning their migration from score DRL to some other scoring mechanism, preferrably CS.
+This document intends to make such migration as easy as possible, showing real-world examples of rules and constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
+
+## Benefits of Constraint Streams
+
+CS is a modern full-featured API for writing OptaPlanner constraints, offering several benefits over score DRL:
+
+* Developers do not need to learn any new language, CS is plain Java.
+* Full IDE support incl. syntax highlighting and refactoring.
+* Comprehensive support for unit testing.
+* In certain use cases, CS performs considerably faster than score DRL.
+
+## Migrating to Constraint Streams, step by step
+
+CS and DRL are very similar in their approach and in fact both use Drools to execute the constraint logic.
+Because of this, migrating many parts of score DRL to CS is straight-forward, even mechanical.
+However, this guide will not help you if your score DRL uses the following constructs, as there is no direct mapping between DRL and CS in that case:
+
+* DRL's `insertLogical()` allows information to be transferred between rules.
+This is not possible in CS, where each constraint is isolated and stands on its own.
+* DRL's `eval()` allows for arbitrary Java code execution anywhere on the left-hand side of a rule.
+This is not possible in CS.
+* DRL's right-hand side allows for arbitrary Java code execution.
+This is not possible in CS, where each constraint can only result in either a score reward or a penalty.
+* Using more than 3 joins in a single rule, which is very unlikely.
+
+If you are using any of these constructs, we recommend that you first refactor them out of your DRL and then check back with this migration guide.
+
+### The basics
+
+In score DRL, all your constraints are typically written in a single text file like so:
+
+[source, drl]
+----
+package org.optaplanner.examples.vehiclerouting.optional.score;
+    dialect "java"
+
+import ...;
+
+global HardSoftLongScoreHolder scoreHolder;
+
+rule "vehicleCapacity"
+    when
+        ...
+    then
+        ...
+end
+
+...
+----
+
+In this file, each rule represents 1 or more constraints.
+In CS, the DRL file is replaced by a standard Java source code:
+
+[source, java]
+----
+package org.optaplanner.examples.vehiclerouting.score;
+
+import ...;
+
+public class VehicleRoutingConstraintProvider implements ConstraintProvider {
+
+    @Override
+    public Constraint[] defineConstraints(ConstraintFactory factory) {
+        return new Constraint[] {
+                vehicleCapacity(factory),
+                ...
+        };
+    }
+
+    protected Constraint vehicleCapacity(ConstraintFactory factory) {
+        ...
+    }
+
+    ...
+}
+
+----
+
+The method `defineConstraints(...)`,  a single method on the `ConstraintProvider`, lists all your constraints.
+Each constraint is then typically represented by a method.
+
+#### Solver configuration
+
+Users of Quarkus most likely do not need to worry about solver configuration.
+Removing score DRL and introducing a `ConstraintProvider` implementation ought to be enough.
+
+In solver configuration XML however, score DRL is configured by pointing the solver to the DRL file:
+
+[source, xml]
+----
+<solver>
+
+  ...
+
+  <scoreDirectorFactory>
+    <scoreDrl>org/optaplanner/examples/vehiclerouting/optional/score/vehicleRoutingConstraints.drl</scoreDrl>
+  </scoreDirectorFactory>
+
+  ...
+
+</solver>
+----
+
+Constraint Streams are selected by pointing the solver to an implementation of the `ConstraintProvider` interface:
+
+[source, xml]
+----
+<solver>
+
+  ...
+
+  <scoreDirectorFactory>
+    <constraintProviderClass>org.optaplanner.examples.vehiclerouting.score.VehicleRoutingConstraintProvider</constraintProviderClass>
+  </scoreDirectorFactory>
+
+  ...
+
+</solver>
+----
+
+### Migrating trivial constraints
+
+Many constraint follow a simple pattern of picking an entity and immediately penalizing it.
+One such case can be found in the Vehicle Routing example:
+
+[source, drl]
+----
+rule "distanceToPreviousStandstill"
+    when
+        Customer(previousStandstill != null, $distanceFromPreviousStandstill : distanceFromPreviousStandstill)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill);
+end
+----
+
+Here, each initialized `Customer` instance incurs a soft penalty equivalent to the value of its `distanceFromPreviousStandstill` field. Here's how the same is achieved in CS:
+
+[source, java]
+----
+Constraint distanceToPreviousStandstill(ConstraintFactory factory) {
+    return factory.forEach(Customer.class)
+        .penalizeLong("distanceToPreviousStandstill",
+            HardSoftLongScore.ONE_SOFT,
+            customer -> customer.getDistanceFromPreviousStandstill());
+}
+----
+
+Note that:
+
+* `forEach(Customer.class)` serves the same purpose as `Customer(...)` in DRL.
+* There is no need to check if planning variable is initialized (`previousStandstill != null`), as `forEach(...)` does it automatically.
+If this behavior is not what you want, use `forEachIncludingNullVars(...)` instead.
+* Right-hand side of the rule (the part after `then`) is replaced by a call to `penalizeLong(...)`.
+The size of the penalty is now determined by constraint weight (`HardSoftLongScore.ONE_SOFT`)
+and match weight (the call to a getter on `Customer`).
+
+#### Applying rewards instead of penalties
+
+In the example above, score DRL applies a penalty by adding a negative constraint match like so:
+
+`scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)`.
+
+CS makes this more explicit by using a keyword `reward` instead of `penalize`, while keeping the match weight positive:
+
+`rewardLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
+
+#### Applying different penalty types
+
+In the example above, `distanceFromPreviousStandstill` is of type `long` and therefore DRL's
+`scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)` maps to CS's
+`penalizeLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
+
+If the type were `int` instead, it would map to `penalize(...)` instead.
+Similarly, if the type were `BigDecimal`, it would map to `penalizeBigDecimal(...)`.
+No types other than `int`, `long` and `BigDecimal` are supported.
+
+The same applies to rewards, too.
+
+#### Applying configurable constraint weights
+
+In some cases, such as in the Conference Scheduling example, constraint weights are specified in a `ConstraintConfiguration`-annotated class and not in score DRL.
+Score DRL expresses this like so:
+
+`scoreHolder.penalize(kcontext, $penalty);`
+
+In CS, this situation maps to `penalizeConfigurable(...)` and similarly for rewards.
+
+For more, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsPenaltiesRewards[penalties and rewards] in OptaPlanner documentation.
+
+### Migrating constraints with filters
+
+In the same Vehicle Routing example, we can also find the following rule:
+
+[source, drl]
+----
+rule "distanceFromLastCustomerToDepot"
+    when
+        $customer : Customer(previousStandstill != null, nextCustomer == null)
+    then
+        Vehicle vehicle = $customer.getVehicle();
+        scoreHolder.addSoftConstraintMatch(kcontext, - $customer.getDistanceTo(vehicle));
+end
+----
+
+There are many similarities to the previous rule, but this time we penalize `Customer` only when the `nextCustomer` field is `null`.
+To do the same in CS, we introduce a `filter(...)` call where we check the return value of a getter for `null`.
+
+[source, java]
+----
+Constraint distanceFromLastCustomerToDepot(ConstraintFactory factory) {
+    return factory.forEach(Customer.class)
+        .filter(customer -> customer.getNextCustomer() == null)
+        .penalizeLong("distanceFromLastCustomerToDepot",
+            HardSoftLongScore.ONE_SOFT,
+            customer -> {
+                Vehicle vehicle = customer.getVehicle();
+                return customer.getDistanceTo(vehicle);
+            });
+}
+----
+
+For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsFilter[filtering] section in OptaPlanner documentation.
+
+### Migrating constraints with joins
+
+Some constraints penalize based on a combination of entities or facts, such as in the NQueens example:
+
+[source, drl]
+----
+rule "Horizontal conflict"
+    when
+        Queen($id : id, row != null, $i : rowIndex)
+        Queen(id > $id, rowIndex == $i)
+    then
+        scoreHolder.addConstraintMatch(kcontext, -1);
+end
+----
+
+Here, we select a pair of different queens (second `Queen.id` greater than first `Queen.id`) which share the same row (second `Queen.rowIndex` equal to first `Queen.rowIndex`).
+Each such pair is then penalized by `1`.
+
+Here's how to do the same thing in CS, using a `join(...)` call with some `Joiners`:
+
+[source, java]
+----
+Constraint horizontalConflict(ConstraintFactory factory) {
+    return factory.forEach(Queen.class)
+        .join(Queen.class,
+            Joiners.greaterThan(Queen::getId),
+            Joiners.equal(Queen::getRowIndex))
+        .penalize("Horizontal conflict", SimpleScore.ONE);
+}
+----
+
+`Joiners.greaterThan(Queen::getId)` is a Java way of expressing DRL's `queen.id > $id`.
+Similarly, `Joiners.equal(Queen::getRowIndex)` represents DRL's `queen.rowIndex == $i`.
+
+However, in this case, we can go further and use some CS syntactic sugar:
+
+[source, java]
+----
+Constraint horizontalConflict(ConstraintFactory factory) {
+    return factory.forEachUniquePair(Queen.class,
+            equal(Queen::getRowIndex))
+        .penalize("Horizontal conflict", SimpleScore.ONE);
+}
+----
+
+Using `forEachUniquePair(Queen.class)`, the `greaterThan(...)` joiner is inserted automatically and we only need to match the row indexes.
+
+For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsJoin[joining] in OptaPlanner documentation.
+
+#### Applying filters while joining
+
+In certain cases, you may need to apply a filter while joining, such as in the case of the Conference Scheduling example:
+
+[source, drl]
+----
+rule "Talk prerequisite talks"
+    when
+        $talk1 : Talk(timeslot != null)
+        $talk2 : Talk(timeslot != null,
+                !getTimeslot().startsAfter($talk1.getTimeslot()),
+                getPrerequisiteTalkSet().contains($talk1))
+    then
+        scoreHolder.penalize(kcontext,
+                $talk1.getDurationInMinutes() + $talk2.getDurationInMinutes());
+end
+----
+
+Note that the second `Talk` is only selected if its `prerequisiteTalkSet` contains the first `Talk`.
+Since there is no CS joiner for this specific operation, we need to use a generic filtering joiner like so:
+
+[source, java]
+----
+Constraint talkPrerequisiteTalks(ConstraintFactory factory) {
+    return factory.forEach(Talk.class)
+        .join(Talk.class,
+            Joiners.greaterThan(
+                    talk1 -> talk1.getTimeslot().getEndDateTime(),
+                    talk2 -> talk2.getTimeslot().getStartDateTime()),
+            Joiners.filtering((talk1, talk2) -> talk2.getPrerequisiteTalkSet().contains(talk1)))
+        .penalizeConfigurable(TALK_PREREQUISITE_TALKS, Talk::combinedDurationInMinutes);
+    }
+----
+
+### Migrating `exists` and `not`
+
+DRL's `exists` can be converted to CS much like the join above.
+Consider this rule from the Cloud Balancing example:
+
+[source, drl]
+----
+rule "computerCost"
+    when
+        $computer : CloudComputer($cost : cost)
+        exists CloudProcess(computer == $computer)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, - $cost);
+end
+----
+
+Here, we only penalize a computer if there exists a process that runs on that particular computer.
+An equivalent constraint stream looks like this:
+
+[source, java]
+----
+Constraint computerCost(ConstraintFactory constraintFactory) {
+    return constraintFactory.forEach(CloudComputer.class)
+        .ifExists(CloudProcess.class,
+            Joiners.equal(Function.identity(), CloudProcess::getComputer))
+        .penalize("computerCost",
+            HardSoftScore.ONE_SOFT,
+            CloudComputer::getCost);
+}
+----
+
+Notice how the `ifExists(...)` call uses the `Joiners` class to define the relationship between `CloudProcess` and `CloudComputer`.
+
+For the use of DRL's `not` keyword, consider this rule from the TSP example:
+
+[source, drl]
+----
+rule "distanceFromLastVisitToDomicile"
+    when
+        $visit : Visit(previousStandstill != null)
+        not Visit(previousStandstill == $visit)
+        $domicile : Domicile()
+    then
+        scoreHolder.addConstraintMatch(kcontext, - $visit.getDistanceTo($domicile));
+end
+----
+
+A visit is only penalized if it is the final visit of the journey.
+The same can be achieved in CS using the `ifNotExists(...)` building block:
+
+[source, java]
+----
+Constraint distanceFromLastVisitToDomicile(ConstraintFactory constraintFactory) {
+    return constraintFactory.forEach(Visit.class)
+        .ifNotExists(Visit.class,
+            Joiners.equal(visit -> visit, Visit::getPreviousStandstill))
+        .join(Domicile.class)
+        .penalizeLong("Distance from last visit to domicile",
+            SimpleLongScore.ONE,
+            Visit::getDistanceTo);
+}
+----
+
+For more information on `ifExists()` and `ifNotExists()`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsConditionalPropagation[conditional propagation] in OptaPlanner documentation.
+
+### Migrating `accumulate`
+
+CS does not have a concept that maps mechanically to DRL's `accumulate`.
+However, it does have a very powerful `groupBy(...)` concept.
+To understand the differences between the two, consider the following rule taken from the Cloud Balancing example:
+
+[source, drl]
+----
+rule "requiredCpuPowerTotal"
+    when
+        $computer : CloudComputer($cpuPower : cpuPower)
+        accumulate(
+            CloudProcess(
+                computer == $computer,
+                $requiredCpuPower : requiredCpuPower);
+            $requiredCpuPowerTotal : sum($requiredCpuPower);
+            $requiredCpuPowerTotal > $cpuPower
+        )
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $cpuPower - $requiredCpuPowerTotal);
+end
+----
+
+For each `CloudComputer`, it computes a sum of CPU power required by `CloudProcess` instances (`$requiredCpuPowerTotal : sum($requiredCpuPower)`) running on that computer (`CloudProcess(
+computer == $computer)`) and only penalizes those computers where the total power required exceeds the power available (`$requiredCpuPowerTotal > $cpuPower`).
+
+For comparison, let us now see how the same is accomplished in CS using `groupBy(...)`:
+
+[source, java]
+----
+Constraint requiredCpuPowerTotal(ConstraintFactory constraintFactory) {
+    return constraintFactory.forEach(CloudProcess.class)
+        .groupBy(
+                CloudProcess::getComputer,
+                ConstraintCollectors.sum(CloudProcess::getRequiredCpuPower))
+        .filter((computer, requiredCpuPower) -> requiredCpuPower > computer.getCpuPower())
+        .penalize("requiredCpuPowerTotal",
+            HardSoftScore.ONE_HARD,
+            (computer, requiredCpuPower) -> requiredCpuPower - computer.getCpuPower());
+    }
+----
+
+First, we select all `CloudProcess` instances (`forEach(CloudProcess.class)`).
+Then we apply `groupBy` in two steps:
+
+* We split the processes into buckets ("groups") by their computer (`CloudProcess::getComputer`).
+If two or more processes have the same computer, they belong to the same group.
+* For each such group, we apply a `ConstraintCollectors.sum(...)` to get a sum total of power required by all processes in such group.
+
+The result of that operation is a pair ("tuple") of facts: a `CloudComputer` and an `int` representing the sum total of power required by all processes running on that computer.
+We then take all such tuples and `filter(...)` out all those where the sum total is `<=` that computer's available power.
+Finally, we penalize the positive difference between the required power and the available power, the overconsumption.
+
+As you can see, `groupBy(...)` accomplishes the same result, but goes about it differently.
+This is why mapping DRL `accumulate` to CS `groupBy`, while always possible, is not necessarily straight-forward or mechanical.
+
+For more information on `groupBy(...)`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsGroupingAndCollectors[grouping and collectors] in OptaPlanner documentation.
+
+## More resources
+
+In case the examples above prove insufficient, there is more.
+In the https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples package], every example has both a score DRL file and an equivalent `ConstraintProvider` implementation.
+Feel free to browse these examples, contrast respective DRL and CS implementations, and use the information to help with your own migration.
