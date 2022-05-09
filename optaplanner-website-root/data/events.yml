@@ -22,7 +22,7 @@
   talks:
     - title: "Artificial Intelligence planning with OptaPlanner"
       url: https://www.devoxx.co.uk/talk/?id=3853
-      presenters: Geoffrey De Smet, Lukáš Petrovický
+      presenters: Geoffrey De Smet
 
 - eventId: 20220510-summit
   eventOrganization: "RH Summit"
