@@ -173,7 +173,7 @@ In the example above, score DRL applies a penalty by adding a negative constrain
 
 `scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)`.
 
-CS makes this more explicit by using a keyword `reward` instead of `penalize`, while keeping the match weight positive:
+CS makes this more explicit by using a keyword `penalize` instead of `add...`, while keeping the match weight positive:
 
 `rewardLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
 
