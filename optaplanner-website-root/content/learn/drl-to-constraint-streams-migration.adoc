@@ -11,7 +11,7 @@ Therefore, the scoreDRL API is now deprecated.
 Users of OptaPlanner 8 can continue using score DRL without any concern as we will continue maintaining score DRL support for the lifetime of OptaPlanner 8.
 However, OptaPlanner 9 will completely remove all support for score DRL.
 Users of score DRL are therefore encouraged to start planning their migration from score DRL to some other scoring mechanism, preferrably CS.
-This document intends to make such migration as easy as possible, showing real-world examples of rules and constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
+This document makes such migration as easy as possible, showing real-world examples of constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
 
 ## Benefits of Constraint Streams
 
