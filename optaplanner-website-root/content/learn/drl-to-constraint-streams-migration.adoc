@@ -1,5 +1,5 @@
 # Migrating OptaPlanner score DRL to Constraint Streams
-:jbake-description: Migrate deprecated Score DRL to Constraint Streams
+:jbake-description: Upgrade your OptaPlanner scoreDRL constraints to the faster constraint streams constraints today.
 :toc:
 
 Ever since its introduction back in 2020,
