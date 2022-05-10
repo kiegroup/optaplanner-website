@@ -302,7 +302,7 @@ end
 ----
 
 Note that the second `Talk` is only selected if its `prerequisiteTalkSet` contains the first `Talk`.
-Since there is no CS joiner for this specific operation, we need to use a generic filtering joiner like so:
+Since there is no CS joiner for this specific operation yet, we need to use a generic filtering joiner like so:
 
 [source, java]
 ----
