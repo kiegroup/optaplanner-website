@@ -1,5 +1,8 @@
 = How to migrate OptaPlanner score DRL to Constraint Streams
+:jbake-type: normalBase
 :jbake-description: Upgrade your OptaPlanner scoreDRL constraints to the faster constraint streams constraints today.
+:jbake-priority: 0.4
+:showtitle:
 :toc:
 
 == Introduction
@@ -22,7 +25,7 @@ CS is a modern full-featured API for writing OptaPlanner constraints, offering s
 * Comprehensive support for unit testing.
 * In most use cases, CS performs considerably faster than score DRL.
 
-=== Migrating to Constraint Streams, step by step
+=== Limits of this guide
 
 CS and DRL are very similar in their approach and in fact both use Drools to execute the constraint logic.
 Because of this, migrating many parts of score DRL to CS is straight-forward, even mechanical.
