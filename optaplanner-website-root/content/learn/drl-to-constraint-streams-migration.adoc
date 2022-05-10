@@ -20,7 +20,7 @@ CS is a modern full-featured API for writing OptaPlanner constraints, offering s
 * Developers do not need to learn any new language, CS is plain Java.
 * Full IDE support incl. syntax highlighting and refactoring.
 * Comprehensive support for unit testing.
-* In certain use cases, CS performs considerably faster than score DRL.
+* In most use cases, CS performs considerably faster than score DRL.
 
 ## Migrating to Constraint Streams, step by step
 
