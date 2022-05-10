@@ -333,7 +333,7 @@ rule "computerCost"
 end
 ----
 
-Here, we only penalize a computer if there exists a process that runs on that particular computer.
+Here, only penalize a computer if a process exists that runs on that particular computer.
 An equivalent constraint stream looks like this:
 
 [source, java]
