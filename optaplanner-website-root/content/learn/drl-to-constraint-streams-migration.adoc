@@ -32,7 +32,7 @@ However, this guide does not help you if your score DRL uses the following const
 This is not possible in CS, where each constraint is isolated and stands on its own.
 * DRL's `eval()` allows for arbitrary Java code execution anywhere on the left-hand side of a rule.
 This is not possible in CS.
-* DRL's right-hand side allows for arbitrary Java code execution.
+* DRL's right-hand side allows for arbitrary Java code execution that goes far beyond calculating the match weight.
 This anti-pattern is not possible in CS, where each constraint can only result in either a score reward or a penalty.
 * Using more than 3 joins in a single rule, which is very unlikely.
 
