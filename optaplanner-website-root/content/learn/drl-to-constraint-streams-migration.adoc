@@ -2,8 +2,8 @@
 :jbake-description: Upgrade your OptaPlanner scoreDRL constraints to the faster constraint streams constraints today.
 :toc:
 
-Ever since its introduction back in 2020,
-the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams framework] ("CS") has seen great adoption and has been used to implement any problem you can think of.
+For a couple of years now, the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams API] ("CS") is fully featured and widely adopted.
+It can handle any use case written in scoreDRL. It's also faster and https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[easier to use].
 Due to this success, we have finally decided to deprecate its predecessor, the score DRL framework.
 
 ## What does deprecating score DRL mean?
