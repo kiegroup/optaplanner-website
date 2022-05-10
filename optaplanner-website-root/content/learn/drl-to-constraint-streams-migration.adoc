@@ -33,7 +33,7 @@ This is not possible in CS, where each constraint is isolated and stands on its 
 * DRL's `eval()` allows for arbitrary Java code execution anywhere on the left-hand side of a rule.
 This is not possible in CS.
 * DRL's right-hand side allows for arbitrary Java code execution.
-This is not possible in CS, where each constraint can only result in either a score reward or a penalty.
+This anti-pattern is not possible in CS, where each constraint can only result in either a score reward or a penalty.
 * Using more than 3 joins in a single rule, which is very unlikely.
 
 If you are using any of these constructs, we recommend that you first refactor them out of your DRL and then check back with this migration guide.
