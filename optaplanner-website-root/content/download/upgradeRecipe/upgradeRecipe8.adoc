@@ -37,13 +37,9 @@ We currently intend to support a minimal version of Java 11 throughout the entir
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `SolverFactory` and `PlannerBenchmarkFactory` no longer support KIE containers
 
-Due to OptaPlanner aligning to Kogito, the KIE container concept no longer applies.
+The KIE container concept no longer applies.
 Therefore, `SolverFactory` no longer allows to create `Solver` instances from KIE containers.
 Likewise for `PlannerBenchmarkFactory` and benchmarks.
-
-Users are encouraged to check out our
-https://github.com/kiegroup/kogito-examples/tree/main/process-optaplanner-quarkus[OptaPlanner Kogito quickstart]
-to see how to integrate with processes in a modern, cloud-native way.
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === OSGi metadata removed
