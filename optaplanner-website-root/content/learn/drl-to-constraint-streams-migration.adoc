@@ -7,13 +7,13 @@
 
 == Introduction
 For a couple of years now, the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams API] ("CS") is fully featured and widely adopted.
-It can handle any use case written in scoreDRL. It's also faster and https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[easier to use].
+It can handle any use case written in score DRL. It's also faster and https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[easier to use].
 Therefore, the scoreDRL API is now deprecated.
 
 === What does deprecating score DRL mean?
 
 Users of OptaPlanner 8 can continue using score DRL without any concern as we will continue maintaining score DRL support for the lifetime of OptaPlanner 8.
-However, users of score DRL are encouraged to start planning their migration from score DRL to some other scoring mechanism, preferrably CS.
+However, users of score DRL are encouraged to start planning their migration from score DRL to some other scoring mechanism, preferably CS.
 This document makes such migration as easy as possible, showing real-world examples of constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
 
 === Benefits of Constraint Streams
@@ -173,7 +173,7 @@ In CS, each constraint applies a reward or a penalty based on several factors:
 
 1. A penalty has a negative impact on the score, while a reward impacts the score positively.
 2. A constant constraint weight, such as `HardSoftScore.ONE_SOFT`, `HardMediumSoftScore.ONE_HARD` etc. Constraint weights can be either fixed or configurable, see below.
-3. A dynamic match weight applies to any individual match and is typically specified by a lambda (eg. `customer -> customer.getDistanceFromPreviousStandstill()`). If not specified, it defaults to `1`.
+3. A dynamic match weight applies to any individual match and is typically specified by a lambda (e.g. `customer \-> customer.getDistanceFromPreviousStandstill()`). If not specified, it defaults to `1`.
 
 Impact of each constraint match is calculated using the following formula:
 
@@ -187,17 +187,17 @@ In the example above, score DRL applies a penalty by adding a negative constrain
 
 CS makes this more explicit by using a keyword `penalize` instead of `add...`, while keeping the match weight positive:
 
-`penalizeLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
+`penalizeLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
 You can accomplish a positive impact if you replace `penalize` by `reward` without changing the match weight:
 
-`rewardLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
+`rewardLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
 === Applying different penalty types
 
 In the example above, `distanceFromPreviousStandstill` is of type `long` and therefore DRL's
 `scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)` maps to CS's
-`penalizeLong(..., ..., customer -> customer.getDistanceFromPreviousStandstill())`.
+`penalizeLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
 If the type were `int` instead, it would map to `penalize(...)` instead.
 Similarly, if the type were `BigDecimal`, it would map to `penalizeBigDecimal(...)`.
@@ -207,7 +207,7 @@ The same applies to rewards, too.
 
 === Applying configurable constraint weights
 
-In some cases, such as in the Conference Scheduling example, constraint weights are specified in a `ConstraintConfiguration`-annotated class and not in score DRL.
+In some cases, such as in the Conference Scheduling example, constraint weights are specified in a `@ConstraintConfiguration`-annotated class and not in score DRL.
 Score DRL expresses this like so:
 
 `scoreHolder.penalize(kcontext, $penalty);`
@@ -252,7 +252,7 @@ For more information, see https://www.optaplanner.org/docs/optaplanner/latest/co
 
 === Migrating `eval(...)`
 
-The `eval(...)` construct allows to execute an arbitrary piece of code that returns `boolean`. As such, it is functionally equivalent to CS' `filter(...)` as described above.
+The `eval(...)` construct allows to execute an arbitrary piece of code that returns `boolean`. As such, it is functionally equivalent to CS`' `filter(...)` as described above.
 
 == Migrating constraints with joins
 
@@ -430,8 +430,7 @@ rule "requiredCpuPowerTotal"
 end
 ----
 
-For each `CloudComputer`, it computes a sum of CPU power required by `CloudProcess` instances (`$requiredCpuPowerTotal : sum($requiredCpuPower)`) running on that computer (`CloudProcess(
-computer == $computer)`) and only penalizes those computers where the total power required exceeds the power available (`$requiredCpuPowerTotal > $cpuPower`).
+For each `CloudComputer`, it computes a sum of CPU power required by `CloudProcess` instances (`$requiredCpuPowerTotal : sum($requiredCpuPower)`) running on that computer (`CloudProcess(computer == $computer)`) and only penalizes those computers where the total power required exceeds the power available (`$requiredCpuPowerTotal > $cpuPower`).
 
 For comparison, let us now see how the same is accomplished in CS using `groupBy(...)`:
 
@@ -457,7 +456,7 @@ If two or more processes have the same computer, they belong to the same group.
 * For each such group, we apply a `ConstraintCollectors.sum(...)` to get a sum total of power required by all processes in such group.
 
 The result of that operation is a pair ("tuple") of facts: a `CloudComputer` and an `int` representing the sum total of power required by all processes running on that computer.
-We then take all such tuples and `filter(...)` out all those where the sum total is `<=` that computer's available power.
+We then take all such tuples and `filter(...)` out all those where the sum total is `\<=` that computer's available power.
 Finally, we penalize the positive difference between the required power and the available power, the overconsumption.
 
 As you can see, `groupBy(...)` accomplishes the same result, but goes about it differently.
