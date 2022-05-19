@@ -18,8 +18,8 @@
   inProductionYear: 2018
   useCaseDescription: Schedule shifts of hospital doctors.
   resources:
-  - resourceName: Software myStaff OnCall
-    resourceUrl: https://healthcare.axians.be/solutions/mystaff/oncall/
+    - resourceName: Software myStaff OnCall
+      resourceUrl: https://healthcare.axians.be/solutions/mystaff/oncall/
   tags:
     - employee rostering
 
@@ -28,8 +28,8 @@
   inProductionYear: 2020
   useCaseDescription: Schedule shifts of hospital doctors and nurses.
   resources:
-  - resourceName: Equina
-    resourceUrl: https://www.equinascheduling.com/news-equina-meets-optaplanner
+    - resourceName: Equina
+      resourceUrl: https://www.equinascheduling.com/news-equina-meets-optaplanner
   tags:
     - employee rostering
 
@@ -38,8 +38,8 @@
   inProductionYear: 2020
   useCaseDescription: Route telco technicians to customers.
   resources:
-  - resourceName: Article on The Quill
-    resourceUrl: http://thequill.in/2020/07/31/jupiter-telecommunications-optimizes-business-operations-with-red-hat-decision-manager/
+    - resourceName: Article on The Quill
+      resourceUrl: http://thequill.in/2020/07/31/jupiter-telecommunications-optimizes-business-operations-with-red-hat-decision-manager/
   tags:
     - vehicle routing
 
@@ -48,10 +48,10 @@
   inProductionYear: 2021
   useCaseDescription: Schedule pilot training based on skills.
   resources:
-  - resourceName: MIT Paper
-    resourceUrl: https://dspace.mit.edu/bitstream/handle/1721.1/139080/koch-mjkoch-sm-orc-2021-thesis.pdf?sequence=1&isAllowed=y
-  - resourceName: Article on MIT news
-    resourceUrl: https://news.mit.edu/2021/us-air-force-pilots-artificial-intelligence-assist-scheduling-aircrews-0708
+    - resourceName: MIT Paper
+      resourceUrl: https://dspace.mit.edu/bitstream/handle/1721.1/139080/koch-mjkoch-sm-orc-2021-thesis.pdf?sequence=1&isAllowed=y
+    - resourceName: Article on MIT news
+      resourceUrl: https://news.mit.edu/2021/us-air-force-pilots-artificial-intelligence-assist-scheduling-aircrews-0708
   tags:
     - job scheduling
 
