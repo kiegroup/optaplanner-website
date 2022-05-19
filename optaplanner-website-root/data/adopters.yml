@@ -48,6 +48,8 @@
   inProductionYear: 2021
   useCaseDescription: Schedule pilot training based on skills.
   resources:
+  - resourceName: MIT Paper
+    resourceUrl: https://dspace.mit.edu/bitstream/handle/1721.1/139080/koch-mjkoch-sm-orc-2021-thesis.pdf?sequence=1&isAllowed=y
   - resourceName: Article on MIT news
     resourceUrl: https://news.mit.edu/2021/us-air-force-pilots-artificial-intelligence-assist-scheduling-aircrews-0708
   tags:
