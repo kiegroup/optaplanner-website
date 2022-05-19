@@ -43,6 +43,16 @@
   tags:
     - vehicle routing
 
+- adopterId: us-air-force-aircrew-scheduling
+  company: US Air Force
+  inProductionYear: 2021
+  useCaseDescription: Schedule pilot training based on skills.
+  resources:
+  - resourceName: Article on MIT news
+    resourceUrl: https://news.mit.edu/2021/us-air-force-pilots-artificial-intelligence-assist-scheduling-aircrews-0708
+  tags:
+    - job scheduling
+
 # TODO Add the other public adopters over the years
 
 # Other articles to incorporate
