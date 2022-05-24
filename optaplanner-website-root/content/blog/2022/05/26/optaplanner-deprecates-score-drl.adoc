@@ -1,6 +1,6 @@
 = OptaPlanner deprecates score DRL
 triceo
-2022-03-07
+2022-05-26
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: constraint, constraint streams, drl, deprecation
