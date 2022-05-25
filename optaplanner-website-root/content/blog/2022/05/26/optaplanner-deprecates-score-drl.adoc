@@ -33,7 +33,7 @@ We understand that constraints are a fundamental part of your application, and t
 To make this job as easy as possible, we have prepared a https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[migration guide] which explains the most typical use cases and migration patterns.
 
 We believe that, while reading the guide, you will realize that the migration is fairly straight-forward in most cases.
-In return, you will get fast constraints written in Java that is ready for Quarkus and the cloud, with full IDE support and a https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsTesting[comprehensive testing framework].
+In return, you will get fast constraints written in Java that are ready for Quarkus and the cloud, with full IDE support and a https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsTesting[comprehensive testing framework].
 
 And as always, if you're ever stuck, we are https://www.optaplanner.org/community/getHelp.html[here to help].
 Onwards with Constraint Streams!
