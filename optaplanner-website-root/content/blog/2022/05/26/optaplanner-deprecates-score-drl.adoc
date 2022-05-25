@@ -5,7 +5,7 @@ triceo
 :jbake-type: post
 :jbake-tags: constraint, constraint streams, drl, deprecation
 
-Long story short: The time to switch to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] is now.
+TLDR: The time to switch from scoreDRL to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] is now.
 Here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
 Score DRL is not going away in OptaPlanner 8.
 
