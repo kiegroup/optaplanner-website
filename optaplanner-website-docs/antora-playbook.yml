@@ -12,7 +12,7 @@ content:
   sources:
     - url: git@github.com:kiegroup/optaplanner.git
       # Update with every release.
-      branches: [8.20.x]
+      branches: [8.21.x]
       start_path: optaplanner-docs/src
 ui:
   bundle:

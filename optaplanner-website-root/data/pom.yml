@@ -1,42 +1,42 @@
 latestFinal:
-  version: 8.20.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.20.0.Final/optaplanner-distribution-8.20.0.Final.zip
-  releaseDate: 2022-04-14
+  version: 8.21.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.21.0.Final/optaplanner-distribution-8.21.0.Final.zip
+  releaseDate: 2022-05-25
   releaseNotesVersion: 8
 
-  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/8.20.0.Final/optaweb-employee-rostering-distribution-8.20.0.Final.zip
-  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.20.0.Final/optaweb-vehicle-routing-distribution-8.20.0.Final.zip
+  optawebEmployeeRosteringDistributionZip: https://download.jboss.org/optaplanner/release/8.21.0.Final/optaweb-employee-rostering-distribution-8.21.0.Final.zip
+  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.21.0.Final/optaweb-vehicle-routing-distribution-8.21.0.Final.zip
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.20.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/8.20.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/8.20.0.Final/optaweb-employee-rostering-docs/html_single/index.html
-  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/8.20.0.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
-  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/8.20.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
-  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/8.20.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.21.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/8.21.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  optawebEmployeeRosteringDocumentationHtmlSingle: https://docs.optaplanner.org/8.21.0.Final/optaweb-employee-rostering-docs/html_single/index.html
+  optawebEmployeeRosteringDocumentationPdf: https://docs.optaplanner.org/8.21.0.Final/optaweb-employee-rostering-docs/pdf/optaweb-employee-rostering-docs.pdf
+  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/8.21.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
+  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/8.21.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
 
-  javadocs: https://docs.optaplanner.org/8.20.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/8.21.0.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 8.20.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.20.0.Final/optaplanner-distribution-8.20.0.Final.zip
-  releaseDate: 2022-04-14
+  version: 8.21.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.21.0.Final/optaplanner-distribution-8.21.0.Final.zip
+  releaseDate: 2022-05-25
   releaseNotesVersion: 8
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.20.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.21.0.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/8.20.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/8.21.0.Final/optaplanner-javadoc/index.html
 
 nightly:
-  version: 8.21.0-SNAPSHOT
+  version: 8.22.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
-  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=8.21.0-SNAPSHOT&e=zip
-  optawebEmployeeRosteringDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-distribution&v=8.21.0-SNAPSHOT&e=zip
-  optawebVehicleRoutingDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-distribution&v=8.21.0-SNAPSHOT&e=zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=8.22.0-SNAPSHOT&e=zip
+  optawebEmployeeRosteringDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-distribution&v=8.22.0-SNAPSHOT&e=zip
+  optawebVehicleRoutingDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-distribution&v=8.22.0-SNAPSHOT&e=zip
 
-  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.21.0-SNAPSHOT&e=zip
-  optawebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-docs&v=8.21.0-SNAPSHOT&e=zip
-  optawebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=8.21.0-SNAPSHOT&e=zip
+  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.22.0-SNAPSHOT&e=zip
+  optawebEmployeeRosteringDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.employeerostering&a=optaweb-employee-rostering-docs&v=8.22.0-SNAPSHOT&e=zip
+  optawebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=8.22.0-SNAPSHOT&e=zip
 
 productToCommunityVersionMap:
   - productVersion: 7.8
