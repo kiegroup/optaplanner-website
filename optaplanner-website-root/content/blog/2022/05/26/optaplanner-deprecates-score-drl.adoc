@@ -1,0 +1,40 @@
+= OptaPlanner deprecates score DRL
+triceo
+2022-05-26
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: constraint, constraint streams, drl, deprecation
+
+TLDR: The time to switch from scoreDRL to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] is now.
+Here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
+Score DRL is not going away in OptaPlanner 8.
+
+== The rise of Constraint Streams
+
+As I was starting with OptaPlanner more than a decade ago, score DRL was there, promising easy and fast score calculation.
+It wasn't as fast as the Incremental Java calculator, but it also wasn't as hard to write while still getting better results than the Easy Java calculator.
+On the other hand, it required me to learn a new programming language.
+
+When I joined the OptaPlanner core team several years ago, I decided that we can do better.
+With the help of many other people, we introduced the Constraint Streams API.
+Constraint Streams, while still implemented using Drools under the hood, is a well-performing pure Java API for writing score constraints in OptaPlanner.
+Since its introduction in 2020, we kept improving it until it reached a full feature set in 2021 and has become the new default.
+Now, a further full year later, we are finally ready to announce the deprecation of score DRL.
+
+== What does it mean?
+
+Starting with OptaPlanner 8.23.0.Final, users of score DRL will be getting IDE and logging notifications that score DRL is deprecated, encouraging migration to Constraint Streams.
+Rest assured that support for score DRL will not be removed in OptaPlanner 8.
+The next major version of OptaPlanner, however, will no longer support score DRL.
+
+== How to migrate?
+
+We understand that constraints are a fundamental part of your application, and that refactoring them to Constraint Streams will take time.
+To make this job as easy as possible, we have prepared a https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[migration guide] which explains the most typical use cases and migration patterns.
+
+We believe that, while reading the guide, you will realize that the migration is fairly straight-forward in most cases.
+In return, you will get fast constraints written in Java that are ready for Quarkus and the cloud, with full IDE support and a https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsTesting[comprehensive testing framework].
+
+And as always, if you're ever stuck, we are https://www.optaplanner.org/community/getHelp.html[here to help].
+Onwards with Constraint Streams!
+
