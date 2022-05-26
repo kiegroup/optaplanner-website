@@ -13,7 +13,7 @@ Score DRL is not going away in OptaPlanner 8.
 
 As I was starting with OptaPlanner more than a decade ago, score DRL was there, promising easy and fast score calculation.
 It wasn't as fast as the Incremental Java calculator, but it also wasn't as hard to write while still getting better results than the Easy Java calculator.
-On the other hand, it required me to learn a new programming language, and one that didn't (and still doesn't) have the best support in IDEs.
+On the other hand, it required me to learn a new programming language.
 
 When I joined the OptaPlanner core team several years ago, I decided that we can do better.
 With the help of many other people, we introduced the Constraint Streams API.
