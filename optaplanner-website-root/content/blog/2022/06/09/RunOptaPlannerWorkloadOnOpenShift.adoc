@@ -35,7 +35,7 @@ topic to let the Demo App know the solution is ready for taking.
 
 === Solver Operator
 
-The OptaPlanner Operator is a Quarkus application developed on top of the https://javaoperatorsdk.io[javaoperatorsdk].
+The OptaPlanner Operator is a Quarkus application developed on top of the https://javaoperatorsdk.io[Java Operator SDK].
 Its job is to ensure all the Kubernetes resources the solver needs are in place: it creates Kafka topics and a deployment that
 runs the solver project, in this case, the School Timetabling.
 
