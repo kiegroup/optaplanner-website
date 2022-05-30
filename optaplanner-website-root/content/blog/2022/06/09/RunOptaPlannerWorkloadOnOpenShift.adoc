@@ -12,7 +12,7 @@ OptaPlanner does not exist in an isolated world of ready-to-be-executed datasets
 You have to deploy the solver project to the target environment, these days likely some kind of cloud platform.
 Another question immediately pops up in one's mind: can OptaPlanner leverage the cloud platform and scale horizontally?
 
-Recently, we have added a new, experimental, `optaplanner-operator` module that will simplify running OptaPlanner workloads
+Recently, we have added a new (experimental) `optaplanner-operator` module that will simplify running OptaPlanner workloads
 on Kubernetes.
 
 In this article I am going to show how to use the OptaPlanner Operator to deploy and scale a school timetabling solver on https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift].
