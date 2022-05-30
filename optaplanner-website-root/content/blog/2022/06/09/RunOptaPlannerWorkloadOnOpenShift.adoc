@@ -17,8 +17,8 @@ on Kubernetes.
 
 In this article I am going to show how to use the OptaPlanner Operator to deploy and scale a school timetabling solver on https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift].
 
-The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[kubernetes demo],
-along with the https://github.com/kiegroup/optaplanner-quickstarts[optaplanner-quickstarts].
+The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[Kubernetes demo],
+along with the other https://github.com/kiegroup/optaplanner-quickstarts[Optaplanner Quickstarts].
 
 == Architecture
 
