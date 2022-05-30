@@ -15,7 +15,7 @@ Another question immediately pops up in one's mind: can OptaPlanner leverage the
 Recently, we have added a new (experimental) `optaplanner-operator` module that will simplify running OptaPlanner workloads
 on Kubernetes.
 
-In this article I am going to show how to use the OptaPlanner Operator to deploy and scale a school timetabling solver on https://www.redhat.com/en/technologies/cloud-computing/openshift[OpenShift].
+In this article I am going to show how to use the OptaPlanner Operator to deploy and scale https://www.redhat.com/en/technologies/cloud-computing/openshift[school timetabling on OpenShift].
 
 The source code is available in the https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[Kubernetes demo],
 along with the other https://github.com/kiegroup/optaplanner-quickstarts[Optaplanner Quickstarts].
