@@ -56,7 +56,7 @@ Let's see how the custom resource changes if we want to have three School Timeta
 
 [source yaml]
 ----
-apiVersion: org.optaplanner.solver/v1
+apiVersion: org.optaplanner.solver/v1beta1
 kind: Solver
 metadata:
   name: school-timetabling
