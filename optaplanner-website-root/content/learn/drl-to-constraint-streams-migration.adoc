@@ -94,7 +94,7 @@ Each constraint is then typically represented by a method.
 
 === Solver configuration
 
-Quarkus and Spring uses most likely do not need to worry about solver configuration.
+Quarkus and Spring users most likely do not need to worry about solver configuration.
 Just remove the score DRL and create a `ConstraintProvider` implementation.
 
 In solver configuration XML however, score DRL is configured by pointing the solver to the DRL file:
