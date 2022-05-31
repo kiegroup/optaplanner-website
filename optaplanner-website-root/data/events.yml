@@ -14,6 +14,25 @@
 #
 # Order events by date descending
 
+- eventId: 20220623-devoxxpoland
+  eventOrganization: "Devoxx Poland"
+  eventUrl: https://devoxx.pl/
+  location: Krakow, Poland
+  date: 2022-06-23
+  talks:
+    - title: "On schedule: Artificial Intelligence plans that meet expectations"
+      presenters: Anna Dupliak, Geoffrey De Smet
+
+- eventId: 20220614-quarkusbenelux
+  eventOrganization: "Quarkus Benelux"
+  eventUrl: https://www.meetup.com/quarkus-benelux/
+  location: Rotterdam, Netherlands
+  date: 2022-06-14
+  talks:
+    - title: "Artificial Intelligence planning with OptaPlanner on Quarkus in Kotlin"
+      url: https://www.meetup.com/quarkus-benelux/events/286109843/
+      presenters: Geoffrey De Smet
+
 - eventId: 20220511-devoxxuk
   eventOrganization: "Devoxx UK"
   eventUrl: https://www.devoxx.co.uk/
