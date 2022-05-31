@@ -6,41 +6,41 @@
 :toc:
 
 == Introduction
-For a couple of years now, the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams API] ("CS") is fully featured and widely adopted.
+For a couple of years now, the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams API] (CS) has been fully featured and widely adopted.
 It can handle any use case written in score DRL. It's also faster and https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[easier to use].
 Therefore, the scoreDRL API is now deprecated.
 
 === What does deprecating score DRL mean?
 
-Users of OptaPlanner 8 can continue using score DRL without any concern as we will continue maintaining score DRL support for the lifetime of OptaPlanner 8.
-However, users of score DRL are encouraged to start planning their migration from score DRL to some other scoring mechanism, preferably CS.
-This document makes such migration as easy as possible, showing real-world examples of constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
+OptaPlanner 8 users can continue using score DRL because we will maintain score DRL support for the lifetime of OptaPlanner 8.
+However, if you use score DRL, start planning your migration from score DRL to some other scoring mechanism, preferably CS.
+Migration to CS is simple. Review the real-world examples of constraints found in https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples].
 
 === Benefits of Constraint Streams
 
 CS is a modern full-featured API for writing OptaPlanner constraints, offering several benefits over score DRL:
 
-* Developers do not need to learn any new language, CS is plain Java.
-* Full IDE support incl. syntax highlighting and refactoring.
-* Comprehensive support for unit testing.
+* Developers do not need to learn any new language. CS is plain Java.
+* CS provides full IDE support including syntax highlighting and refactoring.
+* CS provides comprehensive support for unit testing.
 * In most use cases, CS performs considerably faster than score DRL.
 
 === Limits of this guide
 
 CS and DRL are very similar in their approach and in fact both use Drools to execute the constraint logic.
 Because of this, migrating many parts of score DRL to CS is straight-forward, even mechanical.
-However, this guide does not help you if your score DRL uses the following constructs, as there is no direct mapping between DRL and CS in that case:
+However, this guide does not help you if your score DRL uses the following constructs, because there is no direct mapping between DRL and CS in these cases:
 
-* DRL's `insertLogical()` allows information to be transferred between rules.
+* The DRL `insertLogical()`attribute allows information to be transferred between rules.
 This is not possible in CS, where each constraint is isolated and stands on its own.
-* DRL's right-hand side allows for arbitrary Java code execution that goes far beyond calculating the match weight.
+* The DRL right-hand side allows for arbitrary Java code execution that goes far beyond calculating the match weight.
 This anti-pattern is not possible in CS, where each constraint can only result in either a score reward or a penalty.
 
-If you are using any of these constructs, we recommend that you first refactor them out of your DRL and then check back with this migration guide.
+If you are using either of these constructs, we recommend that you first refactor them out of your DRL and then check back with this migration guide.
 
 == Create and configure a `ConstraintProvider` class
 
-In score DRL, all your constraints are typically written in a single text file like so:
+In score DRL, all your constraints are typically written in a single text file, for example:
 
 [source, drl]
 ----
@@ -61,7 +61,7 @@ end
 ...
 ----
 
-In this file, each rule represents 1 or more constraints.
+In this file, each rule represents one or more constraints.
 In CS, the DRL file is replaced by a standard Java source code:
 
 [source, java]
@@ -89,12 +89,12 @@ public class VehicleRoutingConstraintProvider implements ConstraintProvider {
 
 ----
 
-The method `defineConstraints(...)`,  a single method on the `ConstraintProvider`, lists all your constraints.
+The method `defineConstraints(...)`, a single method on the `ConstraintProvider`, lists all your constraints.
 Each constraint is then typically represented by a method.
 
 === Solver configuration
 
-Users of Quarkus and Spring most likely do not need to worry about solver configuration.
+Quarkus and Spring users most likely do not need to worry about solver configuration.
 Just remove the score DRL and create a `ConstraintProvider` implementation.
 
 In solver configuration XML however, score DRL is configured by pointing the solver to the DRL file:
@@ -133,7 +133,7 @@ Constraint Streams are selected by pointing the solver to an implementation of t
 
 == Migrating trivial constraints
 
-Many constraint follow a simple pattern of picking an entity and immediately penalizing it.
+Many constraints follow a simple pattern of picking an entity and immediately penalizing it.
 One such case can be found in the Vehicle Routing example:
 
 [source, drl]
@@ -146,7 +146,7 @@ rule "distanceToPreviousStandstill"
 end
 ----
 
-Here, each initialized `Customer` instance incurs a soft penalty equivalent to the value of its `distanceFromPreviousStandstill` field. Here's how the same is achieved in CS:
+Here, each initialized `Customer` instance incurs a soft penalty equivalent to the value of its `distanceFromPreviousStandstill` field. Here's how the same result is achieved in CS:
 
 [source, java]
 ----
@@ -161,60 +161,60 @@ Constraint distanceToPreviousStandstill(ConstraintFactory factory) {
 Note that:
 
 * `forEach(Customer.class)` serves the same purpose as `Customer(...)` in DRL.
-* There is no need to check if planning variable is initialized (`previousStandstill != null`), as `forEach(...)` does it automatically.
+* There is no need to check if a planning variable is initialized (`previousStandstill != null`), because `forEach(...)` does it automatically.
 If this behavior is not what you want, use `forEachIncludingNullVars(...)` instead.
-* Right-hand side of the rule (the part after `then`) is replaced by a call to `penalizeLong(...)`.
-The size of the penalty is now determined by constraint weight (`HardSoftLongScore.ONE_SOFT`)
+* The right-hand side of the rule (the part after `then`) is replaced by a call to `penalizeLong(...)`.
+The size of the penalty is now determined by the constraint weight (`HardSoftLongScore.ONE_SOFT`)
 and match weight (the call to a getter on `Customer`).
 
-The latter point is a key difference between DRL and CS.
+The match weight is a key difference between DRL and CS.
 In DRL, each rule adds a constraint match together with a total penalty.
 In CS, each constraint applies a reward or a penalty based on several factors:
 
-1. A penalty has a negative impact on the score, while a reward impacts the score positively.
-2. A constant constraint weight, such as `HardSoftScore.ONE_SOFT`, `HardMediumSoftScore.ONE_HARD` etc. Constraint weights can be either fixed or configurable, see below.
-3. A dynamic match weight applies to any individual match and is typically specified by a lambda (e.g. `customer \-> customer.getDistanceFromPreviousStandstill()`). If not specified, it defaults to `1`.
+* A penalty or reward. A penalty has a negative impact on the score, while a reward impacts the score positively.
+* A constant constraint weight, such as `HardSoftScore.ONE_SOFT`, `HardMediumSoftScore.ONE_HARD`. Constraint weights can be either fixed or configurable.
+* A dynamic match weight. This applies to any individual match and is typically specified by a lambda (for example `customer \-> customer.getDistanceFromPreviousStandstill()`). If not specified, it defaults to `1`.
 
-Impact of each constraint match is calculated using the following formula:
+The impact of each constraint match is calculated using the following formula:
 
 `(isReward ? 1 : -1) * (constraint weight) * (match weight)`
 
 === Applying rewards instead of penalties
 
-In the example above, score DRL applies a penalty by adding a negative constraint match like so:
+In the example above, score DRL applies a penalty by adding a negative constraint match, for example:
 
 `scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)`.
 
-CS makes this more explicit by using a keyword `penalize` instead of `add...`, while keeping the match weight positive:
+CS makes this more explicit by using the keyword `penalize` instead of `add...`, while keeping the match weight positive:
 
 `penalizeLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
-You can accomplish a positive impact if you replace `penalize` by `reward` without changing the match weight:
+You can accomplish a positive impact without changing the match weight if you replace `penalize` by `reward` :
 
 `rewardLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
 === Applying different penalty types
 
-In the example above, `distanceFromPreviousStandstill` is of type `long` and therefore DRL's
-`scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)` maps to CS's
+In the example above, `distanceFromPreviousStandstill` is of the type `long` and therefore the DRL
+`scoreHolder.addSoftConstraintMatch(kcontext, - $distanceFromPreviousStandstill)` maps to the CS
 `penalizeLong(..., ..., customer \-> customer.getDistanceFromPreviousStandstill())`.
 
-If the type were `int` instead, it would map to `penalize(...)` instead.
-Similarly, if the type were `BigDecimal`, it would map to `penalizeBigDecimal(...)`.
-No types other than `int`, `long` and `BigDecimal` are supported.
+If the type was `int`, it would map to `penalize(...)` instead.
+Similarly, if the type was `BigDecimal`, it would map to `penalizeBigDecimal(...)`.
+No types other than `int`, `long`, and `BigDecimal` are supported.
 
-The same applies to rewards, too.
+The same applies to rewards.
 
 === Applying configurable constraint weights
 
-In some cases, such as in the Conference Scheduling example, constraint weights are specified in a `@ConstraintConfiguration`-annotated class and not in score DRL.
-Score DRL expresses this like so:
+In some cases, such as in the Conference Scheduling example, constraint weights are specified in a `@ConstraintConfiguration` annotated class and not in the score DRL.
+The following example shows the score DRL:
 
 `scoreHolder.penalize(kcontext, $penalty);`
 
 In CS, this situation maps to `penalizeConfigurable(...)` and similarly for rewards.
 
-For more, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsPenaltiesRewards[penalties and rewards] in OptaPlanner documentation.
+For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsPenaltiesRewards[penalties and rewards] in the OptaPlanner documentation.
 
 == Migrating constraints with filters
 
@@ -248,11 +248,11 @@ Constraint distanceFromLastCustomerToDepot(ConstraintFactory factory) {
 }
 ----
 
-For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsFilter[filtering] section in OptaPlanner documentation.
+For more information, see the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsFilter[filtering] section in the OptaPlanner documentation.
 
 === Migrating `eval(...)`
 
-The `eval(...)` construct allows to execute an arbitrary piece of code that returns `boolean`. As such, it is functionally equivalent to CS`' `filter(...)` as described above.
+The `eval(...)` construct allows us to execute an arbitrary piece of code that returns `boolean`. As such, it is functionally equivalent to the CS `filter(...)` construct as described previously.
 
 == Migrating constraints with joins
 
@@ -270,7 +270,7 @@ end
 ----
 
 Here, we select a pair of different queens (second `Queen.id` greater than first `Queen.id`) which share the same row (second `Queen.rowIndex` equal to first `Queen.rowIndex`).
-Each such pair is then penalized by `1`.
+Each pair is then penalized by `1`.
 
 Here's how to do the same thing in CS, using a `join(...)` call with some `Joiners`:
 
@@ -285,8 +285,8 @@ Constraint horizontalConflict(ConstraintFactory factory) {
 }
 ----
 
-`Joiners.greaterThan(Queen::getId)` is a Java way of expressing DRL's `queen.id > $id`.
-Similarly, `Joiners.equal(Queen::getRowIndex)` represents DRL's `queen.rowIndex == $i`.
+The `Joiners.greaterThan(Queen::getId)` statement is a way of expressing the DRL `queen.id > $id` statement in Java.
+Similarly, `Joiners.equal(Queen::getRowIndex)` represents the DRL `queen.rowIndex == $i` statement.
 
 However, in this case, we can go further and use some CS syntactic sugar:
 
@@ -301,11 +301,11 @@ Constraint horizontalConflict(ConstraintFactory factory) {
 
 Using `forEachUniquePair(Queen.class)`, the `greaterThan(...)` joiner is inserted automatically and we only need to match the row indexes.
 
-For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsJoin[joining] in OptaPlanner documentation.
+For more information, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsJoin[joining] in the OptaPlanner documentation.
 
 === Applying filters while joining
 
-In certain cases, you may need to apply a filter while joining, such as in the case of the Conference Scheduling example:
+In certain cases, you might need to apply a filter while joining, such as in the case of the Conference Scheduling example:
 
 [source, drl]
 ----
@@ -322,7 +322,7 @@ end
 ----
 
 Note that the second `Talk` is only selected if its `prerequisiteTalkSet` contains the first `Talk`.
-Since there is no CS joiner for this specific operation yet, we need to use a generic filtering joiner like so:
+Because there is no CS joiner for this specific operation yet, we need to use a generic filtering joiner:
 
 [source, java]
 ----
@@ -339,12 +339,12 @@ Constraint talkPrerequisiteTalks(ConstraintFactory factory) {
 
 === Migrating large joins
 
-CS only supports up to 3 joins natively.
-If you need 4 or more joins, refer to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsMappingTuples[mapping tuples] in OptaPlanner documentation.
+CS only supports up to three joins natively.
+If you need four or more joins, refer to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsMappingTuples[mapping tuples] in the OptaPlanner documentation.
 
 == Migrating `exists` and `not`
 
-DRL's `exists` can be converted to CS much like the join above.
+The DRL `exists` keyword can be converted to CS much like the join above.
 Consider this rule from the Cloud Balancing example:
 
 [source, drl]
@@ -375,7 +375,7 @@ Constraint computerCost(ConstraintFactory constraintFactory) {
 
 Notice how the `ifExists(...)` call uses the `Joiners` class to define the relationship between `CloudProcess` and `CloudComputer`.
 
-For the use of DRL's `not` keyword, consider this rule from the TSP example:
+For the use of the DRL  `not` keyword, consider this rule from the Traveling Sales Person (TSP) example:
 
 [source, drl]
 ----
@@ -405,11 +405,11 @@ Constraint distanceFromLastVisitToDomicile(ConstraintFactory constraintFactory) 
 }
 ----
 
-For more information on `ifExists()` and `ifNotExists()`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsConditionalPropagation[conditional propagation] in OptaPlanner documentation.
+For more information on `ifExists()` and `ifNotExists()`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsConditionalPropagation[conditional propagation] in the OptaPlanner documentation.
 
 == Migrating `accumulate`
 
-CS does not have a concept that maps mechanically to DRL's `accumulate`.
+CS does not have a concept that maps mechanically to the DRL `accumulate` keyword.
 However, it does have a very powerful `groupBy(...)` concept.
 To understand the differences between the two, consider the following rule taken from the Cloud Balancing example:
 
@@ -451,9 +451,9 @@ Constraint requiredCpuPowerTotal(ConstraintFactory constraintFactory) {
 First, we select all `CloudProcess` instances (`forEach(CloudProcess.class)`).
 Then we apply `groupBy` in two steps:
 
-* We split the processes into buckets ("groups") by their computer (`CloudProcess::getComputer`).
+. We split the processes into buckets ("groups") by their computer (`CloudProcess::getComputer`).
 If two or more processes have the same computer, they belong to the same group.
-* For each such group, we apply a `ConstraintCollectors.sum(...)` to get a sum total of power required by all processes in such group.
+. For each such group, we apply a `ConstraintCollectors.sum(...)` to get a sum total of power required by all processes in such group.
 
 The result of that operation is a pair ("tuple") of facts: a `CloudComputer` and an `int` representing the sum total of power required by all processes running on that computer.
 We then take all such tuples and `filter(...)` out all those where the sum total is `\<=` that computer's available power.
@@ -462,10 +462,9 @@ Finally, we penalize the positive difference between the required power and the 
 As you can see, `groupBy(...)` accomplishes the same result, but goes about it differently.
 This is why mapping DRL `accumulate` to CS `groupBy`, while always possible, is not necessarily straight-forward or mechanical.
 
-For more information on `groupBy(...)`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsGroupingAndCollectors[grouping and collectors] in OptaPlanner documentation.
+For more information on `groupBy(...)`, see https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsGroupingAndCollectors[grouping and collectors] in the OptaPlanner documentation.
 
 == More resources
 
-In case the examples above prove insufficient, there is more.
-In the https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples package], every example has both a score DRL file and an equivalent `ConstraintProvider` implementation.
-Feel free to browse these examples, contrast respective DRL and CS implementations, and use the information to help with your own migration.
+In the  https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/examples-overview/examples-overview.html[OptaPlanner Examples package] section, every example has both a score DRL file and an equivalent `ConstraintProvider` implementation.
+Browse these examples, contrast respective DRL and CS implementations, and use the information to help with your own migration.
