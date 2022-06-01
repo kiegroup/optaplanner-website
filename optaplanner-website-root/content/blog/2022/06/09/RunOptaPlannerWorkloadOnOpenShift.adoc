@@ -42,7 +42,7 @@ To run the demo, just clone the https://github.com/kiegroup/optaplanner-quicksta
 
 === Scaling the School Timetabling
 
-If the demo is running and the School Timetabling pod solves datasets you throw at it, it's time to take it a bit further.
+Once you've got the demo running and the School Timetabling pod solves datasets you throw at it, it's time to take it a bit further.
 Remember, the main reason for deploying all the pieces to OpenShift was to be able to scale horizontally.
 
 To solve multiple datasets in parallel, we have to start more School Timetabling pods and increase the number
