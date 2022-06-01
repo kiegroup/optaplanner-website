@@ -38,7 +38,7 @@ runs the solver project; in this case, the School Timetabling.
 
 == Running the demo
 
-To run the demo, just clone the https://github.com/kiegroup/optaplanner-quickstarts[Optaplanner Quickstarts] and follow the https://github.com/kiegroup/optaplanner-quickstarts/blob/development/technology/kubernetes/README.adoc[README of the demo].
+To run the demo, just clone the https://github.com/kiegroup/optaplanner-quickstarts[Optaplanner Quickstarts] and follow the https://github.com/kiegroup/optaplanner-quickstarts/blob/development/technology/kubernetes/README.adoc[README].
 
 === Scaling the School Timetabling
 
