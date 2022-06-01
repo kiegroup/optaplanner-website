@@ -64,13 +64,3 @@ Both community and product use the same code base.
 
 To migrate from the community to product binaries, simply add the customer maven repository
 and adjust the version numbers to include the `-redhat` suffix.
-
-== Contact us
-
-++++
-<p>
-  For more information, mail
-  <a class="servicesMailAddress">optaplanner-info</a>
-  or <a href="https://www.redhat.com/en/about/contact/sales">call us</a>.
-</p>
-++++
