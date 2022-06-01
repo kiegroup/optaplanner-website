@@ -27,7 +27,7 @@ and solves it. After that, it stores the solution back to the database and sends
 topic to let the Demo App know the solution is ready for taking.
 
 On the face of it, the PostgreSQL makes the architecture more complex, as the Demo App could have sent the dataset directly in a Kafka message.
-However, Kafka has been designed to process huge amount of small messages, which is not exactly our case.
+However, Kafka has been designed to process huge amounts of small messages, which is not exactly our case.
 The datasets, although not coming in millions, might be possible huge, requiring some sort of storage to be paired up with the Kafka messages.
 
 === Solver Operator
