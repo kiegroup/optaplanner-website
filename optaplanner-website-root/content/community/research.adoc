@@ -31,4 +31,8 @@ To reference OptaPlanner or the user manual, please use this BibTeX reference:
 ** Publication: https://patatconference.org/patat2020/proceedings/[Proceedings of the 13th International Conference on the Practice and Theory of Automated Timetabling - PATAT 2021: Volume I]
 ** ISBN: 978-0-9929984-3-1
 
+* https://ieeexplore.ieee.org/document/9613695[*Layout planning in assembly line kitting - a constraint programming approach*] by Christoffer Fink et al. (2021)
+** Publication: https://ieeexplore.ieee.org/xpl/conhome/9613137/proceeding[2021 26th IEEE International Conference on Emerging Technologies and Factory Automation (ETFA)]
+** ISBN: 978-1-7281-2989-1
+
 If your paper relates to OptaPlanner, link:../community/team.html[let us know] and we'll add it here.
