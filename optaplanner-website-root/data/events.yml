@@ -21,6 +21,7 @@
   date: 2022-06-23
   talks:
     - title: "On schedule: Artificial Intelligence plans that meet expectations"
+      url: https://devoxx.pl/talk-details/?id=8008
       presenters: Anna Dupliak, Geoffrey De Smet
 
 - eventId: 20220614-quarkusbenelux
