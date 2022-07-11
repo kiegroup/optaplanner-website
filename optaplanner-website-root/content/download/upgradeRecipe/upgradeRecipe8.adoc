@@ -1762,3 +1762,12 @@ After in `*ConstraintProvider.java*`:
 
 `SolverManager.addProblemChange()` and `SolverJob.addProblemChange()` return type has changed from `void`
 to `CompletableFuture<Void>`, which might break already compiled code depending on these methods.
+
+== From 8.22.0.Final to 8.23.0.Final
+
+[.upgrade-recipe-major]
+=== Score DRL deprecated in favor of Constraint Streams
+
+Support for Score DRL has been deprecated and users are encouraged to migrate to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] at their earliest convenience.
+To help with migration, here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
+Score DRL is not going away in OptaPlanner 8.
