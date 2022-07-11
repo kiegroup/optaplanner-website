@@ -20,6 +20,14 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner 8_ available and fully supported
 in the latest release of Red Hat Decision Manager 7.
 
+== New and noteworthy: Engine 8.23.0.Final
+
+=== Score DRL deprecated in favor of Constraint Streams
+
+Support for Score DRL has been deprecated and users are encouraged to migrate to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] at their earliest convenience.
+To help with migration, here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
+Score DRL is not going away in OptaPlanner 8.
+
 == New and noteworthy: Engine 8.20.0.Final
 
 === `SolverManager.addProblemChange()` now returns `CompletableFuture<Void>`
