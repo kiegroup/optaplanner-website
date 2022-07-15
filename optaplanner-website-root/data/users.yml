@@ -12,6 +12,7 @@
 #  githubUsername: (optional)
 #  email: It's best to anti-spam this (optional)
 #  employedBy: (optional)
+#  employedByUrl: (optional)
 #  contributionsDescription: only work related to this project (optional)
 #  biography: (optional)
 
@@ -24,6 +25,7 @@
   githubUsername: ge0ffrey
   email: gds.geoffrey.de.smet AT gmail.com
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
   biography: Geoffrey created OptaPlanner in 2006 and has been working for Red Hat since 2010.
 
 - userId: triceo
@@ -32,6 +34,7 @@
   gravatarHashId: c950743f532471ac34022e92193563c3
   githubUsername: triceo
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: snurkabill
   fullName: Jiří Vahala
@@ -45,6 +48,7 @@
   gravatarHashId: c4e5f1a35064cb21de3b3e4bf5bd7ae8
   githubUsername: yurloc
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: rsynek
   fullName: Radovan Synek
@@ -52,6 +56,7 @@
   gravatarHashId: f1b0cd1c06b5697dbc91f02ea00f3090
   githubUsername: rsynek
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: dupliaka
   fullName: Anna Dupliak
@@ -59,6 +64,7 @@
   gravatarHashId: 54cd5de3bdaf21a942e8d9d5fe95f647
   twitterUsername: dupliaka
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: michaltomco
   fullName: Michal Tomčo
@@ -72,8 +78,8 @@
   gravatarHashId: 6d3eaffeaf61a8f3ea86c2d0b701bc2d
   twitterUsername: DuncanDoyle
   githubUsername: DuncanDoyle
-  email: ddoyle AT redhat.com
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: kmacedovarela
   fullName: Karina Varela
@@ -83,6 +89,7 @@
   githubUsername: kmacedovarela
   linkedInId: kmacedovarela
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: LightGuard
   fullName: Jason Porter
@@ -90,7 +97,6 @@
   gravatarHashId: c0bc6989fc3d0c0c3f90353128b7ab2c
   twitterUsername: lightguardjp
   githubUsername: LightGuard
-  employedBy: Red Hat
 
 - userId: ibek
   fullName: Ivo Bek
@@ -112,7 +118,6 @@
   gravatarHashId: 8eb1897dda40d25fd65697872e4a8480
   twitterUsername: fhornain
   githubUsername: fhornain
-  employedBy: Red Hat
   contributionsDescription: Example improvements (code and images)
 
 - userId: mcimbora
@@ -137,6 +142,7 @@
   twitterUsername: markproctor
   githubUsername: mdproctor
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: etirelli
   fullName: Edson Tirelli
@@ -144,7 +150,6 @@
   gravatarHashId: 1b7f091584d6362942215fa51d5913ba
   twitterUsername: edsontirelli
   githubUsername: etirelli
-  employedBy: Red Hat
 
 - userId: mariofusco
   fullName: Mario Fusco
@@ -152,6 +157,7 @@
   gravatarHashId: 9eafc29df96e6aaf4a3eb4c0209086ae
   twitterUsername: mariofusco
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
   githubUsername: mariofusco
 
 - userId: mbiarnes
@@ -159,6 +165,7 @@
   role: Release engineer
   gravatarHashId: b259671a57bb987c00a2e1ba37ff05c5
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
   githubUsername: mbiarnes
 
 - userId: mareknovotny
@@ -166,6 +173,7 @@
   role: Manager
   gravatarHashId: 68b0bb549bdafc79b3b2b9e9768e8a40
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
   githubUsername: mareknovotny
 
 - userId: gsheldon
@@ -180,6 +188,7 @@
   gravatarHashId: df02e4b2e357e04e322e6b66bb24d795
   githubUsername: rbourner
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: tdavid
   fullName: Tomáš David
@@ -194,7 +203,6 @@
   gravatarHashId: 279246bd111a7c211134179eddb94afa
   twitterUsername: bibryam
   githubUsername: bibryam
-  employedBy: Red Hat
   contributionsDescription: Camel-optaplanner improvements
 
 - userId: psiroky
@@ -229,6 +237,7 @@
   gravatarHashId: 16f228a9f340e2a2ca5b42485a17bc3d
   githubUsername: Christopher-Chianelli
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: MusaTalluzi
   fullName: Musa Talluzi
@@ -242,6 +251,7 @@
   role: Senior Software Engineer
   gravatarHashId: 4a8c787544c0b40bc033f631dc2256c2
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
   githubUsername: wmedvede
 
 - userId: jucui
@@ -255,14 +265,12 @@
   role: Contributor
   gravatarHashId: 25cf632d99aec21bfcc60cebbdaa37b5
   githubUsername: jgoldsmith613
-  employedBy: Red Hat
 
 - userId: sudheerchekka
   fullName: Sudheer Chekka
   role: Contributor
   gravatarHashId: 897f2ff7d7a84cb3769d27a9889520c9
   githubUsername: sudheerchekka
-  employedBy: Red Hat
 
 - userId: FredPraca
   fullName: Frédéric Praca
@@ -277,13 +285,13 @@
   role: Product Manager
   gravatarHashId: 24a9f0af90dbc9d2e8d2eaf28505de24
   twitterUsername: philsimpson365
-  employedBy: Red Hat
 
 - userId: emmurphy1
   fullName: Emily Murphy
   role: Principal Technical Writer
   gravatarHashId: d2ad388269e6c48845da82f59da31e34
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: emingora
   fullName: Enrique Mingorance Cano
@@ -293,6 +301,7 @@
   githubUsername: ginxo
   email: emingora AT redhat.com
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: danielezonca
   fullName: Daniele Zonca
@@ -322,6 +331,7 @@
   githubUsername: radtriste
   email: tradisso AT redhat.com
   employedBy: Red Hat
+  employedByUrl: https://www.redhat.com
 
 - userId: taiuti
   fullName: Marco Taiuti

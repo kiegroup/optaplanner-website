@@ -203,11 +203,11 @@
                     <#if long>
                         <#if user.email??>
                             <p class="mb-1">
-                                <span class="emailSupportPopover"><strong>Email:</strong> ${user.email}</span>
+                                <span><strong>Email:</strong> ${user.email}</span>
                             </p>
                         </#if>
                         <#if user.employedBy??>
-                            <p class="mb-1"><strong>Employed by:</strong> ${user.employedBy}</p>
+                            <p class="mb-1"><strong>Employed by:</strong> <#if user.employedByUrl??><a href="${user.employedByUrl}">${user.employedBy}</a><#else>${user.employedBy}</#if></p>
                         </#if>
                         <#if user.contributionsDescription??>
                             <p class="mb-1"><strong>Contributions:</strong> ${user.contributionsDescription}</p>
