@@ -1,7 +1,7 @@
 <footer class="py-4 bg-black text-white-50">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <p class="small">OptaPlanner is open.
                     All dependencies of this project are available under the
                     <a class="link-light" href="${content.rootpath}code/license.html">Apache Software License 2.0</a>
@@ -13,7 +13,7 @@
                     was built with <a class="link-light" href="https://jbake.org">JBake</a> and is open source.
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <h4>Community</h4>
                 <ul class="ps-2 list-unstyled">
                     <li><a class="link-light" href="${content.rootpath}blog/">Blog</a></li>
@@ -23,7 +23,7 @@
                     <li><a class="link-light" href="${content.rootpath}community/research.html">Academic research</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <h4>Code</h4>
                 <ul class="ps-2 list-unstyled">
                     <li><a class="link-light" href="${content.rootpath}code/sourceCode.html">Build from source</a></li>
@@ -31,15 +31,6 @@
                     <li><a class="link-light" href="${content.rootpath}download/releaseNotes/">Release notes</a></li>
                     <li><a class="link-light" href="${content.rootpath}download/upgradeRecipe/">Upgrade recipes</a></li>
                     <li><a class="link-light" href="${content.rootpath}community/branding.html">Logo and branding</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h4>KIE projects</h4>
-                <ul class="ps-2 list-unstyled">
-                    <li><a class="link-light" href="https://www.drools.org/" target="_blank">Drools rule engine</a></li>
-                    <li><a class="link-light" href="https://www.optaplanner.org/" target="_blank">OptaPlanner constraint solver</a></li>
-                    <li><a class="link-light" href="https://www.jbpm.org/" target="_blank">jBPM workflow engine</a></li>
-                    <li><a class="link-light" href="https://kogito.kie.org/" target="_blank">Kogito Business Automation platform</a></li>
                 </ul>
             </div>
         </div>

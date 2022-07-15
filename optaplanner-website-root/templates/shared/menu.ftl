@@ -29,17 +29,6 @@
                 <li class="nav-item"><a class="nav-link" href="${content.rootpath}code/sourceCode.html">Source</a></li>
                 <li class="nav-item"><a class="nav-link" href="${content.rootpath}community/team.html">Team</a></li>
                 <li class="nav-item"><a class="nav-link" href="${content.rootpath}product/services.html">Services</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarKIE" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        KIE
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarKIE">
-                        <li><a class="dropdown-item" href="https://www.drools.org/" target="_blank">Drools</a></li>
-                        <li><a class="dropdown-item" href="https://www.optaplanner.org/" target="_blank">OptaPlanner</a></li>
-                        <li><a class="dropdown-item" href="https://www.jbpm.org/" target="_blank">jBPM</a></li>
-                        <li><a class="dropdown-item" href="https://kogito.kie.org/" target="_blank">Kogito</a></li>
-                    </ul>
-                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="p-2"><a aria-label="Star OptaPlanner on GitHub" class="github-button" data-show-count="true" href="https://github.com/kiegroup/optaplanner">Star</a></li>
