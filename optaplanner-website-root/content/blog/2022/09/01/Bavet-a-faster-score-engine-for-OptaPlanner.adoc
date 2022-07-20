@@ -1,0 +1,265 @@
+= Bavet - A faster score engine for OptaPlanner
+ge0ffrey
+2022-09-01
+:page-interpolate: true
+:jbake-type: post
+:jbake-tags: performance, benchmark, constraint streams
+:jbake-social_media_share_image: ggg.png
+
+Drools is an extremely fast _rule engine_.
+Under the hood, OptaPlanner has used Drools as a _score engine_ for ages.
+Today, we're announcing *a faster, lightweight alternative*: Bavet.
+
+Bavet is a single-purpose, incremental score calculation engine
+that directly implements the https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[ConstraintStreams API].
+Bavet is a module in OptaPlanner.
+It is _feature complete_ as of OptaPlanner `8.27.0.Final`.
+You can switch from Drools to Bavet in a single line of code.
+
+Twice as fast. Zero API changes.
+
+== Faster
+
+For 20 diverse use cases, we compared Bavet and Drools.
+We ran JMH benchmarks
+on OpenJDK 17 (`ParallelGC`, `Xmx1G`)
+on a stable benchmark machine (`Intel® Xeon® Silver (12 cores total / 24 threads)` and `128 GiB` RAM memory)
+without any other computational demanding processes running.
+
+On average, *Bavet is twice as fast as Drools*.
+For the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem],
+Bavet is even three times as fast as Drools:
+
+// TODO Update table, put Drools first, percentage -= 100, switch rows/columns?
+
+// TODO Graph!
+
+.Score calculation speed on different use cases
+|===
+|Use case |Bavet |Drools |Speed up +100%
+|cheaptime >|18,270 >|7,949 >|230%
+|cloudbalancing >|822,613 >|245,069 >|336%
+|coachShuttleGathering >|134,522 >|47,455 >|283%
+|conferenceScheduling >|1,566 >|1,534 >|102%
+|curriculumCourse >|56,685 >|54,021 >|105%
+|examination >|28,260 >|20,130 >|140%
+|flightCrewScheduling >|186,906 >|163,184 >|115%
+|investment >|606,111 >|127,119 >|477%
+|machineReassignment >|28,678 >|21,204 >|135%
+|meetingscheduling >|3,034 >|4,181 >|73%
+|nQueens >|419,201 >|309,581 >|135%
+|nurserostering >|33,123 >|17,460 >|190%
+|pas >|59,049 >|79,651 >|74%
+|projectjobscheduling >|128,209 >|41,125 >|312%
+|rockTour >|282,508 >|62,018 >|456%
+|taskAssigning >|31,814 >|15,733 >|202%
+|tennis >|407,459 >|168,607 >|242%
+|travelingtournament >|118,370 >|72,143 >|164%
+|tsp >|435,091 >|284,803 >|153%
+|vehicleRouting >|38,686 >|12,565 >|308%
+|*Average* >|192,008 >|87,777 >|205%
+|===
+
+// TODO When Bavet dominates remove "almost"
+Bavet almost _dominates_ Drools.
+This means it's faster on almost every single use case.
+Of course, your mileage may vary.
+Turn on Bavet and https://groups.google.com/g/optaplanner-dev[let us know] if it's not faster in your use case.
+
+Meanwhile, Drools is still improving too.
+On the other hand, we have some ideas for a nextgen score calculation engine
+that uses https://github.com/quarkusio/gizmo[Gizmo]
+to generate domain specific Bavet-like nodes.
+This performance race is far from over.
+
+== Scaling
+
+Does Bavet scale well?
+
+On commodity hardware, we ran a 5 minutes VRP benchmark on different dataset sizes,
+to compare how Drools and Bavet scale up:
+
+// TODO redo this benchmark on the benchmark machine
+
+// TODO Graph!
+
+.Score calculation speed on different dataset sizes of VRP
+|===
+|Dataset |Drools |Bavet |Speed up
+|belgium-n50-k10 >|66,585/s >|264,609/s >|+297.40%
+|belgium-n100-k10 >|50,636/s >|205,620/s >|+306.07%
+|belgium-n500-k20 >|31,431/s >|123,974/s >|+294.43%
+|belgium-n1000-k20 >|20,007/s >|75,556/s >|+277.65%
+|belgium-n2750-k55 >|27,072/s >|81,995/s >|+202.88%
+|*Average* >|39,146/s >|150,350/s >|+284.08%
+|===
+
+Same story, but the performance gap does close as the scale goes up.
+
+== Memory
+
+What about memory? In our non-scientific observations (JFR etc),
+Bavet seems to use less memory than Drools for most use cases.
+
+// TODO JFR allocations count of a 5 minute run for VRP
+
+== Not a rule engine
+
+*Bavet is _not_ a rule engine.*
+It deliberately doesn't support _inference_, nor Complex Event Processing (CEP),
+nor other common business rule engine features:
+
+image:ruleEngineScoreEngineScope.png[Rule Engine versus Score Engine scope]
+
+OptaPlanner only requires a score engine. Its Drools implementation only uses a small subset of Drools's features.
+Bavet on the on the hand, is a score engine tailored to OptaPlanner. It's part of OptaPlanner.
+It has no use outside of OptaPlanner.
+
+For incremental score calculation, Bavet borrows techniques from https://en.wikipedia.org/wiki/Rete_algorithm[the RETE algorithm]
+and Drools's Phreak algorithm.
+For example, the https://github.com/kiegroup/optaplanner/blob/main/core/optaplanner-constraint-streams-bavet/src/main/java/org/optaplanner/constraint/streams/bavet/common/AbstractJoinNode.java[JoinNode in Bavet]
+contains `insert()`, `update()` and `retract()`  methods.
+But below the surface, it's a very different implementation.
+Compare it with the method signatures of similar methods in the https://github.com/kiegroup/drools/blob/main/drools-core/src/main/java/org/drools/core/phreak/PhreakJoinNode.java[JoinNode in Drools].
+
+== History and naming
+
+I created Bavet as a https://github.com/ge0ffrey/bavet-experiment[POC] in 2019
+and added it into OptaPlanner as an experimental, fast, incomplete feature.
+There it sat frozen. For 3 years.
+Until recently, when Lukáš Petrovický and me completed all missing features
+and refactored it to the performance sensation is today.
+
+Naming wise, _bavet_ is a Flemish (Dutch) slang word for a _bib_.
+Very useful if your baby is drooling.
+I came up with that name when we were eating with our kids at a spaghetti restaurant called Bavet,
+while facing this mural:
+
+image:bavetEinsteinMural.png[Bavet mural]
+
+Ok, maybe I didn't put much effort into that.
+
+But it's doesn't really need a good name.
+It's just one of OptaPlanner's score calculation options.
+An implementation detail, really.
+
+== Stability
+
+We believe Bavet is stable.
+We successfully run our 48+ hours stress tests on Bavet regularly.
+These stress tests stomp out score corruption by solving a lot of datasets across many use cases.
+
+== Try it out
+
+
+
+=== Plain Java
+
+Switch to Bavet in either your `*.java` file:
+
+[source, java]
+----
+SolverFactory<TimeTable> solverFactory = SolverFactory.create(new SolverConfig()
+        ...
+        .withConstraintStreamImplType(ConstraintStreamImplType.BAVET)
+        ...);
+----
+
+or in your `solverConfig.xml`:
+
+[source, xml]
+----
+  <scoreDirectorFactory>
+    ...
+    <constraintStreamImplType>BAVET</constraintStreamImplType>
+  </scoreDirectorFactory>
+----
+
+=== Quarkus
+
+Switch to Bavet in `src/main/resources/application.properties`:
+
+[source, java]
+----
+quarkus.optaplanner.solver.constraintStreamImplType=BAVET
+----
+
+=== Spring
+
+Switch to Bavet in `src/main/resources/application.properties`:
+
+[source, java]
+----
+optaplanner.solver.constraintStreamImplType=BAVET
+----
+
+== More lightweight
+
+Furthermore, by using Bavet,
+you can even slim down OptaPlanner's classpath,
+by excluding the Drools dependencies:
+
+[source, xml]
+----
+    <dependency>
+      <groupId>org.optaplanner</groupId>
+      <artifactId>optaplanner-core</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.optaplanner</groupId>
+          <artifactId>optaplanner-constraint-drl</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.optaplanner</groupId>
+          <artifactId>optaplanner-constraint-streams-drools</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+----
+
+This reduces optaplanner-core from 42 to 17 transitive dependencies (59% less).
+Specifically, these jars will be removed from your classpath:
+
+[source]
+----
+\- org.optaplanner:optaplanner-constraint-streams-drools:...
+   +- org.drools:drools-engine:...
+   |  +- org.kie:kie-api:...
+   |  +- org.kie:kie-internal:...
+   |  +- org.drools:drools-core:...
+   |  |  +- org.kie:kie-util-xml:...
+   |  |  +- org.drools:drools-wiring-api:...
+   |  |  +- org.drools:drools-wiring-static:...
+   |  |  +- org.drools:drools-util:...
+   |  |  \- commons-codec:commons-codec:...
+   |  +- org.drools:drools-wiring-dynamic:...
+   |  +- org.drools:drools-kiesession:...
+   |  +- org.drools:drools-tms:...
+   |  +- org.drools:drools-compiler:...
+   |  |  +- org.drools:drools-drl-parser:...
+   |  |  +- org.drools:drools-drl-extensions:...
+   |  |  +- org.drools:drools-drl-ast:...
+   |  |  +- org.kie:kie-memory-compiler:...
+   |  |  +- org.drools:drools-ecj:...
+   |  |  +- org.kie:kie-util-maven-support:...
+   |  |  \- org.antlr:antlr-runtime:...
+   |  +- org.drools:drools-model-compiler:...
+   |  |  \- org.drools:drools-canonical-model:...
+   |  \- org.drools:drools-model-codegen:...
+   |     +- org.drools:drools-codegen-common:...
+   |     +- com.github.javaparser:javaparser-core:...
+   |     +- org.drools:drools-mvel-parser:...
+   |     \- org.drools:drools-mvel-compiler:...
+   \- org.drools:drools-alphanetwork-compiler:...
+----
+
+Bavet (`optaplanner-constraint-streams-bavet`) has no transitive dependencies
+(except for `optaplanner-constraint-streams-common`).
+
+== We need your help
+
+// TODO create a bavet specific optaplanner-dev thread "Bavet - how does it change your score calculation speed?"
+
+Try out Bavet and https://groups.google.com/g/optaplanner-dev[let us know]
+what your _score calculation speed_ before and after the change.
+Look for the score calculation speed in the `INFO` log: it's part of the `Solving ended` message.
