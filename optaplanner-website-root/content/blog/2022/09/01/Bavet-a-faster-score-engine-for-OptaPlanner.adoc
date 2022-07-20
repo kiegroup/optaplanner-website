@@ -4,7 +4,7 @@ ge0ffrey
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: performance, benchmark, constraint streams
-:jbake-social_media_share_image: ggg.png
+:jbake-social_media_share_image: ruleEngineScoreEngineScope.png
 
 Drools is an extremely fast _rule engine_.
 Under the hood, OptaPlanner has used Drools as a _score engine_ for ages.
