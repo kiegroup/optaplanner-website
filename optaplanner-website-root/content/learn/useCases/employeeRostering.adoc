@@ -4,12 +4,9 @@
 :jbake-priority: 1.0
 :jbake-related_tag: employee rostering
 :jbake-featured_youtube_id: 3CvadujUN1k
-:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaweb-employee-rostering#readme
+:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/employee-scheduling#readme
 
 image:employeeRosteringValueProposition.png[Employee rostering value proposition]
-
-**https://github.com/kiegroup/optaweb-employee-rostering[Fork our Employee Rostering application]
-and customize that template to your needs.**
 
 == What is OptaPlanner?
 
