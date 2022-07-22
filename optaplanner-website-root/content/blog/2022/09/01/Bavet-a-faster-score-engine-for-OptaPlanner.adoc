@@ -145,13 +145,17 @@ An implementation detail, really.
 
 == Stability
 
-We believe Bavet is stable.
+We believe Bavet is very stable.
 We successfully run our 48+ hours stress tests on Bavet regularly.
 These stress tests stomp out score corruption by solving a lot of datasets across many use cases.
 
 == Try it out
 
+First upgrade to OptaPlanner `8.27.0.Final` or later, if you haven't already.
+If you're using the old `scoreDRL` approach which is deprecated, https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[migrate from scoreDRL to constraint streams] first.
 
+*By default, OptaPlanner still uses Drools for constraint streams.*
+To use Bavet instead, explicitly switch the `ConstraintStreamImplType` to `BAVET`:
 
 === Plain Java
 
@@ -218,7 +222,7 @@ by excluding the Drools dependencies:
 ----
 
 This reduces optaplanner-core from 42 to 17 transitive dependencies (59% less).
-Specifically, these jars will be removed from your classpath:
+Specifically, all these jars will be removed from your classpath:
 
 [source]
 ----
