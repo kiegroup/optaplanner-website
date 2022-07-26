@@ -46,7 +46,7 @@ without much boilerplate code.
 === Faster `Solver` creation
 
 `SolverFactory` newly caches some internal data structures, leading to much faster `Solver` creation times.
-You will benefit from this if you instantiate multiple `Solver`s in quick succession.
+This is beneficial if you instantiate multiple `Solver` instances in quick succession.
 
 == New and noteworthy: Engine 8.12.0.Final
 
