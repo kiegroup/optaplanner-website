@@ -31,7 +31,7 @@ CS and DRL are very similar in their approach and in fact both use Drools to exe
 Because of this, migrating many parts of score DRL to CS is straight-forward, even mechanical.
 However, this guide does not help you if your score DRL uses the following constructs, because there is no direct mapping between DRL and CS in these cases:
 
-* The DRL `insertLogical()`attribute allows information to be transferred between rules.
+* The DRL `insertLogical()` attribute allows information to be transferred between rules.
 This is not possible in CS, where each constraint is isolated and stands on its own.
 * The DRL right-hand side allows for arbitrary Java code execution that goes far beyond calculating the match weight.
 This anti-pattern is not possible in CS, where each constraint can only result in either a score reward or a penalty.
