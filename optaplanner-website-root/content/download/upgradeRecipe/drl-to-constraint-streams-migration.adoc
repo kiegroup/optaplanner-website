@@ -1,14 +1,15 @@
-= How to migrate OptaPlanner score DRL to Constraint Streams
+= Migrate from score DRL to Constraint Streams in OptaPlanner 8.x
 :jbake-type: normalBase
-:jbake-description: Upgrade your OptaPlanner scoreDRL constraints to the faster constraint streams constraints today.
+:jbake-description: Migrate your OptaPlanner scoreDRL constraints to the faster constraint streams constraints today.
 :jbake-priority: 0.4
 :showtitle:
 :toc:
 
 == Introduction
+
 For a couple of years now, the https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams API] (CS) has been fully featured and widely adopted.
 It can handle any use case written in score DRL. It's also faster and https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[easier to use].
-Therefore, the scoreDRL API is now deprecated.
+Therefore, *the scoreDRL API is deprecated*.
 
 === What does deprecating score DRL mean?
 
@@ -18,7 +19,8 @@ Migration to CS is simple. Review the real-world examples of constraints found i
 
 === Benefits of Constraint Streams
 
-CS is a modern full-featured API for writing OptaPlanner constraints, offering several benefits over score DRL:
+Constraint Streams (CS) is a modern full-featured API for writing OptaPlanner constraints,
+offering several benefits over score DRL:
 
 * Developers do not need to learn any new language. CS is plain Java.
 * CS provides full IDE support including syntax highlighting and refactoring.

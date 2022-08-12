@@ -6,7 +6,7 @@ triceo
 :jbake-tags: constraint, constraint streams, drl, deprecation
 
 TLDR: The time to switch from scoreDRL to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] is now.
-Here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
+Here's the https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[score DRL migration guide].
 Score DRL is not going away in OptaPlanner 8.
 
 == The rise of Constraint Streams
@@ -30,7 +30,7 @@ The next major version of OptaPlanner, however, will no longer support score DRL
 == How to migrate?
 
 We understand that constraints are a fundamental part of your application, and that refactoring them to Constraint Streams will take time.
-To make this job as easy as possible, we have prepared a https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[migration guide] which explains the most typical use cases and migration patterns.
+To make this job as easy as possible, we have prepared a https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[migration guide] which explains the most typical use cases and migration patterns.
 
 We believe that, while reading the guide, you will realize that the migration is fairly straight-forward in most cases.
 In return, you will get fast constraints written in Java that are ready for Quarkus and the cloud, with full IDE support and a https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html#constraintStreamsTesting[comprehensive testing framework].

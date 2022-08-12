@@ -1769,5 +1769,5 @@ to `CompletableFuture<Void>`, which might break already compiled code depending 
 === Score DRL deprecated in favor of Constraint Streams
 
 Support for Score DRL has been deprecated and users are encouraged to migrate to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] at their earliest convenience.
-To help with migration, here's the https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[score DRL migration guide].
+To help with migration, here's the link:drl-to-constraint-streams-migration.html[score DRL migration guide].
 Score DRL is not going away in OptaPlanner 8.
