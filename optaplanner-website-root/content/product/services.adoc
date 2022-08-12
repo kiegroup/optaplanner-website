@@ -18,7 +18,7 @@ To assist customers, Red Hat employs:
 
 == Product subscription
 
-Contact Red Hat for more information on product subscriptions that contains OptaPlanner.
+Contact Red Hat for more information on product subscriptions that contain OptaPlanner.
 
 == Community and product comparison
 
