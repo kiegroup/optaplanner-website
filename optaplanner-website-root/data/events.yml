@@ -14,6 +14,12 @@
 #
 # Order events by date descending
 
+- eventId: 20220825-communitycentral
+  eventOrganization: "Community Central"
+  eventUrl: https://primetime.bluejeans.com/a2m/live-event/grurbjbd
+  location: Online
+  date: 2022-08-25
+  
 - eventId: 20221010-devoxxbelgium
   eventOrganization: "Devoxx Belgium"
   eventUrl: https://devoxx.be
