@@ -16,9 +16,12 @@
 
 - eventId: 20220825-communitycentral
   eventOrganization: "Community Central"
-  eventUrl: https://primetime.bluejeans.com/a2m/live-event/grurbjbd
+  eventUrl: http://communitycentral.tv/
   location: Online
   date: 2022-08-25
+  talks:
+    - title: "Introduction to the OptaPlanner AI constraint solver"
+      presenters: Anna Dupliak
   
 - eventId: 20221010-devoxxbelgium
   eventOrganization: "Devoxx Belgium"
