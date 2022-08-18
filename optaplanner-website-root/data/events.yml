@@ -16,7 +16,7 @@
 
 - eventId: 20220825-communitycentral
   eventOrganization: "Community Central"
-  eventUrl: http://communitycentral.tv/
+  eventUrl: https://communitycentral.tv
   location: Online
   date: 2022-08-25
   talks:
