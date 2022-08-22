@@ -10,24 +10,24 @@ Drools is an extremely fast _rule engine_.
 Under the hood, OptaPlanner has used Drools as a _score engine_ for ages.
 Today, we're announcing *a faster, lightweight alternative*: Bavet.
 
-Bavet is a single-purpose, incremental score calculation engine
-that directly implements the https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[ConstraintStreams API].
-Bavet is a module in OptaPlanner.
-It is _feature complete_ as of OptaPlanner `8.27.0.Final`.
+Bavet is a feature of OptaPlanner. It is *not a rule engine*.
+It is a pure, single-purpose, incremental *score calculation implementation*
+of the https://www.optaplanner.org/blog/2020/04/07/ConstraintStreams.html[ConstraintStreams API].
+Bavet is _feature complete_ as of OptaPlanner `8.27.0.Final`.
 You can switch from Drools to Bavet in a single line of code.
 
-Twice as fast. Zero API changes.
+Twice as fast score calculation. Zero API changes.
 
 == Faster
 
-For 20 diverse use cases, we compared Bavet and Drools.
+For 20 diverse use cases, we compared Bavet and Drools for OptaPlanner score calculation.
 We ran JMH benchmarks
 on OpenJDK 17 (`ParallelGC`, `Xmx1G`)
 on a stable benchmark machine (`Intel® Xeon® Silver (12 cores total / 24 threads)` and `128 GiB` RAM memory)
 without any other computational demanding processes running.
 
-On average, *Bavet is twice as fast as Drools*.
-For the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem],
+On average, *Bavet is twice as fast as Drools* for score calculation.
+In the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem],
 Bavet is even three times as fast as Drools:
 
 // TODO Update table, put Drools first, percentage -= 100, switch rows/columns?
@@ -60,16 +60,14 @@ Bavet is even three times as fast as Drools:
 |*Average* >|192,008 >|87,777 >|205%
 |===
 
-// TODO When Bavet dominates remove "almost"
-Bavet almost _dominates_ Drools.
-This means it's faster on almost every single use case.
+Bavet is faster than Drools for almost every use case.
 Of course, your mileage may vary.
-Turn on Bavet and https://groups.google.com/g/optaplanner-dev[let us know] if it's not faster in your use case.
+Turn on Bavet and if it's not faster in your use case, https://groups.google.com/g/optaplanner-dev[let us know].
 
-Meanwhile, Drools is still improving too.
-On the other hand, we have some ideas for a nextgen score calculation engine
+Drools and Bavet are both still improving.
+And we have some crazy ideas for a nextgen score calculation implementation
 that uses https://github.com/quarkusio/gizmo[Gizmo]
-to generate domain specific Bavet-like nodes.
+to generate domain-specific Bavet-like nodes.
 This performance race is far from over.
 
 == Scaling
@@ -111,9 +109,10 @@ nor other common business rule engine features:
 
 image:ruleEngineScoreEngineScope.png[Rule Engine versus Score Engine scope]
 
-OptaPlanner only requires a score engine. Its Drools implementation only uses a small subset of Drools's features.
-Bavet on the on the hand, is a score engine tailored to OptaPlanner. It's part of OptaPlanner.
-It has no use outside of OptaPlanner.
+OptaPlanner only requires a score engine.
+Its Drools implementation only uses a small subset of Drools's features.
+Bavet on the on the hand, is a score engine tailored to OptaPlanner.
+It's part of OptaPlanner. It has no use outside of OptaPlanner.
 
 For incremental score calculation, Bavet borrows techniques from https://en.wikipedia.org/wiki/Rete_algorithm[the RETE algorithm]
 and Drools's Phreak algorithm.
@@ -152,7 +151,7 @@ These stress tests stomp out score corruption by solving a lot of datasets acros
 == Try it out
 
 First upgrade to OptaPlanner `8.27.0.Final` or later, if you haven't already.
-If you're using the old `scoreDRL` approach which is deprecated, https://www.optaplanner.org/learn/drl-to-constraint-streams-migration.html[migrate from scoreDRL to constraint streams] first.
+If you're using the deprecated `scoreDRL` approach, https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[migrate from scoreDRL to constraint streams] first.
 
 *By default, OptaPlanner still uses Drools for constraint streams.*
 To use Bavet instead, explicitly switch the `ConstraintStreamImplType` to `BAVET`:
@@ -199,9 +198,8 @@ optaplanner.solver.constraintStreamImplType=BAVET
 
 == More lightweight
 
-Furthermore, by using Bavet,
-you can even slim down OptaPlanner's classpath,
-by excluding the Drools dependencies:
+By using Bavet, you can slim down OptaPlanner's classpath
+to exclude the Drools dependencies:
 
 [source, xml]
 ----
