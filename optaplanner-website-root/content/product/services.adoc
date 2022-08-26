@@ -6,28 +6,29 @@
 [.summaryParagraph]
 https://www.redhat.com[Red Hat] sponsors this Open Source project
 and employs its link:../community/team.html[core developers].
-Additionally, Red Hat offers enterprise support and consultancy for the enterprise version of this community project,
-as part of a Red Hat product subscription.
+Additionally, Red Hat will offer enterprise support and consultancy,
+as part of a Red Hat product https://www.redhat.com/en/products/application-foundations[Application Foundations].
 
 To assist customers, Red Hat employs:
 
 - Solution architects that can define the best architecture for your scope and demonstrate the product functioning;
-- Services team with consultants and architects to help deliver reliable production implementations with Red Hat PAM;
+- Services team with consultants and architects to help deliver reliable production implementations with Red Hat Application Foundations;
 - A 24/7 support team.
-- and of course the OptaPlanner team itself to implement missing features or fix bugs.
+- and of course OptaPlanner link:../community/team.html[core developers] to implement missing features or fix bugs.
 
 == Product subscription
 
-Contact Red Hat for more information on product subscriptions that contain OptaPlanner.
+Contact Red Hat for more information on the https://www.redhat.com/en/products/application-foundations[Application Foundations] product subscription
+that will add support for OptaPlanner.
 
 == Community and product comparison
 
-The community download delivers everything you would expect from an Open Source project,
-including all features. The product subscription fills the missing gaps for enterprise use.
-Both community and product use the same code base.
+The community download delivers everything you would expect from an Open Source project, including all features.
+The Application Foundations product subscription will fill the missing gaps for enterprise use.
+Both use the same code base.
 
 |===
-| |Community |Product subscription
+| |OptaPlanner community |Application Foundations
 
 |*Functionality* | |
 |All features |image:checkYes.png[Yes] Includes all enterprise features too |image:checkYes.png[Yes]

@@ -69,18 +69,18 @@ To build from source:
  ...
 ----
 
-. Build it with https://maven.apache.org/[Maven] (which uses https://jbake.org/[JBake] underneath)
+. Build it with https://maven.apache.org/[Maven] (which uses https://jbake.org/[JBake] and https://antora.org/[Antora] underneath)
 +
 ----
  $ cd optaplanner-website
- $ mvn clean generate-resources
+ $ mvn clean install
  ...
 ----
 
 . Show it in a browser:
 +
 ----
- $ firefox target/website/index.html
+ $ firefox optaplanner-website-assembly/target/website-complete/index.html
  ...
 ----
 
