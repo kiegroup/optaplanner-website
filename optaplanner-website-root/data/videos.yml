@@ -12,6 +12,16 @@
 #
 # Order videos by date descending
 
+- youtubeId: A-TyjsHJTNM
+  title: "Introduction to OptaPlanner AI constraint solver"
+  author: dupliaka
+  date: 2022-08-25
+
+- youtubeId: ZEOf_GCdFB8
+  title: "On schedule: Artificial Intelligence plans that meet expectations"
+  author: ge0ffrey
+  date: 2022-07-23
+
 - youtubeId: kFoaf696VpA
   title: "Host your OptaPlanner app on OpenShift (Kubernetes)"
   author: ge0ffrey
