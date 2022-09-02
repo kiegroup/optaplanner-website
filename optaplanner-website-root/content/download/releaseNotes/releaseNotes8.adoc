@@ -20,6 +20,16 @@ As usual, Red Hat offers link:../../product/services.html[enterprise support and
 with the _Red Hat build of OptaPlanner 8_ available and fully supported
 in the latest release of Red Hat Decision Manager 7.
 
+== New and noteworthy: Engine 8.27.0.Final
+
+=== Bavet is feature complete
+
+The alternative constraint streams implementation Bavet is feature complete.
+You can now use it as an alternative to Drools (which is still the default).
+
+Bavet will not be supported in Red Hat's support offering.
+Drools intends to catch up performance wise.
+
 == New and noteworthy: Engine 8.23.0.Final
 
 === Score DRL deprecated in favor of Constraint Streams
