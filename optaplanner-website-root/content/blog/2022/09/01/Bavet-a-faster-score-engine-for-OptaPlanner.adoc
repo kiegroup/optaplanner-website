@@ -96,13 +96,6 @@ to compare how Drools and Bavet scale up:
 
 Same story, but the performance gap does close as the scale goes up.
 
-== Memory
-
-What about memory? In our non-scientific observations (JFR etc),
-Bavet seems to use less memory than Drools for most use cases.
-
-// TODO JFR allocations count of a 5 minute run for VRP
-
 == Not a rule engine
 
 *Bavet is _not_ a rule engine.*
@@ -150,54 +143,6 @@ We believe Bavet is very stable.
 We successfully run our 48+ hours stress tests on Bavet regularly.
 These stress tests stomp out score corruption by solving a lot of datasets across many use cases.
 
-== Try it out
-
-First upgrade to OptaPlanner `8.27.0.Final` or later, if you haven't already.
-If you're using the deprecated `scoreDRL` approach, https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[migrate from scoreDRL to constraint streams] first.
-
-*By default, OptaPlanner still uses Drools for constraint streams.*
-To use Bavet instead, explicitly switch the `ConstraintStreamImplType` to `BAVET`:
-
-=== Plain Java
-
-Switch to Bavet in either your `*.java` file:
-
-[source, java]
-----
-SolverFactory<TimeTable> solverFactory = SolverFactory.create(new SolverConfig()
-        ...
-        .withConstraintStreamImplType(ConstraintStreamImplType.BAVET)
-        ...);
-----
-
-or in your `solverConfig.xml`:
-
-[source, xml]
-----
-  <scoreDirectorFactory>
-    ...
-    <constraintStreamImplType>BAVET</constraintStreamImplType>
-  </scoreDirectorFactory>
-----
-
-=== Quarkus
-
-Switch to Bavet in `src/main/resources/application.properties`:
-
-[source, java]
-----
-quarkus.optaplanner.solver.constraintStreamImplType=BAVET
-----
-
-=== Spring
-
-Switch to Bavet in `src/main/resources/application.properties`:
-
-[source, java]
-----
-optaplanner.solver.constraintStreamImplType=BAVET
-----
-
 == More lightweight
 
 In OpenShift and Kubernetes clouds, the size of pods matter.
@@ -207,7 +152,7 @@ to exclude the Drools dependencies.
 On the OptaPlanner https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world[hello-world quickstart],
 a maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
 
-// TODO graph
+image:bavetDistributionSize.png[Distribution size of jar-with-dependencies on OptaPlanner's hello-world]
 
 .Distribution size of jar-with-dependencies on OptaPlanner's hello-world
 [cols="2,>1,>1,4"]
@@ -279,10 +224,56 @@ Specifically, all these jars are removed from your classpath:
 Bavet (`optaplanner-constraint-streams-bavet`) has no transitive dependencies
 (except for `optaplanner-constraint-streams-common`).
 
-== We need your help
+== Try it out
 
-// TODO create a bavet specific optaplanner-dev thread "Bavet - how does it change your score calculation speed?"
+First upgrade to OptaPlanner `8.27.0.Final` or later, if you haven't already.
+If you're using the deprecated `scoreDRL` approach, https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[migrate from scoreDRL to constraint streams] first.
 
-Try out Bavet and https://groups.google.com/g/optaplanner-dev[let us know]
-what your _score calculation speed_ before and after the change.
+*By default, OptaPlanner still uses Drools for constraint streams.*
+To use Bavet instead, explicitly switch the `ConstraintStreamImplType` to `BAVET`:
+
+=== Plain Java
+
+Switch to Bavet in either your `*.java` file:
+
+[source, java]
+----
+SolverFactory<TimeTable> solverFactory = SolverFactory.create(new SolverConfig()
+        ...
+        .withConstraintStreamImplType(ConstraintStreamImplType.BAVET)
+        ...);
+----
+
+or in your `solverConfig.xml`:
+
+[source, xml]
+----
+  <scoreDirectorFactory>
+    ...
+    <constraintStreamImplType>BAVET</constraintStreamImplType>
+  </scoreDirectorFactory>
+----
+
+=== Quarkus
+
+Switch to Bavet in `src/main/resources/application.properties`:
+
+[source, java]
+----
+quarkus.optaplanner.solver.constraintStreamImplType=BAVET
+----
+
+=== Spring
+
+Switch to Bavet in `src/main/resources/application.properties`:
+
+[source, java]
+----
+optaplanner.solver.constraintStreamImplType=BAVET
+----
+
+== Share your results
+
+Help us out. Try Bavet and *https://groups.google.com/g/optaplanner-dev/c/BqwbHbBJbns[let us know here]
+how your _score calculation speed_ changes*.
 Look for the score calculation speed in the `INFO` log: it's part of the `Solving ended` message.
