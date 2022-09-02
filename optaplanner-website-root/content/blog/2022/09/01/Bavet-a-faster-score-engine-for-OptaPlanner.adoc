@@ -37,6 +37,7 @@ Bavet is even three times as fast as Drools:
 .Score calculation speed on different use cases
 |===
 |Use case |Bavet |Drools |Speed up +100%
+
 |cheaptime >|18,270 >|7,949 >|230%
 |cloudbalancing >|822,613 >|245,069 >|336%
 |coachShuttleGathering >|134,522 >|47,455 >|283%
@@ -84,6 +85,7 @@ to compare how Drools and Bavet scale up:
 .Score calculation speed on different dataset sizes of VRP
 |===
 |Dataset |Drools |Bavet |Speed up
+
 |belgium-n50-k10 >|66,585/s >|264,609/s >|+297.40%
 |belgium-n100-k10 >|50,636/s >|205,620/s >|+306.07%
 |belgium-n500-k20 >|31,431/s >|123,974/s >|+294.43%
@@ -198,8 +200,27 @@ optaplanner.solver.constraintStreamImplType=BAVET
 
 == More lightweight
 
+In OpenShift and Kubernetes clouds, the size of pods matter.
 By using Bavet, you can slim down OptaPlanner's classpath
-to exclude the Drools dependencies:
+to exclude the Drools dependencies.
+
+On the OptaPlanner https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world[hello-world quickstart],
+a maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
+
+// TODO graph
+
+.Distribution size of jar-with-dependencies on OptaPlanner's hello-world
+[cols="2,>1,>1,4"]
+|===
+|Core dependencies |Size |Reduction |Core exclusions
+
+|All (default) |17.5{nbsp}MB |0% |none
+|Drools CS only |17.1{nbsp}MB |-2% |`optaplanner-constraint-drl`, `optaplanner-constraint-streams-bavet`
+|Bavet CS only |7.0{nbsp}MB |-60% |`optaplanner-constraint-drl`, `optaplanner-constraint-streams-drools`
+|===
+
+By default, `optaplanner-core` includes both Drools and Bavet,
+so you have to explicitly exclude it in Maven or Gradle:
 
 [source, xml]
 ----
@@ -219,8 +240,8 @@ to exclude the Drools dependencies:
     </dependency>
 ----
 
-This reduces optaplanner-core from 42 to 17 transitive dependencies (59% less).
-Specifically, all these jars will be removed from your classpath:
+This reduces `optaplanner-core` from 42 to 17 transitive dependencies.
+Specifically, all these jars are removed from your classpath:
 
 [source]
 ----
