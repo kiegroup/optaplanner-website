@@ -277,3 +277,9 @@ optaplanner.solver.constraintStreamImplType=BAVET
 Help us out. Try Bavet and *https://groups.google.com/g/optaplanner-dev/c/BqwbHbBJbns[let us know here]
 how your _score calculation speed_ changes*.
 Look for the score calculation speed in the `INFO` log: it's part of the `Solving ended` message.
+
+
+== Red Hat support
+
+A Red Hat support subscription will not offer support for Bavet.
+Drools intends to catch up performance wise.
