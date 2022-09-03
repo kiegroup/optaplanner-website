@@ -78,20 +78,15 @@ Does Bavet scale well?
 On commodity hardware, we ran a 5 minutes VRP benchmark on different dataset sizes,
 to compare how Drools and Bavet scale up:
 
-// TODO redo this benchmark on the benchmark machine
-
-// TODO Graph!
+image:bavetVrpScalingChart.png[Score calculation speed on different dataset sizes of VRP]
 
 .Score calculation speed on different dataset sizes of VRP
 |===
-|Dataset |Drools |Bavet |Speed up
+| >|belgium-n50-k10 >|belgium-n100-k10 >|belgium-n500-k20 >|belgium-n1000-k20 >|belgium-n2750-k55 >|Average
 
-|belgium-n50-k10 >|66,585/s >|264,609/s >|+297.40%
-|belgium-n100-k10 >|50,636/s >|205,620/s >|+306.07%
-|belgium-n500-k20 >|31,431/s >|123,974/s >|+294.43%
-|belgium-n1000-k20 >|20,007/s >|75,556/s >|+277.65%
-|belgium-n2750-k55 >|27,072/s >|81,995/s >|+202.88%
-|*Average* >|39,146/s >|150,350/s >|+284.08%
+|Drools >|76,919/s >|58,365/s >|36,609/s >|23,394/s >|29,770/s >h|45,011/s
+|Bavet >|307,290/s >|242,400/s >|147,595/s >|89,850/s >|91,115/s >h|175,650/s
+|Speed up >|+299.50% >|+315.32% >|+303.17% >|+284.07% >|+206.06% >h|+290.24%
 |===
 
 Same story, but the performance gap does close as the scale goes up.
@@ -152,7 +147,7 @@ to exclude the Drools dependencies.
 On the OptaPlanner https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world[hello-world quickstart],
 a maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
 
-image:bavetDistributionSize.png[Distribution size of jar-with-dependencies on OptaPlanner's hello-world]
+image:bavetDistributionSizeChart.png[Distribution size of jar-with-dependencies on OptaPlanner's hello-world]
 
 .Distribution size of jar-with-dependencies on OptaPlanner's hello-world
 [cols="2,>1,>1,4"]
@@ -277,7 +272,6 @@ optaplanner.solver.constraintStreamImplType=BAVET
 Help us out. Try Bavet and *https://groups.google.com/g/optaplanner-dev/c/BqwbHbBJbns[let us know here]
 how your _score calculation speed_ changes*.
 Look for the score calculation speed in the `INFO` log: it's part of the `Solving ended` message.
-
 
 == Red Hat support
 
