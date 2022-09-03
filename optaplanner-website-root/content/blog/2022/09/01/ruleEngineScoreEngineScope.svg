@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
     width="480"
     height="300"
     id="svg2"
     version="1.1"
-    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
     sodipodi:docname="ruleEngineScoreEngineScope.svg"
     inkscape:export-filename="ruleEngineScoreEngineScope.png"
     inkscape:export-xdpi="96"
-    inkscape:export-ydpi="96">
+    inkscape:export-ydpi="96"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs4"><marker
    inkscape:stockid="Arrow1Lend"
@@ -170,6 +170,7 @@
      d="M 0,0 5,-5 -12.5,0 5,5 Z"
      id="path5767" />
 </marker>
+
 
 
 
@@ -487,8 +488,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.29"
-     inkscape:cx="232.61983"
-     inkscape:cy="236.06518"
+     inkscape:cx="232.55814"
+     inkscape:cy="236.43411"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -517,7 +518,9 @@
      inkscape:snap-object-midpoints="true"
      inkscape:snap-global="true"
      inkscape:document-rotation="0"
-     inkscape:pagecheckerboard="0">
+     inkscape:pagecheckerboard="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        empspacing="10"
        visible="true"
@@ -605,7 +608,7 @@
        rx="90"
        ry="60" />
     <ellipse
-       style="color:#000000;overflow:visible;fill:none;stroke:#5c3566;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       style="color:#000000;overflow:visible;fill:none;stroke:#204a87;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        id="ellipse305"
        cx="208.01074"
        cy="631.36218"
@@ -648,21 +651,21 @@
          style="font-weight:bold;font-size:20px;line-height:1.25;text-align:end;text-anchor:end;fill:#4e9a06"
          id="flowPara361">(Bavet)</flowPara></flowRoot>
     <flowRoot
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:0.01%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#5c3566;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:0.01%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';text-align:end;writing-mode:lr-tb;text-anchor:end;display:inline;fill:#204a87;fill-opacity:1;stroke:none"
        id="flowRoot343"
        xml:space="preserve"
        transform="translate(-76.53223,394.73967)"><flowRegion
-         style="text-align:end;text-anchor:end;fill:#5c3566"
+         style="text-align:end;text-anchor:end;fill:#204a87"
          id="flowRegion339"><rect
-           style="text-align:end;text-anchor:end;fill:#5c3566;"
+           style="text-align:end;text-anchor:end;fill:#204a87"
            y="152.09956"
            x="330.20508"
            height="90"
            width="200.00002"
            id="rect337" /></flowRegion><flowPara
-         style="font-weight:bold;font-size:20px;line-height:1.25;text-align:end;text-anchor:end;fill:#5c3566"
+         style="font-weight:bold;font-size:20px;line-height:1.25;text-align:end;text-anchor:end;fill:#204a87"
          id="flowPara341">Rule engine</flowPara><flowPara
-         style="font-weight:bold;font-size:20px;line-height:1.25;text-align:end;text-anchor:end;fill:#5c3566"
+         style="font-weight:bold;font-size:20px;line-height:1.25;text-align:end;text-anchor:end;fill:#204a87"
          id="flowPara363">(Drools)</flowPara></flowRoot>
     <flowRoot
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:0.01%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none"
