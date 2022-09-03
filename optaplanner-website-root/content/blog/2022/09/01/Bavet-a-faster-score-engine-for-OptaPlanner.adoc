@@ -145,7 +145,7 @@ By using Bavet, you can slim down OptaPlanner's classpath
 to exclude the Drools dependencies.
 
 On the OptaPlanner https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world[hello-world quickstart],
-a maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
+a Maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
 
 image:bavetDistributionSizeChart.png[Distribution size of jar-with-dependencies on OptaPlanner's hello-world]
 
