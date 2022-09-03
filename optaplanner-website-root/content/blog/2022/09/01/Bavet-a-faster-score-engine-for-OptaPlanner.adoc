@@ -101,7 +101,7 @@ image:ruleEngineScoreEngineScope.png[Rule Engine versus Score Engine scope]
 
 OptaPlanner only requires a score engine.
 Its Drools implementation only uses a small subset of Drools's features.
-Bavet on the on the hand, is a score engine tailored to OptaPlanner.
+Bavet on the other hand, is a score engine tailored to OptaPlanner.
 It's part of OptaPlanner. It has no use outside of OptaPlanner.
 
 For incremental score calculation, Bavet borrows techniques from https://en.wikipedia.org/wiki/Rete_algorithm[the RETE algorithm]
