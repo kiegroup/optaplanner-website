@@ -128,7 +128,7 @@ image:bavetEinsteinMural.png[Bavet mural]
 
 Ok, maybe I didn't put much effort into that.
 
-But it's doesn't really need a good name.
+But it doesn't really need a good name.
 It's just one of OptaPlanner's score calculation options.
 An implementation detail, really.
 
