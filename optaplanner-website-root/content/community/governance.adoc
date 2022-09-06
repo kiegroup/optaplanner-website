@@ -21,7 +21,7 @@ This will define what features will be addressed in a given release.
 The project lead will then publish the roadmap on link:getHelp.html[the developer mailing list],
 and update the version information in link:../community/getHelp.html[JIRA].
 
-OptaPlanner is the basis for the commercial (yet open source) link:../product/services.html[Application Foundations] product,
+OptaPlanner will be the basis for the commercial (yet open source) link:../product/services.html[Application Foundations] product,
 so many requirements for this project come from its users.
 However, all requirements are fed into the same community process that our community users follow.
 We create JIRAs for all feature requests on our schedule.
