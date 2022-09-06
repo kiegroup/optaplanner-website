@@ -1,6 +1,6 @@
 = Bavet - A faster score engine for OptaPlanner
 ge0ffrey
-2022-09-01
+2022-09-06
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: performance, benchmark, constraint streams
@@ -30,45 +30,40 @@ On average, *Bavet is twice as fast as Drools* for score calculation.
 In the https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html[Vehicle Routing Problem],
 Bavet is even three times as fast as Drools:
 
-// TODO Update table, put Drools first, percentage -= 100, switch rows/columns?
-
-// TODO Graph!
+image:bavetUseCasesPerformanceChart.png[Score calculation speed on different use cases]
 
 .Score calculation speed on different use cases
 |===
-|Use case |Bavet |Drools |Speed up +100%
+|Use case |Drools |Bavet |Speed up
 
-|cheaptime >|18,270 >|7,949 >|230%
-|cloudbalancing >|822,613 >|245,069 >|336%
-|coachShuttleGathering >|134,522 >|47,455 >|283%
-|conferenceScheduling >|1,566 >|1,534 >|102%
-|curriculumCourse >|56,685 >|54,021 >|105%
-|examination >|28,260 >|20,130 >|140%
-|flightCrewScheduling >|186,906 >|163,184 >|115%
-|investment >|606,111 >|127,119 >|477%
-|machineReassignment >|28,678 >|21,204 >|135%
-|meetingscheduling >|3,034 >|4,181 >|73%
-|nQueens >|419,201 >|309,581 >|135%
-|nurserostering >|33,123 >|17,460 >|190%
-|pas >|59,049 >|79,651 >|74%
-|projectjobscheduling >|128,209 >|41,125 >|312%
-|rockTour >|282,508 >|62,018 >|456%
-|taskAssigning >|31,814 >|15,733 >|202%
-|tennis >|407,459 >|168,607 >|242%
-|travelingtournament >|118,370 >|72,143 >|164%
-|tsp >|435,091 >|284,803 >|153%
-|vehicleRouting >|38,686 >|12,565 >|308%
-|*Average* >|192,008 >|87,777 >|205%
+|cheaptime >|4,349 >|14,543 >|+234%
+|cloudbalancing >|162,820 >|608,204 >|+274%
+|coachShuttleGathering >|38,543 >|111,991 >|+191%
+|conferenceScheduling >|1,072 >|1,264 >|+18%
+|curriculumCourse >|32,272 >|38,933 >|+21%
+|examination >|11,821 >|25,712 >|+118%
+|flightCrewScheduling >|97,020 >|126,563 >|+30%
+|investment >|68,935 >|401,806 >|+483%
+|machineReassignment >|13,384 >|28,619 >|+114%
+|meetingscheduling >|2,291 >|2,158 >|-6%
+|nQueens >|177,528 >|285,268 >|+61%
+|nurserostering >|10,657 >|21,090 >|+98%
+|pas >|50,971 >|47,551 >|-7%
+|projectjobscheduling >|23,715 >|78,291 >|+230%
+|rockTour >|33,997 >|152,472 >|+348%
+|taskAssigning >|10,531 >|20,680 >|+96%
+|tennis >|106,172 >|236,437 >|+123%
+|travelingtournament >|49,428 >|77,143 >|+56%
+|tsp >|169,125 >|430,384 >|+154%
+|vehicleRouting >|8,247 >|26,187 >|+218%
+h|Average: >h|53,644 >h|136,765 >h|+132%
 |===
 
-Bavet is faster than Drools for almost every use case.
+Bavet is faster than Drools for 90% of the use cases.
 Of course, your mileage may vary.
-Turn on Bavet and if it's not faster in your use case, https://groups.google.com/g/optaplanner-dev[let us know].
+Turn on Bavet and if it's not faster in your use case, https://groups.google.com/g/optaplanner-dev/c/BqwbHbBJbns[let us know].
 
 Drools and Bavet are both still improving.
-And we have some crazy ideas for a nextgen score calculation implementation
-that uses https://github.com/quarkusio/gizmo[Gizmo]
-to generate domain-specific Bavet-like nodes.
 This performance race is far from over.
 
 == Scaling
@@ -143,9 +138,10 @@ These stress tests stomp out score corruption by solving a lot of datasets acros
 In OpenShift and Kubernetes clouds, the size of pods matter.
 By using Bavet, you can slim down OptaPlanner's classpath
 to exclude the Drools dependencies.
+The Bavet jar is `400 KB`.
 
 On the OptaPlanner https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/hello-world[hello-world quickstart],
-a Maven assembly of `jar-with-dependencies` is 60% smaller with Bavet only:
+a Maven assembly of `jar-with-dependencies` with only Bavet included is `10 MB` smaller:
 
 image:bavetDistributionSizeChart.png[Distribution size of jar-with-dependencies on OptaPlanner's hello-world]
 
