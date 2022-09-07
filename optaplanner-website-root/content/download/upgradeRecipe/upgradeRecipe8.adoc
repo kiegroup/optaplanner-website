@@ -1771,3 +1771,40 @@ to `CompletableFuture<Void>`, which might break already compiled code depending 
 Support for Score DRL has been deprecated and users are encouraged to migrate to https://www.optaplanner.org/docs/optaplanner/latest/constraint-streams/constraint-streams.html[Constraint Streams] at their earliest convenience.
 To help with migration, here's the link:drl-to-constraint-streams-migration.html[score DRL migration guide].
 Score DRL is not going away in OptaPlanner 8.
+
+== From 8.27.0.Final to 8.28.0.Final
+
+[.upgrade-recipe-minor]
+=== Constraint Streams: pre-existing `penalize(...)`, `reward(...)` and `impact(...)` replaced with builders
+
+Pre-existing methods to penalize and reward matches have been deprecated and will be removed in a future major version of OptaPlanner.
+The newly introduced overloads follow the builder pattern instead.
+
+Before in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+    Constraint assignEveryPatientToABedConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.forEach(BedDesignation.class)
+            ...
+            .penalize("assignEveryPatientToABed",
+                HardMediumSoftScore.ONE_MEDIUM,
+                BedDesignation::getAdmissionPartNightCount);
+    }
+----
+
+After in `*ConstraintProvider.java*`:
+
+[source,java]
+----
+   Constraint assignEveryPatientToABedConstraint(ConstraintFactory constraintFactory) {
+        return constraintFactory.forEach(BedDesignation.class)
+            ...
+            .penalize(HardMediumSoftScore.ONE_MEDIUM,
+                BedDesignation::getAdmissionPartNightCount)
+            .asConstraint("assignEveryPatientToABed");
+    }
+----
+
+This change affects all pre-existing overloads of the various `penalize(...)`, `reward(...)` and `impact(...)` methods, including their `configurable` variants.
+Javadocs on the deprecated methods include recommendations on which of the new overloads to switch to.

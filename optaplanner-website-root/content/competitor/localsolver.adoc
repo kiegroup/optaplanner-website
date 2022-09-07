@@ -187,7 +187,8 @@ constraintFactory.forEach(Shift.class)
         // ... assigned to the same employee ...
         equal(shift -> shift.employee))
     // ... penalize one broken hard constraint per pair.
-    .penalize("One shift per day", HardSoftScore.ONE_HARD);
+    .penalize(HardSoftScore.ONE_HARD)
+    .asConstraint("One shift per day");
 ----
 
 That `equal()` method accepts _any_ code as a parameter to return _any_ type (not just booleans and numbers).
@@ -235,7 +236,8 @@ constraintFactory.forEach(Shift.class)
         equal(shift -> shift.date),
         // ... assigned to that same employee that does not work double shifts ...
         equal(shift -> shift.employee))
-    .penalize("One shift per day", HardSoftScore.ONE_HARD);
+    .penalize(HardSoftScore.ONE_HARD)
+    .asConstraint("One shift per day");
 ----
 
 The `groupBy()` construct supports `count()`, `sum()`, `average()`, `min()`, `max()`, `toList()`, `toSet()`, `toMap()`, etc.
@@ -251,9 +253,10 @@ constraintFactory.forEach(Shift.class)
     // ... if more than 10 shifts for one employee ...
     .filter((employee, shiftCount) -> shiftCount > 10)
     // ... penalize as a hard constraint ...
-    .penalize("Too many shifts", HardSoftScore.ONE_HARD,
+    .penalize(HardSoftScore.ONE_HARD,
             // ... multiplied by the number of excessive shifts.
-            (employee, shiftCount) -> shiftCount - 10);
+            (employee, shiftCount) -> shiftCount - 10)
+    .asConstraint("Too many shifts");
 ----
 
 OptaPlanner allows weighting constraints dynamically.
@@ -269,12 +272,13 @@ constraintFactory.forEach(Shift.class)
     // ... if an employee is working more hours than his/her contract ...
     .filter((employee, hoursTotal) -> hoursTotal > employee.contract.maxHours)
     // ... penalize as a soft constraint of weight 1000 ...
-    .penalize("Too many shifts", HardSoftScore.ofSoft(1000),
+    .penalize(HardSoftScore.ofSoft(1000),
             // ... multiplied by the number of excessive hours squared.
             (employee, hoursTotal) -> {
                     int excessiveHours = hoursTotal - employee.contract.maxHours;
                     return excessiveHours * excessiveHours;
-            });
+            })
+    .asConstraint("Too many shifts");
 ----
 
 This penalizes outliers more.
