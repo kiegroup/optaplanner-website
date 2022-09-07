@@ -3059,12 +3059,12 @@ public class Talk {
 
 }</code></pre>
             <pre xml:space="preserve"><code class="java">  Constraint publishedTimeslot(ConstraintFactory f) {
-    return f.from(Talk.class)
+    return f.forEach(Talk.class)
         .filter(talk -> talk.getPublishedTimeslot() != null
             && talk.getTimeslot()
                 != talk.getPublishedTimeslot())
-        .penalize(PUBLISHED_TIMESLOT,
-          HardMediumSoft.ONE_MEDIUM);
+        .penalize(HardMediumSoft.ONE_MEDIUM)
+                .asConstraint(PUBLISHED_TIMESLOT);
   }</code></pre>
         </section>
         <section>
