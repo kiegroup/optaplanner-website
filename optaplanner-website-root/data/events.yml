@@ -14,6 +14,22 @@
 #
 # Order events by date descending
 
+- eventId: 20221010-devoxxbelgium
+  eventOrganization: "Devoxx Belgium"
+  eventUrl: https://devoxx.be
+  location: Antwerp, Belgium
+  date: 2022-10-10
+
+- eventId: 20220914-fullstackghent
+  eventOrganization: "Full Stack Ghent"
+  eventUrl: https://www.meetup.com/fullstackghent/
+  location: Ghent, Belgium
+  date: 2022-09-14
+  talks:
+    - title: "Solve vehicle routing, shift rostering and other AI optimization problems"
+      url: https://www.meetup.com/fullstackghent/events/286280324/
+      presenters: Geoffrey De Smet
+
 - eventId: 20220825-communitycentral
   eventOrganization: "Community Central"
   eventUrl: https://communitycentral.tv
@@ -22,12 +38,6 @@
   talks:
     - title: "Introduction to the OptaPlanner AI constraint solver"
       presenters: Anna Dupliak
-  
-- eventId: 20221010-devoxxbelgium
-  eventOrganization: "Devoxx Belgium"
-  eventUrl: https://devoxx.be
-  location: Antwerp, Belgium
-  date: 2022-10-10
 
 - eventId: 20220623-devoxxpoland
   eventOrganization: "Devoxx Poland"
