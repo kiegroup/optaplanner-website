@@ -50,7 +50,7 @@ See the `quarkus.qpid-jms.url` property in https://github.com/kiegroup/optaplann
 
 Receiving the input problem message and sending the output message informing that solving has ended must happen in a transaction
 to ensure atomicity.
-Only when the transaction is committed the ActiveMQ Artemis broker removes the input problem message from the queue.
+Only when the transaction is committed does the ActiveMQ Artemis broker remove the input problem message from the queue.
 
 [NOTE]
 .Use the right tool for the job.
