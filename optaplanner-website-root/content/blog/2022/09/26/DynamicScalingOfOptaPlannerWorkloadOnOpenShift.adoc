@@ -8,7 +8,7 @@ rsynek
 In the first https://www.optaplanner.org/blog/2022/06/09/RunOptaPlannerWorkloadOnOpenShift.html[article about running OptaPlanner workloads on OpenShift],
 I've shown how to use the OptaPlanner operator to solve multiple datasets of the same planning problem by starting several pods on OpenShift.
 
-Let's not pay the bills for machines sitting idle. Since the previous article, the OptaPlanner operator supports dynamic scaling driven by the number of input datasets.
+That implementation kept a number of nodes always around, even if they were idle. But why pay the bills for those? Since the previous article, the OptaPlanner operator supports dynamic scaling driven by the number of input datasets.
 
 The https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[Kubernetes demo],
 based on the https://www.optaplanner.org/learn/useCases/schoolTimetabling.html[school timetabling] use case,
