@@ -35,7 +35,7 @@ If a solver pod dies, the ActiveMQ Artemis broker detects a broken connection an
 ==== Batch delivery
 
 By default, the ActiveMQ Artemis distributes messages in batches to reduce needless network round trips.
-While this is a favorable behavior for masses of messages requiring relatively short processing time, our case is different.
+While this is a favorable behavior for large amounts of messages requiring relatively short processing time, our case is different.
 
 We expect fewer messages that, on the other hand, take a long time to process, as it involves optimizing a dataset by OptaPlanner.
 Also, we have a different goal; instead of minimizing the latency, we aim to parallelize solving of multiple datasets as much as possible.
