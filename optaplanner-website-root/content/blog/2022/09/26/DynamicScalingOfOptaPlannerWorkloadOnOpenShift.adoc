@@ -63,7 +63,7 @@ However, Kafka is not a good fit for this scenario.
 
 Every time a new pod is started or deleted as a result of scaling up or down, Kafka reacts by rebalancing
 topic partitions among the current consumers. Any message that has not been acknowledged and committed in
-the topic partition before the rebalancing starts, is redelivered.
+the topic partition before the rebalancing starts is redelivered.
 
 Due to the long processing of every message, the risk of redelivery is high.
 
