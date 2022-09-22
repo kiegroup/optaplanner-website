@@ -90,4 +90,4 @@ To run the demo, clone the https://github.com/kiegroup/optaplanner-quickstarts[O
 
 == Conclusion
 
-OptaPlanner operator now supports dynamic scaling of workloads in a shared queue by utilizing ArtemisCloud and KEDA.
+OptaPlanner operator now supports dynamic scaling of workloads in a shared queue by using ArtemisCloud and KEDA.
