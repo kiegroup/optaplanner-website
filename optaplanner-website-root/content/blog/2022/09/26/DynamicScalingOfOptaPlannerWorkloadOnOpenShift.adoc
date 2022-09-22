@@ -74,7 +74,7 @@ That's certainly not the efficiency we strove for.
 
 KEDA is the cornerstone of the dynamic scaling feature.
 The KEDA controller observes the input problem queue size, in this case, the `school-timetabling-problem`,
-via a REST API of the ActiveMQ Artemis broker and modifies the number of replicas of the `school-timetabling` deployment.
+through a REST API of the ActiveMQ Artemis broker, and modifies the number of replicas of the `school-timetabling` deployment.
 
 === OptaPlanner operator
 
