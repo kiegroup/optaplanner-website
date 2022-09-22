@@ -43,7 +43,7 @@ We expect fewer messages that, on the other hand, take a long time to process, a
 Also, we have a different goal; instead of minimizing the latency, we aim to parallelize solving of multiple datasets as much as possible.
 Each active solver pod must be solving one dataset at any moment.
 
-Batch message delivery hinders scalability because if the first solver pod prefetches multiple messages, the other pods may sit idle.
+Batch message delivery hinders scalability because if the first solver pod prefetches multiple messages, the other pods might remain idle.
 
 The message prefetch is switched off by using the client-side JMS connection parameter `jms.prefetchPolicy.queuePrefetch=0`.
 See the `quarkus.qpid-jms.url` property in https://github.com/kiegroup/optaplanner-quickstarts/blob/development/technology/kubernetes/school-timetabling/src/main/resources/application.properties[application.properties] of the _School Timetabling_ project.
