@@ -32,7 +32,7 @@ from the database, and solves it. After that, it saves the solution back to the 
 === ActiveMQ
 
 The use case for messaging in this architecture is a shared job queue. ActiveMQ Artemis is a good fit here as it provides the exactly-once delivery.
-If a solver pod dies, the ActiveMQ Artemis broker detects a broken connection and redelivers the message to any other available pod.
+If a solver pod becomes unresponsive, the ActiveMQ Artemis broker detects a broken connection and redelivers the message to any other available pod.
 
 ==== Batch delivery
 
