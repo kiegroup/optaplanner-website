@@ -16,7 +16,7 @@ has been updated to show dynamic scaling.
 
 == Architecture
 
-The architecture has evolved, replacing some existing components and adding a new one, too.
+The OptaPlanner architecture has evolved by replacing some existing components and adding a new component.
 
 image::demoArchitecture.svg[OpenShift demo architecture diagram]
 
