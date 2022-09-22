@@ -12,7 +12,7 @@ That implementation required a number of nodes to be retained, even when they we
 
 The https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[Kubernetes demo],
 based on the https://www.optaplanner.org/learn/useCases/schoolTimetabling.html[school timetabling] use case,
-has been updated to show the dynamic scaling.
+has been updated to show dynamic scaling.
 
 == Architecture
 
