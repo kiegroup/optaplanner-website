@@ -9,7 +9,7 @@ In the first https://www.optaplanner.org/blog/2022/06/09/RunOptaPlannerWorkloadO
 
 That implementation required a number of nodes to be retained, even when they were idle. But why pay for unused nodes? Since the previous article, the OptaPlanner operator introduced support for dynamic scaling driven by the number of input datasets.
 
-The https://github.com/kiegroup/optaplanner-quickstarts/tree/development/technology/kubernetes[Kubernetes demo], based on the https://www.optaplanner.org/learn/useCases/schoolTimetabling.html[school timetabling] use case, has been updated to show dynamic scaling.
+The https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/technology/kubernetes[Kubernetes demo], based on the https://www.optaplanner.org/learn/useCases/schoolTimetabling.html[school timetabling] use case, has been updated to show dynamic scaling.
 
 == Architecture
 
@@ -44,7 +44,7 @@ Each active solver pod must be solving one data set at any moment.
 Batch message delivery hinders scalability because if the first solver pod prefetches multiple messages, the other pods might remain idle.
 
 The message prefetch is switched off by using the client-side JMS connection parameter `jms.prefetchPolicy.queuePrefetch=0`.
-See the `quarkus.qpid-jms.url` property in https://github.com/kiegroup/optaplanner-quickstarts/blob/development/technology/kubernetes/school-timetabling/src/main/resources/application.properties[application.properties] of the _School Timetabling_ project.
+See the `quarkus.qpid-jms.url` property in https://github.com/kiegroup/optaplanner-quickstarts/blob/stable/technology/kubernetes/school-timetabling/src/main/resources/application.properties[application.properties] of the _School Timetabling_ project.
 
 ==== Atomicity
 
@@ -81,7 +81,7 @@ The OptaPlanner operator creates three kinds of Kubernetes resources: _Deploymen
 
 == Running the demo
 
-To run the demo, clone the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts] and follow the https://github.com/kiegroup/optaplanner-quickstarts/blob/development/technology/kubernetes/README.adoc[README].
+To run the demo, clone the https://github.com/kiegroup/optaplanner-quickstarts[OptaPlanner Quickstarts] and follow the https://github.com/kiegroup/optaplanner-quickstarts/blob/stable/technology/kubernetes/README.adoc[README].
 
 == Conclusion
 
