@@ -25,7 +25,7 @@ The OptaPlanner operator depends on two other operators:
 * The https://artemiscloud.io/[ArtemisCloud] operator, which creates ActiveMQ Artemis broker and queues
 * https://keda.sh/[KEDA] for scaling the solver deployment, represented by the `school-timetabling` pods in the picture
 
-The _Demo App_ generates datasets, stores them in the PostgreSQL database, and sends a message to the `school-timetabling-problem` queue per each dataset.
+The _Demo App_ generates datasets, stores them in the PostgreSQL database, and sends a message to the `school-timetabling-problem` queue for each dataset.
 The _School Timetabling_ project, which defines the optimization problem, reads a single message from the `school-timetabling-problem` queue, loads the dataset
 from the database, and solves it. After that, it saves the solution back to the database and sends a message to the `school-timetabling-solution` queue to let the _Demo App_ know that the solution is ready for taking.
 
