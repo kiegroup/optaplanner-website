@@ -1,4 +1,4 @@
-= Run OptaPlanner workloads on OpenShift, part II.
+= Run OptaPlanner workloads on OpenShift, part II
 rsynek
 2022-09-26
 :page-interpolate: true
