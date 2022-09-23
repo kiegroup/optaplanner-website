@@ -3,7 +3,7 @@
 :jbake-description: OptaPlanner is an Open Source Java™ engine to optimize Vehicle Routing Problem and Traveling Salesman Problem variants.
 :jbake-priority: 1.0
 :jbake-related_tag: vehicle routing
-:jbake-featured_youtube_id: rEeAML74oWo
+:jbake-featured_youtube_id: 3Bgt4xC4a1M
 :jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaweb-vehicle-routing#readme
 
 
