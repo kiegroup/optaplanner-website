@@ -16,6 +16,8 @@
   title: "The Vehicle Routing Problem"
   author: ge0ffrey
   date: 2022-09-23
+  tags:
+    - vehicle routing
 
 - youtubeId: A-TyjsHJTNM
   title: "Introduction to OptaPlanner AI constraint solver"
