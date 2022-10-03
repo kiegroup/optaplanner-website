@@ -10,7 +10,7 @@
         <p><strong>OptaPlanner’s public API classes are backwards compatible</strong> (per series),
             but users often also use impl classes (which are documented in the reference manual too).
             This upgrade recipe <em>minimizes the pain</em> to upgrade your code
-            and to take advantage of <a href="${content.rootpath}download/releaseNotes/releaseNotes8.html">the newest features in OptaPlanner 8</a>.</p>
+            and to take advantage of <a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-8.x">the newest features in OptaPlanner 8</a>.</p>
     </div>
     <div class="row">
         <div class="col-md-7">
