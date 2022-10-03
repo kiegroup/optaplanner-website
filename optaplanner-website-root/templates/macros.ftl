@@ -10,7 +10,7 @@
             <ul class="list-unstyled mb-0">
                 <li>
                     <div class="title">
-                        <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
+                        <a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x"">
                             ${pom.latestFinal.version} released
                         </a>
                     </div>
@@ -21,7 +21,7 @@
                 <#if pom.latest.version != pom.latestFinal.version>
                 <li class="mt-2">
                     <div class="title">
-                        <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">
+                        <a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x"">
                             ${pom.latest.version} released
                         </a>
                     </div>

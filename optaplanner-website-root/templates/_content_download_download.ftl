@@ -32,7 +32,7 @@
                             <div class="ulist">
                                 <ul>
                                     <li>
-                                        <p><a href="releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">Release notes ${pom.latestFinal.releaseNotesVersion}</a> -
+                                        <p><a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x">Release notes ${pom.latestFinal.releaseNotesVersion}</a> -
                                             <a href="upgradeRecipe/upgradeRecipe${pom.latestFinal.releaseNotesVersion}.html">Upgrade recipe to ${pom.latestFinal.releaseNotesVersion}</a></p>
                                     </li>
                                     <li>
@@ -133,7 +133,7 @@
                                 <div class="ulist">
                                     <ul>
                                         <li>
-                                            <p><a href="releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">Release notes ${pom.latest.releaseNotesVersion}</a> -
+                                            <p><a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x"">Release notes ${pom.latest.releaseNotesVersion}</a> -
                                                 <a href="upgradeRecipe/upgradeRecipe${pom.latest.releaseNotesVersion}.html">Upgrade recipe to ${pom.latest.releaseNotesVersion}</a></p>
                                         </li>
                                         <li>

@@ -4,9 +4,10 @@
 :jbake-priority: 0.1
 :showtitle:
 
-This is a list of all past and upcoming release notes:
+* See link:https://www.optaplanner.org/docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-8.x[latest release notes in OptaPlanner documentation].
 
-* link:releaseNotes8.html[Release Notes OptaPlanner 8.x]
+This is a list of all past release notes:
+
 * link:releaseNotes7.html[Release Notes OptaPlanner 7.x]
 * link:releaseNotes6.5.html[Release Notes OptaPlanner 6.5]
 * link:releaseNotes6.4.html[Release Notes OptaPlanner 6.4]
