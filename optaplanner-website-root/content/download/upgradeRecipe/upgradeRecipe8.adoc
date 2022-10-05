@@ -1183,7 +1183,7 @@ Before in `*EasyScoreCalculator.java*`:
   }
 ----
 
-After in `*EasyScoreCalculator.java*`:
+After in `*EasyScoreCalculator.java`:
 
 [source,java]
 ----
@@ -1196,7 +1196,7 @@ After in `*EasyScoreCalculator.java*`:
   }
 ----
 
-Before in `*IncrementalScoreCalculator.java*`:
+Before in `*IncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -1209,7 +1209,7 @@ Before in `*IncrementalScoreCalculator.java*`:
   }
 ----
 
-After in `*IncrementalScoreCalculator.java*`:
+After in `*IncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -1222,7 +1222,7 @@ After in `*IncrementalScoreCalculator.java*`:
   }
 ----
 
-Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -1238,7 +1238,7 @@ Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
   }
 ----
 
-After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+After in `*ConstraintMatchAwareIncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -1489,7 +1489,7 @@ along with a deprecated interface `StatefulVariableListener`
 and a deprecated class `VariableListenerAdapter` in that same package.
 Instead, use an interface `VariableListener` from package `org.optaplanner.core.api.domain.variable`.
 
-Before in `*VariableListener.java*`:
+Before in `*VariableListener.java`:
 
 [source,java]
 ----
@@ -1511,7 +1511,7 @@ Before in `*VariableListener.java*`:
 
 ----
 
-After in `*VariableListener.java*`:
+After in `*VariableListener.java`:
 
 [source,java]
 ----
@@ -1532,7 +1532,7 @@ After in `*VariableListener.java*`:
   }
 ----
 
-Before in `*StatefulVariableListener.java*`:
+Before in `*StatefulVariableListener.java`:
 
 [source,java]
 ----
@@ -1554,7 +1554,7 @@ Before in `*StatefulVariableListener.java*`:
 
 ----
 
-After in `*StatefulVariableListener.java*`:
+After in `*StatefulVariableListener.java`:
 
 [source,java]
 ----
@@ -1613,7 +1613,7 @@ The addition of `ConstraintCollectors.toSortedSet(Comparator)` has caused a Java
 with the pre-existing method `ConstraintCollectors.toSortedSet(BiFunction)`.
 Users of the original method need to inform the compiler of the particular overload they wish to use.
 
-Before in `*ConstraintProvider.java*`:
+Before in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1624,7 +1624,7 @@ Before in `*ConstraintProvider.java*`:
   ...
 ----
 
-After in `*ConstraintProvider.java*`:
+After in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1671,7 +1671,7 @@ The deprecated methods will eventually be removed in a future major version.
 
 If you do not use over-constrained planning (where `@PlanningVariable(..., nullable = false)`) simply replace all the uses of the `from*` methods with `forEach*` methods.
 
-Before in `*ConstraintProvider.java*`:
+Before in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1681,7 +1681,7 @@ Before in `*ConstraintProvider.java*`:
     }
 ----
 
-After in `*ConstraintProvider.java*`:
+After in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1705,7 +1705,7 @@ In practice, what this means is:
 * Where you previously used `null` checks to exclude entities with unassigned variables,
 you should remove these null checks after replacing `from(...)` with `forEach(...)`.
 
-Before in `*ConstraintProvider.java*`:
+Before in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1716,7 +1716,7 @@ Before in `*ConstraintProvider.java*`:
     }
 ----
 
-After in `*ConstraintProvider.java*`:
+After in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1731,7 +1731,7 @@ After in `*ConstraintProvider.java*`:
 for example in the medium constraint to penalize all unassigned entities,
 you must replace `from(...)` with `forEachIncludingNullVars(...)`.
 
-Before in `*ConstraintProvider.java*`:
+Before in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1743,7 +1743,7 @@ Before in `*ConstraintProvider.java*`:
     }
 ----
 
-After in `*ConstraintProvider.java*`:
+After in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1780,7 +1780,7 @@ Score DRL is not going away in OptaPlanner 8.
 Pre-existing methods to penalize and reward matches have been deprecated and will be removed in a future major version of OptaPlanner.
 The newly introduced overloads follow the builder pattern instead.
 
-Before in `*ConstraintProvider.java*`:
+Before in `*ConstraintProvider.java`:
 
 [source,java]
 ----
@@ -1793,7 +1793,7 @@ Before in `*ConstraintProvider.java*`:
     }
 ----
 
-After in `*ConstraintProvider.java*`:
+After in `*ConstraintProvider.java`:
 
 [source,java]
 ----
