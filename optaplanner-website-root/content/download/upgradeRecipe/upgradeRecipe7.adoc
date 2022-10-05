@@ -3366,7 +3366,7 @@ The existing interfaces `EasyScoreCalculator`, `IncrementalScoreCalculator` and
 
 We recommend users replace the use of the deprecated interfaces and classes with their counterparts in the public API.
 
-Before in `*EasyScoreCalculator.java*`:
+Before in `*EasyScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3379,7 +3379,7 @@ Before in `*EasyScoreCalculator.java*`:
   }
 ----
 
-After in `*EasyScoreCalculator.java*`:
+After in `*EasyScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3392,7 +3392,7 @@ After in `*EasyScoreCalculator.java*`:
   }
 ----
 
-Before in `*IncrementalScoreCalculator.java*`:
+Before in `*IncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3405,7 +3405,7 @@ Before in `*IncrementalScoreCalculator.java*`:
   }
 ----
 
-After in `*IncrementalScoreCalculator.java*`:
+After in `*IncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3418,7 +3418,7 @@ After in `*IncrementalScoreCalculator.java*`:
   }
 ----
 
-Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3434,7 +3434,7 @@ Before in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
   }
 ----
 
-After in `*ConstraintMatchAwareIncrementalScoreCalculator.java*`:
+After in `*ConstraintMatchAwareIncrementalScoreCalculator.java`:
 
 [source,java]
 ----
@@ -3460,7 +3460,7 @@ Users are expected to use the `VariableListener` interface directly.
 Lastly, we have deprecated `StatefulVariableListener`.
 The new `VariableListener` can now be used in a stateful matter instead.
 
-Before in `*VariableListener.java*`:
+Before in `*VariableListener.java`:
 
 [source,java]
 ----
@@ -3482,7 +3482,7 @@ Before in `*VariableListener.java*`:
 
 ----
 
-After in `*VariableListener.java*`:
+After in `*VariableListener.java`:
 
 [source,java]
 ----
@@ -3503,7 +3503,7 @@ After in `*VariableListener.java*`:
   }
 ----
 
-Before in `*StatefulVariableListener.java*`:
+Before in `*StatefulVariableListener.java`:
 
 [source,java]
 ----
@@ -3525,7 +3525,7 @@ Before in `*StatefulVariableListener.java*`:
 
 ----
 
-After in `*StatefulVariableListener.java*`:
+After in `*StatefulVariableListener.java`:
 
 [source,java]
 ----
