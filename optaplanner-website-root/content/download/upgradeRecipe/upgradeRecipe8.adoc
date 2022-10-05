@@ -1917,3 +1917,5 @@ public class RockShow implements RockStandstill {
     ...
 }
 ----
+
+Read more about link:https://www.optaplanner.org/docs/optaplanner/latest/shadow-variable/shadow-variable.html#customVariableListener[custom shadow variables] in the documentation.
