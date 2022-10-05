@@ -1170,7 +1170,7 @@ The deprecated class `org.optaplanner.core.impl.score.director.incremental.Abstr
 has also been removed.
 Replace the use of the removed interfaces and classes with their counterparts in the public API.
 
-Before in `*EasyScoreCalculator.java*`:
+Before in `*EasyScoreCalculator.java`:
 
 [source,java]
 ----
