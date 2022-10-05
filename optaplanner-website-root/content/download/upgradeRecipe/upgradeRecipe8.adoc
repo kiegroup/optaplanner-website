@@ -1853,3 +1853,67 @@ After in `*.java`:
 ----
 
 For more information about these changes, refer to https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#explainingTheScore[Explaining the score] in https://www.optaplanner.org/docs/[OptaPlanner documentation].
+
+[.upgrade-recipe-major]
+=== New custom shadow variable annotations
+
+`@CustomShadowVariable` is now deprecated and superseded by `@ShadowVariable` and `@PiggybackShadowVariable`.
+
+`@ShadowVariable` allows to declare 1 variable listener per source variable.
+Use 1 `@ShadowVariable` annotation for each source variable.
+You may reuse the same variable listener class for multiple sources or use a specialized listener for each source.
+
+Use `@PiggybackShadowVariable` to declare a shadow variable that does not have its own variable listener but is updated by another shadow variable's listener.
+
+Before in `*.java`:
+
+[source,java]
+----
+@PlanningEntity
+public class RockShow implements RockStandstill {
+
+    @PlanningVariable(...) private RockStandstill previousStandstill;
+    @AnchorShadowVariable(...) private RockBus bus;
+
+    ...
+
+    @CustomShadowVariable(
+            variableListenerClass = RockShowVariableListener.class,
+            sources = {
+                    @PlanningVariableReference(variableName = "previousStandstill"),
+                    @PlanningVariableReference(variableName = "bus") })
+    private LocalDate date;
+
+    @CustomShadowVariable(variableListenerRef = @PlanningVariableReference(variableName = "date"))
+    private RockTimeOfDay timeOfDay;
+
+    ...
+}
+----
+
+After in `*.java`:
+
+[source,java]
+----
+@PlanningEntity
+public class RockShow implements RockStandstill {
+
+    @PlanningVariable(...) private RockStandstill previousStandstill;
+    @AnchorShadowVariable(...) private RockBus bus;
+
+    ...
+
+    @ShadowVariable(
+            variableListenerClass = RockShowVariableListener.class,
+            sourceVariableName = "previousStandstill")
+    @ShadowVariable(
+            variableListenerClass = RockShowVariableListener.class,
+            sourceVariableName = "bus")
+    private LocalDate date;
+
+    @PiggybackShadowVariable(shadowVariableName = "date")
+    private RockTimeOfDay timeOfDay;
+
+    ...
+}
+----
