@@ -3099,7 +3099,7 @@ scoreExplanation = scoreManager.explainScore(solution);
 [.upgrade-recipe-minor]
 === `SimpleDoubleScore` and `HardSoftDoubleScore` deprecated for removal
 
-The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
+The use of double-based score types has https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
 as it leads to score corruption.
 They have finally been deprecated for removal and you will no longer be able to use them in the next major version.
 
@@ -3218,7 +3218,7 @@ After in `*.java`:
 The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation has been deprecated for removal and without replacement.
 
 Users of this niche functionality should refer to the documentation on how to achieve the same result by
-link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
+link:https://www.optaplanner.org/docs/optaplanner/latest/planner-configuration/planner-configuration.html#nullablePlanningVariable[power-tweaking construction heuristics].
 
 [.upgrade-recipe-minor]
 === Quarkus extensions renamed to `org.optaplanner:optaplanner-quarkus*`

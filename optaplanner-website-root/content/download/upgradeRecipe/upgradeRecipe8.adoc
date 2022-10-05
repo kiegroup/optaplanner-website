@@ -52,14 +52,14 @@ Due to the limited usage of OSGi and the maintenance burden it brings, the OptaP
 Java serialization is
 https://cr.openjdk.java.net/~briangoetz/amber/serialization.html[considered by its authors to be poorly designed] and it was suggested that the capability would, at some point in time, be removed from the platform altogether.
 In OptaPlanner 8, we have removed most uses of the `Serializable` marker interface from the public API and we encourage users to
-https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#integrationWithPersistentStorage[serialize
+https://www.optaplanner.org/docs/optaplanner/latest/integration/integration.html#integrationWithPersistentStorage[serialize
 via JSON or other formats].
 
 [.upgrade-recipe-major.upgrade-recipe-public-api]
 === `SolverFactory.getScoreDirectorFactory()` replaced by `ScoreManager`
 
 In version 7 of OptaPlanner, using `ScoreDirectorFactory` was necessary in order to
-https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[explain the score].
+https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#explainingTheScore[explain the score].
 In version 8, we have added new functionality to the `ScoreManager` and as a result, there is no longer any reason to create new instances of `ScoreDirector`.
 
 Before in `*.java`:
@@ -817,7 +817,7 @@ After in `*SolverConfig.xml` and `*BenchmarkConfig.xml`:
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `SimpleDoubleScore` and `HardSoftDoubleScore` removed
 
-The use of double-based score types has https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
+The use of double-based score types has https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#avoidFloatingPointNumbersInScoreCalculation[long been frowned upon]
 as it leads to score corruption.
 They have finally been removed.
 
@@ -934,20 +934,20 @@ After in `*.java`:
 The `reinitializeVariableEntityFilter` field on `@PlanningVariable` annotation has been deprecated for removal in 7.x and now removed.
 
 Users of this niche functionality should refer to the documentation on how to achieve the same result by
-link:https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#nullablePlanningVariable[power-tweaking construction heuristics].
+link:https://www.optaplanner.org/docs/optaplanner/latest/planner-configuration/planner-configuration.html#nullablePlanningVariable[power-tweaking construction heuristics].
 
 [.upgrade-recipe-minor.upgrade-recipe-public-api]
 === `*ScoreHolder` classes turned into interfaces
 
 In OptaPlanner 7, `ScoreHolder` classes, used exclusively for
-https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#droolsScoreCalculation[Drools score calculation], exposed a number of public methods which, if used, allowed the user to unintentionally corrupt or otherwise negatively affect their scores.
+https://www.optaplanner.org/docs/optaplanner/latest/drools-score-calculation/drools-score-calculation.html[Drools score calculation], exposed a number of public methods which, if used, allowed the user to unintentionally corrupt or otherwise negatively affect their scores.
 
 In OptaPlanner 8, these methods have been removed and the classes have been turned into interfaces.
 You probably don't use any of the removed, potentially harmful methods, so there will be no impact on your code.
 
 If that is not the case, you will find suitable replacements in the public API in areas of
-https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#explainingTheScore[score explanation] and
-https://docs.optaplanner.org/latest/optaplanner-docs/html_single/index.html#constraintConfiguration[constraint configuration].
+https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#explainingTheScore[score explanation] and
+https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#constraintConfiguration[constraint configuration].
 
 [.upgrade-recipe-minor]
 === `ValueRangeFactory` class now final
