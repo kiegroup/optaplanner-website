@@ -1808,3 +1808,48 @@ After in `*ConstraintProvider.java`:
 
 This change affects all pre-existing overloads of the various `penalize(...)`, `reward(...)` and `impact(...)` methods, including their `configurable` variants.
 Javadocs on the deprecated methods include recommendations on which of the new overloads to switch to.
+
+
+== From 8.28.0.Final to 8.29.0.Final
+
+[.upgrade-recipe-minor]
+=== Justifications and indictments refactored
+
+Score explanation subsystem has been refactored and expanded.
+As a result, `ConstraintMatch.getJustificationList()` method is now deprecated and replaced by `ConstraintMatch.getJustification()`.
+This method no longer returns a collection of objects.
+Instead, it returns a `ConstraintJustification`-typed object that can be queried for the collection.
+
+Before in `*.java`:
+
+[source,java]
+----
+    List<Object> justificationList = constraintMatch.getJustificationList();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+   DefaultConstraintJustification justification = constraintMatch.getJustification();
+   List<Object> facts = justification.getFacts();
+----
+
+Likewise, `Indictment.getJustification()` method has been deprecated in favor of the newly introduced `Indictment.getIndictedObject()` method.
+The behavior is unchanged, this is a change in name only.
+
+Before in `*.java`:
+
+[source,java]
+----
+    Object justification = indictment.getJustification();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+   Object indictedObject = indictment.getIndictedObject();
+----
+
+For more information about these changes, refer to https://www.optaplanner.org/docs/optaplanner/latest/score-calculation/score-calculation.html#explainingTheScore[Explaining the score] in https://www.optaplanner.org/docs/[OptaPlanner documentation].
