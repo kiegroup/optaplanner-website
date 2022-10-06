@@ -14,6 +14,16 @@
 #
 # Order events by date descending
 
+- eventId: 20221111-sfscon
+  eventOrganization: "South Tyrol Free Software Conference"
+  eventUrl: https://www.sfscon.it
+  location: Bolzano, Italy
+  date: 2022-11-11
+  talks:
+    - title: "On schedule: Artificial Intelligence plans that meet expectations"
+      url: "https://www.sfscon.it/talks/on-schedule-artificial-intelligence-plans-that-meet-expectations/"
+      presenters: Anna Dupliak
+      
 - eventId: 20221010-devoxxbelgium
   eventOrganization: "Devoxx Belgium"
   eventUrl: https://devoxx.be
