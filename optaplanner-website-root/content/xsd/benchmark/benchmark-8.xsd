@@ -983,6 +983,12 @@
             <xs:element name="subChainSwapMoveSelector" type="tns:subChainSwapMoveSelectorConfig"/>
                                     
             
+            <xs:element name="subListChangeMoveSelector" type="tns:subListChangeMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="subListSwapMoveSelector" type="tns:subListSwapMoveSelectorConfig"/>
+                                    
+            
             <xs:element name="swapMoveSelector" type="tns:swapMoveSelectorConfig"/>
                                     
             
@@ -1152,72 +1158,6 @@
                         
         
         <xs:attribute name="variableName" type="xs:string"/>
-                      
-      
-      </xs:extension>
-                
-    
-    </xs:complexContent>
-          
-  
-  </xs:complexType>
-      
-  
-  <xs:complexType name="unionMoveSelectorConfig">
-            
-    
-    <xs:complexContent>
-                  
-      
-      <xs:extension base="tns:moveSelectorConfig">
-                        
-        
-        <xs:sequence>
-                              
-          
-          <xs:choice maxOccurs="unbounded" minOccurs="0">
-                                    
-            
-            <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
-                                    
-            
-            <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
-                                    
-            
-            <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="pillarSwapMoveSelector" type="tns:pillarSwapMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="subChainChangeMoveSelector" type="tns:subChainChangeMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="subChainSwapMoveSelector" type="tns:subChainSwapMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="swapMoveSelector" type="tns:swapMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="tailChainSwapMoveSelector" type="tns:tailChainSwapMoveSelectorConfig"/>
-                                    
-            
-            <xs:element name="unionMoveSelector" type="tns:unionMoveSelectorConfig"/>
-                                  
-          
-          </xs:choice>
-                              
-          
-          <xs:element minOccurs="0" name="selectorProbabilityWeightFactoryClass" type="xs:string"/>
-                            
-        
-        </xs:sequence>
                       
       
       </xs:extension>
@@ -1535,6 +1475,72 @@
   </xs:complexType>
       
   
+  <xs:complexType name="subListChangeMoveSelectorConfig">
+            
+    
+    <xs:complexContent>
+                  
+      
+      <xs:extension base="tns:moveSelectorConfig">
+                        
+        
+        <xs:sequence>
+                              
+          
+          <xs:element minOccurs="0" name="minimumSubListSize" type="xs:int"/>
+                              
+          
+          <xs:element minOccurs="0" name="maximumSubListSize" type="xs:int"/>
+                              
+          
+          <xs:element minOccurs="0" name="selectReversingMoveToo" type="xs:boolean"/>
+                            
+        
+        </xs:sequence>
+                      
+      
+      </xs:extension>
+                
+    
+    </xs:complexContent>
+          
+  
+  </xs:complexType>
+      
+  
+  <xs:complexType name="subListSwapMoveSelectorConfig">
+            
+    
+    <xs:complexContent>
+                  
+      
+      <xs:extension base="tns:moveSelectorConfig">
+                        
+        
+        <xs:sequence>
+                              
+          
+          <xs:element minOccurs="0" name="minimumSubListSize" type="xs:int"/>
+                              
+          
+          <xs:element minOccurs="0" name="maximumSubListSize" type="xs:int"/>
+                              
+          
+          <xs:element minOccurs="0" name="selectReversingMoveToo" type="xs:boolean"/>
+                            
+        
+        </xs:sequence>
+                      
+      
+      </xs:extension>
+                
+    
+    </xs:complexContent>
+          
+  
+  </xs:complexType>
+      
+  
   <xs:complexType name="swapMoveSelectorConfig">
             
     
@@ -1616,7 +1622,79 @@
   </xs:complexType>
       
   
-  <xs:complexType name="queuedValuePlacerConfig">
+  <xs:complexType name="unionMoveSelectorConfig">
+            
+    
+    <xs:complexContent>
+                  
+      
+      <xs:extension base="tns:moveSelectorConfig">
+                        
+        
+        <xs:sequence>
+                              
+          
+          <xs:choice maxOccurs="unbounded" minOccurs="0">
+                                    
+            
+            <xs:element name="cartesianProductMoveSelector" type="tns:cartesianProductMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="changeMoveSelector" type="tns:changeMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="moveIteratorFactory" type="tns:moveIteratorFactoryConfig"/>
+                                    
+            
+            <xs:element name="moveListFactory" type="tns:moveListFactoryConfig"/>
+                                    
+            
+            <xs:element name="pillarChangeMoveSelector" type="tns:pillarChangeMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="pillarSwapMoveSelector" type="tns:pillarSwapMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="subChainChangeMoveSelector" type="tns:subChainChangeMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="subChainSwapMoveSelector" type="tns:subChainSwapMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="subListChangeMoveSelector" type="tns:subListChangeMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="subListSwapMoveSelector" type="tns:subListSwapMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="swapMoveSelector" type="tns:swapMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="tailChainSwapMoveSelector" type="tns:tailChainSwapMoveSelectorConfig"/>
+                                    
+            
+            <xs:element name="unionMoveSelector" type="tns:unionMoveSelectorConfig"/>
+                                  
+          
+          </xs:choice>
+                              
+          
+          <xs:element minOccurs="0" name="selectorProbabilityWeightFactoryClass" type="xs:string"/>
+                            
+        
+        </xs:sequence>
+                      
+      
+      </xs:extension>
+                
+    
+    </xs:complexContent>
+          
+  
+  </xs:complexType>
+      
+  
+  <xs:complexType name="pooledEntityPlacerConfig">
             
     
     <xs:complexContent>
@@ -1626,12 +1704,6 @@
                         
         
         <xs:sequence>
-                              
-          
-          <xs:element minOccurs="0" name="entityClass" type="xs:string"/>
-                              
-          
-          <xs:element minOccurs="0" name="valueSelector" type="tns:valueSelectorConfig"/>
                               
           
           <xs:choice minOccurs="0">
@@ -1685,7 +1757,7 @@
   </xs:complexType>
       
   
-  <xs:complexType name="pooledEntityPlacerConfig">
+  <xs:complexType name="queuedValuePlacerConfig">
             
     
     <xs:complexContent>
@@ -1695,6 +1767,12 @@
                         
         
         <xs:sequence>
+                              
+          
+          <xs:element minOccurs="0" name="entityClass" type="xs:string"/>
+                              
+          
+          <xs:element minOccurs="0" name="valueSelector" type="tns:valueSelectorConfig"/>
                               
           
           <xs:choice minOccurs="0">
