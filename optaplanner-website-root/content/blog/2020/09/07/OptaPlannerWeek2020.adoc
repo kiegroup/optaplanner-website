@@ -1,6 +1,6 @@
 = OptaPlanner Week 2020 recordings
 ge0ffrey
-2020-07-09
+2020-09-07
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: feature, coding
