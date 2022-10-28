@@ -34,22 +34,7 @@
           <dependency>
             <groupId>org.jbake</groupId>
             <artifactId>jbake-core</artifactId>
-            <version>2.7.0-rc.5</version>
-          </dependency>
-          <dependency>
-            <groupId>org.asciidoctor</groupId>
-            <artifactId>asciidoctorj</artifactId>
-            <version>2.4.3</version>
-          </dependency>
-          <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.31</version>
-          </dependency>
-          <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.28</version>
+            <version>${version.org.jbake}</version>
           </dependency>
         </dependencies>
       </plugin>
