@@ -8,7 +8,7 @@
 * https://github.com/kiegroup/kogito-pipelines/tree/main/dsl/seed/src/main/groovy/org/kie/jenkins/jobdsl.
 */
 
-import org.kie.jenkins.jobdsl.model.Folder
+import org.kie.jenkins.jobdsl.model.JobType
 import org.kie.jenkins.jobdsl.KogitoJobTemplate
 import org.kie.jenkins.jobdsl.KogitoJobUtils
 import org.kie.jenkins.jobdsl.Utils
@@ -22,7 +22,7 @@ if (Utils.isMainBranch(this)){
 ///////////////////////////////////////////////////////////////////////////
 
 void setupWebsitePublishOtherJob() {
-    def jobParams = KogitoJobUtils.getBasicJobParams(this, "optaplanner-website-publish", Folder.OTHER, "${jenkins_path}/Jenkinsfile.publish",
+    def jobParams = KogitoJobUtils.getBasicJobParams(this, "optaplanner-website-publish", JobType.OTHER, "${jenkins_path}/Jenkinsfile.publish",
             "This is a pipeline job for publishing automatically the Optaplanner Website.")
     KogitoJobUtils.setupJobParamsDefaultMavenConfiguration(this, jobParams)
     jobParams.triggers = [ push: true ]
