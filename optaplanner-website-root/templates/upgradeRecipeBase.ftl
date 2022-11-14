@@ -1,5 +1,6 @@
 <#import "normalBase.ftl" as parent>
 <#import "macros.ftl" as macros>
+<#assign pom = data.get('pom.yml')>
 
 <@layout>${content.body}</@layout>
 
@@ -46,6 +47,32 @@
         <div class="col-md-5 mb-4">
             <@macros.productToProjectVersionMapping/>
         </div>
+    </div>
+    <div class="sect1">
+        <h2>Automatic upgrade to the latest version</h2>
+        <p>
+            <b>Update your code in seconds</b>, with <code>optaplanner-migration</code>
+            (an <a href="https://docs.openrewrite.org/">OpenRewrite</a> recipe). Try it:
+        </p>
+        <ol>
+            <li>Stash any local changes.</li>
+            <li>
+                Run this command in your project directory:
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-shell" data-lang="shell">mvn clean org.openrewrite.maven:rewrite-maven-plugin:LATEST:run -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:${pom.latestFinal.version} -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest</code></pre>
+                    </div>
+                </div>
+                <p>
+                    Note: The <a href="https://github.com/openrewrite/rewrite/issues/2416">-Drewrite.recipeArtifactCoordinates might not work</a>,
+                    use the more verbose <code>pom.xml</code> approach instead.
+                </p>
+            </li>
+            <li>Check the local changes and commit them.</li>
+        </ol>
+        <p>
+            It only does upgrade steps with an <span class="badge bg-automated label-as-badge">Automated</span> badge.
+        </p>
     </div>
     <#nested>
 </@parent.layout>

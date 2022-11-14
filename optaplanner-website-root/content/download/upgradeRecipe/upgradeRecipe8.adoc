@@ -1648,7 +1648,7 @@ Even though OptaPlanner 8.x has always required JDK 11, this only becomes a hard
 
 == From 8.11.0.Final to 8.12.0.Final
 
-[.upgrade-recipe-major]
+[.upgrade-recipe-major.upgrade-recipe-automated]
 === Rename optaplanner.solver.solve-length to optaplanner.solver.solve.duration
 
 The Micrometer meter `optaplanner.solver.solve-length` has been renamed to `optaplanner.solver.solve.duration` to follow Micrometer naming conventions and make it appear better in a variety of monitoring systems. References to `optaplanner.solver.solve-length.+++*+++` in the monitoring system should be changed to `optaplanner.solver.solve.duration.+++*+++`.
@@ -1774,7 +1774,7 @@ Score DRL is not going away in OptaPlanner 8.
 
 == From 8.27.0.Final to 8.28.0.Final
 
-[.upgrade-recipe-minor]
+[.upgrade-recipe-major.upgrade-recipe-automated]
 === Constraint Streams: pre-existing `penalize(...)`, `reward(...)` and `impact(...)` replaced with builders
 
 Pre-existing methods to penalize and reward matches have been deprecated and will be removed in a future major version of OptaPlanner.
