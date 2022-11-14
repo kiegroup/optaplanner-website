@@ -29,6 +29,9 @@ function formatUpgradeRecipeItem(node, badge, collapseByDefault) {
     if ($(node).hasClass("upgrade-recipe-public-api")) {
         $(noteHeader).prepend($('<span class="badge bg-public-api" style="margin-right: 5px;">Public API</span>'));
     }
+    if ($(node).hasClass("upgrade-recipe-automated")) {
+        $(noteHeader).prepend($('<span class="badge bg-automated" style="margin-right: 5px;">Automated</span>'));
+    }
     $(noteHeader).prepend(badge);
     var collapseButton = $('<i class="fas fa-angle-up float-end"></i>');
     $(noteHeader).append(collapseButton);
