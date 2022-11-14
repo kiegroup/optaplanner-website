@@ -41,7 +41,8 @@
             </ul>
             <div class="sect1">
                 <h2>Upgrade from an older version</h2>
-                <p>To upgrade from an older version, first apply <a href="./">the previous upgrade recipes</a>.</p>
+                <p>To upgrade from an older version, first apply <a href="./">the previous upgrade recipes</a>.
+               You will find the order of migration steps bellow: </p>
             </div>
         </div>
         <div class="col-md-5 mb-4">

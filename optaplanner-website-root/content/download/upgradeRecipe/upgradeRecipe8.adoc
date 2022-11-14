@@ -1,3 +1,6 @@
+:toc:
+:toclevels: 1
+:toc-title:
 = Upgrade recipe 8
 :jbake-type: upgradeRecipeBase
 :jbake-description: Upgrade to OptaPlanner 8 from the previous version.

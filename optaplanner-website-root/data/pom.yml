@@ -44,3 +44,5 @@ productToCommunityVersionMap:
     communityVersion: 8.5 (and 7.52)
   - productVersion: 7.12
     communityVersion: 8.11 (and 7.59)
+  - productVersion: 7.13
+    communityVersion: 8.13 (and 7.67)
