@@ -16,8 +16,6 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarLearn">
                         <li><a class="dropdown-item" href="${content.rootpath}learn/documentation.html">Documentation</a></li>
                         <li><a class="dropdown-item" href="${content.rootpath}learn/video.html">Videos</a></li>
-                        <li><a class="dropdown-item" href="${content.rootpath}learn/slides.html">Slides</a></li>
-                        <li><a class="dropdown-item" href="${content.rootpath}learn/training.html">Training</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="${content.rootpath}learn/useCases/index.html">Use cases</a></li>
                         <li><a class="dropdown-item" href="${content.rootpath}compatibility/index.html">Compatibility</a></li>
