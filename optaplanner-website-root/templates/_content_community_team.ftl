@@ -12,7 +12,7 @@
         in community or at Red Hat.
     </p>
     <h2>Research &amp; Development</h2>
-    <@listUserBadges userIds=["triceo", "rsynek", "yurloc", "Christopher-Chianelli"]/>
+    <@listUserBadges userIds=["triceo", "ge0ffrey", "rsynek", "yurloc", "Christopher-Chianelli"]/>
     <h2>Quality Assurance</h2>
     <@listUserBadges userIds=["dupliaka"]/>
     <h2>Product Management</h2>
@@ -21,22 +21,7 @@
     <@listUserBadges userIds=["emmurphy1"]/>
     <h2>Build, continuous integration and releases</h2>
     <@listUserBadges userIds=["mbiarnes", "mareknovotny", "emingora", "tradisso"]/>
-
-    <h2>Honorable mentions</h2>
-    <p>
-        Many people have contributed their time to the OptaPlanner project, for which we are grateful.
-        You can see their names and their <a href="https://github.com/kiegroup/optaplanner/graphs/contributors">contributions on Github</a>.
-        Some past and present contributors, however, deserve special mentions.
-    </p>
-
-    <h3>Project creator</h3>
-    <@listUserBadges userIds=["ge0ffrey"]/>
-    <p>
-        Although Geoffrey is no longer with the project,
-        we recognize the monumental impact he had in shaping the OptaPlanner project as creator and lead for well over a decade.
-    </p>
-
-    <h3>Upstream Drools team</h3>
+    <h2>Upstream Drools team</h2>
     <@listUserBadges userIds=["mariofusco", "mdproctor"]/>
     <p>
         &hellip; and the rest of the Drools team.
