@@ -10,8 +10,7 @@ Watch all OptaPlanner videos on *https://www.youtube.com/channel/UCcpkOKpujFlM67
 
 == Make your own videos
 
-* All images shown are available as `png` and `svg`. See link:slides.html[the slides].
-* The https://github.com/kiegroup/optaplanner-website[optaplanner-website]
+The https://github.com/kiegroup/optaplanner-website[optaplanner-website]
 has a `videoUtils` directory which includes overlay and thumbnail templates.
 
 If it's a public video, link:../community/team.html[let us know]

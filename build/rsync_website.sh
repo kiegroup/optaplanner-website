@@ -3,7 +3,7 @@
 #
 #   You can't execute this script locally since keys, stored in Jenkins, are needed
 #   1. you need to store the id_rsa and known_host file on your local
-#   (for these pwd ask mbiarnes or geoffrey)
+#   (for these pwd ask mbiarnes)
 #   2. create a optaplanner directory underneath $HOME/.ssh to store the needed keys ($HOME/.ssh/optaplanner)
 #   3. copy known_hosts and id_rsa (the same as on Jenkins) to $HOME/.ssh/optaplanner
 #   Then you should use:
