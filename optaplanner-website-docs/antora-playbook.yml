@@ -6,7 +6,7 @@ site:
   start_page: optaplanner::planner-introduction/planner-introduction.adoc
   robots: allow
   keys:
-    google_analytics: 'UA-39485370-1'
+    google_analytics: 'G-KJ89NSGDQ9'
 content:
   edit_url: '{web_url}/edit/main/{path}'
   sources:
