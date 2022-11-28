@@ -1959,3 +1959,21 @@ public class RockShow implements RockStandstill {
 ----
 
 Read more about link:https://www.optaplanner.org/docs/optaplanner/latest/shadow-variable/shadow-variable.html#customVariableListener[custom shadow variables] in the documentation.
+
+== From 8.31.0.Final to 8.32.0.Final
+
+[.upgrade-recipe-major]
+=== XStream support deprecated
+
+OptaPlanner's support for serializing planning solution using XStream has been deprecated and will be removed in a future major release.
+This includes the `optaplanner-persistence-xstream` Maven module and its content.
+
+To continue serializing to XML, use `optaplanner-persistence-jaxb` instead.
+Alternatively, switch to `optaplanner-persistence-jackson` to serialize into Jackson.
+OptaPlanner Examples have done just that.
+
+* For a showcase of serializing a simple domain into JSON, see the `cloudbalancing` example.
+* For a showcase of serializing a chained domain incl. polymorphic types into JSON, see the `tsp` example.
+* For a showcase of serializing a domain based on planning list variable into JSON, see the `vehiclerouting` example.
+
+OptaPlanner Quickstarts never used XStream, and are therefore not affected by these changes.

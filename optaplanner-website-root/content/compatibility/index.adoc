@@ -29,4 +29,4 @@ OptaPlanner is compatible and integrates with:
 == Other
 
 Furthermore, OptaPlanner also integrates with many other technologies,
-such as JPA-Hibernate, Jackson, JSON-B, JAXB, XStream, ...
+such as JPA-Hibernate, Jackson, JSON-B, JAXB, ..
