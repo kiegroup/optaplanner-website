@@ -1969,7 +1969,7 @@ OptaPlanner's support for serializing planning solution using XStream has been d
 This includes the `optaplanner-persistence-xstream` Maven module and its content.
 
 To continue serializing to XML, use `optaplanner-persistence-jaxb` instead.
-Alternatively, switch to `optaplanner-persistence-jackson` to serialize into Jackson.
+Alternatively, switch to `optaplanner-persistence-jackson` to serialize into JSON.
 OptaPlanner Examples have done just that.
 
 * For a showcase of serializing a simple domain into JSON, see the `cloudbalancing` example.
