@@ -7,7 +7,7 @@
 https://www.redhat.com[Red Hat] sponsors this Open Source project
 and employs its link:../community/team.html[core developers].
 Additionally, Red Hat offers enterprise support and consultancy for the enterprise version of this community project,
-as part of a Red Hat product subscription.
+as part of link:https://www.redhat.com/en/products/application-foundations[Red Hat Application Foundations] subscription.
 
 To assist customers, Red Hat employs:
 
@@ -15,10 +15,6 @@ To assist customers, Red Hat employs:
 - Services team with consultants and architects to help deliver reliable production implementations with Red Hat PAM;
 - A 24/7 support team.
 - and of course the OptaPlanner team itself to implement missing features or fix bugs.
-
-== Product subscription
-
-Contact Red Hat for more information on product subscriptions that contain OptaPlanner.
 
 == Community and product comparison
 
