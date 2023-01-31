@@ -1977,3 +1977,83 @@ OptaPlanner Examples have done just that.
 * For a showcase of serializing a domain based on planning list variable into JSON, see the `vehiclerouting` example.
 
 OptaPlanner Quickstarts never used XStream, and are therefore not affected by these changes.
+
+== From 8.33.0.Final to 8.34.0.Final
+
+[.upgrade-recipe-minor.upgrade-recipe-automated]
+=== Various `Score` getters deprecated
+
+Getters on `Score` and `BendableScore` implementations have been renamed
+to match the new convention established by https://docs.oracle.com/en/java/javase/14/language/records.html[Java records].
+This means that the `get` prefix was dropped.
+The original methods are deprecated for removal, but still available.
+
+After in `*.java`:
+
+[source,java]
+----
+HardSoftScore score = ...;
+int hardScore = score.getHardScore();
+----
+
+After in `*.java`:
+
+[source,java]
+----
+HardSoftScore score = ...;
+int hardScore = score.hardScore();
+----
+
+[.upgrade-recipe-minor]
+=== `AbstractScore` and `AbstractBendableScore` deprecated
+
+In order to implement a custom score,
+we now ask users to directly implement the `Score` or `IBendableScore` interfaces.
+Their abstract implementations are now deprecated for removal and no longer used by the solver.
+
+Before in `*Score.java`:
+
+[source,java]
+----
+public class MyScore extends AbstractScore<MyScore> {
+
+    ...
+
+}
+----
+
+After in `*Score.java`:
+
+[source,java]
+----
+public class MyScore implements Score<MyScore> {
+
+    ...
+
+}
+----
+
+Before in `*BendableScore.java`:
+
+[source,java]
+----
+public class MyBendableScore extends AbstractBendableScore<MyBendableScore> {
+
+    ...
+
+}
+----
+
+After in `*BendableScore.java`:
+
+[source,java]
+----
+public class MyBendableScore implements IBendableScore<MyScore> {
+
+    ...
+
+}
+----
+
+Note that support for custom scores has long since been deprecated as well,
+and this change should therefore not impact many users, if any.
