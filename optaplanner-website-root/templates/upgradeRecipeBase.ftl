@@ -38,6 +38,10 @@
                     <span class="badge bg-success label-as-badge">Readme</span>
                     Read this to better understand why the subsequent major changes were made.
                 </li>
+                <li>
+                    <span class="badge bg-automated label-as-badge">Automated</span>
+                    Can be applied automatically using our <a href="#automatic-upgrade">migration tooling</a>.
+                </li>
             </ul>
             <div class="sect1">
                 <h2>Upgrade from an older version</h2>
@@ -49,7 +53,7 @@
             <@macros.productToProjectVersionMapping/>
         </div>
     </div>
-    <div class="sect1">
+    <div class="sect1" id="automatic-upgrade">
         <h2>Automatic upgrade to the latest version</h2>
         <p>
             <b>Update your code in seconds</b>, with <code>optaplanner-migration</code>
