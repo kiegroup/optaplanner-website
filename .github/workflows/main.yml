@@ -24,10 +24,10 @@ jobs:
 
       - name: Set up JDK
         uses: actions/setup-java@v3
-        check-latest: true
         with:
           java-version: 11
           distribution: temurin
+          check-latest: true          
 
       # See https://docs.github.com/en/actions/guides/building-and-testing-java-with-maven#caching-dependencies
       - name: Cache Maven packages
