@@ -6,7 +6,7 @@ triceo
 :jbake-tags: migration, jakarta, javax, javaee, quarkus, spring boot
 :jbake-social_media_share_image: migration-flowchart.png
 
-OptaPlanner 9 is on the way, and today we've made available its first Alpha release. But do not worry! Unless you use Quarkus or Spring Boot, absolutely nothing will change for you. Continue reading to find out what it is that we're doing, why, and how you can participate.
+OptaPlanner 9 is on the way, and today we've made available its first Beta release. But do not worry! Unless you use Quarkus or Spring Boot, absolutely nothing will change for you. Continue reading to find out what it is that we're doing, why, and how you can participate.
 
 
 == Why do OptaPlanner 9?
