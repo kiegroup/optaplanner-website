@@ -77,7 +77,7 @@ For users of `optaplanner-quarkus` or `optaplanner-spring-boot-starter`, the cha
 * Dependencies on Quarkus 2 need to be changed to Quarkus 3.
 * Dependencies on Spring Boot 2 need to be changed to Spring Boot 3. In case of Spring Boot 3, a migration to Java 17 is also necessary. That is the decision of the Spring framework team, and we can not influence that.
 
-However, we have created tooling to simplify this transition to a point where it is also a single line of code. Simply run the following command while in the root directory of your project:
+We have created tooling to simplify this transition to a point where it is also a single line of code. Simply run the following command while in the root directory of your project:
 
 [source,shell]
 ----
