@@ -95,7 +95,16 @@ All signs point to spring of 2023.
 
 == How can I help?
 
-We would appreciate if you could try to migrate your projects to the 9.34.0.Beta1 version we've released today.
+We would appreciate if you could try to migrate your projects to the 9.34.0.Beta1 version we've released recently.
 Known issues include broken native builds,
 and quickstarts not yet having been converted to the new version.
 If you run into any other issues, https://www.optaplanner.org/community/getHelp.html[reach out to us] and let us know.
+
+== Summary
+
+OptaPlanner 9 is coming and it remains functionally equivalent with OptaPlanner 8,
+except around Quarkus and Spring Boot.
+Please try the first Beta and give us your feedback if you can.
+We encourage you to migrate to OptaPlanner 9 as soon as it becomes available,
+but we will continue supporting OptaPlanner 8 for a while.
+We've made migration simple by providing an automated migration script.
