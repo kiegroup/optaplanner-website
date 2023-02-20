@@ -77,18 +77,15 @@ For users of `optaplanner-quarkus` or `optaplanner-spring-boot-starter`, the cha
 * Dependencies on Quarkus 2 need to be changed to Quarkus 3.
 * Dependencies on Spring Boot 2 need to be changed to Spring Boot 3. In case of Spring Boot 3, a migration to Java 17 is also necessary. That is the decision of the Spring framework team, and we can not influence that.
 
-We have created tooling to simplify this transition to a point where it is also a single line of code. Simply run the following command while in the root directory of your project:
+We have created tooling to simplify this transition. Simply run the following commands while in the root directory of your project:
 
 [source,shell]
 ----
-rewrite:run \
-  -Drewrite.configLocation="${optaplanner_file}" \
-  -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:"$project_version" \
-  -Drewrite.exclusions=optaplanner-operator/**,optaplanner-examples/data/** \
-  -Drewrite.activeRecipes=org.optaplanner.openrewrite.Quarkus3 \
-  -Dfull \
-  -Dquickly \
-  -Dmigration
+curl -o ToLatest9.yml https://raw.githubusercontent.com/kiegroup/optaplanner/main/optaplanner-migration/src/main/resources/META-INF/rewrite/ToLatest9.yml
+mvn clean org.openrewrite.maven:rewrite-maven-plugin:LATEST:run \
+   -Drewrite.configLocation=ToLatest9.yml \
+   -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:8.34.0.Final \
+   -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest9
 ----
 
 == When will OptaPlanner 9 be Final?
