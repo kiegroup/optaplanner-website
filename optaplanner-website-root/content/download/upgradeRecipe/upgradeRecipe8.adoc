@@ -2057,3 +2057,59 @@ public class MyBendableScore implements IBendableScore<MyScore> {
 
 Note that support for custom scores has long since been deprecated as well,
 and this change should therefore not impact many users, if any.
+
+[.upgrade-recipe-major.upgrade-recipe-automated]
+=== `ScoreManager` renamed to `SolutionManager`
+
+* Due to the expanding functional scope of the interface,
+we decided to deprecate for removal the `ScoreManager` interface and bring a new one instead,
+called `SolutionManager`.
+
+Before in `*.java`:
+
+[source,java]
+----
+    ScoreManager<MySolution, Score> scoreManager = ScoreManager.create(...);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    SolutionManager<MySolution, Score> solutionManager = SolutionManager.create(...);
+----
+
+* In the new interface,
+`ScoreDirector` methods `updateScore(...)` and `explainScore(...)` methods
+have been renamed to `update(...)` and `explain(...)` respectively.
+
+[source,java]
+----
+    Score score = scoreManager.updateScore(mySolution);
+    ScoreExplanation<MySolution, Score> explanation = scoreManager.explainScore(mySolution);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    Score score = solutionManager.update(mySolution);
+    ScoreExplanation<MySolution, Score> explanation = solutionManager.explain(mySolution);
+----
+
+* Finally, the `getSummary(...)` method has been deprecated for removal.
+
+Before in `*.java`:
+
+[source,java]
+----
+    String summary = scoreManager.getSummary(mySolution);
+----
+
+After in `*.java`:
+
+[source,java]
+----
+    String summary = solutionManager.explain(mySolution)
+        .getSummary();
+----
