@@ -93,7 +93,7 @@ All signs point to spring of 2023.
 
 == How can I help?
 
-We would appreciate if you could try to migrate your projects to the 9.34.0.Beta1 version we've released recently.
+We would appreciate if you could try to migrate your projects to the 9.35.0.Beta2 version we've released recently.
 Known issues include broken native builds,
 and quickstarts not yet having been converted to the new version.
 If you run into any other issues, https://www.optaplanner.org/community/getHelp.html[reach out to us] and let us know.
