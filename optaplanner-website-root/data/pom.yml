@@ -4,13 +4,8 @@ latestFinal:
   releaseDate: 2023-03-03
   releaseNotesVersion: 8
 
-  optawebVehicleRoutingDistributionZip: https://download.jboss.org/optaplanner/release/8.35.0.Final/optaweb-vehicle-routing-distribution-8.35.0.Final.zip
-
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.35.0.Final/optaplanner-docs/html_single/index.html
   engineDocumentationPdf: https://docs.optaplanner.org/8.35.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  optawebVehicleRoutingDocumentationHtmlSingle: https://docs.optaplanner.org/8.35.0.Final/optaweb-vehicle-routing-docs/html_single/index.html
-  optawebVehicleRoutingDocumentationPdf: https://docs.optaplanner.org/8.35.0.Final/optaweb-vehicle-routing-docs/pdf/optaweb-vehicle-routing-docs.pdf
-
   javadocs: https://docs.optaplanner.org/8.35.0.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
@@ -28,10 +23,8 @@ nightly:
   version: 8.36.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
   distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=8.36.0-SNAPSHOT&e=zip
-  optawebVehicleRoutingDistributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-distribution&v=8.36.0-SNAPSHOT&e=zip
 
   engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.36.0-SNAPSHOT&e=zip
-  optawebVehicleRoutingDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaweb.vehiclerouting&a=optaweb-vehicle-routing-docs&v=8.36.0-SNAPSHOT&e=zip
 
 productToCommunityVersionMap:
   - productVersion: 7.8

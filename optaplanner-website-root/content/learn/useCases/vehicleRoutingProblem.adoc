@@ -4,7 +4,6 @@
 :jbake-priority: 1.0
 :jbake-related_tag: vehicle routing
 :jbake-featured_youtube_id: 3Bgt4xC4a1M
-:jbake-featured_quickstart_github_url: https://github.com/kiegroup/optaweb-vehicle-routing#readme
 
 
 The Vehicle Routing Problem (VRP) optimizes the routes of delivery trucks,
@@ -18,8 +17,8 @@ OptaPlanner is flexible enough to handle any VRP variant.
 It includes examples of CVRP (Capacitated Vehicle Routing Problem)
 and VRPTW (Vehicle Routing Problem with Time Windows).
 
-**https://github.com/kiegroup/optaweb-vehicle-routing[Fork our Vehicle Routing application]
-and customize that template to your needs.**
+**https://github.com/kiegroup/optaplanner-quickstarts/tree/stable/use-cases/vehicle-routing[Fork our Vehicle Routing quickstart]
+and customize it to your needs.**
 
 == What is OptaPlanner?
 
@@ -56,6 +55,6 @@ and - of course - advanced construction heuristics and metaheuristics.
 
 == Integration with real maps
 
-As demonstrated in link:../../learn/rhpds/optaweb-vehicle-routing.html[OptaWeb Vehicle Routing], integration with Google Maps or OpenStreetMap is straightforward:
+Integration with Google Maps or OpenStreetMap is straightforward:
 
 image:integrationWithRealMaps.png[Integration with real maps]
