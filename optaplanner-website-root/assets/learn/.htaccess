@@ -1,2 +1,4 @@
 Redirect 301 /learn/slides.html https://www.optaplanner.org/learn/documentation.html
 Redirect 301 /learn/training.html https://www.optaplanner.org/learn/documentation.html
+Redirect 301 /learn/rhpds/index.html https://www.optaplanner.org/learn/useCases/index.html
+Redirect 301 /learn/rhpds/optaweb-vehicle-routing.html https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html
