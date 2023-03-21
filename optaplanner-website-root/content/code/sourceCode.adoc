@@ -50,11 +50,6 @@ The first time, Maven might take a lot of time, because it needs to download jar
 _The source code for each Quick Start._ +
 https://github.com/kiegroup/optaplanner-quickstarts
 
-=== optaweb-vehicle-routing
-
-_The source code for the vehicle routing web application reference architecture._ +
-https://github.com/kiegroup/optaweb-vehicle-routing
-
 === optaplanner-website (www.optaplanner.org)
 
 _The source code for this website and the presentation slides._ +

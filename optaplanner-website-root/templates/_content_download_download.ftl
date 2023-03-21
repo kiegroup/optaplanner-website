@@ -13,9 +13,6 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="engine-tab" data-bs-toggle="tab" data-bs-target="#engine" type="button" role="tab" aria-controls="engine" aria-selected="true">Engine</button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="optaweb-vehicle-routing-tab" data-bs-toggle="tab" data-bs-target="#optaweb-vehicle-routing" type="button" role="tab" aria-controls="optaweb-vehicle-routing" aria-selected="false">OptaWeb Vehicle Routing</button>
-        </li>
     </ul>
     <div class="tab-content border-bottom border-start border-end p-4 mb-4">
         <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
@@ -84,25 +81,6 @@
                         <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latestFinal.version}'&#x000A;}</code></pre>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing" role="tabpanel" aria-labelledby="optaweb-vehicle-routing-tab">
-            <div class="ulist">
-                <ul>
-                    <li>
-                        <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.latestFinal.optawebVehicleRoutingDistributionZip}">Download OptaWeb Vehicle Routing ${pom.latestFinal.version}</a></strong></p>
-                        <div class="ulist">
-                            <ul>
-                                <li>
-                                    <p>License: <a href="../code/license.html">Apache License 2.0</a> - Date: ${pom.latestFinal.releaseDate?string("EEE d MMMM yyyy")}</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <p>For Red Hat subscription releases <a href="https://access.redhat.com/downloads">go to the product download site</a>.</p>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
@@ -174,9 +152,6 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="engine-nightly-tab" data-bs-toggle="tab" data-bs-target="#engine-nightly" type="button" role="tab" aria-controls="engine-nightly" aria-selected="true">Engine</button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="optaweb-vehicle-routing-nightly-tab" data-bs-toggle="tab" data-bs-target="#optaweb-vehicle-routing-nightly" type="button" role="tab" aria-controls="optaweb-vehicle-routing-nightly" aria-selected="false">OptaWeb Vehicle Routing</button>
-        </li>
     </ul>
     <div class="tab-content border-bottom border-start border-end p-4 mb-4">
         <div class="tab-pane fade show active" id="engine-nightly" role="tabpanel" aria-labelledby="engine-nightly-tab">
@@ -184,15 +159,6 @@
                 <ul>
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.distributionZip}">Download OptaPlanner Engine ${pom.nightly.version}</a></strong></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing-nightly" role="tabpanel" aria-labelledby="optaweb-vehicle-routing-nightly-tab">
-            <div class="ulist">
-                <ul>
-                    <li>
-                        <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.optawebVehicleRoutingDistributionZip}">Download OptaWeb Vehicle Routing ${pom.nightly.version}</a></strong></p>
                     </li>
                 </ul>
             </div>
