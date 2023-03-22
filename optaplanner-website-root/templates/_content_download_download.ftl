@@ -9,12 +9,7 @@
     <#assign pom = data.get('pom.yml')>
     <h1>${content.title}</h1>
     <h2 id="FinalReleases">Final releases</h2>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="engine-tab" data-bs-toggle="tab" data-bs-target="#engine" type="button" role="tab" aria-controls="engine" aria-selected="true">Engine</button>
-        </li>
-    </ul>
-    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
+    <div class="tab-content p-4 mb-4">
         <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
             <div class="sect2">
                 <h3>Distribution zip</h3>
@@ -94,52 +89,45 @@
     <#if pom.latest.version == pom.latestFinal.version>
         <p><em>There is no Alpha or Beta yet because we just released a Final version.</em></p>
     <#else>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="engine-latest-tab" data-bs-toggle="tab" data-bs-target="#engine-latest" type="button" role="tab" aria-controls="engine-latest" aria-selected="true">Engine</button>
-            </li>
-        </ul>
-        <div class="tab-content border-bottom border-start border-end p-4 mb-4">
-            <div class="tab-pane fade show active" id="engine-latest" role="tabpanel" aria-labelledby="engine-latest-tab">
-                <div class="sect2">
-                    <h3>Distribution zip</h3>
-                    <div class="ulist">
-                        <ul>
-                            <li>
-                                <p><span class="image"><img src="download.png" alt="Download"></span>
-                                    <strong><a href="${pom.latest.distributionZip}">Download OptaPlanner Engine ${pom.latest.version}</a></strong></p>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>
-                                            <p><a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x"">Release notes ${pom.latest.releaseNotesVersion}</a> -
-                                                <a href="upgradeRecipe/upgradeRecipe${pom.latest.releaseNotesVersion}.html">Upgrade recipe to ${pom.latest.releaseNotesVersion}</a></p>
-                                        </li>
-                                        <li>
-                                            <p>License: <a href="../code/license.html">Apache License 2.0</a> - Date: ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}</p>
-                                        </li>
-                                        <li>
-                                            <p>Download size: Large (over 90% is due to examples, data sets and documentation)</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
+        <div class="tab-content p-4 mb-4">
+            <div class="sect2">
+                <h3>Distribution zip</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p><span class="image"><img src="download.png" alt="Download"></span>
+                                <strong><a href="${pom.latest.distributionZip}">Download OptaPlanner Engine ${pom.latest.version}</a></strong></p>
+                            <div class="ulist">
+                                <ul>
+                                    <li>
+                                        <p><a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latestFinal.releaseNotesVersion}.x"">Release notes ${pom.latest.releaseNotesVersion}</a> -
+                                            <a href="upgradeRecipe/upgradeRecipe${pom.latest.releaseNotesVersion}.html">Upgrade recipe to ${pom.latest.releaseNotesVersion}</a></p>
+                                    </li>
+                                    <li>
+                                        <p>License: <a href="../code/license.html">Apache License 2.0</a> - Date: ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}</p>
+                                    </li>
+                                    <li>
+                                        <p>Download size: Large (over 90% is due to examples, data sets and documentation)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3>Maven</h3>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;project&gt;&#x000A;  ...&#x000A;  &lt;dependencyManagement&gt;&#x000A;    &lt;dependencies&gt;&#x000A;      &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;optaplanner-bom&lt;/artifactId&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;        &lt;version&gt;${pom.latest.version}&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;      &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;  &lt;/dependencyManagement&gt;&#x000A;  &lt;dependencies&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-core&lt;/artifactId&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-test&lt;/artifactId&gt;&#x000A;      &lt;scope&gt;test&lt;/scope&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    ...&#x000A;  &lt;/dependencies&gt;&#x000A;&lt;/project&gt;</code></pre>
                     </div>
                 </div>
-                <div class="sect2">
-                    <h3>Maven</h3>
-                    <div class="listingblock">
-                        <div class="content">
-                            <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;project&gt;&#x000A;  ...&#x000A;  &lt;dependencyManagement&gt;&#x000A;    &lt;dependencies&gt;&#x000A;      &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;optaplanner-bom&lt;/artifactId&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;        &lt;version&gt;${pom.latest.version}&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;      &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;  &lt;/dependencyManagement&gt;&#x000A;  &lt;dependencies&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-core&lt;/artifactId&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-test&lt;/artifactId&gt;&#x000A;      &lt;scope&gt;test&lt;/scope&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    ...&#x000A;  &lt;/dependencies&gt;&#x000A;&lt;/project&gt;</code></pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="sect2">
-                    <h3>Gradle</h3>
-                    <div class="listingblock">
-                        <div class="content">
-                            <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latest.version}'&#x000A;}</code></pre>
-                        </div>
+            </div>
+            <div class="sect2">
+                <h3>Gradle</h3>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latest.version}'&#x000A;}</code></pre>
                     </div>
                 </div>
             </div>
@@ -148,20 +136,13 @@
 
     <h3 id="NightlySnapshots">Nightly snapshots</h3>
     <p>Nightly snapshots are unstable binaries, built automatically by our CI server.</p>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="engine-nightly-tab" data-bs-toggle="tab" data-bs-target="#engine-nightly" type="button" role="tab" aria-controls="engine-nightly" aria-selected="true">Engine</button>
-        </li>
-    </ul>
-    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
-        <div class="tab-pane fade show active" id="engine-nightly" role="tabpanel" aria-labelledby="engine-nightly-tab">
-            <div class="ulist">
-                <ul>
-                    <li>
-                        <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.distributionZip}">Download OptaPlanner Engine ${pom.nightly.version}</a></strong></p>
-                    </li>
-                </ul>
-            </div>
+    <div class="tab-content p-4 mb-4">
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.distributionZip}">Download OptaPlanner Engine ${pom.nightly.version}</a></strong></p>
+                </li>
+            </ul>
         </div>
     </div>
     <h2 id="OlderReleases">Older releases</h2>
