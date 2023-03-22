@@ -8,59 +8,47 @@
 <@parent.layout>
     <#assign pom = data.get('pom.yml')>
     <h1>${content.title}</h1>
+
+    <div class="tab-content p-4 mb-4">
+        <h2><span class="image"><img src="documentation.png" alt="Documentation"></span><a href="${content.rootpath}docs">Visit the documentation website.</a></h2>
+    </div>
+
     <h2 id="FinalReleases">Final releases</h2>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="engine-tab" data-bs-toggle="tab" data-bs-target="#engine" type="button" role="tab" aria-controls="engine" aria-selected="true">Engine</button>
-        </li>
-    </ul>
-    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
-        <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
-            <div class="ulist">
-                <ul>
-                    <li>
-                       <p><span class="image"><img src="documentation.png" alt="Documentation"></span><a href="${content.rootpath}docs">Visit the documentation website.</a></p>
-                    </li>
-                    <li>
-                        <p>OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
-                        <div class="ulist">
-                            <ul>
-                                <li>
-                                    <p><a href="${pom.latestFinal.engineDocumentationHtmlSingle}">HTML Single</a> -
-                                        <a href="${pom.latestFinal.engineDocumentationPdf}">PDF</a></p>
-                                </li>
-                                <li>
-                                    <p>Javadocs:
-                                        <a href="${pom.latestFinal.javadocs}">HTML</a></p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
-                    </li>
-                </ul>
-            </div>
+    <div class="tab-content p-4 mb-4">
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><span class="image"><img src="documentation.png" alt="Documentation"></span>OptaPlanner Engine reference manual ${pom.latestFinal.version}:</p>
+                    <div class="ulist">
+                        <ul>
+                            <li>
+                                <p><a href="${pom.latestFinal.engineDocumentationHtmlSingle}">HTML Single</a> -
+                                    <a href="${pom.latestFinal.engineDocumentationPdf}">PDF</a></p>
+                            </li>
+                            <li>
+                                <p>Javadocs:
+                                    <a href="${pom.latestFinal.javadocs}">HTML</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p>Red Hat subscription documentation: Check <a href="${config.productDocsUrl}">the customer portal</a>.</p>
+                </li>
+            </ul>
         </div>
     </div>
 
     <h2 id="NightlySnapshots">Nightly snapshots</h2>
     <p>Nightly snapshots are unstable binaries, build automatically by our CI server.</p>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="engine-nightly-tab" data-bs-toggle="tab" data-bs-target="#engine-nightly" type="button" role="tab" aria-controls="engine-nightly" aria-selected="true">Engine</button>
-        </li>
-    </ul>
-    <div class="tab-content border-bottom border-start border-end p-4 mb-4">
-        <div class="tab-pane fade show active" id="engine-nightly" role="tabpanel" aria-labelledby="engine-nightly-tab">
-            <div class="ulist">
-                <ul>
-                    <li>
-                        <p><span class="image"><img src="documentation.png" alt="Documentation"></span>
-                            <strong><a href="${pom.nightly.engineDocumentationZip}">OptaPlanner Engine reference manual ${pom.nightly.version}</a></strong></p>
-                    </li>
-                </ul>
-            </div>
+    <div class="tab-content p-4 mb-4">
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p><span class="image"><img src="documentation.png" alt="Documentation"></span>
+                        <strong><a href="${pom.nightly.engineDocumentationZip}">OptaPlanner Engine reference manual ${pom.nightly.version}</a></strong></p>
+                </li>
+            </ul>
         </div>
     </div>
 
