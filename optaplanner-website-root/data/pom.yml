@@ -1,30 +1,30 @@
 latestFinal:
-  version: 8.35.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.35.0.Final/optaplanner-distribution-8.35.0.Final.zip
-  releaseDate: 2023-03-03
+  version: 8.36.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.36.0.Final/optaplanner-distribution-8.36.0.Final.zip
+  releaseDate: 2023-03-28
   releaseNotesVersion: 8
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.35.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/8.35.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: https://docs.optaplanner.org/8.35.0.Final/optaplanner-javadoc/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.36.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/8.36.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: https://docs.optaplanner.org/8.36.0.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 8.35.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.35.0.Final/optaplanner-distribution-8.35.0.Final.zip
-  releaseDate: 2023-03-03
+  version: 8.36.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.36.0.Final/optaplanner-distribution-8.36.0.Final.zip
+  releaseDate: 2023-03-28
   releaseNotesVersion: 8
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.35.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.36.0.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/8.35.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/8.36.0.Final/optaplanner-javadoc/index.html
 
 nightly:
-  version: 8.36.0-SNAPSHOT
+  version: 8.37.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
-  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=8.36.0-SNAPSHOT&e=zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=8.37.0-SNAPSHOT&e=zip
 
-  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.36.0-SNAPSHOT&e=zip
+  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=8.37.0-SNAPSHOT&e=zip
 
 productToCommunityVersionMap:
   - productVersion: 7.8
