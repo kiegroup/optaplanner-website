@@ -2113,3 +2113,66 @@ After in `*.java`:
     String summary = solutionManager.explain(mySolution)
         .getSummary();
 ----
+
+== From 8.36.0.Final to 8.37.0.Final
+
+[.upgrade-recipe-major]
+=== SubList size configuration on move selectors deprecated
+
+We have introduced a new configuration class for the `SubListSelector` and moved the `minimumSubListSize` and `maximumSubListSize` configuration properties from `SubListChangeMoveSelectorConfig` and from `SubListSwapMoveSelectorConfig` to `SubListSelectorConfig`.
+The move selectors' subList size properties have been deprecated and will eventually be removed in a future major version.
+
+Before in `*SolverConfig.xml`:
+
+[source,xml]
+----
+<solver>
+  ...
+  <localSearch>
+    <unionMoveSelector>
+      <subListChangeMoveSelector>
+        <minimumSubListSize>2</minimumSubListSize>
+        <maximumSubListSize>4</maximumSubListSize>
+        <selectReversingMoveToo>true</selectReversingMoveToo>
+      </subListChangeMoveSelector>
+      <subListSwapMoveSelector>
+        <minimumSubListSize>2</minimumSubListSize>
+        <maximumSubListSize>4</maximumSubListSize>
+        <selectReversingMoveToo>true</selectReversingMoveToo>
+      </subListSwapMoveSelector>
+    </unionMoveSelector>
+    ...
+  </localSearch>
+</solver>
+----
+
+After in `*SolverConfig.xml`:
+
+[source,xml]
+----
+<solver>
+  ...
+  <localSearch>
+    <unionMoveSelector>
+      <subListChangeMoveSelector>
+        <selectReversingMoveToo>true</selectReversingMoveToo>
+        <subListSelector>
+          <minimumSubListSize>2</minimumSubListSize>
+          <maximumSubListSize>4</maximumSubListSize>
+        </subListSelector>
+      </subListChangeMoveSelector>
+      <subListSwapMoveSelector>
+        <selectReversingMoveToo>true</selectReversingMoveToo>
+        <subListSelector>
+          <minimumSubListSize>2</minimumSubListSize>
+          <maximumSubListSize>4</maximumSubListSize></subListSelector>
+        <secondarySubListSelector>
+          <minimumSubListSize>2</minimumSubListSize>
+          <maximumSubListSize>4</maximumSubListSize>
+        </secondarySubListSelector>
+      </subListSwapMoveSelector>
+    </unionMoveSelector>
+    ...
+  </localSearch>
+</solver>
+----
