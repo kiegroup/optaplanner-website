@@ -10,8 +10,7 @@
     <div class="paragraph summaryParagraph">
         <p><strong>OptaPlanner’s public API classes are backwards compatible</strong> (per series),
             but users often also use impl classes (which are documented in the reference manual too).
-            This upgrade recipe <em>minimizes the pain</em> to upgrade your code
-            and to take advantage of <a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-8.x">the newest features in OptaPlanner 8</a>.</p>
+            This upgrade recipe <em>minimizes the pain</em> to upgrade your code and to take advantage of the newest features in OptaPlanner.</p>
     </div>
     <div class="row">
         <div class="col-md-7">
@@ -54,7 +53,7 @@
         </div>
     </div>
     <div class="sect1" id="automatic-upgrade">
-        <h2>Automatic upgrade to the latest version</h2>
+        <h2 id="automatic-upgrade">Automatic upgrade to the latest version</h2>
         <p>
             <b>Update your code in seconds</b>, with <code>optaplanner-migration</code>
             (an <a href="https://docs.openrewrite.org/">OpenRewrite</a> recipe). Try it:
@@ -65,7 +64,7 @@
                 Run this command in your project directory:
                 <div class="listingblock">
                     <div class="content">
-                        <pre class="highlight"><code class="language-shell" data-lang="shell">mvn clean org.openrewrite.maven:rewrite-maven-plugin:LATEST:run -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:${pom.latestFinal.version} -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest</code></pre>
+                        <pre class="highlight"><code class="language-shell" data-lang="shell">mvn clean org.openrewrite.maven:rewrite-maven-plugin:LATEST:run -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:${pom.latestFinal.version} -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest9</code></pre>
                     </div>
                 </div>
                 <p>
