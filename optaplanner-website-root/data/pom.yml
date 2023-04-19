@@ -22,7 +22,7 @@ latest:
 latest8Final:
   version: 8.37.0.Final
   distributionZip: https://download.jboss.org/optaplanner/release/8.37.0.Final/optaplanner-distribution-8.37.0.Final.zip
-  releaseDate: 2023-03-28
+  releaseDate: 2023-04-17
   releaseNotesVersion: 8
 
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.37.0.Final/optaplanner-docs/html_single/index.html
