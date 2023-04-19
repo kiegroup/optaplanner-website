@@ -11,8 +11,9 @@
     <h2 id="FinalReleases">Final releases</h2>
     <div class="tab-content p-4 mb-4">
         <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
+            <h3>OptaPlanner 9</h3>
             <div class="sect2">
-                <h3>Distribution zip</h3>
+                <h4>Distribution zip</h4>
                 <div class="paragraph">
                     <p>The OptaPlanner distribution zip includes binaries, documentation, examples and sources.</p>
                 </div>
@@ -43,7 +44,7 @@
                 </div>
             </div>
             <div class="sect2">
-                <h3>Maven</h3>
+                <h4>Maven</h4>
                 <div class="paragraph">
                     <p>The OptaPlanner jars are also available in <a href="http://search.maven.org/#search|ga|1|org.optaplanner">the central maven repository</a>
                         (and also in <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.optaplanner\~~\~\~">the JBoss maven repository</a>).</p>
@@ -67,13 +68,64 @@
                 </div>
             </div>
             <div class="sect2">
-                <h3>Gradle</h3>
+                <h4>Gradle</h4>
                 <div class="paragraph">
                     <p>With Gradle, just add the <code>optaplanner-core</code> dependency in your <code>build.gradle</code> to get started:</p>
                 </div>
                 <div class="listingblock">
                     <div class="content">
                         <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latestFinal.version}'&#x000A;}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <h3 id="optaplanner8">OptaPlanner 8</h3>
+            <p>
+                Both OptaPlanner 8 and 9 are equal feature-wise and their APIs have not changed.
+                While OptaPlanner 9 brings compatibility with Jakarta EE 10, Quarkus 3 and Spring Boot 3, OptaPlanner 8
+                provides full backward compatibility for users who cannot migrate yet.
+                OptaPlanner 8 will keep being released in parallel to OptaPlanner 9 until further notice.
+            </p>
+            <p>If you are not sure which version to pick, see the following diagram:</p>
+            <img src="../blog/2023/02/21/migration-flowchart.png" alt="Which OptaPlanner stream to choose?">
+            <p>
+                To summarize what the diagram shows:
+                <ul>
+                    <li>If you're starting a new project, or you don't use Quarkus or Spring Boot, we recommend using OptaPlanner 9.</li>
+                    <li>Otherwise, stay on OptaPlanner 8, but plan for the migration. OptaPlanner 8 releases will end once enough users adopt Quarkus 3 or Spring Boot 3.</li>
+                </ul>
+            </p>
+            <div class="sect2">
+                <h4>Maven</h4>
+                <div class="paragraph">
+                    <p>The OptaPlanner jars are also available in <a href="http://search.maven.org/#search|ga|1|org.optaplanner">the central maven repository</a>
+                        (and also in <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.optaplanner\~~\~\~">the JBoss maven repository</a>).</p>
+                </div>
+                <div class="paragraph">
+                    <p>With Maven, just add the <code>optaplanner-core</code> dependency in your <code>pom.xml</code> to get started:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-xml" data-lang="xml">  &lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;optaplanner-core&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${pom.latest8Final.version}&lt;/version&gt;&#x000A;  &lt;/dependency&gt;</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Or better yet, import the <code>optaplanner-bom</code> to avoid duplicating version numbers
+                        when adding other optaplanner dependencies later on:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;project&gt;&#x000A;  ...&#x000A;  &lt;dependencyManagement&gt;&#x000A;    &lt;dependencies&gt;&#x000A;      &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;optaplanner-bom&lt;/artifactId&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;        &lt;version&gt;${pom.latest8Final.version}&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;      &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;  &lt;/dependencyManagement&gt;&#x000A;  &lt;dependencies&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-core&lt;/artifactId&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.optaplanner&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;optaplanner-test&lt;/artifactId&gt;&#x000A;      &lt;scope&gt;test&lt;/scope&gt;&#x000A;    &lt;/dependency&gt;&#x000A;    ...&#x000A;  &lt;/dependencies&gt;&#x000A;&lt;/project&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="sect2">
+                <h4>Gradle</h4>
+                <div class="paragraph">
+                    <p>With Gradle, just add the <code>optaplanner-core</code> dependency in your <code>build.gradle</code> to get started:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="highlight"><code class="language-gradle" data-lang="gradle">dependencies {&#x000A;  implementation 'org.optaplanner:optaplanner-core:${pom.latest8Final.version}'&#x000A;}</code></pre>
                     </div>
                 </div>
             </div>
