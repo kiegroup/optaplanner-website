@@ -1,6 +1,6 @@
 = OptaPlanner 9 has been released
 rsynek
-2023-02-21
+2023-04-24
 :page-interpolate: true
 :jbake-type: post
 :jbake-tags: migration, jakarta, javax, javaee, quarkus, spring boot
