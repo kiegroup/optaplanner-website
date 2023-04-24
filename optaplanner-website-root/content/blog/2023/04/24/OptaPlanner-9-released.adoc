@@ -40,7 +40,7 @@ If you use the DRL score calculation and Quarkus, either wait with migration to 
 
 == Which one to use?
 
-The link:../../02/21/OptaPlanner-9-is-coming.adoc[previous article] covers this question; let me shortly repeat how we recomment to approach:
+The link:../../02/21/OptaPlanner-9-is-coming.adoc[previous article] covers this question; let me shortly repeat the recommended approach:
 
 image::migration-flowchart.png[Which OptaPlanner stream to choose?]
 
