@@ -37,6 +37,8 @@ The following table summarizes the compatibility of both OptaPlanner streams:
 
 Apart from those, OptaPlanner 9 currently does not support DRL score calculation when used together with Quarkus.
 If you use the DRL score calculation and Quarkus, either wait with migration to OptaPlanner 9 or consider link:https://www.optaplanner.org/download/upgradeRecipe/drl-to-constraint-streams-migration.html[moving to the Constraint Streams API].
+Also, OptaPlanner 9 no longer supports the `AbstractScoreHibernateType` and its subtypes.
+Please see the https://www.optaplanner.org/download/upgradeRecipe/upgradeRecipe8.html[upgrade recipe] for more details.
 
 == Which one to use?
 
