@@ -22,7 +22,7 @@
                 <@macros.getStartedButton/>
                 <div class="card bg-light mb-4">
                     <div class="text-center p-4">
-                        <a href="${config.canonicalBaseUrl}/download/download.html#optaplanner8">Need the legacy OptaPlanner 8?</a>
+                        <a href="${config.canonicalBaseUrl}/download/download.html#optaplanner8">Need legacy OptaPlanner 8?</a>
                     </div>
                 </div>
             </div>
