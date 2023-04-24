@@ -1,0 +1,23 @@
+:toc:
+:toclevels: 1
+:toc-title:
+= Upgrade recipe 9
+:jbake-type: upgradeRecipeBase
+:jbake-description: Upgrade to OptaPlanner 9 from the previous version.
+:jbake-priority: 0.5
+:jbake-upgrade_recipe_version: 9
+
+OptaPlanner 9 brings compatibility with Jakarta EE 10, Quarkus 3, and Spring Boot 3.
+Until further notice, OptaPlanner will keep releasing both versions: 8.x and 9.x.
+
+OptaPlanner 9 remain fully backward compatible with OptaPlanner 8 with the following exceptions:
+
+* `optaplanner-spring-boot-starter` now requires Java 17 due to Spring Boot 3
+* DRL score calculation is currently not supported with Quarkus 3; this feature might be available later after a Drools version compatible with Quarkus 3 will have been released.
+
+== From 8.x.0.Final to 9.x.0.Final
+
+Before upgrading to 9.x.0.Final, be sure to first link:upgradeRecipe8.adoc[upgrade to the latest version 8].
+
+To upgrade to the latest OptaPlanner 9, follow the link:../upgradeRecipe/upgradeRecipe9.html#automatic-upgrade[automatic upgrade instructions].
+

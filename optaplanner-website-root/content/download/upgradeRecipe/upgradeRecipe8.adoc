@@ -68,7 +68,7 @@ In version 8, we have added new functionality to the `ScoreManager` and as a res
 Before in `*.java`:
 
 [source,java]
-----
+
 ScoreDirectorFactory<CloudBalance> scoreDirectorFactory = solverFactory.getScoreDirectorFactory();
 try (ScoreDirector<CloudBalance> scoreDirector = scoreDirectorFactory.buildScoreDirector()) {
     scoreDirector.setWorkingSolution(solution);

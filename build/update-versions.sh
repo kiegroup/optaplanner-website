@@ -31,16 +31,27 @@ this_script_directory="${BASH_SOURCE%/*}"
 if [[ ! -d "$this_script_directory" ]]; then
   this_script_directory="$PWD"
 fi
+
 readonly pom_yml_file="$this_script_directory/../optaplanner-website-root/data/pom.yml"
+readonly major_version=${new_release::1}
 
-sed -i -E "s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g" "$pom_yml_file"
-sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\.(Final|Beta[0-9]*|CR[0-9]*)/$new_release/g" "$pom_yml_file"
-sed -i -E "s/[0-9]+\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
+if [[ "$major_version" == "9" ]]; then
+  sed -i -E "/latestFinal:/{ n; n; n; s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g }" "$pom_yml_file"
+  sed -i -E "/latest:/{ n; n; n; s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g }" "$pom_yml_file"
+  sed -i -E "s/9\.[0-9]+\.[0-9]+\.(Final|Beta[0-9]*|CR[0-9]*)/$new_release/g" "$pom_yml_file"
+  sed -i -E "s/9\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
 
-# Update antora-playbook.yml to point to the latest release branch of https://github.com/kiegroup/optaplanner.
-if [[ "$new_release" == *Final* ]]; then
-  readonly antora_playbook_yml_file="$this_script_directory/../optaplanner-website-docs/antora-playbook.yml"
-  readonly version_array=(${new_release//./ })
-  readonly release_branch="${version_array[0]}.${version_array[1]}.x"
-  sed -i -E "s/branches: \[[0-9]+\.[0-9]+\.x\]/branches: [$release_branch]/" "$antora_playbook_yml_file"
+  # Update antora-playbook.yml to point to the latest release branch of https://github.com/kiegroup/optaplanner.
+  if [[ "$new_release" == *Final* ]]; then
+    readonly antora_playbook_yml_file="$this_script_directory/../optaplanner-website-docs/antora-playbook.yml"
+    readonly version_array=(${new_release//./ })
+    readonly release_branch="${version_array[0]}.${version_array[1]}.x"
+    sed -i -E "s/branches: \[[0-9]+\.[0-9]+\.x\]/branches: [$release_branch]/" "$antora_playbook_yml_file"
+  fi
+elif [[ "$major_version" == "8" ]]; then
+  sed -i -E "/latest8Final:/{ n; n; n; s/releaseDate: [0-9]+-[0-9]+-[0-9]+/releaseDate: $release_date/g }" "$pom_yml_file"
+  sed -i -E "s/8\.[0-9]+\.[0-9]+\.(Final|Beta[0-9]*|CR[0-9]*)/$new_release/g" "$pom_yml_file"
+  sed -i -E "s/8\.[0-9]+\.[0-9]+\-SNAPSHOT/$new_snapshot/g" "$pom_yml_file"
 fi
+
+

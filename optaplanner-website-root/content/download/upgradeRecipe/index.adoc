@@ -6,6 +6,7 @@
 
 Upgrade quickly and efficiently to the latest and greatest OptaPlanner version:
 
+* link:upgradeRecipe9.html[Upgrade from OptaPlanner 8.x to 9.x]
 * link:drl-to-constraint-streams-migration.html[Migrate from score DRL to Constraint Streams in OptaPlanner 8.x]
 * link:upgradeRecipe8.html[Upgrade from OptaPlanner 7.x to 8.x]
 * Upgrade from OptaPlanner 6.x to 7.x
