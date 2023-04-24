@@ -2,7 +2,7 @@ latestFinal:
   version: 9.37.0.Final
   distributionZip: https://download.jboss.org/optaplanner/release/9.37.0.Final/optaplanner-distribution-9.37.0.Final.zip
   releaseDate: 2023-04-24
-  releaseNotesVersion: 8
+  releaseNotesVersion: 9
 
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.37.0.Final/optaplanner-docs/html_single/index.html
   engineDocumentationPdf: https://docs.optaplanner.org/9.37.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
@@ -13,7 +13,7 @@ latest:
   version: 9.37.0.Final
   distributionZip: https://download.jboss.org/optaplanner/release/9.37.0.Final/optaplanner-distribution-9.37.0.Final.zip
   releaseDate: 2023-04-24
-  releaseNotesVersion: 8
+  releaseNotesVersion: 9
 
   engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.37.0.Final/optaplanner-docs/html_single/index.html
 
