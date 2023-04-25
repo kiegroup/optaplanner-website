@@ -64,7 +64,7 @@
                 Run this command in your project directory:
                 <div class="listingblock">
                     <div class="content">
-                        <pre class="highlight"><code class="language-shell" data-lang="shell">mvn clean org.openrewrite.maven:rewrite-maven-plugin:LATEST:run -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:${pom.latestFinal.version} -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest9</code></pre>
+                        <pre class="highlight"><code class="language-shell" data-lang="shell">mvn clean org.openrewrite.maven:rewrite-maven-plugin:4.44.0:run -Drewrite.recipeArtifactCoordinates=org.optaplanner:optaplanner-migration:${pom.latestFinal.version} -Drewrite.activeRecipes=org.optaplanner.migration.ToLatest9</code></pre>
                     </div>
                 </div>
                 <p>
