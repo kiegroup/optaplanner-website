@@ -28,12 +28,12 @@
 
 - userId: triceo
   fullName: Lukáš Petrovický
-  role: OptaPlanner project lead
+  role: OptaPlanner developer
   gravatarHashId: c950743f532471ac34022e92193563c3
   linkedInId: petrovicky
   githubUsername: triceo
-  employedBy: Red Hat
-  employedByUrl: https://www.redhat.com
+  email: lukas AT petrovicky.net
+  biography: Long-term contributor, no longer active as of April 2023.
 
 - userId: snurkabill
   fullName: Jiří Vahala
