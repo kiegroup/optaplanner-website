@@ -3,8 +3,8 @@ dupliaka
 2023-04-27
 :page-interpolate: true
 :jbake-type: post
-:jbake-tags: insight, design, vehicle routing. move selector
-:jbake-social_media_share_image: nearby-selection.png
+:jbake-tags: insight, design, vehicle routing, move selector
+:jbake-social_media_share_image: nearBySelection.png
 
 https://www.optaplanner.org/docs/optaplanner/latest/use-cases-and-examples/use-cases-and-examples.html#vehicleRouting[Vehicle routing problem (VRP)] is a type of optimization problem that involves finding the most efficient route for a Vehicle to take when delivering goods to different Customers.
 
