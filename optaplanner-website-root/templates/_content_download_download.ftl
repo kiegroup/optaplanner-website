@@ -97,6 +97,37 @@
                     </ul>
                 </p>
                 <div class="sect2">
+                    <h4>Distribution zip</h4>
+                    <div class="paragraph">
+                        <p>The OptaPlanner distribution zip includes binaries, documentation, examples and sources.</p>
+                    </div>
+                    <div class="ulist">
+                        <ul>
+                            <li>
+                                <p><span class="image"><img src="download.png" alt="Download"></span>
+                                    <strong><a href="${pom.latest8Final.distributionZip}">Download OptaPlanner Engine ${pom.latest8Final.version}</a></strong></p>
+                                <div class="ulist">
+                                    <ul>
+                                        <li>
+                                            <p><a href="${content.rootpath}docs/optaplanner/latest/release-notes/release-notes.html#releaseNotes-${pom.latest8Final.releaseNotesVersion}.x">Release notes ${pom.latest8Final.releaseNotesVersion}</a> -
+                                                <a href="upgradeRecipe/upgradeRecipe${pom.latest8Final.releaseNotesVersion}.html">Upgrade recipe to ${pom.latest8Final.releaseNotesVersion}</a></p>
+                                        </li>
+                                        <li>
+                                            <p>License: <a href="../code/license.html">Apache License 2.0</a> - Date: ${pom.latest8Final.releaseDate?string("EEE d MMMM yyyy")}</p>
+                                        </li>
+                                        <li>
+                                            <p>Download size: Large (over 90% is due to examples, data sets and documentation)</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <p>For Red Hat subscription releases <a href="https://access.redhat.com/downloads">go to the product download site</a>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sect2">
                     <h4>Maven</h4>
                     <div class="paragraph">
                         <p>The OptaPlanner jars are also available in <a href="http://search.maven.org/#search|ga|1|org.optaplanner">the central maven repository</a>
