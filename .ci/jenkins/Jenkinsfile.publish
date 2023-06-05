@@ -6,7 +6,7 @@ optaplannerWebsiteRepo = 'optaplanner-website'
 
 pipeline {
     agent {
-        label 'kie-rhel7 && kie-mem4g'
+        label 'rhel8'
     }
     options {
         timestamps()
