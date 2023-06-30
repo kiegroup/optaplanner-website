@@ -35,4 +35,6 @@ To reference OptaPlanner or the user manual, please use this BibTeX reference:
 ** Publication: https://ieeexplore.ieee.org/xpl/conhome/9613137/proceeding[2021 26th IEEE International Conference on Emerging Technologies and Factory Automation (ETFA)]
 ** ISBN: 978-1-7281-2989-1
 
+* https://groups.google.com/g/optaplanner-dev/c/gydIsDzRC4c/m/cZobXHgoAAAJ?utm_medium=email&utm_source=footer&pli=1[*Extending the OptaPlanner scheduling engine with the implementation of the Ruin and Recreate principle (Polish)*] by Michał Dudkiewicz (2023)
+
 If your paper relates to OptaPlanner, link:../community/team.html[let us know] and we'll add it here.
