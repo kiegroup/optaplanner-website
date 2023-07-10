@@ -1,23 +1,23 @@
 latestFinal:
-  version: 9.40.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/9.40.0.Final/optaplanner-distribution-9.40.0.Final.zip
-  releaseDate: 2023-07-06
+  version: 9.41.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/9.41.0.Final/optaplanner-distribution-9.41.0.Final.zip
+  releaseDate: 2023-07-10
   releaseNotesVersion: 9
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.40.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/9.40.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: https://docs.optaplanner.org/9.40.0.Final/optaplanner-javadoc/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.41.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/9.41.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: https://docs.optaplanner.org/9.41.0.Final/optaplanner-javadoc/index.html
 
 # latest.version can be equal to latestFinal.version
 latest:
-  version: 9.40.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/9.40.0.Final/optaplanner-distribution-9.40.0.Final.zip
-  releaseDate: 2023-07-06
+  version: 9.41.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/9.41.0.Final/optaplanner-distribution-9.41.0.Final.zip
+  releaseDate: 2023-07-10
   releaseNotesVersion: 9
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.40.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/9.41.0.Final/optaplanner-docs/html_single/index.html
 
-  javadocs: https://docs.optaplanner.org/9.40.0.Final/optaplanner-javadoc/index.html
+  javadocs: https://docs.optaplanner.org/9.41.0.Final/optaplanner-javadoc/index.html
 
 latest8Final:
   version: 8.41.0.Final
@@ -30,11 +30,11 @@ latest8Final:
   javadocs: https://docs.optaplanner.org/8.41.0.Final/optaplanner-javadoc/index.html
 
 nightly:
-  version: 9.41.0-SNAPSHOT
+  version: 9.42.0-SNAPSHOT
   # The Jenkins public mirror is unreliable because it's stale, so we use JBoss Nexus
-  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=9.41.0-SNAPSHOT&e=zip
+  distributionZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-distribution&v=9.42.0-SNAPSHOT&e=zip
 
-  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=9.41.0-SNAPSHOT&e=zip
+  engineDocumentationZip: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.optaplanner&a=optaplanner-docs&v=9.42.0-SNAPSHOT&e=zip
 
 productToCommunityVersionMap:
   - productVersion: 7.8
