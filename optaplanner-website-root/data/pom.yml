@@ -20,14 +20,14 @@ latest:
   javadocs: https://docs.optaplanner.org/9.42.0.Final/optaplanner-javadoc/index.html
 
 latest8Final:
-  version: 8.41.0.Final
-  distributionZip: https://download.jboss.org/optaplanner/release/8.41.0.Final/optaplanner-distribution-8.41.0.Final.zip
-  releaseDate: 2023-07-06
+  version: 8.42.0.Final
+  distributionZip: https://download.jboss.org/optaplanner/release/8.42.0.Final/optaplanner-distribution-8.42.0.Final.zip
+  releaseDate: 2023-08-02
   releaseNotesVersion: 8
 
-  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.41.0.Final/optaplanner-docs/html_single/index.html
-  engineDocumentationPdf: https://docs.optaplanner.org/8.41.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
-  javadocs: https://docs.optaplanner.org/8.41.0.Final/optaplanner-javadoc/index.html
+  engineDocumentationHtmlSingle: https://docs.optaplanner.org/8.42.0.Final/optaplanner-docs/html_single/index.html
+  engineDocumentationPdf: https://docs.optaplanner.org/8.42.0.Final/optaplanner-docs/pdf/optaplanner-docs.pdf
+  javadocs: https://docs.optaplanner.org/8.42.0.Final/optaplanner-javadoc/index.html
 
 nightly:
   version: 9.43.0-SNAPSHOT
