@@ -24,7 +24,7 @@ if (Utils.isMainBranch(this)){
 void setupWebsitePublishOtherJob() {
     def jobParams = JobParamsUtils.getBasicJobParams(this, "optaplanner-website-publish", JobType.OTHER, "${jenkins_path}/Jenkinsfile.publish",
             "This is a pipeline job for publishing automatically the Optaplanner Website.")
-    JobParamsUtils.setupJobParamsDefaultMavenConfiguration(this, jobParams)
+    JobParamsUtils.setupJobParamsAgentDockerBuilderImageConfiguration(this, jobParams)
     jobParams.triggers = [ push: true ]
     jobParams.env.putAll([
             JENKINS_EMAIL_CREDS_ID: "${JENKINS_EMAIL_CREDS_ID}",

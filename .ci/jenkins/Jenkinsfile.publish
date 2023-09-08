@@ -6,16 +6,15 @@ optaplannerWebsiteRepo = 'optaplanner-website'
 
 pipeline {
     agent {
-        label 'rhel8'
+        docker { 
+            image env.AGENT_DOCKER_BUILDER_IMAGE
+            args env.AGENT_DOCKER_BUILDER_ARGS
+        }
     }
     options {
         timestamps()
         timeout(time: 1, unit: 'HOURS')
         disableConcurrentBuilds(abortPrevious: true)
-    }
-    tools {
-        maven env.BUILD_MAVEN_TOOL
-        jdk env.BUILD_JDK_TOOL
     }
     environment {
         OPTAPLANNER_CI_EMAIL_TO = credentials("${JENKINS_EMAIL_CREDS_ID}")
@@ -38,7 +37,7 @@ pipeline {
                 script {
                     dir("${optaplannerWebsiteRepo}") {
                         MavenCommand mvnCmd = new MavenCommand(this, ['-fae'])
-                            .withSettingsXmlId('kogito_release_settings')
+                            .withSettingsXmlId('kie-release-settings')
                         mvnCmd.run('clean package')
                     }
                 }
