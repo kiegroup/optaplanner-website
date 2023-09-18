@@ -12,4 +12,5 @@
 #
 #############################################################################################################################################################################
 
-rsync -Pavqr -e 'ssh -p 2222' --protocol=28  optaplanner-website-assembly/target/website-complete/* optaplanner@filemgmt-prod-sync.jboss.org:www_htdocs/optaplanner --delete-after
+rsync -Pavqr -e 'ssh -p 2222' --protocol=28 optaplanner-website-assembly/target/website-complete/ optaplanner@filemgmt-prod-sync.jboss.org:www_htdocs/optaplanner/ --delete-after
+
